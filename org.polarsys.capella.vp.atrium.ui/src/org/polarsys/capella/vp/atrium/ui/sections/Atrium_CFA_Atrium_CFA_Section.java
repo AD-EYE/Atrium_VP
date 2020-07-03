@@ -61,10 +61,10 @@ public class Atrium_CFA_Atrium_CFA_Section extends AbstractSection {
 	/**
 	* <!-- begin-model-doc -->
 	* <!-- end-model-doc -->
-	* <!-- begin-user-doc -->
+		* <!-- begin-user-doc -->
 	* <!-- end-user-doc -->
-	* @generated
-	*/
+		* @generated
+		*/
 	private Group Atrium_CFA_AttributeGroup;
 
 	/**
@@ -111,12 +111,12 @@ public class Atrium_CFA_Atrium_CFA_Section extends AbstractSection {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
+	* <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param parent: An EObject. It is considered as the Parent of an EMDE extension (a Viewpoint element)
-	 * @return 
-	 * @generated
-	 */
+	* @param parent: An EObject. It is considered as the Parent of an EMDE extension (a Viewpoint element)
+	* @return 
+	* @generated
+	*/
 	private EObject getCFAObject(EObject parent) {
 		if (parent == null)
 			return null;
@@ -140,11 +140,11 @@ public class Atrium_CFA_Atrium_CFA_Section extends AbstractSection {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
+	* <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return True is the AF viewpoint is active. False else. 
-	 * @generated
-	 */
+	* @return True is the AF viewpoint is active. False else. 
+	* @generated
+	*/
 	private boolean isViewpointActive(EObject modelElement) {
 		return ViewpointManager.getInstance(modelElement).isUsed("org.polarsys.capella.vp.atrium")
 				&& !ViewpointManager.getInstance(modelElement).isFiltered("org.polarsys.capella.vp.atrium");

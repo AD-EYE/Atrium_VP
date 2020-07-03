@@ -17,32 +17,32 @@ import org.polarsys.capella.vp.atrium.Atrium.AtriumPackage;
 import org.polarsys.capella.vp.atrium.Atrium.CFA;
 
 /**
-* <!-- begin-user-doc -->
+ * <!-- begin-user-doc -->
 * The '<em><b>[StateField_semanticCheckboxGroup]</b></em>' customized CheckboxGroup field. 
 * <!-- end-user-doc -->
-* <p>
-* </p>
-*
-* @generated
-*/
+ * <p>
+ * </p>
+ *
+ * @generated
+ */
 
 public class StateField_semanticCheckboxGroup extends AbstractSemanticCheckboxGroup {
 
 	/**
-	 * <!-- begin-user-doc -->
+	* <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+	* @generated
+	*/
 	private Button _StateFieldButton;
 
 	/**
-	 * Constructor.
-	 * <!-- begin-user-doc -->
+	* Constructor.
+	* <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param parent_p
-	 * @param widgetFactory_p
-	 * @generated
-	 */
+	* @param parent_p
+	* @param widgetFactory_p
+	* @generated
+	*/
 	public StateField_semanticCheckboxGroup(Composite parent_p, TabbedPropertySheetWidgetFactory widgetFactory_p) {
 		super(parent_p, widgetFactory_p);
 		_StateFieldButton = createButton(AtriumPackage.eINSTANCE.getCFA_State(), "State", parent_p); //$NON-NLS-1$ 
@@ -56,11 +56,11 @@ public class StateField_semanticCheckboxGroup extends AbstractSemanticCheckboxGr
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
+	* <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * {@inheritDoc}
-	 * @generated   
-	 */
+	* {@inheritDoc}
+	* @generated   
+	*/
 	@Override
 	public List<Button> getSemanticFields() {
 		List<Button> fields = new ArrayList<Button>();

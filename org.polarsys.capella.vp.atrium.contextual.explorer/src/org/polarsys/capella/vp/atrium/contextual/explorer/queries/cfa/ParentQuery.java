@@ -21,11 +21,11 @@ import org.eclipse.amalgam.explorer.contextual.core.query.IQuery;
 public class ParentQuery implements IQuery {
 
 	/**
-	   * <!-- begin-user-doc -->
+	* <!-- begin-user-doc -->
 	   * <!-- end-user-doc -->
-	   * Default constructor
-	   * @generated
-	   */
+	* Default constructor
+	* @generated
+	*/
 	public ParentQuery() {
 		// TODO Auto-generated constructor stub
 	}
