@@ -1,5 +1,0 @@
-Manifest-Version: 1.0
-Bundle-ManifestVersion: 2
-Bundle-Name: Transformation
-Bundle-SymbolicName: org.polarsys.capella.vp.atrium.rules.transformation;singleton:=true
-Bundle-Version: 0.1.0.qualifier
