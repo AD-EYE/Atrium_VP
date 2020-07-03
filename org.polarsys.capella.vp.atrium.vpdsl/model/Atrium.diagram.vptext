@@ -1,0 +1,41 @@
+/**
+ * Copyright (c) PolarSys, 2020. All rights reserved. 
+ *
+ *	Viewpoint Atrium
+ *	@author: adeye
+ *	@date: 7/3/20
+ *
+ */
+Diagrams Atrium.diagram {
+	DiagramExtension "diagramExtension_1" {
+		extended-diagram: LogicalArchitectureBlank //extended diagram
+		Mapping {
+			Container CFAContainer {
+				import: LABLogicalComponent //import a container
+				Contains {
+					
+					Node CFA{
+						domain-context: Atrium.data.CFA
+						provided-by association external emde.ExtensibleElement.ownedExtensions
+						Representation { 
+							Label {
+								content: "CFA" police: black position: node alignment: left
+							}
+							Style {
+								BasicStyle {border-color: black background: light_blue form: Square}
+							}
+						}
+					}
+				}
+				}
+			}
+			Actions {
+				/* CFAContainer Actions*/
+				
+				OpenAction add_CFA {
+					label: "Add CFA"
+				}
+				
+		}
+	}
+}

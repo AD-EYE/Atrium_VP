@@ -1,0 +1,20 @@
+/**
+ * Copyright (c) PolarSys, 2020. All rights reserved. 
+ *
+ *	Viewpoint Atrium.ui
+ *	@author: adeye
+ *	@date: 7/3/20
+ *
+ */
+UIDescription Atrium.ui {
+	UI Atrium_CFA {
+		label: "Atrium"
+		Container Atrium_CFA_Section {
+			Container Atrium_CFA_AttributeGroup {
+				label: "CFA Attributes"
+				Field contentField label: "Content" type text , mapped-to Atrium.data.CFA.content
+				Field stateField label: "State" type checkbox , mapped-to Atrium.data.CFA.state
+			}
+		}
+	}
+}

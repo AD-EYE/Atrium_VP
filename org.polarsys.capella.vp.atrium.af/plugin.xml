@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+	<extension
+	     point="org.eclipse.ui.views">
+	  <view
+	        name="Atrium"
+	        icon="icons/view.gif"
+	        category="org.polarsys.kitalpha.view.category"
+	        class="org.polarsys.kitalpha.ad.viewpoint.ui.views.ViewpointView"
+	        id="org.polarsys.capella.vp.atrium.view"
+	        resourceId="org.polarsys.capella.vp.atrium"/>
+	</extension>
+	<extension
+	     point="org.polarsys.kitalpha.resourcereuse.resources">
+	  <resource
+	        domain="AF"
+	        id="org.polarsys.capella.vp.atrium"
+	        tags="vp"
+	        name="Atrium"
+	        path="/org.polarsys.capella.vp.atrium.af/model/Atrium.vp#_5rO7wL0wEeqz-9mbd1pPOg"/>
+	</extension>
+	<extension 
+	     point="org.eclipse.ui.propertiesView">
+	 	<excludeSources
+	    	id="org.polarsys.capella.vp.atrium.view">
+	 	</excludeSources>
+	</extension>
+</plugin>
+

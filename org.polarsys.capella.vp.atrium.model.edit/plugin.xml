@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+
+
+<plugin>
+
+   
+<!--@generated-->
+  <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <!-- @generated Atrium -->
+      <factory class="org.polarsys.capella.vp.atrium.Atrium.provider.AtriumItemProviderAdapterFactory" supportedTypes="org.eclipse.emf.edit.provider.IEditingDomainItemProvider                org.eclipse.emf.edit.provider.IStructuredItemContentProvider                org.eclipse.emf.edit.provider.ITreeItemContentProvider                org.eclipse.emf.edit.provider.IItemLabelProvider                org.eclipse.emf.edit.provider.IItemPropertySource" uri="http://www.polarsys.org/capella/Atrium"/>
+   </extension>
+
+   
+<!--@generated-->
+  <extension point="org.eclipse.emf.edit.childCreationExtenders">
+      <!-- @generated Atrium -->
+      <extender class="org.polarsys.capella.vp.atrium.Atrium.provider.AtriumItemProviderAdapterFactory$EmdeChildCreationExtender" uri="http://www.polarsys.org/kitalpha/emde/1.0.0"/>
+      <extender class="org.polarsys.capella.vp.atrium.Atrium.provider.AtriumItemProviderAdapterFactory$SharedmodelChildCreationExtender" uri="http://www.polarsys.org/capella/core/sharedmodel/1.4.0"/>
+   </extension>
+
+
+<!--@generated-->
+  <extension point="org.polarsys.capella.common.menu.dynamic.MDEMenuItemContribution">
+</extension>
+
+<!--@generated-->
+  <extension point="org.eclipse.ui.views.properties.tabbed.propertySections">
+    <propertySections contributorId="org.polarsys.capella.core.data.capellamodeller.properties">
+        <propertySection class="org.polarsys.capella.core.data.core.properties.sections.DefaultNamedElementSection" filter="org.polarsys.capella.vp.atrium.Atrium.provider.sections.CFASection" id="org.polarsys.capella.vp.atrium.Atrium.provider.contributions.CFAItemContribution.section" tab="BaseCapella">
+            <input type="org.polarsys.capella.vp.atrium.Atrium.CFA"/>
+        </propertySection>
+</propertySections>
+    </extension>
+
+<!--@generated-->
+  <extension point="org.eclipse.ui.views.properties.tabbed.propertySections">
+    <propertySections contributorId="org.eclipse.sirius.diagram.ui">
+        <propertySection class="org.polarsys.capella.vp.atrium.Atrium.provider.sections.CFASection" filter="org.polarsys.capella.vp.atrium.Atrium.provider.sections.CFASection" id="org.polarsys.capella.vp.atrium.Atrium.provider.sections.CFASection.section" tab="BaseSiriusDiagram">
+        </propertySection>
+</propertySections>
+    </extension>
+</plugin>

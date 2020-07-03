@@ -1,0 +1,80 @@
+!SESSION 2020-07-03 15:08:56.467 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_221
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -showLocation
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -showLocation
+
+!ENTRY org.eclipse.egit.core 1 0 2020-07-03 15:09:07.717
+!MESSAGE Using Apache MINA sshd as ssh client.
+
+!ENTRY org.eclipse.egit.ui 2 0 2020-07-03 15:09:13.337
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\adeye'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.apache.log4j 4 0 2020-07-03 15:24:17.525
+!MESSAGE org.eclipse.xtext.validation.ResourceValidatorImpl  - 
+
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.xtext.nodemodel.util.NodeModelUtils.findNodesForFeature(NodeModelUtils.java:186)
+	at org.eclipse.xtext.nodemodel.util.NodeModelUtils.findNodesForFeature(NodeModelUtils.java:168)
+	at org.eclipse.xtext.validation.DiagnosticConverterImpl.getLocationData(DiagnosticConverterImpl.java:228)
+	at org.eclipse.xtext.validation.DiagnosticConverterImpl.getLocationData(DiagnosticConverterImpl.java:211)
+	at org.eclipse.xtext.validation.DiagnosticConverterImpl.convertValidatorDiagnostic(DiagnosticConverterImpl.java:87)
+	at org.eclipse.xtext.validation.ResourceValidatorImpl.issueFromEValidatorDiagnostic(ResourceValidatorImpl.java:180)
+	at org.eclipse.xtext.validation.ResourceValidatorImpl.validate(ResourceValidatorImpl.java:149)
+	at org.eclipse.xtext.validation.ResourceValidatorImpl.validate(ResourceValidatorImpl.java:124)
+	at org.eclipse.xtext.validation.ResourceValidatorImpl.validate(ResourceValidatorImpl.java:90)
+	at org.eclipse.xtext.ui.editor.validation.ValidationJob$1.exec(ValidationJob.java:91)
+	at org.eclipse.xtext.ui.editor.validation.ValidationJob$1.exec(ValidationJob.java:1)
+	at org.eclipse.xtext.util.concurrent.CancelableUnitOfWork.exec(CancelableUnitOfWork.java:26)
+	at org.eclipse.xtext.util.concurrent.WrappingCancelableUnitOfWork.exec(WrappingCancelableUnitOfWork.java:57)
+	at org.eclipse.xtext.util.concurrent.CancelableUnitOfWork.exec(CancelableUnitOfWork.java:26)
+	at org.eclipse.xtext.resource.OutdatedStateManager.exec(OutdatedStateManager.java:91)
+	at org.eclipse.xtext.ui.editor.model.XtextDocument$XtextDocumentLocker.internalReadOnly(XtextDocument.java:527)
+	at org.eclipse.xtext.ui.editor.model.XtextDocument$XtextDocumentLocker.readOnly(XtextDocument.java:499)
+	at org.eclipse.xtext.ui.editor.model.XtextDocument.readOnly(XtextDocument.java:138)
+	at org.eclipse.xtext.util.concurrent.IReadAccess.tryReadOnly(IReadAccess.java:49)
+	at org.eclipse.xtext.ui.editor.validation.ValidationJob.createIssues(ValidationJob.java:86)
+	at org.eclipse.xtext.ui.editor.validation.ValidationJob.run(ValidationJob.java:67)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.ui 4 0 2020-07-03 15:27:13.501
+!MESSAGE Unhandled event loop exception
+!STACK 0
+java.util.ConcurrentModificationException
+	at java.util.ArrayList$Itr.checkForComodification(Unknown Source)
+	at java.util.ArrayList$Itr.next(Unknown Source)
+	at org.eclipse.sirius.editor.editorPlugin.SiriusEditor.handleChangedResources(SiriusEditor.java:523)
+	at org.eclipse.sirius.editor.editorPlugin.SiriusEditor.handleActivate(SiriusEditor.java:509)
+	at org.eclipse.sirius.editor.editorPlugin.SiriusEditor$3$2.run(SiriusEditor.java:433)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:40)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:185)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:3919)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3550)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1173)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1062)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:635)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:559)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+	at org.polarsys.capella.studio.product.Application.start(Application.java:126)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:400)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:660)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:597)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1468)

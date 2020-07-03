@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+	<extension
+	     point="org.polarsys.kitalpha.resourcereuse.resources">
+	  <resource
+	        domain="vpdsl"
+	        id="org.polarsys.capella.vp.atrium.vpdsl.description"
+	        tags="vpdesc"
+	        name="atrium"
+	        path="/org.polarsys.capella.vp.atrium.vpdsl/model/Atrium.vpdesc"/>
+	</extension>
+
+
+	<extension
+	     point="org.polarsys.kitalpha.resourcereuse.resources">
+	  <resource
+	        domain="vpdsl"
+	        id="org.polarsys.capella.vp.atrium.vpdsl.resource.Atrium.spec"
+	        tags="Viewpoint"
+	        name="spec"
+	        path="/org.polarsys.capella.vp.atrium.vpdsl/model/Atrium.spec.vptext"/>
+	</extension>
+
+	<extension
+	     point="org.polarsys.kitalpha.resourcereuse.resources">
+	  <resource
+	        domain="vpdsl"
+	        id="org.polarsys.capella.vp.atrium.vpdsl.resource.Atrium.data"
+	        tags="Viewpoint"
+	        name="data"
+	        path="/org.polarsys.capella.vp.atrium.vpdsl/model/Atrium.data.vptext"/>
+	</extension>
+
+	<extension
+	     point="org.polarsys.kitalpha.resourcereuse.resources">
+	  <resource
+	        domain="vpdsl"
+	        id="org.polarsys.capella.vp.atrium.vpdsl.resource.Atrium.conf"
+	        tags="Viewpoint"
+	        name="conf"
+	        path="/org.polarsys.capella.vp.atrium.vpdsl/model/Atrium.conf.vptext"/>
+	</extension>
+
+	<extension
+	     point="org.polarsys.kitalpha.resourcereuse.resources">
+	  <resource
+	        domain="vpdsl"
+	        id="org.polarsys.capella.vp.atrium.vpdsl.resource.Atrium.Atrium.ui"
+	        tags="Viewpoint"
+	        name="ui"
+	        path="/org.polarsys.capella.vp.atrium.vpdsl/model/Atrium.ui.vptext"/>
+	</extension>
+
+	<extension
+	     point="org.polarsys.kitalpha.resourcereuse.resources">
+	  <resource
+	        domain="vpdsl"
+	        id="org.polarsys.capella.vp.atrium.vpdsl.resource.Atrium.Atrium.diagram"
+	        tags="Viewpoint"
+	        name="diagram"
+	        path="/org.polarsys.capella.vp.atrium.vpdsl/model/Atrium.diagram.vptext"/>
+	</extension>
+</plugin>

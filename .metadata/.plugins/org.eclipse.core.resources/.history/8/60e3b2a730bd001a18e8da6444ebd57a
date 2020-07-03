@@ -1,0 +1,14 @@
+/**
+ * Copyright (c) PolarSys, 2020. All rights reserved. 
+ *
+ *	Viewpoint Atrium
+ *	@author: adeye
+ *	@date: 7/3/20
+ *
+ */
+Viewpoint Atrium {
+	name: "Atrium"
+	Data Atrium.data
+	UI Atrium.ui
+	Configuration Atrium.conf
+}

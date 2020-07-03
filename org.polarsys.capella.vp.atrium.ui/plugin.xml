@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<?eclipse version="3.4"?>
+<plugin>
+<extension
+	point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
+	<propertyTabs 
+		contributorId="org.eclipse.sirius.diagram.ui">
+			
+			<propertyTab
+		    	afterTab="BaseSiriusDiagram"
+		        category="semantic &amp; extension"
+		        id="Atrium_CFA"
+		        label="Atrium">
+		    </propertyTab> 
+			
+	</propertyTabs>
+</extension> 
+<extension
+	point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
+	<propertyTabs 
+		contributorId="org.polarsys.capella.core.data.capellamodeller.properties">
+			
+			<propertyTab
+		    	afterTab="BaseCapella"
+		        category="default"
+		        id="Atrium_CFA"
+		        label="Atrium">
+		    </propertyTab> 
+			
+	</propertyTabs>
+</extension> 
+<extension
+	point="org.eclipse.ui.views.properties.tabbed.propertySections">
+		<propertySections
+			contributorId="org.eclipse.sirius.diagram.ui">
+			<propertySection
+		    	class="org.polarsys.capella.vp.atrium.ui.sections.Atrium_CFA_Atrium_CFA_Section"
+		        filter="org.polarsys.capella.vp.atrium.ui.sections.Atrium_CFA_Atrium_CFA_Section"
+		        id="Atrium_CFA.Atrium_CFA_Section"
+		        tab="Atrium_CFA">
+		        
+		    </propertySection> 
+		    </propertySections>
+</extension>
+<extension
+	point="org.eclipse.ui.views.properties.tabbed.propertySections">
+		<propertySections
+			contributorId="org.polarsys.capella.core.data.capellamodeller.properties">
+			<propertySection
+		    	class="org.polarsys.capella.vp.atrium.ui.sections.Atrium_CFA_Atrium_CFA_Section"
+		        filter="org.polarsys.capella.vp.atrium.ui.sections.Atrium_CFA_Atrium_CFA_Section"
+		        id="Atrium_CFA.Atrium_CFA_Section"
+		        tab="Atrium_CFA">
+		        
+		    </propertySection> 
+		    </propertySections>
+</extension>
+</plugin>
