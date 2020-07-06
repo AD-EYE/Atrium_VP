@@ -12,7 +12,10 @@
           <type href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
         </owned_type>
       </VP_Class_Attributes>
-      <extends href="http://www.polarsys.org/capella/core/core/1.4.0#//CapellaElement"/>
+      <extends href="http://www.polarsys.org/capella/core/core/1.4.0#//NamedElement"/>
+      <extends href="http://www.polarsys.org/capella/core/fa/1.4.0#//FunctionalExchange"/>
+      <extends href="http://www.polarsys.org/capella/core/pa/1.4.0#//PhysicalFunction"/>
+      <extends href="http://www.polarsys.org/capella/core/la/1.4.0#//LogicalFunction"/>
     </VP_Classes>
   </VP_Data>
   <VP_Aspects xsi:type="vpconf:Configuration" name="Atrium.conf">
@@ -44,6 +47,9 @@
   <VP_Aspects xsi:type="vpdiagram:DiagramSet" name="Atrium.diagram">
     <diagrams xsi:type="vpdiagram:DiagramExtension" name="diagramExtension_1">
       <the_MappingSet>
+        <diagram_Elements xsi:type="vpdiagram:Node" name="LogicalFunction_Import">
+          <imports href="../../../plugin/org.polarsys.capella.core.sirius.analysis/description/logical.odesign#//@ownedViewpoints[name='Logical%20Architecture']/@ownedRepresentations[name='Logical%20Architecture%20Blank']/@defaultLayer/@containerMappings[name='LAB%20Logical%20Component']/@subNodeMappings[name='LAB%20Logical%20Function']"/>
+        </diagram_Elements>
         <diagram_Elements xsi:type="vpdiagram:Container" name="CFAContainer">
           <imports href="../../../plugin/org.polarsys.capella.core.sirius.analysis/description/logical.odesign#//@ownedViewpoints[name='Logical%20Architecture']/@ownedRepresentations[name='Logical%20Architecture%20Blank']/@defaultLayer/@containerMappings[name='LAB%20Logical%20Component']"/>
           <children>
@@ -64,6 +70,12 @@
               </style>
             </owned_nodes>
           </children>
+        </diagram_Elements>
+        <diagram_Elements xsi:type="vpdiagram:Edge" name="LinkCFA_LF" source="//@VP_Aspects.2/@diagrams.0/@the_MappingSet/@diagram_Elements.0" target="//@VP_Aspects.2/@diagrams.0/@the_MappingSet/@diagram_Elements.1">
+          <e_description>
+            <style lineStyle="dash_dot"/>
+          </e_description>
+          <the_domain target_query="aql:self.getCFA_LF()"/>
         </diagram_Elements>
       </the_MappingSet>
       <the_ActionSet>

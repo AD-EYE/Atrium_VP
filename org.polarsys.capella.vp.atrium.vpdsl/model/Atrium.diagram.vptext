@@ -10,6 +10,11 @@ Diagrams Atrium.diagram {
 	DiagramExtension "diagramExtension_1" {
 		extended-diagram: LogicalArchitectureBlank //extended diagram
 		Mapping {
+				Node LogicalFunction_Import
+				{
+					import: LABLogicalFunction
+				}
+			
 			Container CFAContainer {
 				import: LABLogicalComponent //import a container
 				Contains {
@@ -28,6 +33,21 @@ Diagrams Atrium.diagram {
 					}
 				}
 				}
+				
+				Edge LinkCFA_LF {
+				association-context: query: "aql:self.getCFA_LF()"
+				source: diagramExtension_1.LogicalFunction_Import
+				target: diagramExtension_1.CFAContainer
+				Representation {
+					Style {
+						line-style: dash_dot
+						end-decorator: NoDecoration
+					}
+				}
+			}
+				
+				
+				
 			}
 			Actions {
 				/* CFAContainer Actions*/

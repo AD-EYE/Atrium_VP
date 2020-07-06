@@ -7,9 +7,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.emf.ecore.EObject;
-
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.sirius.diagram.DDiagram;
 import org.eclipse.sirius.diagram.DDiagramElement;
+import org.polarsys.capella.common.data.modellingcore.AbstractType;
+import org.polarsys.capella.core.data.capellacore.CapellaElement;
+import org.polarsys.capella.core.data.fa.AbstractFunction;
+import org.polarsys.capella.core.data.fa.FunctionalExchange;
+import org.polarsys.capella.core.data.pa.PhysicalComponentPkg;
+import org.polarsys.capella.vp.atrium.Atrium.CFA;
+import org.polarsys.capella.vp.atrium.Atrium.impl.AtriumFactoryImpl;
+import org.polarsys.kitalpha.emde.model.ElementExtension;
+import org.polarsys.kitalpha.emde.model.ExtensibleElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -27,11 +36,30 @@ public class OpenActionService {
 	* <!-- end-user-doc -->
 	* @param element : the element
 	* @param newSemanticContainer : the element view
-	* @generated
+	* @generated NOT
 	*/
 	public boolean add_CFA(EObject element, EObject newSemanticContainer) {
 		// TODO Auto-generated method stub
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+
+		CFA myCFA = AtriumFactoryImpl.eINSTANCE.createCFA();
+
+		myCFA.setContent("I AM A CFA !");
+		myCFA.setState(true);
+
+		myCFA.setId(EcoreUtil.generateUUID());
+
+		if (element instanceof AbstractFunction) {
+			AbstractFunction AF = (AbstractFunction) element;
+			AF.getOwnedExtensions().add(myCFA);
+			return true;
+		} else if (element instanceof FunctionalExchange) {
+			FunctionalExchange FE = (FunctionalExchange) element;
+			FE.getOwnedExtensions().add(myCFA);
+			return true;
+		} else {
+			((ExtensibleElement) element).getOwnedExtensions().add((ElementExtension) myCFA);
+		}
+
+		return true;
 	}
 }

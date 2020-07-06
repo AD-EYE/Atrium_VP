@@ -274,9 +274,9 @@ public class AtriumPackageImpl extends EPackageImpl implements AtriumPackage {
 	 */
 	protected void createConstraintAnnotations() {
 		String source = "http://www.polarsys.org/kitalpha/emde/1.0.0/constraint"; //$NON-NLS-1$
-		addAnnotation(cfaEClass, source,
-				new String[] { "ExtendedElement", " http://www.polarsys.org/capella/core/core/1.4.0#//CapellaElement" //$NON-NLS-1$ //$NON-NLS-2$
-				});
+		addAnnotation(cfaEClass, source, new String[] { "ExtendedElement", //$NON-NLS-1$
+				" http://www.polarsys.org/capella/core/core/1.4.0#//NamedElement http://www.polarsys.org/capella/core/fa/1.4.0#//FunctionalExchange http://www.polarsys.org/capella/core/pa/1.4.0#//PhysicalFunction http://www.polarsys.org/capella/core/la/1.4.0#//LogicalFunction" //$NON-NLS-1$
+		});
 	}
 
 	/**
@@ -288,7 +288,7 @@ public class AtriumPackageImpl extends EPackageImpl implements AtriumPackage {
 	protected void createConstraintMappingAnnotations() {
 		String source = "http://www.polarsys.org/kitalpha/emde/1.0.0/constraintMapping"; //$NON-NLS-1$
 		addAnnotation(cfaEClass, source, new String[] { "Mapping", //$NON-NLS-1$
-				" platform:/plugin/org.polarsys.capella.core.data.gen/model/CapellaCore.ecore#//CapellaElement" //$NON-NLS-1$
+				" platform:/plugin/org.polarsys.capella.core.data.gen/model/CapellaCore.ecore#//NamedElement platform:/plugin/org.polarsys.capella.core.data.gen/model/FunctionalAnalysis.ecore#//FunctionalExchange platform:/plugin/org.polarsys.capella.core.data.gen/model/PhysicalArchitecture.ecore#//PhysicalFunction platform:/plugin/org.polarsys.capella.core.data.gen/model/LogicalArchitecture.ecore#//LogicalFunction" //$NON-NLS-1$
 		});
 	}
 
