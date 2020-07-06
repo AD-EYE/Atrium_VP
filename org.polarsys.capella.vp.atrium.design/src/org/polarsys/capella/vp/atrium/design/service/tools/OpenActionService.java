@@ -5,18 +5,14 @@ package org.polarsys.capella.vp.atrium.design.service.tools;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.sirius.diagram.DDiagram;
 import org.eclipse.sirius.diagram.DDiagramElement;
-import org.polarsys.capella.common.data.modellingcore.AbstractType;
-import org.polarsys.capella.core.data.capellacore.CapellaElement;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.polarsys.capella.core.data.fa.AbstractFunction;
 import org.polarsys.capella.core.data.fa.FunctionalExchange;
-import org.polarsys.capella.core.data.pa.PhysicalComponentPkg;
 import org.polarsys.capella.vp.atrium.Atrium.CFA;
-import org.polarsys.capella.vp.atrium.Atrium.impl.AtriumFactoryImpl;
+import org.polarsys.capella.vp.atrium.Atrium.AtriumFactory;
 import org.polarsys.kitalpha.emde.model.ElementExtension;
 import org.polarsys.kitalpha.emde.model.ExtensibleElement;
 
@@ -39,9 +35,8 @@ public class OpenActionService {
 	* @generated NOT
 	*/
 	public boolean add_CFA(EObject element, EObject newSemanticContainer) {
-		// TODO Auto-generated method stub
 
-		CFA myCFA = AtriumFactoryImpl.eINSTANCE.createCFA();
+		CFA myCFA = AtriumFactory.eINSTANCE.createCFA();
 
 		myCFA.setContent("I AM A CFA !");
 		myCFA.setState(true);
