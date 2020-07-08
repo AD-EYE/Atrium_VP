@@ -18,6 +18,11 @@
           <style lineStyle="dash" targetArrow="NoDecoration" sizeComputationExpression="0">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
+          <conditionnalStyles predicateExpression="service:isElementNewEdge(view,container)">
+            <style lineStyle="dash" targetArrow="NoDecoration" sizeComputationExpression="0">
+              <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
+            </style>
+          </conditionnalStyles>
         </edgeMappings>
         <edgeMappings name="LinkCFA_LF_EM" label="LinkCFA_LF" sourceMapping="//@ownedViewpoints[name='Atrium_ID']/@ownedRepresentationExtensions[name='Atrium_LogicalExtension']/@layers[name='Atrium']/@containerMappings[name='container_CFA_CM']" targetMapping="//@ownedViewpoints[name='Atrium_ID']/@ownedRepresentationExtensions[name='Atrium_LogicalExtension']/@layers[name='Atrium']/@nodeMappings[name='NodeLF_Imported_NM']" targetFinderExpression="feature:linkedtoElement" sourceFinderExpression="" domainClass="">
           <style lineStyle="dash" targetArrow="NoDecoration" sizeComputationExpression="0">
@@ -84,6 +89,14 @@
           <dropDescriptions href="../../../plugin/org.polarsys.capella.core.sirius.analysis/description/logical.odesign#//@ownedViewpoints[name='Logical%20Architecture']/@ownedRepresentations[name='Logical%20Architecture%20Blank']/@defaultLayer/@toolSections.1/@ownedTools[name='D%26D%20Function%20Allocation%20From%20Project%20Explorer']"/>
           <reusedNodeMappings href="../../../plugin/org.polarsys.capella.core.sirius.analysis/description/logical.odesign#//@ownedViewpoints[name='Logical%20Architecture']/@ownedRepresentations[name='Logical%20Architecture%20Blank']/@defaultLayer/@nodeMappings[name='LAB_Dummy']"/>
           <reusedNodeMappings href="#//@ownedViewpoints[name='Atrium_ID']/@ownedRepresentationExtensions[name='Atrium_LogicalExtension']/@layers[name='Atrium']/@nodeMappings[name='NodeLF_Imported_NM']"/>
+          <conditionnalStyles predicateExpression="service:isElementNew(view,container)">
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="aql:self.computePartLabel()" backgroundStyle="GradientTopToBottom">
+              <borderColor xsi:type="description:UserFixedColor" href="../../../plugin/org.polarsys.capella.core.sirius.analysis/description/common.odesign#//@userColorsPalettes[name='Migration%20Palette']/@entries[name='_CAP_Component_Border_Blue']"/>
+              <labelColor xsi:type="description:UserFixedColor" href="../../../plugin/org.polarsys.capella.core.sirius.analysis/description/common.odesign#//@userColorsPalettes[name='Migration%20Palette']/@entries[name='_CAP_Component_Label_Blue']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </conditionnalStyles>
           <importedMapping href="../../../plugin/org.polarsys.capella.core.sirius.analysis/description/logical.odesign#//@ownedViewpoints[name='Logical%20Architecture']/@ownedRepresentations[name='Logical%20Architecture%20Blank']/@defaultLayer/@containerMappings[name='LAB%20Logical%20Component']"/>
         </containerMappings>
         <toolSections name="Atrium" label="Atrium">
@@ -118,6 +131,8 @@
       </layers>
     </ownedRepresentationExtensions>
     <ownedJavaExtensions qualifiedClassName="org.polarsys.capella.vp.atrium.design.service.AtriumOpenJavaService"/>
+    <ownedJavaExtensions qualifiedClassName="org.polarsys.capella.vp.atrium.design.service.nodes.ContainerLC_Service"/>
+    <ownedJavaExtensions qualifiedClassName="org.polarsys.capella.vp.atrium.design.service.edges.LinkCFA_LC_Service"/>
     <ownedJavaExtensions qualifiedClassName="org.polarsys.capella.vp.atrium.design.service.tools.OpenActionService"/>
   </ownedViewpoints>
 </description:Group>

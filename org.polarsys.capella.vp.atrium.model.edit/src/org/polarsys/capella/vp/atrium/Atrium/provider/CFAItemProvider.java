@@ -98,6 +98,7 @@ public class CFAItemProvider extends NamedElementItemProvider implements IEditin
 			addLinkedtoElementPropertyDescriptor(object);
 			addContentPropertyDescriptor(object);
 			addStatePropertyDescriptor(object);
+			addStateLinkedElementPropertyDescriptor(object);
 		}
 		// begin-extension-code
 		checkChildCreationExtender(object);
@@ -161,6 +162,27 @@ public class CFAItemProvider extends NamedElementItemProvider implements IEditin
 				getString("_UI_CFA_state_feature"), //$NON-NLS-1$
 				getString("_UI_PropertyDescriptor_description", "_UI_CFA_state_feature", "_UI_CFA_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 				AtriumPackage.Literals.CFA__STATE, true, false, false, ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null,
+				// begin-extension-code
+				null));
+		// end-extension-code
+	}
+
+	/**
+	 * This adds a property descriptor for the State Linked Element feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addStateLinkedElementPropertyDescriptor(Object object) {
+
+		// begin-extension-code
+		itemPropertyDescriptors.add(createItemPropertyDescriptor
+		// end-extension-code
+		(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+				getString("_UI_CFA_stateLinkedElement_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_CFA_stateLinkedElement_feature", "_UI_CFA_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				AtriumPackage.Literals.CFA__STATE_LINKED_ELEMENT, true, false, false,
+				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
 				// begin-extension-code
 				null));
 		// end-extension-code
@@ -247,6 +269,7 @@ public class CFAItemProvider extends NamedElementItemProvider implements IEditin
 		switch (notification.getFeatureID(CFA.class)) {
 		case AtriumPackage.CFA__CONTENT:
 		case AtriumPackage.CFA__STATE:
+		case AtriumPackage.CFA__STATE_LINKED_ELEMENT:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		case AtriumPackage.CFA__ASSUMPTION:

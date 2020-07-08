@@ -16,6 +16,7 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="content" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="state" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="stateLinkedElement" eType="#//stateLinkedElement_Type"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Assumption" eSuperTypes="platform:/plugin/org.polarsys.capella.core.data.gen/model/CapellaCore.ecore#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="content" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -24,5 +25,9 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DG" eSuperTypes="platform:/plugin/org.polarsys.capella.core.data.gen/model/CapellaCore.ecore#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="content" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="stateLinkedElement_Type">
+    <eLiterals name="Legacy" literal="Legacy"/>
+    <eLiterals name="New_Development" value="1" literal="New Development"/>
   </eClassifiers>
 </ecore:EPackage>

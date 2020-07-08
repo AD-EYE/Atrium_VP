@@ -12,6 +12,7 @@ Data Atrium.data {
 		Attributes:
 			content type ecore.EString
 			state type ecore.EBoolean
+			stateLinkedElement type ecore.EEnumerator values ("Legacy","New Development")
 		Associations:
 			linkedtoElement refers [1,1] external capellacore.CapellaElement
 			assumption contains [0,*] Assumption

@@ -22,16 +22,4 @@ import org.eclipse.sirius.diagram.DDiagramElement;
  */
 
 public class CreateToolService {
-	/**
-	* <!-- begin-user-doc -->
-	* <!-- end-user-doc -->
-	* @param container : the semantic container of the new model element
-	* @param containerView : the view of the semantic container
-	* @generated NOT
-	*/
-	public boolean CreateInstanceCFA(EObject container, EObject containerView) {
-		// TODO Auto-generated method stub
-		// Ensure that you remove @generated or mark it @generated NOT
-		return true;
-	}
 }

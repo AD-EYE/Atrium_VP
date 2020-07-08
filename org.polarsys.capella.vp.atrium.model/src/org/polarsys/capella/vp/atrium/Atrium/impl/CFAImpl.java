@@ -20,6 +20,7 @@ import org.polarsys.capella.vp.atrium.Atrium.Assumption;
 import org.polarsys.capella.vp.atrium.Atrium.AtriumPackage;
 import org.polarsys.capella.vp.atrium.Atrium.CFA;
 import org.polarsys.capella.vp.atrium.Atrium.DG;
+import org.polarsys.capella.vp.atrium.Atrium.stateLinkedElement_Type;
 
 /**
  * <!-- begin-user-doc -->
@@ -34,6 +35,7 @@ import org.polarsys.capella.vp.atrium.Atrium.DG;
  *   <li>{@link org.polarsys.capella.vp.atrium.Atrium.impl.CFAImpl#getGoal <em>Goal</em>}</li>
  *   <li>{@link org.polarsys.capella.vp.atrium.Atrium.impl.CFAImpl#getContent <em>Content</em>}</li>
  *   <li>{@link org.polarsys.capella.vp.atrium.Atrium.impl.CFAImpl#isState <em>State</em>}</li>
+ *   <li>{@link org.polarsys.capella.vp.atrium.Atrium.impl.CFAImpl#getStateLinkedElement <em>State Linked Element</em>}</li>
  * </ul>
  *
  * @generated
@@ -109,6 +111,26 @@ public class CFAImpl extends NamedElementImpl implements CFA {
 	 * @ordered
 	 */
 	protected boolean state = STATE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getStateLinkedElement() <em>State Linked Element</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStateLinkedElement()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final stateLinkedElement_Type STATE_LINKED_ELEMENT_EDEFAULT = stateLinkedElement_Type.LEGACY;
+
+	/**
+	 * The cached value of the '{@link #getStateLinkedElement() <em>State Linked Element</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStateLinkedElement()
+	 * @generated
+	 * @ordered
+	 */
+	protected stateLinkedElement_Type stateLinkedElement = STATE_LINKED_ELEMENT_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -315,6 +337,35 @@ public class CFAImpl extends NamedElementImpl implements CFA {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+
+	@Override
+	public stateLinkedElement_Type getStateLinkedElement() {
+
+		return stateLinkedElement;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+
+	@Override
+	public void setStateLinkedElement(stateLinkedElement_Type newStateLinkedElement) {
+
+		stateLinkedElement_Type oldStateLinkedElement = stateLinkedElement;
+		stateLinkedElement = newStateLinkedElement == null ? STATE_LINKED_ELEMENT_EDEFAULT : newStateLinkedElement;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AtriumPackage.CFA__STATE_LINKED_ELEMENT,
+					oldStateLinkedElement, stateLinkedElement));
+
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -346,6 +397,8 @@ public class CFAImpl extends NamedElementImpl implements CFA {
 			return getContent();
 		case AtriumPackage.CFA__STATE:
 			return isState();
+		case AtriumPackage.CFA__STATE_LINKED_ELEMENT:
+			return getStateLinkedElement();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -375,6 +428,9 @@ public class CFAImpl extends NamedElementImpl implements CFA {
 		case AtriumPackage.CFA__STATE:
 			setState((Boolean) newValue);
 			return;
+		case AtriumPackage.CFA__STATE_LINKED_ELEMENT:
+			setStateLinkedElement((stateLinkedElement_Type) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -402,6 +458,9 @@ public class CFAImpl extends NamedElementImpl implements CFA {
 		case AtriumPackage.CFA__STATE:
 			setState(STATE_EDEFAULT);
 			return;
+		case AtriumPackage.CFA__STATE_LINKED_ELEMENT:
+			setStateLinkedElement(STATE_LINKED_ELEMENT_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -424,6 +483,8 @@ public class CFAImpl extends NamedElementImpl implements CFA {
 			return CONTENT_EDEFAULT == null ? content != null : !CONTENT_EDEFAULT.equals(content);
 		case AtriumPackage.CFA__STATE:
 			return state != STATE_EDEFAULT;
+		case AtriumPackage.CFA__STATE_LINKED_ELEMENT:
+			return stateLinkedElement != STATE_LINKED_ELEMENT_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -443,6 +504,8 @@ public class CFAImpl extends NamedElementImpl implements CFA {
 		result.append(content);
 		result.append(", state: "); //$NON-NLS-1$
 		result.append(state);
+		result.append(", stateLinkedElement: "); //$NON-NLS-1$
+		result.append(stateLinkedElement);
 		result.append(')');
 		return result.toString();
 	}

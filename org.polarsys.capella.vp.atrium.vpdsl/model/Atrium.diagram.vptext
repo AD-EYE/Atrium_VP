@@ -61,6 +61,16 @@ Diagrams Atrium.diagram {
 			///Import Capella Element
 			Container ContainerLC {
 				import: LABLogicalComponent
+				
+				Representation {
+					condition: Java isElementNew
+					Style {
+						FlatStyle {
+							background: red 
+							foreground: white
+						}
+					}
+				}
 			}
 			Node NodeLF{
 				import: LABLogicalFunction
@@ -79,6 +89,14 @@ Diagrams Atrium.diagram {
 						line-style: dash
 						end-decorator: NoDecoration
 						color: black
+					}
+				}
+				Representation {
+					condition: Java isElementNewEdge
+					Style {
+						line-style: dash
+						end-decorator: NoDecoration
+						color: red
 					}
 				}
 			}
