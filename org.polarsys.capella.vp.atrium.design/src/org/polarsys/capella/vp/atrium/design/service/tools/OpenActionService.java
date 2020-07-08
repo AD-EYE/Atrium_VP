@@ -17,7 +17,9 @@ import org.polarsys.capella.core.data.fa.AbstractFunction;
 import org.polarsys.capella.core.data.fa.FunctionalExchange;
 import org.polarsys.capella.core.data.la.LogicalComponentPkg;
 import org.polarsys.capella.vp.atrium.Atrium.CFA;
+import org.polarsys.capella.vp.atrium.Atrium.DG;
 import org.polarsys.capella.vp.atrium.Atrium.impl.AtriumFactoryImpl;
+import org.polarsys.capella.vp.atrium.Atrium.Assumption;
 import org.polarsys.capella.vp.atrium.Atrium.AtriumFactory;
 import org.polarsys.kitalpha.emde.model.ElementExtension;
 import org.polarsys.kitalpha.emde.model.ExtensibleElement;
@@ -54,5 +56,67 @@ public class OpenActionService {
 		((CapellaElement) myCFA).setId(EcoreUtil.generateUUID());
 		((ExtensibleElement) eObject).getOwnedExtensions().add((ElementExtension) myCFA);
 		return true;
+	}
+
+	/**
+	* <!-- begin-user-doc -->
+	* <!-- end-user-doc -->
+	* @param element : the element
+	* @param newSemanticContainer : the element view
+	* @generated NOT
+	*/
+	public boolean add_assumption(EObject element, EObject newSemanticContainer) {
+
+		if (element instanceof CFA) {
+
+			CFA targetCFA = (CFA) element;
+			System.out.println("The selected element is from CFA so we can do the job");
+
+			Assumption myAssumption = null;
+			myAssumption = AtriumFactoryImpl.eINSTANCE.createAssumption();
+
+			myAssumption.setContent("I ASSUME SOMETHING");
+			myAssumption.setRationale("blabla");
+			myAssumption.setValidity("I am probably valid");
+
+			((CapellaElement) myAssumption).setId(EcoreUtil.generateUUID());
+			targetCFA.getAssumption().add(myAssumption);
+		} else {
+			System.out.println("Come on, this is not a CFA");
+			return false;
+		}
+
+		return true;
+	}
+
+	/**
+	* <!-- begin-user-doc -->
+	* <!-- end-user-doc -->
+	* @param element : the element
+	* @param newSemanticContainer : the element view
+	* @generated NOT
+	*/
+	public boolean add_DG(EObject element, EObject newSemanticContainer) {
+
+		if (element instanceof CFA) {
+
+			CFA targetCFA = (CFA) element;
+
+			System.out.println("The selected element is from CFA so we can do the job");
+
+			DG myDG = null;
+			myDG = AtriumFactoryImpl.eINSTANCE.createDG();
+
+			myDG.setContent("I ASSUME SOMETHING");
+
+			((CapellaElement) myDG).setId(EcoreUtil.generateUUID());
+			targetCFA.setGoal(myDG);
+		} else {
+			System.out.println("Come on, this is not a CFA");
+			return false;
+		}
+
+		return true;
+
 	}
 }

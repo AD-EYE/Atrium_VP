@@ -18,7 +18,30 @@ UI Atrium_CFA {
 		Container Atrium_CFA_AssociationGroup {
 			label: "C F A Associations"
 			Field linkedtoElementAssociation label: "Linkedto Element" type simpleChoiceList , mapped-to Atrium.data.CFA.linkedtoElement
+			Field assumptionAssociation label: "Assumption" type multipleChoiceList , mapped-to Atrium.data.CFA.assumption
+			Field goalAssociation label: "Goal" type simpleChoiceList , mapped-to Atrium.data.CFA.goal
 		}
 	}
 }
+UI Atrium_Assumption {
+	label: "Atrium"
+	Container Atrium_Assumption_Section {
+		Container Atrium_Assumption_AttributeGroup {
+			label: "Assumption Attributes"
+			Field contentField1 label: "Content" type text , mapped-to Atrium.data.Assumption.content
+			Field rationaleField label: "Rationale" type text , mapped-to Atrium.data.Assumption.rationale
+			Field validityField label: "Validity" type text , mapped-to Atrium.data.Assumption.validity
+		}
+	}
+}
+UI Atrium_DG {
+	label: "Atrium"
+	Container Atrium_DG_Section {
+		Container Atrium_DG_AttributeGroup {
+			label: "D G Attributes"
+			Field contentField2 label: "Content" type text , mapped-to Atrium.data.DG.content
+		}
+	}
+}
+
 }

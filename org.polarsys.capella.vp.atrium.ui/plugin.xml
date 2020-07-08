@@ -13,6 +13,20 @@
 		        label="Atrium">
 		    </propertyTab> 
 			
+			<propertyTab
+		    	afterTab="BaseSiriusDiagram"
+		        category="semantic &amp; extension"
+		        id="Atrium_Assumption"
+		        label="Atrium">
+		    </propertyTab> 
+			
+			<propertyTab
+		    	afterTab="BaseSiriusDiagram"
+		        category="semantic &amp; extension"
+		        id="Atrium_DG"
+		        label="Atrium">
+		    </propertyTab> 
+			
 	</propertyTabs>
 </extension> 
 <extension
@@ -24,6 +38,20 @@
 		    	afterTab="BaseCapella"
 		        category="default"
 		        id="Atrium_CFA"
+		        label="Atrium">
+		    </propertyTab> 
+			
+			<propertyTab
+		    	afterTab="BaseCapella"
+		        category="default"
+		        id="Atrium_Assumption"
+		        label="Atrium">
+		    </propertyTab> 
+			
+			<propertyTab
+		    	afterTab="BaseCapella"
+		        category="default"
+		        id="Atrium_DG"
 		        label="Atrium">
 		    </propertyTab> 
 			
@@ -40,6 +68,20 @@
 		        tab="Atrium_CFA">
 		        
 		    </propertySection> 
+		    			<propertySection
+		    	class="org.polarsys.capella.vp.atrium.ui.sections.Atrium_Assumption_Atrium_Assumption_Section"
+		        filter="org.polarsys.capella.vp.atrium.ui.sections.Atrium_Assumption_Atrium_Assumption_Section"
+		        id="Atrium_Assumption.Atrium_Assumption_Section"
+		        tab="Atrium_Assumption">
+		        
+		    </propertySection> 
+		    			<propertySection
+		    	class="org.polarsys.capella.vp.atrium.ui.sections.Atrium_DG_Atrium_DG_Section"
+		        filter="org.polarsys.capella.vp.atrium.ui.sections.Atrium_DG_Atrium_DG_Section"
+		        id="Atrium_DG.Atrium_DG_Section"
+		        tab="Atrium_DG">
+		        
+		    </propertySection> 
 		    </propertySections>
 </extension>
 <extension
@@ -53,6 +95,20 @@
 		        tab="Atrium_CFA">
 		        
 		    </propertySection> 
+		    			<propertySection
+		    	class="org.polarsys.capella.vp.atrium.ui.sections.Atrium_Assumption_Atrium_Assumption_Section"
+		        filter="org.polarsys.capella.vp.atrium.ui.sections.Atrium_Assumption_Atrium_Assumption_Section"
+		        id="Atrium_Assumption.Atrium_Assumption_Section"
+		        tab="Atrium_Assumption">
+		        
+		    </propertySection> 
+		    			<propertySection
+		    	class="org.polarsys.capella.vp.atrium.ui.sections.Atrium_DG_Atrium_DG_Section"
+		        filter="org.polarsys.capella.vp.atrium.ui.sections.Atrium_DG_Atrium_DG_Section"
+		        id="Atrium_DG.Atrium_DG_Section"
+		        tab="Atrium_DG">
+		        
+		    </propertySection> 
 		    </propertySections>
 </extension>
 
@@ -63,6 +119,20 @@
 	   <MDEBusinessQueries 
          class="org.polarsys.capella.vp.atrium.ui.queries.LinkedtoElementAssociationQuery" 
          id="org.polarsys.capella.vp.atrium.ui.queries.LinkedtoElementAssociationQuery"> 
+   </MDEBusinessQueries> 
+
+
+				
+	   <MDEBusinessQueries 
+         class="org.polarsys.capella.vp.atrium.ui.queries.AssumptionAssociationQuery" 
+         id="org.polarsys.capella.vp.atrium.ui.queries.AssumptionAssociationQuery"> 
+   </MDEBusinessQueries> 
+
+
+				
+	   <MDEBusinessQueries 
+         class="org.polarsys.capella.vp.atrium.ui.queries.GoalAssociationQuery" 
+         id="org.polarsys.capella.vp.atrium.ui.queries.GoalAssociationQuery"> 
    </MDEBusinessQueries> 
 
 

@@ -14,7 +14,7 @@ Diagrams Atrium.diagram {
 		Mapping {
 			
 			
-			Container node_CFA {
+			Container container_CFA {
 				domain-context: Atrium.data.CFA
 				provided-by association external emde.ExtensibleElement.ownedExtensions
 				Representation {
@@ -24,28 +24,39 @@ Diagrams Atrium.diagram {
 					}
 				}
 				Contains {
-					//[Container or  Node]
+					
+
+					
+								Node node_assumption {
+									domain-context: Atrium.data.Assumption provided-by association Atrium.data.CFA.assumption
+									Representation {
+										Label { content: "Assumption here" police: black alignment: center}
+										Style {
+											BasicStyle { border-color: black background: light_gray form: Square }
+										}
+									}
+									Contains {
+										//[Container or  Node]
+									}
+								}
+							
+								Node node_DG {
+									domain-context: Atrium.data.DG provided-by association Atrium.data.CFA.goal
+									Representation {
+										Label { content: "Goal here" police: black alignment: center}
+										Style {
+											BasicStyle { border-color: black background: light_gray form: Square }
+										}
+									}
+									Contains {
+										//[Container or  Node]
+									}
+								}
+				
+					
 				}
 			}
 			
-			
-			/* 
-			Node node_CFA {
-				domain-context: Atrium.data.CFA
-				provided-by association external emde.ExtensibleElement.ownedExtensions
-				Representation {
-					Label {
-						content: "HELLO THERE"
-						position: node
-					}
-					Style {
-						BasicStyle {
-							border-color: orange background: light_yellow form: Square
-						}
-					}
-				}
-			}
-			*/
 			
 			///Import Capella Element
 			Container ContainerLC {
@@ -57,10 +68,11 @@ Diagrams Atrium.diagram {
 			EdgeImport FunctionalExchange {
 				import: LABDataFlowbetweenFunction
 			}
+			//End import
 			
 			Edge LinkCFA_LC {
 				association-context: Atrium.data.CFA.linkedtoElement
-				source: node_CFA
+				source: container_CFA
 				target: ContainerLC 
 				Representation {
 					Style {
@@ -72,7 +84,7 @@ Diagrams Atrium.diagram {
 			}
 			Edge LinkCFA_LF {
 				association-context: Atrium.data.CFA.linkedtoElement
-				source: node_CFA
+				source: container_CFA
 				target: NodeLF 
 				Representation {
 					Style {
@@ -84,7 +96,7 @@ Diagrams Atrium.diagram {
 			}
 			Edge LinkCFA_FE {
 				association-context: Atrium.data.CFA.linkedtoElement
-				source: node_CFA
+				source: container_CFA
 				target: FunctionalExchange 
 				Representation {
 					Style {
@@ -97,8 +109,10 @@ Diagrams Atrium.diagram {
 		}
 		
 		Actions {
-			ReconnectEdge ReconnectLink { label: "Connect CFA" action-for: LinkCFA_LC }
+			//ReconnectEdge ReconnectLink { label: "Connect CFA" action-for: LinkCFA_LC }
 			OpenAction add_CFA {label: "Add CFA"}
+			OpenAction add_assumption {label: "Add Assumption"}
+			OpenAction add_DG {label: "Add DG"}
 		}
 	}
 }

@@ -59,6 +59,10 @@ public class AtriumFactoryImpl extends EFactoryImpl implements AtriumFactory {
 		switch (eClass.getClassifierID()) {
 		case AtriumPackage.CFA:
 			return createCFA();
+		case AtriumPackage.ASSUMPTION:
+			return createAssumption();
+		case AtriumPackage.DG:
+			return createDG();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
@@ -77,6 +81,36 @@ public class AtriumFactoryImpl extends EFactoryImpl implements AtriumFactory {
 
 		//end-capella-code
 		return cfa;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Assumption createAssumption() {
+		AssumptionImpl assumption = new AssumptionImpl();
+		//begin-capella-code
+
+		assumption.setId(IdGenerator.createId());
+
+		//end-capella-code
+		return assumption;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DG createDG() {
+		DGImpl dg = new DGImpl();
+		//begin-capella-code
+
+		dg.setId(IdGenerator.createId());
+
+		//end-capella-code
+		return dg;
 	}
 
 	/**
@@ -112,6 +146,32 @@ public class AtriumFactoryImpl extends EFactoryImpl implements AtriumFactory {
 		CFA cfa = createCFA();
 		cfa.setName(name_p);
 		return cfa;
+	}
+
+	/**
+	 * Creates class and sets its name
+	 * (This method comes from a customization of the standard EMF generator)
+	 *
+	 * @param name_p : default name of created element
+	 * @generated
+	 */
+	public Assumption createAssumption(String name_p) {
+		Assumption assumption = createAssumption();
+		assumption.setName(name_p);
+		return assumption;
+	}
+
+	/**
+	 * Creates class and sets its name
+	 * (This method comes from a customization of the standard EMF generator)
+	 *
+	 * @param name_p : default name of created element
+	 * @generated
+	 */
+	public DG createDG(String name_p) {
+		DG dg = createDG();
+		dg.setName(name_p);
+		return dg;
 	}
 
 	//end-capella-code

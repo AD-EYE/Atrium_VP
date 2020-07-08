@@ -83,6 +83,16 @@ public class AtriumAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseAssumption(Assumption object) {
+			return createAssumptionAdapter();
+		}
+
+		@Override
+		public Adapter caseDG(DG object) {
+			return createDGAdapter();
+		}
+
+		@Override
 		public Adapter caseElement(Element object) {
 			return createElementAdapter();
 		}
@@ -157,6 +167,34 @@ public class AtriumAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createCFAAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.polarsys.capella.vp.atrium.Atrium.Assumption <em>Assumption</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.polarsys.capella.vp.atrium.Atrium.Assumption
+	 * @generated
+	 */
+	public Adapter createAssumptionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.polarsys.capella.vp.atrium.Atrium.DG <em>DG</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.polarsys.capella.vp.atrium.Atrium.DG
+	 * @generated
+	 */
+	public Adapter createDGAdapter() {
 		return null;
 	}
 

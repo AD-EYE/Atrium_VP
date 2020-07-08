@@ -14,5 +14,21 @@ Data Atrium.data {
 			state type ecore.EBoolean
 		Associations:
 			linkedtoElement refers [1,1] external capellacore.CapellaElement
+			assumption contains [0,*] Assumption
+			goal contains [1,1] DG
 	}
+	
+	Class Assumption {
+		Attributes:
+			content type ecore.EString
+			rationale type ecore.EString
+			validity type ecore.EString
+	}
+	
+	Class DG {
+		Attributes:
+			content type ecore.EString
+	}
+	
+	
 }

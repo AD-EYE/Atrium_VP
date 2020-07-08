@@ -1,6 +1,7 @@
 
 package org.polarsys.capella.vp.atrium.Atrium;
 
+import org.eclipse.emf.common.util.EList;
 import org.polarsys.capella.core.data.capellacore.CapellaElement;
 import org.polarsys.capella.core.data.capellacore.NamedElement;
 
@@ -16,6 +17,8 @@ import org.polarsys.kitalpha.emde.model.ElementExtension;
  * </p>
  * <ul>
  *   <li>{@link org.polarsys.capella.vp.atrium.Atrium.CFA#getLinkedtoElement <em>Linkedto Element</em>}</li>
+ *   <li>{@link org.polarsys.capella.vp.atrium.Atrium.CFA#getAssumption <em>Assumption</em>}</li>
+ *   <li>{@link org.polarsys.capella.vp.atrium.Atrium.CFA#getGoal <em>Goal</em>}</li>
  *   <li>{@link org.polarsys.capella.vp.atrium.Atrium.CFA#getContent <em>Content</em>}</li>
  *   <li>{@link org.polarsys.capella.vp.atrium.Atrium.CFA#isState <em>State</em>}</li>
  * </ul>
@@ -53,6 +56,46 @@ public interface CFA extends NamedElement, ElementExtension {
 	 */
 
 	void setLinkedtoElement(CapellaElement value);
+
+	/**
+	 * Returns the value of the '<em><b>Assumption</b></em>' containment reference list.
+	 * The list contents are of type {@link org.polarsys.capella.vp.atrium.Atrium.Assumption}.
+	
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Assumption</em>' containment reference list.
+	 * @see org.polarsys.capella.vp.atrium.Atrium.AtriumPackage#getCFA_Assumption()
+	 * @model containment="true"
+	 * @generated
+	 */
+
+	EList<Assumption> getAssumption();
+
+	/**
+	 * Returns the value of the '<em><b>Goal</b></em>' containment reference.
+	
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Goal</em>' containment reference.
+	 * @see #setGoal(DG)
+	 * @see org.polarsys.capella.vp.atrium.Atrium.AtriumPackage#getCFA_Goal()
+	 * @model containment="true" required="true"
+	 * @generated
+	 */
+
+	DG getGoal();
+
+	/**
+	 * Sets the value of the '{@link org.polarsys.capella.vp.atrium.Atrium.CFA#getGoal <em>Goal</em>}' containment reference.
+	
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Goal</em>' containment reference.
+	 * @see #getGoal()
+	 * @generated
+	 */
+
+	void setGoal(DG value);
 
 	/**
 	 * Returns the value of the '<em><b>Content</b></em>' attribute.

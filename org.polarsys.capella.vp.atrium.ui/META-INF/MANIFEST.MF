@@ -7,6 +7,7 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Require-Bundle: org.polarsys.capella.vp.atrium.model,
  org.polarsys.kitalpha.ad.services,
  org.polarsys.capella.core.ui.properties
-Export-Package: org.polarsys.capella.vp.atrium.ui.fields,
+Export-Package: org.polarsys.capella.vp.atrium.ui.controllers,
+ org.polarsys.capella.vp.atrium.ui.fields,
  org.polarsys.capella.vp.atrium.ui.queries,
  org.polarsys.capella.vp.atrium.ui.sections

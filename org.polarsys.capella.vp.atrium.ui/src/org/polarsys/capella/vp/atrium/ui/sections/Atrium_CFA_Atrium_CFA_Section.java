@@ -24,6 +24,7 @@ import org.polarsys.capella.core.ui.properties.fields.*;
 
 import org.polarsys.capella.vp.atrium.ui.fields.StateField_semanticCheckboxGroup;
 
+import org.polarsys.capella.vp.atrium.ui.controllers.AssumptionAssociationFieldController;
 import org.polarsys.capella.core.data.capellacore.CapellaElement;
 import org.polarsys.capella.vp.atrium.Atrium.AtriumPackage;
 import org.polarsys.capella.vp.atrium.Atrium.CFA;
@@ -66,6 +67,24 @@ public class Atrium_CFA_Atrium_CFA_Section extends AbstractSection {
 	* @generated
 	*/
 	private SimpleSemanticField LinkedtoElementAssociation;
+
+	/**
+	* <!-- begin-model-doc -->
+	* <!-- end-model-doc -->
+	* <!-- begin-user-doc -->
+	* <!-- end-user-doc -->
+	* @generated
+	*/
+	private MultipleSemanticField AssumptionAssociation;
+
+	/**
+	* <!-- begin-model-doc -->
+	* <!-- end-model-doc -->
+	* <!-- begin-user-doc -->
+	* <!-- end-user-doc -->
+	* @generated
+	*/
+	private SimpleSemanticField GoalAssociation;
 
 	/**
 	* <!-- begin-model-doc -->
@@ -201,6 +220,12 @@ public class Atrium_CFA_Atrium_CFA_Section extends AbstractSection {
 		LinkedtoElementAssociation = new SimpleSemanticField(Atrium_CFA_AssociationGroup, "Linkedto Element :",
 				getWidgetFactory(), new SimpleSemanticFieldController());
 
+		AssumptionAssociation = new MultipleSemanticField(Atrium_CFA_AssociationGroup, "Assumption :",
+				getWidgetFactory(), new AssumptionAssociationFieldController());
+
+		GoalAssociation = new SimpleSemanticField(Atrium_CFA_AssociationGroup, "Goal :", getWidgetFactory(),
+				new SimpleSemanticFieldController());
+
 	}
 
 	/**
@@ -218,6 +243,10 @@ public class Atrium_CFA_Atrium_CFA_Section extends AbstractSection {
 
 		LinkedtoElementAssociation.loadData(object, AtriumPackage.eINSTANCE.getCFA_LinkedtoElement());
 
+		AssumptionAssociation.loadData(object, AtriumPackage.eINSTANCE.getCFA_Assumption());
+
+		GoalAssociation.loadData(object, AtriumPackage.eINSTANCE.getCFA_Goal());
+
 	}
 
 	/**
@@ -233,6 +262,10 @@ public class Atrium_CFA_Atrium_CFA_Section extends AbstractSection {
 		abstractSemanticFields.add(StateField);
 
 		abstractSemanticFields.add(LinkedtoElementAssociation);
+
+		abstractSemanticFields.add(AssumptionAssociation);
+
+		abstractSemanticFields.add(GoalAssociation);
 
 		return abstractSemanticFields;
 	}

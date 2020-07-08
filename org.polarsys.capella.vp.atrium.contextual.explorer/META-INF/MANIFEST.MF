@@ -7,4 +7,6 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Require-Bundle: org.eclipse.emf.ecore,
  org.eclipse.amalgam.explorer.contextual.core,
  org.polarsys.capella.vp.atrium.model.edit
-Export-Package: org.polarsys.capella.vp.atrium.contextual.explorer.queries.cfa
+Export-Package: org.polarsys.capella.vp.atrium.contextual.explorer.queries.assumption,
+ org.polarsys.capella.vp.atrium.contextual.explorer.queries.cfa,
+ org.polarsys.capella.vp.atrium.contextual.explorer.queries.dg

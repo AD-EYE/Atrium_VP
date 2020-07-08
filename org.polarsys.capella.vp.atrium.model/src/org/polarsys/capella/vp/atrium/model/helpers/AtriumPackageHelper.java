@@ -15,6 +15,8 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.polarsys.capella.common.model.helpers.IHelper;
 
 import org.polarsys.capella.vp.atrium.Atrium.CFA;
+import org.polarsys.capella.vp.atrium.Atrium.Assumption;
+import org.polarsys.capella.vp.atrium.Atrium.DG;
 
 /**
  * @generated 
@@ -29,6 +31,12 @@ public class AtriumPackageHelper implements IHelper {
 
 		if (ret == null && object instanceof CFA) {
 			ret = CFAHelper.getInstance().doSwitch((CFA) object, feature);
+		}
+		if (ret == null && object instanceof Assumption) {
+			ret = AssumptionHelper.getInstance().doSwitch((Assumption) object, feature);
+		}
+		if (ret == null && object instanceof DG) {
+			ret = DGHelper.getInstance().doSwitch((DG) object, feature);
 		}
 		return ret;
 	}

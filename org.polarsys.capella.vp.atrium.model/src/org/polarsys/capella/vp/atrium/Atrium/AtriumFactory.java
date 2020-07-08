@@ -30,6 +30,24 @@ public interface AtriumFactory extends EFactory {
 	CFA createCFA();
 
 	/**
+	 * Returns a new object of class '<em>Assumption</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Assumption</em>'.
+	 * @generated
+	 */
+	Assumption createAssumption();
+
+	/**
+	 * Returns a new object of class '<em>DG</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>DG</em>'.
+	 * @generated
+	 */
+	DG createDG();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

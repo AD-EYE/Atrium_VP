@@ -274,13 +274,31 @@ public interface AtriumPackage extends EPackage {
 	int CFA__LINKEDTO_ELEMENT = CapellacorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Assumption</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CFA__ASSUMPTION = CapellacorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Goal</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CFA__GOAL = CapellacorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
 	 * The feature id for the '<em><b>Content</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CFA__CONTENT = CapellacorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int CFA__CONTENT = CapellacorePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>State</b></em>' attribute.
@@ -289,7 +307,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CFA__STATE = CapellacorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int CFA__STATE = CapellacorePackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>CFA</em>' class.
@@ -298,7 +316,477 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CFA_FEATURE_COUNT = CapellacorePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int CFA_FEATURE_COUNT = CapellacorePackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
+
+	/**
+	 * The meta object id for the '{@link org.polarsys.capella.vp.atrium.Atrium.impl.AssumptionImpl <em>Assumption</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.capella.vp.atrium.Atrium.impl.AssumptionImpl
+	 * @see org.polarsys.capella.vp.atrium.Atrium.impl.AtriumPackageImpl#getAssumption()
+	 * @generated
+	 */
+	int ASSUMPTION = 1;
+
+	/**
+	 * The feature id for the '<em><b>Owned Extensions</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSUMPTION__OWNED_EXTENSIONS = CapellacorePackage.NAMED_ELEMENT__OWNED_EXTENSIONS;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSUMPTION__ID = CapellacorePackage.NAMED_ELEMENT__ID;
+
+	/**
+	 * The feature id for the '<em><b>Sid</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSUMPTION__SID = CapellacorePackage.NAMED_ELEMENT__SID;
+
+	/**
+	 * The feature id for the '<em><b>Constraints</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSUMPTION__CONSTRAINTS = CapellacorePackage.NAMED_ELEMENT__CONSTRAINTS;
+
+	/**
+	 * The feature id for the '<em><b>Owned Constraints</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSUMPTION__OWNED_CONSTRAINTS = CapellacorePackage.NAMED_ELEMENT__OWNED_CONSTRAINTS;
+
+	/**
+	 * The feature id for the '<em><b>Owned Migrated Elements</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSUMPTION__OWNED_MIGRATED_ELEMENTS = CapellacorePackage.NAMED_ELEMENT__OWNED_MIGRATED_ELEMENTS;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSUMPTION__NAME = CapellacorePackage.NAMED_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Incoming Traces</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSUMPTION__INCOMING_TRACES = CapellacorePackage.NAMED_ELEMENT__INCOMING_TRACES;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing Traces</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSUMPTION__OUTGOING_TRACES = CapellacorePackage.NAMED_ELEMENT__OUTGOING_TRACES;
+
+	/**
+	 * The feature id for the '<em><b>Visible In Doc</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSUMPTION__VISIBLE_IN_DOC = CapellacorePackage.NAMED_ELEMENT__VISIBLE_IN_DOC;
+
+	/**
+	 * The feature id for the '<em><b>Visible In LM</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSUMPTION__VISIBLE_IN_LM = CapellacorePackage.NAMED_ELEMENT__VISIBLE_IN_LM;
+
+	/**
+	 * The feature id for the '<em><b>Summary</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSUMPTION__SUMMARY = CapellacorePackage.NAMED_ELEMENT__SUMMARY;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSUMPTION__DESCRIPTION = CapellacorePackage.NAMED_ELEMENT__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Review</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSUMPTION__REVIEW = CapellacorePackage.NAMED_ELEMENT__REVIEW;
+
+	/**
+	 * The feature id for the '<em><b>Owned Property Values</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSUMPTION__OWNED_PROPERTY_VALUES = CapellacorePackage.NAMED_ELEMENT__OWNED_PROPERTY_VALUES;
+
+	/**
+	 * The feature id for the '<em><b>Owned Enumeration Property Types</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSUMPTION__OWNED_ENUMERATION_PROPERTY_TYPES = CapellacorePackage.NAMED_ELEMENT__OWNED_ENUMERATION_PROPERTY_TYPES;
+
+	/**
+	 * The feature id for the '<em><b>Applied Property Values</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSUMPTION__APPLIED_PROPERTY_VALUES = CapellacorePackage.NAMED_ELEMENT__APPLIED_PROPERTY_VALUES;
+
+	/**
+	 * The feature id for the '<em><b>Owned Property Value Groups</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSUMPTION__OWNED_PROPERTY_VALUE_GROUPS = CapellacorePackage.NAMED_ELEMENT__OWNED_PROPERTY_VALUE_GROUPS;
+
+	/**
+	 * The feature id for the '<em><b>Applied Property Value Groups</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSUMPTION__APPLIED_PROPERTY_VALUE_GROUPS = CapellacorePackage.NAMED_ELEMENT__APPLIED_PROPERTY_VALUE_GROUPS;
+
+	/**
+	 * The feature id for the '<em><b>Status</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSUMPTION__STATUS = CapellacorePackage.NAMED_ELEMENT__STATUS;
+
+	/**
+	 * The feature id for the '<em><b>Features</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSUMPTION__FEATURES = CapellacorePackage.NAMED_ELEMENT__FEATURES;
+
+	/**
+	 * The feature id for the '<em><b>Applied Requirements</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSUMPTION__APPLIED_REQUIREMENTS = CapellacorePackage.NAMED_ELEMENT__APPLIED_REQUIREMENTS;
+
+	/**
+	 * The feature id for the '<em><b>Content</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSUMPTION__CONTENT = CapellacorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Rationale</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSUMPTION__RATIONALE = CapellacorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Validity</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSUMPTION__VALIDITY = CapellacorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of structural features of the '<em>Assumption</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSUMPTION_FEATURE_COUNT = CapellacorePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The meta object id for the '{@link org.polarsys.capella.vp.atrium.Atrium.impl.DGImpl <em>DG</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.capella.vp.atrium.Atrium.impl.DGImpl
+	 * @see org.polarsys.capella.vp.atrium.Atrium.impl.AtriumPackageImpl#getDG()
+	 * @generated
+	 */
+	int DG = 2;
+
+	/**
+	 * The feature id for the '<em><b>Owned Extensions</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DG__OWNED_EXTENSIONS = CapellacorePackage.NAMED_ELEMENT__OWNED_EXTENSIONS;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DG__ID = CapellacorePackage.NAMED_ELEMENT__ID;
+
+	/**
+	 * The feature id for the '<em><b>Sid</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DG__SID = CapellacorePackage.NAMED_ELEMENT__SID;
+
+	/**
+	 * The feature id for the '<em><b>Constraints</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DG__CONSTRAINTS = CapellacorePackage.NAMED_ELEMENT__CONSTRAINTS;
+
+	/**
+	 * The feature id for the '<em><b>Owned Constraints</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DG__OWNED_CONSTRAINTS = CapellacorePackage.NAMED_ELEMENT__OWNED_CONSTRAINTS;
+
+	/**
+	 * The feature id for the '<em><b>Owned Migrated Elements</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DG__OWNED_MIGRATED_ELEMENTS = CapellacorePackage.NAMED_ELEMENT__OWNED_MIGRATED_ELEMENTS;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DG__NAME = CapellacorePackage.NAMED_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Incoming Traces</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DG__INCOMING_TRACES = CapellacorePackage.NAMED_ELEMENT__INCOMING_TRACES;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing Traces</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DG__OUTGOING_TRACES = CapellacorePackage.NAMED_ELEMENT__OUTGOING_TRACES;
+
+	/**
+	 * The feature id for the '<em><b>Visible In Doc</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DG__VISIBLE_IN_DOC = CapellacorePackage.NAMED_ELEMENT__VISIBLE_IN_DOC;
+
+	/**
+	 * The feature id for the '<em><b>Visible In LM</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DG__VISIBLE_IN_LM = CapellacorePackage.NAMED_ELEMENT__VISIBLE_IN_LM;
+
+	/**
+	 * The feature id for the '<em><b>Summary</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DG__SUMMARY = CapellacorePackage.NAMED_ELEMENT__SUMMARY;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DG__DESCRIPTION = CapellacorePackage.NAMED_ELEMENT__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Review</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DG__REVIEW = CapellacorePackage.NAMED_ELEMENT__REVIEW;
+
+	/**
+	 * The feature id for the '<em><b>Owned Property Values</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DG__OWNED_PROPERTY_VALUES = CapellacorePackage.NAMED_ELEMENT__OWNED_PROPERTY_VALUES;
+
+	/**
+	 * The feature id for the '<em><b>Owned Enumeration Property Types</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DG__OWNED_ENUMERATION_PROPERTY_TYPES = CapellacorePackage.NAMED_ELEMENT__OWNED_ENUMERATION_PROPERTY_TYPES;
+
+	/**
+	 * The feature id for the '<em><b>Applied Property Values</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DG__APPLIED_PROPERTY_VALUES = CapellacorePackage.NAMED_ELEMENT__APPLIED_PROPERTY_VALUES;
+
+	/**
+	 * The feature id for the '<em><b>Owned Property Value Groups</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DG__OWNED_PROPERTY_VALUE_GROUPS = CapellacorePackage.NAMED_ELEMENT__OWNED_PROPERTY_VALUE_GROUPS;
+
+	/**
+	 * The feature id for the '<em><b>Applied Property Value Groups</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DG__APPLIED_PROPERTY_VALUE_GROUPS = CapellacorePackage.NAMED_ELEMENT__APPLIED_PROPERTY_VALUE_GROUPS;
+
+	/**
+	 * The feature id for the '<em><b>Status</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DG__STATUS = CapellacorePackage.NAMED_ELEMENT__STATUS;
+
+	/**
+	 * The feature id for the '<em><b>Features</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DG__FEATURES = CapellacorePackage.NAMED_ELEMENT__FEATURES;
+
+	/**
+	 * The feature id for the '<em><b>Applied Requirements</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DG__APPLIED_REQUIREMENTS = CapellacorePackage.NAMED_ELEMENT__APPLIED_REQUIREMENTS;
+
+	/**
+	 * The feature id for the '<em><b>Content</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DG__CONTENT = CapellacorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>DG</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DG_FEATURE_COUNT = CapellacorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * Returns the meta object for class '{@link org.polarsys.capella.vp.atrium.Atrium.CFA <em>CFA</em>}'.
@@ -322,6 +810,28 @@ public interface AtriumPackage extends EPackage {
 	EReference getCFA_LinkedtoElement();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link org.polarsys.capella.vp.atrium.Atrium.CFA#getAssumption <em>Assumption</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Assumption</em>'.
+	 * @see org.polarsys.capella.vp.atrium.Atrium.CFA#getAssumption()
+	 * @see #getCFA()
+	 * @generated
+	 */
+	EReference getCFA_Assumption();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.polarsys.capella.vp.atrium.Atrium.CFA#getGoal <em>Goal</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Goal</em>'.
+	 * @see org.polarsys.capella.vp.atrium.Atrium.CFA#getGoal()
+	 * @see #getCFA()
+	 * @generated
+	 */
+	EReference getCFA_Goal();
+
+	/**
 	 * Returns the meta object for the attribute '{@link org.polarsys.capella.vp.atrium.Atrium.CFA#getContent <em>Content</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -342,6 +852,70 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getCFA_State();
+
+	/**
+	 * Returns the meta object for class '{@link org.polarsys.capella.vp.atrium.Atrium.Assumption <em>Assumption</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Assumption</em>'.
+	 * @see org.polarsys.capella.vp.atrium.Atrium.Assumption
+	 * @generated
+	 */
+	EClass getAssumption();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.polarsys.capella.vp.atrium.Atrium.Assumption#getContent <em>Content</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Content</em>'.
+	 * @see org.polarsys.capella.vp.atrium.Atrium.Assumption#getContent()
+	 * @see #getAssumption()
+	 * @generated
+	 */
+	EAttribute getAssumption_Content();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.polarsys.capella.vp.atrium.Atrium.Assumption#getRationale <em>Rationale</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Rationale</em>'.
+	 * @see org.polarsys.capella.vp.atrium.Atrium.Assumption#getRationale()
+	 * @see #getAssumption()
+	 * @generated
+	 */
+	EAttribute getAssumption_Rationale();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.polarsys.capella.vp.atrium.Atrium.Assumption#getValidity <em>Validity</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Validity</em>'.
+	 * @see org.polarsys.capella.vp.atrium.Atrium.Assumption#getValidity()
+	 * @see #getAssumption()
+	 * @generated
+	 */
+	EAttribute getAssumption_Validity();
+
+	/**
+	 * Returns the meta object for class '{@link org.polarsys.capella.vp.atrium.Atrium.DG <em>DG</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>DG</em>'.
+	 * @see org.polarsys.capella.vp.atrium.Atrium.DG
+	 * @generated
+	 */
+	EClass getDG();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.polarsys.capella.vp.atrium.Atrium.DG#getContent <em>Content</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Content</em>'.
+	 * @see org.polarsys.capella.vp.atrium.Atrium.DG#getContent()
+	 * @see #getDG()
+	 * @generated
+	 */
+	EAttribute getDG_Content();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -384,6 +958,22 @@ public interface AtriumPackage extends EPackage {
 		EReference CFA__LINKEDTO_ELEMENT = eINSTANCE.getCFA_LinkedtoElement();
 
 		/**
+		 * The meta object literal for the '<em><b>Assumption</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CFA__ASSUMPTION = eINSTANCE.getCFA_Assumption();
+
+		/**
+		 * The meta object literal for the '<em><b>Goal</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CFA__GOAL = eINSTANCE.getCFA_Goal();
+
+		/**
 		 * The meta object literal for the '<em><b>Content</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -398,6 +988,58 @@ public interface AtriumPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute CFA__STATE = eINSTANCE.getCFA_State();
+
+		/**
+		 * The meta object literal for the '{@link org.polarsys.capella.vp.atrium.Atrium.impl.AssumptionImpl <em>Assumption</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.polarsys.capella.vp.atrium.Atrium.impl.AssumptionImpl
+		 * @see org.polarsys.capella.vp.atrium.Atrium.impl.AtriumPackageImpl#getAssumption()
+		 * @generated
+		 */
+		EClass ASSUMPTION = eINSTANCE.getAssumption();
+
+		/**
+		 * The meta object literal for the '<em><b>Content</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ASSUMPTION__CONTENT = eINSTANCE.getAssumption_Content();
+
+		/**
+		 * The meta object literal for the '<em><b>Rationale</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ASSUMPTION__RATIONALE = eINSTANCE.getAssumption_Rationale();
+
+		/**
+		 * The meta object literal for the '<em><b>Validity</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ASSUMPTION__VALIDITY = eINSTANCE.getAssumption_Validity();
+
+		/**
+		 * The meta object literal for the '{@link org.polarsys.capella.vp.atrium.Atrium.impl.DGImpl <em>DG</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.polarsys.capella.vp.atrium.Atrium.impl.DGImpl
+		 * @see org.polarsys.capella.vp.atrium.Atrium.impl.AtriumPackageImpl#getDG()
+		 * @generated
+		 */
+		EClass DG = eINSTANCE.getDG();
+
+		/**
+		 * The meta object literal for the '<em><b>Content</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DG__CONTENT = eINSTANCE.getDG_Content();
 
 	}
 

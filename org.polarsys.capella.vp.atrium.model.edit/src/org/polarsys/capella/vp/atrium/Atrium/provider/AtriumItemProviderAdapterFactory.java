@@ -135,6 +135,52 @@ public class AtriumItemProviderAdapterFactory extends AtriumAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.polarsys.capella.vp.atrium.Atrium.Assumption} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected AssumptionItemProvider assumptionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.polarsys.capella.vp.atrium.Atrium.Assumption}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createAssumptionAdapter() {
+		if (assumptionItemProvider == null) {
+			assumptionItemProvider = new AssumptionItemProvider(this);
+		}
+
+		return assumptionItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.polarsys.capella.vp.atrium.Atrium.DG} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected DGItemProvider dgItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.polarsys.capella.vp.atrium.Atrium.DG}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createDGAdapter() {
+		if (dgItemProvider == null) {
+			dgItemProvider = new DGItemProvider(this);
+		}
+
+		return dgItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -268,6 +314,10 @@ public class AtriumItemProviderAdapterFactory extends AtriumAdapterFactory
 	public void dispose() {
 		if (cfaItemProvider != null)
 			cfaItemProvider.dispose();
+		if (assumptionItemProvider != null)
+			assumptionItemProvider.dispose();
+		if (dgItemProvider != null)
+			dgItemProvider.dispose();
 	}
 
 	/**
@@ -431,6 +481,28 @@ public class AtriumItemProviderAdapterFactory extends AtriumAdapterFactory
 					CommandParameter commandParameter = createChildParameter(
 							SharedmodelPackage.Literals.GENERIC_PKG__CAPELLA_ELEMENTS,
 							AtriumFactory.eINSTANCE.createCFA());
+					if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
+						newChildDescriptors.add(commandParameter);
+					}
+				}
+				// end-extension-code
+
+				// begin-extension-code
+				{
+					CommandParameter commandParameter = createChildParameter(
+							SharedmodelPackage.Literals.GENERIC_PKG__CAPELLA_ELEMENTS,
+							AtriumFactory.eINSTANCE.createAssumption());
+					if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
+						newChildDescriptors.add(commandParameter);
+					}
+				}
+				// end-extension-code
+
+				// begin-extension-code
+				{
+					CommandParameter commandParameter = createChildParameter(
+							SharedmodelPackage.Literals.GENERIC_PKG__CAPELLA_ELEMENTS,
+							AtriumFactory.eINSTANCE.createDG());
 					if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
 						newChildDescriptors.add(commandParameter);
 					}

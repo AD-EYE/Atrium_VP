@@ -102,6 +102,52 @@ public class AtriumSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
+		case AtriumPackage.ASSUMPTION: {
+			Assumption assumption = (Assumption) theEObject;
+			T result = caseAssumption(assumption);
+			if (result == null)
+				result = caseNamedElement(assumption);
+			if (result == null)
+				result = caseAbstractNamedElement(assumption);
+			if (result == null)
+				result = caseCapellaElement(assumption);
+			if (result == null)
+				result = caseTraceableElement(assumption);
+			if (result == null)
+				result = casePublishableElement(assumption);
+			if (result == null)
+				result = caseModelElement(assumption);
+			if (result == null)
+				result = caseExtensibleElement(assumption);
+			if (result == null)
+				result = caseElement(assumption);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case AtriumPackage.DG: {
+			DG dg = (DG) theEObject;
+			T result = caseDG(dg);
+			if (result == null)
+				result = caseNamedElement(dg);
+			if (result == null)
+				result = caseAbstractNamedElement(dg);
+			if (result == null)
+				result = caseCapellaElement(dg);
+			if (result == null)
+				result = caseTraceableElement(dg);
+			if (result == null)
+				result = casePublishableElement(dg);
+			if (result == null)
+				result = caseModelElement(dg);
+			if (result == null)
+				result = caseExtensibleElement(dg);
+			if (result == null)
+				result = caseElement(dg);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
 		default:
 			return defaultCase(theEObject);
 		}
@@ -119,6 +165,36 @@ public class AtriumSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseCFA(CFA object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Assumption</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Assumption</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAssumption(Assumption object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>DG</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>DG</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDG(DG object) {
 		return null;
 	}
 
