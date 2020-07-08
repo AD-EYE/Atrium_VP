@@ -73,8 +73,14 @@
             <style xsi:type="vpdiagram:BasicStyle" borderColor="orange" backgroundColor="light_yellow"/>
           </style>
         </diagram_Elements>
-        <diagram_Elements xsi:type="vpdiagram:Container" name="CFA_ContainerLC">
+        <diagram_Elements xsi:type="vpdiagram:Container" name="ContainerLC">
           <imports href="../../../plugin/org.polarsys.capella.core.sirius.analysis/description/logical.odesign#//@ownedViewpoints[name='Logical%20Architecture']/@ownedRepresentations[name='Logical%20Architecture%20Blank']/@defaultLayer/@containerMappings[name='LAB%20Logical%20Component']"/>
+        </diagram_Elements>
+        <diagram_Elements xsi:type="vpdiagram:Node" name="NodeLF">
+          <imports href="../../../plugin/org.polarsys.capella.core.sirius.analysis/description/logical.odesign#//@ownedViewpoints[name='Logical%20Architecture']/@ownedRepresentations[name='Logical%20Architecture%20Blank']/@defaultLayer/@containerMappings[name='LAB%20Logical%20Component']/@subNodeMappings[name='LAB%20Logical%20Function']"/>
+        </diagram_Elements>
+        <diagram_Elements xsi:type="vpdiagram:EdgeImport" name="FunctionalExchange">
+          <imports href="../../../plugin/org.polarsys.capella.core.sirius.analysis/description/logical.odesign#//@ownedViewpoints[name='Logical%20Architecture']/@ownedRepresentations[name='Logical%20Architecture%20Blank']/@defaultLayer/@edgeMappings[name='LAB%20DataFlow%20between%20Function']"/>
         </diagram_Elements>
         <diagram_Elements xsi:type="vpdiagram:Edge" name="LinkCFA_LC" source="//@VP_Aspects.2/@diagrams.0/@the_MappingSet/@diagram_Elements.0" target="//@VP_Aspects.2/@diagrams.0/@the_MappingSet/@diagram_Elements.1">
           <e_description>
@@ -84,9 +90,25 @@
             <target_Locator xsi:type="commondata:LocalAssociation" reference="//@VP_Data/@VP_Classes.0/@VP_Classes_Associations.0"/>
           </the_domain>
         </diagram_Elements>
+        <diagram_Elements xsi:type="vpdiagram:Edge" name="LinkCFA_LF" source="//@VP_Aspects.2/@diagrams.0/@the_MappingSet/@diagram_Elements.0" target="//@VP_Aspects.2/@diagrams.0/@the_MappingSet/@diagram_Elements.2">
+          <e_description>
+            <style lineStyle="dash"/>
+          </e_description>
+          <the_domain>
+            <target_Locator xsi:type="commondata:LocalAssociation" reference="//@VP_Data/@VP_Classes.0/@VP_Classes_Associations.0"/>
+          </the_domain>
+        </diagram_Elements>
+        <diagram_Elements xsi:type="vpdiagram:Edge" name="LinkCFA_FE" source="//@VP_Aspects.2/@diagrams.0/@the_MappingSet/@diagram_Elements.0" target="//@VP_Aspects.2/@diagrams.0/@the_MappingSet/@diagram_Elements.3">
+          <e_description>
+            <style lineStyle="dash"/>
+          </e_description>
+          <the_domain>
+            <target_Locator xsi:type="commondata:LocalAssociation" reference="//@VP_Data/@VP_Classes.0/@VP_Classes_Associations.0"/>
+          </the_domain>
+        </diagram_Elements>
       </the_MappingSet>
       <the_ActionSet>
-        <actions xsi:type="vpdiagram:ReconnectEdge" name="ReconnectLink" tool_For="//@VP_Aspects.2/@diagrams.0/@the_MappingSet/@diagram_Elements.2" label="Connect CFA"/>
+        <actions xsi:type="vpdiagram:ReconnectEdge" name="ReconnectLink" tool_For="//@VP_Aspects.2/@diagrams.0/@the_MappingSet/@diagram_Elements.4" label="Connect CFA"/>
         <openActions name="add_CFA" label="Add CFA"/>
       </the_ActionSet>
       <extented_diagram href="../../../plugin/org.polarsys.capella.core.sirius.analysis/description/logical.odesign#//@ownedViewpoints[name='Logical%20Architecture']/@ownedRepresentations[name='Logical%20Architecture%20Blank']"/>

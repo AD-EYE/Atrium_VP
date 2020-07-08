@@ -32,14 +32,45 @@ Diagrams Atrium.diagram {
 				}
 			}
 			
-			Container CFA_ContainerLC {
+			///Import Capella Element
+			Container ContainerLC {
 				import: LABLogicalComponent
+			}
+			Node NodeLF{
+				import: LABLogicalFunction
+			}
+			EdgeImport FunctionalExchange {
+				import: LABDataFlowbetweenFunction
 			}
 			
 			Edge LinkCFA_LC {
 				association-context: Atrium.data.CFA.linkedtoElement
 				source: node_CFA
-				target: CFA_ContainerLC 
+				target: ContainerLC 
+				Representation {
+					Style {
+						line-style: dash
+						end-decorator: NoDecoration
+						color: black
+					}
+				}
+			}
+			Edge LinkCFA_LF {
+				association-context: Atrium.data.CFA.linkedtoElement
+				source: node_CFA
+				target: NodeLF 
+				Representation {
+					Style {
+						line-style: dash
+						end-decorator: NoDecoration
+						color: black
+					}
+				}
+			}
+			Edge LinkCFA_FE {
+				association-context: Atrium.data.CFA.linkedtoElement
+				source: node_CFA
+				target: FunctionalExchange 
 				Representation {
 					Style {
 						line-style: dash
@@ -49,11 +80,10 @@ Diagrams Atrium.diagram {
 				}
 			}
 		}
+		
 		Actions {
 			ReconnectEdge ReconnectLink { label: "Connect CFA" action-for: LinkCFA_LC }
-			OpenAction add_CFA { 
-				label: "Add CFA" 
-			}
+			OpenAction add_CFA {label: "Add CFA"}
 		}
 	}
 }
