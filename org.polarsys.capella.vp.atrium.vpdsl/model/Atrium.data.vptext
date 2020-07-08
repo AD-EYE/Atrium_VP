@@ -8,9 +8,11 @@
  */
 Data Atrium.data {
 	Class CFA {
-		extends capellacore.NamedElement, fa.FunctionalExchange, pa.PhysicalFunction, la.LogicalFunction
+		extends la.LogicalComponent, cs.Part, fa.AbstractFunction, cs.Component, fa.FunctionalExchange, la.LogicalFunction
 		Attributes:
 			content type ecore.EString
 			state type ecore.EBoolean
+		Associations:
+			linkedtoElement refers [1,1] external capellacore.CapellaElement
 	}
 }

@@ -7,14 +7,18 @@
  *
  */
 UIDescription Atrium.ui {
-	UI Atrium_CFA {
-		label: "Atrium"
-		Container Atrium_CFA_Section {
-			Container Atrium_CFA_AttributeGroup {
-				label: "CFA Attributes"
-				Field contentField label: "Content" type text , mapped-to Atrium.data.CFA.content
-				Field stateField label: "State" type checkbox , mapped-to Atrium.data.CFA.state
-			}
+UI Atrium_CFA {
+	label: "Atrium"
+	Container Atrium_CFA_Section {
+		Container Atrium_CFA_AttributeGroup {
+			label: "C F A Attributes"
+			Field contentField label: "Content" type text , mapped-to Atrium.data.CFA.content
+			Field stateField label: "State" type checkbox , mapped-to Atrium.data.CFA.state
+		}
+		Container Atrium_CFA_AssociationGroup {
+			label: "C F A Associations"
+			Field linkedtoElementAssociation label: "Linkedto Element" type simpleChoiceList , mapped-to Atrium.data.CFA.linkedtoElement
 		}
 	}
+}
 }

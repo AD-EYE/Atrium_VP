@@ -9,9 +9,15 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.sirius.diagram.DDiagram;
 import org.eclipse.sirius.diagram.DDiagramElement;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.polarsys.capella.common.data.modellingcore.AbstractType;
+import org.polarsys.capella.core.data.capellacore.CapellaElement;
+import org.polarsys.capella.core.data.cs.Component;
+import org.polarsys.capella.core.data.cs.Part;
 import org.polarsys.capella.core.data.fa.AbstractFunction;
 import org.polarsys.capella.core.data.fa.FunctionalExchange;
+import org.polarsys.capella.core.data.la.LogicalComponentPkg;
 import org.polarsys.capella.vp.atrium.Atrium.CFA;
+import org.polarsys.capella.vp.atrium.Atrium.impl.AtriumFactoryImpl;
 import org.polarsys.capella.vp.atrium.Atrium.AtriumFactory;
 import org.polarsys.kitalpha.emde.model.ElementExtension;
 import org.polarsys.kitalpha.emde.model.ExtensibleElement;
@@ -34,27 +40,20 @@ public class OpenActionService {
 	* @param newSemanticContainer : the element view
 	* @generated NOT
 	*/
-	public boolean add_CFA(EObject element, EObject newSemanticContainer) {
+	public boolean add_CFA(EObject eObject, EObject newSemanticContainer) {
 
-		CFA myCFA = AtriumFactory.eINSTANCE.createCFA();
+		System.out.println("Hello there");
+		CFA myCFA = null;
 
-		myCFA.setContent("I AM A CFA !");
+		myCFA = AtriumFactoryImpl.eINSTANCE.createCFA();
+
+		myCFA.setContent("General Kenobi");
 		myCFA.setState(true);
 
-		myCFA.setId(EcoreUtil.generateUUID());
+		((CapellaElement) myCFA).setId(EcoreUtil.generateUUID());
+		((ExtensibleElement) eObject).getOwnedExtensions().add((ElementExtension) myCFA);
 
-		if (element instanceof AbstractFunction) {
-			AbstractFunction AF = (AbstractFunction) element;
-			AF.getOwnedExtensions().add(myCFA);
-			return true;
-		} else if (element instanceof FunctionalExchange) {
-			FunctionalExchange FE = (FunctionalExchange) element;
-			FE.getOwnedExtensions().add(myCFA);
-			return true;
-		} else {
-			((ExtensibleElement) element).getOwnedExtensions().add((ElementExtension) myCFA);
-		}
-
+		System.out.println(myCFA);
 		return true;
 	}
 }

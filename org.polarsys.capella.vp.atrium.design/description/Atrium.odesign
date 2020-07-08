@@ -1,25 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:description_2="http://www.eclipse.org/sirius/table/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="Atrium" version="12.0.0.2017041100">
   <ownedViewpoints name="Atrium_ID" label="Atrium" modelFileExtension="atrium melodymodeller">
-    <ownedRepresentationExtensions xsi:type="description_1:DiagramExtensionDescription" name="diagramExtension_1" viewpointURI="viewpoint:/org.polarsys.capella.core.sirius.analysis/Logical Architecture" representationName="Logical Architecture Blank">
+    <ownedRepresentationExtensions xsi:type="description_1:DiagramExtensionDescription" name="Atrium_LogicalExtension" viewpointURI="viewpoint:/org.polarsys.capella.core.sirius.analysis/Logical Architecture" representationName="Logical Architecture Blank">
       <layers name="Atrium">
-        <nodeMappings xsi:type="description_1:NodeMappingImport" name="LogicalFunction_Import_Imported_NM" label="LogicalFunction_Import" semanticCandidatesExpression="">
-          <detailDescriptions xsi:type="tool:DiagramCreationDescription" href="../../../plugin/org.polarsys.capella.core.sirius.analysis/description/logical.odesign#//@ownedViewpoints[name='Logical%20Architecture']/@ownedRepresentations[name='Logical%20Function%20Breakdown']/@defaultLayer/@toolSections.0/@ownedTools[name='Logical%20Function%20Breakdown']"/>
-          <detailDescriptions xsi:type="tool:DiagramCreationDescription" href="../../../plugin/org.polarsys.capella.core.sirius.analysis/description/logical.odesign#//@ownedViewpoints[name='Logical%20Architecture']/@ownedRepresentations[name='Logical%20Data%20Flow%20Blank']/@defaultLayer/@toolSections.0/@ownedTools[name='Logical%20Data%20Flow%20Blank']"/>
-          <deletionDescription href="../../../plugin/org.polarsys.capella.core.sirius.analysis/description/logical.odesign#//@ownedViewpoints[name='Logical%20Architecture']/@ownedRepresentations[name='Logical%20Architecture%20Blank']/@defaultLayer/@toolSections.1/@ownedTools[name='delete%20capella%20element']"/>
-          <labelDirectEdit href="../../../plugin/org.polarsys.capella.core.sirius.analysis/description/logical.odesign#//@ownedViewpoints[name='Logical%20Architecture']/@ownedRepresentations[name='Logical%20Architecture%20Blank']/@defaultLayer/@toolSections.1/@ownedTools[name='name']"/>
-          <reusedBorderedNodeMappings href="../../../plugin/org.polarsys.capella.core.sirius.analysis/description/logical.odesign#//@ownedViewpoints[name='Logical%20Architecture']/@ownedRepresentations[name='Logical%20Architecture%20Blank']/@defaultLayer/@containerMappings[name='LAB%20Logical%20Component']/@subNodeMappings[name='LAB%20Logical%20Function']/@borderedNodeMappings[name='LAB%20Flow%20Port%20on%20Logical%20Function']"/>
-          <reusedBorderedNodeMappings href="../../../plugin/org.polarsys.capella.core.sirius.analysis/description/logical.odesign#//@ownedViewpoints[name='Logical%20Architecture']/@ownedRepresentations[name='Logical%20Architecture%20Blank']/@defaultLayer/@containerMappings[name='LAB%20Logical%20Component']/@subNodeMappings[name='LAB%20Logical%20Function']/@borderedNodeMappings[name='LAB%20InputPin%20by%20Categorie']"/>
-          <reusedBorderedNodeMappings href="../../../plugin/org.polarsys.capella.core.sirius.analysis/description/logical.odesign#//@ownedViewpoints[name='Logical%20Architecture']/@ownedRepresentations[name='Logical%20Architecture%20Blank']/@defaultLayer/@containerMappings[name='LAB%20Logical%20Component']/@subNodeMappings[name='LAB%20Logical%20Function']/@borderedNodeMappings[name='LAB%20OutputPin%20by%20Categorie']"/>
-          <dropDescriptions href="../../../plugin/org.polarsys.capella.core.sirius.analysis/description/logical.odesign#//@ownedViewpoints[name='Logical%20Architecture']/@ownedRepresentations[name='Logical%20Architecture%20Blank']/@defaultLayer/@toolSections.1/@ownedTools[name='DnD%20AB%20FunctionPort']"/>
-          <importedMapping href="../../../plugin/org.polarsys.capella.core.sirius.analysis/description/logical.odesign#//@ownedViewpoints[name='Logical%20Architecture']/@ownedRepresentations[name='Logical%20Architecture%20Blank']/@defaultLayer/@containerMappings[name='LAB%20Logical%20Component']/@subNodeMappings[name='LAB%20Logical%20Function']"/>
+        <nodeMappings name="node_CFA_NM" label="node_CFA" semanticCandidatesExpression="feature:ownedExtensions" domainClass="Atrium.CFA">
+          <style xsi:type="style:SquareDescription" borderSizeComputationExpression="1" labelExpression="HELLO THERE" labelPosition="node" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='orange']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_yellow']"/>
+          </style>
         </nodeMappings>
-        <edgeMappings name="LinkCFA_LF_EM" label="LinkCFA_LF" sourceMapping="//@ownedViewpoints[name='Atrium_ID']/@ownedRepresentationExtensions[name='diagramExtension_1']/@layers[name='Atrium']/@nodeMappings[name='LogicalFunction_Import_Imported_NM']" targetMapping="//@ownedViewpoints[name='Atrium_ID']/@ownedRepresentationExtensions[name='diagramExtension_1']/@layers[name='Atrium']/@containerMappings[name='CFAContainer_Imported_CM']" targetFinderExpression="aql:self.getCFA_LF()" sourceFinderExpression="" domainClass="">
-          <style lineStyle="dash_dot" targetArrow="NoDecoration" sizeComputationExpression="0">
+        <edgeMappings name="LinkCFA_LC_EM" label="LinkCFA_LC" sourceMapping="//@ownedViewpoints[name='Atrium_ID']/@ownedRepresentationExtensions[name='Atrium_LogicalExtension']/@layers[name='Atrium']/@nodeMappings[name='node_CFA_NM']" targetMapping="//@ownedViewpoints[name='Atrium_ID']/@ownedRepresentationExtensions[name='Atrium_LogicalExtension']/@layers[name='Atrium']/@containerMappings[name='CFA_ContainerLC_Imported_CM']" targetFinderExpression="feature:linkedtoElement" sourceFinderExpression="" domainClass="" reconnections="//@ownedViewpoints[name='Atrium_ID']/@ownedRepresentationExtensions[name='Atrium_LogicalExtension']/@layers[name='Atrium']/@toolSections.0/@ownedTools[name='ReconnectLink_Source'] //@ownedViewpoints[name='Atrium_ID']/@ownedRepresentationExtensions[name='Atrium_LogicalExtension']/@layers[name='Atrium']/@toolSections.0/@ownedTools[name='ReconnectLink_Target']">
+          <style lineStyle="dash" targetArrow="NoDecoration" sizeComputationExpression="0">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
         </edgeMappings>
-        <containerMappings xsi:type="description_1:ContainerMappingImport" name="CFAContainer_Imported_CM" label="CFAContainer" semanticCandidatesExpression="" reusedContainerMappings="//@ownedViewpoints[name='Atrium_ID']/@ownedRepresentationExtensions[name='diagramExtension_1']/@layers[name='Atrium']/@containerMappings[name='CFAContainer_Imported_CM']">
+        <containerMappings xsi:type="description_1:ContainerMappingImport" name="CFA_ContainerLC_Imported_CM" label="CFA_ContainerLC" semanticCandidatesExpression="" reusedContainerMappings="//@ownedViewpoints[name='Atrium_ID']/@ownedRepresentationExtensions[name='Atrium_LogicalExtension']/@layers[name='Atrium']/@containerMappings[name='CFA_ContainerLC_Imported_CM']">
           <detailDescriptions xsi:type="tool:DiagramCreationDescription" href="../../../plugin/org.polarsys.capella.core.sirius.analysis/description/logical.odesign#//@ownedViewpoints[name='Logical%20Architecture']/@ownedRepresentations[name='Logical%20Component%20Breakdown']/@defaultLayer/@toolSections.0/@ownedTools[name='Logical%20Component%20Breakdown']"/>
           <detailDescriptions xsi:type="tool:DiagramCreationDescription" href="../../../plugin/org.polarsys.capella.core.sirius.analysis/description/logical.odesign#//@ownedViewpoints[name='Logical%20Architecture']/@ownedRepresentations[name='Logical%20Architecture%20Blank']/@defaultLayer/@toolSections.0/@ownedTools[name='Logical%20Architecture%20Blank']"/>
           <detailDescriptions xsi:type="tool:DiagramCreationDescription" href="../../../plugin/org.polarsys.capella.core.sirius.analysis/description/common.odesign#//@ownedViewpoints[name='Common']/@ownedRepresentations[name='Contextual%20Component%20Detailed%20Interfaces']/@defaultLayer/@toolSections.0/@ownedTools[name='Contextual%20Component%20Detailed%20Interfaces']"/>
@@ -46,18 +42,41 @@
           <dropDescriptions href="../../../plugin/org.polarsys.capella.core.sirius.analysis/description/logical.odesign#//@ownedViewpoints[name='Logical%20Architecture']/@ownedRepresentations[name='Logical%20Architecture%20Blank']/@defaultLayer/@toolSections.1/@ownedTools[name='DnD%20AB%20AbstractFunction%20Allocation']"/>
           <dropDescriptions href="../../../plugin/org.polarsys.capella.core.sirius.analysis/description/logical.odesign#//@ownedViewpoints[name='Logical%20Architecture']/@ownedRepresentations[name='Logical%20Architecture%20Blank']/@defaultLayer/@toolSections.1/@ownedTools[name='DnD%20AB%20ComponentPort']"/>
           <dropDescriptions href="../../../plugin/org.polarsys.capella.core.sirius.analysis/description/logical.odesign#//@ownedViewpoints[name='Logical%20Architecture']/@ownedRepresentations[name='Logical%20Architecture%20Blank']/@defaultLayer/@toolSections.1/@ownedTools[name='D%26D%20Function%20Allocation%20From%20Project%20Explorer']"/>
-          <subNodeMappings name="CFA_NM" label="CFA" semanticCandidatesExpression="feature:ownedExtensions" domainClass="Atrium.CFA">
-            <style xsi:type="style:SquareDescription" borderSizeComputationExpression="1" labelExpression="CFA" labelAlignment="LEFT" labelPosition="node" resizeKind="NSEW">
-              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_blue']"/>
-            </style>
-          </subNodeMappings>
+          <reusedNodeMappings href="../../../plugin/org.polarsys.capella.core.sirius.analysis/description/logical.odesign#//@ownedViewpoints[name='Logical%20Architecture']/@ownedRepresentations[name='Logical%20Architecture%20Blank']/@defaultLayer/@containerMappings[name='LAB%20Logical%20Component']/@subNodeMappings[name='LAB%20Logical%20Function']"/>
           <reusedNodeMappings href="../../../plugin/org.polarsys.capella.core.sirius.analysis/description/logical.odesign#//@ownedViewpoints[name='Logical%20Architecture']/@ownedRepresentations[name='Logical%20Architecture%20Blank']/@defaultLayer/@nodeMappings[name='LAB_Dummy']"/>
-          <reusedNodeMappings href="#//@ownedViewpoints[name='Atrium_ID']/@ownedRepresentationExtensions[name='diagramExtension_1']/@layers[name='Atrium']/@nodeMappings[name='LogicalFunction_Import_Imported_NM']"/>
           <importedMapping href="../../../plugin/org.polarsys.capella.core.sirius.analysis/description/logical.odesign#//@ownedViewpoints[name='Logical%20Architecture']/@ownedRepresentations[name='Logical%20Architecture%20Blank']/@defaultLayer/@containerMappings[name='LAB%20Logical%20Component']"/>
         </containerMappings>
         <toolSections name="Atrium" label="Atrium">
+          <ownedTools xsi:type="tool:ReconnectEdgeDescription" name="ReconnectLink_Source" reconnectionKind="RECONNECT_SOURCE">
+            <source name="source"/>
+            <target name="target"/>
+            <sourceView name="sourceView"/>
+            <targetView name="targetView"/>
+            <element name="element"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:Unset" featureName="linkedtoElement" elementExpression="aql:edgeView.targetNode.target"/>
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:target">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="linkedtoElement" valueExpression="aql:edgeView.targetNode.target"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+            <edgeView name="edgeView"/>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ReconnectEdgeDescription" name="ReconnectLink_Target">
+            <source name="source"/>
+            <target name="target"/>
+            <sourceView name="sourceView"/>
+            <targetView name="targetView"/>
+            <element name="element"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool_1:Unset" featureName="linkedtoElement" elementExpression="var:source"/>
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="linkedtoElement" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+            <edgeView name="edgeView"/>
+          </ownedTools>
           <ownedTools xsi:type="tool_1:ToolDescription" name="add_CFA" label="Add CFA">
             <element name="element"/>
             <elementView name="elementView"/>

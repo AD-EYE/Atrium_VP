@@ -5,6 +5,7 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 
+import org.eclipse.emf.ecore.EReference;
 import org.polarsys.capella.core.data.capellacore.CapellacorePackage;
 
 /**
@@ -264,13 +265,22 @@ public interface AtriumPackage extends EPackage {
 	int CFA__APPLIED_REQUIREMENTS = CapellacorePackage.NAMED_ELEMENT__APPLIED_REQUIREMENTS;
 
 	/**
+	 * The feature id for the '<em><b>Linkedto Element</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CFA__LINKEDTO_ELEMENT = CapellacorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Content</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CFA__CONTENT = CapellacorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int CFA__CONTENT = CapellacorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>State</b></em>' attribute.
@@ -279,7 +289,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CFA__STATE = CapellacorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int CFA__STATE = CapellacorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>CFA</em>' class.
@@ -288,7 +298,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CFA_FEATURE_COUNT = CapellacorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int CFA_FEATURE_COUNT = CapellacorePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * Returns the meta object for class '{@link org.polarsys.capella.vp.atrium.Atrium.CFA <em>CFA</em>}'.
@@ -299,6 +309,17 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getCFA();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.polarsys.capella.vp.atrium.Atrium.CFA#getLinkedtoElement <em>Linkedto Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Linkedto Element</em>'.
+	 * @see org.polarsys.capella.vp.atrium.Atrium.CFA#getLinkedtoElement()
+	 * @see #getCFA()
+	 * @generated
+	 */
+	EReference getCFA_LinkedtoElement();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.polarsys.capella.vp.atrium.Atrium.CFA#getContent <em>Content</em>}'.
@@ -353,6 +374,14 @@ public interface AtriumPackage extends EPackage {
 		 * @generated
 		 */
 		EClass CFA = eINSTANCE.getCFA();
+
+		/**
+		 * The meta object literal for the '<em><b>Linkedto Element</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CFA__LINKEDTO_ELEMENT = eINSTANCE.getCFA_LinkedtoElement();
 
 		/**
 		 * The meta object literal for the '<em><b>Content</b></em>' attribute feature.

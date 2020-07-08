@@ -55,4 +55,18 @@
 		    </propertySection> 
 		    </propertySections>
 </extension>
-</plugin>
+
+ 	
+<extension 
+	point="org.polarsys.capella.core.data.business.queries.MDEBusinessQueries">
+				
+	   <MDEBusinessQueries 
+         class="org.polarsys.capella.vp.atrium.ui.queries.LinkedtoElementAssociationQuery" 
+         id="org.polarsys.capella.vp.atrium.ui.queries.LinkedtoElementAssociationQuery"> 
+   </MDEBusinessQueries> 
+
+
+				
+</extension>
+
+		</plugin>

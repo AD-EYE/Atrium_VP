@@ -1,5 +1,5 @@
 
-// Generated on 07.07.2020 at 01:58:55 CEST by Viewpoint DSL Generator V 0.1
+// Generated on 08.07.2020 at 11:33:36 CEST by Viewpoint DSL Generator V 0.1
 
 package org.polarsys.capella.vp.atrium.contextual.explorer.queries.cfa;
 
@@ -10,6 +10,8 @@ import org.eclipse.emf.ecore.EObject;
 
 import org.eclipse.amalgam.explorer.contextual.core.query.IQuery;
 
+import org.polarsys.capella.vp.atrium.Atrium.CFA;
+
 /**
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
@@ -18,7 +20,7 @@ import org.eclipse.amalgam.explorer.contextual.core.query.IQuery;
  *
  * @generated
  */
-public class ParentQuery implements IQuery {
+public class ReferencedExternalElementQuery implements IQuery {
 
 	/**
 	* <!-- begin-user-doc -->
@@ -26,7 +28,7 @@ public class ParentQuery implements IQuery {
 	* Default constructor
 	* @generated
 	*/
-	public ParentQuery() {
+	public ReferencedExternalElementQuery() {
 		// TODO Auto-generated constructor stub
 	}
 
@@ -39,8 +41,11 @@ public class ParentQuery implements IQuery {
 	*/
 	public List<Object> compute(Object object_p) {
 		List<Object> result = new ArrayList<Object>();
-		EObject eObject = (EObject) object_p;
-		result.add(eObject.eContainer());
+		CFA object = (CFA) object_p;
+
+		if (object.getLinkedtoElement() != null)
+			result.add(object.getLinkedtoElement());
+
 		return result;
 	}
 

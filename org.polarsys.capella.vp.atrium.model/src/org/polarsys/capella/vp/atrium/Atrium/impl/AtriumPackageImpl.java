@@ -5,6 +5,7 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.polarsys.capella.common.data.activity.ActivityPackage;
@@ -160,8 +161,18 @@ public class AtriumPackageImpl extends EPackageImpl implements AtriumPackage {
 	 * @generated
 	 */
 	@Override
+	public EReference getCFA_LinkedtoElement() {
+		return (EReference) cfaEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EAttribute getCFA_Content() {
-		return (EAttribute) cfaEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) cfaEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -171,7 +182,7 @@ public class AtriumPackageImpl extends EPackageImpl implements AtriumPackage {
 	 */
 	@Override
 	public EAttribute getCFA_State() {
-		return (EAttribute) cfaEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) cfaEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -205,6 +216,7 @@ public class AtriumPackageImpl extends EPackageImpl implements AtriumPackage {
 
 		// Create classes and their features
 		cfaEClass = createEClass(CFA);
+		createEReference(cfaEClass, CFA__LINKEDTO_ELEMENT);
 		createEAttribute(cfaEClass, CFA__CONTENT);
 		createEAttribute(cfaEClass, CFA__STATE);
 	}
@@ -249,6 +261,9 @@ public class AtriumPackageImpl extends EPackageImpl implements AtriumPackage {
 		// Initialize classes and features; add operations and parameters
 		initEClass(cfaEClass, org.polarsys.capella.vp.atrium.Atrium.CFA.class, "CFA", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
 				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getCFA_LinkedtoElement(), theCapellacorePackage.getCapellaElement(), null, "linkedtoElement", //$NON-NLS-1$
+				null, 1, 1, org.polarsys.capella.vp.atrium.Atrium.CFA.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCFA_Content(), ecorePackage.getEString(), "content", null, 0, 1, //$NON-NLS-1$
 				org.polarsys.capella.vp.atrium.Atrium.CFA.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
 				!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -275,7 +290,7 @@ public class AtriumPackageImpl extends EPackageImpl implements AtriumPackage {
 	protected void createConstraintAnnotations() {
 		String source = "http://www.polarsys.org/kitalpha/emde/1.0.0/constraint"; //$NON-NLS-1$
 		addAnnotation(cfaEClass, source, new String[] { "ExtendedElement", //$NON-NLS-1$
-				" http://www.polarsys.org/capella/core/core/1.4.0#//NamedElement http://www.polarsys.org/capella/core/fa/1.4.0#//FunctionalExchange http://www.polarsys.org/capella/core/pa/1.4.0#//PhysicalFunction http://www.polarsys.org/capella/core/la/1.4.0#//LogicalFunction" //$NON-NLS-1$
+				" http://www.polarsys.org/capella/core/la/1.4.0#//LogicalComponent http://www.polarsys.org/capella/core/cs/1.4.0#//Part http://www.polarsys.org/capella/core/fa/1.4.0#//AbstractFunction http://www.polarsys.org/capella/core/cs/1.4.0#//Component http://www.polarsys.org/capella/core/fa/1.4.0#//FunctionalExchange http://www.polarsys.org/capella/core/la/1.4.0#//LogicalFunction" //$NON-NLS-1$
 		});
 	}
 
@@ -288,7 +303,7 @@ public class AtriumPackageImpl extends EPackageImpl implements AtriumPackage {
 	protected void createConstraintMappingAnnotations() {
 		String source = "http://www.polarsys.org/kitalpha/emde/1.0.0/constraintMapping"; //$NON-NLS-1$
 		addAnnotation(cfaEClass, source, new String[] { "Mapping", //$NON-NLS-1$
-				" platform:/plugin/org.polarsys.capella.core.data.gen/model/CapellaCore.ecore#//NamedElement platform:/plugin/org.polarsys.capella.core.data.gen/model/FunctionalAnalysis.ecore#//FunctionalExchange platform:/plugin/org.polarsys.capella.core.data.gen/model/PhysicalArchitecture.ecore#//PhysicalFunction platform:/plugin/org.polarsys.capella.core.data.gen/model/LogicalArchitecture.ecore#//LogicalFunction" //$NON-NLS-1$
+				" platform:/plugin/org.polarsys.capella.core.data.gen/model/LogicalArchitecture.ecore#//LogicalComponent platform:/plugin/org.polarsys.capella.core.data.gen/model/CompositeStructure.ecore#//Part platform:/plugin/org.polarsys.capella.core.data.gen/model/FunctionalAnalysis.ecore#//AbstractFunction platform:/plugin/org.polarsys.capella.core.data.gen/model/CompositeStructure.ecore#//Component platform:/plugin/org.polarsys.capella.core.data.gen/model/FunctionalAnalysis.ecore#//FunctionalExchange platform:/plugin/org.polarsys.capella.core.data.gen/model/LogicalArchitecture.ecore#//LogicalFunction" //$NON-NLS-1$
 		});
 	}
 
