@@ -57,21 +57,22 @@
   <VP_Aspects xsi:type="vpdiagram:DiagramSet" name="Atrium.diagram">
     <diagrams xsi:type="vpdiagram:DiagramExtension" name="Atrium_LogicalExtension">
       <the_MappingSet>
-        <diagram_Elements xsi:type="vpdiagram:Node" name="node_CFA">
+        <diagram_Elements xsi:type="vpdiagram:Container" name="node_CFA">
           <the_domain>
             <domain_Class xsi:type="commondata:LocalClass" class="//@VP_Data/@VP_Classes.0"/>
             <chlidren_list xsi:type="commondata:ExternalAssociation">
               <reference href="http://www.polarsys.org/kitalpha/emde/1.0.0#//ExtensibleElement/ownedExtensions"/>
             </chlidren_list>
           </the_domain>
-          <style label_position="node">
+          <style>
             <node_Label>
               <value>
                 <expressionElements xsi:type="expression:StringElement" value="HELLO THERE"/>
               </value>
             </node_Label>
-            <style xsi:type="vpdiagram:BasicStyle" borderColor="orange" backgroundColor="light_yellow"/>
+            <style xsi:type="vpdiagram:FlatStyle" backgroundColor="light_chocolate" forgroundColor="white"/>
           </style>
+          <children/>
         </diagram_Elements>
         <diagram_Elements xsi:type="vpdiagram:Container" name="ContainerLC">
           <imports href="../../../plugin/org.polarsys.capella.core.sirius.analysis/description/logical.odesign#//@ownedViewpoints[name='Logical%20Architecture']/@ownedRepresentations[name='Logical%20Architecture%20Blank']/@defaultLayer/@containerMappings[name='LAB%20Logical%20Component']"/>

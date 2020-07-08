@@ -14,8 +14,22 @@ Diagrams Atrium.diagram {
 		Mapping {
 			
 			
+			Container node_CFA {
+				domain-context: Atrium.data.CFA
+				provided-by association external emde.ExtensibleElement.ownedExtensions
+				Representation {
+					Label { content: "HELLO THERE" police: black }
+					Style {
+						FlatStyle {background: light_chocolate foreground: white }
+					}
+				}
+				Contains {
+					//[Container or  Node]
+				}
+			}
 			
 			
+			/* 
 			Node node_CFA {
 				domain-context: Atrium.data.CFA
 				provided-by association external emde.ExtensibleElement.ownedExtensions
@@ -31,6 +45,7 @@ Diagrams Atrium.diagram {
 					}
 				}
 			}
+			*/
 			
 			///Import Capella Element
 			Container ContainerLC {

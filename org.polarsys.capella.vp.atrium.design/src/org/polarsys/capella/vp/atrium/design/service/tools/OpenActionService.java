@@ -42,7 +42,8 @@ public class OpenActionService {
 	*/
 	public boolean add_CFA(EObject eObject, EObject newSemanticContainer) {
 
-		System.out.println("Hello there");
+		System.out.print("Hello there, the variable eObject contains : ");
+		System.out.println(eObject);
 		CFA myCFA = null;
 
 		myCFA = AtriumFactoryImpl.eINSTANCE.createCFA();
@@ -52,8 +53,6 @@ public class OpenActionService {
 
 		((CapellaElement) myCFA).setId(EcoreUtil.generateUUID());
 		((ExtensibleElement) eObject).getOwnedExtensions().add((ElementExtension) myCFA);
-
-		System.out.println(myCFA);
 		return true;
 	}
 }
