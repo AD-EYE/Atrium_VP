@@ -10,6 +10,9 @@ import org.eclipse.emf.ecore.EObject;
 
 import org.eclipse.sirius.diagram.DDiagram;
 import org.eclipse.sirius.diagram.DDiagramElement;
+import org.polarsys.capella.core.data.la.LogicalArchitecture;
+import org.polarsys.capella.core.data.la.LogicalComponentPkg;
+import org.polarsys.capella.core.data.la.impl.LogicalComponentImpl;
 import org.polarsys.capella.vp.atrium.Atrium.CFA;
 import org.polarsys.capella.vp.atrium.Atrium.stateLinkedElement_Type;
 
@@ -36,12 +39,17 @@ public class ContainerLC_Service {
 
 		System.out.println("Let me check if that container should be red");
 
+		//go at root level then access the CFAs
 		//look for the owned CFAs
 
-		for (EObject eO : container.eContents()) {
-			System.out.println("checking eO");
+		EObject predecessor = eObject.eContainer();
+
+		while (!(predecessor instanceof LogicalComponentPkg)) {
+			predecessor = predecessor.eContainer();
+		}
+
+		for (EObject eO : predecessor.eContents()) {
 			if (eO instanceof CFA) {
-				System.out.println("eO is instqnce of CFA");
 				CFA targetCFA = (CFA) eO;
 				if (targetCFA.getLinkedtoElement() == eObject) {
 					if (targetCFA.getStateLinkedElement() == stateLinkedElement_Type.NEW_DEVELOPMENT) {

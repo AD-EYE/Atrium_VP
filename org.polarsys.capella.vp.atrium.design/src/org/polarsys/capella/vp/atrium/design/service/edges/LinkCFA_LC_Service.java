@@ -33,7 +33,6 @@ public class LinkCFA_LC_Service {
 	* @generated NOT
 	*/
 	public boolean isElementNewEdge(EObject eObject, EObject view, EObject container) {
-		System.out.println("Let me check if that edge should be red");
 		CFA targetCFA = (CFA) eObject;
 
 		return (targetCFA.getStateLinkedElement() == stateLinkedElement_Type.NEW_DEVELOPMENT);
