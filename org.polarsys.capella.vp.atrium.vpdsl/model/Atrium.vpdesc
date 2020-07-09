@@ -181,9 +181,21 @@
           <imports href="../../../plugin/org.polarsys.capella.core.sirius.analysis/description/logical.odesign#//@ownedViewpoints[name='Logical%20Architecture']/@ownedRepresentations[name='Logical%20Architecture%20Blank']/@defaultLayer/@containerMappings[name='LAB%20Logical%20Component']"/>
         </diagram_Elements>
         <diagram_Elements xsi:type="vpdiagram:Node" name="NodeLF">
+          <style>
+            <condition>
+              <expression xsi:type="expression:JavaElement" method="isElementNewNode"/>
+            </condition>
+            <style xsi:type="vpdiagram:BasicStyle" backgroundColor="light_red"/>
+          </style>
           <imports href="../../../plugin/org.polarsys.capella.core.sirius.analysis/description/logical.odesign#//@ownedViewpoints[name='Logical%20Architecture']/@ownedRepresentations[name='Logical%20Architecture%20Blank']/@defaultLayer/@containerMappings[name='LAB%20Logical%20Component']/@subNodeMappings[name='LAB%20Logical%20Function']"/>
         </diagram_Elements>
         <diagram_Elements xsi:type="vpdiagram:EdgeImport" name="FunctionalExchange">
+          <e_description>
+            <style color="red"/>
+            <condition>
+              <expression xsi:type="expression:JavaElement" method="isElementNewFE"/>
+            </condition>
+          </e_description>
           <imports href="../../../plugin/org.polarsys.capella.core.sirius.analysis/description/logical.odesign#//@ownedViewpoints[name='Logical%20Architecture']/@ownedRepresentations[name='Logical%20Architecture%20Blank']/@defaultLayer/@edgeMappings[name='LAB%20DataFlow%20between%20Function']"/>
         </diagram_Elements>
         <diagram_Elements xsi:type="vpdiagram:Edge" name="LinkCFA_LC" source="//@VP_Aspects.2/@diagrams.0/@the_MappingSet/@diagram_Elements.0" target="//@VP_Aspects.2/@diagrams.0/@the_MappingSet/@diagram_Elements.1">
@@ -204,6 +216,12 @@
           <e_description>
             <style lineStyle="dash"/>
           </e_description>
+          <e_description>
+            <style lineStyle="dash" color="red"/>
+            <condition>
+              <expression xsi:type="expression:JavaElement" method="isElementNewEdge"/>
+            </condition>
+          </e_description>
           <the_domain>
             <target_Locator xsi:type="commondata:LocalAssociation" reference="//@VP_Data/@VP_Classes.0/@VP_Classes_Associations.0"/>
           </the_domain>
@@ -211,6 +229,12 @@
         <diagram_Elements xsi:type="vpdiagram:Edge" name="LinkCFA_FE" source="//@VP_Aspects.2/@diagrams.0/@the_MappingSet/@diagram_Elements.0" target="//@VP_Aspects.2/@diagrams.0/@the_MappingSet/@diagram_Elements.3">
           <e_description>
             <style lineStyle="dash"/>
+          </e_description>
+          <e_description>
+            <style lineStyle="dash" color="red"/>
+            <condition>
+              <expression xsi:type="expression:JavaElement" method="isElementNewEdge"/>
+            </condition>
           </e_description>
           <the_domain>
             <target_Locator xsi:type="commondata:LocalAssociation" reference="//@VP_Data/@VP_Classes.0/@VP_Classes_Associations.0"/>

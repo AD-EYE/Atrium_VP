@@ -58,10 +58,9 @@ Diagrams Atrium.diagram {
 			}
 			
 			
-			///Import Capella Element
+			///Import Capella Element + giving them a condition
 			Container ContainerLC {
 				import: LABLogicalComponent
-				
 				Representation {
 					condition: Java isElementNew
 					Style {
@@ -74,12 +73,28 @@ Diagrams Atrium.diagram {
 			}
 			Node NodeLF{
 				import: LABLogicalFunction
+				Representation {
+					condition: Java isElementNewNode
+					Style {
+							BasicStyle { border-color: black background: light_red form: Square }
+					}
+				}
 			}
 			EdgeImport FunctionalExchange {
 				import: LABDataFlowbetweenFunction
+				Representation {
+					condition: Java isElementNewFE
+					Style {
+						line-style: solid
+						end-decorator: NoDecoration
+						color: red
+					}
+				}
 			}
 			//End import
 			
+			
+			//////////////EDGES BETWEEN CFA AND CAPELLA ELEMENT////////////////////////
 			Edge LinkCFA_LC {
 				association-context: Atrium.data.CFA.linkedtoElement
 				source: container_CFA
@@ -111,6 +126,14 @@ Diagrams Atrium.diagram {
 						color: black
 					}
 				}
+				Representation {
+					condition: Java isElementNewEdge
+					Style {
+						line-style: dash
+						end-decorator: NoDecoration
+						color: red
+					}
+				}
 			}
 			Edge LinkCFA_FE {
 				association-context: Atrium.data.CFA.linkedtoElement
@@ -123,7 +146,17 @@ Diagrams Atrium.diagram {
 						color: black
 					}
 				}
+				Representation {
+					condition: Java isElementNewEdge
+					Style {
+						line-style: dash
+						end-decorator: NoDecoration
+						color: red
+					}
+				}
 			}
+			
+			/////////////END EDGES///////////////////////
 		}
 		
 		Actions {

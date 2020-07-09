@@ -70,7 +70,6 @@ public class OpenActionService {
 		if (element instanceof CFA) {
 
 			CFA targetCFA = (CFA) element;
-			System.out.println("The selected element is from CFA so we can do the job");
 
 			Assumption myAssumption = null;
 			myAssumption = AtriumFactoryImpl.eINSTANCE.createAssumption();
@@ -82,7 +81,7 @@ public class OpenActionService {
 			((CapellaElement) myAssumption).setId(EcoreUtil.generateUUID());
 			targetCFA.getAssumption().add(myAssumption);
 		} else {
-			System.out.println("Come on, this is not a CFA");
+			System.out.println("This is not a CFA, cancelling creation");
 			return false;
 		}
 
