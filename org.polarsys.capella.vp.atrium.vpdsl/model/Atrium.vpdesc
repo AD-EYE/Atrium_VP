@@ -47,6 +47,14 @@
           <type href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         </owned_type>
       </VP_Class_Attributes>
+      <VP_Class_Attributes name="assumptionType">
+        <owned_values name="Clarification" literal="Clarification"/>
+        <owned_values name="Task" literal="Task"/>
+        <owned_values name="Risk" literal="Risk"/>
+        <owned_type xsi:type="vpdesc:ExternalAttributeType">
+          <type href="http://www.eclipse.org/emf/2002/Ecore#//EEnumerator"/>
+        </owned_type>
+      </VP_Class_Attributes>
     </VP_Classes>
     <VP_Classes name="DG">
       <VP_Class_Attributes name="content">
@@ -107,6 +115,9 @@
           <UI_fields name="validityField" label="Validity">
             <Mapping UI_Field_Mapped_To="//@VP_Data/@VP_Classes.1/@VP_Class_Attributes.2"/>
           </UI_fields>
+          <UI_fields name="assumptionTypeField" label="Assumption Type" type="radiobox">
+            <Mapping UI_Field_Mapped_To="//@VP_Data/@VP_Classes.1/@VP_Class_Attributes.3"/>
+          </UI_fields>
         </subContainers>
       </UI_Containers>
     </UIs>
@@ -133,7 +144,7 @@
           <style>
             <node_Label>
               <value>
-                <expressionElements xsi:type="expression:StringElement" value="HELLO THERE"/>
+                <expressionElements xsi:type="expression:StringElement" value="CFA here"/>
               </value>
             </node_Label>
             <style xsi:type="vpdiagram:FlatStyle" backgroundColor="light_chocolate" forgroundColor="white"/>
@@ -147,10 +158,32 @@
               <style>
                 <node_Label>
                   <value>
-                    <expressionElements xsi:type="expression:StringElement" value="Assumption here"/>
+                    <expressionElements xsi:type="expression:StringElement" value="Clarification here"/>
                   </value>
                 </node_Label>
-                <style xsi:type="vpdiagram:BasicStyle" backgroundColor="light_gray"/>
+                <style xsi:type="vpdiagram:BasicStyle" backgroundColor="light_green" form="Dot"/>
+              </style>
+              <style>
+                <node_Label>
+                  <value>
+                    <expressionElements xsi:type="expression:StringElement" value="Task here"/>
+                  </value>
+                </node_Label>
+                <condition>
+                  <expression xsi:type="expression:JavaElement" method="isTask"/>
+                </condition>
+                <style xsi:type="vpdiagram:BasicStyle" backgroundColor="gray" form="Dot"/>
+              </style>
+              <style>
+                <node_Label>
+                  <value>
+                    <expressionElements xsi:type="expression:StringElement" value="Risk here"/>
+                  </value>
+                </node_Label>
+                <condition>
+                  <expression xsi:type="expression:JavaElement" method="isRisk"/>
+                </condition>
+                <style xsi:type="vpdiagram:BasicStyle" backgroundColor="red" form="Triangle"/>
               </style>
               <children/>
             </owned_nodes>

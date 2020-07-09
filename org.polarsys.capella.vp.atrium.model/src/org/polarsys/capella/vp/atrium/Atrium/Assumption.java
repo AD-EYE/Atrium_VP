@@ -15,6 +15,7 @@ import org.polarsys.capella.core.data.capellacore.NamedElement;
  *   <li>{@link org.polarsys.capella.vp.atrium.Atrium.Assumption#getContent <em>Content</em>}</li>
  *   <li>{@link org.polarsys.capella.vp.atrium.Atrium.Assumption#getRationale <em>Rationale</em>}</li>
  *   <li>{@link org.polarsys.capella.vp.atrium.Atrium.Assumption#getValidity <em>Validity</em>}</li>
+ *   <li>{@link org.polarsys.capella.vp.atrium.Atrium.Assumption#getAssumptionType <em>Assumption Type</em>}</li>
  * </ul>
  *
  * @see org.polarsys.capella.vp.atrium.Atrium.AtriumPackage#getAssumption()
@@ -101,5 +102,34 @@ public interface Assumption extends NamedElement {
 	 */
 
 	void setValidity(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Assumption Type</b></em>' attribute.
+	 * The literals are from the enumeration {@link org.polarsys.capella.vp.atrium.Atrium.assumptionType_Type}.
+	
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Assumption Type</em>' attribute.
+	 * @see org.polarsys.capella.vp.atrium.Atrium.assumptionType_Type
+	 * @see #setAssumptionType(assumptionType_Type)
+	 * @see org.polarsys.capella.vp.atrium.Atrium.AtriumPackage#getAssumption_AssumptionType()
+	 * @model
+	 * @generated
+	 */
+
+	assumptionType_Type getAssumptionType();
+
+	/**
+	 * Sets the value of the '{@link org.polarsys.capella.vp.atrium.Atrium.Assumption#getAssumptionType <em>Assumption Type</em>}' attribute.
+	
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Assumption Type</em>' attribute.
+	 * @see org.polarsys.capella.vp.atrium.Atrium.assumptionType_Type
+	 * @see #getAssumptionType()
+	 * @generated
+	 */
+
+	void setAssumptionType(assumptionType_Type value);
 
 } // Assumption

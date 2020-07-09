@@ -18,7 +18,7 @@ Diagrams Atrium.diagram {
 				domain-context: Atrium.data.CFA
 				provided-by association external emde.ExtensibleElement.ownedExtensions
 				Representation {
-					Label { content: "HELLO THERE" police: black }
+					Label { content: "CFA here" police: black }
 					Style {
 						FlatStyle {background: light_chocolate foreground: white }
 					}
@@ -30,9 +30,23 @@ Diagrams Atrium.diagram {
 								Node node_assumption {
 									domain-context: Atrium.data.Assumption provided-by association Atrium.data.CFA.assumption
 									Representation {
-										Label { content: "Assumption here" police: black alignment: center}
+										Label { content: "Clarification here" police: black alignment: center}
 										Style {
-											BasicStyle { border-color: black background: light_gray form: Square }
+											BasicStyle { border-color: black background: light_green form: Dot }
+										}
+									}
+									Representation {
+										condition: Java isTask
+										Label { content: "Task here" police: black alignment: center}
+										Style {
+											BasicStyle { border-color: black background: gray form: Dot }
+										}
+									}
+									Representation {
+										condition: Java isRisk
+										Label { content: "Risk here" police: black alignment: center}
+										Style {
+											BasicStyle { border-color: black background: red form: Triangle }
 										}
 									}
 									Contains {

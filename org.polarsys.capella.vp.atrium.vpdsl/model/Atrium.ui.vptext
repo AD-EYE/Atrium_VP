@@ -32,6 +32,7 @@ UI Atrium_Assumption {
 			Field contentField1 label: "Content" type text , mapped-to Atrium.data.Assumption.content
 			Field rationaleField label: "Rationale" type text , mapped-to Atrium.data.Assumption.rationale
 			Field validityField label: "Validity" type text , mapped-to Atrium.data.Assumption.validity
+			Field assumptionTypeField label: "Assumption Type" type radiobox , mapped-to Atrium.data.Assumption.assumptionType
 		}
 	}
 }
@@ -44,5 +45,4 @@ UI Atrium_DG {
 		}
 	}
 }
-
 }

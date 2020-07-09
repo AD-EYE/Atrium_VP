@@ -564,13 +564,22 @@ public interface AtriumPackage extends EPackage {
 	int ASSUMPTION__VALIDITY = CapellacorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Assumption Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSUMPTION__ASSUMPTION_TYPE = CapellacorePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
 	 * The number of structural features of the '<em>Assumption</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ASSUMPTION_FEATURE_COUNT = CapellacorePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int ASSUMPTION_FEATURE_COUNT = CapellacorePackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.capella.vp.atrium.Atrium.impl.DGImpl <em>DG</em>}' class.
@@ -809,6 +818,16 @@ public interface AtriumPackage extends EPackage {
 	int STATE_LINKED_ELEMENT_TYPE = 3;
 
 	/**
+	 * The meta object id for the '{@link org.polarsys.capella.vp.atrium.Atrium.assumptionType_Type <em>assumption Type Type</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.capella.vp.atrium.Atrium.assumptionType_Type
+	 * @see org.polarsys.capella.vp.atrium.Atrium.impl.AtriumPackageImpl#getassumptionType_Type()
+	 * @generated
+	 */
+	int ASSUMPTION_TYPE_TYPE = 4;
+
+	/**
 	 * Returns the meta object for class '{@link org.polarsys.capella.vp.atrium.Atrium.CFA <em>CFA</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -928,6 +947,17 @@ public interface AtriumPackage extends EPackage {
 	EAttribute getAssumption_Validity();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.polarsys.capella.vp.atrium.Atrium.Assumption#getAssumptionType <em>Assumption Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Assumption Type</em>'.
+	 * @see org.polarsys.capella.vp.atrium.Atrium.Assumption#getAssumptionType()
+	 * @see #getAssumption()
+	 * @generated
+	 */
+	EAttribute getAssumption_AssumptionType();
+
+	/**
 	 * Returns the meta object for class '{@link org.polarsys.capella.vp.atrium.Atrium.DG <em>DG</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -957,6 +987,16 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 */
 	EEnum getstateLinkedElement_Type();
+
+	/**
+	 * Returns the meta object for enum '{@link org.polarsys.capella.vp.atrium.Atrium.assumptionType_Type <em>assumption Type Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>assumption Type Type</em>'.
+	 * @see org.polarsys.capella.vp.atrium.Atrium.assumptionType_Type
+	 * @generated
+	 */
+	EEnum getassumptionType_Type();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1073,6 +1113,14 @@ public interface AtriumPackage extends EPackage {
 		EAttribute ASSUMPTION__VALIDITY = eINSTANCE.getAssumption_Validity();
 
 		/**
+		 * The meta object literal for the '<em><b>Assumption Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ASSUMPTION__ASSUMPTION_TYPE = eINSTANCE.getAssumption_AssumptionType();
+
+		/**
 		 * The meta object literal for the '{@link org.polarsys.capella.vp.atrium.Atrium.impl.DGImpl <em>DG</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1099,6 +1147,16 @@ public interface AtriumPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum STATE_LINKED_ELEMENT_TYPE = eINSTANCE.getstateLinkedElement_Type();
+
+		/**
+		 * The meta object literal for the '{@link org.polarsys.capella.vp.atrium.Atrium.assumptionType_Type <em>assumption Type Type</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.polarsys.capella.vp.atrium.Atrium.assumptionType_Type
+		 * @see org.polarsys.capella.vp.atrium.Atrium.impl.AtriumPackageImpl#getassumptionType_Type()
+		 * @generated
+		 */
+		EEnum ASSUMPTION_TYPE_TYPE = eINSTANCE.getassumptionType_Type();
 
 	}
 

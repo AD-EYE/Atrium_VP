@@ -24,6 +24,7 @@ Data Atrium.data {
 			content type ecore.EString
 			rationale type ecore.EString
 			validity type ecore.EString
+			assumptionType type ecore.EEnumerator values ("Clarification","Task","Risk")
 	}
 	
 	Class DG {

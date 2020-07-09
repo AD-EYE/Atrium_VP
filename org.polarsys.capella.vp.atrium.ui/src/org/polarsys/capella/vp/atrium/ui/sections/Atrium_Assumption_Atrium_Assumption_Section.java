@@ -22,6 +22,7 @@ import org.polarsys.kitalpha.ad.services.manager.ViewpointManager;
 
 import org.polarsys.capella.core.ui.properties.fields.*;
 
+import org.polarsys.capella.vp.atrium.ui.fields.AssumptionTypeField_semanticKindGroup;
 import org.polarsys.capella.core.data.capellacore.CapellaElement;
 import org.polarsys.capella.vp.atrium.Atrium.AtriumPackage;
 import org.polarsys.capella.vp.atrium.Atrium.Assumption;
@@ -64,6 +65,15 @@ public class Atrium_Assumption_Atrium_Assumption_Section extends AbstractSection
 	* @generated
 	*/
 	private TextValueGroup ValidityField;
+
+	/**
+	* <!-- begin-model-doc -->
+	* <!-- end-model-doc -->
+	* <!-- begin-user-doc -->
+	* <!-- end-user-doc -->
+	* @generated
+	*/
+	private AssumptionTypeField_semanticKindGroup AssumptionTypeField;
 
 	/**
 	* <!-- begin-model-doc -->
@@ -132,6 +142,9 @@ public class Atrium_Assumption_Atrium_Assumption_Section extends AbstractSection
 
 		ValidityField = new TextValueGroup(Atrium_Assumption_AttributeGroup, "Validity :", getWidgetFactory(), true);
 
+		AssumptionTypeField = new AssumptionTypeField_semanticKindGroup(Atrium_Assumption_AttributeGroup,
+				getWidgetFactory());
+
 	}
 
 	/**
@@ -149,6 +162,8 @@ public class Atrium_Assumption_Atrium_Assumption_Section extends AbstractSection
 
 		ValidityField.loadData(object, AtriumPackage.eINSTANCE.getAssumption_Validity());
 
+		AssumptionTypeField.loadData(object, AtriumPackage.eINSTANCE.getAssumption_AssumptionType());
+
 	}
 
 	/**
@@ -164,6 +179,8 @@ public class Atrium_Assumption_Atrium_Assumption_Section extends AbstractSection
 		abstractSemanticFields.add(RationaleField);
 
 		abstractSemanticFields.add(ValidityField);
+
+		abstractSemanticFields.add(AssumptionTypeField);
 
 		return abstractSemanticFields;
 	}

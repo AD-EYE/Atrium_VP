@@ -40,8 +40,6 @@ public class ContainerLC_Service {
 		//go at root level then access the CFAs
 		//look for the owned CFAs
 
-		System.out.println("Let's see if that container should be red");
-
 		EObject predecessor = eObject.eContainer();
 
 		while (!(predecessor instanceof LogicalComponentPkg)) {

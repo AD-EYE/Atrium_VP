@@ -47,6 +47,7 @@ import org.polarsys.capella.vp.atrium.Atrium.Assumption;
 import org.polarsys.capella.vp.atrium.Atrium.AtriumFactory;
 import org.polarsys.capella.vp.atrium.Atrium.AtriumPackage;
 
+import org.polarsys.capella.vp.atrium.Atrium.assumptionType_Type;
 import org.polarsys.capella.vp.atrium.Atrium.stateLinkedElement_Type;
 import org.polarsys.kitalpha.emde.model.EmdePackage;
 
@@ -83,6 +84,13 @@ public class AtriumPackageImpl extends EPackageImpl implements AtriumPackage {
 	 * @generated
 	 */
 	private EEnum stateLinkedElement_TypeEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum assumptionType_TypeEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -284,6 +292,16 @@ public class AtriumPackageImpl extends EPackageImpl implements AtriumPackage {
 	 * @generated
 	 */
 	@Override
+	public EAttribute getAssumption_AssumptionType() {
+		return (EAttribute) assumptionEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getDG() {
 		return dgEClass;
 	}
@@ -306,6 +324,16 @@ public class AtriumPackageImpl extends EPackageImpl implements AtriumPackage {
 	@Override
 	public EEnum getstateLinkedElement_Type() {
 		return stateLinkedElement_TypeEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EEnum getassumptionType_Type() {
+		return assumptionType_TypeEEnum;
 	}
 
 	/**
@@ -350,12 +378,14 @@ public class AtriumPackageImpl extends EPackageImpl implements AtriumPackage {
 		createEAttribute(assumptionEClass, ASSUMPTION__CONTENT);
 		createEAttribute(assumptionEClass, ASSUMPTION__RATIONALE);
 		createEAttribute(assumptionEClass, ASSUMPTION__VALIDITY);
+		createEAttribute(assumptionEClass, ASSUMPTION__ASSUMPTION_TYPE);
 
 		dgEClass = createEClass(DG);
 		createEAttribute(dgEClass, DG__CONTENT);
 
 		// Create enums
 		stateLinkedElement_TypeEEnum = createEEnum(STATE_LINKED_ELEMENT_TYPE);
+		assumptionType_TypeEEnum = createEEnum(ASSUMPTION_TYPE_TYPE);
 	}
 
 	/**
@@ -427,6 +457,9 @@ public class AtriumPackageImpl extends EPackageImpl implements AtriumPackage {
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAssumption_Validity(), ecorePackage.getEString(), "validity", null, 0, 1, Assumption.class, //$NON-NLS-1$
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAssumption_AssumptionType(), this.getassumptionType_Type(), "assumptionType", null, 0, 1, //$NON-NLS-1$
+				Assumption.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 
 		initEClass(dgEClass, org.polarsys.capella.vp.atrium.Atrium.DG.class, "DG", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
 				IS_GENERATED_INSTANCE_CLASS);
@@ -438,6 +471,11 @@ public class AtriumPackageImpl extends EPackageImpl implements AtriumPackage {
 		initEEnum(stateLinkedElement_TypeEEnum, stateLinkedElement_Type.class, "stateLinkedElement_Type"); //$NON-NLS-1$
 		addEEnumLiteral(stateLinkedElement_TypeEEnum, stateLinkedElement_Type.LEGACY);
 		addEEnumLiteral(stateLinkedElement_TypeEEnum, stateLinkedElement_Type.NEW_DEVELOPMENT);
+
+		initEEnum(assumptionType_TypeEEnum, assumptionType_Type.class, "assumptionType_Type"); //$NON-NLS-1$
+		addEEnumLiteral(assumptionType_TypeEEnum, assumptionType_Type.CLARIFICATION);
+		addEEnumLiteral(assumptionType_TypeEEnum, assumptionType_Type.TASK);
+		addEEnumLiteral(assumptionType_TypeEEnum, assumptionType_Type.RISK);
 
 		// Create resource
 		createResource(eNS_URI);

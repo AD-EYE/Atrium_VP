@@ -43,14 +43,11 @@ public class OpenActionService {
 	* @generated NOT
 	*/
 	public boolean add_CFA(EObject eObject, EObject newSemanticContainer) {
-
-		System.out.print("Hello there, the variable eObject contains : ");
-		System.out.println(eObject);
 		CFA myCFA = null;
 
 		myCFA = AtriumFactoryImpl.eINSTANCE.createCFA();
 
-		myCFA.setContent("General Kenobi");
+		myCFA.setContent("Some content");
 		myCFA.setState(true);
 
 		((CapellaElement) myCFA).setId(EcoreUtil.generateUUID());
@@ -101,8 +98,6 @@ public class OpenActionService {
 
 			CFA targetCFA = (CFA) element;
 
-			System.out.println("The selected element is from CFA so we can do the job");
-
 			DG myDG = null;
 			myDG = AtriumFactoryImpl.eINSTANCE.createDG();
 
@@ -111,7 +106,7 @@ public class OpenActionService {
 			((CapellaElement) myDG).setId(EcoreUtil.generateUUID());
 			targetCFA.setGoal(myDG);
 		} else {
-			System.out.println("Come on, this is not a CFA");
+			System.out.println("This is not a CFA, cancelling creation");
 			return false;
 		}
 

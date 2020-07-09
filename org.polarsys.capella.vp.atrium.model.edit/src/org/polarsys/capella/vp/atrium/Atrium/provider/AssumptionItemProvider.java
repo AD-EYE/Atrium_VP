@@ -61,6 +61,7 @@ public class AssumptionItemProvider extends NamedElementItemProvider implements 
 			addContentPropertyDescriptor(object);
 			addRationalePropertyDescriptor(object);
 			addValidityPropertyDescriptor(object);
+			addAssumptionTypePropertyDescriptor(object);
 		}
 		// begin-extension-code
 		checkChildCreationExtender(object);
@@ -135,6 +136,28 @@ public class AssumptionItemProvider extends NamedElementItemProvider implements 
 	}
 
 	/**
+	 * This adds a property descriptor for the Assumption Type feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAssumptionTypePropertyDescriptor(Object object) {
+
+		// begin-extension-code
+		itemPropertyDescriptors.add(createItemPropertyDescriptor
+		// end-extension-code
+		(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+				getString("_UI_Assumption_assumptionType_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_Assumption_assumptionType_feature", //$NON-NLS-1$//$NON-NLS-2$
+						"_UI_Assumption_type"), //$NON-NLS-1$
+				AtriumPackage.Literals.ASSUMPTION__ASSUMPTION_TYPE, true, false, false,
+				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
+				// begin-extension-code
+				null));
+		// end-extension-code
+	}
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -185,6 +208,7 @@ public class AssumptionItemProvider extends NamedElementItemProvider implements 
 		case AtriumPackage.ASSUMPTION__CONTENT:
 		case AtriumPackage.ASSUMPTION__RATIONALE:
 		case AtriumPackage.ASSUMPTION__VALIDITY:
+		case AtriumPackage.ASSUMPTION__ASSUMPTION_TYPE:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}

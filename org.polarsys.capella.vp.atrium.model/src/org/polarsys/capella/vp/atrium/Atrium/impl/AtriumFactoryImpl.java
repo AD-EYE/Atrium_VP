@@ -79,6 +79,8 @@ public class AtriumFactoryImpl extends EFactoryImpl implements AtriumFactory {
 		switch (eDataType.getClassifierID()) {
 		case AtriumPackage.STATE_LINKED_ELEMENT_TYPE:
 			return createstateLinkedElement_TypeFromString(eDataType, initialValue);
+		case AtriumPackage.ASSUMPTION_TYPE_TYPE:
+			return createassumptionType_TypeFromString(eDataType, initialValue);
 		default:
 			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
@@ -94,6 +96,8 @@ public class AtriumFactoryImpl extends EFactoryImpl implements AtriumFactory {
 		switch (eDataType.getClassifierID()) {
 		case AtriumPackage.STATE_LINKED_ELEMENT_TYPE:
 			return convertstateLinkedElement_TypeToString(eDataType, instanceValue);
+		case AtriumPackage.ASSUMPTION_TYPE_TYPE:
+			return convertassumptionType_TypeToString(eDataType, instanceValue);
 		default:
 			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
@@ -163,6 +167,28 @@ public class AtriumFactoryImpl extends EFactoryImpl implements AtriumFactory {
 	 * @generated
 	 */
 	public String convertstateLinkedElement_TypeToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public assumptionType_Type createassumptionType_TypeFromString(EDataType eDataType, String initialValue) {
+		assumptionType_Type result = assumptionType_Type.get(initialValue);
+		if (result == null)
+			throw new IllegalArgumentException(
+					"The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertassumptionType_TypeToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 
