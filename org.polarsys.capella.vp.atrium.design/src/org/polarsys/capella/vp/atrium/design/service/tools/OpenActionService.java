@@ -17,9 +17,12 @@ import org.polarsys.capella.core.data.fa.AbstractFunction;
 import org.polarsys.capella.core.data.fa.FunctionalExchange;
 import org.polarsys.capella.core.data.la.LogicalComponentPkg;
 import org.polarsys.capella.vp.atrium.Atrium.CFA;
+import org.polarsys.capella.vp.atrium.Atrium.CFA_list;
 import org.polarsys.capella.vp.atrium.Atrium.DG;
+import org.polarsys.capella.vp.atrium.Atrium.DG_list;
 import org.polarsys.capella.vp.atrium.Atrium.impl.AtriumFactoryImpl;
 import org.polarsys.capella.vp.atrium.Atrium.Assumption;
+import org.polarsys.capella.vp.atrium.Atrium.Assumption_list;
 import org.polarsys.capella.vp.atrium.Atrium.AtriumFactory;
 import org.polarsys.kitalpha.emde.model.ElementExtension;
 import org.polarsys.kitalpha.emde.model.ExtensibleElement;
@@ -35,6 +38,57 @@ import org.polarsys.kitalpha.emde.model.ExtensibleElement;
  */
 
 public class OpenActionService {
+	/**
+	* <!-- begin-user-doc -->
+	* <!-- end-user-doc -->
+	* @param element : the element
+	* @param newSemanticContainer : the element view
+	* @generated NOT
+	*/
+	public boolean create_CFA_list(EObject element, EObject newSemanticContainer) {
+		CFA_list myCFA_list = null;
+
+		myCFA_list = AtriumFactoryImpl.eINSTANCE.createCFA_list();
+
+		((CapellaElement) myCFA_list).setId(EcoreUtil.generateUUID());
+		((ExtensibleElement) element).getOwnedExtensions().add((ElementExtension) myCFA_list);
+		return true;
+	}
+
+	/**
+	* <!-- begin-user-doc -->
+	* <!-- end-user-doc -->
+	* @param element : the element
+	* @param newSemanticContainer : the element view
+	* @generated NOT
+	*/
+	public boolean create_Assumption_list(EObject element, EObject newSemanticContainer) {
+		Assumption_list myAssumption_list = null;
+
+		myAssumption_list = AtriumFactoryImpl.eINSTANCE.createAssumption_list();
+
+		((CapellaElement) myAssumption_list).setId(EcoreUtil.generateUUID());
+		((ExtensibleElement) element).getOwnedExtensions().add((ElementExtension) myAssumption_list);
+		return true;
+	}
+
+	/**
+	* <!-- begin-user-doc -->
+	* <!-- end-user-doc -->
+	* @param element : the element
+	* @param newSemanticContainer : the element view
+	* @generated NOT
+	*/
+	public boolean create_DG_list(EObject element, EObject newSemanticContainer) {
+		DG_list myDG_list = null;
+
+		myDG_list = AtriumFactoryImpl.eINSTANCE.createDG_list();
+
+		((CapellaElement) myDG_list).setId(EcoreUtil.generateUUID());
+		((ExtensibleElement) element).getOwnedExtensions().add((ElementExtension) myDG_list);
+		return true;
+	}
+
 	/**
 	* <!-- begin-user-doc -->
 	* <!-- end-user-doc -->

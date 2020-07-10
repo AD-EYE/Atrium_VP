@@ -44,9 +44,14 @@ import org.polarsys.capella.core.data.requirement.RequirementPackage;
 import org.polarsys.capella.core.data.sharedmodel.SharedmodelPackage;
 
 import org.polarsys.capella.vp.atrium.Atrium.Assumption;
+import org.polarsys.capella.vp.atrium.Atrium.Assumption_list;
 import org.polarsys.capella.vp.atrium.Atrium.AtriumFactory;
 import org.polarsys.capella.vp.atrium.Atrium.AtriumPackage;
 
+import org.polarsys.capella.vp.atrium.Atrium.CFA_list;
+import org.polarsys.capella.vp.atrium.Atrium.DG_list;
+import org.polarsys.capella.vp.atrium.Atrium.Goal_list;
+import org.polarsys.capella.vp.atrium.Atrium.CFAlist;
 import org.polarsys.capella.vp.atrium.Atrium.assumptionType_Type;
 import org.polarsys.capella.vp.atrium.Atrium.stateLinkedElement_Type;
 import org.polarsys.kitalpha.emde.model.EmdePackage;
@@ -58,6 +63,27 @@ import org.polarsys.kitalpha.emde.model.EmdePackage;
  * @generated
  */
 public class AtriumPackageImpl extends EPackageImpl implements AtriumPackage {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass cfA_listEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass assumption_listEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass dG_listEClass = null;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -174,6 +200,66 @@ public class AtriumPackageImpl extends EPackageImpl implements AtriumPackage {
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(AtriumPackage.eNS_URI, theAtriumPackage);
 		return theAtriumPackage;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getCFA_list() {
+		return cfA_listEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getCFA_list_CFAs() {
+		return (EReference) cfA_listEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getAssumption_list() {
+		return assumption_listEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getAssumption_list_Assumptions() {
+		return (EReference) assumption_listEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getDG_list() {
+		return dG_listEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getDG_list_DGs() {
+		return (EReference) dG_listEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -366,6 +452,15 @@ public class AtriumPackageImpl extends EPackageImpl implements AtriumPackage {
 		isCreated = true;
 
 		// Create classes and their features
+		cfA_listEClass = createEClass(CFA_LIST);
+		createEReference(cfA_listEClass, CFA_LIST__CF_AS);
+
+		assumption_listEClass = createEClass(ASSUMPTION_LIST);
+		createEReference(assumption_listEClass, ASSUMPTION_LIST__ASSUMPTIONS);
+
+		dG_listEClass = createEClass(DG_LIST);
+		createEReference(dG_listEClass, DG_LIST__DGS);
+
 		cfaEClass = createEClass(CFA);
 		createEReference(cfaEClass, CFA__LINKEDTO_ELEMENT);
 		createEReference(cfaEClass, CFA__ASSUMPTION);
@@ -422,12 +517,34 @@ public class AtriumPackageImpl extends EPackageImpl implements AtriumPackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		cfA_listEClass.getESuperTypes().add(theCapellacorePackage.getNamedElement());
+		cfA_listEClass.getESuperTypes().add(theEmdePackage.getElementExtension());
+		assumption_listEClass.getESuperTypes().add(theCapellacorePackage.getNamedElement());
+		assumption_listEClass.getESuperTypes().add(theEmdePackage.getElementExtension());
+		dG_listEClass.getESuperTypes().add(theCapellacorePackage.getNamedElement());
+		dG_listEClass.getESuperTypes().add(theEmdePackage.getElementExtension());
 		cfaEClass.getESuperTypes().add(theCapellacorePackage.getNamedElement());
-		cfaEClass.getESuperTypes().add(theEmdePackage.getElementExtension());
 		assumptionEClass.getESuperTypes().add(theCapellacorePackage.getNamedElement());
 		dgEClass.getESuperTypes().add(theCapellacorePackage.getNamedElement());
 
 		// Initialize classes and features; add operations and parameters
+		initEClass(cfA_listEClass, CFA_list.class, "CFA_list", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getCFA_list_CFAs(), this.getCFA(), null, "CFAs", null, 0, -1, CFA_list.class, !IS_TRANSIENT, //$NON-NLS-1$
+				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+
+		initEClass(assumption_listEClass, Assumption_list.class, "Assumption_list", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getAssumption_list_Assumptions(), this.getAssumption(), null, "Assumptions", null, 0, -1, //$NON-NLS-1$
+				Assumption_list.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(dG_listEClass, DG_list.class, "DG_list", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEReference(getDG_list_DGs(), this.getDG(), null, "DGs", null, 0, -1, DG_list.class, !IS_TRANSIENT, //$NON-NLS-1$
+				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+
 		initEClass(cfaEClass, org.polarsys.capella.vp.atrium.Atrium.CFA.class, "CFA", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
 				IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getCFA_LinkedtoElement(), theCapellacorePackage.getCapellaElement(), null, "linkedtoElement", //$NON-NLS-1$
@@ -435,10 +552,10 @@ public class AtriumPackageImpl extends EPackageImpl implements AtriumPackage {
 				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCFA_Assumption(), this.getAssumption(), null, "assumption", null, 0, -1, //$NON-NLS-1$
 				org.polarsys.capella.vp.atrium.Atrium.CFA.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
-				IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCFA_Goal(), this.getDG(), null, "goal", null, 1, 1, //$NON-NLS-1$
 				org.polarsys.capella.vp.atrium.Atrium.CFA.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
-				IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCFA_Content(), ecorePackage.getEString(), "content", null, 0, 1, //$NON-NLS-1$
 				org.polarsys.capella.vp.atrium.Atrium.CFA.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
 				!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -495,9 +612,15 @@ public class AtriumPackageImpl extends EPackageImpl implements AtriumPackage {
 	 */
 	protected void createConstraintAnnotations() {
 		String source = "http://www.polarsys.org/kitalpha/emde/1.0.0/constraint"; //$NON-NLS-1$
-		addAnnotation(cfaEClass, source, new String[] { "ExtendedElement", //$NON-NLS-1$
-				" http://www.polarsys.org/capella/core/la/1.4.0#//LogicalComponent http://www.polarsys.org/capella/core/cs/1.4.0#//Part http://www.polarsys.org/capella/core/fa/1.4.0#//AbstractFunction http://www.polarsys.org/capella/core/cs/1.4.0#//Component http://www.polarsys.org/capella/core/fa/1.4.0#//FunctionalExchange http://www.polarsys.org/capella/core/la/1.4.0#//LogicalFunction" //$NON-NLS-1$
-		});
+		addAnnotation(cfA_listEClass, source,
+				new String[] { "ExtendedElement", " http://www.polarsys.org/capella/core/la/1.4.0#//LogicalComponent" //$NON-NLS-1$ //$NON-NLS-2$
+				});
+		addAnnotation(assumption_listEClass, source,
+				new String[] { "ExtendedElement", " http://www.polarsys.org/capella/core/la/1.4.0#//LogicalComponent" //$NON-NLS-1$ //$NON-NLS-2$
+				});
+		addAnnotation(dG_listEClass, source,
+				new String[] { "ExtendedElement", " http://www.polarsys.org/capella/core/la/1.4.0#//LogicalComponent" //$NON-NLS-1$ //$NON-NLS-2$
+				});
 	}
 
 	/**
@@ -508,8 +631,14 @@ public class AtriumPackageImpl extends EPackageImpl implements AtriumPackage {
 	 */
 	protected void createConstraintMappingAnnotations() {
 		String source = "http://www.polarsys.org/kitalpha/emde/1.0.0/constraintMapping"; //$NON-NLS-1$
-		addAnnotation(cfaEClass, source, new String[] { "Mapping", //$NON-NLS-1$
-				" platform:/plugin/org.polarsys.capella.core.data.gen/model/LogicalArchitecture.ecore#//LogicalComponent platform:/plugin/org.polarsys.capella.core.data.gen/model/CompositeStructure.ecore#//Part platform:/plugin/org.polarsys.capella.core.data.gen/model/FunctionalAnalysis.ecore#//AbstractFunction platform:/plugin/org.polarsys.capella.core.data.gen/model/CompositeStructure.ecore#//Component platform:/plugin/org.polarsys.capella.core.data.gen/model/FunctionalAnalysis.ecore#//FunctionalExchange platform:/plugin/org.polarsys.capella.core.data.gen/model/LogicalArchitecture.ecore#//LogicalFunction" //$NON-NLS-1$
+		addAnnotation(cfA_listEClass, source, new String[] { "Mapping", //$NON-NLS-1$
+				" platform:/plugin/org.polarsys.capella.core.data.gen/model/LogicalArchitecture.ecore#//LogicalComponent" //$NON-NLS-1$
+		});
+		addAnnotation(assumption_listEClass, source, new String[] { "Mapping", //$NON-NLS-1$
+				" platform:/plugin/org.polarsys.capella.core.data.gen/model/LogicalArchitecture.ecore#//LogicalComponent" //$NON-NLS-1$
+		});
+		addAnnotation(dG_listEClass, source, new String[] { "Mapping", //$NON-NLS-1$
+				" platform:/plugin/org.polarsys.capella.core.data.gen/model/LogicalArchitecture.ecore#//LogicalComponent" //$NON-NLS-1$
 		});
 	}
 

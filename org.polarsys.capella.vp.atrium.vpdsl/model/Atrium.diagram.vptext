@@ -12,93 +12,149 @@ Diagrams Atrium.diagram {
 	DiagramExtension "Atrium_LogicalExtension" {
 		extended-diagram: LogicalArchitectureBlank
 		Mapping {
-			
-			
-			Container container_CFA {
-				domain-context: Atrium.data.CFA
+			Container Container_list_CFA {
+				domain-context: Atrium.data.CFA_list
 				provided-by association external emde.ExtensibleElement.ownedExtensions
 				Representation {
-					Label { content: "CFA here" police: black }
+					Label {
+						content: "CFA List"
+						police: black
+					}
 					Style {
 						FlatStyle {background: light_chocolate foreground: white }
 					}
 				}
 				Contains {
-					
-
-					
-								Node node_assumption {
-									domain-context: Atrium.data.Assumption provided-by association Atrium.data.CFA.assumption
-									Representation {
-										Label { content: "Clarification here" police: black alignment: center}
-										Style {
-											BasicStyle { border-color: black background: light_green form: Dot }
-										}
-									}
-									Representation {
-										condition: Java isTask
-										Label { content: "Task here" police: black alignment: center}
-										Style {
-											BasicStyle { border-color: black background: gray form: Dot }
-										}
-									}
-									Representation {
-										condition: Java isRisk
-										Label { content: "Risk here" police: black alignment: center}
-										Style {
-											BasicStyle { border-color: black background: red form: Triangle }
-										}
-									}
-									Contains {
-										//[Container or  Node]
-									}
+					Node node_CFA {
+						domain-context: Atrium.data.CFA
+						provided-by association external emde.ExtensibleElement.ownedExtensions
+						Representation {
+							Label {
+								content: "CFA here"
+								police: black
+							}
+							Style {
+								BasicStyle {
+									border-color: black background: light_green form: Square
 								}
-							
-								Node node_DG {
-									domain-context: Atrium.data.DG provided-by association Atrium.data.CFA.goal
-									Representation {
-										Label { content: "Goal here" police: black alignment: center}
-										Style {
-											BasicStyle { border-color: black background: light_gray form: Square }
-										}
-									}
-									Contains {
-										//[Container or  Node]
-									}
-								}
-				
-					
-				}
-			}
-			
-			
-			///Import Capella Element + giving them a condition
-			Container ContainerLC {
-				import: LABLogicalComponent
-				Representation {
-					condition: Java isElementNew
-					Style {
-						FlatStyle {
-							background: red 
-							foreground: white
+							}
 						}
 					}
 				}
 			}
-			Node NodeLF{
+			Container Container_list_Assumption {
+				domain-context: Atrium.data.Assumption_list
+				provided-by association external emde.ExtensibleElement.ownedExtensions
+				Representation {
+					Label {
+						content: "Assumption list"
+						police: black
+					}
+					Style {
+						FlatStyle {background: light_chocolate foreground: white }
+					}
+				}
+				Contains {
+					Node node_assumption {
+						domain-context: Atrium.data.Assumption
+						provided-by association Atrium.data.Assumption_list.Assumptions
+						Representation {
+							Label {
+								content: "Clarification here"
+								police: black
+								alignment: center
+							}
+							Style {
+								BasicStyle {
+									border-color: black background: light_green form: Dot
+								}
+							}
+						}
+						Representation {
+							condition: Java isTask
+							Label {
+								content: "Task here"
+								police: black
+								alignment: center
+							}
+							Style {
+								BasicStyle {
+									border-color: black background: gray form: Dot
+								}
+							}
+						}
+						Representation {
+							condition: Java isRisk
+							Label {
+								content: "Risk here"
+								police: black
+								alignment: center
+							}
+							Style {
+								BasicStyle {
+									border-color: black background: red form: Triangle
+								}
+							}
+						}
+					}
+				}
+			}
+			Container Container_list_DG {
+				domain-context: Atrium.data.DG_list
+				provided-by association external emde.ExtensibleElement.ownedExtensions
+				Representation {
+					Label {
+						content: "DG list"
+						police: black
+					}
+					Style {
+						FlatStyle {background: light_chocolate foreground: white }
+					}
+				}
+				Contains {
+					Node node_DG {
+						domain-context: Atrium.data.DG
+						provided-by association Atrium.data.DG_list.DGs
+						Representation {
+							Label {
+								content: "Goal here"
+								police: black
+								alignment: center
+							}
+							Style {
+								BasicStyle {
+									border-color: black background: light_gray form: Square
+								}
+							}
+						}
+					}
+				}
+			}
+
+			///Import Capella Element + giving them a condition
+			Container ContainerLC {
+				import: LABLogicalComponent
+				Representation {
+					condition: Java isElementNew Style {
+						FlatStyle {
+							background: red foreground: white
+						}
+					}
+				}
+			}
+			Node NodeLF {
 				import: LABLogicalFunction
 				Representation {
-					condition: Java isElementNewNode
-					Style {
-							BasicStyle { border-color: black background: light_red form: Square }
+					condition: Java isElementNewNode Style {
+						BasicStyle {
+							border-color: black background: light_red form: Square
+						}
 					}
 				}
 			}
 			EdgeImport FunctionalExchange {
-				import: LABDataFlowbetweenFunction
-				Representation {
-					condition: Java isElementNewFE
-					Style {
+				import: LABDataFlowbetweenFunction Representation {
+					condition: Java isElementNewFE Style {
 						line-style: solid
 						end-decorator: NoDecoration
 						color: red
@@ -106,14 +162,11 @@ Diagrams Atrium.diagram {
 				}
 			}
 			//End import
-			
-			
+
+
 			//////////////EDGES BETWEEN CFA AND CAPELLA ELEMENT////////////////////////
 			Edge LinkCFA_LC {
-				association-context: Atrium.data.CFA.linkedtoElement
-				source: container_CFA
-				target: ContainerLC 
-				Representation {
+				association-context: Atrium.data.CFA.linkedtoElement source: Container_list_CFA.node_CFA target: ContainerLC Representation {
 					Style {
 						line-style: dash
 						end-decorator: NoDecoration
@@ -121,8 +174,7 @@ Diagrams Atrium.diagram {
 					}
 				}
 				Representation {
-					condition: Java isElementNewEdge
-					Style {
+					condition: Java isElementNewEdge Style {
 						line-style: dash
 						end-decorator: NoDecoration
 						color: red
@@ -130,10 +182,7 @@ Diagrams Atrium.diagram {
 				}
 			}
 			Edge LinkCFA_LF {
-				association-context: Atrium.data.CFA.linkedtoElement
-				source: container_CFA
-				target: NodeLF 
-				Representation {
+				association-context: Atrium.data.CFA.linkedtoElement source: Container_list_CFA.node_CFA target: NodeLF Representation {
 					Style {
 						line-style: dash
 						end-decorator: NoDecoration
@@ -141,8 +190,7 @@ Diagrams Atrium.diagram {
 					}
 				}
 				Representation {
-					condition: Java isElementNewEdge
-					Style {
+					condition: Java isElementNewEdge Style {
 						line-style: dash
 						end-decorator: NoDecoration
 						color: red
@@ -150,10 +198,7 @@ Diagrams Atrium.diagram {
 				}
 			}
 			Edge LinkCFA_FE {
-				association-context: Atrium.data.CFA.linkedtoElement
-				source: container_CFA
-				target: FunctionalExchange 
-				Representation {
+				association-context: Atrium.data.CFA.linkedtoElement source: Container_list_CFA.node_CFA target: FunctionalExchange Representation {
 					Style {
 						line-style: dash
 						end-decorator: NoDecoration
@@ -161,23 +206,36 @@ Diagrams Atrium.diagram {
 					}
 				}
 				Representation {
-					condition: Java isElementNewEdge
-					Style {
+					condition: Java isElementNewEdge Style {
 						line-style: dash
 						end-decorator: NoDecoration
 						color: red
 					}
 				}
 			}
-			
+
 			/////////////END EDGES///////////////////////
+
 		}
-		
 		Actions {
-			//ReconnectEdge ReconnectLink { label: "Connect CFA" action-for: LinkCFA_LC }
-			OpenAction add_CFA {label: "Add CFA"}
-			OpenAction add_assumption {label: "Add Assumption"}
-			OpenAction add_DG {label: "Add DG"}
+			OpenAction create_CFA_list {
+				label: "Create CFA List"
+			}
+			OpenAction create_Assumption_list {
+				label: "Create Assumption List"
+			}
+			OpenAction create_DG_list {
+				label: "Create DG List"
+			}
+			OpenAction add_CFA {
+				label: "Add CFA"
+			}
+			OpenAction add_assumption {
+				label: "Add Assumption"
+			}
+			OpenAction add_DG {
+				label: "Add DG"
+			}
 		}
 	}
 }

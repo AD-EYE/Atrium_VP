@@ -58,6 +58,12 @@ public class AtriumFactoryImpl extends EFactoryImpl implements AtriumFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
+		case AtriumPackage.CFA_LIST:
+			return createCFA_list();
+		case AtriumPackage.ASSUMPTION_LIST:
+			return createAssumption_list();
+		case AtriumPackage.DG_LIST:
+			return createDG_list();
 		case AtriumPackage.CFA:
 			return createCFA();
 		case AtriumPackage.ASSUMPTION:
@@ -101,6 +107,51 @@ public class AtriumFactoryImpl extends EFactoryImpl implements AtriumFactory {
 		default:
 			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CFA_list createCFA_list() {
+		CFA_listImpl cfA_list = new CFA_listImpl();
+		//begin-capella-code
+
+		cfA_list.setId(IdGenerator.createId());
+
+		//end-capella-code
+		return cfA_list;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Assumption_list createAssumption_list() {
+		Assumption_listImpl assumption_list = new Assumption_listImpl();
+		//begin-capella-code
+
+		assumption_list.setId(IdGenerator.createId());
+
+		//end-capella-code
+		return assumption_list;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DG_list createDG_list() {
+		DG_listImpl dG_list = new DG_listImpl();
+		//begin-capella-code
+
+		dG_list.setId(IdGenerator.createId());
+
+		//end-capella-code
+		return dG_list;
 	}
 
 	/**
@@ -210,6 +261,45 @@ public class AtriumFactoryImpl extends EFactoryImpl implements AtriumFactory {
 	@Deprecated
 	public static AtriumPackage getPackage() {
 		return AtriumPackage.eINSTANCE;
+	}
+
+	/**
+	 * Creates class and sets its name
+	 * (This method comes from a customization of the standard EMF generator)
+	 *
+	 * @param name_p : default name of created element
+	 * @generated
+	 */
+	public CFA_list createCFA_list(String name_p) {
+		CFA_list cfA_list = createCFA_list();
+		cfA_list.setName(name_p);
+		return cfA_list;
+	}
+
+	/**
+	 * Creates class and sets its name
+	 * (This method comes from a customization of the standard EMF generator)
+	 *
+	 * @param name_p : default name of created element
+	 * @generated
+	 */
+	public Assumption_list createAssumption_list(String name_p) {
+		Assumption_list assumption_list = createAssumption_list();
+		assumption_list.setName(name_p);
+		return assumption_list;
+	}
+
+	/**
+	 * Creates class and sets its name
+	 * (This method comes from a customization of the standard EMF generator)
+	 *
+	 * @param name_p : default name of created element
+	 * @generated
+	 */
+	public DG_list createDG_list(String name_p) {
+		DG_list dG_list = createDG_list();
+		dG_list.setName(name_p);
+		return dG_list;
 	}
 
 	//begin-capella-code

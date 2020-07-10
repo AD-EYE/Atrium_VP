@@ -112,6 +112,75 @@ public class AtriumItemProviderAdapterFactory extends AtriumAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.polarsys.capella.vp.atrium.Atrium.CFA_list} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected CFA_listItemProvider cfA_listItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.polarsys.capella.vp.atrium.Atrium.CFA_list}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createCFA_listAdapter() {
+		if (cfA_listItemProvider == null) {
+			cfA_listItemProvider = new CFA_listItemProvider(this);
+		}
+
+		return cfA_listItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.polarsys.capella.vp.atrium.Atrium.Assumption_list} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected Assumption_listItemProvider assumption_listItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.polarsys.capella.vp.atrium.Atrium.Assumption_list}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createAssumption_listAdapter() {
+		if (assumption_listItemProvider == null) {
+			assumption_listItemProvider = new Assumption_listItemProvider(this);
+		}
+
+		return assumption_listItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.polarsys.capella.vp.atrium.Atrium.DG_list} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected DG_listItemProvider dG_listItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.polarsys.capella.vp.atrium.Atrium.DG_list}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createDG_listAdapter() {
+		if (dG_listItemProvider == null) {
+			dG_listItemProvider = new DG_listItemProvider(this);
+		}
+
+		return dG_listItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link org.polarsys.capella.vp.atrium.Atrium.CFA} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -312,6 +381,12 @@ public class AtriumItemProviderAdapterFactory extends AtriumAdapterFactory
 	 */
 	@Override
 	public void dispose() {
+		if (cfA_listItemProvider != null)
+			cfA_listItemProvider.dispose();
+		if (assumption_listItemProvider != null)
+			assumption_listItemProvider.dispose();
+		if (dG_listItemProvider != null)
+			dG_listItemProvider.dispose();
 		if (cfaItemProvider != null)
 			cfaItemProvider.dispose();
 		if (assumptionItemProvider != null)
@@ -379,7 +454,29 @@ public class AtriumItemProviderAdapterFactory extends AtriumAdapterFactory
 				{
 					CommandParameter commandParameter = createChildParameter(
 							EmdePackage.Literals.EXTENSIBLE_ELEMENT__OWNED_EXTENSIONS,
-							AtriumFactory.eINSTANCE.createCFA());
+							AtriumFactory.eINSTANCE.createCFA_list());
+					if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
+						newChildDescriptors.add(commandParameter);
+					}
+				}
+				// end-extension-code
+
+				// begin-extension-code
+				{
+					CommandParameter commandParameter = createChildParameter(
+							EmdePackage.Literals.EXTENSIBLE_ELEMENT__OWNED_EXTENSIONS,
+							AtriumFactory.eINSTANCE.createAssumption_list());
+					if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
+						newChildDescriptors.add(commandParameter);
+					}
+				}
+				// end-extension-code
+
+				// begin-extension-code
+				{
+					CommandParameter commandParameter = createChildParameter(
+							EmdePackage.Literals.EXTENSIBLE_ELEMENT__OWNED_EXTENSIONS,
+							AtriumFactory.eINSTANCE.createDG_list());
 					if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
 						newChildDescriptors.add(commandParameter);
 					}
@@ -476,6 +573,39 @@ public class AtriumItemProviderAdapterFactory extends AtriumAdapterFactory
 					return null;
 				}
 				// end-extension-code
+				// begin-extension-code
+				{
+					CommandParameter commandParameter = createChildParameter(
+							SharedmodelPackage.Literals.GENERIC_PKG__CAPELLA_ELEMENTS,
+							AtriumFactory.eINSTANCE.createCFA_list());
+					if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
+						newChildDescriptors.add(commandParameter);
+					}
+				}
+				// end-extension-code
+
+				// begin-extension-code
+				{
+					CommandParameter commandParameter = createChildParameter(
+							SharedmodelPackage.Literals.GENERIC_PKG__CAPELLA_ELEMENTS,
+							AtriumFactory.eINSTANCE.createAssumption_list());
+					if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
+						newChildDescriptors.add(commandParameter);
+					}
+				}
+				// end-extension-code
+
+				// begin-extension-code
+				{
+					CommandParameter commandParameter = createChildParameter(
+							SharedmodelPackage.Literals.GENERIC_PKG__CAPELLA_ELEMENTS,
+							AtriumFactory.eINSTANCE.createDG_list());
+					if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
+						newChildDescriptors.add(commandParameter);
+					}
+				}
+				// end-extension-code
+
 				// begin-extension-code
 				{
 					CommandParameter commandParameter = createChildParameter(

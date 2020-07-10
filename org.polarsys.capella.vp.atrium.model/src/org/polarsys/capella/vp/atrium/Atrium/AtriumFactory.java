@@ -21,6 +21,33 @@ public interface AtriumFactory extends EFactory {
 	AtriumFactory eINSTANCE = org.polarsys.capella.vp.atrium.Atrium.impl.AtriumFactoryImpl.init();
 
 	/**
+	 * Returns a new object of class '<em>CFA list</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>CFA list</em>'.
+	 * @generated
+	 */
+	CFA_list createCFA_list();
+
+	/**
+	 * Returns a new object of class '<em>Assumption list</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Assumption list</em>'.
+	 * @generated
+	 */
+	Assumption_list createAssumption_list();
+
+	/**
+	 * Returns a new object of class '<em>DG list</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>DG list</em>'.
+	 * @generated
+	 */
+	DG_list createDG_list();
+
+	/**
 	 * Returns a new object of class '<em>CFA</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

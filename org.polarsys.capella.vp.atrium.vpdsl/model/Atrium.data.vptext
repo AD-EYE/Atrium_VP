@@ -7,16 +7,34 @@
  *
  */
 Data Atrium.data {
+	
+	Class CFA_list {
+		extends la.LogicalComponent
+		Associations:
+			CFAs contains [0,*] CFA
+	}
+	
+	Class Assumption_list {
+		extends la.LogicalComponent
+		Associations:
+			Assumptions contains [0,*] Assumption
+	}
+	
+	Class DG_list {
+		extends la.LogicalComponent
+		Associations:
+			DGs contains [0,*] DG
+	}
+	
 	Class CFA {
-		extends la.LogicalComponent, cs.Part, fa.AbstractFunction, cs.Component, fa.FunctionalExchange, la.LogicalFunction
 		Attributes:
 			content type ecore.EString
 			state type ecore.EBoolean
 			stateLinkedElement type ecore.EEnumerator values ("Legacy","New Development")
 		Associations:
 			linkedtoElement refers [1,1] external capellacore.CapellaElement
-			assumption contains [0,*] Assumption
-			goal contains [1,1] DG
+			assumption refers [0,*] Assumption
+			goal refers [1,1] DG
 	}
 	
 	Class Assumption {

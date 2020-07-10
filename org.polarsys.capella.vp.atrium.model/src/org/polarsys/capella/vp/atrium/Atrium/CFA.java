@@ -25,12 +25,11 @@ import org.polarsys.kitalpha.emde.model.ElementExtension;
  * </ul>
  *
  * @see org.polarsys.capella.vp.atrium.Atrium.AtriumPackage#getCFA()
- * @model annotation="http://www.polarsys.org/kitalpha/emde/1.0.0/constraint ExtendedElement=' http://www.polarsys.org/capella/core/la/1.4.0#//LogicalComponent http://www.polarsys.org/capella/core/cs/1.4.0#//Part http://www.polarsys.org/capella/core/fa/1.4.0#//AbstractFunction http://www.polarsys.org/capella/core/cs/1.4.0#//Component http://www.polarsys.org/capella/core/fa/1.4.0#//FunctionalExchange http://www.polarsys.org/capella/core/la/1.4.0#//LogicalFunction'"
- *        annotation="http://www.polarsys.org/kitalpha/emde/1.0.0/constraintMapping Mapping=' platform:/plugin/org.polarsys.capella.core.data.gen/model/LogicalArchitecture.ecore#//LogicalComponent platform:/plugin/org.polarsys.capella.core.data.gen/model/CompositeStructure.ecore#//Part platform:/plugin/org.polarsys.capella.core.data.gen/model/FunctionalAnalysis.ecore#//AbstractFunction platform:/plugin/org.polarsys.capella.core.data.gen/model/CompositeStructure.ecore#//Component platform:/plugin/org.polarsys.capella.core.data.gen/model/FunctionalAnalysis.ecore#//FunctionalExchange platform:/plugin/org.polarsys.capella.core.data.gen/model/LogicalArchitecture.ecore#//LogicalFunction'"
+ * @model
  * @generated
  */
 
-public interface CFA extends NamedElement, ElementExtension {
+public interface CFA extends NamedElement {
 
 	/**
 	 * Returns the value of the '<em><b>Linkedto Element</b></em>' reference.
@@ -59,39 +58,39 @@ public interface CFA extends NamedElement, ElementExtension {
 	void setLinkedtoElement(CapellaElement value);
 
 	/**
-	 * Returns the value of the '<em><b>Assumption</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Assumption</b></em>' reference list.
 	 * The list contents are of type {@link org.polarsys.capella.vp.atrium.Atrium.Assumption}.
 	
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Assumption</em>' containment reference list.
+	 * @return the value of the '<em>Assumption</em>' reference list.
 	 * @see org.polarsys.capella.vp.atrium.Atrium.AtriumPackage#getCFA_Assumption()
-	 * @model containment="true"
+	 * @model
 	 * @generated
 	 */
 
 	EList<Assumption> getAssumption();
 
 	/**
-	 * Returns the value of the '<em><b>Goal</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Goal</b></em>' reference.
 	
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Goal</em>' containment reference.
+	 * @return the value of the '<em>Goal</em>' reference.
 	 * @see #setGoal(DG)
 	 * @see org.polarsys.capella.vp.atrium.Atrium.AtriumPackage#getCFA_Goal()
-	 * @model containment="true" required="true"
+	 * @model required="true"
 	 * @generated
 	 */
 
 	DG getGoal();
 
 	/**
-	 * Sets the value of the '{@link org.polarsys.capella.vp.atrium.Atrium.CFA#getGoal <em>Goal</em>}' containment reference.
+	 * Sets the value of the '{@link org.polarsys.capella.vp.atrium.Atrium.CFA#getGoal <em>Goal</em>}' reference.
 	
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Goal</em>' containment reference.
+	 * @param value the new value of the '<em>Goal</em>' reference.
 	 * @see #getGoal()
 	 * @generated
 	 */

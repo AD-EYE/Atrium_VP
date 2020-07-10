@@ -1,12 +1,24 @@
 <?xml version="1.0" encoding="ASCII"?>
 <vpdesc:Viewpoint xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:commondata="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/commondata/1.0.0" xmlns:configuration="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdiagram/conf/1.0.0" xmlns:docGenConfiguration="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/DocGenConfiguration/1.0.0" xmlns:expression="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdiagram/expression/1.0.0" xmlns:vpconf="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpconf/1.0.0" xmlns:vpdesc="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdesc/1.0.0" xmlns:vpdiagram="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdiagram/1.0.0" xmlns:vpui="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpui/1.0.0" name="Atrium" shortName="Atrium">
   <VP_Data name="Atrium.data">
+    <VP_Classes name="CFA_list">
+      <VP_Classes_Associations xsi:type="vpdesc:LocalClassAssociation" name="CFAs" cardinality="0..*" LocalTarget="//@VP_Data/@VP_Classes.3"/>
+      <extends href="http://www.polarsys.org/capella/core/la/1.4.0#//LogicalComponent"/>
+    </VP_Classes>
+    <VP_Classes name="Assumption_list">
+      <VP_Classes_Associations xsi:type="vpdesc:LocalClassAssociation" name="Assumptions" cardinality="0..*" LocalTarget="//@VP_Data/@VP_Classes.4"/>
+      <extends href="http://www.polarsys.org/capella/core/la/1.4.0#//LogicalComponent"/>
+    </VP_Classes>
+    <VP_Classes name="DG_list">
+      <VP_Classes_Associations xsi:type="vpdesc:LocalClassAssociation" name="DGs" cardinality="0..*" LocalTarget="//@VP_Data/@VP_Classes.5"/>
+      <extends href="http://www.polarsys.org/capella/core/la/1.4.0#//LogicalComponent"/>
+    </VP_Classes>
     <VP_Classes name="CFA">
       <VP_Classes_Associations xsi:type="vpdesc:ExternalClassAssociation" name="linkedtoElement" cardinality="1" type="reference">
         <ExternalTarget href="http://www.polarsys.org/capella/core/core/1.4.0#//CapellaElement"/>
       </VP_Classes_Associations>
-      <VP_Classes_Associations xsi:type="vpdesc:LocalClassAssociation" name="assumption" cardinality="0..*" LocalTarget="//@VP_Data/@VP_Classes.1"/>
-      <VP_Classes_Associations xsi:type="vpdesc:LocalClassAssociation" name="goal" cardinality="1" LocalTarget="//@VP_Data/@VP_Classes.2"/>
+      <VP_Classes_Associations xsi:type="vpdesc:LocalClassAssociation" name="assumption" cardinality="0..*" type="reference" LocalTarget="//@VP_Data/@VP_Classes.4"/>
+      <VP_Classes_Associations xsi:type="vpdesc:LocalClassAssociation" name="goal" cardinality="1" type="reference" LocalTarget="//@VP_Data/@VP_Classes.5"/>
       <VP_Class_Attributes name="content">
         <owned_type xsi:type="vpdesc:ExternalAttributeType">
           <type href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -24,12 +36,6 @@
           <type href="http://www.eclipse.org/emf/2002/Ecore#//EEnumerator"/>
         </owned_type>
       </VP_Class_Attributes>
-      <extends href="http://www.polarsys.org/capella/core/la/1.4.0#//LogicalComponent"/>
-      <extends href="http://www.polarsys.org/capella/core/cs/1.4.0#//Part"/>
-      <extends href="http://www.polarsys.org/capella/core/fa/1.4.0#//AbstractFunction"/>
-      <extends href="http://www.polarsys.org/capella/core/cs/1.4.0#//Component"/>
-      <extends href="http://www.polarsys.org/capella/core/fa/1.4.0#//FunctionalExchange"/>
-      <extends href="http://www.polarsys.org/capella/core/la/1.4.0#//LogicalFunction"/>
     </VP_Classes>
     <VP_Classes name="Assumption">
       <VP_Class_Attributes name="content">
@@ -81,24 +87,24 @@
       <UI_Containers name="Atrium_CFA_Section">
         <subContainers name="Atrium_CFA_AttributeGroup" label="C F A Attributes">
           <UI_fields name="contentField" label="Content">
-            <Mapping UI_Field_Mapped_To="//@VP_Data/@VP_Classes.0/@VP_Class_Attributes.0"/>
+            <Mapping UI_Field_Mapped_To="//@VP_Data/@VP_Classes.3/@VP_Class_Attributes.0"/>
           </UI_fields>
           <UI_fields name="stateField" label="State" type="checkbox">
-            <Mapping UI_Field_Mapped_To="//@VP_Data/@VP_Classes.0/@VP_Class_Attributes.1"/>
+            <Mapping UI_Field_Mapped_To="//@VP_Data/@VP_Classes.3/@VP_Class_Attributes.1"/>
           </UI_fields>
           <UI_fields name="stateLinkedElementField" label="State Linked Element" type="radiobox">
-            <Mapping UI_Field_Mapped_To="//@VP_Data/@VP_Classes.0/@VP_Class_Attributes.2"/>
+            <Mapping UI_Field_Mapped_To="//@VP_Data/@VP_Classes.3/@VP_Class_Attributes.2"/>
           </UI_fields>
         </subContainers>
         <subContainers name="Atrium_CFA_AssociationGroup" label="C F A Associations">
           <UI_fields name="linkedtoElementAssociation" label="Linkedto Element" type="simpleChoiceList">
-            <Mapping UI_Field_Mapped_To="//@VP_Data/@VP_Classes.0/@VP_Classes_Associations.0"/>
+            <Mapping UI_Field_Mapped_To="//@VP_Data/@VP_Classes.3/@VP_Classes_Associations.0"/>
           </UI_fields>
           <UI_fields name="assumptionAssociation" label="Assumption" type="multipleChoiceList">
-            <Mapping UI_Field_Mapped_To="//@VP_Data/@VP_Classes.0/@VP_Classes_Associations.1"/>
+            <Mapping UI_Field_Mapped_To="//@VP_Data/@VP_Classes.3/@VP_Classes_Associations.1"/>
           </UI_fields>
           <UI_fields name="goalAssociation" label="Goal" type="simpleChoiceList">
-            <Mapping UI_Field_Mapped_To="//@VP_Data/@VP_Classes.0/@VP_Classes_Associations.2"/>
+            <Mapping UI_Field_Mapped_To="//@VP_Data/@VP_Classes.3/@VP_Classes_Associations.2"/>
           </UI_fields>
         </subContainers>
       </UI_Containers>
@@ -107,16 +113,16 @@
       <UI_Containers name="Atrium_Assumption_Section">
         <subContainers name="Atrium_Assumption_AttributeGroup" label="Assumption Attributes">
           <UI_fields name="contentField1" label="Content">
-            <Mapping UI_Field_Mapped_To="//@VP_Data/@VP_Classes.1/@VP_Class_Attributes.0"/>
+            <Mapping UI_Field_Mapped_To="//@VP_Data/@VP_Classes.4/@VP_Class_Attributes.0"/>
           </UI_fields>
           <UI_fields name="rationaleField" label="Rationale">
-            <Mapping UI_Field_Mapped_To="//@VP_Data/@VP_Classes.1/@VP_Class_Attributes.1"/>
+            <Mapping UI_Field_Mapped_To="//@VP_Data/@VP_Classes.4/@VP_Class_Attributes.1"/>
           </UI_fields>
           <UI_fields name="validityField" label="Validity">
-            <Mapping UI_Field_Mapped_To="//@VP_Data/@VP_Classes.1/@VP_Class_Attributes.2"/>
+            <Mapping UI_Field_Mapped_To="//@VP_Data/@VP_Classes.4/@VP_Class_Attributes.2"/>
           </UI_fields>
           <UI_fields name="assumptionTypeField" label="Assumption Type" type="radiobox">
-            <Mapping UI_Field_Mapped_To="//@VP_Data/@VP_Classes.1/@VP_Class_Attributes.3"/>
+            <Mapping UI_Field_Mapped_To="//@VP_Data/@VP_Classes.4/@VP_Class_Attributes.3"/>
           </UI_fields>
         </subContainers>
       </UI_Containers>
@@ -125,7 +131,7 @@
       <UI_Containers name="Atrium_DG_Section">
         <subContainers name="Atrium_DG_AttributeGroup" label="D G Attributes">
           <UI_fields name="contentField2" label="Content">
-            <Mapping UI_Field_Mapped_To="//@VP_Data/@VP_Classes.2/@VP_Class_Attributes.0"/>
+            <Mapping UI_Field_Mapped_To="//@VP_Data/@VP_Classes.5/@VP_Class_Attributes.0"/>
           </UI_fields>
         </subContainers>
       </UI_Containers>
@@ -134,7 +140,7 @@
   <VP_Aspects xsi:type="vpdiagram:DiagramSet" name="Atrium.diagram">
     <diagrams xsi:type="vpdiagram:DiagramExtension" name="Atrium_LogicalExtension">
       <the_MappingSet>
-        <diagram_Elements xsi:type="vpdiagram:Container" name="container_CFA">
+        <diagram_Elements xsi:type="vpdiagram:Container" name="Container_list_CFA">
           <the_domain>
             <domain_Class xsi:type="commondata:LocalClass" class="//@VP_Data/@VP_Classes.0"/>
             <chlidren_list xsi:type="commondata:ExternalAssociation">
@@ -144,7 +150,41 @@
           <style>
             <node_Label>
               <value>
-                <expressionElements xsi:type="expression:StringElement" value="CFA here"/>
+                <expressionElements xsi:type="expression:StringElement" value="CFA List"/>
+              </value>
+            </node_Label>
+            <style xsi:type="vpdiagram:FlatStyle" backgroundColor="light_chocolate" forgroundColor="white"/>
+          </style>
+          <children>
+            <owned_nodes xsi:type="vpdiagram:Node" name="node_CFA">
+              <the_domain>
+                <domain_Class xsi:type="commondata:LocalClass" class="//@VP_Data/@VP_Classes.3"/>
+                <chlidren_list xsi:type="commondata:ExternalAssociation">
+                  <reference href="http://www.polarsys.org/kitalpha/emde/1.0.0#//ExtensibleElement/ownedExtensions"/>
+                </chlidren_list>
+              </the_domain>
+              <style>
+                <node_Label>
+                  <value>
+                    <expressionElements xsi:type="expression:StringElement" value="CFA here"/>
+                  </value>
+                </node_Label>
+                <style xsi:type="vpdiagram:BasicStyle" backgroundColor="light_green"/>
+              </style>
+            </owned_nodes>
+          </children>
+        </diagram_Elements>
+        <diagram_Elements xsi:type="vpdiagram:Container" name="Container_list_Assumption">
+          <the_domain>
+            <domain_Class xsi:type="commondata:LocalClass" class="//@VP_Data/@VP_Classes.1"/>
+            <chlidren_list xsi:type="commondata:ExternalAssociation">
+              <reference href="http://www.polarsys.org/kitalpha/emde/1.0.0#//ExtensibleElement/ownedExtensions"/>
+            </chlidren_list>
+          </the_domain>
+          <style>
+            <node_Label>
+              <value>
+                <expressionElements xsi:type="expression:StringElement" value="Assumption list"/>
               </value>
             </node_Label>
             <style xsi:type="vpdiagram:FlatStyle" backgroundColor="light_chocolate" forgroundColor="white"/>
@@ -152,8 +192,8 @@
           <children>
             <owned_nodes xsi:type="vpdiagram:Node" name="node_assumption">
               <the_domain>
-                <domain_Class xsi:type="commondata:LocalClass" class="//@VP_Data/@VP_Classes.1"/>
-                <chlidren_list xsi:type="commondata:LocalAssociation" reference="//@VP_Data/@VP_Classes.0/@VP_Classes_Associations.1"/>
+                <domain_Class xsi:type="commondata:LocalClass" class="//@VP_Data/@VP_Classes.4"/>
+                <chlidren_list xsi:type="commondata:LocalAssociation" reference="//@VP_Data/@VP_Classes.1/@VP_Classes_Associations.0"/>
               </the_domain>
               <style>
                 <node_Label>
@@ -185,12 +225,29 @@
                 </condition>
                 <style xsi:type="vpdiagram:BasicStyle" backgroundColor="red" form="Triangle"/>
               </style>
-              <children/>
             </owned_nodes>
+          </children>
+        </diagram_Elements>
+        <diagram_Elements xsi:type="vpdiagram:Container" name="Container_list_DG">
+          <the_domain>
+            <domain_Class xsi:type="commondata:LocalClass" class="//@VP_Data/@VP_Classes.2"/>
+            <chlidren_list xsi:type="commondata:ExternalAssociation">
+              <reference href="http://www.polarsys.org/kitalpha/emde/1.0.0#//ExtensibleElement/ownedExtensions"/>
+            </chlidren_list>
+          </the_domain>
+          <style>
+            <node_Label>
+              <value>
+                <expressionElements xsi:type="expression:StringElement" value="DG list"/>
+              </value>
+            </node_Label>
+            <style xsi:type="vpdiagram:FlatStyle" backgroundColor="light_chocolate" forgroundColor="white"/>
+          </style>
+          <children>
             <owned_nodes xsi:type="vpdiagram:Node" name="node_DG">
               <the_domain>
-                <domain_Class xsi:type="commondata:LocalClass" class="//@VP_Data/@VP_Classes.2"/>
-                <chlidren_list xsi:type="commondata:LocalAssociation" reference="//@VP_Data/@VP_Classes.0/@VP_Classes_Associations.2"/>
+                <domain_Class xsi:type="commondata:LocalClass" class="//@VP_Data/@VP_Classes.5"/>
+                <chlidren_list xsi:type="commondata:LocalAssociation" reference="//@VP_Data/@VP_Classes.2/@VP_Classes_Associations.0"/>
               </the_domain>
               <style>
                 <node_Label>
@@ -200,7 +257,6 @@
                 </node_Label>
                 <style xsi:type="vpdiagram:BasicStyle" backgroundColor="light_gray"/>
               </style>
-              <children/>
             </owned_nodes>
           </children>
         </diagram_Elements>
@@ -231,7 +287,7 @@
           </e_description>
           <imports href="../../../plugin/org.polarsys.capella.core.sirius.analysis/description/logical.odesign#//@ownedViewpoints[name='Logical%20Architecture']/@ownedRepresentations[name='Logical%20Architecture%20Blank']/@defaultLayer/@edgeMappings[name='LAB%20DataFlow%20between%20Function']"/>
         </diagram_Elements>
-        <diagram_Elements xsi:type="vpdiagram:Edge" name="LinkCFA_LC" source="//@VP_Aspects.2/@diagrams.0/@the_MappingSet/@diagram_Elements.0" target="//@VP_Aspects.2/@diagrams.0/@the_MappingSet/@diagram_Elements.1">
+        <diagram_Elements xsi:type="vpdiagram:Edge" name="LinkCFA_LC" source="//@VP_Aspects.2/@diagrams.0/@the_MappingSet/@diagram_Elements.0/@children/@owned_nodes.0" target="//@VP_Aspects.2/@diagrams.0/@the_MappingSet/@diagram_Elements.3">
           <e_description>
             <style lineStyle="dash"/>
           </e_description>
@@ -242,10 +298,10 @@
             </condition>
           </e_description>
           <the_domain>
-            <target_Locator xsi:type="commondata:LocalAssociation" reference="//@VP_Data/@VP_Classes.0/@VP_Classes_Associations.0"/>
+            <target_Locator xsi:type="commondata:LocalAssociation" reference="//@VP_Data/@VP_Classes.3/@VP_Classes_Associations.0"/>
           </the_domain>
         </diagram_Elements>
-        <diagram_Elements xsi:type="vpdiagram:Edge" name="LinkCFA_LF" source="//@VP_Aspects.2/@diagrams.0/@the_MappingSet/@diagram_Elements.0" target="//@VP_Aspects.2/@diagrams.0/@the_MappingSet/@diagram_Elements.2">
+        <diagram_Elements xsi:type="vpdiagram:Edge" name="LinkCFA_LF" source="//@VP_Aspects.2/@diagrams.0/@the_MappingSet/@diagram_Elements.0/@children/@owned_nodes.0" target="//@VP_Aspects.2/@diagrams.0/@the_MappingSet/@diagram_Elements.4">
           <e_description>
             <style lineStyle="dash"/>
           </e_description>
@@ -256,10 +312,10 @@
             </condition>
           </e_description>
           <the_domain>
-            <target_Locator xsi:type="commondata:LocalAssociation" reference="//@VP_Data/@VP_Classes.0/@VP_Classes_Associations.0"/>
+            <target_Locator xsi:type="commondata:LocalAssociation" reference="//@VP_Data/@VP_Classes.3/@VP_Classes_Associations.0"/>
           </the_domain>
         </diagram_Elements>
-        <diagram_Elements xsi:type="vpdiagram:Edge" name="LinkCFA_FE" source="//@VP_Aspects.2/@diagrams.0/@the_MappingSet/@diagram_Elements.0" target="//@VP_Aspects.2/@diagrams.0/@the_MappingSet/@diagram_Elements.3">
+        <diagram_Elements xsi:type="vpdiagram:Edge" name="LinkCFA_FE" source="//@VP_Aspects.2/@diagrams.0/@the_MappingSet/@diagram_Elements.0/@children/@owned_nodes.0" target="//@VP_Aspects.2/@diagrams.0/@the_MappingSet/@diagram_Elements.5">
           <e_description>
             <style lineStyle="dash"/>
           </e_description>
@@ -270,11 +326,14 @@
             </condition>
           </e_description>
           <the_domain>
-            <target_Locator xsi:type="commondata:LocalAssociation" reference="//@VP_Data/@VP_Classes.0/@VP_Classes_Associations.0"/>
+            <target_Locator xsi:type="commondata:LocalAssociation" reference="//@VP_Data/@VP_Classes.3/@VP_Classes_Associations.0"/>
           </the_domain>
         </diagram_Elements>
       </the_MappingSet>
       <the_ActionSet>
+        <openActions name="create_CFA_list" label="Create CFA List"/>
+        <openActions name="create_Assumption_list" label="Create Assumption List"/>
+        <openActions name="create_DG_list" label="Create DG List"/>
         <openActions name="add_CFA" label="Add CFA"/>
         <openActions name="add_assumption" label="Add Assumption"/>
         <openActions name="add_DG" label="Add DG"/>

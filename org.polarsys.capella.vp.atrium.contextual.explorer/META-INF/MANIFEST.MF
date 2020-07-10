@@ -8,5 +8,10 @@ Require-Bundle: org.eclipse.emf.ecore,
  org.eclipse.amalgam.explorer.contextual.core,
  org.polarsys.capella.vp.atrium.model.edit
 Export-Package: org.polarsys.capella.vp.atrium.contextual.explorer.queries.assumption,
+ org.polarsys.capella.vp.atrium.contextual.explorer.queries.assumption_list,
  org.polarsys.capella.vp.atrium.contextual.explorer.queries.cfa,
- org.polarsys.capella.vp.atrium.contextual.explorer.queries.dg
+ org.polarsys.capella.vp.atrium.contextual.explorer.queries.cfa_list,
+ org.polarsys.capella.vp.atrium.contextual.explorer.queries.cfalist,
+ org.polarsys.capella.vp.atrium.contextual.explorer.queries.dg,
+ org.polarsys.capella.vp.atrium.contextual.explorer.queries.dg_list,
+ org.polarsys.capella.vp.atrium.contextual.explorer.queries.goal_list

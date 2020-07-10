@@ -78,6 +78,21 @@ public class AtriumAdapterFactory extends AdapterFactoryImpl {
 	 */
 	protected AtriumSwitch<Adapter> modelSwitch = new AtriumSwitch<Adapter>() {
 		@Override
+		public Adapter caseCFA_list(CFA_list object) {
+			return createCFA_listAdapter();
+		}
+
+		@Override
+		public Adapter caseAssumption_list(Assumption_list object) {
+			return createAssumption_listAdapter();
+		}
+
+		@Override
+		public Adapter caseDG_list(DG_list object) {
+			return createDG_listAdapter();
+		}
+
+		@Override
 		public Adapter caseCFA(CFA object) {
 			return createCFAAdapter();
 		}
@@ -154,6 +169,48 @@ public class AtriumAdapterFactory extends AdapterFactoryImpl {
 	@Override
 	public Adapter createAdapter(Notifier target) {
 		return modelSwitch.doSwitch((EObject) target);
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.polarsys.capella.vp.atrium.Atrium.CFA_list <em>CFA list</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.polarsys.capella.vp.atrium.Atrium.CFA_list
+	 * @generated
+	 */
+	public Adapter createCFA_listAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.polarsys.capella.vp.atrium.Atrium.Assumption_list <em>Assumption list</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.polarsys.capella.vp.atrium.Atrium.Assumption_list
+	 * @generated
+	 */
+	public Adapter createAssumption_listAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.polarsys.capella.vp.atrium.Atrium.DG_list <em>DG list</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.polarsys.capella.vp.atrium.Atrium.DG_list
+	 * @generated
+	 */
+	public Adapter createDG_listAdapter() {
+		return null;
 	}
 
 	/**

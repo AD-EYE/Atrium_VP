@@ -77,13 +77,86 @@ public class AtriumSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
+		case AtriumPackage.CFA_LIST: {
+			CFA_list cfA_list = (CFA_list) theEObject;
+			T result = caseCFA_list(cfA_list);
+			if (result == null)
+				result = caseNamedElement(cfA_list);
+			if (result == null)
+				result = caseElementExtension(cfA_list);
+			if (result == null)
+				result = caseAbstractNamedElement(cfA_list);
+			if (result == null)
+				result = caseCapellaElement(cfA_list);
+			if (result == null)
+				result = caseTraceableElement(cfA_list);
+			if (result == null)
+				result = casePublishableElement(cfA_list);
+			if (result == null)
+				result = caseModelElement(cfA_list);
+			if (result == null)
+				result = caseExtensibleElement(cfA_list);
+			if (result == null)
+				result = caseElement(cfA_list);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case AtriumPackage.ASSUMPTION_LIST: {
+			Assumption_list assumption_list = (Assumption_list) theEObject;
+			T result = caseAssumption_list(assumption_list);
+			if (result == null)
+				result = caseNamedElement(assumption_list);
+			if (result == null)
+				result = caseElementExtension(assumption_list);
+			if (result == null)
+				result = caseAbstractNamedElement(assumption_list);
+			if (result == null)
+				result = caseCapellaElement(assumption_list);
+			if (result == null)
+				result = caseTraceableElement(assumption_list);
+			if (result == null)
+				result = casePublishableElement(assumption_list);
+			if (result == null)
+				result = caseModelElement(assumption_list);
+			if (result == null)
+				result = caseExtensibleElement(assumption_list);
+			if (result == null)
+				result = caseElement(assumption_list);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case AtriumPackage.DG_LIST: {
+			DG_list dG_list = (DG_list) theEObject;
+			T result = caseDG_list(dG_list);
+			if (result == null)
+				result = caseNamedElement(dG_list);
+			if (result == null)
+				result = caseElementExtension(dG_list);
+			if (result == null)
+				result = caseAbstractNamedElement(dG_list);
+			if (result == null)
+				result = caseCapellaElement(dG_list);
+			if (result == null)
+				result = caseTraceableElement(dG_list);
+			if (result == null)
+				result = casePublishableElement(dG_list);
+			if (result == null)
+				result = caseModelElement(dG_list);
+			if (result == null)
+				result = caseExtensibleElement(dG_list);
+			if (result == null)
+				result = caseElement(dG_list);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
 		case AtriumPackage.CFA: {
 			CFA cfa = (CFA) theEObject;
 			T result = caseCFA(cfa);
 			if (result == null)
 				result = caseNamedElement(cfa);
-			if (result == null)
-				result = caseElementExtension(cfa);
 			if (result == null)
 				result = caseAbstractNamedElement(cfa);
 			if (result == null)
@@ -151,6 +224,51 @@ public class AtriumSwitch<T> extends Switch<T> {
 		default:
 			return defaultCase(theEObject);
 		}
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>CFA list</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>CFA list</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseCFA_list(CFA_list object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Assumption list</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Assumption list</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAssumption_list(Assumption_list object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>DG list</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>DG list</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDG_list(DG_list object) {
+		return null;
 	}
 
 	/**
