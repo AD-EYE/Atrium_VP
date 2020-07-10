@@ -97,6 +97,11 @@ public class Atrium_Assumption_Atrium_Assumption_Section extends AbstractSection
 			return false;
 		} else if (eObjectToTest instanceof Assumption) {
 			return true;
+		} else {
+			EObject children = getAssumptionObject(eObjectToTest);
+			if (children != null) {
+				return true;
+			}
 		}
 
 		return false;
@@ -111,11 +116,55 @@ public class Atrium_Assumption_Atrium_Assumption_Section extends AbstractSection
 	*/
 	public void setInput(IWorkbenchPart part, ISelection selection) {
 		EObject newEObject = super.setInputSelection(part, selection);
+
+		if (newEObject != null && !(newEObject instanceof Assumption))
+			newEObject = getAssumptionObject(newEObject);
+
 		if (newEObject != null) {
 			loadData(newEObject);
 		} else {
 			return;
 		}
+	}
+
+	/**
+	* <!-- begin-user-doc -->
+	* <!-- end-user-doc -->
+	* @param parent: An EObject. It is considered as the Parent of an EMDE extension (a Viewpoint element)
+	* @return 
+	* @generated
+	*/
+	private EObject getAssumptionObject(EObject parent) {
+		if (parent == null)
+			return null;
+
+		if (!isViewpointActive(parent))
+			return null;
+
+		if (parent.eContents() == null)
+			return null;
+
+		EObject result = null;
+		for (EObject iEObject : parent.eContents()) {
+			if (iEObject instanceof Assumption) {
+				result = (result == null ? (Assumption) iEObject : null);
+				// This case is true when there is more then one extension of the same type. 
+				if (result == null)
+					break;
+			}
+		}
+		return result;
+	}
+
+	/**
+	* <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	* @return True is the AF viewpoint is active. False else. 
+	* @generated
+	*/
+	private boolean isViewpointActive(EObject modelElement) {
+		return ViewpointManager.getInstance(modelElement).isUsed("org.polarsys.capella.vp.atrium")
+				&& !ViewpointManager.getInstance(modelElement).isFiltered("org.polarsys.capella.vp.atrium");
 	}
 
 	/**

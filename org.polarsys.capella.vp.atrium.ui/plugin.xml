@@ -9,6 +9,27 @@
 			<propertyTab
 		    	afterTab="BaseSiriusDiagram"
 		        category="semantic &amp; extension"
+		        id="Atrium_CFA_list"
+		        label="Atrium">
+		    </propertyTab> 
+			
+			<propertyTab
+		    	afterTab="BaseSiriusDiagram"
+		        category="semantic &amp; extension"
+		        id="Atrium_Assumption_list"
+		        label="Atrium">
+		    </propertyTab> 
+			
+			<propertyTab
+		    	afterTab="BaseSiriusDiagram"
+		        category="semantic &amp; extension"
+		        id="Atrium_DG_list"
+		        label="Atrium">
+		    </propertyTab> 
+			
+			<propertyTab
+		    	afterTab="BaseSiriusDiagram"
+		        category="semantic &amp; extension"
 		        id="Atrium_CFA"
 		        label="Atrium">
 		    </propertyTab> 
@@ -33,6 +54,27 @@
 	point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
 	<propertyTabs 
 		contributorId="org.polarsys.capella.core.data.capellamodeller.properties">
+			
+			<propertyTab
+		    	afterTab="BaseCapella"
+		        category="default"
+		        id="Atrium_CFA_list"
+		        label="Atrium">
+		    </propertyTab> 
+			
+			<propertyTab
+		    	afterTab="BaseCapella"
+		        category="default"
+		        id="Atrium_Assumption_list"
+		        label="Atrium">
+		    </propertyTab> 
+			
+			<propertyTab
+		    	afterTab="BaseCapella"
+		        category="default"
+		        id="Atrium_DG_list"
+		        label="Atrium">
+		    </propertyTab> 
 			
 			<propertyTab
 		    	afterTab="BaseCapella"
@@ -62,6 +104,27 @@
 		<propertySections
 			contributorId="org.eclipse.sirius.diagram.ui">
 			<propertySection
+		    	class="org.polarsys.capella.vp.atrium.ui.sections.Atrium_CFA_list_Atrium_CFA_list_Section"
+		        filter="org.polarsys.capella.vp.atrium.ui.sections.Atrium_CFA_list_Atrium_CFA_list_Section"
+		        id="Atrium_CFA_list.Atrium_CFA_list_Section"
+		        tab="Atrium_CFA_list">
+		        
+		    </propertySection> 
+		    			<propertySection
+		    	class="org.polarsys.capella.vp.atrium.ui.sections.Atrium_Assumption_list_Atrium_Assumption_list_Section"
+		        filter="org.polarsys.capella.vp.atrium.ui.sections.Atrium_Assumption_list_Atrium_Assumption_list_Section"
+		        id="Atrium_Assumption_list.Atrium_Assumption_list_Section"
+		        tab="Atrium_Assumption_list">
+		        
+		    </propertySection> 
+		    			<propertySection
+		    	class="org.polarsys.capella.vp.atrium.ui.sections.Atrium_DG_list_Atrium_DG_list_Section"
+		        filter="org.polarsys.capella.vp.atrium.ui.sections.Atrium_DG_list_Atrium_DG_list_Section"
+		        id="Atrium_DG_list.Atrium_DG_list_Section"
+		        tab="Atrium_DG_list">
+		        
+		    </propertySection> 
+		    			<propertySection
 		    	class="org.polarsys.capella.vp.atrium.ui.sections.Atrium_CFA_Atrium_CFA_Section"
 		        filter="org.polarsys.capella.vp.atrium.ui.sections.Atrium_CFA_Atrium_CFA_Section"
 		        id="Atrium_CFA.Atrium_CFA_Section"
@@ -89,6 +152,27 @@
 		<propertySections
 			contributorId="org.polarsys.capella.core.data.capellamodeller.properties">
 			<propertySection
+		    	class="org.polarsys.capella.vp.atrium.ui.sections.Atrium_CFA_list_Atrium_CFA_list_Section"
+		        filter="org.polarsys.capella.vp.atrium.ui.sections.Atrium_CFA_list_Atrium_CFA_list_Section"
+		        id="Atrium_CFA_list.Atrium_CFA_list_Section"
+		        tab="Atrium_CFA_list">
+		        
+		    </propertySection> 
+		    			<propertySection
+		    	class="org.polarsys.capella.vp.atrium.ui.sections.Atrium_Assumption_list_Atrium_Assumption_list_Section"
+		        filter="org.polarsys.capella.vp.atrium.ui.sections.Atrium_Assumption_list_Atrium_Assumption_list_Section"
+		        id="Atrium_Assumption_list.Atrium_Assumption_list_Section"
+		        tab="Atrium_Assumption_list">
+		        
+		    </propertySection> 
+		    			<propertySection
+		    	class="org.polarsys.capella.vp.atrium.ui.sections.Atrium_DG_list_Atrium_DG_list_Section"
+		        filter="org.polarsys.capella.vp.atrium.ui.sections.Atrium_DG_list_Atrium_DG_list_Section"
+		        id="Atrium_DG_list.Atrium_DG_list_Section"
+		        tab="Atrium_DG_list">
+		        
+		    </propertySection> 
+		    			<propertySection
 		    	class="org.polarsys.capella.vp.atrium.ui.sections.Atrium_CFA_Atrium_CFA_Section"
 		        filter="org.polarsys.capella.vp.atrium.ui.sections.Atrium_CFA_Atrium_CFA_Section"
 		        id="Atrium_CFA.Atrium_CFA_Section"
@@ -112,6 +196,48 @@
 		    </propertySections>
 </extension>
 
+ 	
+<extension 
+	point="org.polarsys.capella.core.data.business.queries.MDEBusinessQueries">
+				
+	   <MDEBusinessQueries 
+         class="org.polarsys.capella.vp.atrium.ui.queries.CFAsAssociationQuery" 
+         id="org.polarsys.capella.vp.atrium.ui.queries.CFAsAssociationQuery"> 
+   </MDEBusinessQueries> 
+
+
+				
+</extension>
+
+		
+ 	
+<extension 
+	point="org.polarsys.capella.core.data.business.queries.MDEBusinessQueries">
+				
+	   <MDEBusinessQueries 
+         class="org.polarsys.capella.vp.atrium.ui.queries.AssumptionsAssociationQuery" 
+         id="org.polarsys.capella.vp.atrium.ui.queries.AssumptionsAssociationQuery"> 
+   </MDEBusinessQueries> 
+
+
+				
+</extension>
+
+		
+ 	
+<extension 
+	point="org.polarsys.capella.core.data.business.queries.MDEBusinessQueries">
+				
+	   <MDEBusinessQueries 
+         class="org.polarsys.capella.vp.atrium.ui.queries.DGsAssociationQuery" 
+         id="org.polarsys.capella.vp.atrium.ui.queries.DGsAssociationQuery"> 
+   </MDEBusinessQueries> 
+
+
+				
+</extension>
+
+		
  	
 <extension 
 	point="org.polarsys.capella.core.data.business.queries.MDEBusinessQueries">

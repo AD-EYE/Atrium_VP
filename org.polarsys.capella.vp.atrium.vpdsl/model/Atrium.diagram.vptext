@@ -15,6 +15,7 @@ Diagrams Atrium.diagram {
 			Container Container_list_CFA {
 				domain-context: Atrium.data.CFA_list
 				provided-by association external emde.ExtensibleElement.ownedExtensions
+				content-layout: List
 				Representation {
 					Label {
 						content: "CFA List"
@@ -45,6 +46,7 @@ Diagrams Atrium.diagram {
 			Container Container_list_Assumption {
 				domain-context: Atrium.data.Assumption_list
 				provided-by association external emde.ExtensibleElement.ownedExtensions
+				content-layout: List
 				Representation {
 					Label {
 						content: "Assumption list"
@@ -57,7 +59,7 @@ Diagrams Atrium.diagram {
 				Contains {
 					Node node_assumption {
 						domain-context: Atrium.data.Assumption
-						provided-by association Atrium.data.Assumption_list.Assumptions
+						provided-by association external emde.ExtensibleElement.ownedExtensions
 						Representation {
 							Label {
 								content: "Clarification here"
@@ -102,6 +104,7 @@ Diagrams Atrium.diagram {
 			Container Container_list_DG {
 				domain-context: Atrium.data.DG_list
 				provided-by association external emde.ExtensibleElement.ownedExtensions
+				content-layout: List
 				Representation {
 					Label {
 						content: "DG list"
@@ -114,7 +117,7 @@ Diagrams Atrium.diagram {
 				Contains {
 					Node node_DG {
 						domain-context: Atrium.data.DG
-						provided-by association Atrium.data.DG_list.DGs
+						provided-by association external emde.ExtensibleElement.ownedExtensions
 						Representation {
 							Label {
 								content: "Goal here"

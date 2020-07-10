@@ -524,8 +524,11 @@ public class AtriumPackageImpl extends EPackageImpl implements AtriumPackage {
 		dG_listEClass.getESuperTypes().add(theCapellacorePackage.getNamedElement());
 		dG_listEClass.getESuperTypes().add(theEmdePackage.getElementExtension());
 		cfaEClass.getESuperTypes().add(theCapellacorePackage.getNamedElement());
+		cfaEClass.getESuperTypes().add(theEmdePackage.getElementExtension());
 		assumptionEClass.getESuperTypes().add(theCapellacorePackage.getNamedElement());
+		assumptionEClass.getESuperTypes().add(theEmdePackage.getElementExtension());
 		dgEClass.getESuperTypes().add(theCapellacorePackage.getNamedElement());
+		dgEClass.getESuperTypes().add(theEmdePackage.getElementExtension());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(cfA_listEClass, CFA_list.class, "CFA_list", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
@@ -621,6 +624,15 @@ public class AtriumPackageImpl extends EPackageImpl implements AtriumPackage {
 		addAnnotation(dG_listEClass, source,
 				new String[] { "ExtendedElement", " http://www.polarsys.org/capella/core/la/1.4.0#//LogicalComponent" //$NON-NLS-1$ //$NON-NLS-2$
 				});
+		addAnnotation(cfaEClass, source,
+				new String[] { "ExtendedElement", " http://www.polarsys.org/capella/core/fa/1.4.0#//AbstractFunction" //$NON-NLS-1$ //$NON-NLS-2$
+				});
+		addAnnotation(assumptionEClass, source,
+				new String[] { "ExtendedElement", " http://www.polarsys.org/capella/core/fa/1.4.0#//AbstractFunction" //$NON-NLS-1$ //$NON-NLS-2$
+				});
+		addAnnotation(dgEClass, source,
+				new String[] { "ExtendedElement", " http://www.polarsys.org/capella/core/fa/1.4.0#//AbstractFunction" //$NON-NLS-1$ //$NON-NLS-2$
+				});
 	}
 
 	/**
@@ -639,6 +651,15 @@ public class AtriumPackageImpl extends EPackageImpl implements AtriumPackage {
 		});
 		addAnnotation(dG_listEClass, source, new String[] { "Mapping", //$NON-NLS-1$
 				" platform:/plugin/org.polarsys.capella.core.data.gen/model/LogicalArchitecture.ecore#//LogicalComponent" //$NON-NLS-1$
+		});
+		addAnnotation(cfaEClass, source, new String[] { "Mapping", //$NON-NLS-1$
+				" platform:/plugin/org.polarsys.capella.core.data.gen/model/FunctionalAnalysis.ecore#//AbstractFunction" //$NON-NLS-1$
+		});
+		addAnnotation(assumptionEClass, source, new String[] { "Mapping", //$NON-NLS-1$
+				" platform:/plugin/org.polarsys.capella.core.data.gen/model/FunctionalAnalysis.ecore#//AbstractFunction" //$NON-NLS-1$
+		});
+		addAnnotation(dgEClass, source, new String[] { "Mapping", //$NON-NLS-1$
+				" platform:/plugin/org.polarsys.capella.core.data.gen/model/FunctionalAnalysis.ecore#//AbstractFunction" //$NON-NLS-1$
 		});
 	}
 

@@ -63,7 +63,7 @@
             </style>
           </conditionnalStyles>
         </edgeMappingImports>
-        <containerMappings name="Container_list_CFA_CM" label="Container_list_CFA" semanticCandidatesExpression="feature:ownedExtensions" domainClass="Atrium.CFA_list">
+        <containerMappings name="Container_list_CFA_CM" label="Container_list_CFA" semanticCandidatesExpression="feature:ownedExtensions" domainClass="Atrium.CFA_list" childrenPresentation="List">
           <subNodeMappings name="node_CFA_NM" label="node_CFA" semanticCandidatesExpression="feature:ownedExtensions" domainClass="Atrium.CFA">
             <style xsi:type="style:SquareDescription" borderSizeComputationExpression="1" labelExpression="CFA here" resizeKind="NSEW">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -78,8 +78,8 @@
             <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
           </style>
         </containerMappings>
-        <containerMappings name="Container_list_Assumption_CM" label="Container_list_Assumption" semanticCandidatesExpression="feature:ownedExtensions" domainClass="Atrium.Assumption_list">
-          <subNodeMappings name="node_assumption_NM" label="node_assumption" semanticCandidatesExpression="feature:Assumptions" domainClass="Atrium.Assumption">
+        <containerMappings name="Container_list_Assumption_CM" label="Container_list_Assumption" semanticCandidatesExpression="feature:ownedExtensions" domainClass="Atrium.Assumption_list" childrenPresentation="List">
+          <subNodeMappings name="node_assumption_NM" label="node_assumption" semanticCandidatesExpression="feature:ownedExtensions" domainClass="Atrium.Assumption">
             <style xsi:type="style:DotDescription" borderSizeComputationExpression="1" labelExpression="Clarification here" resizeKind="NSEW">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -107,8 +107,8 @@
             <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
           </style>
         </containerMappings>
-        <containerMappings name="Container_list_DG_CM" label="Container_list_DG" semanticCandidatesExpression="feature:ownedExtensions" domainClass="Atrium.DG_list">
-          <subNodeMappings name="node_DG_NM" label="node_DG" semanticCandidatesExpression="feature:DGs" domainClass="Atrium.DG">
+        <containerMappings name="Container_list_DG_CM" label="Container_list_DG" semanticCandidatesExpression="feature:ownedExtensions" domainClass="Atrium.DG_list" childrenPresentation="List">
+          <subNodeMappings name="node_DG_NM" label="node_DG" semanticCandidatesExpression="feature:ownedExtensions" domainClass="Atrium.DG">
             <style xsi:type="style:SquareDescription" borderSizeComputationExpression="1" labelExpression="Goal here" resizeKind="NSEW">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>

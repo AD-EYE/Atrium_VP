@@ -1,5 +1,5 @@
 
-// Generated on 08.07.2020 at 02:20:59 CEST by Viewpoint DSL Generator V 0.1
+// Generated on 10.07.2020 at 04:31:07 CEST by Viewpoint DSL Generator V 0.1
 
 package org.polarsys.capella.vp.atrium.ui.sections;
 
@@ -22,13 +22,15 @@ import org.polarsys.kitalpha.ad.services.manager.ViewpointManager;
 
 import org.polarsys.capella.core.ui.properties.fields.*;
 
+import org.polarsys.capella.vp.atrium.ui.controllers.AssumptionsAssociationFieldController;
+
 import org.polarsys.capella.core.data.capellacore.CapellaElement;
 import org.polarsys.capella.vp.atrium.Atrium.AtriumPackage;
-import org.polarsys.capella.vp.atrium.Atrium.DG;
+import org.polarsys.capella.vp.atrium.Atrium.Assumption_list;
 
 /**
  * <!-- begin-user-doc -->
- * This class is an implementation of the section '<em><b>[Atrium_DG_Atrium_DG_Section]</b></em>'.
+ * This class is an implementation of the section '<em><b>[Atrium_Assumption_list_Atrium_Assumption_list_Section]</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * </p>
@@ -36,7 +38,7 @@ import org.polarsys.capella.vp.atrium.Atrium.DG;
  * @generated
  */
 
-public class Atrium_DG_Atrium_DG_Section extends AbstractSection {
+public class Atrium_Assumption_list_Atrium_Assumption_list_Section extends AbstractSection {
 
 	/**
 	* <!-- begin-model-doc -->
@@ -45,7 +47,7 @@ public class Atrium_DG_Atrium_DG_Section extends AbstractSection {
 	* <!-- end-user-doc -->
 	* @generated
 	*/
-	private TextValueGroup ContentField2;
+	private MultipleSemanticField AssumptionsAssociation;
 
 	/**
 	* <!-- begin-model-doc -->
@@ -54,7 +56,7 @@ public class Atrium_DG_Atrium_DG_Section extends AbstractSection {
 	* <!-- end-user-doc -->
 		* @generated
 		*/
-	private Group Atrium_DG_AttributeGroup;
+	private Group Atrium_Assumption_list_AssociationGroup;
 
 	/**
 	* <!-- begin-user-doc -->
@@ -67,10 +69,10 @@ public class Atrium_DG_Atrium_DG_Section extends AbstractSection {
 
 		if (eObjectToTest == null) {
 			return false;
-		} else if (eObjectToTest instanceof DG) {
+		} else if (eObjectToTest instanceof Assumption_list) {
 			return true;
 		} else {
-			EObject children = getDGObject(eObjectToTest);
+			EObject children = getAssumption_listObject(eObjectToTest);
 			if (children != null) {
 				return true;
 			}
@@ -89,8 +91,8 @@ public class Atrium_DG_Atrium_DG_Section extends AbstractSection {
 	public void setInput(IWorkbenchPart part, ISelection selection) {
 		EObject newEObject = super.setInputSelection(part, selection);
 
-		if (newEObject != null && !(newEObject instanceof DG))
-			newEObject = getDGObject(newEObject);
+		if (newEObject != null && !(newEObject instanceof Assumption_list))
+			newEObject = getAssumption_listObject(newEObject);
 
 		if (newEObject != null) {
 			loadData(newEObject);
@@ -101,12 +103,12 @@ public class Atrium_DG_Atrium_DG_Section extends AbstractSection {
 
 	/**
 	* <!-- begin-user-doc -->
-	* <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	* @param parent: An EObject. It is considered as the Parent of an EMDE extension (a Viewpoint element)
 	* @return 
 	* @generated
 	*/
-	private EObject getDGObject(EObject parent) {
+	private EObject getAssumption_listObject(EObject parent) {
 		if (parent == null)
 			return null;
 
@@ -118,8 +120,8 @@ public class Atrium_DG_Atrium_DG_Section extends AbstractSection {
 
 		EObject result = null;
 		for (EObject iEObject : parent.eContents()) {
-			if (iEObject instanceof DG) {
-				result = (result == null ? (DG) iEObject : null);
+			if (iEObject instanceof Assumption_list) {
+				result = (result == null ? (Assumption_list) iEObject : null);
 				// This case is true when there is more then one extension of the same type. 
 				if (result == null)
 					break;
@@ -149,15 +151,18 @@ public class Atrium_DG_Atrium_DG_Section extends AbstractSection {
 	public void createControls(Composite parent, TabbedPropertySheetPage aTabbedPropertySheetPage) {
 		super.createControls(parent, aTabbedPropertySheetPage);
 
-		Atrium_DG_AttributeGroup = getWidgetFactory().createGroup(rootParentComposite, "D G Attributes");
-		Atrium_DG_AttributeGroup.setLayout(new GridLayout(1, false));
+		Atrium_Assumption_list_AssociationGroup = getWidgetFactory().createGroup(rootParentComposite,
+				"Assumption_list Associations");
+		Atrium_Assumption_list_AssociationGroup.setLayout(new GridLayout(6, false));
 
-		GridData gdAtrium_DG_AttributeGroup = new GridData(GridData.FILL_HORIZONTAL);
+		GridData gdAtrium_Assumption_list_AssociationGroup = new GridData(GridData.FILL_HORIZONTAL);
 
-		gdAtrium_DG_AttributeGroup.horizontalSpan = ((GridLayout) rootParentComposite.getLayout()).numColumns;
-		Atrium_DG_AttributeGroup.setLayoutData(gdAtrium_DG_AttributeGroup);
+		gdAtrium_Assumption_list_AssociationGroup.horizontalSpan = ((GridLayout) rootParentComposite
+				.getLayout()).numColumns;
+		Atrium_Assumption_list_AssociationGroup.setLayoutData(gdAtrium_Assumption_list_AssociationGroup);
 
-		ContentField2 = new TextValueGroup(Atrium_DG_AttributeGroup, "Content :", getWidgetFactory(), true);
+		AssumptionsAssociation = new MultipleSemanticField(Atrium_Assumption_list_AssociationGroup, "Assumptions :",
+				getWidgetFactory(), new AssumptionsAssociationFieldController());
 
 	}
 
@@ -170,7 +175,7 @@ public class Atrium_DG_Atrium_DG_Section extends AbstractSection {
 	public void loadData(EObject object) {
 		super.loadData(object);
 
-		ContentField2.loadData(object, AtriumPackage.eINSTANCE.getDG_Content());
+		AssumptionsAssociation.loadData(object, AtriumPackage.eINSTANCE.getAssumption_list_Assumptions());
 
 	}
 
@@ -182,7 +187,7 @@ public class Atrium_DG_Atrium_DG_Section extends AbstractSection {
 	public List<AbstractSemanticField> getSemanticFields() {
 		List<AbstractSemanticField> abstractSemanticFields = new ArrayList<AbstractSemanticField>();
 
-		abstractSemanticFields.add(ContentField2);
+		abstractSemanticFields.add(AssumptionsAssociation);
 
 		return abstractSemanticFields;
 	}

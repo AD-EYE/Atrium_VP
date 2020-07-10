@@ -7,6 +7,33 @@
  *
  */
 UIDescription Atrium.ui {
+UI Atrium_CFA_list {
+	label: "Atrium"
+	Container Atrium_CFA_list_Section {
+		Container Atrium_CFA_list_AssociationGroup {
+			label: "C F A_list Associations"
+			Field CFAsAssociation label: "C F As" type multipleChoiceList , mapped-to Atrium.data.CFA_list.CFAs
+		}
+	}
+}
+UI Atrium_Assumption_list {
+	label: "Atrium"
+	Container Atrium_Assumption_list_Section {
+		Container Atrium_Assumption_list_AssociationGroup {
+			label: "Assumption_list Associations"
+			Field AssumptionsAssociation label: "Assumptions" type multipleChoiceList , mapped-to Atrium.data.Assumption_list.Assumptions
+		}
+	}
+}
+UI Atrium_DG_list {
+	label: "Atrium"
+	Container Atrium_DG_list_Section {
+		Container Atrium_DG_list_AssociationGroup {
+			label: "D G_list Associations"
+			Field DGsAssociation label: "D Gs" type multipleChoiceList , mapped-to Atrium.data.DG_list.DGs
+		}
+	}
+}
 UI Atrium_CFA {
 	label: "Atrium"
 	Container Atrium_CFA_Section {
@@ -45,4 +72,5 @@ UI Atrium_DG {
 		}
 	}
 }
+
 }

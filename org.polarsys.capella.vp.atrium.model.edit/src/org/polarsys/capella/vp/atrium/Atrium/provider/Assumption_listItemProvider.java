@@ -195,6 +195,37 @@ public class Assumption_listItemProvider extends NamedElementItemProvider implem
 		// begin-extension-code
 		{
 			CommandParameter commandParameter = createChildParameter(
+					EmdePackage.Literals.EXTENSIBLE_ELEMENT__OWNED_EXTENSIONS, AtriumFactory.eINSTANCE.createCFA());
+			if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
+				newChildDescriptors.add(commandParameter);
+			}
+		}
+		// end-extension-code
+
+		// begin-extension-code
+		{
+			CommandParameter commandParameter = createChildParameter(
+					EmdePackage.Literals.EXTENSIBLE_ELEMENT__OWNED_EXTENSIONS,
+					AtriumFactory.eINSTANCE.createAssumption());
+			if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
+				newChildDescriptors.add(commandParameter);
+			}
+		}
+		// end-extension-code
+
+		// begin-extension-code
+		{
+			CommandParameter commandParameter = createChildParameter(
+					EmdePackage.Literals.EXTENSIBLE_ELEMENT__OWNED_EXTENSIONS, AtriumFactory.eINSTANCE.createDG());
+			if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
+				newChildDescriptors.add(commandParameter);
+			}
+		}
+		// end-extension-code
+
+		// begin-extension-code
+		{
+			CommandParameter commandParameter = createChildParameter(
 					AtriumPackage.Literals.ASSUMPTION_LIST__ASSUMPTIONS, AtriumFactory.eINSTANCE.createAssumption());
 			if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
 				newChildDescriptors.add(commandParameter);
@@ -202,6 +233,27 @@ public class Assumption_listItemProvider extends NamedElementItemProvider implem
 		}
 		// end-extension-code
 
+	}
+
+	/**
+	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
+		Object childFeature = feature;
+		Object childObject = child;
+
+		boolean qualify = childFeature == EmdePackage.Literals.EXTENSIBLE_ELEMENT__OWNED_EXTENSIONS
+				|| childFeature == AtriumPackage.Literals.ASSUMPTION_LIST__ASSUMPTIONS;
+
+		if (qualify) {
+			return getString("_UI_CreateChild_text2", //$NON-NLS-1$
+					new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
+		}
+		return super.getCreateChildText(owner, feature, child, selection);
 	}
 
 }

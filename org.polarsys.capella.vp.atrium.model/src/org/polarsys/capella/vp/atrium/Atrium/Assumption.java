@@ -2,6 +2,7 @@
 package org.polarsys.capella.vp.atrium.Atrium;
 
 import org.polarsys.capella.core.data.capellacore.NamedElement;
+import org.polarsys.kitalpha.emde.model.ElementExtension;
 
 /**
  * <!-- begin-user-doc -->
@@ -19,11 +20,12 @@ import org.polarsys.capella.core.data.capellacore.NamedElement;
  * </ul>
  *
  * @see org.polarsys.capella.vp.atrium.Atrium.AtriumPackage#getAssumption()
- * @model
+ * @model annotation="http://www.polarsys.org/kitalpha/emde/1.0.0/constraint ExtendedElement=' http://www.polarsys.org/capella/core/fa/1.4.0#//AbstractFunction'"
+ *        annotation="http://www.polarsys.org/kitalpha/emde/1.0.0/constraintMapping Mapping=' platform:/plugin/org.polarsys.capella.core.data.gen/model/FunctionalAnalysis.ecore#//AbstractFunction'"
  * @generated
  */
 
-public interface Assumption extends NamedElement {
+public interface Assumption extends NamedElement, ElementExtension {
 
 	/**
 	 * Returns the value of the '<em><b>Content</b></em>' attribute.

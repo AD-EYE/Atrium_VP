@@ -97,16 +97,24 @@ public class OpenActionService {
 	* @generated NOT
 	*/
 	public boolean add_CFA(EObject eObject, EObject newSemanticContainer) {
-		CFA myCFA = null;
 
-		myCFA = AtriumFactoryImpl.eINSTANCE.createCFA();
+		if (!(eObject instanceof CFA_list)) {
+			System.out.println("Action cancelled, please add CFA inside a CFA list");
+			return false;
+		} else {
+			CFA myCFA = null;
+			CFA_list my_list = (CFA_list) eObject;
 
-		myCFA.setContent("Some content");
-		myCFA.setState(true);
+			myCFA = AtriumFactoryImpl.eINSTANCE.createCFA();
 
-		((CapellaElement) myCFA).setId(EcoreUtil.generateUUID());
-		((ExtensibleElement) eObject).getOwnedExtensions().add((ElementExtension) myCFA);
-		return true;
+			myCFA.setContent("Some content");
+			myCFA.setState(true);
+
+			((CapellaElement) myCFA).setId(EcoreUtil.generateUUID());
+			my_list.getCFAs().add(myCFA);
+			((ExtensibleElement) my_list).getOwnedExtensions().add((ElementExtension) myCFA);
+			return true;
+		}
 	}
 
 	/**
@@ -118,25 +126,24 @@ public class OpenActionService {
 	*/
 	public boolean add_assumption(EObject element, EObject newSemanticContainer) {
 
-		if (element instanceof CFA) {
-
-			CFA targetCFA = (CFA) element;
-
+		if (!(element instanceof Assumption_list)) {
+			System.out.println("Action cancelled, please add an Assumption inside an Assumption list");
+			return false;
+		} else {
 			Assumption myAssumption = null;
+			Assumption_list my_Assumption_list = (Assumption_list) element;
+
 			myAssumption = AtriumFactoryImpl.eINSTANCE.createAssumption();
 
-			myAssumption.setContent("I ASSUME SOMETHING");
-			myAssumption.setRationale("blabla");
-			myAssumption.setValidity("I am probably valid");
+			myAssumption.setContent("Some content");
+			myAssumption.setRationale("yes");
+			myAssumption.setValidity("no");
 
 			((CapellaElement) myAssumption).setId(EcoreUtil.generateUUID());
-			targetCFA.getAssumption().add(myAssumption);
-		} else {
-			System.out.println("This is not a CFA, cancelling creation");
-			return false;
+			my_Assumption_list.getAssumptions().add(myAssumption);
+			((ExtensibleElement) my_Assumption_list).getOwnedExtensions().add((ElementExtension) myAssumption);
+			return true;
 		}
-
-		return true;
 	}
 
 	/**
@@ -148,23 +155,22 @@ public class OpenActionService {
 	*/
 	public boolean add_DG(EObject element, EObject newSemanticContainer) {
 
-		if (element instanceof CFA) {
-
-			CFA targetCFA = (CFA) element;
-
+		if (!(element instanceof DG_list)) {
+			System.out.println("Action cancelled, please add a DG inside a DG list");
+			return false;
+		} else {
 			DG myDG = null;
+			DG_list my_DG_list = (DG_list) element;
+
 			myDG = AtriumFactoryImpl.eINSTANCE.createDG();
 
-			myDG.setContent("I ASSUME SOMETHING");
+			myDG.setContent("Some content");
 
 			((CapellaElement) myDG).setId(EcoreUtil.generateUUID());
-			targetCFA.setGoal(myDG);
-		} else {
-			System.out.println("This is not a CFA, cancelling creation");
-			return false;
+			my_DG_list.getDGs().add(myDG);
+			((ExtensibleElement) my_DG_list).getOwnedExtensions().add((ElementExtension) myDG);
+			return true;
 		}
-
-		return true;
 
 	}
 }

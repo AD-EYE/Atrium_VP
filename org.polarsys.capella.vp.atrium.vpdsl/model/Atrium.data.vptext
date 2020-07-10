@@ -27,6 +27,7 @@ Data Atrium.data {
 	}
 	
 	Class CFA {
+		extends fa.AbstractFunction
 		Attributes:
 			content type ecore.EString
 			state type ecore.EBoolean
@@ -38,6 +39,7 @@ Data Atrium.data {
 	}
 	
 	Class Assumption {
+		extends fa.AbstractFunction
 		Attributes:
 			content type ecore.EString
 			rationale type ecore.EString
@@ -46,6 +48,7 @@ Data Atrium.data {
 	}
 	
 	Class DG {
+		extends fa.AbstractFunction
 		Attributes:
 			content type ecore.EString
 	}

@@ -25,11 +25,12 @@ import org.polarsys.kitalpha.emde.model.ElementExtension;
  * </ul>
  *
  * @see org.polarsys.capella.vp.atrium.Atrium.AtriumPackage#getCFA()
- * @model
+ * @model annotation="http://www.polarsys.org/kitalpha/emde/1.0.0/constraint ExtendedElement=' http://www.polarsys.org/capella/core/fa/1.4.0#//AbstractFunction'"
+ *        annotation="http://www.polarsys.org/kitalpha/emde/1.0.0/constraintMapping Mapping=' platform:/plugin/org.polarsys.capella.core.data.gen/model/FunctionalAnalysis.ecore#//AbstractFunction'"
  * @generated
  */
 
-public interface CFA extends NamedElement {
+public interface CFA extends NamedElement, ElementExtension {
 
 	/**
 	 * Returns the value of the '<em><b>Linkedto Element</b></em>' reference.

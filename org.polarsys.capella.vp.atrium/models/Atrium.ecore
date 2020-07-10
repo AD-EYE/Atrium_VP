@@ -31,7 +31,13 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="DGs" upperBound="-1" eType="#//DG"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="CFA" eSuperTypes="platform:/plugin/org.polarsys.capella.core.data.gen/model/CapellaCore.ecore#//NamedElement">
+  <eClassifiers xsi:type="ecore:EClass" name="CFA" eSuperTypes="platform:/plugin/org.polarsys.capella.core.data.gen/model/CapellaCore.ecore#//NamedElement platform:/plugin/org.polarsys.kitalpha.emde/model/eMDE.ecore#//ElementExtension">
+    <eAnnotations source="http://www.polarsys.org/kitalpha/emde/1.0.0/constraint">
+      <details key="ExtendedElement" value=" http://www.polarsys.org/capella/core/fa/1.4.0#//AbstractFunction"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.polarsys.org/kitalpha/emde/1.0.0/constraintMapping">
+      <details key="Mapping" value=" platform:/plugin/org.polarsys.capella.core.data.gen/model/FunctionalAnalysis.ecore#//AbstractFunction"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="linkedtoElement" lowerBound="1"
         eType="ecore:EClass platform:/plugin/org.polarsys.capella.core.data.gen/model/CapellaCore.ecore#//CapellaElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="assumption" upperBound="-1"
@@ -41,13 +47,25 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="state" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="stateLinkedElement" eType="#//stateLinkedElement_Type"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Assumption" eSuperTypes="platform:/plugin/org.polarsys.capella.core.data.gen/model/CapellaCore.ecore#//NamedElement">
+  <eClassifiers xsi:type="ecore:EClass" name="Assumption" eSuperTypes="platform:/plugin/org.polarsys.capella.core.data.gen/model/CapellaCore.ecore#//NamedElement platform:/plugin/org.polarsys.kitalpha.emde/model/eMDE.ecore#//ElementExtension">
+    <eAnnotations source="http://www.polarsys.org/kitalpha/emde/1.0.0/constraint">
+      <details key="ExtendedElement" value=" http://www.polarsys.org/capella/core/fa/1.4.0#//AbstractFunction"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.polarsys.org/kitalpha/emde/1.0.0/constraintMapping">
+      <details key="Mapping" value=" platform:/plugin/org.polarsys.capella.core.data.gen/model/FunctionalAnalysis.ecore#//AbstractFunction"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="content" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="rationale" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="validity" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="assumptionType" eType="#//assumptionType_Type"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="DG" eSuperTypes="platform:/plugin/org.polarsys.capella.core.data.gen/model/CapellaCore.ecore#//NamedElement">
+  <eClassifiers xsi:type="ecore:EClass" name="DG" eSuperTypes="platform:/plugin/org.polarsys.capella.core.data.gen/model/CapellaCore.ecore#//NamedElement platform:/plugin/org.polarsys.kitalpha.emde/model/eMDE.ecore#//ElementExtension">
+    <eAnnotations source="http://www.polarsys.org/kitalpha/emde/1.0.0/constraint">
+      <details key="ExtendedElement" value=" http://www.polarsys.org/capella/core/fa/1.4.0#//AbstractFunction"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.polarsys.org/kitalpha/emde/1.0.0/constraintMapping">
+      <details key="Mapping" value=" platform:/plugin/org.polarsys.capella.core.data.gen/model/FunctionalAnalysis.ecore#//AbstractFunction"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="content" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="stateLinkedElement_Type">

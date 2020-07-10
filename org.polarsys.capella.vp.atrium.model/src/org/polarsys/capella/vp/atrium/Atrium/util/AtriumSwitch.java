@@ -158,6 +158,8 @@ public class AtriumSwitch<T> extends Switch<T> {
 			if (result == null)
 				result = caseNamedElement(cfa);
 			if (result == null)
+				result = caseElementExtension(cfa);
+			if (result == null)
 				result = caseAbstractNamedElement(cfa);
 			if (result == null)
 				result = caseCapellaElement(cfa);
@@ -181,6 +183,8 @@ public class AtriumSwitch<T> extends Switch<T> {
 			if (result == null)
 				result = caseNamedElement(assumption);
 			if (result == null)
+				result = caseElementExtension(assumption);
+			if (result == null)
 				result = caseAbstractNamedElement(assumption);
 			if (result == null)
 				result = caseCapellaElement(assumption);
@@ -203,6 +207,8 @@ public class AtriumSwitch<T> extends Switch<T> {
 			T result = caseDG(dg);
 			if (result == null)
 				result = caseNamedElement(dg);
+			if (result == null)
+				result = caseElementExtension(dg);
 			if (result == null)
 				result = caseAbstractNamedElement(dg);
 			if (result == null)

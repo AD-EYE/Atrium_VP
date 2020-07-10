@@ -184,6 +184,37 @@ public class DGItemProvider extends NamedElementItemProvider implements IEditing
 		}
 		// end-extension-code
 
+		// begin-extension-code
+		{
+			CommandParameter commandParameter = createChildParameter(
+					EmdePackage.Literals.EXTENSIBLE_ELEMENT__OWNED_EXTENSIONS, AtriumFactory.eINSTANCE.createCFA());
+			if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
+				newChildDescriptors.add(commandParameter);
+			}
+		}
+		// end-extension-code
+
+		// begin-extension-code
+		{
+			CommandParameter commandParameter = createChildParameter(
+					EmdePackage.Literals.EXTENSIBLE_ELEMENT__OWNED_EXTENSIONS,
+					AtriumFactory.eINSTANCE.createAssumption());
+			if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
+				newChildDescriptors.add(commandParameter);
+			}
+		}
+		// end-extension-code
+
+		// begin-extension-code
+		{
+			CommandParameter commandParameter = createChildParameter(
+					EmdePackage.Literals.EXTENSIBLE_ELEMENT__OWNED_EXTENSIONS, AtriumFactory.eINSTANCE.createDG());
+			if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
+				newChildDescriptors.add(commandParameter);
+			}
+		}
+		// end-extension-code
+
 	}
 
 }
