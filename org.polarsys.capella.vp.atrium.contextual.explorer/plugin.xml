@@ -58,6 +58,24 @@
 <extension 
 	point="org.eclipse.amalgam.explorer.contextual.core.contentProviderCategory">
       <category
+            id="org.polarsys.capella.vp.atrium.contextual.explorer.queries.DA_list.Parent"
+            isTopLevel="true"
+            name="Parent">
+         <targetExplorerId
+               id="CurrentElementExplorer">
+         </targetExplorerId>
+         <availableForType
+               class="org.polarsys.capella.vp.atrium.Atrium.DA_list">
+         </availableForType>
+         <categoryQuery>
+            <basicQuery
+                  class="org.polarsys.capella.vp.atrium.contextual.explorer.queries.da_list.ParentQuery">
+            </basicQuery>
+         </categoryQuery>
+      </category>	</extension>
+<extension 
+	point="org.eclipse.amalgam.explorer.contextual.core.contentProviderCategory">
+      <category
             id="org.polarsys.capella.vp.atrium.contextual.explorer.queries.CFA.Parent"
             isTopLevel="true"
             name="Parent">
@@ -151,6 +169,39 @@
          <categoryQuery>
             <basicQuery
                   class="org.polarsys.capella.vp.atrium.contextual.explorer.queries.dg.ParentQuery">
+            </basicQuery>
+         </categoryQuery>
+      </category>      <category
+            id="org.polarsys.capella.vp.atrium.contextual.explorer.queries.DG.ReferencedViewpointElements"
+            isTopLevel="true"
+            name="Referenced viewpoint elements">
+         <targetExplorerId
+               id="ReferencedElementExplorer">
+         </targetExplorerId>
+         <availableForType
+               class="org.polarsys.capella.vp.atrium.Atrium.DG">
+         </availableForType>
+         <categoryQuery>
+            <basicQuery
+                  class="org.polarsys.capella.vp.atrium.contextual.explorer.queries.dg.ReferencedViewpointElementQuery">
+            </basicQuery>
+         </categoryQuery>
+      </category>	</extension>
+<extension 
+	point="org.eclipse.amalgam.explorer.contextual.core.contentProviderCategory">
+      <category
+            id="org.polarsys.capella.vp.atrium.contextual.explorer.queries.DA.Parent"
+            isTopLevel="true"
+            name="Parent">
+         <targetExplorerId
+               id="CurrentElementExplorer">
+         </targetExplorerId>
+         <availableForType
+               class="org.polarsys.capella.vp.atrium.Atrium.DA">
+         </availableForType>
+         <categoryQuery>
+            <basicQuery
+                  class="org.polarsys.capella.vp.atrium.contextual.explorer.queries.da.ParentQuery">
             </basicQuery>
          </categoryQuery>
       </category>	</extension>

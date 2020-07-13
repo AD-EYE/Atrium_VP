@@ -16,6 +16,9 @@ Data Atrium.data {
 	Class DG_list {
 		extends la.LogicalComponent
 	}
+	Class DA_list {
+		extends la.LogicalComponent
+	}
 	Class CFA {
 		extends fa.AbstractFunction
 		Attributes:
@@ -41,7 +44,16 @@ Data Atrium.data {
 		extends fa.AbstractFunction
 		Attributes:
 			content type ecore.EString
+		Associations:
+			DesignAlternative refers [1,*] DA
 	}
+	Class DA {
+		extends fa.AbstractFunction
+		Attributes:
+			content type ecore.EString
+			isPartOfSelection type ecore.EBoolean
+	}
+	
 	Class ElementStateAtrium {
 		extends capellacore.CapellaElement
 		Attributes:

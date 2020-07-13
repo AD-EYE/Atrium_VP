@@ -37,6 +37,9 @@
         <propertySection class="org.polarsys.capella.core.data.core.properties.sections.DefaultNamedElementSection" filter="org.polarsys.capella.vp.atrium.Atrium.provider.sections.DG_listSection" id="org.polarsys.capella.vp.atrium.Atrium.provider.contributions.DG_listItemContribution.section" tab="BaseCapella">
             <input type="org.polarsys.capella.vp.atrium.Atrium.DG_list"/>
         </propertySection>
+        <propertySection class="org.polarsys.capella.core.data.core.properties.sections.DefaultNamedElementSection" filter="org.polarsys.capella.vp.atrium.Atrium.provider.sections.DA_listSection" id="org.polarsys.capella.vp.atrium.Atrium.provider.contributions.DA_listItemContribution.section" tab="BaseCapella">
+            <input type="org.polarsys.capella.vp.atrium.Atrium.DA_list"/>
+        </propertySection>
         <propertySection class="org.polarsys.capella.core.data.core.properties.sections.DefaultNamedElementSection" filter="org.polarsys.capella.vp.atrium.Atrium.provider.sections.CFASection" id="org.polarsys.capella.vp.atrium.Atrium.provider.contributions.CFAItemContribution.section" tab="BaseCapella">
             <input type="org.polarsys.capella.vp.atrium.Atrium.CFA"/>
         </propertySection>
@@ -45,6 +48,9 @@
         </propertySection>
         <propertySection class="org.polarsys.capella.core.data.core.properties.sections.DefaultNamedElementSection" filter="org.polarsys.capella.vp.atrium.Atrium.provider.sections.DGSection" id="org.polarsys.capella.vp.atrium.Atrium.provider.contributions.DGItemContribution.section" tab="BaseCapella">
             <input type="org.polarsys.capella.vp.atrium.Atrium.DG"/>
+        </propertySection>
+        <propertySection class="org.polarsys.capella.core.data.core.properties.sections.DefaultNamedElementSection" filter="org.polarsys.capella.vp.atrium.Atrium.provider.sections.DASection" id="org.polarsys.capella.vp.atrium.Atrium.provider.contributions.DAItemContribution.section" tab="BaseCapella">
+            <input type="org.polarsys.capella.vp.atrium.Atrium.DA"/>
         </propertySection>
         <propertySection class="org.polarsys.capella.core.data.core.properties.sections.DefaultNamedElementSection" filter="org.polarsys.capella.vp.atrium.Atrium.provider.sections.ElementStateAtriumSection" id="org.polarsys.capella.vp.atrium.Atrium.provider.contributions.ElementStateAtriumItemContribution.section" tab="BaseCapella">
             <input type="org.polarsys.capella.vp.atrium.Atrium.ElementStateAtrium"/>
@@ -61,11 +67,15 @@
         </propertySection>
         <propertySection class="org.polarsys.capella.vp.atrium.Atrium.provider.sections.DG_listSection" filter="org.polarsys.capella.vp.atrium.Atrium.provider.sections.DG_listSection" id="org.polarsys.capella.vp.atrium.Atrium.provider.sections.DG_listSection.section" tab="BaseSiriusDiagram">
         </propertySection>
+        <propertySection class="org.polarsys.capella.vp.atrium.Atrium.provider.sections.DA_listSection" filter="org.polarsys.capella.vp.atrium.Atrium.provider.sections.DA_listSection" id="org.polarsys.capella.vp.atrium.Atrium.provider.sections.DA_listSection.section" tab="BaseSiriusDiagram">
+        </propertySection>
         <propertySection class="org.polarsys.capella.vp.atrium.Atrium.provider.sections.CFASection" filter="org.polarsys.capella.vp.atrium.Atrium.provider.sections.CFASection" id="org.polarsys.capella.vp.atrium.Atrium.provider.sections.CFASection.section" tab="BaseSiriusDiagram">
         </propertySection>
         <propertySection class="org.polarsys.capella.vp.atrium.Atrium.provider.sections.AssumptionSection" filter="org.polarsys.capella.vp.atrium.Atrium.provider.sections.AssumptionSection" id="org.polarsys.capella.vp.atrium.Atrium.provider.sections.AssumptionSection.section" tab="BaseSiriusDiagram">
         </propertySection>
         <propertySection class="org.polarsys.capella.vp.atrium.Atrium.provider.sections.DGSection" filter="org.polarsys.capella.vp.atrium.Atrium.provider.sections.DGSection" id="org.polarsys.capella.vp.atrium.Atrium.provider.sections.DGSection.section" tab="BaseSiriusDiagram">
+        </propertySection>
+        <propertySection class="org.polarsys.capella.vp.atrium.Atrium.provider.sections.DASection" filter="org.polarsys.capella.vp.atrium.Atrium.provider.sections.DASection" id="org.polarsys.capella.vp.atrium.Atrium.provider.sections.DASection.section" tab="BaseSiriusDiagram">
         </propertySection>
         <propertySection class="org.polarsys.capella.vp.atrium.Atrium.provider.sections.ElementStateAtriumSection" filter="org.polarsys.capella.vp.atrium.Atrium.provider.sections.ElementStateAtriumSection" id="org.polarsys.capella.vp.atrium.Atrium.provider.sections.ElementStateAtriumSection.section" tab="BaseSiriusDiagram">
         </propertySection>

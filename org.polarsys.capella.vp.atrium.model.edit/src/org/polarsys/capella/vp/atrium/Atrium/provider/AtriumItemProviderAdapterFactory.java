@@ -181,6 +181,29 @@ public class AtriumItemProviderAdapterFactory extends AtriumAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.polarsys.capella.vp.atrium.Atrium.DA_list} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected DA_listItemProvider dA_listItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.polarsys.capella.vp.atrium.Atrium.DA_list}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createDA_listAdapter() {
+		if (dA_listItemProvider == null) {
+			dA_listItemProvider = new DA_listItemProvider(this);
+		}
+
+		return dA_listItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link org.polarsys.capella.vp.atrium.Atrium.CFA} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -247,6 +270,29 @@ public class AtriumItemProviderAdapterFactory extends AtriumAdapterFactory
 		}
 
 		return dgItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.polarsys.capella.vp.atrium.Atrium.DA} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected DAItemProvider daItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.polarsys.capella.vp.atrium.Atrium.DA}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createDAAdapter() {
+		if (daItemProvider == null) {
+			daItemProvider = new DAItemProvider(this);
+		}
+
+		return daItemProvider;
 	}
 
 	/**
@@ -410,12 +456,16 @@ public class AtriumItemProviderAdapterFactory extends AtriumAdapterFactory
 			assumption_listItemProvider.dispose();
 		if (dG_listItemProvider != null)
 			dG_listItemProvider.dispose();
+		if (dA_listItemProvider != null)
+			dA_listItemProvider.dispose();
 		if (cfaItemProvider != null)
 			cfaItemProvider.dispose();
 		if (assumptionItemProvider != null)
 			assumptionItemProvider.dispose();
 		if (dgItemProvider != null)
 			dgItemProvider.dispose();
+		if (daItemProvider != null)
+			daItemProvider.dispose();
 		if (elementStateAtriumItemProvider != null)
 			elementStateAtriumItemProvider.dispose();
 	}
@@ -512,6 +562,17 @@ public class AtriumItemProviderAdapterFactory extends AtriumAdapterFactory
 				{
 					CommandParameter commandParameter = createChildParameter(
 							EmdePackage.Literals.EXTENSIBLE_ELEMENT__OWNED_EXTENSIONS,
+							AtriumFactory.eINSTANCE.createDA_list());
+					if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
+						newChildDescriptors.add(commandParameter);
+					}
+				}
+				// end-extension-code
+
+				// begin-extension-code
+				{
+					CommandParameter commandParameter = createChildParameter(
+							EmdePackage.Literals.EXTENSIBLE_ELEMENT__OWNED_EXTENSIONS,
 							AtriumFactory.eINSTANCE.createCFA());
 					if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
 						newChildDescriptors.add(commandParameter);
@@ -535,6 +596,17 @@ public class AtriumItemProviderAdapterFactory extends AtriumAdapterFactory
 					CommandParameter commandParameter = createChildParameter(
 							EmdePackage.Literals.EXTENSIBLE_ELEMENT__OWNED_EXTENSIONS,
 							AtriumFactory.eINSTANCE.createDG());
+					if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
+						newChildDescriptors.add(commandParameter);
+					}
+				}
+				// end-extension-code
+
+				// begin-extension-code
+				{
+					CommandParameter commandParameter = createChildParameter(
+							EmdePackage.Literals.EXTENSIBLE_ELEMENT__OWNED_EXTENSIONS,
+							AtriumFactory.eINSTANCE.createDA());
 					if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
 						newChildDescriptors.add(commandParameter);
 					}
@@ -679,6 +751,17 @@ public class AtriumItemProviderAdapterFactory extends AtriumAdapterFactory
 				{
 					CommandParameter commandParameter = createChildParameter(
 							SharedmodelPackage.Literals.GENERIC_PKG__CAPELLA_ELEMENTS,
+							AtriumFactory.eINSTANCE.createDA_list());
+					if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
+						newChildDescriptors.add(commandParameter);
+					}
+				}
+				// end-extension-code
+
+				// begin-extension-code
+				{
+					CommandParameter commandParameter = createChildParameter(
+							SharedmodelPackage.Literals.GENERIC_PKG__CAPELLA_ELEMENTS,
 							AtriumFactory.eINSTANCE.createCFA());
 					if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
 						newChildDescriptors.add(commandParameter);
@@ -702,6 +785,17 @@ public class AtriumItemProviderAdapterFactory extends AtriumAdapterFactory
 					CommandParameter commandParameter = createChildParameter(
 							SharedmodelPackage.Literals.GENERIC_PKG__CAPELLA_ELEMENTS,
 							AtriumFactory.eINSTANCE.createDG());
+					if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
+						newChildDescriptors.add(commandParameter);
+					}
+				}
+				// end-extension-code
+
+				// begin-extension-code
+				{
+					CommandParameter commandParameter = createChildParameter(
+							SharedmodelPackage.Literals.GENERIC_PKG__CAPELLA_ELEMENTS,
+							AtriumFactory.eINSTANCE.createDA());
 					if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
 						newChildDescriptors.add(commandParameter);
 					}

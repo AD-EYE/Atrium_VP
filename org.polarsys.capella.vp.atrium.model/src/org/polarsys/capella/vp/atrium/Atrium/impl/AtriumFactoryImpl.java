@@ -64,12 +64,16 @@ public class AtriumFactoryImpl extends EFactoryImpl implements AtriumFactory {
 			return createAssumption_list();
 		case AtriumPackage.DG_LIST:
 			return createDG_list();
+		case AtriumPackage.DA_LIST:
+			return createDA_list();
 		case AtriumPackage.CFA:
 			return createCFA();
 		case AtriumPackage.ASSUMPTION:
 			return createAssumption();
 		case AtriumPackage.DG:
 			return createDG();
+		case AtriumPackage.DA:
+			return createDA();
 		case AtriumPackage.ELEMENT_STATE_ATRIUM:
 			return createElementStateAtrium();
 		default:
@@ -157,6 +161,21 @@ public class AtriumFactoryImpl extends EFactoryImpl implements AtriumFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public DA_list createDA_list() {
+		DA_listImpl dA_list = new DA_listImpl();
+		//begin-capella-code
+
+		dA_list.setId(IdGenerator.createId());
+
+		//end-capella-code
+		return dA_list;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public CFA createCFA() {
 		CFAImpl cfa = new CFAImpl();
 		//begin-capella-code
@@ -195,6 +214,21 @@ public class AtriumFactoryImpl extends EFactoryImpl implements AtriumFactory {
 
 		//end-capella-code
 		return dg;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DA createDA() {
+		DAImpl da = new DAImpl();
+		//begin-capella-code
+
+		da.setId(IdGenerator.createId());
+
+		//end-capella-code
+		return da;
 	}
 
 	/**
@@ -293,6 +327,19 @@ public class AtriumFactoryImpl extends EFactoryImpl implements AtriumFactory {
 		return dG_list;
 	}
 
+	/**
+	 * Creates class and sets its name
+	 * (This method comes from a customization of the standard EMF generator)
+	 *
+	 * @param name_p : default name of created element
+	 * @generated
+	 */
+	public DA_list createDA_list(String name_p) {
+		DA_list dA_list = createDA_list();
+		dA_list.setName(name_p);
+		return dA_list;
+	}
+
 	//begin-capella-code
 
 	/**
@@ -332,6 +379,19 @@ public class AtriumFactoryImpl extends EFactoryImpl implements AtriumFactory {
 		DG dg = createDG();
 		dg.setName(name_p);
 		return dg;
+	}
+
+	/**
+	 * Creates class and sets its name
+	 * (This method comes from a customization of the standard EMF generator)
+	 *
+	 * @param name_p : default name of created element
+	 * @generated
+	 */
+	public DA createDA(String name_p) {
+		DA da = createDA();
+		da.setName(name_p);
+		return da;
 	}
 
 	/**

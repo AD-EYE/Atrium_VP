@@ -49,6 +49,7 @@ import org.polarsys.capella.vp.atrium.Atrium.AtriumFactory;
 import org.polarsys.capella.vp.atrium.Atrium.AtriumPackage;
 
 import org.polarsys.capella.vp.atrium.Atrium.CFA_list;
+import org.polarsys.capella.vp.atrium.Atrium.DA_list;
 import org.polarsys.capella.vp.atrium.Atrium.DG_list;
 import org.polarsys.capella.vp.atrium.Atrium.ElementStateAtrium;
 import org.polarsys.capella.vp.atrium.Atrium.Goal_list;
@@ -90,6 +91,13 @@ public class AtriumPackageImpl extends EPackageImpl implements AtriumPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass dA_listEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass cfaEClass = null;
 
 	/**
@@ -104,6 +112,13 @@ public class AtriumPackageImpl extends EPackageImpl implements AtriumPackage {
 	 * @generated
 	 */
 	private EClass dgEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass daEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -231,6 +246,16 @@ public class AtriumPackageImpl extends EPackageImpl implements AtriumPackage {
 	@Override
 	public EClass getDG_list() {
 		return dG_listEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getDA_list() {
+		return dA_listEClass;
 	}
 
 	/**
@@ -389,8 +414,48 @@ public class AtriumPackageImpl extends EPackageImpl implements AtriumPackage {
 	 * @generated
 	 */
 	@Override
+	public EReference getDG_DesignAlternative() {
+		return (EReference) dgEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EAttribute getDG_Content() {
-		return (EAttribute) dgEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) dgEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getDA() {
+		return daEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getDA_Content() {
+		return (EAttribute) daEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getDA_IsPartOfSelection() {
+		return (EAttribute) daEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -459,6 +524,8 @@ public class AtriumPackageImpl extends EPackageImpl implements AtriumPackage {
 
 		dG_listEClass = createEClass(DG_LIST);
 
+		dA_listEClass = createEClass(DA_LIST);
+
 		cfaEClass = createEClass(CFA);
 		createEReference(cfaEClass, CFA__LINKEDTO_ELEMENT);
 		createEReference(cfaEClass, CFA__ASSUMPTION);
@@ -476,7 +543,12 @@ public class AtriumPackageImpl extends EPackageImpl implements AtriumPackage {
 		createEAttribute(assumptionEClass, ASSUMPTION__DATE_OF_COMPLETION);
 
 		dgEClass = createEClass(DG);
+		createEReference(dgEClass, DG__DESIGN_ALTERNATIVE);
 		createEAttribute(dgEClass, DG__CONTENT);
+
+		daEClass = createEClass(DA);
+		createEAttribute(daEClass, DA__CONTENT);
+		createEAttribute(daEClass, DA__IS_PART_OF_SELECTION);
 
 		elementStateAtriumEClass = createEClass(ELEMENT_STATE_ATRIUM);
 		createEAttribute(elementStateAtriumEClass, ELEMENT_STATE_ATRIUM__IS_NEW_DEVELOPMENT);
@@ -525,12 +597,16 @@ public class AtriumPackageImpl extends EPackageImpl implements AtriumPackage {
 		assumption_listEClass.getESuperTypes().add(theEmdePackage.getElementExtension());
 		dG_listEClass.getESuperTypes().add(theCapellacorePackage.getNamedElement());
 		dG_listEClass.getESuperTypes().add(theEmdePackage.getElementExtension());
+		dA_listEClass.getESuperTypes().add(theCapellacorePackage.getNamedElement());
+		dA_listEClass.getESuperTypes().add(theEmdePackage.getElementExtension());
 		cfaEClass.getESuperTypes().add(theCapellacorePackage.getNamedElement());
 		cfaEClass.getESuperTypes().add(theEmdePackage.getElementExtension());
 		assumptionEClass.getESuperTypes().add(theCapellacorePackage.getNamedElement());
 		assumptionEClass.getESuperTypes().add(theEmdePackage.getElementExtension());
 		dgEClass.getESuperTypes().add(theCapellacorePackage.getNamedElement());
 		dgEClass.getESuperTypes().add(theEmdePackage.getElementExtension());
+		daEClass.getESuperTypes().add(theCapellacorePackage.getNamedElement());
+		daEClass.getESuperTypes().add(theEmdePackage.getElementExtension());
 		elementStateAtriumEClass.getESuperTypes().add(theCapellacorePackage.getNamedElement());
 		elementStateAtriumEClass.getESuperTypes().add(theEmdePackage.getElementExtension());
 
@@ -542,6 +618,8 @@ public class AtriumPackageImpl extends EPackageImpl implements AtriumPackage {
 				IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(dG_listEClass, DG_list.class, "DG_list", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+
+		initEClass(dA_listEClass, DA_list.class, "DA_list", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 
 		initEClass(cfaEClass, org.polarsys.capella.vp.atrium.Atrium.CFA.class, "CFA", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
 				IS_GENERATED_INSTANCE_CLASS);
@@ -584,8 +662,20 @@ public class AtriumPackageImpl extends EPackageImpl implements AtriumPackage {
 
 		initEClass(dgEClass, org.polarsys.capella.vp.atrium.Atrium.DG.class, "DG", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
 				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getDG_DesignAlternative(), this.getDA(), null, "DesignAlternative", null, 1, -1, //$NON-NLS-1$
+				org.polarsys.capella.vp.atrium.Atrium.DG.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDG_Content(), ecorePackage.getEString(), "content", null, 0, 1, //$NON-NLS-1$
 				org.polarsys.capella.vp.atrium.Atrium.DG.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(daEClass, org.polarsys.capella.vp.atrium.Atrium.DA.class, "DA", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getDA_Content(), ecorePackage.getEString(), "content", null, 0, 1, //$NON-NLS-1$
+				org.polarsys.capella.vp.atrium.Atrium.DA.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDA_IsPartOfSelection(), ecorePackage.getEBoolean(), "isPartOfSelection", null, 0, 1, //$NON-NLS-1$
+				org.polarsys.capella.vp.atrium.Atrium.DA.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
 				!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(elementStateAtriumEClass, ElementStateAtrium.class, "ElementStateAtrium", !IS_ABSTRACT, //$NON-NLS-1$
@@ -627,6 +717,9 @@ public class AtriumPackageImpl extends EPackageImpl implements AtriumPackage {
 		addAnnotation(dG_listEClass, source,
 				new String[] { "ExtendedElement", " http://www.polarsys.org/capella/core/la/1.4.0#//LogicalComponent" //$NON-NLS-1$ //$NON-NLS-2$
 				});
+		addAnnotation(dA_listEClass, source,
+				new String[] { "ExtendedElement", " http://www.polarsys.org/capella/core/la/1.4.0#//LogicalComponent" //$NON-NLS-1$ //$NON-NLS-2$
+				});
 		addAnnotation(cfaEClass, source,
 				new String[] { "ExtendedElement", " http://www.polarsys.org/capella/core/fa/1.4.0#//AbstractFunction" //$NON-NLS-1$ //$NON-NLS-2$
 				});
@@ -634,6 +727,9 @@ public class AtriumPackageImpl extends EPackageImpl implements AtriumPackage {
 				new String[] { "ExtendedElement", " http://www.polarsys.org/capella/core/fa/1.4.0#//AbstractFunction" //$NON-NLS-1$ //$NON-NLS-2$
 				});
 		addAnnotation(dgEClass, source,
+				new String[] { "ExtendedElement", " http://www.polarsys.org/capella/core/fa/1.4.0#//AbstractFunction" //$NON-NLS-1$ //$NON-NLS-2$
+				});
+		addAnnotation(daEClass, source,
 				new String[] { "ExtendedElement", " http://www.polarsys.org/capella/core/fa/1.4.0#//AbstractFunction" //$NON-NLS-1$ //$NON-NLS-2$
 				});
 		addAnnotation(elementStateAtriumEClass, source,
@@ -658,6 +754,9 @@ public class AtriumPackageImpl extends EPackageImpl implements AtriumPackage {
 		addAnnotation(dG_listEClass, source, new String[] { "Mapping", //$NON-NLS-1$
 				" platform:/plugin/org.polarsys.capella.core.data.gen/model/LogicalArchitecture.ecore#//LogicalComponent" //$NON-NLS-1$
 		});
+		addAnnotation(dA_listEClass, source, new String[] { "Mapping", //$NON-NLS-1$
+				" platform:/plugin/org.polarsys.capella.core.data.gen/model/LogicalArchitecture.ecore#//LogicalComponent" //$NON-NLS-1$
+		});
 		addAnnotation(cfaEClass, source, new String[] { "Mapping", //$NON-NLS-1$
 				" platform:/plugin/org.polarsys.capella.core.data.gen/model/FunctionalAnalysis.ecore#//AbstractFunction" //$NON-NLS-1$
 		});
@@ -665,6 +764,9 @@ public class AtriumPackageImpl extends EPackageImpl implements AtriumPackage {
 				" platform:/plugin/org.polarsys.capella.core.data.gen/model/FunctionalAnalysis.ecore#//AbstractFunction" //$NON-NLS-1$
 		});
 		addAnnotation(dgEClass, source, new String[] { "Mapping", //$NON-NLS-1$
+				" platform:/plugin/org.polarsys.capella.core.data.gen/model/FunctionalAnalysis.ecore#//AbstractFunction" //$NON-NLS-1$
+		});
+		addAnnotation(daEClass, source, new String[] { "Mapping", //$NON-NLS-1$
 				" platform:/plugin/org.polarsys.capella.core.data.gen/model/FunctionalAnalysis.ecore#//AbstractFunction" //$NON-NLS-1$
 		});
 		addAnnotation(elementStateAtriumEClass, source, new String[] { "Mapping", //$NON-NLS-1$

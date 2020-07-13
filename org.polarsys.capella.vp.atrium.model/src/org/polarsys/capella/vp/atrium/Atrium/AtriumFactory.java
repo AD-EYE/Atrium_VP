@@ -48,6 +48,15 @@ public interface AtriumFactory extends EFactory {
 	DG_list createDG_list();
 
 	/**
+	 * Returns a new object of class '<em>DA list</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>DA list</em>'.
+	 * @generated
+	 */
+	DA_list createDA_list();
+
+	/**
 	 * Returns a new object of class '<em>CFA</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -73,6 +82,15 @@ public interface AtriumFactory extends EFactory {
 	 * @generated
 	 */
 	DG createDG();
+
+	/**
+	 * Returns a new object of class '<em>DA</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>DA</em>'.
+	 * @generated
+	 */
+	DA createDA();
 
 	/**
 	 * Returns a new object of class '<em>Element State Atrium</em>'.

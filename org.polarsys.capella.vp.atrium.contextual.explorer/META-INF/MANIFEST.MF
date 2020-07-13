@@ -12,6 +12,8 @@ Export-Package: org.polarsys.capella.vp.atrium.contextual.explorer.queries.assum
  org.polarsys.capella.vp.atrium.contextual.explorer.queries.cfa,
  org.polarsys.capella.vp.atrium.contextual.explorer.queries.cfa_list,
  org.polarsys.capella.vp.atrium.contextual.explorer.queries.cfalist,
+ org.polarsys.capella.vp.atrium.contextual.explorer.queries.da,
+ org.polarsys.capella.vp.atrium.contextual.explorer.queries.da_list,
  org.polarsys.capella.vp.atrium.contextual.explorer.queries.dg,
  org.polarsys.capella.vp.atrium.contextual.explorer.queries.dg_list,
  org.polarsys.capella.vp.atrium.contextual.explorer.queries.elementstateatrium,

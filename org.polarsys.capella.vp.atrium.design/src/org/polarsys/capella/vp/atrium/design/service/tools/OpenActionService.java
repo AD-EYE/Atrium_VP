@@ -18,6 +18,8 @@ import org.polarsys.capella.core.data.fa.FunctionalExchange;
 import org.polarsys.capella.core.data.la.LogicalComponentPkg;
 import org.polarsys.capella.vp.atrium.Atrium.CFA;
 import org.polarsys.capella.vp.atrium.Atrium.CFA_list;
+import org.polarsys.capella.vp.atrium.Atrium.DA;
+import org.polarsys.capella.vp.atrium.Atrium.DA_list;
 import org.polarsys.capella.vp.atrium.Atrium.DG;
 import org.polarsys.capella.vp.atrium.Atrium.DG_list;
 import org.polarsys.capella.vp.atrium.Atrium.ElementStateAtrium;
@@ -88,6 +90,23 @@ public class OpenActionService {
 
 		((CapellaElement) myDG_list).setId(EcoreUtil.generateUUID());
 		((ExtensibleElement) element).getOwnedExtensions().add((ElementExtension) myDG_list);
+		return true;
+	}
+
+	/**
+	* <!-- begin-user-doc -->
+	* <!-- end-user-doc -->
+	* @param element : the element
+	* @param newSemanticContainer : the element view
+	* @generated NOT
+	*/
+	public boolean create_DA_list(EObject element, EObject newSemanticContainer) {
+		DA_list myDA_list = null;
+
+		myDA_list = AtriumFactoryImpl.eINSTANCE.createDA_list();
+
+		((CapellaElement) myDA_list).setId(EcoreUtil.generateUUID());
+		((ExtensibleElement) element).getOwnedExtensions().add((ElementExtension) myDA_list);
 		return true;
 	}
 
@@ -168,6 +187,32 @@ public class OpenActionService {
 
 			((CapellaElement) myDG).setId(EcoreUtil.generateUUID());
 			((ExtensibleElement) my_DG_list).getOwnedExtensions().add((ElementExtension) myDG);
+			return true;
+		}
+	}
+
+	/**
+	* <!-- begin-user-doc -->
+	* <!-- end-user-doc -->
+	* @param element : the element
+	* @param newSemanticContainer : the element view
+	* @generated NOT
+	*/
+	public boolean add_DA(EObject element, EObject newSemanticContainer) {
+
+		if (!(element instanceof DA_list)) {
+			System.out.println("Action cancelled, please add a DA inside a DA list");
+			return false;
+		} else {
+			DA myDA = null;
+			DA_list my_DA_list = (DA_list) element;
+
+			myDA = AtriumFactoryImpl.eINSTANCE.createDA();
+
+			myDA.setContent("Some content");
+
+			((CapellaElement) myDA).setId(EcoreUtil.generateUUID());
+			((ExtensibleElement) my_DA_list).getOwnedExtensions().add((ElementExtension) myDA);
 			return true;
 		}
 	}

@@ -93,6 +93,11 @@ public class AtriumAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseDA_list(DA_list object) {
+			return createDA_listAdapter();
+		}
+
+		@Override
 		public Adapter caseCFA(CFA object) {
 			return createCFAAdapter();
 		}
@@ -105,6 +110,11 @@ public class AtriumAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseDG(DG object) {
 			return createDGAdapter();
+		}
+
+		@Override
+		public Adapter caseDA(DA object) {
+			return createDAAdapter();
 		}
 
 		@Override
@@ -219,6 +229,20 @@ public class AtriumAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link org.polarsys.capella.vp.atrium.Atrium.DA_list <em>DA list</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.polarsys.capella.vp.atrium.Atrium.DA_list
+	 * @generated
+	 */
+	public Adapter createDA_listAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link org.polarsys.capella.vp.atrium.Atrium.CFA <em>CFA</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -257,6 +281,20 @@ public class AtriumAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createDGAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.polarsys.capella.vp.atrium.Atrium.DA <em>DA</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.polarsys.capella.vp.atrium.Atrium.DA
+	 * @generated
+	 */
+	public Adapter createDAAdapter() {
 		return null;
 	}
 

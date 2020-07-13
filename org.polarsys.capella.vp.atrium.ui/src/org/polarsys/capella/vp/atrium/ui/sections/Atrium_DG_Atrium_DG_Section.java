@@ -22,6 +22,7 @@ import org.polarsys.kitalpha.ad.services.manager.ViewpointManager;
 
 import org.polarsys.capella.core.ui.properties.fields.*;
 
+import org.polarsys.capella.vp.atrium.ui.controllers.DesignAlternativeAssociationFieldController;
 import org.polarsys.capella.core.data.capellacore.CapellaElement;
 import org.polarsys.capella.vp.atrium.Atrium.AtriumPackage;
 import org.polarsys.capella.vp.atrium.Atrium.DG;
@@ -50,11 +51,29 @@ public class Atrium_DG_Atrium_DG_Section extends AbstractSection {
 	/**
 	* <!-- begin-model-doc -->
 	* <!-- end-model-doc -->
+	* <!-- begin-user-doc -->
+	* <!-- end-user-doc -->
+	* @generated
+	*/
+	private MultipleSemanticField DesignAlternativeAssociation;
+
+	/**
+	* <!-- begin-model-doc -->
+	* <!-- end-model-doc -->
 		* <!-- begin-user-doc -->
 	* <!-- end-user-doc -->
 		* @generated
 		*/
 	private Group Atrium_DG_AttributeGroup;
+
+	/**
+	* <!-- begin-model-doc -->
+	* <!-- end-model-doc -->
+		* <!-- begin-user-doc -->
+		* <!-- end-user-doc -->
+		* @generated
+		*/
+	private Group Atrium_DG_AssociationGroup;
 
 	/**
 	* <!-- begin-user-doc -->
@@ -159,6 +178,17 @@ public class Atrium_DG_Atrium_DG_Section extends AbstractSection {
 
 		ContentField2 = new TextValueGroup(Atrium_DG_AttributeGroup, "Content :", getWidgetFactory(), true);
 
+		Atrium_DG_AssociationGroup = getWidgetFactory().createGroup(rootParentComposite, "D G Associations");
+		Atrium_DG_AssociationGroup.setLayout(new GridLayout(6, false));
+
+		GridData gdAtrium_DG_AssociationGroup = new GridData(GridData.FILL_HORIZONTAL);
+
+		gdAtrium_DG_AssociationGroup.horizontalSpan = ((GridLayout) rootParentComposite.getLayout()).numColumns;
+		Atrium_DG_AssociationGroup.setLayoutData(gdAtrium_DG_AssociationGroup);
+
+		DesignAlternativeAssociation = new MultipleSemanticField(Atrium_DG_AssociationGroup, "Design Alternative :",
+				getWidgetFactory(), new DesignAlternativeAssociationFieldController());
+
 	}
 
 	/**
@@ -172,6 +202,8 @@ public class Atrium_DG_Atrium_DG_Section extends AbstractSection {
 
 		ContentField2.loadData(object, AtriumPackage.eINSTANCE.getDG_Content());
 
+		DesignAlternativeAssociation.loadData(object, AtriumPackage.eINSTANCE.getDG_DesignAlternative());
+
 	}
 
 	/**
@@ -183,6 +215,8 @@ public class Atrium_DG_Atrium_DG_Section extends AbstractSection {
 		List<AbstractSemanticField> abstractSemanticFields = new ArrayList<AbstractSemanticField>();
 
 		abstractSemanticFields.add(ContentField2);
+
+		abstractSemanticFields.add(DesignAlternativeAssociation);
 
 		return abstractSemanticFields;
 	}

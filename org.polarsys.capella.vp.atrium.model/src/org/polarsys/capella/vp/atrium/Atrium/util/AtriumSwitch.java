@@ -152,6 +152,31 @@ public class AtriumSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
+		case AtriumPackage.DA_LIST: {
+			DA_list dA_list = (DA_list) theEObject;
+			T result = caseDA_list(dA_list);
+			if (result == null)
+				result = caseNamedElement(dA_list);
+			if (result == null)
+				result = caseElementExtension(dA_list);
+			if (result == null)
+				result = caseAbstractNamedElement(dA_list);
+			if (result == null)
+				result = caseCapellaElement(dA_list);
+			if (result == null)
+				result = caseTraceableElement(dA_list);
+			if (result == null)
+				result = casePublishableElement(dA_list);
+			if (result == null)
+				result = caseModelElement(dA_list);
+			if (result == null)
+				result = caseExtensibleElement(dA_list);
+			if (result == null)
+				result = caseElement(dA_list);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
 		case AtriumPackage.CFA: {
 			CFA cfa = (CFA) theEObject;
 			T result = caseCFA(cfa);
@@ -223,6 +248,31 @@ public class AtriumSwitch<T> extends Switch<T> {
 				result = caseExtensibleElement(dg);
 			if (result == null)
 				result = caseElement(dg);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case AtriumPackage.DA: {
+			DA da = (DA) theEObject;
+			T result = caseDA(da);
+			if (result == null)
+				result = caseNamedElement(da);
+			if (result == null)
+				result = caseElementExtension(da);
+			if (result == null)
+				result = caseAbstractNamedElement(da);
+			if (result == null)
+				result = caseCapellaElement(da);
+			if (result == null)
+				result = caseTraceableElement(da);
+			if (result == null)
+				result = casePublishableElement(da);
+			if (result == null)
+				result = caseModelElement(da);
+			if (result == null)
+				result = caseExtensibleElement(da);
+			if (result == null)
+				result = caseElement(da);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -303,6 +353,21 @@ public class AtriumSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>DA list</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>DA list</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDA_list(DA_list object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>CFA</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -344,6 +409,21 @@ public class AtriumSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseDG(DG object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>DA</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>DA</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDA(DA object) {
 		return null;
 	}
 

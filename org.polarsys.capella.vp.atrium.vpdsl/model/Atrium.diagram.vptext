@@ -136,6 +136,40 @@ Diagrams Atrium.diagram {
 					}
 				}
 			}
+			
+			Container Container_list_DA {
+				domain-context: Atrium.data.DA_list
+				provided-by association external emde.ExtensibleElement.ownedExtensions content-layout: List
+				Representation {
+					Label {
+						content: "DA list"
+						police: black
+					}
+					Style {
+						FlatStyle {
+							background: light_chocolate foreground: white
+						}
+					}
+				}
+				Contains {
+					Node node_DA {
+						domain-context: Atrium.data.DA
+						provided-by association external emde.ExtensibleElement.ownedExtensions
+						Representation {
+							Label {
+								content: "[Design] " + "aql:self.name"
+								police: black
+								alignment: center
+							}
+							Style {
+								BasicStyle {
+									border-color: black background: light_gray form: Square
+								}
+							}
+						}
+					}
+				}
+			}
 
 			///Import Capella Element + giving them a condition
 			Container ContainerLC {
@@ -143,7 +177,7 @@ Diagrams Atrium.diagram {
 				Representation {
 					condition: Java isElementNew Style {
 						FlatStyle {
-							background: red foreground: white
+							background: orange foreground: white
 						}
 					}
 				}
@@ -153,7 +187,7 @@ Diagrams Atrium.diagram {
 				Representation {
 					condition: Java isElementNewNode Style {
 						BasicStyle {
-							background: light_red
+							background: orange
 						}
 					}
 				}
@@ -163,7 +197,7 @@ Diagrams Atrium.diagram {
 					condition: Java isElementNewFE Style {
 						line-style: solid
 						end-decorator: NoDecoration
-						color: red
+						color: orange
 					}
 				}
 			}
@@ -180,6 +214,9 @@ Diagrams Atrium.diagram {
 			OpenAction create_DG_list {
 				label: "Create DG List"
 			}
+			OpenAction create_DA_list {
+				label: "Create DA List"
+			}
 			OpenAction add_CFA {
 				label: "Add CFA"
 			}
@@ -188,6 +225,9 @@ Diagrams Atrium.diagram {
 			}
 			OpenAction add_DG {
 				label: "Add DG"
+			}
+			OpenAction add_DA {
+				label: "Add DA"
 			}
 			OpenAction ElementNewDevelopment {
 				label: "ElementNewDevelopment"
