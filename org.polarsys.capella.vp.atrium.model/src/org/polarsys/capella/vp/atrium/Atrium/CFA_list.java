@@ -11,12 +11,6 @@ import org.polarsys.kitalpha.emde.model.ElementExtension;
  * A representation of the model object '<em><b>CFA list</b></em>'.
  * <!-- end-user-doc -->
  *
- * <p>
- * The following features are supported:
- * </p>
- * <ul>
- *   <li>{@link org.polarsys.capella.vp.atrium.Atrium.CFA_list#getCFAs <em>CF As</em>}</li>
- * </ul>
  *
  * @see org.polarsys.capella.vp.atrium.Atrium.AtriumPackage#getCFA_list()
  * @model annotation="http://www.polarsys.org/kitalpha/emde/1.0.0/constraint ExtendedElement=' http://www.polarsys.org/capella/core/la/1.4.0#//LogicalComponent'"
@@ -25,19 +19,5 @@ import org.polarsys.kitalpha.emde.model.ElementExtension;
  */
 
 public interface CFA_list extends NamedElement, ElementExtension {
-
-	/**
-	 * Returns the value of the '<em><b>CF As</b></em>' containment reference list.
-	 * The list contents are of type {@link org.polarsys.capella.vp.atrium.Atrium.CFA}.
-	
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>CF As</em>' containment reference list.
-	 * @see org.polarsys.capella.vp.atrium.Atrium.AtriumPackage#getCFA_list_CFAs()
-	 * @model containment="true"
-	 * @generated
-	 */
-
-	EList<CFA> getCFAs();
 
 } // CFA_list

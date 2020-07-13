@@ -117,13 +117,6 @@ public class AtriumPackageImpl extends EPackageImpl implements AtriumPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EEnum stateLinkedElement_TypeEEnum = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EEnum assumptionType_TypeEEnum = null;
 
 	/**
@@ -226,16 +219,6 @@ public class AtriumPackageImpl extends EPackageImpl implements AtriumPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getCFA_list_CFAs() {
-		return (EReference) cfA_listEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getAssumption_list() {
 		return assumption_listEClass;
 	}
@@ -246,28 +229,8 @@ public class AtriumPackageImpl extends EPackageImpl implements AtriumPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getAssumption_list_Assumptions() {
-		return (EReference) assumption_listEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getDG_list() {
 		return dG_listEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getDG_list_DGs() {
-		return (EReference) dG_listEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -336,16 +299,6 @@ public class AtriumPackageImpl extends EPackageImpl implements AtriumPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getCFA_StateLinkedElement() {
-		return (EAttribute) cfaEClass.getEStructuralFeatures().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getAssumption() {
 		return assumptionEClass;
 	}
@@ -357,16 +310,6 @@ public class AtriumPackageImpl extends EPackageImpl implements AtriumPackage {
 	 */
 	@Override
 	public EAttribute getAssumption_Content() {
-		return (EAttribute) assumptionEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getAssumption_Rationale() {
 		return (EAttribute) assumptionEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -376,7 +319,7 @@ public class AtriumPackageImpl extends EPackageImpl implements AtriumPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getAssumption_Validity() {
+	public EAttribute getAssumption_Rationale() {
 		return (EAttribute) assumptionEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -386,8 +329,48 @@ public class AtriumPackageImpl extends EPackageImpl implements AtriumPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getAssumption_AssumptionType() {
+	public EAttribute getAssumption_Validity() {
 		return (EAttribute) assumptionEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getAssumption_ResponsibleArchitect() {
+		return (EAttribute) assumptionEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getAssumption_ResponsibleExpert() {
+		return (EAttribute) assumptionEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getAssumption_DateOfCompletion() {
+		return (EAttribute) assumptionEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getAssumption_AssumptionType() {
+		return (EAttribute) assumptionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -436,16 +419,6 @@ public class AtriumPackageImpl extends EPackageImpl implements AtriumPackage {
 	 * @generated
 	 */
 	@Override
-	public EEnum getstateLinkedElement_Type() {
-		return stateLinkedElement_TypeEEnum;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EEnum getassumptionType_Type() {
 		return assumptionType_TypeEEnum;
 	}
@@ -481,13 +454,10 @@ public class AtriumPackageImpl extends EPackageImpl implements AtriumPackage {
 
 		// Create classes and their features
 		cfA_listEClass = createEClass(CFA_LIST);
-		createEReference(cfA_listEClass, CFA_LIST__CF_AS);
 
 		assumption_listEClass = createEClass(ASSUMPTION_LIST);
-		createEReference(assumption_listEClass, ASSUMPTION_LIST__ASSUMPTIONS);
 
 		dG_listEClass = createEClass(DG_LIST);
-		createEReference(dG_listEClass, DG_LIST__DGS);
 
 		cfaEClass = createEClass(CFA);
 		createEReference(cfaEClass, CFA__LINKEDTO_ELEMENT);
@@ -495,13 +465,15 @@ public class AtriumPackageImpl extends EPackageImpl implements AtriumPackage {
 		createEReference(cfaEClass, CFA__GOAL);
 		createEAttribute(cfaEClass, CFA__CONTENT);
 		createEAttribute(cfaEClass, CFA__STATE);
-		createEAttribute(cfaEClass, CFA__STATE_LINKED_ELEMENT);
 
 		assumptionEClass = createEClass(ASSUMPTION);
+		createEAttribute(assumptionEClass, ASSUMPTION__ASSUMPTION_TYPE);
 		createEAttribute(assumptionEClass, ASSUMPTION__CONTENT);
 		createEAttribute(assumptionEClass, ASSUMPTION__RATIONALE);
 		createEAttribute(assumptionEClass, ASSUMPTION__VALIDITY);
-		createEAttribute(assumptionEClass, ASSUMPTION__ASSUMPTION_TYPE);
+		createEAttribute(assumptionEClass, ASSUMPTION__RESPONSIBLE_ARCHITECT);
+		createEAttribute(assumptionEClass, ASSUMPTION__RESPONSIBLE_EXPERT);
+		createEAttribute(assumptionEClass, ASSUMPTION__DATE_OF_COMPLETION);
 
 		dgEClass = createEClass(DG);
 		createEAttribute(dgEClass, DG__CONTENT);
@@ -510,7 +482,6 @@ public class AtriumPackageImpl extends EPackageImpl implements AtriumPackage {
 		createEAttribute(elementStateAtriumEClass, ELEMENT_STATE_ATRIUM__IS_NEW_DEVELOPMENT);
 
 		// Create enums
-		stateLinkedElement_TypeEEnum = createEEnum(STATE_LINKED_ELEMENT_TYPE);
 		assumptionType_TypeEEnum = createEEnum(ASSUMPTION_TYPE_TYPE);
 	}
 
@@ -566,20 +537,11 @@ public class AtriumPackageImpl extends EPackageImpl implements AtriumPackage {
 		// Initialize classes and features; add operations and parameters
 		initEClass(cfA_listEClass, CFA_list.class, "CFA_list", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
 				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getCFA_list_CFAs(), this.getCFA(), null, "CFAs", null, 0, -1, CFA_list.class, !IS_TRANSIENT, //$NON-NLS-1$
-				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
 
 		initEClass(assumption_listEClass, Assumption_list.class, "Assumption_list", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
 				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAssumption_list_Assumptions(), this.getAssumption(), null, "Assumptions", null, 0, -1, //$NON-NLS-1$
-				Assumption_list.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(dG_listEClass, DG_list.class, "DG_list", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEReference(getDG_list_DGs(), this.getDG(), null, "DGs", null, 0, -1, DG_list.class, !IS_TRANSIENT, //$NON-NLS-1$
-				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
 
 		initEClass(cfaEClass, org.polarsys.capella.vp.atrium.Atrium.CFA.class, "CFA", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
 				IS_GENERATED_INSTANCE_CLASS);
@@ -598,19 +560,25 @@ public class AtriumPackageImpl extends EPackageImpl implements AtriumPackage {
 		initEAttribute(getCFA_State(), ecorePackage.getEBoolean(), "state", null, 0, 1, //$NON-NLS-1$
 				org.polarsys.capella.vp.atrium.Atrium.CFA.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
 				!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCFA_StateLinkedElement(), this.getstateLinkedElement_Type(), "stateLinkedElement", null, 0, 1, //$NON-NLS-1$
-				org.polarsys.capella.vp.atrium.Atrium.CFA.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
-				!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(assumptionEClass, Assumption.class, "Assumption", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
 				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getAssumption_AssumptionType(), this.getassumptionType_Type(), "assumptionType", null, 0, 1, //$NON-NLS-1$
+				Assumption.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAssumption_Content(), ecorePackage.getEString(), "content", null, 0, 1, Assumption.class, //$NON-NLS-1$
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAssumption_Rationale(), ecorePackage.getEString(), "rationale", null, 0, 1, Assumption.class, //$NON-NLS-1$
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAssumption_Validity(), ecorePackage.getEString(), "validity", null, 0, 1, Assumption.class, //$NON-NLS-1$
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAssumption_AssumptionType(), this.getassumptionType_Type(), "assumptionType", null, 0, 1, //$NON-NLS-1$
+		initEAttribute(getAssumption_ResponsibleArchitect(), ecorePackage.getEString(), "responsibleArchitect", null, 0, //$NON-NLS-1$
+				1, Assumption.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAssumption_ResponsibleExpert(), ecorePackage.getEString(), "responsibleExpert", null, 0, 1, //$NON-NLS-1$
+				Assumption.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAssumption_DateOfCompletion(), ecorePackage.getEDate(), "dateOfCompletion", null, 0, 1, //$NON-NLS-1$
 				Assumption.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
 
@@ -627,10 +595,6 @@ public class AtriumPackageImpl extends EPackageImpl implements AtriumPackage {
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
-		initEEnum(stateLinkedElement_TypeEEnum, stateLinkedElement_Type.class, "stateLinkedElement_Type"); //$NON-NLS-1$
-		addEEnumLiteral(stateLinkedElement_TypeEEnum, stateLinkedElement_Type.LEGACY);
-		addEEnumLiteral(stateLinkedElement_TypeEEnum, stateLinkedElement_Type.NEW_DEVELOPMENT);
-
 		initEEnum(assumptionType_TypeEEnum, assumptionType_Type.class, "assumptionType_Type"); //$NON-NLS-1$
 		addEEnumLiteral(assumptionType_TypeEEnum, assumptionType_Type.CLARIFICATION);
 		addEEnumLiteral(assumptionType_TypeEEnum, assumptionType_Type.TASK);

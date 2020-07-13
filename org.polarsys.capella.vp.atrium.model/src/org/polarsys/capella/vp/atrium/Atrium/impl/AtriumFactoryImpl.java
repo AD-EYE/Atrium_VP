@@ -85,8 +85,6 @@ public class AtriumFactoryImpl extends EFactoryImpl implements AtriumFactory {
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
-		case AtriumPackage.STATE_LINKED_ELEMENT_TYPE:
-			return createstateLinkedElement_TypeFromString(eDataType, initialValue);
 		case AtriumPackage.ASSUMPTION_TYPE_TYPE:
 			return createassumptionType_TypeFromString(eDataType, initialValue);
 		default:
@@ -102,8 +100,6 @@ public class AtriumFactoryImpl extends EFactoryImpl implements AtriumFactory {
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
-		case AtriumPackage.STATE_LINKED_ELEMENT_TYPE:
-			return convertstateLinkedElement_TypeToString(eDataType, instanceValue);
 		case AtriumPackage.ASSUMPTION_TYPE_TYPE:
 			return convertassumptionType_TypeToString(eDataType, instanceValue);
 		default:
@@ -214,28 +210,6 @@ public class AtriumFactoryImpl extends EFactoryImpl implements AtriumFactory {
 
 		//end-capella-code
 		return elementStateAtrium;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public stateLinkedElement_Type createstateLinkedElement_TypeFromString(EDataType eDataType, String initialValue) {
-		stateLinkedElement_Type result = stateLinkedElement_Type.get(initialValue);
-		if (result == null)
-			throw new IllegalArgumentException(
-					"The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertstateLinkedElement_TypeToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
 	}
 
 	/**

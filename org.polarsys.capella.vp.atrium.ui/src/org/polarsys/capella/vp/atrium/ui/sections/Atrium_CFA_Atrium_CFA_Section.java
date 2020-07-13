@@ -67,15 +67,6 @@ public class Atrium_CFA_Atrium_CFA_Section extends AbstractSection {
 	* <!-- end-user-doc -->
 	* @generated
 	*/
-	private StateLinkedElementField_semanticKindGroup StateLinkedElementField;
-
-	/**
-	* <!-- begin-model-doc -->
-	* <!-- end-model-doc -->
-	* <!-- begin-user-doc -->
-	* <!-- end-user-doc -->
-	* @generated
-	*/
 	private SimpleSemanticField LinkedtoElementAssociation;
 
 	/**
@@ -219,9 +210,6 @@ public class Atrium_CFA_Atrium_CFA_Section extends AbstractSection {
 
 		StateField = new StateField_semanticCheckboxGroup(Atrium_CFA_AttributeGroup, getWidgetFactory());
 
-		StateLinkedElementField = new StateLinkedElementField_semanticKindGroup(Atrium_CFA_AttributeGroup,
-				getWidgetFactory());
-
 		Atrium_CFA_AssociationGroup = getWidgetFactory().createGroup(rootParentComposite, "C F A Associations");
 		Atrium_CFA_AssociationGroup.setLayout(new GridLayout(6, false));
 
@@ -254,8 +242,6 @@ public class Atrium_CFA_Atrium_CFA_Section extends AbstractSection {
 
 		StateField.loadData(object);
 
-		StateLinkedElementField.loadData(object, AtriumPackage.eINSTANCE.getCFA_StateLinkedElement());
-
 		LinkedtoElementAssociation.loadData(object, AtriumPackage.eINSTANCE.getCFA_LinkedtoElement());
 
 		AssumptionAssociation.loadData(object, AtriumPackage.eINSTANCE.getCFA_Assumption());
@@ -275,8 +261,6 @@ public class Atrium_CFA_Atrium_CFA_Section extends AbstractSection {
 		abstractSemanticFields.add(ContentField);
 
 		abstractSemanticFields.add(StateField);
-
-		abstractSemanticFields.add(StateLinkedElementField);
 
 		abstractSemanticFields.add(LinkedtoElementAssociation);
 

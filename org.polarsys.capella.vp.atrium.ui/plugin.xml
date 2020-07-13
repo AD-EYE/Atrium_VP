@@ -48,6 +48,13 @@
 		        label="Atrium">
 		    </propertyTab> 
 			
+			<propertyTab
+		    	afterTab="BaseSiriusDiagram"
+		        category="semantic &amp; extension"
+		        id="Atrium_ElementStateAtrium"
+		        label="Atrium">
+		    </propertyTab> 
+			
 	</propertyTabs>
 </extension> 
 <extension
@@ -94,6 +101,13 @@
 		    	afterTab="BaseCapella"
 		        category="default"
 		        id="Atrium_DG"
+		        label="Atrium">
+		    </propertyTab> 
+			
+			<propertyTab
+		    	afterTab="BaseCapella"
+		        category="default"
+		        id="Atrium_ElementStateAtrium"
 		        label="Atrium">
 		    </propertyTab> 
 			
@@ -145,6 +159,13 @@
 		        tab="Atrium_DG">
 		        
 		    </propertySection> 
+		    			<propertySection
+		    	class="org.polarsys.capella.vp.atrium.ui.sections.Atrium_ElementStateAtrium_Atrium_ElementStateAtrium_Section"
+		        filter="org.polarsys.capella.vp.atrium.ui.sections.Atrium_ElementStateAtrium_Atrium_ElementStateAtrium_Section"
+		        id="Atrium_ElementStateAtrium.Atrium_ElementStateAtrium_Section"
+		        tab="Atrium_ElementStateAtrium">
+		        
+		    </propertySection> 
 		    </propertySections>
 </extension>
 <extension
@@ -193,51 +214,16 @@
 		        tab="Atrium_DG">
 		        
 		    </propertySection> 
+		    			<propertySection
+		    	class="org.polarsys.capella.vp.atrium.ui.sections.Atrium_ElementStateAtrium_Atrium_ElementStateAtrium_Section"
+		        filter="org.polarsys.capella.vp.atrium.ui.sections.Atrium_ElementStateAtrium_Atrium_ElementStateAtrium_Section"
+		        id="Atrium_ElementStateAtrium.Atrium_ElementStateAtrium_Section"
+		        tab="Atrium_ElementStateAtrium">
+		        
+		    </propertySection> 
 		    </propertySections>
 </extension>
 
- 	
-<extension 
-	point="org.polarsys.capella.core.data.business.queries.MDEBusinessQueries">
-				
-	   <MDEBusinessQueries 
-         class="org.polarsys.capella.vp.atrium.ui.queries.CFAsAssociationQuery" 
-         id="org.polarsys.capella.vp.atrium.ui.queries.CFAsAssociationQuery"> 
-   </MDEBusinessQueries> 
-
-
-				
-</extension>
-
-		
- 	
-<extension 
-	point="org.polarsys.capella.core.data.business.queries.MDEBusinessQueries">
-				
-	   <MDEBusinessQueries 
-         class="org.polarsys.capella.vp.atrium.ui.queries.AssumptionsAssociationQuery" 
-         id="org.polarsys.capella.vp.atrium.ui.queries.AssumptionsAssociationQuery"> 
-   </MDEBusinessQueries> 
-
-
-				
-</extension>
-
-		
- 	
-<extension 
-	point="org.polarsys.capella.core.data.business.queries.MDEBusinessQueries">
-				
-	   <MDEBusinessQueries 
-         class="org.polarsys.capella.vp.atrium.ui.queries.DGsAssociationQuery" 
-         id="org.polarsys.capella.vp.atrium.ui.queries.DGsAssociationQuery"> 
-   </MDEBusinessQueries> 
-
-
-				
-</extension>
-
-		
  	
 <extension 
 	point="org.polarsys.capella.core.data.business.queries.MDEBusinessQueries">

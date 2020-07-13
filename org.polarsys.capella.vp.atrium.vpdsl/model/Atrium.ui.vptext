@@ -10,28 +10,19 @@ UIDescription Atrium.ui {
 UI Atrium_CFA_list {
 	label: "Atrium"
 	Container Atrium_CFA_list_Section {
-		Container Atrium_CFA_list_AssociationGroup {
-			label: "C F A_list Associations"
-			Field CFAsAssociation label: "C F As" type multipleChoiceList , mapped-to Atrium.data.CFA_list.CFAs
-		}
+		
 	}
 }
 UI Atrium_Assumption_list {
 	label: "Atrium"
 	Container Atrium_Assumption_list_Section {
-		Container Atrium_Assumption_list_AssociationGroup {
-			label: "Assumption_list Associations"
-			Field AssumptionsAssociation label: "Assumptions" type multipleChoiceList , mapped-to Atrium.data.Assumption_list.Assumptions
-		}
+		
 	}
 }
 UI Atrium_DG_list {
 	label: "Atrium"
 	Container Atrium_DG_list_Section {
-		Container Atrium_DG_list_AssociationGroup {
-			label: "D G_list Associations"
-			Field DGsAssociation label: "D Gs" type multipleChoiceList , mapped-to Atrium.data.DG_list.DGs
-		}
+		
 	}
 }
 UI Atrium_CFA {
@@ -41,7 +32,6 @@ UI Atrium_CFA {
 			label: "C F A Attributes"
 			Field contentField label: "Content" type text , mapped-to Atrium.data.CFA.content
 			Field stateField label: "State" type checkbox , mapped-to Atrium.data.CFA.state
-			Field stateLinkedElementField label: "State Linked Element" type radiobox , mapped-to Atrium.data.CFA.stateLinkedElement
 		}
 		Container Atrium_CFA_AssociationGroup {
 			label: "C F A Associations"
@@ -56,10 +46,13 @@ UI Atrium_Assumption {
 	Container Atrium_Assumption_Section {
 		Container Atrium_Assumption_AttributeGroup {
 			label: "Assumption Attributes"
+			Field assumptionTypeField label: "Assumption Type" type radiobox , mapped-to Atrium.data.Assumption.assumptionType
 			Field contentField1 label: "Content" type text , mapped-to Atrium.data.Assumption.content
 			Field rationaleField label: "Rationale" type text , mapped-to Atrium.data.Assumption.rationale
 			Field validityField label: "Validity" type text , mapped-to Atrium.data.Assumption.validity
-			Field assumptionTypeField label: "Assumption Type" type radiobox , mapped-to Atrium.data.Assumption.assumptionType
+			Field responsibleArchitectField label: "Responsible Architect" type text , mapped-to Atrium.data.Assumption.responsibleArchitect
+			Field responsibleExpertField label: "Responsible Expert" type text , mapped-to Atrium.data.Assumption.responsibleExpert
+			Field dateOfCompletionField label: "Date Of Completion" type text , mapped-to Atrium.data.Assumption.dateOfCompletion
 		}
 	}
 }
@@ -69,6 +62,15 @@ UI Atrium_DG {
 		Container Atrium_DG_AttributeGroup {
 			label: "D G Attributes"
 			Field contentField2 label: "Content" type text , mapped-to Atrium.data.DG.content
+		}
+	}
+}
+UI Atrium_ElementStateAtrium {
+	label: "Atrium"
+	Container Atrium_ElementStateAtrium_Section {
+		Container Atrium_ElementStateAtrium_AttributeGroup {
+			label: "Element State Atrium Attributes"
+			Field isNewDevelopmentField label: "Is New Development" type checkbox , mapped-to Atrium.data.ElementStateAtrium.isNewDevelopment
 		}
 	}
 }

@@ -266,22 +266,13 @@ public interface AtriumPackage extends EPackage {
 	int CFA_LIST__APPLIED_REQUIREMENTS = CapellacorePackage.NAMED_ELEMENT__APPLIED_REQUIREMENTS;
 
 	/**
-	 * The feature id for the '<em><b>CF As</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CFA_LIST__CF_AS = CapellacorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
 	 * The number of structural features of the '<em>CFA list</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CFA_LIST_FEATURE_COUNT = CapellacorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int CFA_LIST_FEATURE_COUNT = CapellacorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.capella.vp.atrium.Atrium.impl.Assumption_listImpl <em>Assumption list</em>}' class.
@@ -492,22 +483,13 @@ public interface AtriumPackage extends EPackage {
 	int ASSUMPTION_LIST__APPLIED_REQUIREMENTS = CapellacorePackage.NAMED_ELEMENT__APPLIED_REQUIREMENTS;
 
 	/**
-	 * The feature id for the '<em><b>Assumptions</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ASSUMPTION_LIST__ASSUMPTIONS = CapellacorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
 	 * The number of structural features of the '<em>Assumption list</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ASSUMPTION_LIST_FEATURE_COUNT = CapellacorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int ASSUMPTION_LIST_FEATURE_COUNT = CapellacorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.capella.vp.atrium.Atrium.impl.DG_listImpl <em>DG list</em>}' class.
@@ -718,22 +700,13 @@ public interface AtriumPackage extends EPackage {
 	int DG_LIST__APPLIED_REQUIREMENTS = CapellacorePackage.NAMED_ELEMENT__APPLIED_REQUIREMENTS;
 
 	/**
-	 * The feature id for the '<em><b>DGs</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DG_LIST__DGS = CapellacorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
 	 * The number of structural features of the '<em>DG list</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DG_LIST_FEATURE_COUNT = CapellacorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int DG_LIST_FEATURE_COUNT = CapellacorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.capella.vp.atrium.Atrium.impl.CFAImpl <em>CFA</em>}' class.
@@ -989,22 +962,13 @@ public interface AtriumPackage extends EPackage {
 	int CFA__STATE = CapellacorePackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
-	 * The feature id for the '<em><b>State Linked Element</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CFA__STATE_LINKED_ELEMENT = CapellacorePackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
-
-	/**
 	 * The number of structural features of the '<em>CFA</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CFA_FEATURE_COUNT = CapellacorePackage.NAMED_ELEMENT_FEATURE_COUNT + 6;
+	int CFA_FEATURE_COUNT = CapellacorePackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.capella.vp.atrium.Atrium.impl.AssumptionImpl <em>Assumption</em>}' class.
@@ -1215,13 +1179,22 @@ public interface AtriumPackage extends EPackage {
 	int ASSUMPTION__APPLIED_REQUIREMENTS = CapellacorePackage.NAMED_ELEMENT__APPLIED_REQUIREMENTS;
 
 	/**
+	 * The feature id for the '<em><b>Assumption Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSUMPTION__ASSUMPTION_TYPE = CapellacorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Content</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ASSUMPTION__CONTENT = CapellacorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int ASSUMPTION__CONTENT = CapellacorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Rationale</b></em>' attribute.
@@ -1230,7 +1203,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSUMPTION__RATIONALE = CapellacorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int ASSUMPTION__RATIONALE = CapellacorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Validity</b></em>' attribute.
@@ -1239,16 +1212,34 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSUMPTION__VALIDITY = CapellacorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int ASSUMPTION__VALIDITY = CapellacorePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Assumption Type</b></em>' attribute.
+	 * The feature id for the '<em><b>Responsible Architect</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ASSUMPTION__ASSUMPTION_TYPE = CapellacorePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int ASSUMPTION__RESPONSIBLE_ARCHITECT = CapellacorePackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Responsible Expert</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSUMPTION__RESPONSIBLE_EXPERT = CapellacorePackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Date Of Completion</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSUMPTION__DATE_OF_COMPLETION = CapellacorePackage.NAMED_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of structural features of the '<em>Assumption</em>' class.
@@ -1257,7 +1248,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSUMPTION_FEATURE_COUNT = CapellacorePackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
+	int ASSUMPTION_FEATURE_COUNT = CapellacorePackage.NAMED_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.capella.vp.atrium.Atrium.impl.DGImpl <em>DG</em>}' class.
@@ -1712,16 +1703,6 @@ public interface AtriumPackage extends EPackage {
 	int ELEMENT_STATE_ATRIUM_FEATURE_COUNT = CapellacorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link org.polarsys.capella.vp.atrium.Atrium.stateLinkedElement_Type <em>state Linked Element Type</em>}' enum.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.polarsys.capella.vp.atrium.Atrium.stateLinkedElement_Type
-	 * @see org.polarsys.capella.vp.atrium.Atrium.impl.AtriumPackageImpl#getstateLinkedElement_Type()
-	 * @generated
-	 */
-	int STATE_LINKED_ELEMENT_TYPE = 7;
-
-	/**
 	 * The meta object id for the '{@link org.polarsys.capella.vp.atrium.Atrium.assumptionType_Type <em>assumption Type Type</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1729,7 +1710,7 @@ public interface AtriumPackage extends EPackage {
 	 * @see org.polarsys.capella.vp.atrium.Atrium.impl.AtriumPackageImpl#getassumptionType_Type()
 	 * @generated
 	 */
-	int ASSUMPTION_TYPE_TYPE = 8;
+	int ASSUMPTION_TYPE_TYPE = 7;
 
 	/**
 	 * Returns the meta object for class '{@link org.polarsys.capella.vp.atrium.Atrium.CFA_list <em>CFA list</em>}'.
@@ -1742,17 +1723,6 @@ public interface AtriumPackage extends EPackage {
 	EClass getCFA_list();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.polarsys.capella.vp.atrium.Atrium.CFA_list#getCFAs <em>CF As</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>CF As</em>'.
-	 * @see org.polarsys.capella.vp.atrium.Atrium.CFA_list#getCFAs()
-	 * @see #getCFA_list()
-	 * @generated
-	 */
-	EReference getCFA_list_CFAs();
-
-	/**
 	 * Returns the meta object for class '{@link org.polarsys.capella.vp.atrium.Atrium.Assumption_list <em>Assumption list</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1763,17 +1733,6 @@ public interface AtriumPackage extends EPackage {
 	EClass getAssumption_list();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.polarsys.capella.vp.atrium.Atrium.Assumption_list#getAssumptions <em>Assumptions</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Assumptions</em>'.
-	 * @see org.polarsys.capella.vp.atrium.Atrium.Assumption_list#getAssumptions()
-	 * @see #getAssumption_list()
-	 * @generated
-	 */
-	EReference getAssumption_list_Assumptions();
-
-	/**
 	 * Returns the meta object for class '{@link org.polarsys.capella.vp.atrium.Atrium.DG_list <em>DG list</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1782,17 +1741,6 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getDG_list();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link org.polarsys.capella.vp.atrium.Atrium.DG_list#getDGs <em>DGs</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>DGs</em>'.
-	 * @see org.polarsys.capella.vp.atrium.Atrium.DG_list#getDGs()
-	 * @see #getDG_list()
-	 * @generated
-	 */
-	EReference getDG_list_DGs();
 
 	/**
 	 * Returns the meta object for class '{@link org.polarsys.capella.vp.atrium.Atrium.CFA <em>CFA</em>}'.
@@ -1860,17 +1808,6 @@ public interface AtriumPackage extends EPackage {
 	EAttribute getCFA_State();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.polarsys.capella.vp.atrium.Atrium.CFA#getStateLinkedElement <em>State Linked Element</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>State Linked Element</em>'.
-	 * @see org.polarsys.capella.vp.atrium.Atrium.CFA#getStateLinkedElement()
-	 * @see #getCFA()
-	 * @generated
-	 */
-	EAttribute getCFA_StateLinkedElement();
-
-	/**
 	 * Returns the meta object for class '{@link org.polarsys.capella.vp.atrium.Atrium.Assumption <em>Assumption</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1912,6 +1849,39 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getAssumption_Validity();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.polarsys.capella.vp.atrium.Atrium.Assumption#getResponsibleArchitect <em>Responsible Architect</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Responsible Architect</em>'.
+	 * @see org.polarsys.capella.vp.atrium.Atrium.Assumption#getResponsibleArchitect()
+	 * @see #getAssumption()
+	 * @generated
+	 */
+	EAttribute getAssumption_ResponsibleArchitect();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.polarsys.capella.vp.atrium.Atrium.Assumption#getResponsibleExpert <em>Responsible Expert</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Responsible Expert</em>'.
+	 * @see org.polarsys.capella.vp.atrium.Atrium.Assumption#getResponsibleExpert()
+	 * @see #getAssumption()
+	 * @generated
+	 */
+	EAttribute getAssumption_ResponsibleExpert();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.polarsys.capella.vp.atrium.Atrium.Assumption#getDateOfCompletion <em>Date Of Completion</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Date Of Completion</em>'.
+	 * @see org.polarsys.capella.vp.atrium.Atrium.Assumption#getDateOfCompletion()
+	 * @see #getAssumption()
+	 * @generated
+	 */
+	EAttribute getAssumption_DateOfCompletion();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.polarsys.capella.vp.atrium.Atrium.Assumption#getAssumptionType <em>Assumption Type</em>}'.
@@ -1967,16 +1937,6 @@ public interface AtriumPackage extends EPackage {
 	EAttribute getElementStateAtrium_IsNewDevelopment();
 
 	/**
-	 * Returns the meta object for enum '{@link org.polarsys.capella.vp.atrium.Atrium.stateLinkedElement_Type <em>state Linked Element Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>state Linked Element Type</em>'.
-	 * @see org.polarsys.capella.vp.atrium.Atrium.stateLinkedElement_Type
-	 * @generated
-	 */
-	EEnum getstateLinkedElement_Type();
-
-	/**
 	 * Returns the meta object for enum '{@link org.polarsys.capella.vp.atrium.Atrium.assumptionType_Type <em>assumption Type Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2019,14 +1979,6 @@ public interface AtriumPackage extends EPackage {
 		EClass CFA_LIST = eINSTANCE.getCFA_list();
 
 		/**
-		 * The meta object literal for the '<em><b>CF As</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference CFA_LIST__CF_AS = eINSTANCE.getCFA_list_CFAs();
-
-		/**
 		 * The meta object literal for the '{@link org.polarsys.capella.vp.atrium.Atrium.impl.Assumption_listImpl <em>Assumption list</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2037,14 +1989,6 @@ public interface AtriumPackage extends EPackage {
 		EClass ASSUMPTION_LIST = eINSTANCE.getAssumption_list();
 
 		/**
-		 * The meta object literal for the '<em><b>Assumptions</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ASSUMPTION_LIST__ASSUMPTIONS = eINSTANCE.getAssumption_list_Assumptions();
-
-		/**
 		 * The meta object literal for the '{@link org.polarsys.capella.vp.atrium.Atrium.impl.DG_listImpl <em>DG list</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2053,14 +1997,6 @@ public interface AtriumPackage extends EPackage {
 		 * @generated
 		 */
 		EClass DG_LIST = eINSTANCE.getDG_list();
-
-		/**
-		 * The meta object literal for the '<em><b>DGs</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference DG_LIST__DGS = eINSTANCE.getDG_list_DGs();
 
 		/**
 		 * The meta object literal for the '{@link org.polarsys.capella.vp.atrium.Atrium.impl.CFAImpl <em>CFA</em>}' class.
@@ -2113,14 +2049,6 @@ public interface AtriumPackage extends EPackage {
 		EAttribute CFA__STATE = eINSTANCE.getCFA_State();
 
 		/**
-		 * The meta object literal for the '<em><b>State Linked Element</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CFA__STATE_LINKED_ELEMENT = eINSTANCE.getCFA_StateLinkedElement();
-
-		/**
 		 * The meta object literal for the '{@link org.polarsys.capella.vp.atrium.Atrium.impl.AssumptionImpl <em>Assumption</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2153,6 +2081,30 @@ public interface AtriumPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ASSUMPTION__VALIDITY = eINSTANCE.getAssumption_Validity();
+
+		/**
+		 * The meta object literal for the '<em><b>Responsible Architect</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ASSUMPTION__RESPONSIBLE_ARCHITECT = eINSTANCE.getAssumption_ResponsibleArchitect();
+
+		/**
+		 * The meta object literal for the '<em><b>Responsible Expert</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ASSUMPTION__RESPONSIBLE_EXPERT = eINSTANCE.getAssumption_ResponsibleExpert();
+
+		/**
+		 * The meta object literal for the '<em><b>Date Of Completion</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ASSUMPTION__DATE_OF_COMPLETION = eINSTANCE.getAssumption_DateOfCompletion();
 
 		/**
 		 * The meta object literal for the '<em><b>Assumption Type</b></em>' attribute feature.
@@ -2197,16 +2149,6 @@ public interface AtriumPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ELEMENT_STATE_ATRIUM__IS_NEW_DEVELOPMENT = eINSTANCE.getElementStateAtrium_IsNewDevelopment();
-
-		/**
-		 * The meta object literal for the '{@link org.polarsys.capella.vp.atrium.Atrium.stateLinkedElement_Type <em>state Linked Element Type</em>}' enum.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.polarsys.capella.vp.atrium.Atrium.stateLinkedElement_Type
-		 * @see org.polarsys.capella.vp.atrium.Atrium.impl.AtriumPackageImpl#getstateLinkedElement_Type()
-		 * @generated
-		 */
-		EEnum STATE_LINKED_ELEMENT_TYPE = eINSTANCE.getstateLinkedElement_Type();
 
 		/**
 		 * The meta object literal for the '{@link org.polarsys.capella.vp.atrium.Atrium.assumptionType_Type <em>assumption Type Type</em>}' enum.

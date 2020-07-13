@@ -21,7 +21,6 @@ import org.polarsys.kitalpha.emde.model.ElementExtension;
  *   <li>{@link org.polarsys.capella.vp.atrium.Atrium.CFA#getGoal <em>Goal</em>}</li>
  *   <li>{@link org.polarsys.capella.vp.atrium.Atrium.CFA#getContent <em>Content</em>}</li>
  *   <li>{@link org.polarsys.capella.vp.atrium.Atrium.CFA#isState <em>State</em>}</li>
- *   <li>{@link org.polarsys.capella.vp.atrium.Atrium.CFA#getStateLinkedElement <em>State Linked Element</em>}</li>
  * </ul>
  *
  * @see org.polarsys.capella.vp.atrium.Atrium.AtriumPackage#getCFA()
@@ -149,34 +148,5 @@ public interface CFA extends NamedElement, ElementExtension {
 	 */
 
 	void setState(boolean value);
-
-	/**
-	 * Returns the value of the '<em><b>State Linked Element</b></em>' attribute.
-	 * The literals are from the enumeration {@link org.polarsys.capella.vp.atrium.Atrium.stateLinkedElement_Type}.
-	
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>State Linked Element</em>' attribute.
-	 * @see org.polarsys.capella.vp.atrium.Atrium.stateLinkedElement_Type
-	 * @see #setStateLinkedElement(stateLinkedElement_Type)
-	 * @see org.polarsys.capella.vp.atrium.Atrium.AtriumPackage#getCFA_StateLinkedElement()
-	 * @model
-	 * @generated
-	 */
-
-	stateLinkedElement_Type getStateLinkedElement();
-
-	/**
-	 * Sets the value of the '{@link org.polarsys.capella.vp.atrium.Atrium.CFA#getStateLinkedElement <em>State Linked Element</em>}' attribute.
-	
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>State Linked Element</em>' attribute.
-	 * @see org.polarsys.capella.vp.atrium.Atrium.stateLinkedElement_Type
-	 * @see #getStateLinkedElement()
-	 * @generated
-	 */
-
-	void setStateLinkedElement(stateLinkedElement_Type value);
 
 } // CFA

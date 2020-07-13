@@ -14,15 +14,16 @@ Diagrams Atrium.diagram {
 		Mapping {
 			Container Container_list_CFA {
 				domain-context: Atrium.data.CFA_list
-				provided-by association external emde.ExtensibleElement.ownedExtensions
-				content-layout: List
+				provided-by association external emde.ExtensibleElement.ownedExtensions content-layout: List
 				Representation {
 					Label {
 						content: "CFA List"
 						police: black
 					}
 					Style {
-						FlatStyle {background: light_chocolate foreground: white }
+						FlatStyle {
+							background: light_chocolate foreground: white
+						}
 					}
 				}
 				Contains {
@@ -31,7 +32,7 @@ Diagrams Atrium.diagram {
 						provided-by association external emde.ExtensibleElement.ownedExtensions
 						Representation {
 							Label {
-								content: "CFA here"
+								content: "[CFA] " + "aql:self.name"
 								police: black
 							}
 							Style {
@@ -45,15 +46,16 @@ Diagrams Atrium.diagram {
 			}
 			Container Container_list_Assumption {
 				domain-context: Atrium.data.Assumption_list
-				provided-by association external emde.ExtensibleElement.ownedExtensions
-				content-layout: List
+				provided-by association external emde.ExtensibleElement.ownedExtensions content-layout: List
 				Representation {
 					Label {
 						content: "Assumption list"
 						police: black
 					}
 					Style {
-						FlatStyle {background: light_chocolate foreground: white }
+						FlatStyle {
+							background: light_chocolate foreground: white
+						}
 					}
 				}
 				Contains {
@@ -62,7 +64,7 @@ Diagrams Atrium.diagram {
 						provided-by association external emde.ExtensibleElement.ownedExtensions
 						Representation {
 							Label {
-								content: "Clarification here"
+								content: "[Clarification] " + "aql:self.name"
 								police: black
 								alignment: center
 							}
@@ -75,7 +77,7 @@ Diagrams Atrium.diagram {
 						Representation {
 							condition: Java isTask
 							Label {
-								content: "Task here"
+								content: "[Task] " + "aql:self.name"
 								police: black
 								alignment: center
 							}
@@ -88,7 +90,7 @@ Diagrams Atrium.diagram {
 						Representation {
 							condition: Java isRisk
 							Label {
-								content: "Risk here"
+								content: "[Risk] " + "aql:self.name"
 								police: black
 								alignment: center
 							}
@@ -103,15 +105,16 @@ Diagrams Atrium.diagram {
 			}
 			Container Container_list_DG {
 				domain-context: Atrium.data.DG_list
-				provided-by association external emde.ExtensibleElement.ownedExtensions
-				content-layout: List
+				provided-by association external emde.ExtensibleElement.ownedExtensions content-layout: List
 				Representation {
 					Label {
 						content: "DG list"
 						police: black
 					}
 					Style {
-						FlatStyle {background: light_chocolate foreground: white }
+						FlatStyle {
+							background: light_chocolate foreground: white
+						}
 					}
 				}
 				Contains {
@@ -120,7 +123,7 @@ Diagrams Atrium.diagram {
 						provided-by association external emde.ExtensibleElement.ownedExtensions
 						Representation {
 							Label {
-								content: "Goal here"
+								content: "[Goal] " + "aql:self.name"
 								police: black
 								alignment: center
 							}
@@ -138,8 +141,7 @@ Diagrams Atrium.diagram {
 			Container ContainerLC {
 				import: LABLogicalComponent
 				Representation {
-					condition: Java isElementNew
-					 Style {
+					condition: Java isElementNew Style {
 						FlatStyle {
 							background: red foreground: white
 						}
@@ -151,7 +153,7 @@ Diagrams Atrium.diagram {
 				Representation {
 					condition: Java isElementNewNode Style {
 						BasicStyle {
-							border-color: black background: light_red form: Square
+							background: light_red
 						}
 					}
 				}
@@ -166,59 +168,6 @@ Diagrams Atrium.diagram {
 				}
 			}
 			//End import
-
-
-			//////////////EDGES BETWEEN CFA AND CAPELLA ELEMENT////////////////////////
-			Edge LinkCFA_LC {
-				association-context: Atrium.data.CFA.linkedtoElement source: Container_list_CFA.node_CFA target: ContainerLC Representation {
-					Style {
-						line-style: dash
-						end-decorator: NoDecoration
-						color: black
-					}
-				}
-				Representation {
-					condition: Java isElementNewEdge Style {
-						line-style: dash
-						end-decorator: NoDecoration
-						color: red
-					}
-				}
-			}
-			Edge LinkCFA_LF {
-				association-context: Atrium.data.CFA.linkedtoElement source: Container_list_CFA.node_CFA target: NodeLF Representation {
-					Style {
-						line-style: dash
-						end-decorator: NoDecoration
-						color: black
-					}
-				}
-				Representation {
-					condition: Java isElementNewEdge Style {
-						line-style: dash
-						end-decorator: NoDecoration
-						color: red
-					}
-				}
-			}
-			Edge LinkCFA_FE {
-				association-context: Atrium.data.CFA.linkedtoElement source: Container_list_CFA.node_CFA target: FunctionalExchange Representation {
-					Style {
-						line-style: dash
-						end-decorator: NoDecoration
-						color: black
-					}
-				}
-				Representation {
-					condition: Java isElementNewEdge Style {
-						line-style: dash
-						end-decorator: NoDecoration
-						color: red
-					}
-				}
-			}
-
-			/////////////END EDGES///////////////////////
 
 		}
 		Actions {

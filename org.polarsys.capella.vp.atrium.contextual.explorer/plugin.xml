@@ -18,21 +18,6 @@
                   class="org.polarsys.capella.vp.atrium.contextual.explorer.queries.cfa_list.ParentQuery">
             </basicQuery>
          </categoryQuery>
-      </category>      <category
-            id="org.polarsys.capella.vp.atrium.contextual.explorer.queries.CFA_list.OwnedViewpointElements"
-            isTopLevel="true"
-            name="Owned Viewpoint elements">
-         <targetExplorerId
-               id="CurrentElementExplorer">
-         </targetExplorerId>
-         <availableForType
-               class="org.polarsys.capella.vp.atrium.Atrium.CFA_list">
-         </availableForType>
-         <categoryQuery>
-            <basicQuery
-                  class="org.polarsys.capella.vp.atrium.contextual.explorer.queries.cfa_list.OwnedViewpointElementQuery">
-            </basicQuery>
-         </categoryQuery>
       </category>	</extension>
 <extension 
 	point="org.eclipse.amalgam.explorer.contextual.core.contentProviderCategory">
@@ -51,21 +36,6 @@
                   class="org.polarsys.capella.vp.atrium.contextual.explorer.queries.assumption_list.ParentQuery">
             </basicQuery>
          </categoryQuery>
-      </category>      <category
-            id="org.polarsys.capella.vp.atrium.contextual.explorer.queries.Assumption_list.OwnedViewpointElements"
-            isTopLevel="true"
-            name="Owned Viewpoint elements">
-         <targetExplorerId
-               id="CurrentElementExplorer">
-         </targetExplorerId>
-         <availableForType
-               class="org.polarsys.capella.vp.atrium.Atrium.Assumption_list">
-         </availableForType>
-         <categoryQuery>
-            <basicQuery
-                  class="org.polarsys.capella.vp.atrium.contextual.explorer.queries.assumption_list.OwnedViewpointElementQuery">
-            </basicQuery>
-         </categoryQuery>
       </category>	</extension>
 <extension 
 	point="org.eclipse.amalgam.explorer.contextual.core.contentProviderCategory">
@@ -82,21 +52,6 @@
          <categoryQuery>
             <basicQuery
                   class="org.polarsys.capella.vp.atrium.contextual.explorer.queries.dg_list.ParentQuery">
-            </basicQuery>
-         </categoryQuery>
-      </category>      <category
-            id="org.polarsys.capella.vp.atrium.contextual.explorer.queries.DG_list.OwnedViewpointElements"
-            isTopLevel="true"
-            name="Owned Viewpoint elements">
-         <targetExplorerId
-               id="CurrentElementExplorer">
-         </targetExplorerId>
-         <availableForType
-               class="org.polarsys.capella.vp.atrium.Atrium.DG_list">
-         </availableForType>
-         <categoryQuery>
-            <basicQuery
-                  class="org.polarsys.capella.vp.atrium.contextual.explorer.queries.dg_list.OwnedViewpointElementQuery">
             </basicQuery>
          </categoryQuery>
       </category>	</extension>

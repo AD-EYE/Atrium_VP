@@ -73,6 +73,33 @@ public class Atrium_Assumption_Atrium_Assumption_Section extends AbstractSection
 	* <!-- end-user-doc -->
 	* @generated
 	*/
+	private TextValueGroup ResponsibleArchitectField;
+
+	/**
+	* <!-- begin-model-doc -->
+	* <!-- end-model-doc -->
+	* <!-- begin-user-doc -->
+	* <!-- end-user-doc -->
+	* @generated
+	*/
+	private TextValueGroup ResponsibleExpertField;
+
+	/**
+	* <!-- begin-model-doc -->
+	* <!-- end-model-doc -->
+	* <!-- begin-user-doc -->
+	* <!-- end-user-doc -->
+	* @generated
+	*/
+	private TextValueGroup DateOfCompletionField;
+
+	/**
+	* <!-- begin-model-doc -->
+	* <!-- end-model-doc -->
+	* <!-- begin-user-doc -->
+	* <!-- end-user-doc -->
+	* @generated
+	*/
 	private AssumptionTypeField_semanticKindGroup AssumptionTypeField;
 
 	/**
@@ -185,14 +212,23 @@ public class Atrium_Assumption_Atrium_Assumption_Section extends AbstractSection
 		gdAtrium_Assumption_AttributeGroup.horizontalSpan = ((GridLayout) rootParentComposite.getLayout()).numColumns;
 		Atrium_Assumption_AttributeGroup.setLayoutData(gdAtrium_Assumption_AttributeGroup);
 
+		AssumptionTypeField = new AssumptionTypeField_semanticKindGroup(Atrium_Assumption_AttributeGroup,
+				getWidgetFactory());
+
 		ContentField1 = new TextValueGroup(Atrium_Assumption_AttributeGroup, "Content :", getWidgetFactory(), true);
 
 		RationaleField = new TextValueGroup(Atrium_Assumption_AttributeGroup, "Rationale :", getWidgetFactory(), true);
 
 		ValidityField = new TextValueGroup(Atrium_Assumption_AttributeGroup, "Validity :", getWidgetFactory(), true);
 
-		AssumptionTypeField = new AssumptionTypeField_semanticKindGroup(Atrium_Assumption_AttributeGroup,
-				getWidgetFactory());
+		ResponsibleArchitectField = new TextValueGroup(Atrium_Assumption_AttributeGroup, "Responsible Architect :",
+				getWidgetFactory(), true);
+
+		ResponsibleExpertField = new TextValueGroup(Atrium_Assumption_AttributeGroup, "Responsible Expert :",
+				getWidgetFactory(), true);
+
+		DateOfCompletionField = new TextValueGroup(Atrium_Assumption_AttributeGroup, "Date Of Completion :",
+				getWidgetFactory(), true);
 
 	}
 
@@ -205,13 +241,19 @@ public class Atrium_Assumption_Atrium_Assumption_Section extends AbstractSection
 	public void loadData(EObject object) {
 		super.loadData(object);
 
+		AssumptionTypeField.loadData(object, AtriumPackage.eINSTANCE.getAssumption_AssumptionType());
+
 		ContentField1.loadData(object, AtriumPackage.eINSTANCE.getAssumption_Content());
 
 		RationaleField.loadData(object, AtriumPackage.eINSTANCE.getAssumption_Rationale());
 
 		ValidityField.loadData(object, AtriumPackage.eINSTANCE.getAssumption_Validity());
 
-		AssumptionTypeField.loadData(object, AtriumPackage.eINSTANCE.getAssumption_AssumptionType());
+		ResponsibleArchitectField.loadData(object, AtriumPackage.eINSTANCE.getAssumption_ResponsibleArchitect());
+
+		ResponsibleExpertField.loadData(object, AtriumPackage.eINSTANCE.getAssumption_ResponsibleExpert());
+
+		DateOfCompletionField.loadData(object, AtriumPackage.eINSTANCE.getAssumption_DateOfCompletion());
 
 	}
 
@@ -223,13 +265,19 @@ public class Atrium_Assumption_Atrium_Assumption_Section extends AbstractSection
 	public List<AbstractSemanticField> getSemanticFields() {
 		List<AbstractSemanticField> abstractSemanticFields = new ArrayList<AbstractSemanticField>();
 
+		abstractSemanticFields.add(AssumptionTypeField);
+
 		abstractSemanticFields.add(ContentField1);
 
 		abstractSemanticFields.add(RationaleField);
 
 		abstractSemanticFields.add(ValidityField);
 
-		abstractSemanticFields.add(AssumptionTypeField);
+		abstractSemanticFields.add(ResponsibleArchitectField);
+
+		abstractSemanticFields.add(ResponsibleExpertField);
+
+		abstractSemanticFields.add(DateOfCompletionField);
 
 		return abstractSemanticFields;
 	}

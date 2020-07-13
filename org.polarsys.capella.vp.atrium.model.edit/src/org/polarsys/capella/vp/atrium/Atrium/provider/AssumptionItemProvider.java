@@ -58,10 +58,13 @@ public class AssumptionItemProvider extends NamedElementItemProvider implements 
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addAssumptionTypePropertyDescriptor(object);
 			addContentPropertyDescriptor(object);
 			addRationalePropertyDescriptor(object);
 			addValidityPropertyDescriptor(object);
-			addAssumptionTypePropertyDescriptor(object);
+			addResponsibleArchitectPropertyDescriptor(object);
+			addResponsibleExpertPropertyDescriptor(object);
+			addDateOfCompletionPropertyDescriptor(object);
 		}
 		// begin-extension-code
 		checkChildCreationExtender(object);
@@ -129,6 +132,72 @@ public class AssumptionItemProvider extends NamedElementItemProvider implements 
 				getString("_UI_PropertyDescriptor_description", "_UI_Assumption_validity_feature", //$NON-NLS-1$//$NON-NLS-2$
 						"_UI_Assumption_type"), //$NON-NLS-1$
 				AtriumPackage.Literals.ASSUMPTION__VALIDITY, true, false, false,
+				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
+				// begin-extension-code
+				null));
+		// end-extension-code
+	}
+
+	/**
+	 * This adds a property descriptor for the Responsible Architect feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addResponsibleArchitectPropertyDescriptor(Object object) {
+
+		// begin-extension-code
+		itemPropertyDescriptors.add(createItemPropertyDescriptor
+		// end-extension-code
+		(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+				getString("_UI_Assumption_responsibleArchitect_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_Assumption_responsibleArchitect_feature", //$NON-NLS-1$//$NON-NLS-2$
+						"_UI_Assumption_type"), //$NON-NLS-1$
+				AtriumPackage.Literals.ASSUMPTION__RESPONSIBLE_ARCHITECT, true, false, false,
+				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
+				// begin-extension-code
+				null));
+		// end-extension-code
+	}
+
+	/**
+	 * This adds a property descriptor for the Responsible Expert feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addResponsibleExpertPropertyDescriptor(Object object) {
+
+		// begin-extension-code
+		itemPropertyDescriptors.add(createItemPropertyDescriptor
+		// end-extension-code
+		(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+				getString("_UI_Assumption_responsibleExpert_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_Assumption_responsibleExpert_feature", //$NON-NLS-1$//$NON-NLS-2$
+						"_UI_Assumption_type"), //$NON-NLS-1$
+				AtriumPackage.Literals.ASSUMPTION__RESPONSIBLE_EXPERT, true, false, false,
+				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
+				// begin-extension-code
+				null));
+		// end-extension-code
+	}
+
+	/**
+	 * This adds a property descriptor for the Date Of Completion feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDateOfCompletionPropertyDescriptor(Object object) {
+
+		// begin-extension-code
+		itemPropertyDescriptors.add(createItemPropertyDescriptor
+		// end-extension-code
+		(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+				getString("_UI_Assumption_dateOfCompletion_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_Assumption_dateOfCompletion_feature", //$NON-NLS-1$//$NON-NLS-2$
+						"_UI_Assumption_type"), //$NON-NLS-1$
+				AtriumPackage.Literals.ASSUMPTION__DATE_OF_COMPLETION, true, false, false,
 				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
 				// begin-extension-code
 				null));
@@ -205,10 +274,13 @@ public class AssumptionItemProvider extends NamedElementItemProvider implements 
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Assumption.class)) {
+		case AtriumPackage.ASSUMPTION__ASSUMPTION_TYPE:
 		case AtriumPackage.ASSUMPTION__CONTENT:
 		case AtriumPackage.ASSUMPTION__RATIONALE:
 		case AtriumPackage.ASSUMPTION__VALIDITY:
-		case AtriumPackage.ASSUMPTION__ASSUMPTION_TYPE:
+		case AtriumPackage.ASSUMPTION__RESPONSIBLE_ARCHITECT:
+		case AtriumPackage.ASSUMPTION__RESPONSIBLE_EXPERT:
+		case AtriumPackage.ASSUMPTION__DATE_OF_COMPLETION:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}

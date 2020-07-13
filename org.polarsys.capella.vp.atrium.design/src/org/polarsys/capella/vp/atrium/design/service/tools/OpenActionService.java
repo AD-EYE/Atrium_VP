@@ -29,8 +29,9 @@ import org.polarsys.kitalpha.emde.model.ElementExtension;
 import org.polarsys.kitalpha.emde.model.ExtensibleElement;
 
 /**
- * <!-- begin-user-doc -->
- * This class is an implementation of the Sirius JavaExtension '<em><b>[org.polarsys.capella.vp.atrium.design.service.tools.OpenActionService]</b></em>'.
+ * <!-- begin-user-doc --> This class is an implementation of the Sirius
+ * JavaExtension
+ * '<em><b>[org.polarsys.capella.vp.atrium.design.service.tools.OpenActionService]</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * </p>
@@ -40,12 +41,12 @@ import org.polarsys.kitalpha.emde.model.ExtensibleElement;
 
 public class OpenActionService {
 	/**
-	* <!-- begin-user-doc -->
-	* <!-- end-user-doc -->
-	* @param element : the element
-	* @param newSemanticContainer : the element view
-	* @generated NOT
-	*/
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @param element              : the element
+	 * @param newSemanticContainer : the element view
+	 * @generated NOT
+	 */
 	public boolean create_CFA_list(EObject element, EObject newSemanticContainer) {
 		CFA_list myCFA_list = null;
 
@@ -57,12 +58,12 @@ public class OpenActionService {
 	}
 
 	/**
-	* <!-- begin-user-doc -->
-	* <!-- end-user-doc -->
-	* @param element : the element
-	* @param newSemanticContainer : the element view
-	* @generated NOT
-	*/
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @param element              : the element
+	 * @param newSemanticContainer : the element view
+	 * @generated NOT
+	 */
 	public boolean create_Assumption_list(EObject element, EObject newSemanticContainer) {
 		Assumption_list myAssumption_list = null;
 
@@ -74,12 +75,12 @@ public class OpenActionService {
 	}
 
 	/**
-	* <!-- begin-user-doc -->
-	* <!-- end-user-doc -->
-	* @param element : the element
-	* @param newSemanticContainer : the element view
-	* @generated NOT
-	*/
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @param element              : the element
+	 * @param newSemanticContainer : the element view
+	 * @generated NOT
+	 */
 	public boolean create_DG_list(EObject element, EObject newSemanticContainer) {
 		DG_list myDG_list = null;
 
@@ -91,12 +92,12 @@ public class OpenActionService {
 	}
 
 	/**
-	* <!-- begin-user-doc -->
-	* <!-- end-user-doc -->
-	* @param element : the element
-	* @param newSemanticContainer : the element view
-	* @generated NOT
-	*/
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @param element              : the element
+	 * @param newSemanticContainer : the element view
+	 * @generated NOT
+	 */
 	public boolean add_CFA(EObject eObject, EObject newSemanticContainer) {
 
 		if (!(eObject instanceof CFA_list)) {
@@ -112,19 +113,18 @@ public class OpenActionService {
 			myCFA.setState(true);
 
 			((CapellaElement) myCFA).setId(EcoreUtil.generateUUID());
-			my_list.getCFAs().add(myCFA);
 			((ExtensibleElement) my_list).getOwnedExtensions().add((ElementExtension) myCFA);
 			return true;
 		}
 	}
 
 	/**
-	* <!-- begin-user-doc -->
-	* <!-- end-user-doc -->
-	* @param element : the element
-	* @param newSemanticContainer : the element view
-	* @generated NOT
-	*/
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @param element              : the element
+	 * @param newSemanticContainer : the element view
+	 * @generated NOT
+	 */
 	public boolean add_assumption(EObject element, EObject newSemanticContainer) {
 
 		if (!(element instanceof Assumption_list)) {
@@ -141,19 +141,18 @@ public class OpenActionService {
 			myAssumption.setValidity("no");
 
 			((CapellaElement) myAssumption).setId(EcoreUtil.generateUUID());
-			my_Assumption_list.getAssumptions().add(myAssumption);
 			((ExtensibleElement) my_Assumption_list).getOwnedExtensions().add((ElementExtension) myAssumption);
 			return true;
 		}
 	}
 
 	/**
-	* <!-- begin-user-doc -->
-	* <!-- end-user-doc -->
-	* @param element : the element
-	* @param newSemanticContainer : the element view
-	* @generated NOT
-	*/
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @param element              : the element
+	 * @param newSemanticContainer : the element view
+	 * @generated NOT
+	 */
 	public boolean add_DG(EObject element, EObject newSemanticContainer) {
 
 		if (!(element instanceof DG_list)) {
@@ -168,31 +167,29 @@ public class OpenActionService {
 			myDG.setContent("Some content");
 
 			((CapellaElement) myDG).setId(EcoreUtil.generateUUID());
-			my_DG_list.getDGs().add(myDG);
 			((ExtensibleElement) my_DG_list).getOwnedExtensions().add((ElementExtension) myDG);
 			return true;
 		}
-
 	}
 
 	/**
-	* <!-- begin-user-doc -->
-	* <!-- end-user-doc -->
-	* @param element : the element
-	* @param newSemanticContainer : the element view
-	* @generated NOT
-	*/
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @param element              : the element
+	 * @param newSemanticContainer : the element view
+	 * @generated NOT
+	 */
 	public boolean ElementNewDevelopment(EObject element, EObject newSemanticContainer) {
 		for (EObject eO : element.eContents()) {
 			if (eO instanceof ElementStateAtrium) {
-				//update ElementStateAtrium to newDevelopment
+				// update ElementStateAtrium to newDevelopment
 				ElementStateAtrium myElementState = (ElementStateAtrium) eO;
 				myElementState.setIsNewDevelopment(true);
 				return true;
 			}
 		}
-		//or if not found
-		//create ElementStateAtrium and initialize it to newDevelopment
+		// or if not found
+		// create ElementStateAtrium and initialize it to newDevelopment
 		ElementStateAtrium myElementState = null;
 
 		myElementState = AtriumFactoryImpl.eINSTANCE.createElementStateAtrium();
@@ -206,23 +203,23 @@ public class OpenActionService {
 	}
 
 	/**
-	* <!-- begin-user-doc -->
-	* <!-- end-user-doc -->
-	* @param element : the element
-	* @param newSemanticContainer : the element view
-	* @generated NOT
-	*/
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @param element              : the element
+	 * @param newSemanticContainer : the element view
+	 * @generated NOT
+	 */
 	public boolean ElementLegacy(EObject element, EObject newSemanticContainer) {
 		for (EObject eO : element.eContents()) {
 			if (eO instanceof ElementStateAtrium) {
-				//update ElementStateAtrium to Legacy
+				// update ElementStateAtrium to Legacy
 				ElementStateAtrium myElementState = (ElementStateAtrium) eO;
 				myElementState.setIsNewDevelopment(false);
 				return true;
 			}
 		}
-		//or if not found
-		//create ElementStateAtrium and initialize it to newDevelopment
+		// or if not found
+		// create ElementStateAtrium and initialize it to newDevelopment
 		ElementStateAtrium myElementState = null;
 
 		myElementState = AtriumFactoryImpl.eINSTANCE.createElementStateAtrium();

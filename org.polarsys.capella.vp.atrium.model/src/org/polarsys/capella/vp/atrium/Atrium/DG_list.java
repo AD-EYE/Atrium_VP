@@ -12,12 +12,6 @@ import org.polarsys.kitalpha.emde.model.ElementExtension;
  * A representation of the model object '<em><b>DG list</b></em>'.
  * <!-- end-user-doc -->
  *
- * <p>
- * The following features are supported:
- * </p>
- * <ul>
- *   <li>{@link org.polarsys.capella.vp.atrium.Atrium.DG_list#getDGs <em>DGs</em>}</li>
- * </ul>
  *
  * @see org.polarsys.capella.vp.atrium.Atrium.AtriumPackage#getDG_list()
  * @model annotation="http://www.polarsys.org/kitalpha/emde/1.0.0/constraint ExtendedElement=' http://www.polarsys.org/capella/core/la/1.4.0#//LogicalComponent'"
@@ -26,19 +20,5 @@ import org.polarsys.kitalpha.emde.model.ElementExtension;
  */
 
 public interface DG_list extends NamedElement, ElementExtension {
-
-	/**
-	 * Returns the value of the '<em><b>DGs</b></em>' containment reference list.
-	 * The list contents are of type {@link org.polarsys.capella.vp.atrium.Atrium.DG}.
-	
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>DGs</em>' containment reference list.
-	 * @see org.polarsys.capella.vp.atrium.Atrium.AtriumPackage#getDG_list_DGs()
-	 * @model containment="true"
-	 * @generated
-	 */
-
-	EList<DG> getDGs();
 
 } // DG_list

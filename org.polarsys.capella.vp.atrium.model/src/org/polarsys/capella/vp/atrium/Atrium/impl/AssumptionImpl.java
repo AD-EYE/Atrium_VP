@@ -1,6 +1,7 @@
 
 package org.polarsys.capella.vp.atrium.Atrium.impl;
 
+import java.util.Date;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
@@ -21,15 +22,38 @@ import org.polarsys.capella.vp.atrium.Atrium.assumptionType_Type;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.polarsys.capella.vp.atrium.Atrium.impl.AssumptionImpl#getAssumptionType <em>Assumption Type</em>}</li>
  *   <li>{@link org.polarsys.capella.vp.atrium.Atrium.impl.AssumptionImpl#getContent <em>Content</em>}</li>
  *   <li>{@link org.polarsys.capella.vp.atrium.Atrium.impl.AssumptionImpl#getRationale <em>Rationale</em>}</li>
  *   <li>{@link org.polarsys.capella.vp.atrium.Atrium.impl.AssumptionImpl#getValidity <em>Validity</em>}</li>
- *   <li>{@link org.polarsys.capella.vp.atrium.Atrium.impl.AssumptionImpl#getAssumptionType <em>Assumption Type</em>}</li>
+ *   <li>{@link org.polarsys.capella.vp.atrium.Atrium.impl.AssumptionImpl#getResponsibleArchitect <em>Responsible Architect</em>}</li>
+ *   <li>{@link org.polarsys.capella.vp.atrium.Atrium.impl.AssumptionImpl#getResponsibleExpert <em>Responsible Expert</em>}</li>
+ *   <li>{@link org.polarsys.capella.vp.atrium.Atrium.impl.AssumptionImpl#getDateOfCompletion <em>Date Of Completion</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class AssumptionImpl extends NamedElementImpl implements Assumption {
+
+	/**
+	 * The default value of the '{@link #getAssumptionType() <em>Assumption Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAssumptionType()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final assumptionType_Type ASSUMPTION_TYPE_EDEFAULT = assumptionType_Type.CLARIFICATION;
+
+	/**
+	 * The cached value of the '{@link #getAssumptionType() <em>Assumption Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAssumptionType()
+	 * @generated
+	 * @ordered
+	 */
+	protected assumptionType_Type assumptionType = ASSUMPTION_TYPE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getContent() <em>Content</em>}' attribute.
@@ -92,24 +116,64 @@ public class AssumptionImpl extends NamedElementImpl implements Assumption {
 	protected String validity = VALIDITY_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getAssumptionType() <em>Assumption Type</em>}' attribute.
+	 * The default value of the '{@link #getResponsibleArchitect() <em>Responsible Architect</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAssumptionType()
+	 * @see #getResponsibleArchitect()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final assumptionType_Type ASSUMPTION_TYPE_EDEFAULT = assumptionType_Type.CLARIFICATION;
+	protected static final String RESPONSIBLE_ARCHITECT_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getAssumptionType() <em>Assumption Type</em>}' attribute.
+	 * The cached value of the '{@link #getResponsibleArchitect() <em>Responsible Architect</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAssumptionType()
+	 * @see #getResponsibleArchitect()
 	 * @generated
 	 * @ordered
 	 */
-	protected assumptionType_Type assumptionType = ASSUMPTION_TYPE_EDEFAULT;
+	protected String responsibleArchitect = RESPONSIBLE_ARCHITECT_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getResponsibleExpert() <em>Responsible Expert</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getResponsibleExpert()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String RESPONSIBLE_EXPERT_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getResponsibleExpert() <em>Responsible Expert</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getResponsibleExpert()
+	 * @generated
+	 * @ordered
+	 */
+	protected String responsibleExpert = RESPONSIBLE_EXPERT_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getDateOfCompletion() <em>Date Of Completion</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDateOfCompletion()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final Date DATE_OF_COMPLETION_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getDateOfCompletion() <em>Date Of Completion</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDateOfCompletion()
+	 * @generated
+	 * @ordered
+	 */
+	protected Date dateOfCompletion = DATE_OF_COMPLETION_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -226,6 +290,93 @@ public class AssumptionImpl extends NamedElementImpl implements Assumption {
 	 */
 
 	@Override
+	public String getResponsibleArchitect() {
+
+		return responsibleArchitect;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+
+	@Override
+	public void setResponsibleArchitect(String newResponsibleArchitect) {
+
+		String oldResponsibleArchitect = responsibleArchitect;
+		responsibleArchitect = newResponsibleArchitect;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AtriumPackage.ASSUMPTION__RESPONSIBLE_ARCHITECT,
+					oldResponsibleArchitect, responsibleArchitect));
+
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+
+	@Override
+	public String getResponsibleExpert() {
+
+		return responsibleExpert;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+
+	@Override
+	public void setResponsibleExpert(String newResponsibleExpert) {
+
+		String oldResponsibleExpert = responsibleExpert;
+		responsibleExpert = newResponsibleExpert;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AtriumPackage.ASSUMPTION__RESPONSIBLE_EXPERT,
+					oldResponsibleExpert, responsibleExpert));
+
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+
+	@Override
+	public Date getDateOfCompletion() {
+
+		return dateOfCompletion;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+
+	@Override
+	public void setDateOfCompletion(Date newDateOfCompletion) {
+
+		Date oldDateOfCompletion = dateOfCompletion;
+		dateOfCompletion = newDateOfCompletion;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AtriumPackage.ASSUMPTION__DATE_OF_COMPLETION,
+					oldDateOfCompletion, dateOfCompletion));
+
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+
+	@Override
 	public assumptionType_Type getAssumptionType() {
 
 		return assumptionType;
@@ -256,14 +407,20 @@ public class AssumptionImpl extends NamedElementImpl implements Assumption {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+		case AtriumPackage.ASSUMPTION__ASSUMPTION_TYPE:
+			return getAssumptionType();
 		case AtriumPackage.ASSUMPTION__CONTENT:
 			return getContent();
 		case AtriumPackage.ASSUMPTION__RATIONALE:
 			return getRationale();
 		case AtriumPackage.ASSUMPTION__VALIDITY:
 			return getValidity();
-		case AtriumPackage.ASSUMPTION__ASSUMPTION_TYPE:
-			return getAssumptionType();
+		case AtriumPackage.ASSUMPTION__RESPONSIBLE_ARCHITECT:
+			return getResponsibleArchitect();
+		case AtriumPackage.ASSUMPTION__RESPONSIBLE_EXPERT:
+			return getResponsibleExpert();
+		case AtriumPackage.ASSUMPTION__DATE_OF_COMPLETION:
+			return getDateOfCompletion();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -276,6 +433,9 @@ public class AssumptionImpl extends NamedElementImpl implements Assumption {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+		case AtriumPackage.ASSUMPTION__ASSUMPTION_TYPE:
+			setAssumptionType((assumptionType_Type) newValue);
+			return;
 		case AtriumPackage.ASSUMPTION__CONTENT:
 			setContent((String) newValue);
 			return;
@@ -285,8 +445,14 @@ public class AssumptionImpl extends NamedElementImpl implements Assumption {
 		case AtriumPackage.ASSUMPTION__VALIDITY:
 			setValidity((String) newValue);
 			return;
-		case AtriumPackage.ASSUMPTION__ASSUMPTION_TYPE:
-			setAssumptionType((assumptionType_Type) newValue);
+		case AtriumPackage.ASSUMPTION__RESPONSIBLE_ARCHITECT:
+			setResponsibleArchitect((String) newValue);
+			return;
+		case AtriumPackage.ASSUMPTION__RESPONSIBLE_EXPERT:
+			setResponsibleExpert((String) newValue);
+			return;
+		case AtriumPackage.ASSUMPTION__DATE_OF_COMPLETION:
+			setDateOfCompletion((Date) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -300,6 +466,9 @@ public class AssumptionImpl extends NamedElementImpl implements Assumption {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+		case AtriumPackage.ASSUMPTION__ASSUMPTION_TYPE:
+			setAssumptionType(ASSUMPTION_TYPE_EDEFAULT);
+			return;
 		case AtriumPackage.ASSUMPTION__CONTENT:
 			setContent(CONTENT_EDEFAULT);
 			return;
@@ -309,8 +478,14 @@ public class AssumptionImpl extends NamedElementImpl implements Assumption {
 		case AtriumPackage.ASSUMPTION__VALIDITY:
 			setValidity(VALIDITY_EDEFAULT);
 			return;
-		case AtriumPackage.ASSUMPTION__ASSUMPTION_TYPE:
-			setAssumptionType(ASSUMPTION_TYPE_EDEFAULT);
+		case AtriumPackage.ASSUMPTION__RESPONSIBLE_ARCHITECT:
+			setResponsibleArchitect(RESPONSIBLE_ARCHITECT_EDEFAULT);
+			return;
+		case AtriumPackage.ASSUMPTION__RESPONSIBLE_EXPERT:
+			setResponsibleExpert(RESPONSIBLE_EXPERT_EDEFAULT);
+			return;
+		case AtriumPackage.ASSUMPTION__DATE_OF_COMPLETION:
+			setDateOfCompletion(DATE_OF_COMPLETION_EDEFAULT);
 			return;
 		}
 		super.eUnset(featureID);
@@ -324,14 +499,23 @@ public class AssumptionImpl extends NamedElementImpl implements Assumption {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+		case AtriumPackage.ASSUMPTION__ASSUMPTION_TYPE:
+			return assumptionType != ASSUMPTION_TYPE_EDEFAULT;
 		case AtriumPackage.ASSUMPTION__CONTENT:
 			return CONTENT_EDEFAULT == null ? content != null : !CONTENT_EDEFAULT.equals(content);
 		case AtriumPackage.ASSUMPTION__RATIONALE:
 			return RATIONALE_EDEFAULT == null ? rationale != null : !RATIONALE_EDEFAULT.equals(rationale);
 		case AtriumPackage.ASSUMPTION__VALIDITY:
 			return VALIDITY_EDEFAULT == null ? validity != null : !VALIDITY_EDEFAULT.equals(validity);
-		case AtriumPackage.ASSUMPTION__ASSUMPTION_TYPE:
-			return assumptionType != ASSUMPTION_TYPE_EDEFAULT;
+		case AtriumPackage.ASSUMPTION__RESPONSIBLE_ARCHITECT:
+			return RESPONSIBLE_ARCHITECT_EDEFAULT == null ? responsibleArchitect != null
+					: !RESPONSIBLE_ARCHITECT_EDEFAULT.equals(responsibleArchitect);
+		case AtriumPackage.ASSUMPTION__RESPONSIBLE_EXPERT:
+			return RESPONSIBLE_EXPERT_EDEFAULT == null ? responsibleExpert != null
+					: !RESPONSIBLE_EXPERT_EDEFAULT.equals(responsibleExpert);
+		case AtriumPackage.ASSUMPTION__DATE_OF_COMPLETION:
+			return DATE_OF_COMPLETION_EDEFAULT == null ? dateOfCompletion != null
+					: !DATE_OF_COMPLETION_EDEFAULT.equals(dateOfCompletion);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -347,14 +531,20 @@ public class AssumptionImpl extends NamedElementImpl implements Assumption {
 			return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (content: "); //$NON-NLS-1$
+		result.append(" (assumptionType: "); //$NON-NLS-1$
+		result.append(assumptionType);
+		result.append(", content: "); //$NON-NLS-1$
 		result.append(content);
 		result.append(", rationale: "); //$NON-NLS-1$
 		result.append(rationale);
 		result.append(", validity: "); //$NON-NLS-1$
 		result.append(validity);
-		result.append(", assumptionType: "); //$NON-NLS-1$
-		result.append(assumptionType);
+		result.append(", responsibleArchitect: "); //$NON-NLS-1$
+		result.append(responsibleArchitect);
+		result.append(", responsibleExpert: "); //$NON-NLS-1$
+		result.append(responsibleExpert);
+		result.append(", dateOfCompletion: "); //$NON-NLS-1$
+		result.append(dateOfCompletion);
 		result.append(')');
 		return result.toString();
 	}
