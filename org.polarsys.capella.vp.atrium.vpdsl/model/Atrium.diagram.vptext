@@ -138,7 +138,8 @@ Diagrams Atrium.diagram {
 			Container ContainerLC {
 				import: LABLogicalComponent
 				Representation {
-					condition: Java isElementNew Style {
+					condition: Java isElementNew
+					 Style {
 						FlatStyle {
 							background: red foreground: white
 						}
@@ -238,6 +239,12 @@ Diagrams Atrium.diagram {
 			}
 			OpenAction add_DG {
 				label: "Add DG"
+			}
+			OpenAction ElementNewDevelopment {
+				label: "ElementNewDevelopment"
+			}
+			OpenAction ElementLegacy {
+				label: "ElementLegacy"
 			}
 		}
 	}

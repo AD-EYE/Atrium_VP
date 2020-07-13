@@ -20,6 +20,7 @@ import org.polarsys.capella.vp.atrium.Atrium.CFA;
 import org.polarsys.capella.vp.atrium.Atrium.CFA_list;
 import org.polarsys.capella.vp.atrium.Atrium.DG;
 import org.polarsys.capella.vp.atrium.Atrium.DG_list;
+import org.polarsys.capella.vp.atrium.Atrium.ElementStateAtrium;
 import org.polarsys.capella.vp.atrium.Atrium.impl.AtriumFactoryImpl;
 import org.polarsys.capella.vp.atrium.Atrium.Assumption;
 import org.polarsys.capella.vp.atrium.Atrium.Assumption_list;
@@ -172,5 +173,65 @@ public class OpenActionService {
 			return true;
 		}
 
+	}
+
+	/**
+	* <!-- begin-user-doc -->
+	* <!-- end-user-doc -->
+	* @param element : the element
+	* @param newSemanticContainer : the element view
+	* @generated NOT
+	*/
+	public boolean ElementNewDevelopment(EObject element, EObject newSemanticContainer) {
+		for (EObject eO : element.eContents()) {
+			if (eO instanceof ElementStateAtrium) {
+				//update ElementStateAtrium to newDevelopment
+				ElementStateAtrium myElementState = (ElementStateAtrium) eO;
+				myElementState.setIsNewDevelopment(true);
+				return true;
+			}
+		}
+		//or if not found
+		//create ElementStateAtrium and initialize it to newDevelopment
+		ElementStateAtrium myElementState = null;
+
+		myElementState = AtriumFactoryImpl.eINSTANCE.createElementStateAtrium();
+
+		myElementState.setIsNewDevelopment(true);
+
+		((CapellaElement) myElementState).setId(EcoreUtil.generateUUID());
+		((ExtensibleElement) element).getOwnedExtensions().add((ElementExtension) myElementState);
+
+		return true;
+	}
+
+	/**
+	* <!-- begin-user-doc -->
+	* <!-- end-user-doc -->
+	* @param element : the element
+	* @param newSemanticContainer : the element view
+	* @generated NOT
+	*/
+	public boolean ElementLegacy(EObject element, EObject newSemanticContainer) {
+		for (EObject eO : element.eContents()) {
+			if (eO instanceof ElementStateAtrium) {
+				//update ElementStateAtrium to Legacy
+				ElementStateAtrium myElementState = (ElementStateAtrium) eO;
+				myElementState.setIsNewDevelopment(false);
+				return true;
+			}
+		}
+		//or if not found
+		//create ElementStateAtrium and initialize it to newDevelopment
+		ElementStateAtrium myElementState = null;
+
+		myElementState = AtriumFactoryImpl.eINSTANCE.createElementStateAtrium();
+
+		myElementState.setIsNewDevelopment(false);
+
+		((CapellaElement) myElementState).setId(EcoreUtil.generateUUID());
+		((ExtensibleElement) element).getOwnedExtensions().add((ElementExtension) myElementState);
+
+		return true;
 	}
 }

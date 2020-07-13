@@ -53,5 +53,12 @@ Data Atrium.data {
 			content type ecore.EString
 	}
 	
+	Class ElementStateAtrium {
+		extends capellacore.CapellaElement
+		Attributes:
+			isNewDevelopment type ecore.EBoolean
+	}
+	
+	
 	
 }

@@ -70,6 +70,8 @@ public class AtriumFactoryImpl extends EFactoryImpl implements AtriumFactory {
 			return createAssumption();
 		case AtriumPackage.DG:
 			return createDG();
+		case AtriumPackage.ELEMENT_STATE_ATRIUM:
+			return createElementStateAtrium();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
@@ -197,6 +199,21 @@ public class AtriumFactoryImpl extends EFactoryImpl implements AtriumFactory {
 
 		//end-capella-code
 		return dg;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ElementStateAtrium createElementStateAtrium() {
+		ElementStateAtriumImpl elementStateAtrium = new ElementStateAtriumImpl();
+		//begin-capella-code
+
+		elementStateAtrium.setId(IdGenerator.createId());
+
+		//end-capella-code
+		return elementStateAtrium;
 	}
 
 	/**
@@ -341,6 +358,19 @@ public class AtriumFactoryImpl extends EFactoryImpl implements AtriumFactory {
 		DG dg = createDG();
 		dg.setName(name_p);
 		return dg;
+	}
+
+	/**
+	 * Creates class and sets its name
+	 * (This method comes from a customization of the standard EMF generator)
+	 *
+	 * @param name_p : default name of created element
+	 * @generated
+	 */
+	public ElementStateAtrium createElementStateAtrium(String name_p) {
+		ElementStateAtrium elementStateAtrium = createElementStateAtrium();
+		elementStateAtrium.setName(name_p);
+		return elementStateAtrium;
 	}
 
 	//end-capella-code

@@ -22,6 +22,7 @@ import org.polarsys.capella.vp.atrium.Atrium.CFAlist;
 import org.polarsys.capella.vp.atrium.Atrium.CFA;
 import org.polarsys.capella.vp.atrium.Atrium.Assumption;
 import org.polarsys.capella.vp.atrium.Atrium.DG;
+import org.polarsys.capella.vp.atrium.Atrium.ElementStateAtrium;
 
 /**
  * @generated 
@@ -51,6 +52,9 @@ public class AtriumPackageHelper implements IHelper {
 		}
 		if (ret == null && object instanceof DG) {
 			ret = DGHelper.getInstance().doSwitch((DG) object, feature);
+		}
+		if (ret == null && object instanceof ElementStateAtrium) {
+			ret = ElementStateAtriumHelper.getInstance().doSwitch((ElementStateAtrium) object, feature);
 		}
 		return ret;
 	}

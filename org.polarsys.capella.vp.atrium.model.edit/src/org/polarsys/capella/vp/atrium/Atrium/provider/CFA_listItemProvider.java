@@ -225,6 +225,17 @@ public class CFA_listItemProvider extends NamedElementItemProvider implements IE
 
 		// begin-extension-code
 		{
+			CommandParameter commandParameter = createChildParameter(
+					EmdePackage.Literals.EXTENSIBLE_ELEMENT__OWNED_EXTENSIONS,
+					AtriumFactory.eINSTANCE.createElementStateAtrium());
+			if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
+				newChildDescriptors.add(commandParameter);
+			}
+		}
+		// end-extension-code
+
+		// begin-extension-code
+		{
 			CommandParameter commandParameter = createChildParameter(AtriumPackage.Literals.CFA_LIST__CF_AS,
 					AtriumFactory.eINSTANCE.createCFA());
 			if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {

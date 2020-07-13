@@ -250,6 +250,29 @@ public class AtriumItemProviderAdapterFactory extends AtriumAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.polarsys.capella.vp.atrium.Atrium.ElementStateAtrium} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ElementStateAtriumItemProvider elementStateAtriumItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.polarsys.capella.vp.atrium.Atrium.ElementStateAtrium}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createElementStateAtriumAdapter() {
+		if (elementStateAtriumItemProvider == null) {
+			elementStateAtriumItemProvider = new ElementStateAtriumItemProvider(this);
+		}
+
+		return elementStateAtriumItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -393,6 +416,8 @@ public class AtriumItemProviderAdapterFactory extends AtriumAdapterFactory
 			assumptionItemProvider.dispose();
 		if (dgItemProvider != null)
 			dgItemProvider.dispose();
+		if (elementStateAtriumItemProvider != null)
+			elementStateAtriumItemProvider.dispose();
 	}
 
 	/**
@@ -510,6 +535,17 @@ public class AtriumItemProviderAdapterFactory extends AtriumAdapterFactory
 					CommandParameter commandParameter = createChildParameter(
 							EmdePackage.Literals.EXTENSIBLE_ELEMENT__OWNED_EXTENSIONS,
 							AtriumFactory.eINSTANCE.createDG());
+					if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
+						newChildDescriptors.add(commandParameter);
+					}
+				}
+				// end-extension-code
+
+				// begin-extension-code
+				{
+					CommandParameter commandParameter = createChildParameter(
+							EmdePackage.Literals.EXTENSIBLE_ELEMENT__OWNED_EXTENSIONS,
+							AtriumFactory.eINSTANCE.createElementStateAtrium());
 					if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
 						newChildDescriptors.add(commandParameter);
 					}
@@ -666,6 +702,17 @@ public class AtriumItemProviderAdapterFactory extends AtriumAdapterFactory
 					CommandParameter commandParameter = createChildParameter(
 							SharedmodelPackage.Literals.GENERIC_PKG__CAPELLA_ELEMENTS,
 							AtriumFactory.eINSTANCE.createDG());
+					if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
+						newChildDescriptors.add(commandParameter);
+					}
+				}
+				// end-extension-code
+
+				// begin-extension-code
+				{
+					CommandParameter commandParameter = createChildParameter(
+							SharedmodelPackage.Literals.GENERIC_PKG__CAPELLA_ELEMENTS,
+							AtriumFactory.eINSTANCE.createElementStateAtrium());
 					if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
 						newChildDescriptors.add(commandParameter);
 					}

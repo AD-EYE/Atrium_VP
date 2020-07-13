@@ -227,6 +227,31 @@ public class AtriumSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
+		case AtriumPackage.ELEMENT_STATE_ATRIUM: {
+			ElementStateAtrium elementStateAtrium = (ElementStateAtrium) theEObject;
+			T result = caseElementStateAtrium(elementStateAtrium);
+			if (result == null)
+				result = caseNamedElement(elementStateAtrium);
+			if (result == null)
+				result = caseElementExtension(elementStateAtrium);
+			if (result == null)
+				result = caseAbstractNamedElement(elementStateAtrium);
+			if (result == null)
+				result = caseCapellaElement(elementStateAtrium);
+			if (result == null)
+				result = caseTraceableElement(elementStateAtrium);
+			if (result == null)
+				result = casePublishableElement(elementStateAtrium);
+			if (result == null)
+				result = caseModelElement(elementStateAtrium);
+			if (result == null)
+				result = caseExtensibleElement(elementStateAtrium);
+			if (result == null)
+				result = caseElement(elementStateAtrium);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
 		default:
 			return defaultCase(theEObject);
 		}
@@ -319,6 +344,21 @@ public class AtriumSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseDG(DG object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Element State Atrium</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Element State Atrium</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseElementStateAtrium(ElementStateAtrium object) {
 		return null;
 	}
 

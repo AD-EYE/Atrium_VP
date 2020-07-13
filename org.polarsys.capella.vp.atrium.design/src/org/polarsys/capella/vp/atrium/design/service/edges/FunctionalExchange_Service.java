@@ -13,6 +13,7 @@ import org.eclipse.sirius.diagram.DDiagramElement;
 import org.polarsys.capella.core.data.la.LogicalArchitecture;
 import org.polarsys.capella.core.data.la.LogicalComponentPkg;
 import org.polarsys.capella.vp.atrium.Atrium.CFA;
+import org.polarsys.capella.vp.atrium.Atrium.ElementStateAtrium;
 import org.polarsys.capella.vp.atrium.Atrium.stateLinkedElement_Type;
 
 /**
@@ -37,30 +38,10 @@ public class FunctionalExchange_Service {
 	*/
 	public boolean isElementNewFE(EObject eObject, EObject view, EObject container) {
 
-		//go at root level then access the CFAs
-		//look for the owned CFAs
-
-		EObject rootlevel = null;
-
-		EObject predecessor = eObject.eContainer();
-
-		while (!(predecessor instanceof LogicalArchitecture)) {
-			predecessor = predecessor.eContainer();
-		}
-
-		for (EObject eO : predecessor.eContents()) {
-			if (eO instanceof LogicalComponentPkg) {
-				rootlevel = eO;
-			}
-		}
-
-		for (EObject eO : rootlevel.eContents()) {
-			if (eO instanceof CFA) {
-				CFA targetCFA = (CFA) eO;
-				if (targetCFA.getLinkedtoElement() == eObject) {
-					if (targetCFA.getStateLinkedElement() == stateLinkedElement_Type.NEW_DEVELOPMENT) {
-						return true;
-					}
+		for (EObject eO : eObject.eContents()) {
+			if (eO instanceof ElementStateAtrium) {
+				if (((ElementStateAtrium) eO).isIsNewDevelopment()) {
+					return true;
 				}
 			}
 		}

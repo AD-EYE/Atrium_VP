@@ -225,6 +225,17 @@ public class DG_listItemProvider extends NamedElementItemProvider implements IEd
 
 		// begin-extension-code
 		{
+			CommandParameter commandParameter = createChildParameter(
+					EmdePackage.Literals.EXTENSIBLE_ELEMENT__OWNED_EXTENSIONS,
+					AtriumFactory.eINSTANCE.createElementStateAtrium());
+			if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
+				newChildDescriptors.add(commandParameter);
+			}
+		}
+		// end-extension-code
+
+		// begin-extension-code
+		{
 			CommandParameter commandParameter = createChildParameter(AtriumPackage.Literals.DG_LIST__DGS,
 					AtriumFactory.eINSTANCE.createDG());
 			if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {

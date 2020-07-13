@@ -226,6 +226,17 @@ public class Assumption_listItemProvider extends NamedElementItemProvider implem
 		// begin-extension-code
 		{
 			CommandParameter commandParameter = createChildParameter(
+					EmdePackage.Literals.EXTENSIBLE_ELEMENT__OWNED_EXTENSIONS,
+					AtriumFactory.eINSTANCE.createElementStateAtrium());
+			if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
+				newChildDescriptors.add(commandParameter);
+			}
+		}
+		// end-extension-code
+
+		// begin-extension-code
+		{
+			CommandParameter commandParameter = createChildParameter(
 					AtriumPackage.Literals.ASSUMPTION_LIST__ASSUMPTIONS, AtriumFactory.eINSTANCE.createAssumption());
 			if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
 				newChildDescriptors.add(commandParameter);

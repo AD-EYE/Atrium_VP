@@ -21,21 +21,21 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import org.polarsys.capella.core.data.capellacore.provider.NamedElementItemProvider;
 
-import org.polarsys.capella.vp.atrium.Atrium.Assumption;
 import org.polarsys.capella.vp.atrium.Atrium.AtriumFactory;
 import org.polarsys.capella.vp.atrium.Atrium.AtriumPackage;
+import org.polarsys.capella.vp.atrium.Atrium.ElementStateAtrium;
 
 import org.polarsys.kitalpha.emde.model.EmdePackage;
 
 import org.polarsys.kitalpha.emde.model.edit.provider.NewChildDescriptorHelper;
 
 /**
- * This is the item provider adapter for a {@link org.polarsys.capella.vp.atrium.Atrium.Assumption} object.
+ * This is the item provider adapter for a {@link org.polarsys.capella.vp.atrium.Atrium.ElementStateAtrium} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class AssumptionItemProvider extends NamedElementItemProvider implements IEditingDomainItemProvider,
+public class ElementStateAtriumItemProvider extends NamedElementItemProvider implements IEditingDomainItemProvider,
 		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -43,7 +43,7 @@ public class AssumptionItemProvider extends NamedElementItemProvider implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AssumptionItemProvider(AdapterFactory adapterFactory) {
+	public ElementStateAtriumItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -58,10 +58,7 @@ public class AssumptionItemProvider extends NamedElementItemProvider implements 
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addContentPropertyDescriptor(object);
-			addRationalePropertyDescriptor(object);
-			addValidityPropertyDescriptor(object);
-			addAssumptionTypePropertyDescriptor(object);
+			addIsNewDevelopmentPropertyDescriptor(object);
 		}
 		// begin-extension-code
 		checkChildCreationExtender(object);
@@ -70,88 +67,22 @@ public class AssumptionItemProvider extends NamedElementItemProvider implements 
 	}
 
 	/**
-	 * This adds a property descriptor for the Content feature.
+	 * This adds a property descriptor for the Is New Development feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addContentPropertyDescriptor(Object object) {
+	protected void addIsNewDevelopmentPropertyDescriptor(Object object) {
 
 		// begin-extension-code
 		itemPropertyDescriptors.add(createItemPropertyDescriptor
 		// end-extension-code
 		(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-				getString("_UI_Assumption_content_feature"), //$NON-NLS-1$
-				getString("_UI_PropertyDescriptor_description", "_UI_Assumption_content_feature", //$NON-NLS-1$//$NON-NLS-2$
-						"_UI_Assumption_type"), //$NON-NLS-1$
-				AtriumPackage.Literals.ASSUMPTION__CONTENT, true, false, false,
-				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
-				// begin-extension-code
-				null));
-		// end-extension-code
-	}
-
-	/**
-	 * This adds a property descriptor for the Rationale feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addRationalePropertyDescriptor(Object object) {
-
-		// begin-extension-code
-		itemPropertyDescriptors.add(createItemPropertyDescriptor
-		// end-extension-code
-		(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-				getString("_UI_Assumption_rationale_feature"), //$NON-NLS-1$
-				getString("_UI_PropertyDescriptor_description", "_UI_Assumption_rationale_feature", //$NON-NLS-1$//$NON-NLS-2$
-						"_UI_Assumption_type"), //$NON-NLS-1$
-				AtriumPackage.Literals.ASSUMPTION__RATIONALE, true, false, false,
-				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
-				// begin-extension-code
-				null));
-		// end-extension-code
-	}
-
-	/**
-	 * This adds a property descriptor for the Validity feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addValidityPropertyDescriptor(Object object) {
-
-		// begin-extension-code
-		itemPropertyDescriptors.add(createItemPropertyDescriptor
-		// end-extension-code
-		(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-				getString("_UI_Assumption_validity_feature"), //$NON-NLS-1$
-				getString("_UI_PropertyDescriptor_description", "_UI_Assumption_validity_feature", //$NON-NLS-1$//$NON-NLS-2$
-						"_UI_Assumption_type"), //$NON-NLS-1$
-				AtriumPackage.Literals.ASSUMPTION__VALIDITY, true, false, false,
-				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
-				// begin-extension-code
-				null));
-		// end-extension-code
-	}
-
-	/**
-	 * This adds a property descriptor for the Assumption Type feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addAssumptionTypePropertyDescriptor(Object object) {
-
-		// begin-extension-code
-		itemPropertyDescriptors.add(createItemPropertyDescriptor
-		// end-extension-code
-		(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-				getString("_UI_Assumption_assumptionType_feature"), //$NON-NLS-1$
-				getString("_UI_PropertyDescriptor_description", "_UI_Assumption_assumptionType_feature", //$NON-NLS-1$//$NON-NLS-2$
-						"_UI_Assumption_type"), //$NON-NLS-1$
-				AtriumPackage.Literals.ASSUMPTION__ASSUMPTION_TYPE, true, false, false,
-				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
+				getString("_UI_ElementStateAtrium_isNewDevelopment_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_ElementStateAtrium_isNewDevelopment_feature", //$NON-NLS-1$//$NON-NLS-2$
+						"_UI_ElementStateAtrium_type"), //$NON-NLS-1$
+				AtriumPackage.Literals.ELEMENT_STATE_ATRIUM__IS_NEW_DEVELOPMENT, true, false, false,
+				ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null,
 				// begin-extension-code
 				null));
 		// end-extension-code
@@ -168,14 +99,14 @@ public class AssumptionItemProvider extends NamedElementItemProvider implements 
 	}
 
 	/**
-	 * This returns Assumption.gif.
+	 * This returns ElementStateAtrium.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Assumption")); //$NON-NLS-1$
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/ElementStateAtrium")); //$NON-NLS-1$
 	}
 
 	/**
@@ -187,9 +118,9 @@ public class AssumptionItemProvider extends NamedElementItemProvider implements 
 	@Override
 	public String getText(Object object) {
 
-		String label = ((Assumption) object).getName();
+		String label = ((ElementStateAtrium) object).getName();
 		// begin-extension-code
-		return label == null || label.length() == 0 ? "[" + getString("_UI_Assumption_type") + "]" : label; //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+		return label == null || label.length() == 0 ? "[" + getString("_UI_ElementStateAtrium_type") + "]" : label; //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 		// end-extension-code
 	}
 
@@ -204,11 +135,8 @@ public class AssumptionItemProvider extends NamedElementItemProvider implements 
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Assumption.class)) {
-		case AtriumPackage.ASSUMPTION__CONTENT:
-		case AtriumPackage.ASSUMPTION__RATIONALE:
-		case AtriumPackage.ASSUMPTION__VALIDITY:
-		case AtriumPackage.ASSUMPTION__ASSUMPTION_TYPE:
+		switch (notification.getFeatureID(ElementStateAtrium.class)) {
+		case AtriumPackage.ELEMENT_STATE_ATRIUM__IS_NEW_DEVELOPMENT:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}

@@ -72,6 +72,14 @@
       </VP_Class_Attributes>
       <extends href="http://www.polarsys.org/capella/core/fa/1.4.0#//AbstractFunction"/>
     </VP_Classes>
+    <VP_Classes name="ElementStateAtrium">
+      <VP_Class_Attributes name="isNewDevelopment">
+        <owned_type xsi:type="vpdesc:ExternalAttributeType">
+          <type href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+        </owned_type>
+      </VP_Class_Attributes>
+      <extends href="http://www.polarsys.org/capella/core/core/1.4.0#//CapellaElement"/>
+    </VP_Classes>
   </VP_Data>
   <VP_Aspects xsi:type="vpconf:Configuration" name="Atrium.conf">
     <vpConfigurationElements xsi:type="vpconf:TargetApplication" type="Capella"/>
@@ -371,6 +379,8 @@
         <openActions name="add_CFA" label="Add CFA"/>
         <openActions name="add_assumption" label="Add Assumption"/>
         <openActions name="add_DG" label="Add DG"/>
+        <openActions name="ElementNewDevelopment" label="ElementNewDevelopment"/>
+        <openActions name="ElementLegacy" label="ElementLegacy"/>
       </the_ActionSet>
       <extented_diagram href="../../../plugin/org.polarsys.capella.core.sirius.analysis/description/logical.odesign#//@ownedViewpoints[name='Logical%20Architecture']/@ownedRepresentations[name='Logical%20Architecture%20Blank']"/>
     </diagrams>
