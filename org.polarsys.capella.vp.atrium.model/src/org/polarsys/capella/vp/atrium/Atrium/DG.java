@@ -15,6 +15,7 @@ import org.polarsys.kitalpha.emde.model.ElementExtension;
  * </p>
  * <ul>
  *   <li>{@link org.polarsys.capella.vp.atrium.Atrium.DG#getDesignAlternative <em>Design Alternative</em>}</li>
+ *   <li>{@link org.polarsys.capella.vp.atrium.Atrium.DG#getSubDGs <em>Sub DGs</em>}</li>
  *   <li>{@link org.polarsys.capella.vp.atrium.Atrium.DG#getContent <em>Content</em>}</li>
  * </ul>
  *
@@ -39,6 +40,20 @@ public interface DG extends NamedElement, ElementExtension {
 	 */
 
 	EList<DA> getDesignAlternative();
+
+	/**
+	 * Returns the value of the '<em><b>Sub DGs</b></em>' reference list.
+	 * The list contents are of type {@link org.polarsys.capella.vp.atrium.Atrium.DG}.
+	
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Sub DGs</em>' reference list.
+	 * @see org.polarsys.capella.vp.atrium.Atrium.AtriumPackage#getDG_SubDGs()
+	 * @model
+	 * @generated
+	 */
+
+	EList<DG> getSubDGs();
 
 	/**
 	 * Returns the value of the '<em><b>Content</b></em>' attribute.

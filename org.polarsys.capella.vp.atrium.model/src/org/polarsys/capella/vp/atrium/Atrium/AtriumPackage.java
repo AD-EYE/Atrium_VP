@@ -1685,13 +1685,22 @@ public interface AtriumPackage extends EPackage {
 	int DG__DESIGN_ALTERNATIVE = CapellacorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Sub DGs</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DG__SUB_DGS = CapellacorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
 	 * The feature id for the '<em><b>Content</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DG__CONTENT = CapellacorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int DG__CONTENT = CapellacorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>DG</em>' class.
@@ -1700,7 +1709,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DG_FEATURE_COUNT = CapellacorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int DG_FEATURE_COUNT = CapellacorePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.capella.vp.atrium.Atrium.impl.DAImpl <em>DA</em>}' class.
@@ -2387,6 +2396,17 @@ public interface AtriumPackage extends EPackage {
 	EReference getDG_DesignAlternative();
 
 	/**
+	 * Returns the meta object for the reference list '{@link org.polarsys.capella.vp.atrium.Atrium.DG#getSubDGs <em>Sub DGs</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Sub DGs</em>'.
+	 * @see org.polarsys.capella.vp.atrium.Atrium.DG#getSubDGs()
+	 * @see #getDG()
+	 * @generated
+	 */
+	EReference getDG_SubDGs();
+
+	/**
 	 * Returns the meta object for the attribute '{@link org.polarsys.capella.vp.atrium.Atrium.DG#getContent <em>Content</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2655,6 +2675,14 @@ public interface AtriumPackage extends EPackage {
 		 * @generated
 		 */
 		EReference DG__DESIGN_ALTERNATIVE = eINSTANCE.getDG_DesignAlternative();
+
+		/**
+		 * The meta object literal for the '<em><b>Sub DGs</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DG__SUB_DGS = eINSTANCE.getDG_SubDGs();
 
 		/**
 		 * The meta object literal for the '<em><b>Content</b></em>' attribute feature.

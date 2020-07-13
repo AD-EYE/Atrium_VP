@@ -70,8 +70,10 @@
     <eAnnotations source="http://www.polarsys.org/kitalpha/emde/1.0.0/constraintMapping">
       <details key="Mapping" value=" platform:/plugin/org.polarsys.capella.core.data.gen/model/FunctionalAnalysis.ecore#//AbstractFunction"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="DesignAlternative" lowerBound="1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="designAlternative" lowerBound="1"
         upperBound="-1" eType="#//DA"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subDGs" upperBound="-1"
+        eType="#//DG"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="content" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DA" eSuperTypes="platform:/plugin/org.polarsys.capella.core.data.gen/model/CapellaCore.ecore#//NamedElement platform:/plugin/org.polarsys.kitalpha.emde/model/eMDE.ecore#//ElementExtension">

@@ -25,6 +25,7 @@ import org.polarsys.capella.vp.atrium.Atrium.DG;
  * </p>
  * <ul>
  *   <li>{@link org.polarsys.capella.vp.atrium.Atrium.impl.DGImpl#getDesignAlternative <em>Design Alternative</em>}</li>
+ *   <li>{@link org.polarsys.capella.vp.atrium.Atrium.impl.DGImpl#getSubDGs <em>Sub DGs</em>}</li>
  *   <li>{@link org.polarsys.capella.vp.atrium.Atrium.impl.DGImpl#getContent <em>Content</em>}</li>
  * </ul>
  *
@@ -41,6 +42,16 @@ public class DGImpl extends NamedElementImpl implements DG {
 	 * @ordered
 	 */
 	protected EList<DA> designAlternative;
+
+	/**
+	 * The cached value of the '{@link #getSubDGs() <em>Sub DGs</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSubDGs()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<DG> subDGs;
 
 	/**
 	 * The default value of the '{@link #getContent() <em>Content</em>}' attribute.
@@ -105,6 +116,21 @@ public class DGImpl extends NamedElementImpl implements DG {
 	 */
 
 	@Override
+	public EList<DG> getSubDGs() {
+
+		if (subDGs == null) {
+			subDGs = new EObjectResolvingEList<DG>(DG.class, this, AtriumPackage.DG__SUB_DGS);
+		}
+		return subDGs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+
+	@Override
 	public String getContent() {
 
 		return content;
@@ -136,6 +162,8 @@ public class DGImpl extends NamedElementImpl implements DG {
 		switch (featureID) {
 		case AtriumPackage.DG__DESIGN_ALTERNATIVE:
 			return getDesignAlternative();
+		case AtriumPackage.DG__SUB_DGS:
+			return getSubDGs();
 		case AtriumPackage.DG__CONTENT:
 			return getContent();
 		}
@@ -155,6 +183,10 @@ public class DGImpl extends NamedElementImpl implements DG {
 			getDesignAlternative().clear();
 			getDesignAlternative().addAll((Collection<? extends DA>) newValue);
 			return;
+		case AtriumPackage.DG__SUB_DGS:
+			getSubDGs().clear();
+			getSubDGs().addAll((Collection<? extends DG>) newValue);
+			return;
 		case AtriumPackage.DG__CONTENT:
 			setContent((String) newValue);
 			return;
@@ -173,6 +205,9 @@ public class DGImpl extends NamedElementImpl implements DG {
 		case AtriumPackage.DG__DESIGN_ALTERNATIVE:
 			getDesignAlternative().clear();
 			return;
+		case AtriumPackage.DG__SUB_DGS:
+			getSubDGs().clear();
+			return;
 		case AtriumPackage.DG__CONTENT:
 			setContent(CONTENT_EDEFAULT);
 			return;
@@ -190,6 +225,8 @@ public class DGImpl extends NamedElementImpl implements DG {
 		switch (featureID) {
 		case AtriumPackage.DG__DESIGN_ALTERNATIVE:
 			return designAlternative != null && !designAlternative.isEmpty();
+		case AtriumPackage.DG__SUB_DGS:
+			return subDGs != null && !subDGs.isEmpty();
 		case AtriumPackage.DG__CONTENT:
 			return CONTENT_EDEFAULT == null ? content != null : !CONTENT_EDEFAULT.equals(content);
 		}

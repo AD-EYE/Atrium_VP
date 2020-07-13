@@ -59,6 +59,7 @@ public class DGItemProvider extends NamedElementItemProvider implements IEditing
 			super.getPropertyDescriptors(object);
 
 			addDesignAlternativePropertyDescriptor(object);
+			addSubDGsPropertyDescriptor(object);
 			addContentPropertyDescriptor(object);
 		}
 		// begin-extension-code
@@ -79,9 +80,29 @@ public class DGItemProvider extends NamedElementItemProvider implements IEditing
 		itemPropertyDescriptors.add(createItemPropertyDescriptor
 		// end-extension-code
 		(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-				getString("_UI_DG_DesignAlternative_feature"), //$NON-NLS-1$
-				getString("_UI_PropertyDescriptor_description", "_UI_DG_DesignAlternative_feature", "_UI_DG_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				getString("_UI_DG_designAlternative_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_DG_designAlternative_feature", "_UI_DG_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 				AtriumPackage.Literals.DG__DESIGN_ALTERNATIVE, true, false, true, null, null,
+				// begin-extension-code
+				null));
+		// end-extension-code
+	}
+
+	/**
+	 * This adds a property descriptor for the Sub DGs feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSubDGsPropertyDescriptor(Object object) {
+
+		// begin-extension-code
+		itemPropertyDescriptors.add(createItemPropertyDescriptor
+		// end-extension-code
+		(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+				getString("_UI_DG_subDGs_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_DG_subDGs_feature", "_UI_DG_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				AtriumPackage.Literals.DG__SUB_DGS, true, false, true, null, null,
 				// begin-extension-code
 				null));
 		// end-extension-code

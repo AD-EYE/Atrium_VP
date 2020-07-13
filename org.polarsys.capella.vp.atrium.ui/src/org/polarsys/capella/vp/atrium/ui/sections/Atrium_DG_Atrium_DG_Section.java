@@ -23,6 +23,7 @@ import org.polarsys.kitalpha.ad.services.manager.ViewpointManager;
 import org.polarsys.capella.core.ui.properties.fields.*;
 
 import org.polarsys.capella.vp.atrium.ui.controllers.DesignAlternativeAssociationFieldController;
+import org.polarsys.capella.vp.atrium.ui.controllers.SubDGsAssociationFieldController;
 import org.polarsys.capella.core.data.capellacore.CapellaElement;
 import org.polarsys.capella.vp.atrium.Atrium.AtriumPackage;
 import org.polarsys.capella.vp.atrium.Atrium.DG;
@@ -56,6 +57,15 @@ public class Atrium_DG_Atrium_DG_Section extends AbstractSection {
 	* @generated
 	*/
 	private MultipleSemanticField DesignAlternativeAssociation;
+
+	/**
+	* <!-- begin-model-doc -->
+	* <!-- end-model-doc -->
+	* <!-- begin-user-doc -->
+	* <!-- end-user-doc -->
+	* @generated
+	*/
+	private MultipleSemanticField SubDGsAssociation;
 
 	/**
 	* <!-- begin-model-doc -->
@@ -189,6 +199,9 @@ public class Atrium_DG_Atrium_DG_Section extends AbstractSection {
 		DesignAlternativeAssociation = new MultipleSemanticField(Atrium_DG_AssociationGroup, "Design Alternative :",
 				getWidgetFactory(), new DesignAlternativeAssociationFieldController());
 
+		SubDGsAssociation = new MultipleSemanticField(Atrium_DG_AssociationGroup, "Sub D Gs :", getWidgetFactory(),
+				new SubDGsAssociationFieldController());
+
 	}
 
 	/**
@@ -204,6 +217,8 @@ public class Atrium_DG_Atrium_DG_Section extends AbstractSection {
 
 		DesignAlternativeAssociation.loadData(object, AtriumPackage.eINSTANCE.getDG_DesignAlternative());
 
+		SubDGsAssociation.loadData(object, AtriumPackage.eINSTANCE.getDG_SubDGs());
+
 	}
 
 	/**
@@ -217,6 +232,8 @@ public class Atrium_DG_Atrium_DG_Section extends AbstractSection {
 		abstractSemanticFields.add(ContentField2);
 
 		abstractSemanticFields.add(DesignAlternativeAssociation);
+
+		abstractSemanticFields.add(SubDGsAssociation);
 
 		return abstractSemanticFields;
 	}

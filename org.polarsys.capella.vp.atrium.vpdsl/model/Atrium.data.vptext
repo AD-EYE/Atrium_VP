@@ -45,7 +45,8 @@ Data Atrium.data {
 		Attributes:
 			content type ecore.EString
 		Associations:
-			DesignAlternative refers [1,*] DA
+			designAlternative refers [1,*] DA
+			subDGs refers [0,*] DG
 	}
 	Class DA {
 		extends fa.AbstractFunction

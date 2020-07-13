@@ -7,6 +7,7 @@
  *
  */
 UIDescription Atrium.ui {
+
 UI Atrium_CFA_list {
 	label: "Atrium"
 	Container Atrium_CFA_list_Section {
@@ -71,7 +72,8 @@ UI Atrium_DG {
 		}
 		Container Atrium_DG_AssociationGroup {
 			label: "D G Associations"
-			Field DesignAlternativeAssociation label: "Design Alternative" type multipleChoiceList , mapped-to Atrium.data.DG.DesignAlternative
+			Field designAlternativeAssociation label: "Design Alternative" type multipleChoiceList , mapped-to Atrium.data.DG.designAlternative
+			Field subDGsAssociation label: "Sub D Gs" type multipleChoiceList , mapped-to Atrium.data.DG.subDGs
 		}
 	}
 }
@@ -94,6 +96,5 @@ UI Atrium_ElementStateAtrium {
 		}
 	}
 }
-
 
 }

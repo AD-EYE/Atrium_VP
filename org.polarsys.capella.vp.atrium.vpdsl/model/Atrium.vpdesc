@@ -73,7 +73,8 @@
       <extends href="http://www.polarsys.org/capella/core/fa/1.4.0#//AbstractFunction"/>
     </VP_Classes>
     <VP_Classes name="DG">
-      <VP_Classes_Associations xsi:type="vpdesc:LocalClassAssociation" name="DesignAlternative" cardinality="1..*" type="reference" LocalTarget="//@VP_Data/@VP_Classes.7"/>
+      <VP_Classes_Associations xsi:type="vpdesc:LocalClassAssociation" name="designAlternative" cardinality="1..*" type="reference" LocalTarget="//@VP_Data/@VP_Classes.7"/>
+      <VP_Classes_Associations xsi:type="vpdesc:LocalClassAssociation" name="subDGs" cardinality="0..*" type="reference" LocalTarget="//@VP_Data/@VP_Classes.6"/>
       <VP_Class_Attributes name="content">
         <owned_type xsi:type="vpdesc:ExternalAttributeType">
           <type href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -186,8 +187,11 @@
           </UI_fields>
         </subContainers>
         <subContainers name="Atrium_DG_AssociationGroup" label="D G Associations">
-          <UI_fields name="DesignAlternativeAssociation" label="Design Alternative" type="multipleChoiceList">
+          <UI_fields name="designAlternativeAssociation" label="Design Alternative" type="multipleChoiceList">
             <Mapping UI_Field_Mapped_To="//@VP_Data/@VP_Classes.6/@VP_Classes_Associations.0"/>
+          </UI_fields>
+          <UI_fields name="subDGsAssociation" label="Sub D Gs" type="multipleChoiceList">
+            <Mapping UI_Field_Mapped_To="//@VP_Data/@VP_Classes.6/@VP_Classes_Associations.1"/>
           </UI_fields>
         </subContainers>
       </UI_Containers>

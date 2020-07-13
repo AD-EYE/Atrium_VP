@@ -44,6 +44,8 @@ public class ReferencedViewpointElementQuery implements IQuery {
 		DG object = (DG) object_p;
 		for (EObject eObject : object.getDesignAlternative())
 			result.add(eObject);
+		for (EObject eObject : object.getSubDGs())
+			result.add(eObject);
 
 		return result;
 	}

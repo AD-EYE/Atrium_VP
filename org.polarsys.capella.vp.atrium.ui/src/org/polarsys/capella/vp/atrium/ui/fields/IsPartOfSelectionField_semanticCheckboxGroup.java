@@ -17,32 +17,32 @@ import org.polarsys.capella.vp.atrium.Atrium.AtriumPackage;
 import org.polarsys.capella.vp.atrium.Atrium.DA;
 
 /**
-* <!-- begin-user-doc -->
+ * <!-- begin-user-doc -->
 * The '<em><b>[IsPartOfSelectionField_semanticCheckboxGroup]</b></em>' customized CheckboxGroup field. 
 * <!-- end-user-doc -->
-* <p>
-* </p>
-*
-* @generated
-*/
+ * <p>
+ * </p>
+ *
+ * @generated
+ */
 
 public class IsPartOfSelectionField_semanticCheckboxGroup extends AbstractSemanticCheckboxGroup {
 
 	/**
-	 * <!-- begin-user-doc -->
+	* <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+	* @generated
+	*/
 	private Button _IsPartOfSelectionFieldButton;
 
 	/**
-	 * Constructor.
-	 * <!-- begin-user-doc -->
+	* Constructor.
+	* <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param parent_p
-	 * @param widgetFactory_p
-	 * @generated
-	 */
+	* @param parent_p
+	* @param widgetFactory_p
+	* @generated
+	*/
 	public IsPartOfSelectionField_semanticCheckboxGroup(Composite parent_p,
 			TabbedPropertySheetWidgetFactory widgetFactory_p) {
 		super(parent_p, widgetFactory_p);
@@ -58,11 +58,11 @@ public class IsPartOfSelectionField_semanticCheckboxGroup extends AbstractSemant
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
+	* <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * {@inheritDoc}
-	 * @generated   
-	 */
+	* {@inheritDoc}
+	* @generated   
+	*/
 	@Override
 	public List<Button> getSemanticFields() {
 		List<Button> fields = new ArrayList<Button>();

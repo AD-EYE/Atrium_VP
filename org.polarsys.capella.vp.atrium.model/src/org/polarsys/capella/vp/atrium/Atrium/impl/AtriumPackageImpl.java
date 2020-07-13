@@ -424,8 +424,18 @@ public class AtriumPackageImpl extends EPackageImpl implements AtriumPackage {
 	 * @generated
 	 */
 	@Override
+	public EReference getDG_SubDGs() {
+		return (EReference) dgEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EAttribute getDG_Content() {
-		return (EAttribute) dgEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) dgEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -544,6 +554,7 @@ public class AtriumPackageImpl extends EPackageImpl implements AtriumPackage {
 
 		dgEClass = createEClass(DG);
 		createEReference(dgEClass, DG__DESIGN_ALTERNATIVE);
+		createEReference(dgEClass, DG__SUB_DGS);
 		createEAttribute(dgEClass, DG__CONTENT);
 
 		daEClass = createEClass(DA);
@@ -662,7 +673,10 @@ public class AtriumPackageImpl extends EPackageImpl implements AtriumPackage {
 
 		initEClass(dgEClass, org.polarsys.capella.vp.atrium.Atrium.DG.class, "DG", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
 				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getDG_DesignAlternative(), this.getDA(), null, "DesignAlternative", null, 1, -1, //$NON-NLS-1$
+		initEReference(getDG_DesignAlternative(), this.getDA(), null, "designAlternative", null, 1, -1, //$NON-NLS-1$
+				org.polarsys.capella.vp.atrium.Atrium.DG.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDG_SubDGs(), this.getDG(), null, "subDGs", null, 0, -1, //$NON-NLS-1$
 				org.polarsys.capella.vp.atrium.Atrium.DG.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
 				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDG_Content(), ecorePackage.getEString(), "content", null, 0, 1, //$NON-NLS-1$

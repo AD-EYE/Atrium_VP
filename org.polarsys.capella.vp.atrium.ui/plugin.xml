@@ -319,6 +319,13 @@
 
 
 				
+	   <MDEBusinessQueries 
+         class="org.polarsys.capella.vp.atrium.ui.queries.SubDGsAssociationQuery" 
+         id="org.polarsys.capella.vp.atrium.ui.queries.SubDGsAssociationQuery"> 
+   </MDEBusinessQueries> 
+
+
+				
 </extension>
 
 		</plugin>

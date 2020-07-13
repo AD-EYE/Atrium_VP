@@ -1,5 +1,5 @@
 
-// Generated on 13.07.2020 at 03:17:40 CEST by Viewpoint DSL Generator V 0.1
+// Generated on 13.07.2020 at 04:14:43 CEST by Viewpoint DSL Generator V 0.1
 
 package org.polarsys.capella.vp.atrium.ui.queries;
 
@@ -22,29 +22,22 @@ import org.polarsys.capella.core.model.handler.helpers.CapellaProjectHelper;
 import org.polarsys.capella.core.model.helpers.SystemEngineeringExt;
 import org.polarsys.capella.core.data.capellamodeller.Project;
 import org.polarsys.capella.vp.atrium.Atrium.AtriumPackage;
-import org.polarsys.capella.vp.atrium.Atrium.AtriumPackage;
-import org.polarsys.capella.vp.atrium.Atrium.AtriumPackage;
-import org.polarsys.capella.vp.atrium.Atrium.AtriumPackage;
-import org.polarsys.capella.vp.atrium.Atrium.AtriumPackage;
-import org.polarsys.capella.vp.atrium.Atrium.AtriumPackage;
-import org.polarsys.capella.vp.atrium.Atrium.AtriumPackage;
-import org.polarsys.capella.vp.atrium.Atrium.AtriumPackage;
 
 import org.polarsys.capella.vp.atrium.Atrium.DG;
 
 import org.polarsys.capella.vp.atrium.Atrium.AtriumPackage;
 
 /**
- * <!-- begin-user-doc -->
-* The '<em><b>[DesignAlternativeAssociationQuery]</b></em>' BusinessQuery defined for 
-* '<em><b>[AtriumPackage.eINSTANCE.getDG_DesignAlternative()]</b></em>'.
+* <!-- begin-user-doc -->
+* The '<em><b>[SubDGsAssociationQuery]</b></em>' BusinessQuery defined for 
+* '<em><b>[AtriumPackage.eINSTANCE.getDG_SubDGs()]</b></em>'.
 * <!-- end-user-doc -->
- * <p>
- * </p>
- *
- * @generated
- */
-public class DesignAlternativeAssociationQuery implements IBusinessQuery {
+* <p>
+* </p>
+*
+* @generated
+*/
+public class SubDGsAssociationQuery implements IBusinessQuery {
 
 	/**
 	* <!-- begin-user-doc -->
@@ -60,7 +53,7 @@ public class DesignAlternativeAssociationQuery implements IBusinessQuery {
 				: null;
 
 		if (null != systemEngineering) {
-			Set<EObject> all = EObjectExt.getAll(systemEngineering, AtriumPackage.Literals.DA);
+			Set<EObject> all = EObjectExt.getAll(systemEngineering, AtriumPackage.Literals.DG);
 			availableElements.addAll(all);
 		}
 		availableElements = ListExt.removeDuplicates(availableElements);
@@ -78,7 +71,7 @@ public class DesignAlternativeAssociationQuery implements IBusinessQuery {
 	public List<EObject> getCurrentElements(EObject elementP, boolean onlyGeneratedP) {
 		List<EObject> currentsElements = new ArrayList<EObject>();
 		if (elementP instanceof DG)
-			currentsElements.addAll(((DG) elementP).getDesignAlternative());
+			currentsElements.addAll(((DG) elementP).getSubDGs());
 		return currentsElements;
 	}
 
@@ -98,7 +91,7 @@ public class DesignAlternativeAssociationQuery implements IBusinessQuery {
 	 */
 	public List<EReference> getEStructuralFeatures() {
 		List<EReference> eReferences = new ArrayList<EReference>();
-		eReferences.add(AtriumPackage.eINSTANCE.getDG_DesignAlternative());
+		eReferences.add(AtriumPackage.eINSTANCE.getDG_SubDGs());
 		return eReferences;
 	}
 }
