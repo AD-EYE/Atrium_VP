@@ -15,5 +15,4 @@ public class Simple {
 	f.setLayout(null);//using no layout managers  
 	f.setVisible(true);//making the frame visible  
 	}  
-
 }
