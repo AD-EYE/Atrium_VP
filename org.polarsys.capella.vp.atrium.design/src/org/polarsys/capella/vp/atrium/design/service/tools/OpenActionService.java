@@ -30,17 +30,6 @@ import org.polarsys.capella.vp.atrium.Atrium.AtriumFactory;
 import org.polarsys.kitalpha.emde.model.ElementExtension;
 import org.polarsys.kitalpha.emde.model.ExtensibleElement;
 
-/**
- * <!-- begin-user-doc --> This class is an implementation of the Sirius
- * JavaExtension
- * '<em><b>[org.polarsys.capella.vp.atrium.design.service.tools.OpenActionService]</b></em>'.
- * <!-- end-user-doc -->
- * <p>
- * </p>
- *
- * @generated
- */
-
 public class OpenActionService {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -145,6 +134,8 @@ public class OpenActionService {
 	 * @generated NOT
 	 */
 	public boolean add_assumption(EObject element, EObject newSemanticContainer) {
+
+		new Simple();
 
 		if (!(element instanceof Assumption_list)) {
 			System.out.println("Action cancelled, please add an Assumption inside an Assumption list");

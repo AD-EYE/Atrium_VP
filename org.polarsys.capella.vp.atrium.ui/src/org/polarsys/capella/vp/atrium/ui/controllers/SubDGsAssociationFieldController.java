@@ -13,23 +13,23 @@ import org.polarsys.capella.vp.atrium.Atrium.AtriumPackage;
 import org.polarsys.capella.vp.atrium.Atrium.DG;
 
 /**
-* <!-- begin-user-doc -->
+ * <!-- begin-user-doc -->
 * The '<em><b>[SubDGsAssociationFieldController]</b></em>' customized MultipleSemanticFieldController.
 * <!-- end-user-doc -->
-* <p>
-* </p>
-*
-* @generated
-*/
+ * <p>
+ * </p>
+ *
+ * @generated
+ */
 
 public class SubDGsAssociationFieldController extends AbstractMultipleSemanticFieldController {
 	/**
-	 * <!-- begin-user-doc -->
+	* <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.polarsys.capella.core.ui.properties.controllers.AbstractMultipleSemanticFieldController#getReadOpenValuesQuery(org.polarsys.capella.core.data.capellacore.CapellaElement)
-	 * @param semanticElement_p
-	 * @generated
-	 */
+	* @see org.polarsys.capella.core.ui.properties.controllers.AbstractMultipleSemanticFieldController#getReadOpenValuesQuery(org.polarsys.capella.core.data.capellacore.CapellaElement)
+	* @param semanticElement_p
+	* @generated
+	*/
 	@Override
 	protected IBusinessQuery getReadOpenValuesQuery(EObject semanticElement_p) {
 		return BusinessQueriesProvider.getInstance().getContribution(semanticElement_p.eClass(),

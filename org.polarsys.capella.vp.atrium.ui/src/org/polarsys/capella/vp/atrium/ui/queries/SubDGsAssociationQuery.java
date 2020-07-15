@@ -22,21 +22,26 @@ import org.polarsys.capella.core.model.handler.helpers.CapellaProjectHelper;
 import org.polarsys.capella.core.model.helpers.SystemEngineeringExt;
 import org.polarsys.capella.core.data.capellamodeller.Project;
 import org.polarsys.capella.vp.atrium.Atrium.AtriumPackage;
+import org.polarsys.capella.vp.atrium.Atrium.AtriumPackage;
+import org.polarsys.capella.vp.atrium.Atrium.AtriumPackage;
+import org.polarsys.capella.vp.atrium.Atrium.AtriumPackage;
+import org.polarsys.capella.vp.atrium.Atrium.AtriumPackage;
+import org.polarsys.capella.vp.atrium.Atrium.AtriumPackage;
 
 import org.polarsys.capella.vp.atrium.Atrium.DG;
 
 import org.polarsys.capella.vp.atrium.Atrium.AtriumPackage;
 
 /**
-* <!-- begin-user-doc -->
+ * <!-- begin-user-doc -->
 * The '<em><b>[SubDGsAssociationQuery]</b></em>' BusinessQuery defined for 
 * '<em><b>[AtriumPackage.eINSTANCE.getDG_SubDGs()]</b></em>'.
 * <!-- end-user-doc -->
-* <p>
-* </p>
-*
-* @generated
-*/
+ * <p>
+ * </p>
+ *
+ * @generated
+ */
 public class SubDGsAssociationQuery implements IBusinessQuery {
 
 	/**
