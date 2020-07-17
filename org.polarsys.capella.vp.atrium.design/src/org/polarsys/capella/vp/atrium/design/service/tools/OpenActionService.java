@@ -16,6 +16,7 @@ import org.polarsys.capella.core.data.cs.Part;
 import org.polarsys.capella.core.data.fa.AbstractFunction;
 import org.polarsys.capella.core.data.fa.FunctionalExchange;
 import org.polarsys.capella.core.data.la.LogicalComponentPkg;
+import org.polarsys.capella.core.data.pa.PhysicalComponent;
 import org.polarsys.capella.vp.atrium.Atrium.CFA;
 import org.polarsys.capella.vp.atrium.Atrium.CFA_list;
 import org.polarsys.capella.vp.atrium.Atrium.DA;
@@ -135,8 +136,6 @@ public class OpenActionService {
 	 */
 	public boolean add_assumption(EObject element, EObject newSemanticContainer) {
 
-		new Simple();
-
 		if (!(element instanceof Assumption_list)) {
 			System.out.println("Action cancelled, please add an Assumption inside an Assumption list");
 			return false;
@@ -146,9 +145,9 @@ public class OpenActionService {
 
 			myAssumption = AtriumFactoryImpl.eINSTANCE.createAssumption();
 
-			myAssumption.setContent("Some content");
-			myAssumption.setRationale("yes");
-			myAssumption.setValidity("no");
+			myAssumption.setContent("Hello there");
+			myAssumption.setRationale("General Kenobi");
+			myAssumption.setValidity("yes");
 
 			((CapellaElement) myAssumption).setId(EcoreUtil.generateUUID());
 			((ExtensibleElement) my_Assumption_list).getOwnedExtensions().add((ElementExtension) myAssumption);
@@ -265,6 +264,19 @@ public class OpenActionService {
 		((CapellaElement) myElementState).setId(EcoreUtil.generateUUID());
 		((ExtensibleElement) element).getOwnedExtensions().add((ElementExtension) myElementState);
 
+		return true;
+	}
+
+	/**
+	* <!-- begin-user-doc -->
+	* <!-- end-user-doc -->
+	* @param element : the element
+	* @param newSemanticContainer : the element view
+	* @generated NOT
+	*/
+	public boolean openSwing(EObject element, EObject newSemanticContainer) {
+
+		new AtriumProcess(element);
 		return true;
 	}
 }

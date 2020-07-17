@@ -235,6 +235,11 @@ Diagrams Atrium.diagram {
 			OpenAction ElementLegacy {
 				label: "ElementLegacy"
 			}
+			
+			OpenAction openSwing {
+				label: "Open Swing"
+			}
+			
 		}
 	}
 }
