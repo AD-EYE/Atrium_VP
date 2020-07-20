@@ -134,12 +134,17 @@ public class AtriumProcess extends javax.swing.JFrame {
 		jLabel4.setText("Linked Assumptions");
 
 		jComboBoxCapellaElement.setModel(ListCapellaName);
-
 		jComboBoxCapellaElement.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				jComboBoxCapellaElementActionPerformed(evt);
 			}
 		});
+		jComboBoxFailureMode.setModel(ListFailureMode);
+        jComboBoxFailureMode.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxFailureModeActionPerformed(evt);
+            }
+        });
 
 		jLabel5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
 		jLabel5.setText("Linking CFAs and Assumptions");
@@ -148,13 +153,13 @@ public class AtriumProcess extends javax.swing.JFrame {
 
 		jLabel7.setText("+");
 
-		jComboBoxFailureMode.setModel(ListFailureMode);
+		
 
 		jLabel8.setText("Failure Mode");
 
 		jLabel9.setText("Resulting CFA");
 
-		jTextFieldResultingCFA.setText("Chose a combination with element and failure mode");
+		jTextFieldResultingCFA.setText("{ " + CapellaElementName + " ; " + FailureName + " }");
 
 		jButtonFinish.setText("Finish and save");
 		jButtonFinish.addActionListener(new java.awt.event.ActionListener() {
@@ -285,13 +290,23 @@ public class AtriumProcess extends javax.swing.JFrame {
 	}
 
 	private void jComboBoxCapellaElementActionPerformed(java.awt.event.ActionEvent evt) {
-		// TODO add your handling code here:
+		CapellaElementName = (String) jComboBoxCapellaElement.getSelectedItem();
+		jTextFieldResultingCFA.setText("{ " + CapellaElementName + " ; " + FailureName + " }");
 	}
+	
+    private void jComboBoxFailureModeActionPerformed(java.awt.event.ActionEvent evt) {                                                     
+    	FailureName = (String) jComboBoxFailureMode.getSelectedItem();
+    	jTextFieldResultingCFA.setText("{ " + CapellaElementName + " ; " + FailureName + " }");
+    }                                                    
 
 	private void jButtonFinishActionPerformed(java.awt.event.ActionEvent evt) {
 		// TODO add your handling code here:
 	}
 
+	
+	private String CapellaElementName= "Capella Element Example";
+	private String FailureName= "Failure Example";
+		
 	// Variables declaration - do not modify
 	private javax.swing.JButton jButtonAddLinked;
 	private javax.swing.JButton jButtonFinish;
