@@ -5,20 +5,36 @@ import javax.swing.DefaultListModel;
 import javax.swing.ListModel;
 import javax.xml.soap.Node;
 
+import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.emf.transaction.RecordingCommand;
+import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.emf.transaction.util.TransactionUtil;
+import org.polarsys.capella.core.data.capellacore.CapellaElement;
 import org.polarsys.capella.core.data.fa.FunctionalExchange;
 import org.polarsys.capella.core.data.la.LogicalArchitecture;
 import org.polarsys.capella.core.data.la.LogicalComponent;
 import org.polarsys.capella.core.data.la.LogicalComponentPkg;
 import org.polarsys.capella.core.data.la.LogicalFunction;
 import org.polarsys.capella.core.data.la.LogicalFunctionPkg;
+import org.polarsys.capella.vp.atrium.Atrium.CFA;
 import org.polarsys.capella.vp.atrium.Atrium.CFA_list;
 import org.polarsys.capella.vp.atrium.Atrium.ElementStateAtrium;
 import org.polarsys.capella.vp.atrium.Atrium.FailureMode;
+import org.polarsys.capella.vp.atrium.Atrium.impl.AtriumFactoryImpl;
+import org.polarsys.kitalpha.emde.model.ElementExtension;
+import org.polarsys.kitalpha.emde.model.ExtensibleElement;
 
 public class AtriumProcess extends javax.swing.JFrame {
+	
+	//handle list of CFA
+	
+	EList<CFA> listCFA = new BasicEList<CFA>();
+	CFA_list the_CFA_list = null;
+	
 	public AtriumProcess(EObject element) {
 
 		System.out.println(element);
@@ -55,13 +71,12 @@ public class AtriumProcess extends javax.swing.JFrame {
 		jButtonFinish = new javax.swing.JButton();
 		
 		
-		//handle list of capella element name
-		DefaultComboBoxModel<String> ListCapellaName = new DefaultComboBoxModel<String>();
+		//handle list of capella element NAME
+		//EList <EObject> ListCapellaElement = null;
+		DefaultComboBoxModel<String> ListCapellaElementName = new DefaultComboBoxModel<String>();
 		
-		//handle list of failure mode
+		//handle list of failure mode NAME
 		DefaultComboBoxModel<String> ListFailureMode = new DefaultComboBoxModel<String>();
-
-
 		
 		LogicalArchitecture logArch = (LogicalArchitecture) root;
 		TreeIterator<EObject> treeArch = logArch.eAllContents();
@@ -72,25 +87,40 @@ public class AtriumProcess extends javax.swing.JFrame {
 		  if (node instanceof LogicalFunction)
 		  {
 			  LogicalFunction lf = (LogicalFunction) node;
-			  ListCapellaName.addElement("[LF] " + lf.getName());
+			  ListCapellaElementName.addElement("[LF] " + lf.getName());
+			  //ListCapellaElement.add(lf);
 		  }
 		  
 		  if (node instanceof LogicalComponent)
 		  {
 			  LogicalComponent lc = (LogicalComponent) node;
-			  ListCapellaName.addElement("[LC] " + lc.getName());
+			  ListCapellaElementName.addElement("[LC] " + lc.getName());
+			  //ListCapellaElement.add(lc);
 		  }
 		  
 		  if (node instanceof FunctionalExchange)
 		  {
 			  FunctionalExchange fe = (FunctionalExchange) node;
-			  ListCapellaName.addElement("[FE] " + fe.getName());
+			  ListCapellaElementName.addElement("[FE] " + fe.getName());
+			  //ListCapellaElement.add(fe);
 		  }
 		  
 		  if (node instanceof FailureMode)
 		  {
 			  FailureMode fm = (FailureMode) node;
 			  ListFailureMode.addElement(fm.getName());
+		  }
+		  
+		  if (node instanceof CFA)
+		  {
+			  CFA myCFA = (CFA) node;
+			  listCFA.add(myCFA);
+		  }
+		  
+		  if (node instanceof CFA_list)
+		  {
+			  the_CFA_list = (CFA_list) node;
+			  System.out.println("I have found the CFA list !");
 		  }
 		}
 		
@@ -118,8 +148,6 @@ public class AtriumProcess extends javax.swing.JFrame {
 			}
 		});
 
-		jLabel1.setText("Add to linked");
-
 		jButtonRemoveLinked.setText("<=");
 		jButtonRemoveLinked.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -127,13 +155,7 @@ public class AtriumProcess extends javax.swing.JFrame {
 			}
 		});
 
-		jLabel2.setText("Remove from linked");
-
-		jLabel3.setText("Unlinked Assumptions");
-
-		jLabel4.setText("Linked Assumptions");
-
-		jComboBoxCapellaElement.setModel(ListCapellaName);
+		jComboBoxCapellaElement.setModel(ListCapellaElementName);
 		jComboBoxCapellaElement.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				jComboBoxCapellaElementActionPerformed(evt);
@@ -146,21 +168,19 @@ public class AtriumProcess extends javax.swing.JFrame {
             }
         });
 
+
+        jLabel1.setText("Add to linked");
+		jLabel2.setText("Remove from linked");
+		jLabel3.setText("Unlinked Assumptions");
+		jLabel4.setText("Linked Assumptions");
 		jLabel5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
 		jLabel5.setText("Linking CFAs and Assumptions");
-
 		jLabel6.setText("Capella Element");
-
 		jLabel7.setText("+");
-
-		
-
 		jLabel8.setText("Failure Mode");
-
 		jLabel9.setText("Resulting CFA");
-
 		jTextFieldResultingCFA.setText("{ " + CapellaElementName + " ; " + FailureName + " }");
-
+		
 		jButtonFinish.setText("Finish and save");
 		jButtonFinish.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -280,6 +300,48 @@ public class AtriumProcess extends javax.swing.JFrame {
 
 		pack();
 	}// </editor-fold>
+	
+	
+	private void updateDisplayCFA()
+	{
+		if ((CapellaElementName!="Capella Element Example")&&(FailureName!="Failure Example"))
+		{
+			boolean found=false;
+			for (CFA myCFA : listCFA)
+			{
+				if (myCFA.getName().equals(jTextFieldResultingCFA.getText()))
+				{
+					found=true;
+				}
+			}
+			if (!(found))
+			{
+				//create CFA if not found
+				final CFA newCFA = AtriumFactoryImpl.eINSTANCE.createCFA();
+
+				newCFA.setContent("Some content");
+				newCFA.setState(true);
+				newCFA.setName(jTextFieldResultingCFA.getText());
+				System.out.println(the_CFA_list);
+
+				((CapellaElement) newCFA).setId(EcoreUtil.generateUUID());
+				
+				 TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(the_CFA_list);
+				    domain.getCommandStack().execute(new RecordingCommand(domain) {
+
+				        @Override
+				        protected void doExecute() {
+				            // Implement your write operations here,
+				            // for example: set a new name
+				        	((ExtensibleElement) the_CFA_list).getOwnedExtensions().add((ElementExtension) newCFA);
+				        }
+				    });
+				listCFA.add(newCFA);
+			}
+			
+		}
+		
+	}
 
 	private void jButtonAddLinkedActionPerformed(java.awt.event.ActionEvent evt) {
 		// TODO add your handling code here:
@@ -292,15 +354,18 @@ public class AtriumProcess extends javax.swing.JFrame {
 	private void jComboBoxCapellaElementActionPerformed(java.awt.event.ActionEvent evt) {
 		CapellaElementName = (String) jComboBoxCapellaElement.getSelectedItem();
 		jTextFieldResultingCFA.setText("{ " + CapellaElementName + " ; " + FailureName + " }");
+		updateDisplayCFA();
 	}
 	
     private void jComboBoxFailureModeActionPerformed(java.awt.event.ActionEvent evt) {                                                     
     	FailureName = (String) jComboBoxFailureMode.getSelectedItem();
     	jTextFieldResultingCFA.setText("{ " + CapellaElementName + " ; " + FailureName + " }");
+		updateDisplayCFA();
     }                                                    
 
 	private void jButtonFinishActionPerformed(java.awt.event.ActionEvent evt) {
 		// TODO add your handling code here:
+		System.out.println(listCFA);
 	}
 
 	
