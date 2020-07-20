@@ -16,6 +16,7 @@ import org.polarsys.capella.core.data.la.LogicalFunction;
 import org.polarsys.capella.core.data.la.LogicalFunctionPkg;
 import org.polarsys.capella.vp.atrium.Atrium.CFA_list;
 import org.polarsys.capella.vp.atrium.Atrium.ElementStateAtrium;
+import org.polarsys.capella.vp.atrium.Atrium.FailureMode;
 
 public class AtriumProcess extends javax.swing.JFrame {
 	public AtriumProcess(EObject element) {
@@ -53,31 +54,43 @@ public class AtriumProcess extends javax.swing.JFrame {
 		jTextFieldResultingCFA = new javax.swing.JTextField();
 		jButtonFinish = new javax.swing.JButton();
 		
+		
+		//handle list of capella element name
+		DefaultComboBoxModel<String> ListCapellaName = new DefaultComboBoxModel<String>();
+		
+		//handle list of failure mode
+		DefaultComboBoxModel<String> ListFailureMode = new DefaultComboBoxModel<String>();
+
+
+		
 		LogicalArchitecture logArch = (LogicalArchitecture) root;
 		TreeIterator<EObject> treeArch = logArch.eAllContents();
-		//LogicalFunctionPkg lfPkg = logArch.getContainedLogicalFunctionPkg();
-		//TreeIterator<EObject> tree = lfPkg.eAllContents();
 		
 		EObject node= null;
-		DefaultComboBoxModel<String> ListName = new DefaultComboBoxModel<String>();
 		while(treeArch.hasNext())  {
 		  node=treeArch.next();
 		  if (node instanceof LogicalFunction)
 		  {
 			  LogicalFunction lf = (LogicalFunction) node;
-			  ListName.addElement("[LF] " + lf.getName());
+			  ListCapellaName.addElement("[LF] " + lf.getName());
 		  }
 		  
 		  if (node instanceof LogicalComponent)
 		  {
 			  LogicalComponent lc = (LogicalComponent) node;
-			  ListName.addElement("[LC] " + lc.getName());
+			  ListCapellaName.addElement("[LC] " + lc.getName());
 		  }
 		  
 		  if (node instanceof FunctionalExchange)
 		  {
 			  FunctionalExchange fe = (FunctionalExchange) node;
-			  ListName.addElement("[FE] " + fe.getName());
+			  ListCapellaName.addElement("[FE] " + fe.getName());
+		  }
+		  
+		  if (node instanceof FailureMode)
+		  {
+			  FailureMode fm = (FailureMode) node;
+			  ListFailureMode.addElement(fm.getName());
 		  }
 		}
 		
@@ -120,7 +133,7 @@ public class AtriumProcess extends javax.swing.JFrame {
 
 		jLabel4.setText("Linked Assumptions");
 
-		jComboBoxCapellaElement.setModel(ListName);
+		jComboBoxCapellaElement.setModel(ListCapellaName);
 
 		jComboBoxCapellaElement.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -135,8 +148,7 @@ public class AtriumProcess extends javax.swing.JFrame {
 
 		jLabel7.setText("+");
 
-		jComboBoxFailureMode.setModel(
-				new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+		jComboBoxFailureMode.setModel(ListFailureMode);
 
 		jLabel8.setText("Failure Mode");
 

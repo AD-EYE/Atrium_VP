@@ -12,8 +12,8 @@
           <type xmi:type="pattern:TypePatternSubstitution" xmi:id="_41VOhr0wEeqz-9mbd1pPOg"/>
         </orchestrationParameters>
       </orchestrationParameterContainer>
-      <invocations xmi:id="_PXpkMMp_Eeq0DeI-6QAYJQ" name="Atrium invocation" invokedActivity="#_41WcoL0wEeqz-9mbd1pPOg">
-        <invocationContractContainer xmi:id="_PXpkMcp_Eeq0DeI-6QAYJQ"/>
+      <invocations xmi:id="_zdVcIMqDEeq0DeI-6QAYJQ" name="Atrium invocation" invokedActivity="#_41WcoL0wEeqz-9mbd1pPOg">
+        <invocationContractContainer xmi:id="_zdVcIcqDEeq0DeI-6QAYJQ"/>
       </invocations>
     </orchestration>
   </fcore:FactoryComponent>
@@ -27,8 +27,8 @@
           <type xmi:type="pattern:TypePatternSubstitution" xmi:id="_41Wcpr0wEeqz-9mbd1pPOg"/>
         </orchestrationParameters>
       </orchestrationParameterContainer>
-      <invocations xmi:id="_PXpkMsp_Eeq0DeI-6QAYJQ" name="Atrium invocation" invokedActivity="#_41YR0b0wEeqz-9mbd1pPOg">
-        <invocationContractContainer xmi:id="_PXpkM8p_Eeq0DeI-6QAYJQ"/>
+      <invocations xmi:id="_zdemEMqDEeq0DeI-6QAYJQ" name="Atrium invocation" invokedActivity="#_41YR0b0wEeqz-9mbd1pPOg">
+        <invocationContractContainer xmi:id="_zdemEcqDEeq0DeI-6QAYJQ"/>
       </invocations>
     </orchestration>
   </fcore:FactoryComponent>
@@ -42,27 +42,27 @@
     <orchestration xmi:type="fprod:ProductionPlan" xmi:id="_41YR1L0wEeqz-9mbd1pPOg">
       <orchestrationParameterContainer xmi:id="_41YR1b0wEeqz-9mbd1pPOg">
         <orchestrationParameters xmi:id="_41YR1r0wEeqz-9mbd1pPOg" name="generation extension"
-            invocationContracts="#_PXpkOMp_Eeq0DeI-6QAYJQ #_PXpkPcp_Eeq0DeI-6QAYJQ">
+            invocationContracts="#_zdemFsqDEeq0DeI-6QAYJQ #_zdemG8qDEeq0DeI-6QAYJQ">
           <type xmi:type="pattern:TypePatternSubstitution" xmi:id="_41YR170wEeqz-9mbd1pPOg"/>
         </orchestrationParameters>
       </orchestrationParameterContainer>
-      <invocations xmi:id="_PXpkNMp_Eeq0DeI-6QAYJQ" name="capella.emf.gen.model invocation"
+      <invocations xmi:id="_zdemEsqDEeq0DeI-6QAYJQ" name="capella.emf.gen.model invocation"
           invokedActivity="fcore:FactoryComponent platform:/plugin/org.polarsys.capella.extension.tools/egf/capellaTools.fcore#_fRRLIB_3EeCuNfuGnuOPDw">
-        <invocationContractContainer xmi:id="_PXpkNcp_Eeq0DeI-6QAYJQ">
-          <invocationContracts xmi:id="_PXpkNsp_Eeq0DeI-6QAYJQ" invokedContract="fcore:FactoryComponentContract platform:/plugin/org.polarsys.capella.extension.tools/egf/capellaTools.fcore#_l7ckIB_3EeCuNfuGnuOPDw">
-            <type xmi:type="domain:TypeDomain" xmi:id="_PXpkN8p_Eeq0DeI-6QAYJQ" domain="#_45BbsL0wEeqz-9mbd1pPOg"/>
+        <invocationContractContainer xmi:id="_zdemE8qDEeq0DeI-6QAYJQ">
+          <invocationContracts xmi:id="_zdemFMqDEeq0DeI-6QAYJQ" invokedContract="fcore:FactoryComponentContract platform:/plugin/org.polarsys.capella.extension.tools/egf/capellaTools.fcore#_l7ckIB_3EeCuNfuGnuOPDw">
+            <type xmi:type="domain:TypeDomain" xmi:id="_zdemFcqDEeq0DeI-6QAYJQ" domain="#_45BbsL0wEeqz-9mbd1pPOg"/>
           </invocationContracts>
-          <invocationContracts xmi:id="_PXpkOMp_Eeq0DeI-6QAYJQ" orchestrationParameter="#_41YR1r0wEeqz-9mbd1pPOg"
+          <invocationContracts xmi:id="_zdemFsqDEeq0DeI-6QAYJQ" orchestrationParameter="#_41YR1r0wEeqz-9mbd1pPOg"
               invokedContract="fcore:FactoryComponentContract platform:/plugin/org.polarsys.capella.extension.tools/egf/capellaTools.fcore#_l7ckJB_3EeCuNfuGnuOPDw"/>
         </invocationContractContainer>
       </invocations>
-      <invocations xmi:id="_PXpkOcp_Eeq0DeI-6QAYJQ" name="capella.emf.gen.edit invocation"
+      <invocations xmi:id="_zdemF8qDEeq0DeI-6QAYJQ" name="capella.emf.gen.edit invocation"
           invokedActivity="fcore:FactoryComponent platform:/plugin/org.polarsys.capella.extension.tools/egf/capellaTools.fcore#_WJu-4B_3EeCuNfuGnuOPDw">
-        <invocationContractContainer xmi:id="_PXpkOsp_Eeq0DeI-6QAYJQ">
-          <invocationContracts xmi:id="_PXpkO8p_Eeq0DeI-6QAYJQ" invokedContract="fcore:FactoryComponentContract platform:/plugin/org.polarsys.capella.extension.tools/egf/capellaTools.fcore#_tt5z0B_3EeCuNfuGnuOPDw">
-            <type xmi:type="domain:TypeDomain" xmi:id="_PXpkPMp_Eeq0DeI-6QAYJQ" domain="#_45BbsL0wEeqz-9mbd1pPOg"/>
+        <invocationContractContainer xmi:id="_zdemGMqDEeq0DeI-6QAYJQ">
+          <invocationContracts xmi:id="_zdemGcqDEeq0DeI-6QAYJQ" invokedContract="fcore:FactoryComponentContract platform:/plugin/org.polarsys.capella.extension.tools/egf/capellaTools.fcore#_tt5z0B_3EeCuNfuGnuOPDw">
+            <type xmi:type="domain:TypeDomain" xmi:id="_zdemGsqDEeq0DeI-6QAYJQ" domain="#_45BbsL0wEeqz-9mbd1pPOg"/>
           </invocationContracts>
-          <invocationContracts xmi:id="_PXpkPcp_Eeq0DeI-6QAYJQ" orchestrationParameter="#_41YR1r0wEeqz-9mbd1pPOg"
+          <invocationContracts xmi:id="_zdemG8qDEeq0DeI-6QAYJQ" orchestrationParameter="#_41YR1r0wEeqz-9mbd1pPOg"
               invokedContract="fcore:FactoryComponentContract platform:/plugin/org.polarsys.capella.extension.tools/egf/capellaTools.fcore#_tt5z1B_3EeCuNfuGnuOPDw"/>
         </invocationContractContainer>
       </invocations>

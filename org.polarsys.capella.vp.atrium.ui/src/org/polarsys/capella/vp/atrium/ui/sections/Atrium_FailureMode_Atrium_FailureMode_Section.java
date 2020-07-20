@@ -50,10 +50,10 @@ public class Atrium_FailureMode_Atrium_FailureMode_Section extends AbstractSecti
 	/**
 	* <!-- begin-model-doc -->
 	* <!-- end-model-doc -->
-	* <!-- begin-user-doc -->
+		* <!-- begin-user-doc -->
 	* <!-- end-user-doc -->
-	* @generated
-	*/
+		* @generated
+		*/
 	private Group Atrium_FailureMode_AttributeGroup;
 
 	/**
@@ -100,12 +100,12 @@ public class Atrium_FailureMode_Atrium_FailureMode_Section extends AbstractSecti
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
+	* <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param parent: An EObject. It is considered as the Parent of an EMDE extension (a Viewpoint element)
-	 * @return 
-	 * @generated
-	 */
+	* @param parent: An EObject. It is considered as the Parent of an EMDE extension (a Viewpoint element)
+	* @return 
+	* @generated
+	*/
 	private EObject getFailureModeObject(EObject parent) {
 		if (parent == null)
 			return null;
@@ -129,11 +129,11 @@ public class Atrium_FailureMode_Atrium_FailureMode_Section extends AbstractSecti
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
+	* <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return True is the AF viewpoint is active. False else. 
-	 * @generated
-	 */
+	* @return True is the AF viewpoint is active. False else. 
+	* @generated
+	*/
 	private boolean isViewpointActive(EObject modelElement) {
 		return ViewpointManager.getInstance(modelElement).isUsed("org.polarsys.capella.vp.atrium")
 				&& !ViewpointManager.getInstance(modelElement).isFiltered("org.polarsys.capella.vp.atrium");
