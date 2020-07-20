@@ -76,6 +76,24 @@
 <extension 
 	point="org.eclipse.amalgam.explorer.contextual.core.contentProviderCategory">
       <category
+            id="org.polarsys.capella.vp.atrium.contextual.explorer.queries.Failure_list.Parent"
+            isTopLevel="true"
+            name="Parent">
+         <targetExplorerId
+               id="CurrentElementExplorer">
+         </targetExplorerId>
+         <availableForType
+               class="org.polarsys.capella.vp.atrium.Atrium.Failure_list">
+         </availableForType>
+         <categoryQuery>
+            <basicQuery
+                  class="org.polarsys.capella.vp.atrium.contextual.explorer.queries.failure_list.ParentQuery">
+            </basicQuery>
+         </categoryQuery>
+      </category>	</extension>
+<extension 
+	point="org.eclipse.amalgam.explorer.contextual.core.contentProviderCategory">
+      <category
             id="org.polarsys.capella.vp.atrium.contextual.explorer.queries.CFA.Parent"
             isTopLevel="true"
             name="Parent">
@@ -220,6 +238,24 @@
          <categoryQuery>
             <basicQuery
                   class="org.polarsys.capella.vp.atrium.contextual.explorer.queries.elementstateatrium.ParentQuery">
+            </basicQuery>
+         </categoryQuery>
+      </category>	</extension>
+<extension 
+	point="org.eclipse.amalgam.explorer.contextual.core.contentProviderCategory">
+      <category
+            id="org.polarsys.capella.vp.atrium.contextual.explorer.queries.FailureMode.Parent"
+            isTopLevel="true"
+            name="Parent">
+         <targetExplorerId
+               id="CurrentElementExplorer">
+         </targetExplorerId>
+         <availableForType
+               class="org.polarsys.capella.vp.atrium.Atrium.FailureMode">
+         </availableForType>
+         <categoryQuery>
+            <basicQuery
+                  class="org.polarsys.capella.vp.atrium.contextual.explorer.queries.failuremode.ParentQuery">
             </basicQuery>
          </categoryQuery>
       </category>	</extension>

@@ -170,6 +170,40 @@ Diagrams Atrium.diagram {
 					}
 				}
 			}
+			
+			Container Container_list_Failure {
+				domain-context: Atrium.data.Failure_list
+				provided-by association external emde.ExtensibleElement.ownedExtensions content-layout: List
+				Representation {
+					Label {
+						content: "Failure list"
+						police: black
+					}
+					Style {
+						FlatStyle {
+							background: light_chocolate foreground: white
+						}
+					}
+				}
+				Contains {
+					Node node_Failure {
+						domain-context: Atrium.data.FailureMode
+						provided-by association external emde.ExtensibleElement.ownedExtensions
+						Representation {
+							Label {
+								content: "[Failure] " + "aql:self.name"
+								police: black
+								alignment: center
+							}
+							Style {
+								BasicStyle {
+									border-color: black background: light_gray form: Square
+								}
+							}
+						}
+					}
+				}
+			}
 
 			///Import Capella Element + giving them a condition
 			Container ContainerLC {
@@ -217,6 +251,9 @@ Diagrams Atrium.diagram {
 			OpenAction create_DA_list {
 				label: "Create DA List"
 			}
+			OpenAction create_Failure_list {
+				label: "Create Failure List"
+			}
 			OpenAction add_CFA {
 				label: "Add CFA"
 			}
@@ -228,6 +265,9 @@ Diagrams Atrium.diagram {
 			}
 			OpenAction add_DA {
 				label: "Add DA"
+			}
+			OpenAction add_failure {
+				label: "Add Failure"
 			}
 			OpenAction ElementNewDevelopment {
 				label: "ElementNewDevelopment"

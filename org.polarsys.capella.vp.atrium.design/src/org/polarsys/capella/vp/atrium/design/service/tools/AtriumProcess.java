@@ -2,10 +2,15 @@ package org.polarsys.capella.vp.atrium.design.service.tools;
 
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
+import javax.swing.ListModel;
+import javax.xml.soap.Node;
 
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
+import org.polarsys.capella.core.data.fa.FunctionalExchange;
 import org.polarsys.capella.core.data.la.LogicalArchitecture;
+import org.polarsys.capella.core.data.la.LogicalComponent;
 import org.polarsys.capella.core.data.la.LogicalComponentPkg;
 import org.polarsys.capella.core.data.la.LogicalFunction;
 import org.polarsys.capella.core.data.la.LogicalFunctionPkg;
@@ -47,35 +52,34 @@ public class AtriumProcess extends javax.swing.JFrame {
 		jLabel9 = new javax.swing.JLabel();
 		jTextFieldResultingCFA = new javax.swing.JTextField();
 		jButtonFinish = new javax.swing.JButton();
-
-		// setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-		DefaultComboBoxModel<String> functionNames = new DefaultComboBoxModel<String>();
-
-		System.out.println("ROOT LEVEL");
-		EList<LogicalFunction> mylist = null;
-		for (EObject eO : root.eContents()) {
-			if (eO instanceof LogicalFunctionPkg) {
-				System.out.println("LOGICAL FUNCTION PKG");
-				System.out.println(eO);
-				LogicalFunctionPkg myLFpkg = (LogicalFunctionPkg) eO;
-				for (EObject e1 : myLFpkg.eContents()) { // look for root function
-					if (e1 instanceof LogicalFunction) {
-						System.out.println("ROOT LOGICAL FUNCTION");
-						System.out.println(e1);
-						LogicalFunction rootfunction = (LogicalFunction) e1;
-						mylist = rootfunction.getChildrenLogicalFunctions();
-						}
-					}
-				}
-			}
 		
-		for (LogicalFunction LF : mylist)
-		{
-			functionNames.addElement(LF.getName());
-		}				
-				
-		/////////////////////////////////////
+		LogicalArchitecture logArch = (LogicalArchitecture) root;
+		TreeIterator<EObject> treeArch = logArch.eAllContents();
+		//LogicalFunctionPkg lfPkg = logArch.getContainedLogicalFunctionPkg();
+		//TreeIterator<EObject> tree = lfPkg.eAllContents();
+		
+		EObject node= null;
+		DefaultComboBoxModel<String> ListName = new DefaultComboBoxModel<String>();
+		while(treeArch.hasNext())  {
+		  node=treeArch.next();
+		  if (node instanceof LogicalFunction)
+		  {
+			  LogicalFunction lf = (LogicalFunction) node;
+			  ListName.addElement("[LF] " + lf.getName());
+		  }
+		  
+		  if (node instanceof LogicalComponent)
+		  {
+			  LogicalComponent lc = (LogicalComponent) node;
+			  ListName.addElement("[LC] " + lc.getName());
+		  }
+		  
+		  if (node instanceof FunctionalExchange)
+		  {
+			  FunctionalExchange fe = (FunctionalExchange) node;
+			  ListName.addElement("[FE] " + fe.getName());
+		  }
+		}
 		
 
 		// jListUnlinkedAssumptions.setModel(functionNames);
@@ -116,7 +120,7 @@ public class AtriumProcess extends javax.swing.JFrame {
 
 		jLabel4.setText("Linked Assumptions");
 
-		jComboBoxCapellaElement.setModel(functionNames);
+		jComboBoxCapellaElement.setModel(ListName);
 
 		jComboBoxCapellaElement.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {

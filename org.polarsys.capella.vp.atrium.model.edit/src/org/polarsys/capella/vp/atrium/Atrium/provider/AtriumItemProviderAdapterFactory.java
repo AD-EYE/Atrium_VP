@@ -204,6 +204,29 @@ public class AtriumItemProviderAdapterFactory extends AtriumAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.polarsys.capella.vp.atrium.Atrium.Failure_list} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected Failure_listItemProvider failure_listItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.polarsys.capella.vp.atrium.Atrium.Failure_list}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createFailure_listAdapter() {
+		if (failure_listItemProvider == null) {
+			failure_listItemProvider = new Failure_listItemProvider(this);
+		}
+
+		return failure_listItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link org.polarsys.capella.vp.atrium.Atrium.CFA} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -316,6 +339,29 @@ public class AtriumItemProviderAdapterFactory extends AtriumAdapterFactory
 		}
 
 		return elementStateAtriumItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.polarsys.capella.vp.atrium.Atrium.FailureMode} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected FailureModeItemProvider failureModeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.polarsys.capella.vp.atrium.Atrium.FailureMode}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createFailureModeAdapter() {
+		if (failureModeItemProvider == null) {
+			failureModeItemProvider = new FailureModeItemProvider(this);
+		}
+
+		return failureModeItemProvider;
 	}
 
 	/**
@@ -458,6 +504,8 @@ public class AtriumItemProviderAdapterFactory extends AtriumAdapterFactory
 			dG_listItemProvider.dispose();
 		if (dA_listItemProvider != null)
 			dA_listItemProvider.dispose();
+		if (failure_listItemProvider != null)
+			failure_listItemProvider.dispose();
 		if (cfaItemProvider != null)
 			cfaItemProvider.dispose();
 		if (assumptionItemProvider != null)
@@ -468,6 +516,8 @@ public class AtriumItemProviderAdapterFactory extends AtriumAdapterFactory
 			daItemProvider.dispose();
 		if (elementStateAtriumItemProvider != null)
 			elementStateAtriumItemProvider.dispose();
+		if (failureModeItemProvider != null)
+			failureModeItemProvider.dispose();
 	}
 
 	/**
@@ -573,6 +623,17 @@ public class AtriumItemProviderAdapterFactory extends AtriumAdapterFactory
 				{
 					CommandParameter commandParameter = createChildParameter(
 							EmdePackage.Literals.EXTENSIBLE_ELEMENT__OWNED_EXTENSIONS,
+							AtriumFactory.eINSTANCE.createFailure_list());
+					if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
+						newChildDescriptors.add(commandParameter);
+					}
+				}
+				// end-extension-code
+
+				// begin-extension-code
+				{
+					CommandParameter commandParameter = createChildParameter(
+							EmdePackage.Literals.EXTENSIBLE_ELEMENT__OWNED_EXTENSIONS,
 							AtriumFactory.eINSTANCE.createCFA());
 					if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
 						newChildDescriptors.add(commandParameter);
@@ -618,6 +679,17 @@ public class AtriumItemProviderAdapterFactory extends AtriumAdapterFactory
 					CommandParameter commandParameter = createChildParameter(
 							EmdePackage.Literals.EXTENSIBLE_ELEMENT__OWNED_EXTENSIONS,
 							AtriumFactory.eINSTANCE.createElementStateAtrium());
+					if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
+						newChildDescriptors.add(commandParameter);
+					}
+				}
+				// end-extension-code
+
+				// begin-extension-code
+				{
+					CommandParameter commandParameter = createChildParameter(
+							EmdePackage.Literals.EXTENSIBLE_ELEMENT__OWNED_EXTENSIONS,
+							AtriumFactory.eINSTANCE.createFailureMode());
 					if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
 						newChildDescriptors.add(commandParameter);
 					}
@@ -762,6 +834,17 @@ public class AtriumItemProviderAdapterFactory extends AtriumAdapterFactory
 				{
 					CommandParameter commandParameter = createChildParameter(
 							SharedmodelPackage.Literals.GENERIC_PKG__CAPELLA_ELEMENTS,
+							AtriumFactory.eINSTANCE.createFailure_list());
+					if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
+						newChildDescriptors.add(commandParameter);
+					}
+				}
+				// end-extension-code
+
+				// begin-extension-code
+				{
+					CommandParameter commandParameter = createChildParameter(
+							SharedmodelPackage.Literals.GENERIC_PKG__CAPELLA_ELEMENTS,
 							AtriumFactory.eINSTANCE.createCFA());
 					if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
 						newChildDescriptors.add(commandParameter);
@@ -807,6 +890,17 @@ public class AtriumItemProviderAdapterFactory extends AtriumAdapterFactory
 					CommandParameter commandParameter = createChildParameter(
 							SharedmodelPackage.Literals.GENERIC_PKG__CAPELLA_ELEMENTS,
 							AtriumFactory.eINSTANCE.createElementStateAtrium());
+					if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
+						newChildDescriptors.add(commandParameter);
+					}
+				}
+				// end-extension-code
+
+				// begin-extension-code
+				{
+					CommandParameter commandParameter = createChildParameter(
+							SharedmodelPackage.Literals.GENERIC_PKG__CAPELLA_ELEMENTS,
+							AtriumFactory.eINSTANCE.createFailureMode());
 					if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
 						newChildDescriptors.add(commandParameter);
 					}

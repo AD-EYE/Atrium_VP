@@ -7,35 +7,35 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
-import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.emf.edit.command.CommandParameter;
 
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import org.polarsys.capella.core.data.capellacore.provider.NamedElementItemProvider;
 
-import org.polarsys.capella.vp.atrium.Atrium.Assumption_list;
 import org.polarsys.capella.vp.atrium.Atrium.AtriumFactory;
 import org.polarsys.capella.vp.atrium.Atrium.AtriumPackage;
+import org.polarsys.capella.vp.atrium.Atrium.FailureMode;
 
 import org.polarsys.kitalpha.emde.model.EmdePackage;
 
 import org.polarsys.kitalpha.emde.model.edit.provider.NewChildDescriptorHelper;
 
 /**
- * This is the item provider adapter for a {@link org.polarsys.capella.vp.atrium.Atrium.Assumption_list} object.
+ * This is the item provider adapter for a {@link org.polarsys.capella.vp.atrium.Atrium.FailureMode} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class Assumption_listItemProvider extends NamedElementItemProvider implements IEditingDomainItemProvider,
+public class FailureModeItemProvider extends NamedElementItemProvider implements IEditingDomainItemProvider,
 		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -43,7 +43,7 @@ public class Assumption_listItemProvider extends NamedElementItemProvider implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Assumption_listItemProvider(AdapterFactory adapterFactory) {
+	public FailureModeItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -58,11 +58,34 @@ public class Assumption_listItemProvider extends NamedElementItemProvider implem
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addContentPropertyDescriptor(object);
 		}
 		// begin-extension-code
 		checkChildCreationExtender(object);
 		// end-extension-code
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Content feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addContentPropertyDescriptor(Object object) {
+
+		// begin-extension-code
+		itemPropertyDescriptors.add(createItemPropertyDescriptor
+		// end-extension-code
+		(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+				getString("_UI_FailureMode_content_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_FailureMode_content_feature", //$NON-NLS-1$//$NON-NLS-2$
+						"_UI_FailureMode_type"), //$NON-NLS-1$
+				AtriumPackage.Literals.FAILURE_MODE__CONTENT, true, false, false,
+				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
+				// begin-extension-code
+				null));
+		// end-extension-code
 	}
 
 	/**
@@ -76,14 +99,14 @@ public class Assumption_listItemProvider extends NamedElementItemProvider implem
 	}
 
 	/**
-	 * This returns Assumption_list.gif.
+	 * This returns FailureMode.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Assumption_list")); //$NON-NLS-1$
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/FailureMode")); //$NON-NLS-1$
 	}
 
 	/**
@@ -95,9 +118,9 @@ public class Assumption_listItemProvider extends NamedElementItemProvider implem
 	@Override
 	public String getText(Object object) {
 
-		String label = ((Assumption_list) object).getName();
+		String label = ((FailureMode) object).getName();
 		// begin-extension-code
-		return label == null || label.length() == 0 ? "[" + getString("_UI_Assumption_list_type") + "]" : label; //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+		return label == null || label.length() == 0 ? "[" + getString("_UI_FailureMode_type") + "]" : label; //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 		// end-extension-code
 	}
 
@@ -111,6 +134,13 @@ public class Assumption_listItemProvider extends NamedElementItemProvider implem
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(FailureMode.class)) {
+		case AtriumPackage.FAILURE_MODE__CONTENT:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
+		}
+		super.notifyChanged(notification);
 	}
 
 	/**

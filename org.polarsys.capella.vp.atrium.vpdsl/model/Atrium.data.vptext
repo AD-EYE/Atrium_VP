@@ -19,6 +19,9 @@ Data Atrium.data {
 	Class DA_list {
 		extends la.LogicalComponent
 	}
+	Class Failure_list {
+		extends la.LogicalComponent
+	}
 	Class CFA {
 		extends fa.AbstractFunction
 		Attributes:
@@ -59,5 +62,11 @@ Data Atrium.data {
 		extends capellacore.CapellaElement
 		Attributes:
 			isNewDevelopment type ecore.EBoolean
+	}
+	
+	Class FailureMode {
+		extends fa.AbstractFunction
+		Attributes:
+			content type ecore.EString
 	}
 }

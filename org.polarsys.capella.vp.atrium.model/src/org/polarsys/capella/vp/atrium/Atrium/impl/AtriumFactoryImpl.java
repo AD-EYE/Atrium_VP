@@ -66,6 +66,8 @@ public class AtriumFactoryImpl extends EFactoryImpl implements AtriumFactory {
 			return createDG_list();
 		case AtriumPackage.DA_LIST:
 			return createDA_list();
+		case AtriumPackage.FAILURE_LIST:
+			return createFailure_list();
 		case AtriumPackage.CFA:
 			return createCFA();
 		case AtriumPackage.ASSUMPTION:
@@ -76,6 +78,8 @@ public class AtriumFactoryImpl extends EFactoryImpl implements AtriumFactory {
 			return createDA();
 		case AtriumPackage.ELEMENT_STATE_ATRIUM:
 			return createElementStateAtrium();
+		case AtriumPackage.FAILURE_MODE:
+			return createFailureMode();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
@@ -176,6 +180,21 @@ public class AtriumFactoryImpl extends EFactoryImpl implements AtriumFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Failure_list createFailure_list() {
+		Failure_listImpl failure_list = new Failure_listImpl();
+		//begin-capella-code
+
+		failure_list.setId(IdGenerator.createId());
+
+		//end-capella-code
+		return failure_list;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public CFA createCFA() {
 		CFAImpl cfa = new CFAImpl();
 		//begin-capella-code
@@ -244,6 +263,21 @@ public class AtriumFactoryImpl extends EFactoryImpl implements AtriumFactory {
 
 		//end-capella-code
 		return elementStateAtrium;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FailureMode createFailureMode() {
+		FailureModeImpl failureMode = new FailureModeImpl();
+		//begin-capella-code
+
+		failureMode.setId(IdGenerator.createId());
+
+		//end-capella-code
+		return failureMode;
 	}
 
 	/**
@@ -340,6 +374,19 @@ public class AtriumFactoryImpl extends EFactoryImpl implements AtriumFactory {
 		return dA_list;
 	}
 
+	/**
+	 * Creates class and sets its name
+	 * (This method comes from a customization of the standard EMF generator)
+	 *
+	 * @param name_p : default name of created element
+	 * @generated
+	 */
+	public Failure_list createFailure_list(String name_p) {
+		Failure_list failure_list = createFailure_list();
+		failure_list.setName(name_p);
+		return failure_list;
+	}
+
 	//begin-capella-code
 
 	/**
@@ -405,6 +452,19 @@ public class AtriumFactoryImpl extends EFactoryImpl implements AtriumFactory {
 		ElementStateAtrium elementStateAtrium = createElementStateAtrium();
 		elementStateAtrium.setName(name_p);
 		return elementStateAtrium;
+	}
+
+	/**
+	 * Creates class and sets its name
+	 * (This method comes from a customization of the standard EMF generator)
+	 *
+	 * @param name_p : default name of created element
+	 * @generated
+	 */
+	public FailureMode createFailureMode(String name_p) {
+		FailureMode failureMode = createFailureMode();
+		failureMode.setName(name_p);
+		return failureMode;
 	}
 
 	//end-capella-code

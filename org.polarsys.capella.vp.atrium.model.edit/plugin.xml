@@ -40,6 +40,9 @@
         <propertySection class="org.polarsys.capella.core.data.core.properties.sections.DefaultNamedElementSection" filter="org.polarsys.capella.vp.atrium.Atrium.provider.sections.DA_listSection" id="org.polarsys.capella.vp.atrium.Atrium.provider.contributions.DA_listItemContribution.section" tab="BaseCapella">
             <input type="org.polarsys.capella.vp.atrium.Atrium.DA_list"/>
         </propertySection>
+        <propertySection class="org.polarsys.capella.core.data.core.properties.sections.DefaultNamedElementSection" filter="org.polarsys.capella.vp.atrium.Atrium.provider.sections.Failure_listSection" id="org.polarsys.capella.vp.atrium.Atrium.provider.contributions.Failure_listItemContribution.section" tab="BaseCapella">
+            <input type="org.polarsys.capella.vp.atrium.Atrium.Failure_list"/>
+        </propertySection>
         <propertySection class="org.polarsys.capella.core.data.core.properties.sections.DefaultNamedElementSection" filter="org.polarsys.capella.vp.atrium.Atrium.provider.sections.CFASection" id="org.polarsys.capella.vp.atrium.Atrium.provider.contributions.CFAItemContribution.section" tab="BaseCapella">
             <input type="org.polarsys.capella.vp.atrium.Atrium.CFA"/>
         </propertySection>
@@ -55,6 +58,9 @@
         <propertySection class="org.polarsys.capella.core.data.core.properties.sections.DefaultNamedElementSection" filter="org.polarsys.capella.vp.atrium.Atrium.provider.sections.ElementStateAtriumSection" id="org.polarsys.capella.vp.atrium.Atrium.provider.contributions.ElementStateAtriumItemContribution.section" tab="BaseCapella">
             <input type="org.polarsys.capella.vp.atrium.Atrium.ElementStateAtrium"/>
         </propertySection>
+        <propertySection class="org.polarsys.capella.core.data.core.properties.sections.DefaultNamedElementSection" filter="org.polarsys.capella.vp.atrium.Atrium.provider.sections.FailureModeSection" id="org.polarsys.capella.vp.atrium.Atrium.provider.contributions.FailureModeItemContribution.section" tab="BaseCapella">
+            <input type="org.polarsys.capella.vp.atrium.Atrium.FailureMode"/>
+        </propertySection>
 </propertySections>
     </extension>
 
@@ -69,6 +75,8 @@
         </propertySection>
         <propertySection class="org.polarsys.capella.vp.atrium.Atrium.provider.sections.DA_listSection" filter="org.polarsys.capella.vp.atrium.Atrium.provider.sections.DA_listSection" id="org.polarsys.capella.vp.atrium.Atrium.provider.sections.DA_listSection.section" tab="BaseSiriusDiagram">
         </propertySection>
+        <propertySection class="org.polarsys.capella.vp.atrium.Atrium.provider.sections.Failure_listSection" filter="org.polarsys.capella.vp.atrium.Atrium.provider.sections.Failure_listSection" id="org.polarsys.capella.vp.atrium.Atrium.provider.sections.Failure_listSection.section" tab="BaseSiriusDiagram">
+        </propertySection>
         <propertySection class="org.polarsys.capella.vp.atrium.Atrium.provider.sections.CFASection" filter="org.polarsys.capella.vp.atrium.Atrium.provider.sections.CFASection" id="org.polarsys.capella.vp.atrium.Atrium.provider.sections.CFASection.section" tab="BaseSiriusDiagram">
         </propertySection>
         <propertySection class="org.polarsys.capella.vp.atrium.Atrium.provider.sections.AssumptionSection" filter="org.polarsys.capella.vp.atrium.Atrium.provider.sections.AssumptionSection" id="org.polarsys.capella.vp.atrium.Atrium.provider.sections.AssumptionSection.section" tab="BaseSiriusDiagram">
@@ -78,6 +86,8 @@
         <propertySection class="org.polarsys.capella.vp.atrium.Atrium.provider.sections.DASection" filter="org.polarsys.capella.vp.atrium.Atrium.provider.sections.DASection" id="org.polarsys.capella.vp.atrium.Atrium.provider.sections.DASection.section" tab="BaseSiriusDiagram">
         </propertySection>
         <propertySection class="org.polarsys.capella.vp.atrium.Atrium.provider.sections.ElementStateAtriumSection" filter="org.polarsys.capella.vp.atrium.Atrium.provider.sections.ElementStateAtriumSection" id="org.polarsys.capella.vp.atrium.Atrium.provider.sections.ElementStateAtriumSection.section" tab="BaseSiriusDiagram">
+        </propertySection>
+        <propertySection class="org.polarsys.capella.vp.atrium.Atrium.provider.sections.FailureModeSection" filter="org.polarsys.capella.vp.atrium.Atrium.provider.sections.FailureModeSection" id="org.polarsys.capella.vp.atrium.Atrium.provider.sections.FailureModeSection.section" tab="BaseSiriusDiagram">
         </propertySection>
 </propertySections>
     </extension>

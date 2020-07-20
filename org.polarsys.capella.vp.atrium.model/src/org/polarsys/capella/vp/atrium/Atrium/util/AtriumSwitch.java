@@ -177,6 +177,31 @@ public class AtriumSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
+		case AtriumPackage.FAILURE_LIST: {
+			Failure_list failure_list = (Failure_list) theEObject;
+			T result = caseFailure_list(failure_list);
+			if (result == null)
+				result = caseNamedElement(failure_list);
+			if (result == null)
+				result = caseElementExtension(failure_list);
+			if (result == null)
+				result = caseAbstractNamedElement(failure_list);
+			if (result == null)
+				result = caseCapellaElement(failure_list);
+			if (result == null)
+				result = caseTraceableElement(failure_list);
+			if (result == null)
+				result = casePublishableElement(failure_list);
+			if (result == null)
+				result = caseModelElement(failure_list);
+			if (result == null)
+				result = caseExtensibleElement(failure_list);
+			if (result == null)
+				result = caseElement(failure_list);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
 		case AtriumPackage.CFA: {
 			CFA cfa = (CFA) theEObject;
 			T result = caseCFA(cfa);
@@ -302,6 +327,31 @@ public class AtriumSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
+		case AtriumPackage.FAILURE_MODE: {
+			FailureMode failureMode = (FailureMode) theEObject;
+			T result = caseFailureMode(failureMode);
+			if (result == null)
+				result = caseNamedElement(failureMode);
+			if (result == null)
+				result = caseElementExtension(failureMode);
+			if (result == null)
+				result = caseAbstractNamedElement(failureMode);
+			if (result == null)
+				result = caseCapellaElement(failureMode);
+			if (result == null)
+				result = caseTraceableElement(failureMode);
+			if (result == null)
+				result = casePublishableElement(failureMode);
+			if (result == null)
+				result = caseModelElement(failureMode);
+			if (result == null)
+				result = caseExtensibleElement(failureMode);
+			if (result == null)
+				result = caseElement(failureMode);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
 		default:
 			return defaultCase(theEObject);
 		}
@@ -364,6 +414,21 @@ public class AtriumSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseDA_list(DA_list object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Failure list</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Failure list</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseFailure_list(Failure_list object) {
 		return null;
 	}
 
@@ -439,6 +504,21 @@ public class AtriumSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseElementStateAtrium(ElementStateAtrium object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Failure Mode</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Failure Mode</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseFailureMode(FailureMode object) {
 		return null;
 	}
 

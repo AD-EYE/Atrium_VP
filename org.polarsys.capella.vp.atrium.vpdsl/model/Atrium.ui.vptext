@@ -7,7 +7,6 @@
  *
  */
 UIDescription Atrium.ui {
-
 UI Atrium_CFA_list {
 	label: "Atrium"
 	Container Atrium_CFA_list_Section {
@@ -29,6 +28,12 @@ UI Atrium_DG_list {
 UI Atrium_DA_list {
 	label: "Atrium"
 	Container Atrium_DA_list_Section {
+		
+	}
+}
+UI Atrium_Failure_list {
+	label: "Atrium"
+	Container Atrium_Failure_list_Section {
 		
 	}
 }
@@ -93,6 +98,15 @@ UI Atrium_ElementStateAtrium {
 		Container Atrium_ElementStateAtrium_AttributeGroup {
 			label: "Element State Atrium Attributes"
 			Field isNewDevelopmentField label: "Is New Development" type checkbox , mapped-to Atrium.data.ElementStateAtrium.isNewDevelopment
+		}
+	}
+}
+UI Atrium_FailureMode {
+	label: "Atrium"
+	Container Atrium_FailureMode_Section {
+		Container Atrium_FailureMode_AttributeGroup {
+			label: "Failure Mode Attributes"
+			Field contentField4 label: "Content" type text , mapped-to Atrium.data.FailureMode.content
 		}
 	}
 }

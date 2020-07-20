@@ -220,6 +220,17 @@ public class DAItemProvider extends NamedElementItemProvider implements IEditing
 		// begin-extension-code
 		{
 			CommandParameter commandParameter = createChildParameter(
+					EmdePackage.Literals.EXTENSIBLE_ELEMENT__OWNED_EXTENSIONS,
+					AtriumFactory.eINSTANCE.createFailure_list());
+			if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
+				newChildDescriptors.add(commandParameter);
+			}
+		}
+		// end-extension-code
+
+		// begin-extension-code
+		{
+			CommandParameter commandParameter = createChildParameter(
 					EmdePackage.Literals.EXTENSIBLE_ELEMENT__OWNED_EXTENSIONS, AtriumFactory.eINSTANCE.createCFA());
 			if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
 				newChildDescriptors.add(commandParameter);
@@ -263,6 +274,17 @@ public class DAItemProvider extends NamedElementItemProvider implements IEditing
 			CommandParameter commandParameter = createChildParameter(
 					EmdePackage.Literals.EXTENSIBLE_ELEMENT__OWNED_EXTENSIONS,
 					AtriumFactory.eINSTANCE.createElementStateAtrium());
+			if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
+				newChildDescriptors.add(commandParameter);
+			}
+		}
+		// end-extension-code
+
+		// begin-extension-code
+		{
+			CommandParameter commandParameter = createChildParameter(
+					EmdePackage.Literals.EXTENSIBLE_ELEMENT__OWNED_EXTENSIONS,
+					AtriumFactory.eINSTANCE.createFailureMode());
 			if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
 				newChildDescriptors.add(commandParameter);
 			}

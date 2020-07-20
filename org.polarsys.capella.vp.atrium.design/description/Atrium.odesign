@@ -106,6 +106,21 @@
             <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
           </style>
         </containerMappings>
+        <containerMappings name="Container_list_Failure_CM" label="Container_list_Failure" semanticCandidatesExpression="feature:ownedExtensions" domainClass="Atrium.Failure_list" childrenPresentation="List">
+          <subNodeMappings name="node_Failure_NM" label="node_Failure" semanticCandidatesExpression="feature:ownedExtensions" domainClass="Atrium.FailureMode">
+            <style xsi:type="style:SquareDescription" borderSizeComputationExpression="1" labelExpression="aql:'[Failure] '+self.name" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+          </subNodeMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="Failure list">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_chocolate']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+          </style>
+        </containerMappings>
         <containerMappings xsi:type="description_1:ContainerMappingImport" name="ContainerLC_Imported_CM" label="ContainerLC" semanticCandidatesExpression="" reusedContainerMappings="//@ownedViewpoints[name='Atrium_ID']/@ownedRepresentationExtensions[name='Atrium_LogicalExtension']/@layers[name='Atrium']/@containerMappings[name='ContainerLC_Imported_CM']">
           <detailDescriptions xsi:type="tool:DiagramCreationDescription" href="../../../plugin/org.polarsys.capella.core.sirius.analysis/description/logical.odesign#//@ownedViewpoints[name='Logical%20Architecture']/@ownedRepresentations[name='Logical%20Component%20Breakdown']/@defaultLayer/@toolSections.0/@ownedTools[name='Logical%20Component%20Breakdown']"/>
           <detailDescriptions xsi:type="tool:DiagramCreationDescription" href="../../../plugin/org.polarsys.capella.core.sirius.analysis/description/logical.odesign#//@ownedViewpoints[name='Logical%20Architecture']/@ownedRepresentations[name='Logical%20Architecture%20Blank']/@defaultLayer/@toolSections.0/@ownedTools[name='Logical%20Architecture%20Blank']"/>
@@ -182,6 +197,15 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
+          <ownedTools xsi:type="tool_1:ToolDescription" name="create_Failure_list" label="Create Failure List">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool_1:If" conditionExpression="service:create_Failure_list(elementView)"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
           <ownedTools xsi:type="tool_1:ToolDescription" name="add_CFA" label="Add CFA">
             <element name="element"/>
             <elementView name="elementView"/>
@@ -215,6 +239,15 @@
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
                 <subModelOperations xsi:type="tool_1:If" conditionExpression="service:add_DA(elementView)"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:ToolDescription" name="add_failure" label="Add Failure">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool_1:If" conditionExpression="service:add_failure(elementView)"/>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>

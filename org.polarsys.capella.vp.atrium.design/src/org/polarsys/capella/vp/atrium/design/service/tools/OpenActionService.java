@@ -24,6 +24,8 @@ import org.polarsys.capella.vp.atrium.Atrium.DA_list;
 import org.polarsys.capella.vp.atrium.Atrium.DG;
 import org.polarsys.capella.vp.atrium.Atrium.DG_list;
 import org.polarsys.capella.vp.atrium.Atrium.ElementStateAtrium;
+import org.polarsys.capella.vp.atrium.Atrium.FailureMode;
+import org.polarsys.capella.vp.atrium.Atrium.Failure_list;
 import org.polarsys.capella.vp.atrium.Atrium.impl.AtriumFactoryImpl;
 import org.polarsys.capella.vp.atrium.Atrium.Assumption;
 import org.polarsys.capella.vp.atrium.Atrium.Assumption_list;
@@ -97,6 +99,23 @@ public class OpenActionService {
 
 		((CapellaElement) myDA_list).setId(EcoreUtil.generateUUID());
 		((ExtensibleElement) element).getOwnedExtensions().add((ElementExtension) myDA_list);
+		return true;
+	}
+
+	/**
+	* <!-- begin-user-doc -->
+	* <!-- end-user-doc -->
+	* @param element : the element
+	* @param newSemanticContainer : the element view
+	* @generated NOT
+	*/
+	public boolean create_Failure_list(EObject element, EObject newSemanticContainer) {
+		Failure_list myFailure_list = null;
+
+		myFailure_list = AtriumFactoryImpl.eINSTANCE.createFailure_list();
+
+		((CapellaElement) myFailure_list).setId(EcoreUtil.generateUUID());
+		((ExtensibleElement) element).getOwnedExtensions().add((ElementExtension) myFailure_list);
 		return true;
 	}
 
@@ -203,6 +222,31 @@ public class OpenActionService {
 
 			((CapellaElement) myDA).setId(EcoreUtil.generateUUID());
 			((ExtensibleElement) my_DA_list).getOwnedExtensions().add((ElementExtension) myDA);
+			return true;
+		}
+	}
+
+	/**
+	* <!-- begin-user-doc -->
+	* <!-- end-user-doc -->
+	* @param element : the element
+	* @param newSemanticContainer : the element view
+	* @generated NOT
+	*/
+	public boolean add_failure(EObject element, EObject newSemanticContainer) {
+		if (!(element instanceof Failure_list)) {
+			System.out.println("Action cancelled, please add a Failure inside a Failure list");
+			return false;
+		} else {
+			FailureMode myFailure = null;
+			Failure_list my_Failure_list = (Failure_list) element;
+
+			myFailure = AtriumFactoryImpl.eINSTANCE.createFailureMode();
+
+			myFailure.setContent("Some content");
+
+			((CapellaElement) myFailure).setId(EcoreUtil.generateUUID());
+			((ExtensibleElement) my_Failure_list).getOwnedExtensions().add((ElementExtension) myFailure);
 			return true;
 		}
 	}

@@ -98,6 +98,11 @@ public class AtriumAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseFailure_list(Failure_list object) {
+			return createFailure_listAdapter();
+		}
+
+		@Override
 		public Adapter caseCFA(CFA object) {
 			return createCFAAdapter();
 		}
@@ -120,6 +125,11 @@ public class AtriumAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseElementStateAtrium(ElementStateAtrium object) {
 			return createElementStateAtriumAdapter();
+		}
+
+		@Override
+		public Adapter caseFailureMode(FailureMode object) {
+			return createFailureModeAdapter();
 		}
 
 		@Override
@@ -243,6 +253,20 @@ public class AtriumAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link org.polarsys.capella.vp.atrium.Atrium.Failure_list <em>Failure list</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.polarsys.capella.vp.atrium.Atrium.Failure_list
+	 * @generated
+	 */
+	public Adapter createFailure_listAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link org.polarsys.capella.vp.atrium.Atrium.CFA <em>CFA</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -309,6 +333,20 @@ public class AtriumAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createElementStateAtriumAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.polarsys.capella.vp.atrium.Atrium.FailureMode <em>Failure Mode</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.polarsys.capella.vp.atrium.Atrium.FailureMode
+	 * @generated
+	 */
+	public Adapter createFailureModeAdapter() {
 		return null;
 	}
 

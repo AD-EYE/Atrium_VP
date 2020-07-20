@@ -57,6 +57,15 @@ public interface AtriumFactory extends EFactory {
 	DA_list createDA_list();
 
 	/**
+	 * Returns a new object of class '<em>Failure list</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Failure list</em>'.
+	 * @generated
+	 */
+	Failure_list createFailure_list();
+
+	/**
 	 * Returns a new object of class '<em>CFA</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -100,6 +109,15 @@ public interface AtriumFactory extends EFactory {
 	 * @generated
 	 */
 	ElementStateAtrium createElementStateAtrium();
+
+	/**
+	 * Returns a new object of class '<em>Failure Mode</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Failure Mode</em>'.
+	 * @generated
+	 */
+	FailureMode createFailureMode();
 
 	/**
 	 * Returns the package supported by this factory.
