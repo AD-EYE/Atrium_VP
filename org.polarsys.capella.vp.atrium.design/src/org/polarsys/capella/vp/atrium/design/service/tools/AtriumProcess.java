@@ -2,6 +2,7 @@ package org.polarsys.capella.vp.atrium.design.service.tools;
 
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
+import javax.swing.JOptionPane;
 import javax.swing.ListModel;
 import javax.xml.soap.Node;
 
@@ -21,17 +22,17 @@ import org.polarsys.capella.core.data.la.LogicalComponentPkg;
 import org.polarsys.capella.core.data.la.LogicalFunction;
 import org.polarsys.capella.core.data.la.LogicalFunctionPkg;
 import org.polarsys.capella.vp.atrium.Atrium.Assumption;
+import org.polarsys.capella.vp.atrium.Atrium.Assumption_list;
 import org.polarsys.capella.vp.atrium.Atrium.CFA;
 import org.polarsys.capella.vp.atrium.Atrium.CFA_list;
 import org.polarsys.capella.vp.atrium.Atrium.ElementStateAtrium;
 import org.polarsys.capella.vp.atrium.Atrium.FailureMode;
+import org.polarsys.capella.vp.atrium.Atrium.Failure_list;
 import org.polarsys.capella.vp.atrium.Atrium.impl.AtriumFactoryImpl;
 import org.polarsys.kitalpha.emde.model.ElementExtension;
 import org.polarsys.kitalpha.emde.model.ExtensibleElement;
 
 public class AtriumProcess extends javax.swing.JFrame {
-	
-	//handle list of CFA
 	
 	EList<CFA> listCFA = new BasicEList<CFA>();
 	EList<Assumption> listAssumption = new BasicEList<Assumption>();
@@ -39,11 +40,13 @@ public class AtriumProcess extends javax.swing.JFrame {
 	DefaultListModel<String> nameLinkedAssumption = new DefaultListModel<String>();
 	DefaultListModel<String> nameUnlinkedAssumption = new DefaultListModel<String>();
 	
+	DefaultComboBoxModel<String> ListFailureMode = new DefaultComboBoxModel<String>();
+	
 	CFA_list the_CFA_list = null;
+	Failure_list the_Failure_list = null;
+	Assumption_list the_Assumption_list = null;
 	
 	public AtriumProcess(EObject element) {
-
-		System.out.println(element);
 
 		EObject root = element.eContainer();
 		if (!(root instanceof LogicalArchitecture)) {
@@ -84,9 +87,6 @@ public class AtriumProcess extends javax.swing.JFrame {
 		//EList <EObject> ListCapellaElement = null;
 		DefaultComboBoxModel<String> ListCapellaElementName = new DefaultComboBoxModel<String>();
 		
-		//handle list of failure mode NAME
-		DefaultComboBoxModel<String> ListFailureMode = new DefaultComboBoxModel<String>();
-		
 		LogicalArchitecture logArch = (LogicalArchitecture) root;
 		TreeIterator<EObject> treeArch = logArch.eAllContents();
 		
@@ -120,6 +120,11 @@ public class AtriumProcess extends javax.swing.JFrame {
 			  ListFailureMode.addElement(fm.getName());
 		  }
 		  
+		  if (node instanceof Failure_list)
+		  {
+			  the_Failure_list = (Failure_list) node;
+		  }
+		  
 		  if (node instanceof CFA)
 		  {
 			  CFA myCFA = (CFA) node;
@@ -129,7 +134,6 @@ public class AtriumProcess extends javax.swing.JFrame {
 		  if (node instanceof CFA_list)
 		  {
 			  the_CFA_list = (CFA_list) node;
-			  System.out.println("I have found the CFA list !");
 		  }
 		  
 		  if (node instanceof Assumption)
@@ -137,24 +141,15 @@ public class AtriumProcess extends javax.swing.JFrame {
 			  Assumption myAssumption = (Assumption) node;
 			  listAssumption.add(myAssumption);
 		  }
+		  
+		  if (node instanceof Assumption_list)
+		  {
+			  the_Assumption_list = (Assumption_list) node;
+		  }
+		  
 		}
-		
 
-		// jListUnlinkedAssumptions.setModel(functionNames);
 		jScrollPane1.setViewportView(jListUnlinkedAssumptions);
-
-//		jListLinkedAssumption.setModel(new javax.swing.DefaultListModel<String>() {
-//			String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-//
-//			public int getSize() {
-//				return strings.length;
-//			}
-//
-//			public String getElementAt(int i) {
-//				return strings[i];
-//			}
-//		});
-		
 		jScrollPane2.setViewportView(jListLinkedAssumptions);
 
 		jButtonAddLinked.setText("=>");
@@ -177,13 +172,14 @@ public class AtriumProcess extends javax.swing.JFrame {
 				jComboBoxCapellaElementActionPerformed(evt);
 			}
 		});
+		
 		jComboBoxFailureMode.setModel(ListFailureMode);
         jComboBoxFailureMode.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBoxFailureModeActionPerformed(evt);
             }
         });
-
+      
 
         jLabel1.setText("Add to linked");
 		jLabel2.setText("Remove from linked");
@@ -327,40 +323,25 @@ public class AtriumProcess extends javax.swing.JFrame {
 	
 	private void updateDisplayCFA()
 	{
-		DefaultListModel<Assumption> listLinkedAssumption=new DefaultListModel<Assumption>();
-		DefaultListModel<Assumption> listUnlinkedAssumption=new DefaultListModel<Assumption>();
 		nameLinkedAssumption=new DefaultListModel<String>();
 		nameUnlinkedAssumption=new DefaultListModel<String>();
-		
 		CFA the_CFA=null;
 		
 		if ((CapellaElementName!="Capella Element Example")&&(FailureName!="Failure Example"))
 		{	
-			for (CFA myCFA : listCFA)
+			for (CFA myCFA : listCFA) //look for the CFA that we are interested in
 			{
-				if (myCFA.getName().equals(jTextFieldResultingCFA.getText()))
-				{
-					the_CFA=myCFA;
-				}
+				if (myCFA.getName().equals(jTextFieldResultingCFA.getText())){the_CFA = myCFA;}
 			}
 			
-			for (Assumption a : listAssumption)
+			for (Assumption a : listAssumption) //go through all the Assumptions to find those linked with the_CFA
 			{
-				if (the_CFA.getAssumption().contains(a))//if linked assumptions
-				{
-					listLinkedAssumption.addElement(a);
-					nameLinkedAssumption.addElement(a.getName());
-				}
-				else
-				{
-					listUnlinkedAssumption.addElement(a);
-					nameUnlinkedAssumption.addElement(a.getName());
-				}
+				if (the_CFA.getAssumption().contains(a)){nameLinkedAssumption.addElement(a.getName());}
+				else{nameUnlinkedAssumption.addElement(a.getName());}
 			}
 			
-			jListUnlinkedAssumptions.setModel(nameUnlinkedAssumption);
+			jListUnlinkedAssumptions.setModel(nameUnlinkedAssumption); //update list of assumptions
 			jListLinkedAssumptions.setModel(nameLinkedAssumption);
-			
 		}
 	}
 	
@@ -370,68 +351,59 @@ public class AtriumProcess extends javax.swing.JFrame {
 		String movingAssumption = null;
 		Assumption the_moving_assumption = null;
 		
+		//decide on which list should we look for the Assumptions based on if we want to add or remove a link
 		if (action=="add") {movingAssumption = jListUnlinkedAssumptions.getSelectedValue();}
 		else if (action=="remove") {movingAssumption = jListLinkedAssumptions.getSelectedValue();}
 		else {System.out.println("The moveAssumption action you want to do is unclear...");}
 		
-		for (Assumption a : listAssumption)
+		for (Assumption a : listAssumption) //Go through all the assumptions to find the one with the same name
 		{
-			if (a.getName().equals(movingAssumption))
-			{
-				the_moving_assumption=a;
-			}
+			if (a.getName().equals(movingAssumption)){the_moving_assumption=a;}
 		}
 		
-		for (CFA myCFA : listCFA)
+		for (CFA myCFA : listCFA) //look for the CFA that we are interested in
 		{
-			if (myCFA.getName().equals(jTextFieldResultingCFA.getText()))
-			{
-				the_CFA=myCFA;
-			}
+			if (myCFA.getName().equals(jTextFieldResultingCFA.getText())){the_CFA=myCFA;}
 		}
 		
 		final CFA CFA_parameter = the_CFA;
 		final Assumption assumption_parameter = the_moving_assumption;
-		
 		TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(the_CFA_list);
 		
 		if (action=="remove")
 		{
 			domain.getCommandStack().execute(new RecordingCommand(domain) {
-
 			        @Override
 			        protected void doExecute() {
-			        	CFA_parameter.getAssumption().remove(assumption_parameter);
+			        	CFA_parameter.getAssumption().remove(assumption_parameter);//the remove action is done there, within a transaction context
 			        }
 			    });
 		}
 		else if (action=="add")
 		{
 			 domain.getCommandStack().execute(new RecordingCommand(domain) {
-
 			        @Override
 			        protected void doExecute() {
-			        	CFA_parameter.getAssumption().add(assumption_parameter);
+			        	CFA_parameter.getAssumption().add(assumption_parameter);//the add action is done there, within a transaction context
 			        }
 			    });
 		}
 		else {System.out.println("The moveAssumption action you want to do is unclear...twice");}
 		
-		updateDisplayCFA();
+		updateDisplayCFA();//because the lists have changed
 	}
 	
 	private void createCFAifNew()
 	{
-		if ((CapellaElementName!="Capella Element Example")&&(FailureName!="Failure Example"))
+		if ((CapellaElementName!="Capella Element Example")&&(FailureName!="Failure Example"))//do nothing if not
 		{
 			boolean found=false;
-			for (CFA myCFA : listCFA)
+			for (CFA myCFA : listCFA)//we are not sure to find a matching CFA
 			{
 				if (myCFA.getName().equals(jTextFieldResultingCFA.getText())){found=true;}
 			}
-			if (!(found))
+			if (!(found))//if the CFA doesnt exist, then we create it
 			{
-				//create CFA if not found
 				final CFA newCFA = AtriumFactoryImpl.eINSTANCE.createCFA();
 				newCFA.setContent("Some content");
 				newCFA.setState(true);
@@ -439,26 +411,57 @@ public class AtriumProcess extends javax.swing.JFrame {
 
 				TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(the_CFA_list);
 				domain.getCommandStack().execute(new RecordingCommand(domain) {
-
 				        @Override
 				        protected void doExecute() {
-				        	((ExtensibleElement) the_CFA_list).getOwnedExtensions().add((ElementExtension) newCFA);
+				        	((ExtensibleElement) the_CFA_list).getOwnedExtensions().add((ElementExtension) newCFA);//the add action is done there, within a transaction context
 				        }
 				    });
 				 
-				listCFA.add(newCFA);
+				listCFA.add(newCFA);//updating our local list
 			}
 		}
+	}
+	
+	private void createFailureMode(String name) {
+		final FailureMode newFailure = AtriumFactoryImpl.eINSTANCE.createFailureMode();
+		newFailure.setContent("Some content");
+		newFailure.setName(name);
+		TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(the_Failure_list);
+		domain.getCommandStack().execute(new RecordingCommand(domain) {
+		        @Override
+		        protected void doExecute() {
+		        	((ExtensibleElement) the_Failure_list).getOwnedExtensions().add((ElementExtension) newFailure);//the add action is done there, within a transaction context
+		        }
+		    });
+		
+		ListFailureMode.addElement(newFailure.getName());//updating our local list
+	}
+	
+	private void createAssumption(String name) {
+		final Assumption newAssumption = AtriumFactoryImpl.eINSTANCE.createAssumption();
+		newAssumption.setContent("Some content");
+		newAssumption.setName(name);
+		TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(the_Assumption_list);
+		domain.getCommandStack().execute(new RecordingCommand(domain) {
+		        @Override
+		        protected void doExecute() {
+		        	((ExtensibleElement) the_Assumption_list).getOwnedExtensions().add((ElementExtension) newAssumption);//the add action is done there, within a transaction context
+		        }
+		    });
+		
+		listAssumption.add(newAssumption);//updating our local list
+		
+		updateDisplayCFA();
 	}
 
 	
 	private void jButtonAddLinkedActionPerformed(java.awt.event.ActionEvent evt) {
-		//check later if this is legit
+		//TODO check later if this is legit
 		moveAssumption("add");
 	}
 	
 	private void jButtonRemoveLinkedActionPerformed(java.awt.event.ActionEvent evt) {
-		//check later if this is legit
+		//TODO check later if this is legit
 		moveAssumption("remove");
 	}
 	
@@ -481,12 +484,19 @@ public class AtriumProcess extends javax.swing.JFrame {
 		System.out.println(listCFA);
 	}
 	
-	private void jButtonAddFailureActionPerformed(java.awt.event.ActionEvent evt) {                                                  
-        // TODO add your handling code here:
+	private void jButtonAddFailureActionPerformed(java.awt.event.ActionEvent evt) {
+		String name = JOptionPane.showInputDialog(getParent(), "Please name the new Failure Mode", "MyNewFailure");
+		if (name != null) { //if the user has not pressed "cancel"
+			createFailureMode(name);
+		}
     }
 	
 	private void jButtonAddAssumptionActionPerformed(java.awt.event.ActionEvent evt) {                                                     
         // TODO add your handling code here:
+		String name = JOptionPane.showInputDialog(getParent(), "Please name the new Assumption", "MyNewAssumption");
+		if (name != null) { //if the user has not pressed "cancel"
+			createAssumption(name);
+		}
     }   
 
 	
