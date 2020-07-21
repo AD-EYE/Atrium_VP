@@ -20,6 +20,7 @@ import org.polarsys.capella.core.data.la.LogicalComponent;
 import org.polarsys.capella.core.data.la.LogicalComponentPkg;
 import org.polarsys.capella.core.data.la.LogicalFunction;
 import org.polarsys.capella.core.data.la.LogicalFunctionPkg;
+import org.polarsys.capella.vp.atrium.Atrium.Assumption;
 import org.polarsys.capella.vp.atrium.Atrium.CFA;
 import org.polarsys.capella.vp.atrium.Atrium.CFA_list;
 import org.polarsys.capella.vp.atrium.Atrium.ElementStateAtrium;
@@ -33,6 +34,11 @@ public class AtriumProcess extends javax.swing.JFrame {
 	//handle list of CFA
 	
 	EList<CFA> listCFA = new BasicEList<CFA>();
+	EList<Assumption> listAssumption = new BasicEList<Assumption>();
+	
+	DefaultListModel<String> nameLinkedAssumption = new DefaultListModel<String>();
+	DefaultListModel<String> nameUnlinkedAssumption = new DefaultListModel<String>();
+	
 	CFA_list the_CFA_list = null;
 	
 	public AtriumProcess(EObject element) {
@@ -53,7 +59,7 @@ public class AtriumProcess extends javax.swing.JFrame {
 		jScrollPane1 = new javax.swing.JScrollPane();
 		jListUnlinkedAssumptions = new javax.swing.JList();
 		jScrollPane2 = new javax.swing.JScrollPane();
-		jListLinkedAssumption = new javax.swing.JList();
+		jListLinkedAssumptions = new javax.swing.JList();
 		jButtonAddLinked = new javax.swing.JButton();
 		jLabel1 = new javax.swing.JLabel();
 		jButtonRemoveLinked = new javax.swing.JButton();
@@ -122,24 +128,31 @@ public class AtriumProcess extends javax.swing.JFrame {
 			  the_CFA_list = (CFA_list) node;
 			  System.out.println("I have found the CFA list !");
 		  }
+		  
+		  if (node instanceof Assumption)
+		  {
+			  Assumption myAssumption = (Assumption) node;
+			  listAssumption.add(myAssumption);
+		  }
 		}
 		
 
 		// jListUnlinkedAssumptions.setModel(functionNames);
 		jScrollPane1.setViewportView(jListUnlinkedAssumptions);
 
-		jListLinkedAssumption.setModel(new javax.swing.DefaultListModel<String>() {
-			String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-
-			public int getSize() {
-				return strings.length;
-			}
-
-			public String getElementAt(int i) {
-				return strings[i];
-			}
-		});
-		jScrollPane2.setViewportView(jListLinkedAssumption);
+//		jListLinkedAssumption.setModel(new javax.swing.DefaultListModel<String>() {
+//			String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+//
+//			public int getSize() {
+//				return strings.length;
+//			}
+//
+//			public String getElementAt(int i) {
+//				return strings[i];
+//			}
+//		});
+		
+		jScrollPane2.setViewportView(jListLinkedAssumptions);
 
 		jButtonAddLinked.setText("=>");
 		jButtonAddLinked.addActionListener(new java.awt.event.ActionListener() {
@@ -304,6 +317,13 @@ public class AtriumProcess extends javax.swing.JFrame {
 	
 	private void updateDisplayCFA()
 	{
+		DefaultListModel<Assumption> listLinkedAssumption=new DefaultListModel<Assumption>();
+		DefaultListModel<Assumption> listUnlinkedAssumption=new DefaultListModel<Assumption>();
+		nameLinkedAssumption=new DefaultListModel<String>();
+		nameUnlinkedAssumption=new DefaultListModel<String>();
+
+		CFA the_CFA=null;
+		
 		if ((CapellaElementName!="Capella Element Example")&&(FailureName!="Failure Example"))
 		{
 			boolean found=false;
@@ -312,6 +332,7 @@ public class AtriumProcess extends javax.swing.JFrame {
 				if (myCFA.getName().equals(jTextFieldResultingCFA.getText()))
 				{
 					found=true;
+					the_CFA=myCFA;
 				}
 			}
 			if (!(found))
@@ -327,17 +348,36 @@ public class AtriumProcess extends javax.swing.JFrame {
 				((CapellaElement) newCFA).setId(EcoreUtil.generateUUID());
 				
 				 TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(the_CFA_list);
-				    domain.getCommandStack().execute(new RecordingCommand(domain) {
+				 domain.getCommandStack().execute(new RecordingCommand(domain) {
 
 				        @Override
 				        protected void doExecute() {
-				            // Implement your write operations here,
-				            // for example: set a new name
+				            // Implement your write operations here
 				        	((ExtensibleElement) the_CFA_list).getOwnedExtensions().add((ElementExtension) newCFA);
 				        }
 				    });
+				 
 				listCFA.add(newCFA);
+				the_CFA=newCFA;
 			}
+			
+			for (Assumption a : listAssumption)
+			{
+				if (the_CFA.getAssumption().contains(a))//if linked assumptions
+				{
+					listLinkedAssumption.addElement(a);
+					nameLinkedAssumption.addElement(a.getName());
+				}
+				else
+				{
+					listUnlinkedAssumption.addElement(a);
+					nameUnlinkedAssumption.addElement(a.getName());
+
+				}
+			}
+			
+			jListUnlinkedAssumptions.setModel(nameUnlinkedAssumption);
+			jListLinkedAssumptions.setModel(nameLinkedAssumption);
 			
 		}
 		
@@ -387,7 +427,7 @@ public class AtriumProcess extends javax.swing.JFrame {
 	private javax.swing.JLabel jLabel7;
 	private javax.swing.JLabel jLabel8;
 	private javax.swing.JLabel jLabel9;
-	private javax.swing.JList<String> jListLinkedAssumption;
+	private javax.swing.JList<String> jListLinkedAssumptions;
 	private javax.swing.JList<String> jListUnlinkedAssumptions;
 	private javax.swing.JScrollPane jScrollPane1;
 	private javax.swing.JScrollPane jScrollPane2;
