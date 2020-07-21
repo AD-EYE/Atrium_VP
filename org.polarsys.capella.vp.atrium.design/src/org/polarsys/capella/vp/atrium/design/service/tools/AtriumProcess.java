@@ -331,44 +331,17 @@ public class AtriumProcess extends javax.swing.JFrame {
 		DefaultListModel<Assumption> listUnlinkedAssumption=new DefaultListModel<Assumption>();
 		nameLinkedAssumption=new DefaultListModel<String>();
 		nameUnlinkedAssumption=new DefaultListModel<String>();
-
+		
 		CFA the_CFA=null;
 		
 		if ((CapellaElementName!="Capella Element Example")&&(FailureName!="Failure Example"))
-		{
-			boolean found=false;
+		{	
 			for (CFA myCFA : listCFA)
 			{
 				if (myCFA.getName().equals(jTextFieldResultingCFA.getText()))
 				{
-					found=true;
 					the_CFA=myCFA;
 				}
-			}
-			if (!(found))
-			{
-				//create CFA if not found
-				final CFA newCFA = AtriumFactoryImpl.eINSTANCE.createCFA();
-
-				newCFA.setContent("Some content");
-				newCFA.setState(true);
-				newCFA.setName(jTextFieldResultingCFA.getText());
-				System.out.println(the_CFA_list);
-
-				((CapellaElement) newCFA).setId(EcoreUtil.generateUUID());
-				
-				 TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(the_CFA_list);
-				 domain.getCommandStack().execute(new RecordingCommand(domain) {
-
-				        @Override
-				        protected void doExecute() {
-				            // Implement your write operations here
-				        	((ExtensibleElement) the_CFA_list).getOwnedExtensions().add((ElementExtension) newCFA);
-				        }
-				    });
-				 
-				listCFA.add(newCFA);
-				the_CFA=newCFA;
 			}
 			
 			for (Assumption a : listAssumption)
@@ -389,15 +362,17 @@ public class AtriumProcess extends javax.swing.JFrame {
 			jListLinkedAssumptions.setModel(nameLinkedAssumption);
 			
 		}
-		
 	}
-
-	private void jButtonAddLinkedActionPerformed(java.awt.event.ActionEvent evt) {
-		//check later if this is legit
-		String movingAssumption = null;
+	
+	private void moveAssumption(String action) //action="add" or "remove"
+	{
 		CFA the_CFA = null;
+		String movingAssumption = null;
 		Assumption the_moving_assumption = null;
-		movingAssumption = jListUnlinkedAssumptions.getSelectedValue();
+		
+		if (action=="add") {movingAssumption = jListUnlinkedAssumptions.getSelectedValue();}
+		else if (action=="remove") {movingAssumption = jListLinkedAssumptions.getSelectedValue();}
+		else {System.out.println("The moveAssumption action you want to do is unclear...");}
 		
 		for (Assumption a : listAssumption)
 		{
@@ -418,73 +393,86 @@ public class AtriumProcess extends javax.swing.JFrame {
 		final CFA CFA_parameter = the_CFA;
 		final Assumption assumption_parameter = the_moving_assumption;
 		
-		 TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(the_CFA_list);
-		 domain.getCommandStack().execute(new RecordingCommand(domain) {
-
-		        @Override
-		        protected void doExecute() {
-		            // Implement your write operations here
-		        	CFA_parameter.getAssumption().add(assumption_parameter);
-		        }
-		    });
+		TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(the_CFA_list);
 		
-		// UGLY THO
+		if (action=="remove")
+		{
+			domain.getCommandStack().execute(new RecordingCommand(domain) {
+
+			        @Override
+			        protected void doExecute() {
+			        	CFA_parameter.getAssumption().remove(assumption_parameter);
+			        }
+			    });
+		}
+		else if (action=="add")
+		{
+			 domain.getCommandStack().execute(new RecordingCommand(domain) {
+
+			        @Override
+			        protected void doExecute() {
+			        	CFA_parameter.getAssumption().add(assumption_parameter);
+			        }
+			    });
+		}
+		else {System.out.println("The moveAssumption action you want to do is unclear...twice");}
 		
 		updateDisplayCFA();
 	}
+	
+	private void createCFAifNew()
+	{
+		if ((CapellaElementName!="Capella Element Example")&&(FailureName!="Failure Example"))
+		{
+			boolean found=false;
+			for (CFA myCFA : listCFA)
+			{
+				if (myCFA.getName().equals(jTextFieldResultingCFA.getText())){found=true;}
+			}
+			if (!(found))
+			{
+				//create CFA if not found
+				final CFA newCFA = AtriumFactoryImpl.eINSTANCE.createCFA();
+				newCFA.setContent("Some content");
+				newCFA.setState(true);
+				newCFA.setName(jTextFieldResultingCFA.getText());
 
-	private void jButtonRemoveLinkedActionPerformed(java.awt.event.ActionEvent evt) {
-		//check later if this is legit
-				String movingAssumption = null;
-				CFA the_CFA = null;
-				Assumption the_moving_assumption = null;
-				movingAssumption = jListLinkedAssumptions.getSelectedValue();
-				
-				for (Assumption a : listAssumption)
-				{
-					if (a.getName().equals(movingAssumption))
-					{
-						the_moving_assumption=a;
-					}
-				}
-				
-				for (CFA myCFA : listCFA)
-				{
-					if (myCFA.getName().equals(jTextFieldResultingCFA.getText()))
-					{
-						the_CFA=myCFA;
-					}
-				}
-				
-				final CFA CFA_parameter = the_CFA;
-				final Assumption assumption_parameter = the_moving_assumption;
-				
 				TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(the_CFA_list);
-				 domain.getCommandStack().execute(new RecordingCommand(domain) {
+				domain.getCommandStack().execute(new RecordingCommand(domain) {
 
 				        @Override
 				        protected void doExecute() {
-				            // Implement your write operations here
-				        	CFA_parameter.getAssumption().remove(assumption_parameter);
+				        	((ExtensibleElement) the_CFA_list).getOwnedExtensions().add((ElementExtension) newCFA);
 				        }
 				    });
-				
-				// UGLY THO
-				
-				the_CFA.getAssumption().remove(the_moving_assumption);
-				
-				updateDisplayCFA();
+				 
+				listCFA.add(newCFA);
+			}
+		}
 	}
 
+	
+	private void jButtonAddLinkedActionPerformed(java.awt.event.ActionEvent evt) {
+		//check later if this is legit
+		moveAssumption("add");
+	}
+	
+	private void jButtonRemoveLinkedActionPerformed(java.awt.event.ActionEvent evt) {
+		//check later if this is legit
+		moveAssumption("remove");
+	}
+	
 	private void jComboBoxCapellaElementActionPerformed(java.awt.event.ActionEvent evt) {
 		CapellaElementName = (String) jComboBoxCapellaElement.getSelectedItem();
 		jTextFieldResultingCFA.setText("{ " + CapellaElementName + " ; " + FailureName + " }");
+		createCFAifNew();
 		updateDisplayCFA();
 	}
 	
     private void jComboBoxFailureModeActionPerformed(java.awt.event.ActionEvent evt) {                                                     
     	FailureName = (String) jComboBoxFailureMode.getSelectedItem();
     	jTextFieldResultingCFA.setText("{ " + CapellaElementName + " ; " + FailureName + " }");
+		createCFAifNew();
 		updateDisplayCFA();
     }                                                    
 
