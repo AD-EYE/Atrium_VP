@@ -372,7 +372,6 @@ public class AtriumProcess extends javax.swing.JFrame {
 				{
 					listUnlinkedAssumption.addElement(a);
 					nameUnlinkedAssumption.addElement(a.getName());
-
 				}
 			}
 			
@@ -384,11 +383,87 @@ public class AtriumProcess extends javax.swing.JFrame {
 	}
 
 	private void jButtonAddLinkedActionPerformed(java.awt.event.ActionEvent evt) {
-		// TODO add your handling code here:
+		//check later if this is legit
+		String movingAssumption = null;
+		CFA the_CFA = null;
+		Assumption the_moving_assumption = null;
+		movingAssumption = jListUnlinkedAssumptions.getSelectedValue();
+		
+		for (Assumption a : listAssumption)
+		{
+			if (a.getName().equals(movingAssumption))
+			{
+				the_moving_assumption=a;
+			}
+		}
+		
+		for (CFA myCFA : listCFA)
+		{
+			if (myCFA.getName().equals(jTextFieldResultingCFA.getText()))
+			{
+				the_CFA=myCFA;
+			}
+		}
+		
+		final CFA CFA_parameter = the_CFA;
+		final Assumption assumption_parameter = the_moving_assumption;
+		
+		 TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(the_CFA_list);
+		 domain.getCommandStack().execute(new RecordingCommand(domain) {
+
+		        @Override
+		        protected void doExecute() {
+		            // Implement your write operations here
+		        	CFA_parameter.getAssumption().add(assumption_parameter);
+		        }
+		    });
+		
+		// UGLY THO
+		
+		updateDisplayCFA();
 	}
 
 	private void jButtonRemoveLinkedActionPerformed(java.awt.event.ActionEvent evt) {
-		// TODO add your handling code here:
+		//check later if this is legit
+				String movingAssumption = null;
+				CFA the_CFA = null;
+				Assumption the_moving_assumption = null;
+				movingAssumption = jListLinkedAssumptions.getSelectedValue();
+				
+				for (Assumption a : listAssumption)
+				{
+					if (a.getName().equals(movingAssumption))
+					{
+						the_moving_assumption=a;
+					}
+				}
+				
+				for (CFA myCFA : listCFA)
+				{
+					if (myCFA.getName().equals(jTextFieldResultingCFA.getText()))
+					{
+						the_CFA=myCFA;
+					}
+				}
+				
+				final CFA CFA_parameter = the_CFA;
+				final Assumption assumption_parameter = the_moving_assumption;
+				
+				TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(the_CFA_list);
+				 domain.getCommandStack().execute(new RecordingCommand(domain) {
+
+				        @Override
+				        protected void doExecute() {
+				            // Implement your write operations here
+				        	CFA_parameter.getAssumption().remove(assumption_parameter);
+				        }
+				    });
+				
+				// UGLY THO
+				
+				the_CFA.getAssumption().remove(the_moving_assumption);
+				
+				updateDisplayCFA();
 	}
 
 	private void jComboBoxCapellaElementActionPerformed(java.awt.event.ActionEvent evt) {
