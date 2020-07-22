@@ -50,18 +50,19 @@ public class AtriumProcess extends javax.swing.JFrame {
 	DG_list the_DG_list = null;
 	DA_list the_DA_list= null;
 	
-	EditingFrameAssumption myEditor = new EditingFrameAssumption();
-	
+	EditingFrameAssumption myEditor = null;
 	
 	
 	public AtriumProcess(EObject element) {
-
+		
 		EObject root = element;
 		while (!(root instanceof LogicalArchitecture))
 		{
 			root = root.eContainer();
 			//TODO add protection there
 		}
+		
+		myEditor = new EditingFrameAssumption(this);
 
 		initComponents(root);
 		this.setVisible(true);
@@ -181,9 +182,15 @@ public class AtriumProcess extends javax.swing.JFrame {
 	    });
 		
 		
-		 jListLinkedAssumptions.addMouseListener(new java.awt.event.MouseAdapter() {
+		jListLinkedAssumptions.addMouseListener(new java.awt.event.MouseAdapter() {
 	            public void mouseClicked(java.awt.event.MouseEvent evt) {
 	                jListLinkedAssumptionMouseClicked(evt);
+	            }
+	        });
+		 
+		jListUnlinkedAssumptions.addMouseListener(new java.awt.event.MouseAdapter() {
+	            public void mouseClicked(java.awt.event.MouseEvent evt) {
+	                jListUnlinkedAssumptionMouseClicked(evt);
 	            }
 	        });
 
@@ -352,7 +359,7 @@ public class AtriumProcess extends javax.swing.JFrame {
     }// </editor-fold>              
 	
 	
-	private void updateDisplayCFA()
+	public void updateDisplayCFA()
 	{
 		nameLinkedAssumption=new DefaultListModel<String>();
 		nameUnlinkedAssumption=new DefaultListModel<String>();
@@ -529,11 +536,28 @@ public class AtriumProcess extends javax.swing.JFrame {
     }   
 	
 	private void jListLinkedAssumptionMouseClicked(java.awt.event.MouseEvent evt) {
+		Assumption edited_assumption = null;
         if (evt.getClickCount() == 2) {
-            myEditor.test();
-        }
-        
-    }      
+        	String selectedAssumptionName = jListLinkedAssumptions.getSelectedValue();
+        	for (Assumption a : listAssumption) //Go through all the assumptions to find the one with the same name
+    		{
+    			if (a.getName().equals(selectedAssumptionName)){edited_assumption=a;}
+    		}
+            myEditor.editAssumption(edited_assumption);
+        } 
+    }
+	
+	private void jListUnlinkedAssumptionMouseClicked(java.awt.event.MouseEvent evt) {
+		Assumption edited_assumption = null;
+        if (evt.getClickCount() == 2) {
+        	String selectedAssumptionName = jListUnlinkedAssumptions.getSelectedValue();
+        	for (Assumption a : listAssumption) //Go through all the assumptions to find the one with the same name
+    		{
+    			if (a.getName().equals(selectedAssumptionName)){edited_assumption=a;}
+    		}
+            myEditor.editAssumption(edited_assumption);
+        } 
+    } 
 
 	private String CapellaElementName= "Capella Element Example";
 	private String FailureName= "Failure Example";

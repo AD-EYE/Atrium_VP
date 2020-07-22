@@ -1,12 +1,23 @@
 package org.polarsys.capella.vp.atrium.design.service.tools;
 
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.transaction.RecordingCommand;
+import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.polarsys.capella.core.data.la.LogicalArchitecture;
 import org.polarsys.capella.vp.atrium.Atrium.Assumption;
+import org.polarsys.capella.vp.atrium.Atrium.assumptionType_Type;
+import org.polarsys.capella.vp.atrium.Atrium.validity_Type;
+import org.polarsys.kitalpha.emde.model.ElementExtension;
+import org.polarsys.kitalpha.emde.model.ExtensibleElement;
 
 public class EditingFrameAssumption extends javax.swing.JFrame {
 	
-	public EditingFrameAssumption() {
+	Assumption edited_assumption = null;
+	AtriumProcess my_parent = null;
+	
+	public EditingFrameAssumption(AtriumProcess parent) {
+		my_parent=parent;
 		initcomponents();	
 	}
 	
@@ -198,12 +209,46 @@ public class EditingFrameAssumption extends javax.swing.JFrame {
         pack();
 	}
 	
-    private void FinishAndSaveEditingActionPerformed(java.awt.event.ActionEvent evt) {                                                     
-        // TODO add your handling code here:
+    private void FinishAndSaveEditingActionPerformed(java.awt.event.ActionEvent evt) {
+    	
+    	TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(edited_assumption);
+		domain.getCommandStack().execute(new RecordingCommand(domain) {
+		        @Override
+		        protected void doExecute() {
+		        	edited_assumption.setName(EditingName.getText());
+		        	if (isRisk.isSelected()){edited_assumption.setAssumptionType(assumptionType_Type.RISK);}
+		        	else if (isTask.isSelected()){edited_assumption.setAssumptionType(assumptionType_Type.TASK);}
+		        	else if (isClarification.isSelected()){edited_assumption.setAssumptionType(assumptionType_Type.CLARIFICATION);}
+		        	edited_assumption.setContent(EditingContent.getText());
+		        	edited_assumption.setRationale(EditingRationale.getText());
+		        	if (isValid.isSelected()) {edited_assumption.setValidity(validity_Type.VALID);}
+		        	else if (isInvalid.isSelected()) {edited_assumption.setValidity(validity_Type.INVALID);}
+		        	edited_assumption.setResponsibleArchitect(EditingResponsibleArchitect.getText());
+		        	edited_assumption.setResponsibleExpert(EditingResponsibleExpert.getText());
+		        	edited_assumption.setDateOfCompletion(EditingDate.getText());
+		        }
+		    });
+		
+		my_parent.updateDisplayCFA();
+		Editingframe.setVisible(false);
     }
     
-    public void test()
+    public void editAssumption(Assumption edited_assumption_parameter)
     {
+    	edited_assumption = edited_assumption_parameter;
+
+    	EditingName.setText(edited_assumption.getName());
+    	isRisk.setSelected(edited_assumption.getAssumptionType()==assumptionType_Type.RISK);
+    	isTask.setSelected(edited_assumption.getAssumptionType()==assumptionType_Type.TASK);
+    	isClarification.setSelected(edited_assumption.getAssumptionType()==assumptionType_Type.CLARIFICATION);
+    	EditingContent.setText(edited_assumption.getContent());
+    	EditingRationale.setText(edited_assumption.getRationale());
+    	isValid.setSelected(edited_assumption.getValidity()==validity_Type.VALID);
+    	isInvalid.setSelected(edited_assumption.getValidity()==validity_Type.INVALID);
+    	EditingResponsibleArchitect.setText(edited_assumption.getResponsibleArchitect());
+    	EditingResponsibleExpert.setText(edited_assumption.getResponsibleExpert());
+    	EditingDate.setText(edited_assumption.getDateOfCompletion());
+    	
     	Editingframe.setVisible(true);
     }
     

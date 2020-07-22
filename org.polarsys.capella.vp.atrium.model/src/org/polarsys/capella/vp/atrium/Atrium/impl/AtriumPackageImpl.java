@@ -57,6 +57,7 @@ import org.polarsys.capella.vp.atrium.Atrium.Failure_list;
 import org.polarsys.capella.vp.atrium.Atrium.Goal_list;
 import org.polarsys.capella.vp.atrium.Atrium.CFAlist;
 import org.polarsys.capella.vp.atrium.Atrium.assumptionType_Type;
+import org.polarsys.capella.vp.atrium.Atrium.validity_Type;
 import org.polarsys.capella.vp.atrium.Atrium.stateLinkedElement_Type;
 import org.polarsys.kitalpha.emde.model.EmdePackage;
 
@@ -149,6 +150,13 @@ public class AtriumPackageImpl extends EPackageImpl implements AtriumPackage {
 	 * @generated
 	 */
 	private EEnum assumptionType_TypeEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum validity_TypeEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -550,6 +558,16 @@ public class AtriumPackageImpl extends EPackageImpl implements AtriumPackage {
 	 * @generated
 	 */
 	@Override
+	public EEnum getvalidity_Type() {
+		return validity_TypeEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public AtriumFactory getAtriumFactory() {
 		return (AtriumFactory) getEFactoryInstance();
 	}
@@ -617,6 +635,7 @@ public class AtriumPackageImpl extends EPackageImpl implements AtriumPackage {
 
 		// Create enums
 		assumptionType_TypeEEnum = createEEnum(ASSUMPTION_TYPE_TYPE);
+		validity_TypeEEnum = createEEnum(VALIDITY_TYPE);
 	}
 
 	/**
@@ -717,7 +736,7 @@ public class AtriumPackageImpl extends EPackageImpl implements AtriumPackage {
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAssumption_Rationale(), ecorePackage.getEString(), "rationale", null, 0, 1, Assumption.class, //$NON-NLS-1$
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAssumption_Validity(), ecorePackage.getEString(), "validity", null, 0, 1, Assumption.class, //$NON-NLS-1$
+		initEAttribute(getAssumption_Validity(), this.getvalidity_Type(), "validity", null, 0, 1, Assumption.class, //$NON-NLS-1$
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAssumption_ResponsibleArchitect(), ecorePackage.getEString(), "responsibleArchitect", null, 0, //$NON-NLS-1$
 				1, Assumption.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
@@ -725,7 +744,7 @@ public class AtriumPackageImpl extends EPackageImpl implements AtriumPackage {
 		initEAttribute(getAssumption_ResponsibleExpert(), ecorePackage.getEString(), "responsibleExpert", null, 0, 1, //$NON-NLS-1$
 				Assumption.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAssumption_DateOfCompletion(), ecorePackage.getEDate(), "dateOfCompletion", null, 0, 1, //$NON-NLS-1$
+		initEAttribute(getAssumption_DateOfCompletion(), ecorePackage.getEString(), "dateOfCompletion", null, 0, 1, //$NON-NLS-1$
 				Assumption.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
 
@@ -766,6 +785,10 @@ public class AtriumPackageImpl extends EPackageImpl implements AtriumPackage {
 		addEEnumLiteral(assumptionType_TypeEEnum, assumptionType_Type.CLARIFICATION);
 		addEEnumLiteral(assumptionType_TypeEEnum, assumptionType_Type.TASK);
 		addEEnumLiteral(assumptionType_TypeEEnum, assumptionType_Type.RISK);
+
+		initEEnum(validity_TypeEEnum, validity_Type.class, "validity_Type"); //$NON-NLS-1$
+		addEEnumLiteral(validity_TypeEEnum, validity_Type.VALID);
+		addEEnumLiteral(validity_TypeEEnum, validity_Type.INVALID);
 
 		// Create resource
 		createResource(eNS_URI);

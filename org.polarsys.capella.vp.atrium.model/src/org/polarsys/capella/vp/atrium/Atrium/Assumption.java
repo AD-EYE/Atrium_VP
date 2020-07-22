@@ -85,17 +85,19 @@ public interface Assumption extends NamedElement, ElementExtension {
 
 	/**
 	 * Returns the value of the '<em><b>Validity</b></em>' attribute.
+	 * The literals are from the enumeration {@link org.polarsys.capella.vp.atrium.Atrium.validity_Type}.
 	
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Validity</em>' attribute.
-	 * @see #setValidity(String)
+	 * @see org.polarsys.capella.vp.atrium.Atrium.validity_Type
+	 * @see #setValidity(validity_Type)
 	 * @see org.polarsys.capella.vp.atrium.Atrium.AtriumPackage#getAssumption_Validity()
 	 * @model
 	 * @generated
 	 */
 
-	String getValidity();
+	validity_Type getValidity();
 
 	/**
 	 * Sets the value of the '{@link org.polarsys.capella.vp.atrium.Atrium.Assumption#getValidity <em>Validity</em>}' attribute.
@@ -103,11 +105,12 @@ public interface Assumption extends NamedElement, ElementExtension {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Validity</em>' attribute.
+	 * @see org.polarsys.capella.vp.atrium.Atrium.validity_Type
 	 * @see #getValidity()
 	 * @generated
 	 */
 
-	void setValidity(String value);
+	void setValidity(validity_Type value);
 
 	/**
 	 * Returns the value of the '<em><b>Responsible Architect</b></em>' attribute.
@@ -167,13 +170,13 @@ public interface Assumption extends NamedElement, ElementExtension {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Date Of Completion</em>' attribute.
-	 * @see #setDateOfCompletion(Date)
+	 * @see #setDateOfCompletion(String)
 	 * @see org.polarsys.capella.vp.atrium.Atrium.AtriumPackage#getAssumption_DateOfCompletion()
 	 * @model
 	 * @generated
 	 */
 
-	Date getDateOfCompletion();
+	String getDateOfCompletion();
 
 	/**
 	 * Sets the value of the '{@link org.polarsys.capella.vp.atrium.Atrium.Assumption#getDateOfCompletion <em>Date Of Completion</em>}' attribute.
@@ -185,7 +188,7 @@ public interface Assumption extends NamedElement, ElementExtension {
 	 * @generated
 	 */
 
-	void setDateOfCompletion(Date value);
+	void setDateOfCompletion(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Assumption Type</b></em>' attribute.

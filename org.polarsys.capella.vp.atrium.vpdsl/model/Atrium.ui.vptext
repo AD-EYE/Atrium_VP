@@ -61,7 +61,7 @@ UI Atrium_Assumption {
 			Field assumptionTypeField label: "Assumption Type" type radiobox , mapped-to Atrium.data.Assumption.assumptionType
 			Field contentField1 label: "Content" type text , mapped-to Atrium.data.Assumption.content
 			Field rationaleField label: "Rationale" type text , mapped-to Atrium.data.Assumption.rationale
-			Field validityField label: "Validity" type text , mapped-to Atrium.data.Assumption.validity
+			Field validityField label: "Validity" type radiobox , mapped-to Atrium.data.Assumption.validity
 			Field responsibleArchitectField label: "Responsible Architect" type text , mapped-to Atrium.data.Assumption.responsibleArchitect
 			Field responsibleExpertField label: "Responsible Expert" type text , mapped-to Atrium.data.Assumption.responsibleExpert
 			Field dateOfCompletionField label: "Date Of Completion" type text , mapped-to Atrium.data.Assumption.dateOfCompletion

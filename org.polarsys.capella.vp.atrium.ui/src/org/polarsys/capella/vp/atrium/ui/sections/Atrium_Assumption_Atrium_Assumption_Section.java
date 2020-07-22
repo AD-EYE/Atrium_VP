@@ -23,6 +23,7 @@ import org.polarsys.kitalpha.ad.services.manager.ViewpointManager;
 import org.polarsys.capella.core.ui.properties.fields.*;
 
 import org.polarsys.capella.vp.atrium.ui.fields.AssumptionTypeField_semanticKindGroup;
+import org.polarsys.capella.vp.atrium.ui.fields.ValidityField_semanticKindGroup;
 import org.polarsys.capella.core.data.capellacore.CapellaElement;
 import org.polarsys.capella.vp.atrium.Atrium.AtriumPackage;
 import org.polarsys.capella.vp.atrium.Atrium.Assumption;
@@ -64,7 +65,7 @@ public class Atrium_Assumption_Atrium_Assumption_Section extends AbstractSection
 	* <!-- end-user-doc -->
 	* @generated
 	*/
-	private TextValueGroup ValidityField;
+	private ValidityField_semanticKindGroup ValidityField;
 
 	/**
 	* <!-- begin-model-doc -->
@@ -219,7 +220,7 @@ public class Atrium_Assumption_Atrium_Assumption_Section extends AbstractSection
 
 		RationaleField = new TextValueGroup(Atrium_Assumption_AttributeGroup, "Rationale :", getWidgetFactory(), true);
 
-		ValidityField = new TextValueGroup(Atrium_Assumption_AttributeGroup, "Validity :", getWidgetFactory(), true);
+		ValidityField = new ValidityField_semanticKindGroup(Atrium_Assumption_AttributeGroup, getWidgetFactory());
 
 		ResponsibleArchitectField = new TextValueGroup(Atrium_Assumption_AttributeGroup, "Responsible Architect :",
 				getWidgetFactory(), true);

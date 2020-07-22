@@ -26,6 +26,7 @@ import org.polarsys.capella.vp.atrium.Atrium.DG_list;
 import org.polarsys.capella.vp.atrium.Atrium.ElementStateAtrium;
 import org.polarsys.capella.vp.atrium.Atrium.FailureMode;
 import org.polarsys.capella.vp.atrium.Atrium.Failure_list;
+import org.polarsys.capella.vp.atrium.Atrium.validity_Type;
 import org.polarsys.capella.vp.atrium.Atrium.impl.AtriumFactoryImpl;
 import org.polarsys.capella.vp.atrium.Atrium.Assumption;
 import org.polarsys.capella.vp.atrium.Atrium.Assumption_list;
@@ -166,7 +167,7 @@ public class OpenActionService {
 
 			myAssumption.setContent("Hello there");
 			myAssumption.setRationale("General Kenobi");
-			myAssumption.setValidity("yes");
+			myAssumption.setValidity(validity_Type.INVALID);
 
 			((CapellaElement) myAssumption).setId(EcoreUtil.generateUUID());
 			((ExtensibleElement) my_Assumption_list).getOwnedExtensions().add((ElementExtension) myAssumption);

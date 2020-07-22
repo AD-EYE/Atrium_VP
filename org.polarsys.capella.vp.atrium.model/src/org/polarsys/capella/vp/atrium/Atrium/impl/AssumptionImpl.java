@@ -13,6 +13,7 @@ import org.polarsys.capella.core.data.capellacore.impl.NamedElementImpl;
 import org.polarsys.capella.vp.atrium.Atrium.Assumption;
 import org.polarsys.capella.vp.atrium.Atrium.AtriumPackage;
 import org.polarsys.capella.vp.atrium.Atrium.assumptionType_Type;
+import org.polarsys.capella.vp.atrium.Atrium.validity_Type;
 
 /**
  * <!-- begin-user-doc -->
@@ -103,7 +104,7 @@ public class AssumptionImpl extends NamedElementImpl implements Assumption {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String VALIDITY_EDEFAULT = null;
+	protected static final validity_Type VALIDITY_EDEFAULT = validity_Type.VALID;
 
 	/**
 	 * The cached value of the '{@link #getValidity() <em>Validity</em>}' attribute.
@@ -113,7 +114,7 @@ public class AssumptionImpl extends NamedElementImpl implements Assumption {
 	 * @generated
 	 * @ordered
 	 */
-	protected String validity = VALIDITY_EDEFAULT;
+	protected validity_Type validity = VALIDITY_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getResponsibleArchitect() <em>Responsible Architect</em>}' attribute.
@@ -163,7 +164,7 @@ public class AssumptionImpl extends NamedElementImpl implements Assumption {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Date DATE_OF_COMPLETION_EDEFAULT = null;
+	protected static final String DATE_OF_COMPLETION_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getDateOfCompletion() <em>Date Of Completion</em>}' attribute.
@@ -173,7 +174,7 @@ public class AssumptionImpl extends NamedElementImpl implements Assumption {
 	 * @generated
 	 * @ordered
 	 */
-	protected Date dateOfCompletion = DATE_OF_COMPLETION_EDEFAULT;
+	protected String dateOfCompletion = DATE_OF_COMPLETION_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -261,7 +262,7 @@ public class AssumptionImpl extends NamedElementImpl implements Assumption {
 	 */
 
 	@Override
-	public String getValidity() {
+	public validity_Type getValidity() {
 
 		return validity;
 	}
@@ -273,10 +274,10 @@ public class AssumptionImpl extends NamedElementImpl implements Assumption {
 	 */
 
 	@Override
-	public void setValidity(String newValidity) {
+	public void setValidity(validity_Type newValidity) {
 
-		String oldValidity = validity;
-		validity = newValidity;
+		validity_Type oldValidity = validity;
+		validity = newValidity == null ? VALIDITY_EDEFAULT : newValidity;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, AtriumPackage.ASSUMPTION__VALIDITY, oldValidity,
 					validity));
@@ -348,7 +349,7 @@ public class AssumptionImpl extends NamedElementImpl implements Assumption {
 	 */
 
 	@Override
-	public Date getDateOfCompletion() {
+	public String getDateOfCompletion() {
 
 		return dateOfCompletion;
 	}
@@ -360,9 +361,9 @@ public class AssumptionImpl extends NamedElementImpl implements Assumption {
 	 */
 
 	@Override
-	public void setDateOfCompletion(Date newDateOfCompletion) {
+	public void setDateOfCompletion(String newDateOfCompletion) {
 
-		Date oldDateOfCompletion = dateOfCompletion;
+		String oldDateOfCompletion = dateOfCompletion;
 		dateOfCompletion = newDateOfCompletion;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, AtriumPackage.ASSUMPTION__DATE_OF_COMPLETION,
@@ -443,7 +444,7 @@ public class AssumptionImpl extends NamedElementImpl implements Assumption {
 			setRationale((String) newValue);
 			return;
 		case AtriumPackage.ASSUMPTION__VALIDITY:
-			setValidity((String) newValue);
+			setValidity((validity_Type) newValue);
 			return;
 		case AtriumPackage.ASSUMPTION__RESPONSIBLE_ARCHITECT:
 			setResponsibleArchitect((String) newValue);
@@ -452,7 +453,7 @@ public class AssumptionImpl extends NamedElementImpl implements Assumption {
 			setResponsibleExpert((String) newValue);
 			return;
 		case AtriumPackage.ASSUMPTION__DATE_OF_COMPLETION:
-			setDateOfCompletion((Date) newValue);
+			setDateOfCompletion((String) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -506,7 +507,7 @@ public class AssumptionImpl extends NamedElementImpl implements Assumption {
 		case AtriumPackage.ASSUMPTION__RATIONALE:
 			return RATIONALE_EDEFAULT == null ? rationale != null : !RATIONALE_EDEFAULT.equals(rationale);
 		case AtriumPackage.ASSUMPTION__VALIDITY:
-			return VALIDITY_EDEFAULT == null ? validity != null : !VALIDITY_EDEFAULT.equals(validity);
+			return validity != VALIDITY_EDEFAULT;
 		case AtriumPackage.ASSUMPTION__RESPONSIBLE_ARCHITECT:
 			return RESPONSIBLE_ARCHITECT_EDEFAULT == null ? responsibleArchitect != null
 					: !RESPONSIBLE_ARCHITECT_EDEFAULT.equals(responsibleArchitect);

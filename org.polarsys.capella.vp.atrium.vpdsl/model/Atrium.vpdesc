@@ -54,8 +54,10 @@
         </owned_type>
       </VP_Class_Attributes>
       <VP_Class_Attributes name="validity">
+        <owned_values name="Valid" literal="Valid"/>
+        <owned_values name="Invalid" literal="Invalid"/>
         <owned_type xsi:type="vpdesc:ExternalAttributeType">
-          <type href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <type href="http://www.eclipse.org/emf/2002/Ecore#//EEnumerator"/>
         </owned_type>
       </VP_Class_Attributes>
       <VP_Class_Attributes name="responsibleArchitect">
@@ -70,7 +72,7 @@
       </VP_Class_Attributes>
       <VP_Class_Attributes name="dateOfCompletion">
         <owned_type xsi:type="vpdesc:ExternalAttributeType">
-          <type href="http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+          <type href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         </owned_type>
       </VP_Class_Attributes>
       <extends href="http://www.polarsys.org/capella/core/fa/1.4.0#//AbstractFunction"/>
@@ -178,7 +180,7 @@
           <UI_fields name="rationaleField" label="Rationale">
             <Mapping UI_Field_Mapped_To="//@VP_Data/@VP_Classes.6/@VP_Class_Attributes.2"/>
           </UI_fields>
-          <UI_fields name="validityField" label="Validity">
+          <UI_fields name="validityField" label="Validity" type="radiobox">
             <Mapping UI_Field_Mapped_To="//@VP_Data/@VP_Classes.6/@VP_Class_Attributes.3"/>
           </UI_fields>
           <UI_fields name="responsibleArchitectField" label="Responsible Architect">

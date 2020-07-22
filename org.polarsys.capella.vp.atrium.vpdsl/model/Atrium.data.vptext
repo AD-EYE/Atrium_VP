@@ -38,10 +38,10 @@ Data Atrium.data {
 			assumptionType type ecore.EEnumerator values ( Clarification , Task , Risk )
 			content type ecore.EString
 			rationale type ecore.EString
-			validity type ecore.EString
+			validity type ecore.EEnumerator values ( Valid , Invalid )
 			responsibleArchitect type ecore.EString
 			responsibleExpert type ecore.EString
-			dateOfCompletion type ecore.EDate
+			dateOfCompletion type ecore.EString
 	}
 	Class DG {
 		extends fa.AbstractFunction

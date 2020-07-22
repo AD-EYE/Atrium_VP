@@ -2626,6 +2626,16 @@ public interface AtriumPackage extends EPackage {
 	int ASSUMPTION_TYPE_TYPE = 11;
 
 	/**
+	 * The meta object id for the '{@link org.polarsys.capella.vp.atrium.Atrium.validity_Type <em>validity Type</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.capella.vp.atrium.Atrium.validity_Type
+	 * @see org.polarsys.capella.vp.atrium.Atrium.impl.AtriumPackageImpl#getvalidity_Type()
+	 * @generated
+	 */
+	int VALIDITY_TYPE = 12;
+
+	/**
 	 * Returns the meta object for class '{@link org.polarsys.capella.vp.atrium.Atrium.CFA_list <em>CFA list</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2955,6 +2965,16 @@ public interface AtriumPackage extends EPackage {
 	EEnum getassumptionType_Type();
 
 	/**
+	 * Returns the meta object for enum '{@link org.polarsys.capella.vp.atrium.Atrium.validity_Type <em>validity Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>validity Type</em>'.
+	 * @see org.polarsys.capella.vp.atrium.Atrium.validity_Type
+	 * @generated
+	 */
+	EEnum getvalidity_Type();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3247,6 +3267,16 @@ public interface AtriumPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum ASSUMPTION_TYPE_TYPE = eINSTANCE.getassumptionType_Type();
+
+		/**
+		 * The meta object literal for the '{@link org.polarsys.capella.vp.atrium.Atrium.validity_Type <em>validity Type</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.polarsys.capella.vp.atrium.Atrium.validity_Type
+		 * @see org.polarsys.capella.vp.atrium.Atrium.impl.AtriumPackageImpl#getvalidity_Type()
+		 * @generated
+		 */
+		EEnum VALIDITY_TYPE = eINSTANCE.getvalidity_Type();
 
 	}
 

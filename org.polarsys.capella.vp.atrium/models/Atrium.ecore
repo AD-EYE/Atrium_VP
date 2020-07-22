@@ -66,10 +66,10 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="assumptionType" eType="#//assumptionType_Type"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="content" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="rationale" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="validity" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="validity" eType="#//validity_Type"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="responsibleArchitect" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="responsibleExpert" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dateOfCompletion" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dateOfCompletion" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DG" eSuperTypes="platform:/plugin/org.polarsys.capella.core.data.gen/model/CapellaCore.ecore#//NamedElement platform:/plugin/org.polarsys.kitalpha.emde/model/eMDE.ecore#//ElementExtension">
     <eAnnotations source="http://www.polarsys.org/kitalpha/emde/1.0.0/constraint">
@@ -116,5 +116,9 @@
     <eLiterals name="Clarification" literal="Clarification"/>
     <eLiterals name="Task" value="1" literal="Task"/>
     <eLiterals name="Risk" value="2" literal="Risk"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="validity_Type">
+    <eLiterals name="Valid" literal="Valid"/>
+    <eLiterals name="Invalid" value="1" literal="Invalid"/>
   </eClassifiers>
 </ecore:EPackage>
