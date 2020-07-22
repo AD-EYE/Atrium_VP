@@ -41,7 +41,6 @@ public class AtriumProcess extends javax.swing.JFrame {
 	
 	DefaultListModel<String> nameLinkedAssumption = new DefaultListModel<String>();
 	DefaultListModel<String> nameUnlinkedAssumption = new DefaultListModel<String>();
-	
 	DefaultComboBoxModel<String> ListFailureMode = new DefaultComboBoxModel<String>();
 	
 	LogicalComponentPkg the_LogicalComponentPkg = null;
@@ -141,41 +140,36 @@ public class AtriumProcess extends javax.swing.JFrame {
 		}
 		
 		TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(root);
-		domain.getCommandStack().execute(new RecordingCommand(domain) {
+		domain.getCommandStack().execute(new RecordingCommand(domain) { // in a transaction context, create any list that has not been found
 	        @Override
 	        protected void doExecute() {
 	        	if (the_Assumption_list==null)
 	        	{
 	        		the_Assumption_list = AtriumFactoryImpl.eINSTANCE.createAssumption_list();
-
 	        		((CapellaElement) the_Assumption_list).setId(EcoreUtil.generateUUID());
 	        		((ExtensibleElement) the_LogicalComponentPkg).getOwnedExtensions().add((ElementExtension) the_Assumption_list);
 	        	}
 	        	if (the_DA_list==null)
 	        	{
 	        		the_DA_list = AtriumFactoryImpl.eINSTANCE.createDA_list();
-
 	        		((CapellaElement) the_DA_list).setId(EcoreUtil.generateUUID());
 	        		((ExtensibleElement) the_LogicalComponentPkg).getOwnedExtensions().add((ElementExtension) the_DA_list);
 	        	}
 	        	if (the_DG_list==null)
 	        	{
 	        		the_DG_list = AtriumFactoryImpl.eINSTANCE.createDG_list();
-
 	        		((CapellaElement) the_DG_list).setId(EcoreUtil.generateUUID());
 	        		((ExtensibleElement) the_LogicalComponentPkg).getOwnedExtensions().add((ElementExtension) the_DG_list);
 	        	}
 	        	if (the_CFA_list==null)
 	        	{
 	        		the_CFA_list = AtriumFactoryImpl.eINSTANCE.createCFA_list();
-
 	        		((CapellaElement) the_CFA_list).setId(EcoreUtil.generateUUID());
 	        		((ExtensibleElement) the_LogicalComponentPkg).getOwnedExtensions().add((ElementExtension) the_CFA_list);
 	        	}
 	        	if (the_Failure_list==null)
 	        	{
 	        		the_Failure_list = AtriumFactoryImpl.eINSTANCE.createFailure_list();
-
 	        		((CapellaElement) the_Failure_list).setId(EcoreUtil.generateUUID());
 	        		((ExtensibleElement) the_LogicalComponentPkg).getOwnedExtensions().add((ElementExtension) the_Failure_list);
 	        	}
@@ -422,7 +416,7 @@ public class AtriumProcess extends javax.swing.JFrame {
 	
 	private void createCFAifNew()
 	{
-		if ((CapellaElementName!="Capella Element Example")&&(FailureName!="Failure Example"))//do nothing if not
+		if ((CapellaElementName!="Capella Element Example")&&(FailureName!="Failure Example"))//do nothing if a CFA is not chosen yet
 		{
 			boolean found=false;
 			for (CFA myCFA : listCFA)//we are not sure to find a matching CFA
@@ -483,13 +477,17 @@ public class AtriumProcess extends javax.swing.JFrame {
 
 	
 	private void jButtonAddLinkedActionPerformed(java.awt.event.ActionEvent evt) {
-		//TODO check later if this is legit
-		moveAssumption("add");
+		if (!(jListUnlinkedAssumptions.getSelectedValue()==null)) //if one unlinked assumption is selected
+		{
+			moveAssumption("add");
+		}
 	}
 	
 	private void jButtonRemoveLinkedActionPerformed(java.awt.event.ActionEvent evt) {
-		//TODO check later if this is legit
-		moveAssumption("remove");
+		if (!(jListLinkedAssumptions.getSelectedValue()==null)) //if one linked assumption is selected
+		{
+			moveAssumption("remove");
+		}
 	}
 	
 	private void jComboBoxCapellaElementActionPerformed(java.awt.event.ActionEvent evt) {
@@ -513,19 +511,15 @@ public class AtriumProcess extends javax.swing.JFrame {
 		}
     }
 	
-	private void jButtonAddAssumptionActionPerformed(java.awt.event.ActionEvent evt) {                                                     
-        // TODO add your handling code here:
+	private void jButtonAddAssumptionActionPerformed(java.awt.event.ActionEvent evt) {
 		String name = JOptionPane.showInputDialog(getParent(), "Please name the new Assumption", "MyNewAssumption");
 		if (name != null) { //if the user has not pressed "cancel"
 			createAssumption(name);
 		}
     }   
 
-	
 	private String CapellaElementName= "Capella Element Example";
 	private String FailureName= "Failure Example";
-		
-	// Variables declaration - do not modify
 	private javax.swing.JButton jButtonAddAssumption;
     private javax.swing.JButton jButtonAddFailure;
 	private javax.swing.JButton jButtonAddLinked;
@@ -546,5 +540,4 @@ public class AtriumProcess extends javax.swing.JFrame {
 	private javax.swing.JScrollPane jScrollPane1;
 	private javax.swing.JScrollPane jScrollPane2;
 	private javax.swing.JTextField jTextFieldResultingCFA;
-	// End of variables declaration
 }
