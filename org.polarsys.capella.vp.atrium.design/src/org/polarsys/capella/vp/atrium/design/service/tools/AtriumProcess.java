@@ -25,6 +25,8 @@ import org.polarsys.capella.vp.atrium.Atrium.Assumption;
 import org.polarsys.capella.vp.atrium.Atrium.Assumption_list;
 import org.polarsys.capella.vp.atrium.Atrium.CFA;
 import org.polarsys.capella.vp.atrium.Atrium.CFA_list;
+import org.polarsys.capella.vp.atrium.Atrium.DA_list;
+import org.polarsys.capella.vp.atrium.Atrium.DG_list;
 import org.polarsys.capella.vp.atrium.Atrium.ElementStateAtrium;
 import org.polarsys.capella.vp.atrium.Atrium.FailureMode;
 import org.polarsys.capella.vp.atrium.Atrium.Failure_list;
@@ -42,15 +44,20 @@ public class AtriumProcess extends javax.swing.JFrame {
 	
 	DefaultComboBoxModel<String> ListFailureMode = new DefaultComboBoxModel<String>();
 	
+	LogicalComponentPkg the_LogicalComponentPkg = null;
 	CFA_list the_CFA_list = null;
 	Failure_list the_Failure_list = null;
 	Assumption_list the_Assumption_list = null;
+	DG_list the_DG_list = null;
+	DA_list the_DA_list= null;
 	
 	public AtriumProcess(EObject element) {
 
-		EObject root = element.eContainer();
-		if (!(root instanceof LogicalArchitecture)) {
-			System.out.println("It will be fixed later hopefully, but in the meantime please click on the diagram.");
+		EObject root = element;
+		while (!(root instanceof LogicalArchitecture))
+		{
+			root = root.eContainer();
+			//TODO add protection there
 		}
 
 		initComponents(root);
@@ -77,41 +84,37 @@ public class AtriumProcess extends javax.swing.JFrame {
 		jLabel8 = new javax.swing.JLabel();
 		jLabel9 = new javax.swing.JLabel();
 		jTextFieldResultingCFA = new javax.swing.JTextField();
-		jButtonFinish = new javax.swing.JButton();
         jButtonAddFailure = new javax.swing.JButton();
         jButtonAddAssumption = new javax.swing.JButton();
-
 		
 		
-		//handle list of capella element NAME
-		//EList <EObject> ListCapellaElement = null;
+		//handle list of Capella element NAME
 		DefaultComboBoxModel<String> ListCapellaElementName = new DefaultComboBoxModel<String>();
 		
 		LogicalArchitecture logArch = (LogicalArchitecture) root;
 		TreeIterator<EObject> treeArch = logArch.eAllContents();
 		
 		EObject node= null;
-		while(treeArch.hasNext())  {
+		
+		while(treeArch.hasNext())
+		{
 		  node=treeArch.next();
 		  if (node instanceof LogicalFunction)
 		  {
 			  LogicalFunction lf = (LogicalFunction) node;
 			  ListCapellaElementName.addElement("[LF] " + lf.getName());
-			  //ListCapellaElement.add(lf);
 		  }
 		  
 		  if (node instanceof LogicalComponent)
 		  {
 			  LogicalComponent lc = (LogicalComponent) node;
 			  ListCapellaElementName.addElement("[LC] " + lc.getName());
-			  //ListCapellaElement.add(lc);
 		  }
 		  
 		  if (node instanceof FunctionalExchange)
 		  {
 			  FunctionalExchange fe = (FunctionalExchange) node;
 			  ListCapellaElementName.addElement("[FE] " + fe.getName());
-			  //ListCapellaElement.add(fe);
 		  }
 		  
 		  if (node instanceof FailureMode)
@@ -120,34 +123,65 @@ public class AtriumProcess extends javax.swing.JFrame {
 			  ListFailureMode.addElement(fm.getName());
 		  }
 		  
-		  if (node instanceof Failure_list)
-		  {
-			  the_Failure_list = (Failure_list) node;
-		  }
+		  if (node instanceof CFA){listCFA.add((CFA) node);}
 		  
-		  if (node instanceof CFA)
-		  {
-			  CFA myCFA = (CFA) node;
-			  listCFA.add(myCFA);
-		  }
+		  if (node instanceof Assumption){listAssumption.add((Assumption) node);}
 		  
-		  if (node instanceof CFA_list)
-		  {
-			  the_CFA_list = (CFA_list) node;
-		  }
+		  if (node instanceof LogicalComponentPkg){the_LogicalComponentPkg = (LogicalComponentPkg) node;}
 		  
-		  if (node instanceof Assumption)
-		  {
-			  Assumption myAssumption = (Assumption) node;
-			  listAssumption.add(myAssumption);
-		  }
+		  if (node instanceof CFA_list){the_CFA_list = (CFA_list) node;}
 		  
-		  if (node instanceof Assumption_list)
-		  {
-			  the_Assumption_list = (Assumption_list) node;
-		  }
+		  if (node instanceof Failure_list){the_Failure_list = (Failure_list) node;}
 		  
+		  if (node instanceof Assumption_list){the_Assumption_list = (Assumption_list) node;}
+		  
+		  if (node instanceof DA_list){the_DA_list = (DA_list) node;}
+		  
+		  if (node instanceof DG_list){the_DG_list = (DG_list) node;}
 		}
+		
+		TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(root);
+		domain.getCommandStack().execute(new RecordingCommand(domain) {
+	        @Override
+	        protected void doExecute() {
+	        	if (the_Assumption_list==null)
+	        	{
+	        		the_Assumption_list = AtriumFactoryImpl.eINSTANCE.createAssumption_list();
+
+	        		((CapellaElement) the_Assumption_list).setId(EcoreUtil.generateUUID());
+	        		((ExtensibleElement) the_LogicalComponentPkg).getOwnedExtensions().add((ElementExtension) the_Assumption_list);
+	        	}
+	        	if (the_DA_list==null)
+	        	{
+	        		the_DA_list = AtriumFactoryImpl.eINSTANCE.createDA_list();
+
+	        		((CapellaElement) the_DA_list).setId(EcoreUtil.generateUUID());
+	        		((ExtensibleElement) the_LogicalComponentPkg).getOwnedExtensions().add((ElementExtension) the_DA_list);
+	        	}
+	        	if (the_DG_list==null)
+	        	{
+	        		the_DG_list = AtriumFactoryImpl.eINSTANCE.createDG_list();
+
+	        		((CapellaElement) the_DG_list).setId(EcoreUtil.generateUUID());
+	        		((ExtensibleElement) the_LogicalComponentPkg).getOwnedExtensions().add((ElementExtension) the_DG_list);
+	        	}
+	        	if (the_CFA_list==null)
+	        	{
+	        		the_CFA_list = AtriumFactoryImpl.eINSTANCE.createCFA_list();
+
+	        		((CapellaElement) the_CFA_list).setId(EcoreUtil.generateUUID());
+	        		((ExtensibleElement) the_LogicalComponentPkg).getOwnedExtensions().add((ElementExtension) the_CFA_list);
+	        	}
+	        	if (the_Failure_list==null)
+	        	{
+	        		the_Failure_list = AtriumFactoryImpl.eINSTANCE.createFailure_list();
+
+	        		((CapellaElement) the_Failure_list).setId(EcoreUtil.generateUUID());
+	        		((ExtensibleElement) the_LogicalComponentPkg).getOwnedExtensions().add((ElementExtension) the_Failure_list);
+	        	}
+	        }
+	    });
+		
 
 		jScrollPane1.setViewportView(jListUnlinkedAssumptions);
 		jScrollPane2.setViewportView(jListLinkedAssumptions);
@@ -192,13 +226,6 @@ public class AtriumProcess extends javax.swing.JFrame {
 		jLabel8.setText("Failure Mode");
 		jLabel9.setText("Resulting CFA");
 		jTextFieldResultingCFA.setText("{ " + CapellaElementName + " ; " + FailureName + " }");
-		
-		jButtonFinish.setText("Finish and save");
-		jButtonFinish.addActionListener(new java.awt.event.ActionListener() {
-			public void actionPerformed(java.awt.event.ActionEvent evt) {
-				jButtonFinishActionPerformed(evt);
-			}
-		});
 		
 		jButtonAddFailure.setText("Add Failure Mode");
         jButtonAddFailure.addActionListener(new java.awt.event.ActionListener() {
@@ -477,12 +504,7 @@ public class AtriumProcess extends javax.swing.JFrame {
     	jTextFieldResultingCFA.setText("{ " + CapellaElementName + " ; " + FailureName + " }");
 		createCFAifNew();
 		updateDisplayCFA();
-    }                                                    
-
-	private void jButtonFinishActionPerformed(java.awt.event.ActionEvent evt) {
-		// TODO add your handling code here:
-		System.out.println(listCFA);
-	}
+    }
 	
 	private void jButtonAddFailureActionPerformed(java.awt.event.ActionEvent evt) {
 		String name = JOptionPane.showInputDialog(getParent(), "Please name the new Failure Mode", "MyNewFailure");
@@ -507,7 +529,6 @@ public class AtriumProcess extends javax.swing.JFrame {
 	private javax.swing.JButton jButtonAddAssumption;
     private javax.swing.JButton jButtonAddFailure;
 	private javax.swing.JButton jButtonAddLinked;
-	private javax.swing.JButton jButtonFinish;
 	private javax.swing.JButton jButtonRemoveLinked;
 	private javax.swing.JComboBox<String> jComboBoxCapellaElement;
 	private javax.swing.JComboBox<String> jComboBoxFailureMode;
