@@ -50,6 +50,10 @@ public class AtriumProcess extends javax.swing.JFrame {
 	DG_list the_DG_list = null;
 	DA_list the_DA_list= null;
 	
+	EditingFrameAssumption myEditor = new EditingFrameAssumption();
+	
+	
+	
 	public AtriumProcess(EObject element) {
 
 		EObject root = element;
@@ -176,6 +180,12 @@ public class AtriumProcess extends javax.swing.JFrame {
 	        }
 	    });
 		
+		
+		 jListLinkedAssumptions.addMouseListener(new java.awt.event.MouseAdapter() {
+	            public void mouseClicked(java.awt.event.MouseEvent evt) {
+	                jListLinkedAssumptionMouseClicked(evt);
+	            }
+	        });
 
 		jScrollPane1.setViewportView(jListUnlinkedAssumptions);
 		jScrollPane2.setViewportView(jListLinkedAssumptions);
@@ -517,6 +527,13 @@ public class AtriumProcess extends javax.swing.JFrame {
 			createAssumption(name);
 		}
     }   
+	
+	private void jListLinkedAssumptionMouseClicked(java.awt.event.MouseEvent evt) {
+        if (evt.getClickCount() == 2) {
+            myEditor.test();
+        }
+        
+    }      
 
 	private String CapellaElementName= "Capella Element Example";
 	private String FailureName= "Failure Example";
