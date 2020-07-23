@@ -221,7 +221,6 @@ public class AtriumProcess extends javax.swing.JFrame {
 			}
 		});
 		jComboBoxCapellaElement.setMaximumRowCount(16);
-		jComboBoxCapellaElement.setSelectedIndex(0);
 		
 		jComboBoxFailureMode.setModel(ListFailureMode);
         jComboBoxFailureMode.addActionListener(new java.awt.event.ActionListener() {
@@ -230,7 +229,6 @@ public class AtriumProcess extends javax.swing.JFrame {
             }
         });
         jComboBoxFailureMode.setMaximumRowCount(16);
-        jComboBoxFailureMode.setSelectedIndex(0);
       
 
         jLabel1.setText("Add to linked");
