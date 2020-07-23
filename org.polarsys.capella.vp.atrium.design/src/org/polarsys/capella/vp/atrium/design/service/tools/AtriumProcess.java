@@ -221,6 +221,7 @@ public class AtriumProcess extends javax.swing.JFrame {
 			}
 		});
 		jComboBoxCapellaElement.setMaximumRowCount(16);
+		jComboBoxCapellaElement.setSelectedIndex(0);
 		
 		jComboBoxFailureMode.setModel(ListFailureMode);
         jComboBoxFailureMode.addActionListener(new java.awt.event.ActionListener() {
@@ -229,6 +230,7 @@ public class AtriumProcess extends javax.swing.JFrame {
             }
         });
         jComboBoxFailureMode.setMaximumRowCount(16);
+        jComboBoxFailureMode.setSelectedIndex(0);
       
 
         jLabel1.setText("Add to linked");
@@ -477,7 +479,7 @@ public class AtriumProcess extends javax.swing.JFrame {
 		        }
 		    });
 		
-		ListFailureMode.addElement(newFailure.getName());//updating our local list
+		ListFailureMode.addElement(newFailure.getName());//updating our local ComboBox
 	}
 	
 	private void createAssumption(String name) {
@@ -528,15 +530,29 @@ public class AtriumProcess extends javax.swing.JFrame {
 	
 	private void jButtonAddFailureActionPerformed(java.awt.event.ActionEvent evt) {
 		String name = JOptionPane.showInputDialog(getParent(), "Please name the new Failure Mode", "MyNewFailure");
-		if (name != null) { //if the user has not pressed "cancel"
-			createFailureMode(name);
+		if (name != null) //if the user has not pressed "cancel"
+		{ 
+			boolean alreadyHere = false; //protection against existing name
+			for (int i=0; i<ListFailureMode.getSize();i++)
+			{
+				if (name.equals(ListFailureMode.getElementAt(i))){alreadyHere = true;}
+			}
+			if (!(alreadyHere)) {createFailureMode(name);}
+			else {JOptionPane.showMessageDialog(getParent(), "There is already a failure named like that, please chose another name.");}
 		}
-    }
+	}
 	
 	private void jButtonAddAssumptionActionPerformed(java.awt.event.ActionEvent evt) {
 		String name = JOptionPane.showInputDialog(getParent(), "Please name the new Assumption", "MyNewAssumption");
 		if (name != null) { //if the user has not pressed "cancel"
-			createAssumption(name);
+			
+			boolean alreadyHere = false; //protection against existing name
+			for (Assumption a : listAssumption)
+			{
+				if (name.equals(a.getName())){alreadyHere = true;}
+			}
+			if (!(alreadyHere)) {createAssumption(name);}
+			else {JOptionPane.showMessageDialog(getParent(), "There is already an assumption named like that, please chose another name.");}
 		}
     }   
 	
