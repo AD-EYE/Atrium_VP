@@ -1,5 +1,7 @@
 package org.polarsys.capella.vp.atrium.design.service.tools;
 
+import java.util.Collections;
+
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
@@ -91,34 +93,32 @@ public class AtriumProcess extends javax.swing.JFrame {
         jButtonAddFailure = new javax.swing.JButton();
         jButtonAddAssumption = new javax.swing.JButton();
 		
-		
-		//handle list of Capella element NAME
-		DefaultComboBoxModel<String> ListCapellaElementName = new DefaultComboBoxModel<String>();
+		EList<String> ListCapellaElementName = new BasicEList<String>();
 		
 		LogicalArchitecture logArch = (LogicalArchitecture) root;
 		TreeIterator<EObject> treeArch = logArch.eAllContents();
 		
-		EObject node= null;
+		EObject node = null;
 		
 		while(treeArch.hasNext())
 		{
-		  node=treeArch.next();
+		  node = treeArch.next();
 		  if (node instanceof LogicalFunction)
 		  {
 			  LogicalFunction lf = (LogicalFunction) node;
-			  ListCapellaElementName.addElement("[LF] " + lf.getName());
+			  ListCapellaElementName.add("[LF] " + lf.getName());
 		  }
 		  
 		  if (node instanceof LogicalComponent)
 		  {
 			  LogicalComponent lc = (LogicalComponent) node;
-			  ListCapellaElementName.addElement("[LC] " + lc.getName());
+			  ListCapellaElementName.add("[LC] " + lc.getName());
 		  }
 		  
 		  if (node instanceof FunctionalExchange)
 		  {
 			  FunctionalExchange fe = (FunctionalExchange) node;
-			  ListCapellaElementName.addElement("[FE] " + fe.getName());
+			  ListCapellaElementName.add("[FE] " + fe.getName());
 		  }
 		  
 		  if (node instanceof FailureMode)
@@ -143,6 +143,9 @@ public class AtriumProcess extends javax.swing.JFrame {
 		  
 		  if (node instanceof DG_list){the_DG_list = (DG_list) node;}
 		}
+		
+		Collections.sort(ListCapellaElementName);
+		DefaultComboBoxModel <String> ListCapellaElementNameBox = new DefaultComboBoxModel<String>(ListCapellaElementName.toArray(new String[ListCapellaElementName.size()]));
 		
 		TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(root);
 		domain.getCommandStack().execute(new RecordingCommand(domain) { // in a transaction context, create any list that has not been found
@@ -211,12 +214,13 @@ public class AtriumProcess extends javax.swing.JFrame {
 			}
 		});
 
-		jComboBoxCapellaElement.setModel(ListCapellaElementName);
+		jComboBoxCapellaElement.setModel(ListCapellaElementNameBox);
 		jComboBoxCapellaElement.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				jComboBoxCapellaElementActionPerformed(evt);
 			}
 		});
+		jComboBoxCapellaElement.setMaximumRowCount(16);
 		
 		jComboBoxFailureMode.setModel(ListFailureMode);
         jComboBoxFailureMode.addActionListener(new java.awt.event.ActionListener() {
@@ -224,6 +228,7 @@ public class AtriumProcess extends javax.swing.JFrame {
                 jComboBoxFailureModeActionPerformed(evt);
             }
         });
+        jComboBoxFailureMode.setMaximumRowCount(16);
       
 
         jLabel1.setText("Add to linked");

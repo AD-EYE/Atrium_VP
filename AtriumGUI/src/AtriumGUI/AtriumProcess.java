@@ -106,6 +106,12 @@ public class AtriumProcess extends javax.swing.JFrame {
         jLabel16.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel16.setText("Date of Completion");
 
+        EditingResponsibleExpert.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EditingResponsibleExpertActionPerformed(evt);
+            }
+        });
+
         EditingContent.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 EditingContentActionPerformed(evt);
@@ -223,7 +229,6 @@ public class AtriumProcess extends javax.swing.JFrame {
                     .addGroup(EditingframeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(EditingRationale, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel11)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(EditingframeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel12)
                     .addComponent(isValid)
@@ -238,13 +243,13 @@ public class AtriumProcess extends javax.swing.JFrame {
                             .addComponent(jLabel14)
                             .addComponent(EditingResponsibleArchitect, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(35, 35, 35)))
-                .addGap(18, 18, 18)
+                .addGap(35, 35, 35)
                 .addGroup(EditingframeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel16)
                     .addComponent(EditingDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(26, 26, 26)
+                .addGap(7, 7, 7)
                 .addComponent(FinishAndSaveEditing, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -485,6 +490,10 @@ public class AtriumProcess extends javax.swing.JFrame {
     private void EditingRationaleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditingRationaleActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_EditingRationaleActionPerformed
+
+    private void EditingResponsibleExpertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditingResponsibleExpertActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_EditingResponsibleExpertActionPerformed
 
     
     
