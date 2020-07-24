@@ -53,7 +53,7 @@ public class AtriumProcess extends javax.swing.JFrame {
         buttonGroup2 = new javax.swing.ButtonGroup();
         jMenuItem1 = new javax.swing.JMenuItem();
         jSeparator1 = new javax.swing.JSeparator();
-        jTabbedPane1 = new javax.swing.JTabbedPane();
+        jTabbedPane = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jListUnlinkedAssumptions = new javax.swing.JList<>();
@@ -65,73 +65,73 @@ public class AtriumProcess extends javax.swing.JFrame {
         jButtonRemoveLinked = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        jComboBoxCFA = new javax.swing.JComboBox<>();
         jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        jComboBoxDG = new javax.swing.JComboBox<>();
         jLabel21 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jListUnlinkedAssumptions1 = new javax.swing.JList<>();
+        jListUnlinkedDA = new javax.swing.JList<>();
         jScrollPane4 = new javax.swing.JScrollPane();
-        jListLinkedAssumption1 = new javax.swing.JList<>();
+        jListLinkedDA = new javax.swing.JList<>();
         jLabel5 = new javax.swing.JLabel();
-        jButtonAddLinked1 = new javax.swing.JButton();
+        jButtonAddLinkedDA = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
-        jButtonRemoveLinked1 = new javax.swing.JButton();
+        jButtonRemoveLinkedDA = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
-        jComboBox3 = new javax.swing.JComboBox<>();
+        jComboBoxDG2 = new javax.swing.JComboBox<>();
         jLabel9 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
         jScrollPane14 = new javax.swing.JScrollPane();
-        jList11 = new javax.swing.JList<>();
+        jListUnlinkedSDG = new javax.swing.JList<>();
         jLabel37 = new javax.swing.JLabel();
         jScrollPane15 = new javax.swing.JScrollPane();
-        jList10 = new javax.swing.JList<>();
+        jListLinkedSDG = new javax.swing.JList<>();
         jLabel38 = new javax.swing.JLabel();
         jLabel39 = new javax.swing.JLabel();
-        jButtonAddLinked2 = new javax.swing.JButton();
+        jButtonAddLinkedSDG = new javax.swing.JButton();
         jLabel40 = new javax.swing.JLabel();
-        jButtonRemoveLinked2 = new javax.swing.JButton();
+        jButtonRemoveLinkedSDG = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane8 = new javax.swing.JScrollPane();
-        jList3 = new javax.swing.JList<>();
+        jListDG = new javax.swing.JList<>();
         jScrollPane6 = new javax.swing.JScrollPane();
-        jList4 = new javax.swing.JList<>();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        jListDA = new javax.swing.JList<>();
+        jButtonAddDG = new javax.swing.JButton();
+        jButtonAddDA = new javax.swing.JButton();
         jScrollPane9 = new javax.swing.JScrollPane();
-        jList5 = new javax.swing.JList<>();
+        jListCFA = new javax.swing.JList<>();
         jLabel25 = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
         jLabel27 = new javax.swing.JLabel();
         jLabel29 = new javax.swing.JLabel();
         jScrollPane13 = new javax.swing.JScrollPane();
-        jList9 = new javax.swing.JList<>();
-        jButton5 = new javax.swing.JButton();
+        jListSDG = new javax.swing.JList<>();
+        jButtonAddSDG = new javax.swing.JButton();
         jLabel36 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         jScrollPane7 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
+        jListAssumption = new javax.swing.JList<>();
         jButtonAddAssumption = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         jScrollPane11 = new javax.swing.JScrollPane();
-        jList7 = new javax.swing.JList<>();
+        jListODD = new javax.swing.JList<>();
         jScrollPane12 = new javax.swing.JScrollPane();
-        jList8 = new javax.swing.JList<>();
+        jListFR = new javax.swing.JList<>();
         jLabel32 = new javax.swing.JLabel();
         jLabel33 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        jButtonAddODD = new javax.swing.JButton();
+        jButtonAddFR = new javax.swing.JButton();
         jLabel34 = new javax.swing.JLabel();
         jLabel35 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jScrollPane5 = new javax.swing.JScrollPane();
-        jList2 = new javax.swing.JList<>();
+        jListFailure = new javax.swing.JList<>();
         jButtonAddFailure = new javax.swing.JButton();
         jLabel24 = new javax.swing.JLabel();
         jScrollPane10 = new javax.swing.JScrollPane();
-        jList6 = new javax.swing.JList<>();
+        jListCapella = new javax.swing.JList<>();
         jLabel30 = new javax.swing.JLabel();
         jLabel31 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
@@ -364,14 +364,19 @@ public class AtriumProcess extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel4.setText("Linked Assumptions");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBoxCFA.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jLabel19.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel19.setText("CFA");
 
         jLabel20.setText("linked to :");
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBoxDG.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBoxDG.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxDGActionPerformed(evt);
+            }
+        });
 
         jLabel21.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel21.setText("Design Goal");
@@ -408,11 +413,11 @@ public class AtriumProcess extends javax.swing.JFrame {
                                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel4)))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 680, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jComboBoxCFA, javax.swing.GroupLayout.PREFERRED_SIZE, 680, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jLabel20)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(jComboBoxDG, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(30, 30, 30))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel19)
@@ -429,9 +434,9 @@ public class AtriumProcess extends javax.swing.JFrame {
                     .addComponent(jLabel21))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboBoxCFA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel20)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jComboBoxDG, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(34, 34, 34)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -457,49 +462,49 @@ public class AtriumProcess extends javax.swing.JFrame {
                 .addGap(64, 64, 64))
         );
 
-        jTabbedPane1.addTab("Linking DG and Assumptions to CFA", jPanel1);
+        jTabbedPane.addTab("Linking DG and Assumptions to CFA", jPanel1);
 
-        jListUnlinkedAssumptions1.setModel(new javax.swing.AbstractListModel<String>() {
+        jListUnlinkedDA.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane3.setViewportView(jListUnlinkedAssumptions1);
+        jScrollPane3.setViewportView(jListUnlinkedDA);
 
-        jListLinkedAssumption1.setModel(new javax.swing.AbstractListModel<String>() {
+        jListLinkedDA.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jListLinkedAssumption1.addMouseListener(new java.awt.event.MouseAdapter() {
+        jListLinkedDA.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jListLinkedAssumption1MouseClicked(evt);
+                jListLinkedDAMouseClicked(evt);
             }
         });
-        jScrollPane4.setViewportView(jListLinkedAssumption1);
+        jScrollPane4.setViewportView(jListLinkedDA);
 
         jLabel5.setText("Add to linked");
 
-        jButtonAddLinked1.setText("=>");
-        jButtonAddLinked1.addActionListener(new java.awt.event.ActionListener() {
+        jButtonAddLinkedDA.setText("=>");
+        jButtonAddLinkedDA.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonAddLinked1ActionPerformed(evt);
+                jButtonAddLinkedDAActionPerformed(evt);
             }
         });
 
         jLabel6.setText("Remove from linked");
 
-        jButtonRemoveLinked1.setText("<=");
-        jButtonRemoveLinked1.addActionListener(new java.awt.event.ActionListener() {
+        jButtonRemoveLinkedDA.setText("<=");
+        jButtonRemoveLinkedDA.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonRemoveLinked1ActionPerformed(evt);
+                jButtonRemoveLinkedDAActionPerformed(evt);
             }
         });
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel7.setText("Design Goal");
 
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBoxDG2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel9.setText("Unlinked Design Alternative");
@@ -507,41 +512,41 @@ public class AtriumProcess extends javax.swing.JFrame {
         jLabel23.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel23.setText("Linked Design Alternative");
 
-        jList11.setModel(new javax.swing.AbstractListModel<String>() {
+        jListUnlinkedSDG.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane14.setViewportView(jList11);
+        jScrollPane14.setViewportView(jListUnlinkedSDG);
 
         jLabel37.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel37.setText("Unlinked Sub-Design Goal");
 
-        jList10.setModel(new javax.swing.AbstractListModel<String>() {
+        jListLinkedSDG.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane15.setViewportView(jList10);
+        jScrollPane15.setViewportView(jListLinkedSDG);
 
         jLabel38.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel38.setText("Linked Sub-Design Goal");
 
         jLabel39.setText("Add to linked");
 
-        jButtonAddLinked2.setText("=>");
-        jButtonAddLinked2.addActionListener(new java.awt.event.ActionListener() {
+        jButtonAddLinkedSDG.setText("=>");
+        jButtonAddLinkedSDG.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonAddLinked2ActionPerformed(evt);
+                jButtonAddLinkedSDGActionPerformed(evt);
             }
         });
 
         jLabel40.setText("Remove from linked");
 
-        jButtonRemoveLinked2.setText("<=");
-        jButtonRemoveLinked2.addActionListener(new java.awt.event.ActionListener() {
+        jButtonRemoveLinkedSDG.setText("<=");
+        jButtonRemoveLinkedSDG.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonRemoveLinked2ActionPerformed(evt);
+                jButtonRemoveLinkedSDGActionPerformed(evt);
             }
         });
 
@@ -565,7 +570,7 @@ public class AtriumProcess extends javax.swing.JFrame {
                                     .addGroup(jPanel2Layout.createSequentialGroup()
                                         .addGap(48, 48, 48)
                                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jButtonAddLinked1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jButtonAddLinkedDA, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(jLabel5)))
                                     .addGroup(jPanel2Layout.createSequentialGroup()
                                         .addGap(38, 38, 38)
@@ -576,10 +581,10 @@ public class AtriumProcess extends javax.swing.JFrame {
                                                 .addGap(10, 10, 10)
                                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                        .addComponent(jButtonAddLinked2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(jButtonAddLinkedSDG, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                         .addComponent(jLabel39)
-                                                        .addComponent(jButtonRemoveLinked1, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                    .addComponent(jButtonRemoveLinked2, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                                        .addComponent(jButtonRemoveLinkedDA, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                    .addComponent(jButtonRemoveLinkedSDG, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
                                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel2Layout.createSequentialGroup()
@@ -594,7 +599,7 @@ public class AtriumProcess extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel7)
-                            .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 703, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jComboBoxDG2, javax.swing.GroupLayout.PREFERRED_SIZE, 703, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanel2Layout.setVerticalGroup(
@@ -603,7 +608,7 @@ public class AtriumProcess extends javax.swing.JFrame {
                 .addContainerGap(20, Short.MAX_VALUE)
                 .addComponent(jLabel7)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jComboBoxDG2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(33, 33, 33)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel23, javax.swing.GroupLayout.Alignment.TRAILING)
@@ -614,11 +619,11 @@ public class AtriumProcess extends javax.swing.JFrame {
                         .addGap(25, 25, 25)
                         .addComponent(jLabel5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButtonAddLinked1)
+                        .addComponent(jButtonAddLinkedDA)
                         .addGap(18, 18, 18)
                         .addComponent(jLabel6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButtonRemoveLinked1))
+                        .addComponent(jButtonRemoveLinkedDA))
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)
                     .addComponent(jScrollPane4))
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -639,50 +644,50 @@ public class AtriumProcess extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
                         .addComponent(jLabel39)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButtonAddLinked2)
+                        .addComponent(jButtonAddLinkedSDG)
                         .addGap(18, 18, 18)
                         .addComponent(jLabel40)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButtonRemoveLinked2)
+                        .addComponent(jButtonRemoveLinkedSDG)
                         .addGap(51, 51, 51))))
         );
 
-        jTabbedPane1.addTab("Linking DG and DA", jPanel2);
+        jTabbedPane.addTab("Linking DG and DA", jPanel2);
 
-        jList3.setModel(new javax.swing.AbstractListModel<String>() {
+        jListDG.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane8.setViewportView(jList3);
+        jScrollPane8.setViewportView(jListDG);
 
-        jList4.setModel(new javax.swing.AbstractListModel<String>() {
+        jListDA.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane6.setViewportView(jList4);
+        jScrollPane6.setViewportView(jListDA);
 
-        jButton1.setText("Add Design Goal");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jButtonAddDG.setText("Add Design Goal");
+        jButtonAddDG.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jButtonAddDGActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Add Design Alternative");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        jButtonAddDA.setText("Add Design Alternative");
+        jButtonAddDA.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                jButtonAddDAActionPerformed(evt);
             }
         });
 
-        jList5.setModel(new javax.swing.AbstractListModel<String>() {
+        jListCFA.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane9.setViewportView(jList5);
+        jScrollPane9.setViewportView(jListCFA);
 
         jLabel25.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel25.setText("CFA list");
@@ -695,14 +700,14 @@ public class AtriumProcess extends javax.swing.JFrame {
         jLabel29.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel29.setText("Design Alternative List");
 
-        jList9.setModel(new javax.swing.AbstractListModel<String>() {
+        jListSDG.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane13.setViewportView(jList9);
+        jScrollPane13.setViewportView(jListSDG);
 
-        jButton5.setText("Add Sub-Design Goal");
+        jButtonAddSDG.setText("Add Sub-Design Goal");
 
         jLabel36.setText("Sub-Design Goal list");
 
@@ -717,7 +722,7 @@ public class AtriumProcess extends javax.swing.JFrame {
                         .addGap(44, 44, 44)
                         .addComponent(jLabel26)
                         .addGap(134, 134, 134)
-                        .addComponent(jButton1))
+                        .addComponent(jButtonAddDG))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 497, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -729,13 +734,13 @@ public class AtriumProcess extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton2)
+                        .addComponent(jButtonAddDA)
                         .addGap(87, 87, 87))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addGap(90, 90, 90)
-                                .addComponent(jButton5))
+                                .addComponent(jButtonAddSDG))
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addGap(12, 12, 12)
                                 .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -762,7 +767,7 @@ public class AtriumProcess extends javax.swing.JFrame {
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton5)
+                        .addComponent(jButtonAddSDG)
                         .addGap(30, 30, 30)
                         .addComponent(jLabel29)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -772,19 +777,19 @@ public class AtriumProcess extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel26)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(jButtonAddDG)
+                    .addComponent(jButtonAddDA))
                 .addGap(30, 30, 30))
         );
 
-        jTabbedPane1.addTab("Edit DG, sDG, DA, CFA", jPanel3);
+        jTabbedPane.addTab("Edit DG, sDG, DA, CFA", jPanel3);
 
-        jList1.setModel(new javax.swing.AbstractListModel<String>() {
+        jListAssumption.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane7.setViewportView(jList1);
+        jScrollPane7.setViewportView(jListAssumption);
 
         jButtonAddAssumption.setText("Add Assumption");
         jButtonAddAssumption.addActionListener(new java.awt.event.ActionListener() {
@@ -796,19 +801,19 @@ public class AtriumProcess extends javax.swing.JFrame {
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel8.setText("Assumption list");
 
-        jList7.setModel(new javax.swing.AbstractListModel<String>() {
+        jListODD.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane11.setViewportView(jList7);
+        jScrollPane11.setViewportView(jListODD);
 
-        jList8.setModel(new javax.swing.AbstractListModel<String>() {
+        jListFR.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane12.setViewportView(jList8);
+        jScrollPane12.setViewportView(jListFR);
 
         jLabel32.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel32.setText("Operational Design Domain");
@@ -816,14 +821,14 @@ public class AtriumProcess extends javax.swing.JFrame {
         jLabel33.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel33.setText("Functional Requirements");
 
-        jButton3.setText("Add ODD");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        jButtonAddODD.setText("Add ODD");
+        jButtonAddODD.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                jButtonAddODDActionPerformed(evt);
             }
         });
 
-        jButton4.setText("Add Functional Requirement");
+        jButtonAddFR.setText("Add Functional Requirement");
 
         jLabel34.setText("(will add the corresponding assumption)");
 
@@ -853,9 +858,9 @@ public class AtriumProcess extends javax.swing.JFrame {
                 .addGap(108, 108, 108)
                 .addComponent(jButtonAddAssumption)
                 .addGap(307, 307, 307)
-                .addComponent(jButton3)
+                .addComponent(jButtonAddODD)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton4)
+                .addComponent(jButtonAddFR)
                 .addGap(89, 89, 89))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -880,8 +885,8 @@ public class AtriumProcess extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonAddAssumption)
-                    .addComponent(jButton3)
-                    .addComponent(jButton4))
+                    .addComponent(jButtonAddODD)
+                    .addComponent(jButtonAddFR))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel34)
@@ -889,14 +894,14 @@ public class AtriumProcess extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("Edit Assumption, ODD, FR", jPanel5);
+        jTabbedPane.addTab("Edit Assumption, ODD, FR", jPanel5);
 
-        jList2.setModel(new javax.swing.AbstractListModel<String>() {
+        jListFailure.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane5.setViewportView(jList2);
+        jScrollPane5.setViewportView(jListFailure);
 
         jButtonAddFailure.setText("Add Failure Mode");
         jButtonAddFailure.addActionListener(new java.awt.event.ActionListener() {
@@ -908,12 +913,12 @@ public class AtriumProcess extends javax.swing.JFrame {
         jLabel24.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel24.setText("Failure list");
 
-        jList6.setModel(new javax.swing.AbstractListModel<String>() {
+        jListCapella.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane10.setViewportView(jList6);
+        jScrollPane10.setViewportView(jListCapella);
 
         jLabel30.setText("To add a Capella element, simply add it on the Capella model. Please restart this UI afterward though.");
 
@@ -961,7 +966,7 @@ public class AtriumProcess extends javax.swing.JFrame {
                 .addContainerGap(35, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("Capella elements and Failure mode", jPanel4);
+        jTabbedPane.addTab("Capella elements and Failure mode", jPanel4);
 
         jLabel22.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel22.setText("ATRIUM process");
@@ -981,7 +986,7 @@ public class AtriumProcess extends javax.swing.JFrame {
                         .addComponent(jLabel28)
                         .addGap(20, 20, 20))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTabbedPane, javax.swing.GroupLayout.PREFERRED_SIZE, 1111, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())))
         );
         layout.setVerticalGroup(
@@ -992,7 +997,7 @@ public class AtriumProcess extends javax.swing.JFrame {
                     .addComponent(jLabel22)
                     .addComponent(jLabel28))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 565, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jTabbedPane, javax.swing.GroupLayout.PREFERRED_SIZE, 565, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(23, Short.MAX_VALUE))
         );
 
@@ -1044,37 +1049,41 @@ public class AtriumProcess extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_EditingResponsibleExpertActionPerformed
 
-    private void jListLinkedAssumption1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListLinkedAssumption1MouseClicked
+    private void jListLinkedDAMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListLinkedDAMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_jListLinkedAssumption1MouseClicked
+    }//GEN-LAST:event_jListLinkedDAMouseClicked
 
-    private void jButtonAddLinked1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAddLinked1ActionPerformed
+    private void jButtonAddLinkedDAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAddLinkedDAActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonAddLinked1ActionPerformed
+    }//GEN-LAST:event_jButtonAddLinkedDAActionPerformed
 
-    private void jButtonRemoveLinked1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRemoveLinked1ActionPerformed
+    private void jButtonRemoveLinkedDAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRemoveLinkedDAActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonRemoveLinked1ActionPerformed
+    }//GEN-LAST:event_jButtonRemoveLinkedDAActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jButtonAddDGActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAddDGActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_jButtonAddDGActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void jButtonAddDAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAddDAActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_jButtonAddDAActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void jButtonAddODDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAddODDActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_jButtonAddODDActionPerformed
 
-    private void jButtonAddLinked2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAddLinked2ActionPerformed
+    private void jButtonAddLinkedSDGActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAddLinkedSDGActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonAddLinked2ActionPerformed
+    }//GEN-LAST:event_jButtonAddLinkedSDGActionPerformed
 
-    private void jButtonRemoveLinked2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRemoveLinked2ActionPerformed
+    private void jButtonRemoveLinkedSDGActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRemoveLinkedSDGActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonRemoveLinked2ActionPerformed
+    }//GEN-LAST:event_jButtonRemoveLinkedSDGActionPerformed
+
+    private void jComboBoxDGActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxDGActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBoxDGActionPerformed
 
     
     
@@ -1131,22 +1140,22 @@ public class AtriumProcess extends javax.swing.JFrame {
     private javax.swing.JRadioButton isRisk;
     private javax.swing.JRadioButton isTask;
     private javax.swing.JRadioButton isValid;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JButton jButtonAddAssumption;
+    private javax.swing.JButton jButtonAddDA;
+    private javax.swing.JButton jButtonAddDG;
+    private javax.swing.JButton jButtonAddFR;
     private javax.swing.JButton jButtonAddFailure;
     private javax.swing.JButton jButtonAddLinked;
-    private javax.swing.JButton jButtonAddLinked1;
-    private javax.swing.JButton jButtonAddLinked2;
+    private javax.swing.JButton jButtonAddLinkedDA;
+    private javax.swing.JButton jButtonAddLinkedSDG;
+    private javax.swing.JButton jButtonAddODD;
+    private javax.swing.JButton jButtonAddSDG;
     private javax.swing.JButton jButtonRemoveLinked;
-    private javax.swing.JButton jButtonRemoveLinked1;
-    private javax.swing.JButton jButtonRemoveLinked2;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JComboBox<String> jComboBox3;
+    private javax.swing.JButton jButtonRemoveLinkedDA;
+    private javax.swing.JButton jButtonRemoveLinkedSDG;
+    private javax.swing.JComboBox<String> jComboBoxCFA;
+    private javax.swing.JComboBox<String> jComboBoxDG;
+    private javax.swing.JComboBox<String> jComboBoxDG2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1187,21 +1196,21 @@ public class AtriumProcess extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JList<String> jList1;
-    private javax.swing.JList<String> jList10;
-    private javax.swing.JList<String> jList11;
-    private javax.swing.JList<String> jList2;
-    private javax.swing.JList<String> jList3;
-    private javax.swing.JList<String> jList4;
-    private javax.swing.JList<String> jList5;
-    private javax.swing.JList<String> jList6;
-    private javax.swing.JList<String> jList7;
-    private javax.swing.JList<String> jList8;
-    private javax.swing.JList<String> jList9;
+    private javax.swing.JList<String> jListAssumption;
+    private javax.swing.JList<String> jListCFA;
+    private javax.swing.JList<String> jListCapella;
+    private javax.swing.JList<String> jListDA;
+    private javax.swing.JList<String> jListDG;
+    private javax.swing.JList<String> jListFR;
+    private javax.swing.JList<String> jListFailure;
     private javax.swing.JList<String> jListLinkedAssumption;
-    private javax.swing.JList<String> jListLinkedAssumption1;
+    private javax.swing.JList<String> jListLinkedDA;
+    private javax.swing.JList<String> jListLinkedSDG;
+    private javax.swing.JList<String> jListODD;
+    private javax.swing.JList<String> jListSDG;
     private javax.swing.JList<String> jListUnlinkedAssumptions;
-    private javax.swing.JList<String> jListUnlinkedAssumptions1;
+    private javax.swing.JList<String> jListUnlinkedDA;
+    private javax.swing.JList<String> jListUnlinkedSDG;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
@@ -1224,6 +1233,6 @@ public class AtriumProcess extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTabbedPane jTabbedPane;
     // End of variables declaration//GEN-END:variables
 }
