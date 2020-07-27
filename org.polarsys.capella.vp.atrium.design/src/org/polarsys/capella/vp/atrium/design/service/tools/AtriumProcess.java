@@ -323,6 +323,8 @@ public class AtriumProcess extends javax.swing.JFrame {
 			}
 		}
 		
+		updateDisplay();
+		
 		jListLinkedAssumptions.addMouseListener(new java.awt.event.MouseAdapter() {
 	            public void mouseClicked(java.awt.event.MouseEvent evt) {
 	                jListLinkedAssumptionMouseClicked(evt);
@@ -652,18 +654,12 @@ public class AtriumProcess extends javax.swing.JFrame {
 
         jTabbedPane.addTab("Linking DG and DA", jPanel2);
 
-        jListDG.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
+        
+        
+       
         jScrollPane8.setViewportView(jListDG);
 
-        jListDA.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
+        
         jScrollPane6.setViewportView(jListDA);
 
         jButtonAddDG.setText("Add Design Goal");
@@ -680,11 +676,7 @@ public class AtriumProcess extends javax.swing.JFrame {
             }
         });
 
-        jListCFA.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
+        
         jScrollPane9.setViewportView(jListCFA);
 
         jLabel25.setText("CFA list");
@@ -695,11 +687,7 @@ public class AtriumProcess extends javax.swing.JFrame {
 
         jLabel29.setText("Design Alternative List");
 
-        jListSDG.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
+        
         jScrollPane13.setViewportView(jListSDG);
 
         jButtonAddSDG.setText("Add Sub-Design Goal");
@@ -786,12 +774,7 @@ public class AtriumProcess extends javax.swing.JFrame {
         );
 
         jTabbedPane.addTab("Edit DG, sDG, DA, CFA", jPanel3);
-
-        jListAssumption.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
+        
         jScrollPane7.setViewportView(jListAssumption);
 
         jButtonAddAssumption.setText("Add Assumption");
@@ -898,13 +881,6 @@ public class AtriumProcess extends javax.swing.JFrame {
 
         jTabbedPane.addTab("Edit Assumption, ODD, FR", jPanel5);
         
-        DefaultListModel <String> listModelFailure = new DefaultListModel<String>();
-        for (FailureMode f : ListFailureMode)
-        {
-        	listModelFailure.addElement(f.getName());
-        }
-        
-        jListFailure.setModel(listModelFailure);
         jScrollPane5.setViewportView(jListFailure);
 
         jButtonAddFailure.setText("Add Failure Mode");
@@ -1034,6 +1010,33 @@ public class AtriumProcess extends javax.swing.JFrame {
 			jListUnlinkedAssumptions.setModel(nameUnlinkedAssumption); //update list of assumptions
 			jListLinkedAssumptions.setModel(nameLinkedAssumption);
 		}
+	}
+	
+	public void updateDisplay()
+	{
+		DefaultListModel <String> listModelDG = new DefaultListModel<String>();
+        for (DG dg : listDG){listModelDG.addElement(dg.getName());}
+        jListDG.setModel(listModelDG);
+        
+        DefaultListModel <String> listModelDA = new DefaultListModel<String>();
+        for (DA da : listDA){listModelDA.addElement(da.getName());}
+        jListDA.setModel(listModelDA);
+        
+        DefaultListModel <String> listModelCFA = new DefaultListModel<String>();
+        for (CFA cfa : listCFA){listModelCFA.addElement(cfa.getName());}
+        jListCFA.setModel(listModelCFA);
+        
+        DefaultListModel <String> listModelsDG = new DefaultListModel<String>();
+        for (sDG sdg : listsDG){listModelsDG.addElement(sdg.getName());}
+        jListSDG.setModel(listModelsDG);
+        
+        DefaultListModel <String> listModelsAssumptions = new DefaultListModel<String>();
+        for (Assumption a : listAssumption){listModelsAssumptions.addElement(a.getName());}
+        jListAssumption.setModel(listModelsAssumptions);
+        
+        DefaultListModel <String> listModelFailure = new DefaultListModel<String>();
+        for (FailureMode f : ListFailureMode){listModelFailure.addElement(f.getName());}
+        jListFailure.setModel(listModelFailure);
 	}
 	
 	private void moveAssumption(String action) //action="add" or "remove"
