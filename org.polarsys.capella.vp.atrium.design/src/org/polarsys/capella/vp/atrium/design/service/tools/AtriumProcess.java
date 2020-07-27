@@ -4,6 +4,7 @@ import java.util.Collections;
 
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
+import javax.swing.JList;
 import javax.swing.JOptionPane;
 import javax.swing.ListModel;
 import javax.swing.UIManager;
@@ -866,12 +867,8 @@ public class AtriumProcess extends javax.swing.JFrame {
         );
 
         jTabbedPane.addTab("Edit Assumption, ODD, FR", jPanel5);
-
-        jListFailure.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
+        
+        jListFailure.setModel(ListFailureMode);
         jScrollPane5.setViewportView(jListFailure);
 
         jButtonAddFailure.setText("Add Failure Mode");
@@ -882,12 +879,15 @@ public class AtriumProcess extends javax.swing.JFrame {
         });
 
         jLabel24.setText("Failure list");
-
-        jListCapella.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
+        
+        
+        DefaultListModel <String> listModel = new DefaultListModel<String>();
+        for (int i = 0; i < ListCapellaElementName.size(); i++)
+        {
+            listModel.addElement(ListCapellaElementName.get(i));
+        }
+        jListCapella.setModel(listModel);
+    
         jScrollPane10.setViewportView(jListCapella);
 
         jLabel30.setText("To add a Capella element, simply add it on the Capella model. Please restart this UI afterward.");
