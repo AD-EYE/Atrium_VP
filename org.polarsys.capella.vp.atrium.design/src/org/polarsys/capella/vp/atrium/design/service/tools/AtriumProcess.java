@@ -368,8 +368,7 @@ public class AtriumProcess extends javax.swing.JFrame {
         jLabel19.setText("CFA");
 
         jLabel20.setText("linked to :");
-
-        jComboBoxDG.setModel(new javax.swing.DefaultComboBoxModel<String>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        
         jComboBoxDG.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBoxDGActionPerformed(evt);
@@ -510,8 +509,6 @@ public class AtriumProcess extends javax.swing.JFrame {
         });
 
         jLabel7.setText("Design Goal");
-
-        jComboBoxDG2.setModel(new javax.swing.DefaultComboBoxModel<String>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jLabel9.setText("Unlinked Design Alternative");
 
@@ -988,29 +985,29 @@ public class AtriumProcess extends javax.swing.JFrame {
     }// </editor-fold>                                  
 	
 	
-	public void updateDisplayCFA()
-	{
-		nameLinkedAssumption=new DefaultListModel<String>();
-		nameUnlinkedAssumption=new DefaultListModel<String>();
-		CFA the_CFA=null;
-		
-		if ((CapellaElementName!="Capella Element Example")&&(FailureName!="Failure Example"))
-		{	
-			for (CFA myCFA : listCFA) //look for the CFA that we are interested in
-			{
-				if (myCFA.getName().equals(jComboBoxCFA.getSelectedItem())){the_CFA = myCFA;}
-			}
-			
-			for (Assumption a : listAssumption) //go through all the Assumptions to find those linked with the_CFA
-			{
-				if (the_CFA.getAssumption().contains(a)){nameLinkedAssumption.addElement(a.getName());}
-				else{nameUnlinkedAssumption.addElement(a.getName());}
-			}
-			
-			jListUnlinkedAssumptions.setModel(nameUnlinkedAssumption); //update list of assumptions
-			jListLinkedAssumptions.setModel(nameLinkedAssumption);
-		}
-	}
+//	public void updateDisplayCFA()
+//	{
+//		nameLinkedAssumption=new DefaultListModel<String>();
+//		nameUnlinkedAssumption=new DefaultListModel<String>();
+//		CFA the_CFA=null;
+//		
+//		if ((CapellaElementName!="Capella Element Example")&&(FailureName!="Failure Example"))
+//		{	
+//			for (CFA myCFA : listCFA) //look for the CFA that we are interested in
+//			{
+//				if (myCFA.getName().equals(jComboBoxCFA.getSelectedItem())){the_CFA = myCFA;}
+//			}
+//			
+//			for (Assumption a : listAssumption) //go through all the Assumptions to find those linked with the_CFA
+//			{
+//				if (the_CFA.getAssumption().contains(a)){nameLinkedAssumption.addElement(a.getName());}
+//				else{nameUnlinkedAssumption.addElement(a.getName());}
+//			}
+//			
+//			jListUnlinkedAssumptions.setModel(nameUnlinkedAssumption); //update list of assumptions
+//			jListLinkedAssumptions.setModel(nameLinkedAssumption);
+//		}
+//	}
 	
 	public void updateDisplay()
 	{
@@ -1037,55 +1034,60 @@ public class AtriumProcess extends javax.swing.JFrame {
         DefaultListModel <String> listModelFailure = new DefaultListModel<String>();
         for (FailureMode f : ListFailureMode){listModelFailure.addElement(f.getName());}
         jListFailure.setModel(listModelFailure);
+        
+        DefaultComboBoxModel<String> listDGcbModel= new DefaultComboBoxModel<String>();
+        for (DG dg : listDG) {listDGcbModel.addElement(dg.getName());}
+        jComboBoxDG.setModel(listDGcbModel);
+        jComboBoxDG2.setModel(listDGcbModel);
 	}
 	
-	private void moveAssumption(String action) //action="add" or "remove"
-	{
-		CFA the_CFA = null;
-		String movingAssumption = null;
-		Assumption the_moving_assumption = null;
-		
-		//decide on which list should we look for the Assumptions based on if we want to add or remove a link
-		if (action=="add") {movingAssumption = jListUnlinkedAssumptions.getSelectedValue();}
-		else if (action=="remove") {movingAssumption = jListLinkedAssumptions.getSelectedValue();}
-		else {System.out.println("The moveAssumption action you want to do is unclear...");}
-		
-		for (Assumption a : listAssumption) //Go through all the assumptions to find the one with the same name
-		{
-			if (a.getName().equals(movingAssumption)){the_moving_assumption=a;}
-		}
-		
-		for (CFA myCFA : listCFA) //look for the CFA that we are interested in
-		{
-			if (myCFA.getName().equals(jComboBoxCFA.getSelectedItem())){the_CFA=myCFA;}
-		}
-		
-		final CFA CFA_parameter = the_CFA;
-		final Assumption assumption_parameter = the_moving_assumption;
-		TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(the_CFA_list);
-		
-		if (action=="remove")
-		{
-			domain.getCommandStack().execute(new RecordingCommand(domain) {
-			        @Override
-			        protected void doExecute() {
-			        	CFA_parameter.getAssumption().remove(assumption_parameter);//the remove action is done there, within a transaction context
-			        }
-			    });
-		}
-		else if (action=="add")
-		{
-			 domain.getCommandStack().execute(new RecordingCommand(domain) {
-			        @Override
-			        protected void doExecute() {
-			        	CFA_parameter.getAssumption().add(assumption_parameter);//the add action is done there, within a transaction context
-			        }
-			    });
-		}
-		else {System.out.println("The moveAssumption action you want to do is unclear...twice");}
-		
-		updateDisplayCFA();//because the lists have changed
-	}
+//	private void moveAssumption(String action) //action="add" or "remove"
+//	{
+//		CFA the_CFA = null;
+//		String movingAssumption = null;
+//		Assumption the_moving_assumption = null;
+//		
+//		//decide on which list should we look for the Assumptions based on if we want to add or remove a link
+//		if (action=="add") {movingAssumption = jListUnlinkedAssumptions.getSelectedValue();}
+//		else if (action=="remove") {movingAssumption = jListLinkedAssumptions.getSelectedValue();}
+//		else {System.out.println("The moveAssumption action you want to do is unclear...");}
+//		
+//		for (Assumption a : listAssumption) //Go through all the assumptions to find the one with the same name
+//		{
+//			if (a.getName().equals(movingAssumption)){the_moving_assumption=a;}
+//		}
+//		
+//		for (CFA myCFA : listCFA) //look for the CFA that we are interested in
+//		{
+//			if (myCFA.getName().equals(jComboBoxCFA.getSelectedItem())){the_CFA=myCFA;}
+//		}
+//		
+//		final CFA CFA_parameter = the_CFA;
+//		final Assumption assumption_parameter = the_moving_assumption;
+//		TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(the_CFA_list);
+//		
+//		if (action=="remove")
+//		{
+//			domain.getCommandStack().execute(new RecordingCommand(domain) {
+//			        @Override
+//			        protected void doExecute() {
+//			        	CFA_parameter.getAssumption().remove(assumption_parameter);//the remove action is done there, within a transaction context
+//			        }
+//			    });
+//		}
+//		else if (action=="add")
+//		{
+//			 domain.getCommandStack().execute(new RecordingCommand(domain) {
+//			        @Override
+//			        protected void doExecute() {
+//			        	CFA_parameter.getAssumption().add(assumption_parameter);//the add action is done there, within a transaction context
+//			        }
+//			    });
+//		}
+//		else {System.out.println("The moveAssumption action you want to do is unclear...twice");}
+//		
+//		updateDisplayCFA();//because the lists have changed
+//	}
 	
 
 	private void createFailureMode(String name) {
@@ -1118,7 +1120,6 @@ public class AtriumProcess extends javax.swing.JFrame {
 		    });
 		
 		listAssumption.add(newAssumption);//updating our local list
-		updateDisplayCFA();
 		myAssumptionEditor.editAssumption(newAssumption, listAssumption);
 	}
 	
@@ -1135,7 +1136,6 @@ public class AtriumProcess extends javax.swing.JFrame {
 		    });
 		
 		listDG.add(newDG);//updating our local list
-		updateDisplayCFA();
 		AtriumBasicElement newDG_parameter = (AtriumBasicElement) newDG;
 		myEditor.editing(newDG_parameter, listDG, listDA, listCFA, listsDG, ListFailureMode);
 	}
@@ -1153,7 +1153,6 @@ public class AtriumProcess extends javax.swing.JFrame {
 		    });
 		
 		listDA.add(newDA);//updating our local list
-		updateDisplayCFA();
 		AtriumBasicElement newDA_parameter = (AtriumBasicElement) newDA;
 		myEditor.editing(newDA_parameter, listDG, listDA, listCFA, listsDG, ListFailureMode);
 	}
@@ -1171,7 +1170,6 @@ public class AtriumProcess extends javax.swing.JFrame {
 		    });
 		
 		listsDG.add(newsDG);//updating our local list
-		updateDisplayCFA();
 		AtriumBasicElement newsDG_parameter = (AtriumBasicElement) newsDG;
 		myEditor.editing(newsDG_parameter, listDG, listDA, listCFA, listsDG, ListFailureMode);
 	}
@@ -1180,20 +1178,20 @@ public class AtriumProcess extends javax.swing.JFrame {
 	private void jButtonAddLinkedActionPerformed(java.awt.event.ActionEvent evt) {
 		if (!(jListUnlinkedAssumptions.getSelectedValue()==null)) //if one unlinked assumption is selected
 		{
-			moveAssumption("add");
+			//moveAssumption("add");
 		}
 	}
 	
 	private void jButtonRemoveLinkedActionPerformed(java.awt.event.ActionEvent evt) {
 		if (!(jListLinkedAssumptions.getSelectedValue()==null)) //if one linked assumption is selected
 		{
-			moveAssumption("remove");
+			//moveAssumption("remove");
 		}
 	}
 	
 	private void jComboBoxCFAActionPerformed(java.awt.event.ActionEvent evt) {
 		CapellaElementName = (String) jComboBoxCFA.getSelectedItem();
-		updateDisplayCFA();
+		//updateDisplayCFA();
 	}
 	
 	private void jButtonAddFailureActionPerformed(java.awt.event.ActionEvent evt) {
