@@ -149,6 +149,17 @@ public class Assumption_listItemProvider extends NamedElementItemProvider implem
 		{
 			CommandParameter commandParameter = createChildParameter(
 					EmdePackage.Literals.EXTENSIBLE_ELEMENT__OWNED_EXTENSIONS,
+					AtriumFactory.eINSTANCE.createsDG_list());
+			if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
+				newChildDescriptors.add(commandParameter);
+			}
+		}
+		// end-extension-code
+
+		// begin-extension-code
+		{
+			CommandParameter commandParameter = createChildParameter(
+					EmdePackage.Literals.EXTENSIBLE_ELEMENT__OWNED_EXTENSIONS,
 					AtriumFactory.eINSTANCE.createAssumption_list());
 			if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
 				newChildDescriptors.add(commandParameter);
@@ -212,6 +223,16 @@ public class Assumption_listItemProvider extends NamedElementItemProvider implem
 		{
 			CommandParameter commandParameter = createChildParameter(
 					EmdePackage.Literals.EXTENSIBLE_ELEMENT__OWNED_EXTENSIONS, AtriumFactory.eINSTANCE.createDG());
+			if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
+				newChildDescriptors.add(commandParameter);
+			}
+		}
+		// end-extension-code
+
+		// begin-extension-code
+		{
+			CommandParameter commandParameter = createChildParameter(
+					EmdePackage.Literals.EXTENSIBLE_ELEMENT__OWNED_EXTENSIONS, AtriumFactory.eINSTANCE.createsDG());
 			if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
 				newChildDescriptors.add(commandParameter);
 			}

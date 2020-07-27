@@ -88,6 +88,11 @@ public class AtriumAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter casesDG_list(sDG_list object) {
+			return createsDG_listAdapter();
+		}
+
+		@Override
 		public Adapter caseAssumption_list(Assumption_list object) {
 			return createAssumption_listAdapter();
 		}
@@ -120,6 +125,11 @@ public class AtriumAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseDG(DG object) {
 			return createDGAdapter();
+		}
+
+		@Override
+		public Adapter casesDG(sDG object) {
+			return createsDGAdapter();
 		}
 
 		@Override
@@ -230,6 +240,20 @@ public class AtriumAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link org.polarsys.capella.vp.atrium.Atrium.sDG_list <em>sDG list</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.polarsys.capella.vp.atrium.Atrium.sDG_list
+	 * @generated
+	 */
+	public Adapter createsDG_listAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link org.polarsys.capella.vp.atrium.Atrium.Assumption_list <em>Assumption list</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -324,6 +348,20 @@ public class AtriumAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createDGAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.polarsys.capella.vp.atrium.Atrium.sDG <em>sDG</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.polarsys.capella.vp.atrium.Atrium.sDG
+	 * @generated
+	 */
+	public Adapter createsDGAdapter() {
 		return null;
 	}
 

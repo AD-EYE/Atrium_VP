@@ -46,7 +46,7 @@ public class Atrium_FailureMode_Atrium_FailureMode_Section extends AbstractSecti
 	* <!-- end-user-doc -->
 	* @generated
 	*/
-	private TextValueGroup ContentField5;
+	private TextValueGroup ContentField6;
 
 	/**
 	* <!-- begin-model-doc -->
@@ -159,7 +159,7 @@ public class Atrium_FailureMode_Atrium_FailureMode_Section extends AbstractSecti
 		gdAtrium_FailureMode_AttributeGroup.horizontalSpan = ((GridLayout) rootParentComposite.getLayout()).numColumns;
 		Atrium_FailureMode_AttributeGroup.setLayoutData(gdAtrium_FailureMode_AttributeGroup);
 
-		ContentField5 = new TextValueGroup(Atrium_FailureMode_AttributeGroup, "Content :", getWidgetFactory(), true);
+		ContentField6 = new TextValueGroup(Atrium_FailureMode_AttributeGroup, "Content :", getWidgetFactory(), true);
 
 	}
 
@@ -172,7 +172,7 @@ public class Atrium_FailureMode_Atrium_FailureMode_Section extends AbstractSecti
 	public void loadData(EObject object) {
 		super.loadData(object);
 
-		ContentField5.loadData(object, AtriumPackage.eINSTANCE.getAtriumBasicElement_Content());
+		ContentField6.loadData(object, AtriumPackage.eINSTANCE.getAtriumBasicElement_Content());
 
 	}
 
@@ -184,7 +184,7 @@ public class Atrium_FailureMode_Atrium_FailureMode_Section extends AbstractSecti
 	public List<AbstractSemanticField> getSemanticFields() {
 		List<AbstractSemanticField> abstractSemanticFields = new ArrayList<AbstractSemanticField>();
 
-		abstractSemanticFields.add(ContentField5);
+		abstractSemanticFields.add(ContentField6);
 
 		return abstractSemanticFields;
 	}

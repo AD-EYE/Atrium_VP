@@ -91,6 +91,21 @@
             <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
           </style>
         </containerMappings>
+        <containerMappings name="Container_list_sDG_CM" label="Container_list_sDG" semanticCandidatesExpression="feature:ownedExtensions" domainClass="Atrium.sDG_list" childrenPresentation="List">
+          <subNodeMappings name="node_sDG_NM" label="node_sDG" semanticCandidatesExpression="feature:ownedExtensions" domainClass="Atrium.sDG">
+            <style xsi:type="style:SquareDescription" borderSizeComputationExpression="1" labelExpression="aql:'[sDG] '+self.name" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+          </subNodeMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="sDG list">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_chocolate']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+          </style>
+        </containerMappings>
         <containerMappings name="Container_list_DA_CM" label="Container_list_DA" semanticCandidatesExpression="feature:ownedExtensions" domainClass="Atrium.DA_list" childrenPresentation="List">
           <subNodeMappings name="node_DA_NM" label="node_DA" semanticCandidatesExpression="feature:ownedExtensions" domainClass="Atrium.DA">
             <style xsi:type="style:SquareDescription" borderSizeComputationExpression="1" labelExpression="aql:'[Design] '+self.name" resizeKind="NSEW">

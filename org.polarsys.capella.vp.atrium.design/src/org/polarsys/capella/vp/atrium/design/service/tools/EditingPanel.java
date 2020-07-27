@@ -17,6 +17,7 @@ import org.polarsys.capella.vp.atrium.Atrium.DA;
 import org.polarsys.capella.vp.atrium.Atrium.DG;
 import org.polarsys.capella.vp.atrium.Atrium.FailureMode;
 import org.polarsys.capella.vp.atrium.Atrium.assumptionType_Type;
+import org.polarsys.capella.vp.atrium.Atrium.sDG;
 import org.polarsys.capella.vp.atrium.Atrium.validity_Type;
 
 public class EditingPanel extends javax.swing.JFrame {
@@ -26,6 +27,8 @@ public class EditingPanel extends javax.swing.JFrame {
 	EList<CFA> listCFA = new BasicEList<CFA>();
 	EList<DG> listDG = new BasicEList<DG>();
 	EList<DA> listDA = new BasicEList<DA>();
+	EList<sDG> listsDG = new BasicEList<sDG>();
+	EList<FailureMode> listFailure = new BasicEList<FailureMode>();
 	
     public EditingPanel(AtriumProcess parent) {
     	my_parent=parent;
@@ -118,6 +121,8 @@ public class EditingPanel extends javax.swing.JFrame {
 		for (DG dg : listDG){if (jTextNameeditedObject.getText().equals(dg.getName()) && (!(dg.equals((DG) editedObject)))){alreadyHere = true;}}
 		for (DA da : listDA){if (jTextNameeditedObject.getText().equals(da.getName()) && (!(da.equals((DA) editedObject)))){alreadyHere = true;}}
 		for (CFA cfa : listCFA){if (jTextNameeditedObject.getText().equals(cfa.getName()) && (!(cfa.equals((CFA) editedObject)))){alreadyHere = true;}}
+		for (sDG sdg : listsDG){if (jTextNameeditedObject.getText().equals(sdg.getName()) && (!(sdg.equals((sDG) editedObject)))){alreadyHere = true;}}
+		for (FailureMode f : listFailure){if (jTextNameeditedObject.getText().equals(f.getName()) && (!(f.equals((FailureMode) editedObject)))){alreadyHere = true;}}
 	
 		if (!(alreadyHere))
 		{
@@ -136,20 +141,23 @@ public class EditingPanel extends javax.swing.JFrame {
 		else {JOptionPane.showMessageDialog(getParent(), "There is already an assumption named like that, please chose another name.");}
     }
     
-    public void editing(AtriumBasicElement object, EList<DG> listDG_parameter, EList<DA> listDA_parameter, EList<CFA> listCFA_parameter)
+    public void editing(AtriumBasicElement object, EList<DG> listDG_p, EList<DA> listDA_p, EList<CFA> listCFA_p, EList<sDG> listsDG_p, EList<FailureMode> listFailure_p)
     {	
-    	listDG = listDG_parameter;
-    	listDA = listDA_parameter;
-    	listCFA = listCFA_parameter;
+    	listDG = listDG_p;
+    	listDA = listDA_p;
+    	listCFA = listCFA_p;
+    	listsDG = listsDG_p;
+    	listFailure = listFailure_p;
     	
     	editedObject=object;
     	jTextNameeditedObject.setText(object.getName());
     	jTextContentEditedObject.setText(object.getContent());
     	
     	if (object instanceof CFA) {jLabel1.setText("Editing CFA");}
-    	if (object instanceof DG) {jLabel1.setText("Editing DG");}
-    	if (object instanceof DA) {jLabel1.setText("Editing DA");}
+    	if (object instanceof DG) {jLabel1.setText("Editing Design Goal");}
+    	if (object instanceof DA) {jLabel1.setText("Editing Design alternative");}
     	if (object instanceof FailureMode) {jLabel1.setText("Editing Failure Mode");}
+    	if (object instanceof sDG) {jLabel1.setText("Editing subDesign Goal");}
     	
     	Editingpanel.setVisible(true);
     }

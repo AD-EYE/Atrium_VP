@@ -80,12 +80,21 @@ UI Atrium_DG {
 		}
 	}
 }
+UI Atrium_sDG {
+	label: "Atrium"
+	Container Atrium_sDG_Section {
+		Container Atrium_sDG_AttributeGroup {
+			label: "S D G Attributes"
+			Field contentField4 label: "Content" type text , mapped-to Atrium.data.AtriumBasicElement.content
+		}
+	}
+}
 UI Atrium_DA {
 	label: "Atrium"
 	Container Atrium_DA_Section {
 		Container Atrium_DA_AttributeGroup {
 			label: "D A Attributes"
-			Field contentField4 label: "Content" type text , mapped-to Atrium.data.AtriumBasicElement.content
+			Field contentField5 label: "Content" type text , mapped-to Atrium.data.AtriumBasicElement.content
 			Field isPartOfSelectionField label: "Is Part Of Selection" type checkbox , mapped-to Atrium.data.DA.isPartOfSelection
 		}
 	}
@@ -104,10 +113,9 @@ UI Atrium_FailureMode {
 	Container Atrium_FailureMode_Section {
 		Container Atrium_FailureMode_AttributeGroup {
 			label: "Failure Mode Attributes"
-			Field contentField5 label: "Content" type text , mapped-to Atrium.data.AtriumBasicElement.content
+			Field contentField6 label: "Content" type text , mapped-to Atrium.data.AtriumBasicElement.content
 		}
 	}
 }
-
 
 }

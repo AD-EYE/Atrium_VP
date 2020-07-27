@@ -501,6 +501,223 @@ public interface AtriumPackage extends EPackage {
 	int CFA_LIST_FEATURE_COUNT = CapellacorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link org.polarsys.capella.vp.atrium.Atrium.impl.sDG_listImpl <em>sDG list</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.capella.vp.atrium.Atrium.impl.sDG_listImpl
+	 * @see org.polarsys.capella.vp.atrium.Atrium.impl.AtriumPackageImpl#getsDG_list()
+	 * @generated
+	 */
+	int SDG_LIST = 2;
+
+	/**
+	 * The feature id for the '<em><b>Owned Extensions</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SDG_LIST__OWNED_EXTENSIONS = CapellacorePackage.NAMED_ELEMENT__OWNED_EXTENSIONS;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SDG_LIST__ID = CapellacorePackage.NAMED_ELEMENT__ID;
+
+	/**
+	 * The feature id for the '<em><b>Sid</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SDG_LIST__SID = CapellacorePackage.NAMED_ELEMENT__SID;
+
+	/**
+	 * The feature id for the '<em><b>Constraints</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SDG_LIST__CONSTRAINTS = CapellacorePackage.NAMED_ELEMENT__CONSTRAINTS;
+
+	/**
+	 * The feature id for the '<em><b>Owned Constraints</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SDG_LIST__OWNED_CONSTRAINTS = CapellacorePackage.NAMED_ELEMENT__OWNED_CONSTRAINTS;
+
+	/**
+	 * The feature id for the '<em><b>Owned Migrated Elements</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SDG_LIST__OWNED_MIGRATED_ELEMENTS = CapellacorePackage.NAMED_ELEMENT__OWNED_MIGRATED_ELEMENTS;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SDG_LIST__NAME = CapellacorePackage.NAMED_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Incoming Traces</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SDG_LIST__INCOMING_TRACES = CapellacorePackage.NAMED_ELEMENT__INCOMING_TRACES;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing Traces</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SDG_LIST__OUTGOING_TRACES = CapellacorePackage.NAMED_ELEMENT__OUTGOING_TRACES;
+
+	/**
+	 * The feature id for the '<em><b>Visible In Doc</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SDG_LIST__VISIBLE_IN_DOC = CapellacorePackage.NAMED_ELEMENT__VISIBLE_IN_DOC;
+
+	/**
+	 * The feature id for the '<em><b>Visible In LM</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SDG_LIST__VISIBLE_IN_LM = CapellacorePackage.NAMED_ELEMENT__VISIBLE_IN_LM;
+
+	/**
+	 * The feature id for the '<em><b>Summary</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SDG_LIST__SUMMARY = CapellacorePackage.NAMED_ELEMENT__SUMMARY;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SDG_LIST__DESCRIPTION = CapellacorePackage.NAMED_ELEMENT__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Review</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SDG_LIST__REVIEW = CapellacorePackage.NAMED_ELEMENT__REVIEW;
+
+	/**
+	 * The feature id for the '<em><b>Owned Property Values</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SDG_LIST__OWNED_PROPERTY_VALUES = CapellacorePackage.NAMED_ELEMENT__OWNED_PROPERTY_VALUES;
+
+	/**
+	 * The feature id for the '<em><b>Owned Enumeration Property Types</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SDG_LIST__OWNED_ENUMERATION_PROPERTY_TYPES = CapellacorePackage.NAMED_ELEMENT__OWNED_ENUMERATION_PROPERTY_TYPES;
+
+	/**
+	 * The feature id for the '<em><b>Applied Property Values</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SDG_LIST__APPLIED_PROPERTY_VALUES = CapellacorePackage.NAMED_ELEMENT__APPLIED_PROPERTY_VALUES;
+
+	/**
+	 * The feature id for the '<em><b>Owned Property Value Groups</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SDG_LIST__OWNED_PROPERTY_VALUE_GROUPS = CapellacorePackage.NAMED_ELEMENT__OWNED_PROPERTY_VALUE_GROUPS;
+
+	/**
+	 * The feature id for the '<em><b>Applied Property Value Groups</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SDG_LIST__APPLIED_PROPERTY_VALUE_GROUPS = CapellacorePackage.NAMED_ELEMENT__APPLIED_PROPERTY_VALUE_GROUPS;
+
+	/**
+	 * The feature id for the '<em><b>Status</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SDG_LIST__STATUS = CapellacorePackage.NAMED_ELEMENT__STATUS;
+
+	/**
+	 * The feature id for the '<em><b>Features</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SDG_LIST__FEATURES = CapellacorePackage.NAMED_ELEMENT__FEATURES;
+
+	/**
+	 * The feature id for the '<em><b>Applied Requirements</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SDG_LIST__APPLIED_REQUIREMENTS = CapellacorePackage.NAMED_ELEMENT__APPLIED_REQUIREMENTS;
+
+	/**
+	 * The number of structural features of the '<em>sDG list</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SDG_LIST_FEATURE_COUNT = CapellacorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.polarsys.capella.vp.atrium.Atrium.impl.Assumption_listImpl <em>Assumption list</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -508,7 +725,7 @@ public interface AtriumPackage extends EPackage {
 	 * @see org.polarsys.capella.vp.atrium.Atrium.impl.AtriumPackageImpl#getAssumption_list()
 	 * @generated
 	 */
-	int ASSUMPTION_LIST = 2;
+	int ASSUMPTION_LIST = 3;
 
 	/**
 	 * The feature id for the '<em><b>Owned Extensions</b></em>' containment reference list.
@@ -725,7 +942,7 @@ public interface AtriumPackage extends EPackage {
 	 * @see org.polarsys.capella.vp.atrium.Atrium.impl.AtriumPackageImpl#getDG_list()
 	 * @generated
 	 */
-	int DG_LIST = 3;
+	int DG_LIST = 4;
 
 	/**
 	 * The feature id for the '<em><b>Owned Extensions</b></em>' containment reference list.
@@ -942,7 +1159,7 @@ public interface AtriumPackage extends EPackage {
 	 * @see org.polarsys.capella.vp.atrium.Atrium.impl.AtriumPackageImpl#getDA_list()
 	 * @generated
 	 */
-	int DA_LIST = 4;
+	int DA_LIST = 5;
 
 	/**
 	 * The feature id for the '<em><b>Owned Extensions</b></em>' containment reference list.
@@ -1159,7 +1376,7 @@ public interface AtriumPackage extends EPackage {
 	 * @see org.polarsys.capella.vp.atrium.Atrium.impl.AtriumPackageImpl#getFailure_list()
 	 * @generated
 	 */
-	int FAILURE_LIST = 5;
+	int FAILURE_LIST = 6;
 
 	/**
 	 * The feature id for the '<em><b>Owned Extensions</b></em>' containment reference list.
@@ -1376,7 +1593,7 @@ public interface AtriumPackage extends EPackage {
 	 * @see org.polarsys.capella.vp.atrium.Atrium.impl.AtriumPackageImpl#getCFA()
 	 * @generated
 	 */
-	int CFA = 6;
+	int CFA = 7;
 
 	/**
 	 * The feature id for the '<em><b>Owned Extensions</b></em>' containment reference list.
@@ -1638,7 +1855,7 @@ public interface AtriumPackage extends EPackage {
 	 * @see org.polarsys.capella.vp.atrium.Atrium.impl.AtriumPackageImpl#getAssumption()
 	 * @generated
 	 */
-	int ASSUMPTION = 7;
+	int ASSUMPTION = 8;
 
 	/**
 	 * The feature id for the '<em><b>Owned Extensions</b></em>' containment reference list.
@@ -1918,7 +2135,7 @@ public interface AtriumPackage extends EPackage {
 	 * @see org.polarsys.capella.vp.atrium.Atrium.impl.AtriumPackageImpl#getDG()
 	 * @generated
 	 */
-	int DG = 8;
+	int DG = 9;
 
 	/**
 	 * The feature id for the '<em><b>Owned Extensions</b></em>' containment reference list.
@@ -2155,6 +2372,232 @@ public interface AtriumPackage extends EPackage {
 	int DG_FEATURE_COUNT = ATRIUM_BASIC_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
+	 * The meta object id for the '{@link org.polarsys.capella.vp.atrium.Atrium.impl.sDGImpl <em>sDG</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.capella.vp.atrium.Atrium.impl.sDGImpl
+	 * @see org.polarsys.capella.vp.atrium.Atrium.impl.AtriumPackageImpl#getsDG()
+	 * @generated
+	 */
+	int SDG = 10;
+
+	/**
+	 * The feature id for the '<em><b>Owned Extensions</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SDG__OWNED_EXTENSIONS = ATRIUM_BASIC_ELEMENT__OWNED_EXTENSIONS;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SDG__ID = ATRIUM_BASIC_ELEMENT__ID;
+
+	/**
+	 * The feature id for the '<em><b>Sid</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SDG__SID = ATRIUM_BASIC_ELEMENT__SID;
+
+	/**
+	 * The feature id for the '<em><b>Constraints</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SDG__CONSTRAINTS = ATRIUM_BASIC_ELEMENT__CONSTRAINTS;
+
+	/**
+	 * The feature id for the '<em><b>Owned Constraints</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SDG__OWNED_CONSTRAINTS = ATRIUM_BASIC_ELEMENT__OWNED_CONSTRAINTS;
+
+	/**
+	 * The feature id for the '<em><b>Owned Migrated Elements</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SDG__OWNED_MIGRATED_ELEMENTS = ATRIUM_BASIC_ELEMENT__OWNED_MIGRATED_ELEMENTS;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SDG__NAME = ATRIUM_BASIC_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Incoming Traces</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SDG__INCOMING_TRACES = ATRIUM_BASIC_ELEMENT__INCOMING_TRACES;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing Traces</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SDG__OUTGOING_TRACES = ATRIUM_BASIC_ELEMENT__OUTGOING_TRACES;
+
+	/**
+	 * The feature id for the '<em><b>Visible In Doc</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SDG__VISIBLE_IN_DOC = ATRIUM_BASIC_ELEMENT__VISIBLE_IN_DOC;
+
+	/**
+	 * The feature id for the '<em><b>Visible In LM</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SDG__VISIBLE_IN_LM = ATRIUM_BASIC_ELEMENT__VISIBLE_IN_LM;
+
+	/**
+	 * The feature id for the '<em><b>Summary</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SDG__SUMMARY = ATRIUM_BASIC_ELEMENT__SUMMARY;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SDG__DESCRIPTION = ATRIUM_BASIC_ELEMENT__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Review</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SDG__REVIEW = ATRIUM_BASIC_ELEMENT__REVIEW;
+
+	/**
+	 * The feature id for the '<em><b>Owned Property Values</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SDG__OWNED_PROPERTY_VALUES = ATRIUM_BASIC_ELEMENT__OWNED_PROPERTY_VALUES;
+
+	/**
+	 * The feature id for the '<em><b>Owned Enumeration Property Types</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SDG__OWNED_ENUMERATION_PROPERTY_TYPES = ATRIUM_BASIC_ELEMENT__OWNED_ENUMERATION_PROPERTY_TYPES;
+
+	/**
+	 * The feature id for the '<em><b>Applied Property Values</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SDG__APPLIED_PROPERTY_VALUES = ATRIUM_BASIC_ELEMENT__APPLIED_PROPERTY_VALUES;
+
+	/**
+	 * The feature id for the '<em><b>Owned Property Value Groups</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SDG__OWNED_PROPERTY_VALUE_GROUPS = ATRIUM_BASIC_ELEMENT__OWNED_PROPERTY_VALUE_GROUPS;
+
+	/**
+	 * The feature id for the '<em><b>Applied Property Value Groups</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SDG__APPLIED_PROPERTY_VALUE_GROUPS = ATRIUM_BASIC_ELEMENT__APPLIED_PROPERTY_VALUE_GROUPS;
+
+	/**
+	 * The feature id for the '<em><b>Status</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SDG__STATUS = ATRIUM_BASIC_ELEMENT__STATUS;
+
+	/**
+	 * The feature id for the '<em><b>Features</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SDG__FEATURES = ATRIUM_BASIC_ELEMENT__FEATURES;
+
+	/**
+	 * The feature id for the '<em><b>Applied Requirements</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SDG__APPLIED_REQUIREMENTS = ATRIUM_BASIC_ELEMENT__APPLIED_REQUIREMENTS;
+
+	/**
+	 * The feature id for the '<em><b>Content</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SDG__CONTENT = ATRIUM_BASIC_ELEMENT__CONTENT;
+
+	/**
+	 * The number of structural features of the '<em>sDG</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SDG_FEATURE_COUNT = ATRIUM_BASIC_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.polarsys.capella.vp.atrium.Atrium.impl.DAImpl <em>DA</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2162,7 +2605,7 @@ public interface AtriumPackage extends EPackage {
 	 * @see org.polarsys.capella.vp.atrium.Atrium.impl.AtriumPackageImpl#getDA()
 	 * @generated
 	 */
-	int DA = 9;
+	int DA = 11;
 
 	/**
 	 * The feature id for the '<em><b>Owned Extensions</b></em>' containment reference list.
@@ -2397,7 +2840,7 @@ public interface AtriumPackage extends EPackage {
 	 * @see org.polarsys.capella.vp.atrium.Atrium.impl.AtriumPackageImpl#getElementStateAtrium()
 	 * @generated
 	 */
-	int ELEMENT_STATE_ATRIUM = 10;
+	int ELEMENT_STATE_ATRIUM = 12;
 
 	/**
 	 * The feature id for the '<em><b>Owned Extensions</b></em>' containment reference list.
@@ -2623,7 +3066,7 @@ public interface AtriumPackage extends EPackage {
 	 * @see org.polarsys.capella.vp.atrium.Atrium.impl.AtriumPackageImpl#getFailureMode()
 	 * @generated
 	 */
-	int FAILURE_MODE = 11;
+	int FAILURE_MODE = 13;
 
 	/**
 	 * The feature id for the '<em><b>Owned Extensions</b></em>' containment reference list.
@@ -2849,7 +3292,7 @@ public interface AtriumPackage extends EPackage {
 	 * @see org.polarsys.capella.vp.atrium.Atrium.impl.AtriumPackageImpl#getassumptionType_Type()
 	 * @generated
 	 */
-	int ASSUMPTION_TYPE_TYPE = 12;
+	int ASSUMPTION_TYPE_TYPE = 14;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.capella.vp.atrium.Atrium.validity_Type <em>validity Type</em>}' enum.
@@ -2859,7 +3302,7 @@ public interface AtriumPackage extends EPackage {
 	 * @see org.polarsys.capella.vp.atrium.Atrium.impl.AtriumPackageImpl#getvalidity_Type()
 	 * @generated
 	 */
-	int VALIDITY_TYPE = 13;
+	int VALIDITY_TYPE = 15;
 
 	/**
 	 * Returns the meta object for class '{@link org.polarsys.capella.vp.atrium.Atrium.AtriumBasicElement <em>Basic Element</em>}'.
@@ -2891,6 +3334,16 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getCFA_list();
+
+	/**
+	 * Returns the meta object for class '{@link org.polarsys.capella.vp.atrium.Atrium.sDG_list <em>sDG list</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>sDG list</em>'.
+	 * @see org.polarsys.capella.vp.atrium.Atrium.sDG_list
+	 * @generated
+	 */
+	EClass getsDG_list();
 
 	/**
 	 * Returns the meta object for class '{@link org.polarsys.capella.vp.atrium.Atrium.Assumption_list <em>Assumption list</em>}'.
@@ -3095,6 +3548,16 @@ public interface AtriumPackage extends EPackage {
 	EReference getDG_SubDGs();
 
 	/**
+	 * Returns the meta object for class '{@link org.polarsys.capella.vp.atrium.Atrium.sDG <em>sDG</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>sDG</em>'.
+	 * @see org.polarsys.capella.vp.atrium.Atrium.sDG
+	 * @generated
+	 */
+	EClass getsDG();
+
+	/**
 	 * Returns the meta object for class '{@link org.polarsys.capella.vp.atrium.Atrium.DA <em>DA</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3215,6 +3678,16 @@ public interface AtriumPackage extends EPackage {
 		 * @generated
 		 */
 		EClass CFA_LIST = eINSTANCE.getCFA_list();
+
+		/**
+		 * The meta object literal for the '{@link org.polarsys.capella.vp.atrium.Atrium.impl.sDG_listImpl <em>sDG list</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.polarsys.capella.vp.atrium.Atrium.impl.sDG_listImpl
+		 * @see org.polarsys.capella.vp.atrium.Atrium.impl.AtriumPackageImpl#getsDG_list()
+		 * @generated
+		 */
+		EClass SDG_LIST = eINSTANCE.getsDG_list();
 
 		/**
 		 * The meta object literal for the '{@link org.polarsys.capella.vp.atrium.Atrium.impl.Assumption_listImpl <em>Assumption list</em>}' class.
@@ -3381,6 +3854,16 @@ public interface AtriumPackage extends EPackage {
 		 * @generated
 		 */
 		EReference DG__SUB_DGS = eINSTANCE.getDG_SubDGs();
+
+		/**
+		 * The meta object literal for the '{@link org.polarsys.capella.vp.atrium.Atrium.impl.sDGImpl <em>sDG</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.polarsys.capella.vp.atrium.Atrium.impl.sDGImpl
+		 * @see org.polarsys.capella.vp.atrium.Atrium.impl.AtriumPackageImpl#getsDG()
+		 * @generated
+		 */
+		EClass SDG = eINSTANCE.getsDG();
 
 		/**
 		 * The meta object literal for the '{@link org.polarsys.capella.vp.atrium.Atrium.impl.DAImpl <em>DA</em>}' class.

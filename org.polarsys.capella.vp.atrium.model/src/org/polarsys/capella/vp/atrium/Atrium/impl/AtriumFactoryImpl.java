@@ -62,6 +62,8 @@ public class AtriumFactoryImpl extends EFactoryImpl implements AtriumFactory {
 			return createAtriumBasicElement();
 		case AtriumPackage.CFA_LIST:
 			return createCFA_list();
+		case AtriumPackage.SDG_LIST:
+			return createsDG_list();
 		case AtriumPackage.ASSUMPTION_LIST:
 			return createAssumption_list();
 		case AtriumPackage.DG_LIST:
@@ -76,6 +78,8 @@ public class AtriumFactoryImpl extends EFactoryImpl implements AtriumFactory {
 			return createAssumption();
 		case AtriumPackage.DG:
 			return createDG();
+		case AtriumPackage.SDG:
+			return createsDG();
 		case AtriumPackage.DA:
 			return createDA();
 		case AtriumPackage.ELEMENT_STATE_ATRIUM:
@@ -149,6 +153,21 @@ public class AtriumFactoryImpl extends EFactoryImpl implements AtriumFactory {
 
 		//end-capella-code
 		return cfA_list;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public sDG_list createsDG_list() {
+		sDG_listImpl sDG_list = new sDG_listImpl();
+		//begin-capella-code
+
+		sDG_list.setId(IdGenerator.createId());
+
+		//end-capella-code
+		return sDG_list;
 	}
 
 	/**
@@ -254,6 +273,21 @@ public class AtriumFactoryImpl extends EFactoryImpl implements AtriumFactory {
 
 		//end-capella-code
 		return dg;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public sDG createsDG() {
+		sDGImpl sDG = new sDGImpl();
+		//begin-capella-code
+
+		sDG.setId(IdGenerator.createId());
+
+		//end-capella-code
+		return sDG;
 	}
 
 	/**
@@ -400,6 +434,19 @@ public class AtriumFactoryImpl extends EFactoryImpl implements AtriumFactory {
 	 * @param name_p : default name of created element
 	 * @generated
 	 */
+	public sDG_list createsDG_list(String name_p) {
+		sDG_list sDG_list = createsDG_list();
+		sDG_list.setName(name_p);
+		return sDG_list;
+	}
+
+	/**
+	 * Creates class and sets its name
+	 * (This method comes from a customization of the standard EMF generator)
+	 *
+	 * @param name_p : default name of created element
+	 * @generated
+	 */
 	public Assumption_list createAssumption_list(String name_p) {
 		Assumption_list assumption_list = createAssumption_list();
 		assumption_list.setName(name_p);
@@ -482,6 +529,19 @@ public class AtriumFactoryImpl extends EFactoryImpl implements AtriumFactory {
 		DG dg = createDG();
 		dg.setName(name_p);
 		return dg;
+	}
+
+	/**
+	 * Creates class and sets its name
+	 * (This method comes from a customization of the standard EMF generator)
+	 *
+	 * @param name_p : default name of created element
+	 * @generated
+	 */
+	public sDG createsDG(String name_p) {
+		sDG sDG = createsDG();
+		sDG.setName(name_p);
+		return sDG;
 	}
 
 	/**

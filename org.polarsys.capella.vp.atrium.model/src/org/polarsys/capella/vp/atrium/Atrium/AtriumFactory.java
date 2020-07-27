@@ -39,6 +39,15 @@ public interface AtriumFactory extends EFactory {
 	CFA_list createCFA_list();
 
 	/**
+	 * Returns a new object of class '<em>sDG list</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>sDG list</em>'.
+	 * @generated
+	 */
+	sDG_list createsDG_list();
+
+	/**
 	 * Returns a new object of class '<em>Assumption list</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -100,6 +109,15 @@ public interface AtriumFactory extends EFactory {
 	 * @generated
 	 */
 	DG createDG();
+
+	/**
+	 * Returns a new object of class '<em>sDG</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>sDG</em>'.
+	 * @generated
+	 */
+	sDG createsDG();
 
 	/**
 	 * Returns a new object of class '<em>DA</em>'.

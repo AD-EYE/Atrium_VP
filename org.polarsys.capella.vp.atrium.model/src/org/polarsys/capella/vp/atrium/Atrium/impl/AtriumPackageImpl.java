@@ -55,6 +55,8 @@ import org.polarsys.capella.vp.atrium.Atrium.ElementStateAtrium;
 import org.polarsys.capella.vp.atrium.Atrium.FailureMode;
 import org.polarsys.capella.vp.atrium.Atrium.Failure_list;
 import org.polarsys.capella.vp.atrium.Atrium.assumptionType_Type;
+import org.polarsys.capella.vp.atrium.Atrium.sDG;
+import org.polarsys.capella.vp.atrium.Atrium.sDG_list;
 import org.polarsys.capella.vp.atrium.Atrium.validity_Type;
 
 import org.polarsys.kitalpha.emde.model.EmdePackage;
@@ -79,6 +81,13 @@ public class AtriumPackageImpl extends EPackageImpl implements AtriumPackage {
 	 * @generated
 	 */
 	private EClass cfA_listEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass sDG_listEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -128,6 +137,13 @@ public class AtriumPackageImpl extends EPackageImpl implements AtriumPackage {
 	 * @generated
 	 */
 	private EClass dgEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass sDGEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -276,6 +292,16 @@ public class AtriumPackageImpl extends EPackageImpl implements AtriumPackage {
 	@Override
 	public EClass getCFA_list() {
 		return cfA_listEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getsDG_list() {
+		return sDG_listEClass;
 	}
 
 	/**
@@ -474,6 +500,16 @@ public class AtriumPackageImpl extends EPackageImpl implements AtriumPackage {
 	 * @generated
 	 */
 	@Override
+	public EClass getsDG() {
+		return sDGEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getDA() {
 		return daEClass;
 	}
@@ -573,6 +609,8 @@ public class AtriumPackageImpl extends EPackageImpl implements AtriumPackage {
 
 		cfA_listEClass = createEClass(CFA_LIST);
 
+		sDG_listEClass = createEClass(SDG_LIST);
+
 		assumption_listEClass = createEClass(ASSUMPTION_LIST);
 
 		dG_listEClass = createEClass(DG_LIST);
@@ -598,6 +636,8 @@ public class AtriumPackageImpl extends EPackageImpl implements AtriumPackage {
 		dgEClass = createEClass(DG);
 		createEReference(dgEClass, DG__DESIGN_ALTERNATIVE);
 		createEReference(dgEClass, DG__SUB_DGS);
+
+		sDGEClass = createEClass(SDG);
 
 		daEClass = createEClass(DA);
 		createEAttribute(daEClass, DA__IS_PART_OF_SELECTION);
@@ -650,6 +690,8 @@ public class AtriumPackageImpl extends EPackageImpl implements AtriumPackage {
 		atriumBasicElementEClass.getESuperTypes().add(theEmdePackage.getElementExtension());
 		cfA_listEClass.getESuperTypes().add(theCapellacorePackage.getNamedElement());
 		cfA_listEClass.getESuperTypes().add(theEmdePackage.getElementExtension());
+		sDG_listEClass.getESuperTypes().add(theCapellacorePackage.getNamedElement());
+		sDG_listEClass.getESuperTypes().add(theEmdePackage.getElementExtension());
 		assumption_listEClass.getESuperTypes().add(theCapellacorePackage.getNamedElement());
 		assumption_listEClass.getESuperTypes().add(theEmdePackage.getElementExtension());
 		dG_listEClass.getESuperTypes().add(theCapellacorePackage.getNamedElement());
@@ -661,6 +703,7 @@ public class AtriumPackageImpl extends EPackageImpl implements AtriumPackage {
 		cfaEClass.getESuperTypes().add(this.getAtriumBasicElement());
 		assumptionEClass.getESuperTypes().add(this.getAtriumBasicElement());
 		dgEClass.getESuperTypes().add(this.getAtriumBasicElement());
+		sDGEClass.getESuperTypes().add(this.getAtriumBasicElement());
 		daEClass.getESuperTypes().add(this.getAtriumBasicElement());
 		elementStateAtriumEClass.getESuperTypes().add(theCapellacorePackage.getNamedElement());
 		elementStateAtriumEClass.getESuperTypes().add(theEmdePackage.getElementExtension());
@@ -674,6 +717,9 @@ public class AtriumPackageImpl extends EPackageImpl implements AtriumPackage {
 				!IS_DERIVED, IS_ORDERED);
 
 		initEClass(cfA_listEClass, CFA_list.class, "CFA_list", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
+				IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(sDG_listEClass, sDG_list.class, "sDG_list", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
 				IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(assumption_listEClass, Assumption_list.class, "Assumption_list", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
@@ -729,6 +775,8 @@ public class AtriumPackageImpl extends EPackageImpl implements AtriumPackage {
 				org.polarsys.capella.vp.atrium.Atrium.DG.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
 				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEClass(sDGEClass, sDG.class, "sDG", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+
 		initEClass(daEClass, org.polarsys.capella.vp.atrium.Atrium.DA.class, "DA", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
 				IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDA_IsPartOfSelection(), ecorePackage.getEBoolean(), "isPartOfSelection", null, 0, 1, //$NON-NLS-1$
@@ -778,6 +826,9 @@ public class AtriumPackageImpl extends EPackageImpl implements AtriumPackage {
 		addAnnotation(cfA_listEClass, source,
 				new String[] { "ExtendedElement", " http://www.polarsys.org/capella/core/la/1.4.0#//LogicalComponent" //$NON-NLS-1$ //$NON-NLS-2$
 				});
+		addAnnotation(sDG_listEClass, source,
+				new String[] { "ExtendedElement", " http://www.polarsys.org/capella/core/la/1.4.0#//LogicalComponent" //$NON-NLS-1$ //$NON-NLS-2$
+				});
 		addAnnotation(assumption_listEClass, source,
 				new String[] { "ExtendedElement", " http://www.polarsys.org/capella/core/la/1.4.0#//LogicalComponent" //$NON-NLS-1$ //$NON-NLS-2$
 				});
@@ -807,6 +858,9 @@ public class AtriumPackageImpl extends EPackageImpl implements AtriumPackage {
 				" platform:/plugin/org.polarsys.capella.core.data.gen/model/FunctionalAnalysis.ecore#//AbstractFunction" //$NON-NLS-1$
 		});
 		addAnnotation(cfA_listEClass, source, new String[] { "Mapping", //$NON-NLS-1$
+				" platform:/plugin/org.polarsys.capella.core.data.gen/model/LogicalArchitecture.ecore#//LogicalComponent" //$NON-NLS-1$
+		});
+		addAnnotation(sDG_listEClass, source, new String[] { "Mapping", //$NON-NLS-1$
 				" platform:/plugin/org.polarsys.capella.core.data.gen/model/LogicalArchitecture.ecore#//LogicalComponent" //$NON-NLS-1$
 		});
 		addAnnotation(assumption_listEClass, source, new String[] { "Mapping", //$NON-NLS-1$

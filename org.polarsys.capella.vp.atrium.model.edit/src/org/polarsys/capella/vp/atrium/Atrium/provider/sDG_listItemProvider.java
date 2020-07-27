@@ -7,8 +7,6 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
-import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.emf.edit.command.CommandParameter;
 
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
@@ -17,25 +15,23 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import org.polarsys.capella.core.data.capellacore.provider.NamedElementItemProvider;
 
 import org.polarsys.capella.vp.atrium.Atrium.AtriumFactory;
-import org.polarsys.capella.vp.atrium.Atrium.AtriumPackage;
-import org.polarsys.capella.vp.atrium.Atrium.CFA_list;
+import org.polarsys.capella.vp.atrium.Atrium.sDG_list;
 
 import org.polarsys.kitalpha.emde.model.EmdePackage;
 
 import org.polarsys.kitalpha.emde.model.edit.provider.NewChildDescriptorHelper;
 
 /**
- * This is the item provider adapter for a {@link org.polarsys.capella.vp.atrium.Atrium.CFA_list} object.
+ * This is the item provider adapter for a {@link org.polarsys.capella.vp.atrium.Atrium.sDG_list} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class CFA_listItemProvider extends NamedElementItemProvider implements IEditingDomainItemProvider,
+public class sDG_listItemProvider extends NamedElementItemProvider implements IEditingDomainItemProvider,
 		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -43,7 +39,7 @@ public class CFA_listItemProvider extends NamedElementItemProvider implements IE
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CFA_listItemProvider(AdapterFactory adapterFactory) {
+	public sDG_listItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -76,14 +72,14 @@ public class CFA_listItemProvider extends NamedElementItemProvider implements IE
 	}
 
 	/**
-	 * This returns CFA_list.gif.
+	 * This returns sDG_list.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/CFA_list")); //$NON-NLS-1$
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/sDG_list")); //$NON-NLS-1$
 	}
 
 	/**
@@ -95,9 +91,9 @@ public class CFA_listItemProvider extends NamedElementItemProvider implements IE
 	@Override
 	public String getText(Object object) {
 
-		String label = ((CFA_list) object).getName();
+		String label = ((sDG_list) object).getName();
 		// begin-extension-code
-		return label == null || label.length() == 0 ? "[" + getString("_UI_CFA_list_type") + "]" : label; //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+		return label == null || label.length() == 0 ? "[" + getString("_UI_sDG_list_type") + "]" : label; //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 		// end-extension-code
 	}
 

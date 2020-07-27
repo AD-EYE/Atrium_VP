@@ -72,6 +72,13 @@
 			<propertyTab
 		    	afterTab="BaseSiriusDiagram"
 		        category="semantic &amp; extension"
+		        id="Atrium_sDG"
+		        label="Atrium">
+		    </propertyTab> 
+			
+			<propertyTab
+		    	afterTab="BaseSiriusDiagram"
+		        category="semantic &amp; extension"
 		        id="Atrium_DA"
 		        label="Atrium">
 		    </propertyTab> 
@@ -157,6 +164,13 @@
 		    	afterTab="BaseCapella"
 		        category="default"
 		        id="Atrium_DG"
+		        label="Atrium">
+		    </propertyTab> 
+			
+			<propertyTab
+		    	afterTab="BaseCapella"
+		        category="default"
+		        id="Atrium_sDG"
 		        label="Atrium">
 		    </propertyTab> 
 			
@@ -251,6 +265,13 @@
 		        
 		    </propertySection> 
 		    			<propertySection
+		    	class="org.polarsys.capella.vp.atrium.ui.sections.Atrium_sDG_Atrium_sDG_Section"
+		        filter="org.polarsys.capella.vp.atrium.ui.sections.Atrium_sDG_Atrium_sDG_Section"
+		        id="Atrium_sDG.Atrium_sDG_Section"
+		        tab="Atrium_sDG">
+		        
+		    </propertySection> 
+		    			<propertySection
 		    	class="org.polarsys.capella.vp.atrium.ui.sections.Atrium_DA_Atrium_DA_Section"
 		        filter="org.polarsys.capella.vp.atrium.ui.sections.Atrium_DA_Atrium_DA_Section"
 		        id="Atrium_DA.Atrium_DA_Section"
@@ -338,6 +359,13 @@
 		        filter="org.polarsys.capella.vp.atrium.ui.sections.Atrium_DG_Atrium_DG_Section"
 		        id="Atrium_DG.Atrium_DG_Section"
 		        tab="Atrium_DG">
+		        
+		    </propertySection> 
+		    			<propertySection
+		    	class="org.polarsys.capella.vp.atrium.ui.sections.Atrium_sDG_Atrium_sDG_Section"
+		        filter="org.polarsys.capella.vp.atrium.ui.sections.Atrium_sDG_Atrium_sDG_Section"
+		        id="Atrium_sDG.Atrium_sDG_Section"
+		        tab="Atrium_sDG">
 		        
 		    </propertySection> 
 		    			<propertySection

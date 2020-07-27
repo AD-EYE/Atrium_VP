@@ -12,6 +12,9 @@
     <VP_Classes name="CFA_list">
       <extends href="http://www.polarsys.org/capella/core/la/1.4.0#//LogicalComponent"/>
     </VP_Classes>
+    <VP_Classes name="sDG_list">
+      <extends href="http://www.polarsys.org/capella/core/la/1.4.0#//LogicalComponent"/>
+    </VP_Classes>
     <VP_Classes name="Assumption_list">
       <extends href="http://www.polarsys.org/capella/core/la/1.4.0#//LogicalComponent"/>
     </VP_Classes>
@@ -28,8 +31,8 @@
       <VP_Classes_Associations xsi:type="vpdesc:ExternalClassAssociation" name="linkedtoElement" cardinality="1" type="reference">
         <ExternalTarget href="http://www.polarsys.org/capella/core/core/1.4.0#//CapellaElement"/>
       </VP_Classes_Associations>
-      <VP_Classes_Associations xsi:type="vpdesc:LocalClassAssociation" name="assumption" cardinality="0..*" type="reference" LocalTarget="//@VP_Data/@VP_Classes.7"/>
-      <VP_Classes_Associations xsi:type="vpdesc:LocalClassAssociation" name="goal" cardinality="1" type="reference" LocalTarget="//@VP_Data/@VP_Classes.8"/>
+      <VP_Classes_Associations xsi:type="vpdesc:LocalClassAssociation" name="assumption" cardinality="0..*" type="reference" LocalTarget="//@VP_Data/@VP_Classes.8"/>
+      <VP_Classes_Associations xsi:type="vpdesc:LocalClassAssociation" name="goal" cardinality="1" type="reference" LocalTarget="//@VP_Data/@VP_Classes.9"/>
       <VP_Class_Attributes name="state">
         <owned_type xsi:type="vpdesc:ExternalAttributeType">
           <type href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
@@ -76,8 +79,11 @@
       <Inheritences xsi:type="vpdesc:LocalSuperClass" superClass="//@VP_Data/@VP_Classes.0"/>
     </VP_Classes>
     <VP_Classes name="DG">
-      <VP_Classes_Associations xsi:type="vpdesc:LocalClassAssociation" name="designAlternative" cardinality="1..*" type="reference" LocalTarget="//@VP_Data/@VP_Classes.9"/>
-      <VP_Classes_Associations xsi:type="vpdesc:LocalClassAssociation" name="subDGs" cardinality="0..*" type="reference" LocalTarget="//@VP_Data/@VP_Classes.8"/>
+      <VP_Classes_Associations xsi:type="vpdesc:LocalClassAssociation" name="designAlternative" cardinality="1..*" type="reference" LocalTarget="//@VP_Data/@VP_Classes.11"/>
+      <VP_Classes_Associations xsi:type="vpdesc:LocalClassAssociation" name="subDGs" cardinality="0..*" type="reference" LocalTarget="//@VP_Data/@VP_Classes.9"/>
+      <Inheritences xsi:type="vpdesc:LocalSuperClass" superClass="//@VP_Data/@VP_Classes.0"/>
+    </VP_Classes>
+    <VP_Classes name="sDG">
       <Inheritences xsi:type="vpdesc:LocalSuperClass" superClass="//@VP_Data/@VP_Classes.0"/>
     </VP_Classes>
     <VP_Classes name="DA">
@@ -144,7 +150,7 @@
             <Mapping UI_Field_Mapped_To="//@VP_Data/@VP_Classes.0/@VP_Class_Attributes.0"/>
           </UI_fields>
           <UI_fields name="stateField" label="State" type="checkbox">
-            <Mapping UI_Field_Mapped_To="//@VP_Data/@VP_Classes.6/@VP_Class_Attributes.0"/>
+            <Mapping UI_Field_Mapped_To="//@VP_Data/@VP_Classes.7/@VP_Class_Attributes.0"/>
           </UI_fields>
         </subContainers>
       </UI_Containers>
@@ -156,22 +162,22 @@
             <Mapping UI_Field_Mapped_To="//@VP_Data/@VP_Classes.0/@VP_Class_Attributes.0"/>
           </UI_fields>
           <UI_fields name="assumptionTypeField" label="Assumption Type" type="radiobox">
-            <Mapping UI_Field_Mapped_To="//@VP_Data/@VP_Classes.7/@VP_Class_Attributes.0"/>
+            <Mapping UI_Field_Mapped_To="//@VP_Data/@VP_Classes.8/@VP_Class_Attributes.0"/>
           </UI_fields>
           <UI_fields name="rationaleField" label="Rationale">
-            <Mapping UI_Field_Mapped_To="//@VP_Data/@VP_Classes.7/@VP_Class_Attributes.1"/>
+            <Mapping UI_Field_Mapped_To="//@VP_Data/@VP_Classes.8/@VP_Class_Attributes.1"/>
           </UI_fields>
           <UI_fields name="validityField" label="Validity" type="radiobox">
-            <Mapping UI_Field_Mapped_To="//@VP_Data/@VP_Classes.7/@VP_Class_Attributes.2"/>
+            <Mapping UI_Field_Mapped_To="//@VP_Data/@VP_Classes.8/@VP_Class_Attributes.2"/>
           </UI_fields>
           <UI_fields name="responsibleArchitectField" label="Responsible Architect">
-            <Mapping UI_Field_Mapped_To="//@VP_Data/@VP_Classes.7/@VP_Class_Attributes.3"/>
+            <Mapping UI_Field_Mapped_To="//@VP_Data/@VP_Classes.8/@VP_Class_Attributes.3"/>
           </UI_fields>
           <UI_fields name="responsibleExpertField" label="Responsible Expert">
-            <Mapping UI_Field_Mapped_To="//@VP_Data/@VP_Classes.7/@VP_Class_Attributes.4"/>
+            <Mapping UI_Field_Mapped_To="//@VP_Data/@VP_Classes.8/@VP_Class_Attributes.4"/>
           </UI_fields>
           <UI_fields name="dateOfCompletionField" label="Date Of Completion">
-            <Mapping UI_Field_Mapped_To="//@VP_Data/@VP_Classes.7/@VP_Class_Attributes.5"/>
+            <Mapping UI_Field_Mapped_To="//@VP_Data/@VP_Classes.8/@VP_Class_Attributes.5"/>
           </UI_fields>
         </subContainers>
       </UI_Containers>
@@ -185,14 +191,23 @@
         </subContainers>
       </UI_Containers>
     </UIs>
-    <UIs name="Atrium_DA" label="Atrium">
-      <UI_Containers name="Atrium_DA_Section">
-        <subContainers name="Atrium_DA_AttributeGroup" label="D A Attributes">
+    <UIs name="Atrium_sDG" label="Atrium">
+      <UI_Containers name="Atrium_sDG_Section">
+        <subContainers name="Atrium_sDG_AttributeGroup" label="S D G Attributes">
           <UI_fields name="contentField4" label="Content">
             <Mapping UI_Field_Mapped_To="//@VP_Data/@VP_Classes.0/@VP_Class_Attributes.0"/>
           </UI_fields>
+        </subContainers>
+      </UI_Containers>
+    </UIs>
+    <UIs name="Atrium_DA" label="Atrium">
+      <UI_Containers name="Atrium_DA_Section">
+        <subContainers name="Atrium_DA_AttributeGroup" label="D A Attributes">
+          <UI_fields name="contentField5" label="Content">
+            <Mapping UI_Field_Mapped_To="//@VP_Data/@VP_Classes.0/@VP_Class_Attributes.0"/>
+          </UI_fields>
           <UI_fields name="isPartOfSelectionField" label="Is Part Of Selection" type="checkbox">
-            <Mapping UI_Field_Mapped_To="//@VP_Data/@VP_Classes.9/@VP_Class_Attributes.0"/>
+            <Mapping UI_Field_Mapped_To="//@VP_Data/@VP_Classes.11/@VP_Class_Attributes.0"/>
           </UI_fields>
         </subContainers>
       </UI_Containers>
@@ -201,7 +216,7 @@
       <UI_Containers name="Atrium_ElementStateAtrium_Section">
         <subContainers name="Atrium_ElementStateAtrium_AttributeGroup" label="Element State Atrium Attributes">
           <UI_fields name="isNewDevelopmentField" label="Is New Development" type="checkbox">
-            <Mapping UI_Field_Mapped_To="//@VP_Data/@VP_Classes.10/@VP_Class_Attributes.0"/>
+            <Mapping UI_Field_Mapped_To="//@VP_Data/@VP_Classes.12/@VP_Class_Attributes.0"/>
           </UI_fields>
         </subContainers>
       </UI_Containers>
@@ -209,7 +224,7 @@
     <UIs name="Atrium_FailureMode" label="Atrium">
       <UI_Containers name="Atrium_FailureMode_Section">
         <subContainers name="Atrium_FailureMode_AttributeGroup" label="Failure Mode Attributes">
-          <UI_fields name="contentField5" label="Content">
+          <UI_fields name="contentField6" label="Content">
             <Mapping UI_Field_Mapped_To="//@VP_Data/@VP_Classes.0/@VP_Class_Attributes.0"/>
           </UI_fields>
         </subContainers>
@@ -237,7 +252,7 @@
           <children>
             <owned_nodes xsi:type="vpdiagram:Node" name="node_CFA">
               <the_domain>
-                <domain_Class xsi:type="commondata:LocalClass" class="//@VP_Data/@VP_Classes.6"/>
+                <domain_Class xsi:type="commondata:LocalClass" class="//@VP_Data/@VP_Classes.7"/>
                 <chlidren_list xsi:type="commondata:ExternalAssociation">
                   <reference href="http://www.polarsys.org/kitalpha/emde/1.0.0#//ExtensibleElement/ownedExtensions"/>
                 </chlidren_list>
@@ -256,7 +271,7 @@
         </diagram_Elements>
         <diagram_Elements xsi:type="vpdiagram:Container" name="Container_list_Assumption" contentLayout="List">
           <the_domain>
-            <domain_Class xsi:type="commondata:LocalClass" class="//@VP_Data/@VP_Classes.2"/>
+            <domain_Class xsi:type="commondata:LocalClass" class="//@VP_Data/@VP_Classes.3"/>
             <chlidren_list xsi:type="commondata:ExternalAssociation">
               <reference href="http://www.polarsys.org/kitalpha/emde/1.0.0#//ExtensibleElement/ownedExtensions"/>
             </chlidren_list>
@@ -272,7 +287,7 @@
           <children>
             <owned_nodes xsi:type="vpdiagram:Node" name="node_assumption">
               <the_domain>
-                <domain_Class xsi:type="commondata:LocalClass" class="//@VP_Data/@VP_Classes.7"/>
+                <domain_Class xsi:type="commondata:LocalClass" class="//@VP_Data/@VP_Classes.8"/>
                 <chlidren_list xsi:type="commondata:ExternalAssociation">
                   <reference href="http://www.polarsys.org/kitalpha/emde/1.0.0#//ExtensibleElement/ownedExtensions"/>
                 </chlidren_list>
@@ -315,7 +330,7 @@
         </diagram_Elements>
         <diagram_Elements xsi:type="vpdiagram:Container" name="Container_list_DG" contentLayout="List">
           <the_domain>
-            <domain_Class xsi:type="commondata:LocalClass" class="//@VP_Data/@VP_Classes.3"/>
+            <domain_Class xsi:type="commondata:LocalClass" class="//@VP_Data/@VP_Classes.4"/>
             <chlidren_list xsi:type="commondata:ExternalAssociation">
               <reference href="http://www.polarsys.org/kitalpha/emde/1.0.0#//ExtensibleElement/ownedExtensions"/>
             </chlidren_list>
@@ -331,7 +346,7 @@
           <children>
             <owned_nodes xsi:type="vpdiagram:Node" name="node_DG">
               <the_domain>
-                <domain_Class xsi:type="commondata:LocalClass" class="//@VP_Data/@VP_Classes.8"/>
+                <domain_Class xsi:type="commondata:LocalClass" class="//@VP_Data/@VP_Classes.9"/>
                 <chlidren_list xsi:type="commondata:ExternalAssociation">
                   <reference href="http://www.polarsys.org/kitalpha/emde/1.0.0#//ExtensibleElement/ownedExtensions"/>
                 </chlidren_list>
@@ -348,9 +363,44 @@
             </owned_nodes>
           </children>
         </diagram_Elements>
+        <diagram_Elements xsi:type="vpdiagram:Container" name="Container_list_sDG" contentLayout="List">
+          <the_domain>
+            <domain_Class xsi:type="commondata:LocalClass" class="//@VP_Data/@VP_Classes.2"/>
+            <chlidren_list xsi:type="commondata:ExternalAssociation">
+              <reference href="http://www.polarsys.org/kitalpha/emde/1.0.0#//ExtensibleElement/ownedExtensions"/>
+            </chlidren_list>
+          </the_domain>
+          <style>
+            <node_Label>
+              <value>
+                <expressionElements xsi:type="expression:StringElement" value="sDG list"/>
+              </value>
+            </node_Label>
+            <style xsi:type="vpdiagram:FlatStyle" backgroundColor="light_chocolate" forgroundColor="white"/>
+          </style>
+          <children>
+            <owned_nodes xsi:type="vpdiagram:Node" name="node_sDG">
+              <the_domain>
+                <domain_Class xsi:type="commondata:LocalClass" class="//@VP_Data/@VP_Classes.10"/>
+                <chlidren_list xsi:type="commondata:ExternalAssociation">
+                  <reference href="http://www.polarsys.org/kitalpha/emde/1.0.0#//ExtensibleElement/ownedExtensions"/>
+                </chlidren_list>
+              </the_domain>
+              <style>
+                <node_Label>
+                  <value>
+                    <expressionElements xsi:type="expression:StringElement" value="[sDG] "/>
+                    <expressionElements xsi:type="expression:StringElement" value="aql:self.name"/>
+                  </value>
+                </node_Label>
+                <style xsi:type="vpdiagram:BasicStyle" backgroundColor="light_gray"/>
+              </style>
+            </owned_nodes>
+          </children>
+        </diagram_Elements>
         <diagram_Elements xsi:type="vpdiagram:Container" name="Container_list_DA" contentLayout="List">
           <the_domain>
-            <domain_Class xsi:type="commondata:LocalClass" class="//@VP_Data/@VP_Classes.4"/>
+            <domain_Class xsi:type="commondata:LocalClass" class="//@VP_Data/@VP_Classes.5"/>
             <chlidren_list xsi:type="commondata:ExternalAssociation">
               <reference href="http://www.polarsys.org/kitalpha/emde/1.0.0#//ExtensibleElement/ownedExtensions"/>
             </chlidren_list>
@@ -366,7 +416,7 @@
           <children>
             <owned_nodes xsi:type="vpdiagram:Node" name="node_DA">
               <the_domain>
-                <domain_Class xsi:type="commondata:LocalClass" class="//@VP_Data/@VP_Classes.9"/>
+                <domain_Class xsi:type="commondata:LocalClass" class="//@VP_Data/@VP_Classes.11"/>
                 <chlidren_list xsi:type="commondata:ExternalAssociation">
                   <reference href="http://www.polarsys.org/kitalpha/emde/1.0.0#//ExtensibleElement/ownedExtensions"/>
                 </chlidren_list>
@@ -385,7 +435,7 @@
         </diagram_Elements>
         <diagram_Elements xsi:type="vpdiagram:Container" name="Container_list_Failure" contentLayout="List">
           <the_domain>
-            <domain_Class xsi:type="commondata:LocalClass" class="//@VP_Data/@VP_Classes.5"/>
+            <domain_Class xsi:type="commondata:LocalClass" class="//@VP_Data/@VP_Classes.6"/>
             <chlidren_list xsi:type="commondata:ExternalAssociation">
               <reference href="http://www.polarsys.org/kitalpha/emde/1.0.0#//ExtensibleElement/ownedExtensions"/>
             </chlidren_list>
@@ -401,7 +451,7 @@
           <children>
             <owned_nodes xsi:type="vpdiagram:Node" name="node_Failure">
               <the_domain>
-                <domain_Class xsi:type="commondata:LocalClass" class="//@VP_Data/@VP_Classes.11"/>
+                <domain_Class xsi:type="commondata:LocalClass" class="//@VP_Data/@VP_Classes.13"/>
                 <chlidren_list xsi:type="commondata:ExternalAssociation">
                   <reference href="http://www.polarsys.org/kitalpha/emde/1.0.0#//ExtensibleElement/ownedExtensions"/>
                 </chlidren_list>

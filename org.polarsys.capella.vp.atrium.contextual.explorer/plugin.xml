@@ -40,6 +40,24 @@
 <extension 
 	point="org.eclipse.amalgam.explorer.contextual.core.contentProviderCategory">
       <category
+            id="org.polarsys.capella.vp.atrium.contextual.explorer.queries.sDG_list.Parent"
+            isTopLevel="true"
+            name="Parent">
+         <targetExplorerId
+               id="CurrentElementExplorer">
+         </targetExplorerId>
+         <availableForType
+               class="org.polarsys.capella.vp.atrium.Atrium.sDG_list">
+         </availableForType>
+         <categoryQuery>
+            <basicQuery
+                  class="org.polarsys.capella.vp.atrium.contextual.explorer.queries.sdg_list.ParentQuery">
+            </basicQuery>
+         </categoryQuery>
+      </category>	</extension>
+<extension 
+	point="org.eclipse.amalgam.explorer.contextual.core.contentProviderCategory">
+      <category
             id="org.polarsys.capella.vp.atrium.contextual.explorer.queries.Assumption_list.Parent"
             isTopLevel="true"
             name="Parent">
@@ -220,6 +238,24 @@
          <categoryQuery>
             <basicQuery
                   class="org.polarsys.capella.vp.atrium.contextual.explorer.queries.dg.ReferencedViewpointElementQuery">
+            </basicQuery>
+         </categoryQuery>
+      </category>	</extension>
+<extension 
+	point="org.eclipse.amalgam.explorer.contextual.core.contentProviderCategory">
+      <category
+            id="org.polarsys.capella.vp.atrium.contextual.explorer.queries.sDG.Parent"
+            isTopLevel="true"
+            name="Parent">
+         <targetExplorerId
+               id="CurrentElementExplorer">
+         </targetExplorerId>
+         <availableForType
+               class="org.polarsys.capella.vp.atrium.Atrium.sDG">
+         </availableForType>
+         <categoryQuery>
+            <basicQuery
+                  class="org.polarsys.capella.vp.atrium.contextual.explorer.queries.sdg.ParentQuery">
             </basicQuery>
          </categoryQuery>
       </category>	</extension>

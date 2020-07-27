@@ -137,6 +137,40 @@ Diagrams Atrium.diagram {
 				}
 			}
 			
+			Container Container_list_sDG {
+				domain-context: Atrium.data.sDG_list
+				provided-by association external emde.ExtensibleElement.ownedExtensions content-layout: List
+				Representation {
+					Label {
+						content: "sDG list"
+						police: black
+					}
+					Style {
+						FlatStyle {
+							background: light_chocolate foreground: white
+						}
+					}
+				}
+				Contains {
+					Node node_sDG {
+						domain-context: Atrium.data.sDG
+						provided-by association external emde.ExtensibleElement.ownedExtensions
+						Representation {
+							Label {
+								content: "[sDG] " + "aql:self.name"
+								police: black
+								alignment: center
+							}
+							Style {
+								BasicStyle {
+									border-color: black background: light_gray form: Square
+								}
+							}
+						}
+					}
+				}
+			}
+			
 			Container Container_list_DA {
 				domain-context: Atrium.data.DA_list
 				provided-by association external emde.ExtensibleElement.ownedExtensions content-layout: List

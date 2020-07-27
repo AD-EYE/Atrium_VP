@@ -15,6 +15,9 @@ Data Atrium.data {
 	Class CFA_list {
 		extends la.LogicalComponent
 	}
+	Class sDG_list {
+		extends la.LogicalComponent
+	}
 	Class Assumption_list {
 		extends la.LogicalComponent
 	}
@@ -52,6 +55,9 @@ Data Atrium.data {
 		Associations:
 			designAlternative refers [1,*] DA
 			subDGs refers [0,*] DG
+	}
+	Class sDG {
+		superClass AtriumBasicElement
 	}
 	Class DA {
 		superClass AtriumBasicElement

@@ -18,6 +18,14 @@
       <details key="Mapping" value=" platform:/plugin/org.polarsys.capella.core.data.gen/model/LogicalArchitecture.ecore#//LogicalComponent"/>
     </eAnnotations>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="sDG_list" eSuperTypes="platform:/plugin/org.polarsys.capella.core.data.gen/model/CapellaCore.ecore#//NamedElement platform:/plugin/org.polarsys.kitalpha.emde/model/eMDE.ecore#//ElementExtension">
+    <eAnnotations source="http://www.polarsys.org/kitalpha/emde/1.0.0/constraint">
+      <details key="ExtendedElement" value=" http://www.polarsys.org/capella/core/la/1.4.0#//LogicalComponent"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.polarsys.org/kitalpha/emde/1.0.0/constraintMapping">
+      <details key="Mapping" value=" platform:/plugin/org.polarsys.capella.core.data.gen/model/LogicalArchitecture.ecore#//LogicalComponent"/>
+    </eAnnotations>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Assumption_list" eSuperTypes="platform:/plugin/org.polarsys.capella.core.data.gen/model/CapellaCore.ecore#//NamedElement platform:/plugin/org.polarsys.kitalpha.emde/model/eMDE.ecore#//ElementExtension">
     <eAnnotations source="http://www.polarsys.org/kitalpha/emde/1.0.0/constraint">
       <details key="ExtendedElement" value=" http://www.polarsys.org/capella/core/la/1.4.0#//LogicalComponent"/>
@@ -72,6 +80,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="subDGs" upperBound="-1"
         eType="#//DG"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="sDG" eSuperTypes="#//AtriumBasicElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="DA" eSuperTypes="#//AtriumBasicElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isPartOfSelection" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
