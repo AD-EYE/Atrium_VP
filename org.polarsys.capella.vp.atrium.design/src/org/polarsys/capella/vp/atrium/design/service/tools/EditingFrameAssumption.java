@@ -1,5 +1,8 @@
 package org.polarsys.capella.vp.atrium.design.service.tools;
 
+import javax.swing.JOptionPane;
+
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
@@ -14,6 +17,7 @@ import org.polarsys.kitalpha.emde.model.ExtensibleElement;
 public class EditingFrameAssumption extends javax.swing.JFrame {
 	
 	Assumption edited_assumption = null;
+	EList<Assumption> listAssumption = null;
 	AtriumProcess my_parent = null;
 	
 	public EditingFrameAssumption(AtriumProcess parent) {
@@ -211,31 +215,43 @@ public class EditingFrameAssumption extends javax.swing.JFrame {
 	
     private void FinishAndSaveEditingActionPerformed(java.awt.event.ActionEvent evt) {
     	
-    	TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(edited_assumption);
-		domain.getCommandStack().execute(new RecordingCommand(domain) {
-		        @Override
-		        protected void doExecute() {
-		        	edited_assumption.setName(EditingName.getText());
-		        	if (isRisk.isSelected()){edited_assumption.setAssumptionType(assumptionType_Type.RISK);}
-		        	else if (isTask.isSelected()){edited_assumption.setAssumptionType(assumptionType_Type.TASK);}
-		        	else if (isClarification.isSelected()){edited_assumption.setAssumptionType(assumptionType_Type.CLARIFICATION);}
-		        	edited_assumption.setContent(EditingContent.getText());
-		        	edited_assumption.setRationale(EditingRationale.getText());
-		        	if (isValid.isSelected()) {edited_assumption.setValidity(validity_Type.VALID);}
-		        	else if (isInvalid.isSelected()) {edited_assumption.setValidity(validity_Type.INVALID);}
-		        	edited_assumption.setResponsibleArchitect(EditingResponsibleArchitect.getText());
-		        	edited_assumption.setResponsibleExpert(EditingResponsibleExpert.getText());
-		        	edited_assumption.setDateOfCompletion(EditingDate.getText());
-		        }
-		    });
+    	boolean alreadyHere = false; //protection against existing name
+		for (Assumption a : listAssumption)
+		{
+			if (EditingName.getText().equals(a.getName()) && (!(a.equals(edited_assumption)))){alreadyHere = true;}
+		}
 		
-		my_parent.updateDisplayCFA();
-		Editingframe.setVisible(false);
+		if (!(alreadyHere))
+		{
+			TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(edited_assumption);
+			domain.getCommandStack().execute(new RecordingCommand(domain) {
+			        @Override
+			        protected void doExecute() {
+			        	edited_assumption.setName(EditingName.getText());
+			        	if (isRisk.isSelected()){edited_assumption.setAssumptionType(assumptionType_Type.RISK);}
+			        	else if (isTask.isSelected()){edited_assumption.setAssumptionType(assumptionType_Type.TASK);}
+			        	else if (isClarification.isSelected()){edited_assumption.setAssumptionType(assumptionType_Type.CLARIFICATION);}
+			        	edited_assumption.setContent(EditingContent.getText());
+			        	edited_assumption.setRationale(EditingRationale.getText());
+			        	if (isValid.isSelected()) {edited_assumption.setValidity(validity_Type.VALID);}
+			        	else if (isInvalid.isSelected()) {edited_assumption.setValidity(validity_Type.INVALID);}
+			        	edited_assumption.setResponsibleArchitect(EditingResponsibleArchitect.getText());
+			        	edited_assumption.setResponsibleExpert(EditingResponsibleExpert.getText());
+			        	edited_assumption.setDateOfCompletion(EditingDate.getText());
+			        }
+			    });
+			
+			my_parent.updateDisplayCFA();
+			Editingframe.setVisible(false);
+		}
+		else {JOptionPane.showMessageDialog(getParent(), "There is already an assumption named like that, please chose another name.");}
+    	
     }
     
-    public void editAssumption(Assumption edited_assumption_parameter)
+    public void editAssumption(Assumption edited_assumption_parameter, EList<Assumption> listAssumption_parameter)
     {
     	edited_assumption = edited_assumption_parameter;
+    	listAssumption = listAssumption_parameter;
 
     	EditingName.setText(edited_assumption.getName());
     	isRisk.setSelected(edited_assumption.getAssumptionType()==assumptionType_Type.RISK);

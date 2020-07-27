@@ -357,13 +357,6 @@ public class AtriumProcess extends javax.swing.JFrame {
                 jButtonAddFailureActionPerformed(evt);
             }
         });
-        
-        jButtonAddAssumption.setText("Add Assumption");
-        jButtonAddAssumption.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonAddAssumptionActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -1068,8 +1061,8 @@ public class AtriumProcess extends javax.swing.JFrame {
 	
 	private void createAssumption(String name) {
 		final Assumption newAssumption = AtriumFactoryImpl.eINSTANCE.createAssumption();
-		newAssumption.setContent("Some content");
 		newAssumption.setName(name);
+		
 		TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(the_Assumption_list);
 		domain.getCommandStack().execute(new RecordingCommand(domain) {
 		        @Override
@@ -1079,8 +1072,8 @@ public class AtriumProcess extends javax.swing.JFrame {
 		    });
 		
 		listAssumption.add(newAssumption);//updating our local list
-		
 		updateDisplayCFA();
+		myAssumptionEditor.editAssumption(newAssumption, listAssumption);
 	}
 
 	
@@ -1139,7 +1132,7 @@ public class AtriumProcess extends javax.swing.JFrame {
     		{
     			if (a.getName().equals(selectedAssumptionName)){edited_assumption=a;}
     		}
-            myAssumptionEditor.editAssumption(edited_assumption);
+            myAssumptionEditor.editAssumption(edited_assumption, listAssumption);
         } 
     }
 	
@@ -1151,7 +1144,7 @@ public class AtriumProcess extends javax.swing.JFrame {
     		{
     			if (a.getName().equals(selectedAssumptionName)){edited_assumption=a;}
     		}
-            myAssumptionEditor.editAssumption(edited_assumption);
+            myAssumptionEditor.editAssumption(edited_assumption, listAssumption);
         } 
     }                                             
 
@@ -1169,7 +1162,6 @@ public class AtriumProcess extends javax.swing.JFrame {
 
     private void jButtonAddDGActionPerformed(java.awt.event.ActionEvent evt) {                                             
         // TODO add your handling code here:
-    	myEditor.editing();
     }                                            
 
     private void jButtonAddDAActionPerformed(java.awt.event.ActionEvent evt) {                                             
