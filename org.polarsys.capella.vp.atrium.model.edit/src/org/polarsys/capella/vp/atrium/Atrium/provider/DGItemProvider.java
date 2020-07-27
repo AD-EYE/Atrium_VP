@@ -35,7 +35,7 @@ import org.polarsys.kitalpha.emde.model.edit.provider.NewChildDescriptorHelper;
  * <!-- end-user-doc -->
  * @generated
  */
-public class DGItemProvider extends NamedElementItemProvider implements IEditingDomainItemProvider,
+public class DGItemProvider extends AtriumBasicElementItemProvider implements IEditingDomainItemProvider,
 		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -60,7 +60,6 @@ public class DGItemProvider extends NamedElementItemProvider implements IEditing
 
 			addDesignAlternativePropertyDescriptor(object);
 			addSubDGsPropertyDescriptor(object);
-			addContentPropertyDescriptor(object);
 		}
 		// begin-extension-code
 		checkChildCreationExtender(object);
@@ -109,37 +108,6 @@ public class DGItemProvider extends NamedElementItemProvider implements IEditing
 	}
 
 	/**
-	 * This adds a property descriptor for the Content feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addContentPropertyDescriptor(Object object) {
-
-		// begin-extension-code
-		itemPropertyDescriptors.add(createItemPropertyDescriptor
-		// end-extension-code
-		(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-				getString("_UI_DG_content_feature"), //$NON-NLS-1$
-				getString("_UI_PropertyDescriptor_description", "_UI_DG_content_feature", "_UI_DG_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				AtriumPackage.Literals.DG__CONTENT, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				null,
-				// begin-extension-code
-				null));
-		// end-extension-code
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean hasChildren(Object object) {
-		return hasChildren(object, true);
-	}
-
-	/**
 	 * This returns DG.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -175,13 +143,6 @@ public class DGItemProvider extends NamedElementItemProvider implements IEditing
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-
-		switch (notification.getFeatureID(DG.class)) {
-		case AtriumPackage.DG__CONTENT:
-			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-			return;
-		}
-		super.notifyChanged(notification);
 	}
 
 	/**
@@ -194,122 +155,6 @@ public class DGItemProvider extends NamedElementItemProvider implements IEditing
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-		// begin-extension-code
-		{
-			CommandParameter commandParameter = createChildParameter(
-					EmdePackage.Literals.EXTENSIBLE_ELEMENT__OWNED_EXTENSIONS,
-					AtriumFactory.eINSTANCE.createCFA_list());
-			if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
-				newChildDescriptors.add(commandParameter);
-			}
-		}
-		// end-extension-code
-
-		// begin-extension-code
-		{
-			CommandParameter commandParameter = createChildParameter(
-					EmdePackage.Literals.EXTENSIBLE_ELEMENT__OWNED_EXTENSIONS,
-					AtriumFactory.eINSTANCE.createAssumption_list());
-			if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
-				newChildDescriptors.add(commandParameter);
-			}
-		}
-		// end-extension-code
-
-		// begin-extension-code
-		{
-			CommandParameter commandParameter = createChildParameter(
-					EmdePackage.Literals.EXTENSIBLE_ELEMENT__OWNED_EXTENSIONS, AtriumFactory.eINSTANCE.createDG_list());
-			if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
-				newChildDescriptors.add(commandParameter);
-			}
-		}
-		// end-extension-code
-
-		// begin-extension-code
-		{
-			CommandParameter commandParameter = createChildParameter(
-					EmdePackage.Literals.EXTENSIBLE_ELEMENT__OWNED_EXTENSIONS, AtriumFactory.eINSTANCE.createDA_list());
-			if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
-				newChildDescriptors.add(commandParameter);
-			}
-		}
-		// end-extension-code
-
-		// begin-extension-code
-		{
-			CommandParameter commandParameter = createChildParameter(
-					EmdePackage.Literals.EXTENSIBLE_ELEMENT__OWNED_EXTENSIONS,
-					AtriumFactory.eINSTANCE.createFailure_list());
-			if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
-				newChildDescriptors.add(commandParameter);
-			}
-		}
-		// end-extension-code
-
-		// begin-extension-code
-		{
-			CommandParameter commandParameter = createChildParameter(
-					EmdePackage.Literals.EXTENSIBLE_ELEMENT__OWNED_EXTENSIONS, AtriumFactory.eINSTANCE.createCFA());
-			if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
-				newChildDescriptors.add(commandParameter);
-			}
-		}
-		// end-extension-code
-
-		// begin-extension-code
-		{
-			CommandParameter commandParameter = createChildParameter(
-					EmdePackage.Literals.EXTENSIBLE_ELEMENT__OWNED_EXTENSIONS,
-					AtriumFactory.eINSTANCE.createAssumption());
-			if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
-				newChildDescriptors.add(commandParameter);
-			}
-		}
-		// end-extension-code
-
-		// begin-extension-code
-		{
-			CommandParameter commandParameter = createChildParameter(
-					EmdePackage.Literals.EXTENSIBLE_ELEMENT__OWNED_EXTENSIONS, AtriumFactory.eINSTANCE.createDG());
-			if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
-				newChildDescriptors.add(commandParameter);
-			}
-		}
-		// end-extension-code
-
-		// begin-extension-code
-		{
-			CommandParameter commandParameter = createChildParameter(
-					EmdePackage.Literals.EXTENSIBLE_ELEMENT__OWNED_EXTENSIONS, AtriumFactory.eINSTANCE.createDA());
-			if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
-				newChildDescriptors.add(commandParameter);
-			}
-		}
-		// end-extension-code
-
-		// begin-extension-code
-		{
-			CommandParameter commandParameter = createChildParameter(
-					EmdePackage.Literals.EXTENSIBLE_ELEMENT__OWNED_EXTENSIONS,
-					AtriumFactory.eINSTANCE.createElementStateAtrium());
-			if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
-				newChildDescriptors.add(commandParameter);
-			}
-		}
-		// end-extension-code
-
-		// begin-extension-code
-		{
-			CommandParameter commandParameter = createChildParameter(
-					EmdePackage.Literals.EXTENSIBLE_ELEMENT__OWNED_EXTENSIONS,
-					AtriumFactory.eINSTANCE.createFailureMode());
-			if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
-				newChildDescriptors.add(commandParameter);
-			}
-		}
-		// end-extension-code
-
 	}
 
 }

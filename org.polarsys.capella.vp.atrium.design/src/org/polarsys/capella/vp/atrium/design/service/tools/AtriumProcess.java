@@ -27,9 +27,12 @@ import org.polarsys.capella.core.data.la.LogicalFunction;
 import org.polarsys.capella.core.data.la.LogicalFunctionPkg;
 import org.polarsys.capella.vp.atrium.Atrium.Assumption;
 import org.polarsys.capella.vp.atrium.Atrium.Assumption_list;
+import org.polarsys.capella.vp.atrium.Atrium.AtriumBasicElement;
 import org.polarsys.capella.vp.atrium.Atrium.CFA;
 import org.polarsys.capella.vp.atrium.Atrium.CFA_list;
+import org.polarsys.capella.vp.atrium.Atrium.DA;
 import org.polarsys.capella.vp.atrium.Atrium.DA_list;
+import org.polarsys.capella.vp.atrium.Atrium.DG;
 import org.polarsys.capella.vp.atrium.Atrium.DG_list;
 import org.polarsys.capella.vp.atrium.Atrium.ElementStateAtrium;
 import org.polarsys.capella.vp.atrium.Atrium.FailureMode;
@@ -42,6 +45,8 @@ public class AtriumProcess extends javax.swing.JFrame {
 	
 	EList<CFA> listCFA = new BasicEList<CFA>();
 	EList<Assumption> listAssumption = new BasicEList<Assumption>();
+	EList<DG> listDG = new BasicEList<DG>();
+	EList<DA> listDA = new BasicEList<DA>();
 	
 	DefaultListModel<String> nameLinkedAssumption = new DefaultListModel<String>();
 	DefaultListModel<String> nameUnlinkedAssumption = new DefaultListModel<String>();
@@ -192,6 +197,18 @@ public class AtriumProcess extends javax.swing.JFrame {
 		  {
 			  FailureMode fm = (FailureMode) node;
 			  ListFailureMode.addElement(fm.getName());
+		  }
+		  
+		  if (node instanceof DG)
+		  {
+			  DG dg = (DG) node;
+			  listDG.add(dg);
+		  }
+		  
+		  if (node instanceof DA)
+		  {
+			  DA da = (DA) node;
+			  listDA.add(da);
 		  }
 		  
 		  if (node instanceof CFA){listCFA.add((CFA) node);}
@@ -1075,6 +1092,24 @@ public class AtriumProcess extends javax.swing.JFrame {
 		updateDisplayCFA();
 		myAssumptionEditor.editAssumption(newAssumption, listAssumption);
 	}
+	
+	private void createDG(String name) {
+		final DG newDG = AtriumFactoryImpl.eINSTANCE.createDG();
+		newDG.setName(name);
+		
+		TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(the_DG_list);
+		domain.getCommandStack().execute(new RecordingCommand(domain) {
+		        @Override
+		        protected void doExecute() {
+		        	((ExtensibleElement) the_DG_list).getOwnedExtensions().add((ElementExtension) newDG);//the add action is done there, within a transaction context
+		        }
+		    });
+		
+		listDG.add(newDG);//updating our local list
+		updateDisplayCFA();
+		AtriumBasicElement newDG_parameter = (AtriumBasicElement) newDG;
+		myEditor.editing(newDG_parameter, listDG, listDA, listCFA);
+	}
 
 	
 	private void jButtonAddLinkedActionPerformed(java.awt.event.ActionEvent evt) {
@@ -1161,7 +1196,17 @@ public class AtriumProcess extends javax.swing.JFrame {
     }                                                     
 
     private void jButtonAddDGActionPerformed(java.awt.event.ActionEvent evt) {                                             
-        // TODO add your handling code here:
+    	String name = JOptionPane.showInputDialog(getParent(), "Please name the new DG", "MyNewDG");
+		if (name != null) { //if the user has not pressed "cancel"
+			
+			boolean alreadyHere = false; //protection against existing name
+			for (DG dg : listDG)
+			{
+				if (name.equals(dg.getName())){alreadyHere = true;}
+			}
+			if (!(alreadyHere)) {createDG(name);}
+			else {JOptionPane.showMessageDialog(getParent(), "There is already a design goal named like that, please chose another name.");}
+		}
     }                                            
 
     private void jButtonAddDAActionPerformed(java.awt.event.ActionEvent evt) {                                             

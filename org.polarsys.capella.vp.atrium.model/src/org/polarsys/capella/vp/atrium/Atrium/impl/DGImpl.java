@@ -2,15 +2,12 @@
 package org.polarsys.capella.vp.atrium.Atrium.impl;
 
 import java.util.Collection;
-import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-import org.polarsys.capella.core.data.capellacore.impl.NamedElementImpl;
 
 import org.polarsys.capella.vp.atrium.Atrium.AtriumPackage;
 import org.polarsys.capella.vp.atrium.Atrium.DA;
@@ -26,12 +23,11 @@ import org.polarsys.capella.vp.atrium.Atrium.DG;
  * <ul>
  *   <li>{@link org.polarsys.capella.vp.atrium.Atrium.impl.DGImpl#getDesignAlternative <em>Design Alternative</em>}</li>
  *   <li>{@link org.polarsys.capella.vp.atrium.Atrium.impl.DGImpl#getSubDGs <em>Sub DGs</em>}</li>
- *   <li>{@link org.polarsys.capella.vp.atrium.Atrium.impl.DGImpl#getContent <em>Content</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class DGImpl extends NamedElementImpl implements DG {
+public class DGImpl extends AtriumBasicElementImpl implements DG {
 
 	/**
 	 * The cached value of the '{@link #getDesignAlternative() <em>Design Alternative</em>}' reference list.
@@ -52,26 +48,6 @@ public class DGImpl extends NamedElementImpl implements DG {
 	 * @ordered
 	 */
 	protected EList<DG> subDGs;
-
-	/**
-	 * The default value of the '{@link #getContent() <em>Content</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContent()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CONTENT_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getContent() <em>Content</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContent()
-	 * @generated
-	 * @ordered
-	 */
-	protected String content = CONTENT_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -129,34 +105,6 @@ public class DGImpl extends NamedElementImpl implements DG {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-
-	@Override
-	public String getContent() {
-
-		return content;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-
-	@Override
-	public void setContent(String newContent) {
-
-		String oldContent = content;
-		content = newContent;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AtriumPackage.DG__CONTENT, oldContent, content));
-
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -164,8 +112,6 @@ public class DGImpl extends NamedElementImpl implements DG {
 			return getDesignAlternative();
 		case AtriumPackage.DG__SUB_DGS:
 			return getSubDGs();
-		case AtriumPackage.DG__CONTENT:
-			return getContent();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -187,9 +133,6 @@ public class DGImpl extends NamedElementImpl implements DG {
 			getSubDGs().clear();
 			getSubDGs().addAll((Collection<? extends DG>) newValue);
 			return;
-		case AtriumPackage.DG__CONTENT:
-			setContent((String) newValue);
-			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -208,9 +151,6 @@ public class DGImpl extends NamedElementImpl implements DG {
 		case AtriumPackage.DG__SUB_DGS:
 			getSubDGs().clear();
 			return;
-		case AtriumPackage.DG__CONTENT:
-			setContent(CONTENT_EDEFAULT);
-			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -227,27 +167,8 @@ public class DGImpl extends NamedElementImpl implements DG {
 			return designAlternative != null && !designAlternative.isEmpty();
 		case AtriumPackage.DG__SUB_DGS:
 			return subDGs != null && !subDGs.isEmpty();
-		case AtriumPackage.DG__CONTENT:
-			return CONTENT_EDEFAULT == null ? content != null : !CONTENT_EDEFAULT.equals(content);
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy())
-			return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (content: "); //$NON-NLS-1$
-		result.append(content);
-		result.append(')');
-		return result.toString();
 	}
 
 } //DGImpl

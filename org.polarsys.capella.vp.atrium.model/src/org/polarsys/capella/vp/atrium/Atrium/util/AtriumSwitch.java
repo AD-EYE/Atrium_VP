@@ -77,6 +77,31 @@ public class AtriumSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
+		case AtriumPackage.ATRIUM_BASIC_ELEMENT: {
+			AtriumBasicElement atriumBasicElement = (AtriumBasicElement) theEObject;
+			T result = caseAtriumBasicElement(atriumBasicElement);
+			if (result == null)
+				result = caseNamedElement(atriumBasicElement);
+			if (result == null)
+				result = caseElementExtension(atriumBasicElement);
+			if (result == null)
+				result = caseAbstractNamedElement(atriumBasicElement);
+			if (result == null)
+				result = caseCapellaElement(atriumBasicElement);
+			if (result == null)
+				result = caseTraceableElement(atriumBasicElement);
+			if (result == null)
+				result = casePublishableElement(atriumBasicElement);
+			if (result == null)
+				result = caseModelElement(atriumBasicElement);
+			if (result == null)
+				result = caseExtensibleElement(atriumBasicElement);
+			if (result == null)
+				result = caseElement(atriumBasicElement);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
 		case AtriumPackage.CFA_LIST: {
 			CFA_list cfA_list = (CFA_list) theEObject;
 			T result = caseCFA_list(cfA_list);
@@ -206,6 +231,8 @@ public class AtriumSwitch<T> extends Switch<T> {
 			CFA cfa = (CFA) theEObject;
 			T result = caseCFA(cfa);
 			if (result == null)
+				result = caseAtriumBasicElement(cfa);
+			if (result == null)
 				result = caseNamedElement(cfa);
 			if (result == null)
 				result = caseElementExtension(cfa);
@@ -230,6 +257,8 @@ public class AtriumSwitch<T> extends Switch<T> {
 		case AtriumPackage.ASSUMPTION: {
 			Assumption assumption = (Assumption) theEObject;
 			T result = caseAssumption(assumption);
+			if (result == null)
+				result = caseAtriumBasicElement(assumption);
 			if (result == null)
 				result = caseNamedElement(assumption);
 			if (result == null)
@@ -256,6 +285,8 @@ public class AtriumSwitch<T> extends Switch<T> {
 			DG dg = (DG) theEObject;
 			T result = caseDG(dg);
 			if (result == null)
+				result = caseAtriumBasicElement(dg);
+			if (result == null)
 				result = caseNamedElement(dg);
 			if (result == null)
 				result = caseElementExtension(dg);
@@ -280,6 +311,8 @@ public class AtriumSwitch<T> extends Switch<T> {
 		case AtriumPackage.DA: {
 			DA da = (DA) theEObject;
 			T result = caseDA(da);
+			if (result == null)
+				result = caseAtriumBasicElement(da);
 			if (result == null)
 				result = caseNamedElement(da);
 			if (result == null)
@@ -331,6 +364,8 @@ public class AtriumSwitch<T> extends Switch<T> {
 			FailureMode failureMode = (FailureMode) theEObject;
 			T result = caseFailureMode(failureMode);
 			if (result == null)
+				result = caseAtriumBasicElement(failureMode);
+			if (result == null)
 				result = caseNamedElement(failureMode);
 			if (result == null)
 				result = caseElementExtension(failureMode);
@@ -355,6 +390,21 @@ public class AtriumSwitch<T> extends Switch<T> {
 		default:
 			return defaultCase(theEObject);
 		}
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Basic Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Basic Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAtriumBasicElement(AtriumBasicElement object) {
+		return null;
 	}
 
 	/**

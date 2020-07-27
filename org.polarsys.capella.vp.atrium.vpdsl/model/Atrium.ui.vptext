@@ -7,6 +7,15 @@
  *
  */
 UIDescription Atrium.ui {
+UI Atrium_AtriumBasicElement {
+	label: "Atrium"
+	Container Atrium_AtriumBasicElement_Section {
+		Container Atrium_AtriumBasicElement_AttributeGroup {
+			label: "Atrium Basic Element Attributes"
+			Field contentField label: "Content" type text , mapped-to Atrium.data.AtriumBasicElement.content
+		}
+	}
+}
 UI Atrium_CFA_list {
 	label: "Atrium"
 	Container Atrium_CFA_list_Section {
@@ -42,14 +51,8 @@ UI Atrium_CFA {
 	Container Atrium_CFA_Section {
 		Container Atrium_CFA_AttributeGroup {
 			label: "C F A Attributes"
-			Field contentField label: "Content" type text , mapped-to Atrium.data.CFA.content
+			Field contentField1 label: "Content" type text , mapped-to Atrium.data.AtriumBasicElement.content
 			Field stateField label: "State" type checkbox , mapped-to Atrium.data.CFA.state
-		}
-		Container Atrium_CFA_AssociationGroup {
-			label: "C F A Associations"
-			Field linkedtoElementAssociation label: "Linkedto Element" type simpleChoiceList , mapped-to Atrium.data.CFA.linkedtoElement
-			Field assumptionAssociation label: "Assumption" type multipleChoiceList , mapped-to Atrium.data.CFA.assumption
-			Field goalAssociation label: "Goal" type simpleChoiceList , mapped-to Atrium.data.CFA.goal
 		}
 	}
 }
@@ -58,8 +61,8 @@ UI Atrium_Assumption {
 	Container Atrium_Assumption_Section {
 		Container Atrium_Assumption_AttributeGroup {
 			label: "Assumption Attributes"
+			Field contentField2 label: "Content" type text , mapped-to Atrium.data.AtriumBasicElement.content
 			Field assumptionTypeField label: "Assumption Type" type radiobox , mapped-to Atrium.data.Assumption.assumptionType
-			Field contentField1 label: "Content" type text , mapped-to Atrium.data.Assumption.content
 			Field rationaleField label: "Rationale" type text , mapped-to Atrium.data.Assumption.rationale
 			Field validityField label: "Validity" type radiobox , mapped-to Atrium.data.Assumption.validity
 			Field responsibleArchitectField label: "Responsible Architect" type text , mapped-to Atrium.data.Assumption.responsibleArchitect
@@ -73,12 +76,7 @@ UI Atrium_DG {
 	Container Atrium_DG_Section {
 		Container Atrium_DG_AttributeGroup {
 			label: "D G Attributes"
-			Field contentField2 label: "Content" type text , mapped-to Atrium.data.DG.content
-		}
-		Container Atrium_DG_AssociationGroup {
-			label: "D G Associations"
-			Field designAlternativeAssociation label: "Design Alternative" type multipleChoiceList , mapped-to Atrium.data.DG.designAlternative
-			Field subDGsAssociation label: "Sub D Gs" type multipleChoiceList , mapped-to Atrium.data.DG.subDGs
+			Field contentField3 label: "Content" type text , mapped-to Atrium.data.AtriumBasicElement.content
 		}
 	}
 }
@@ -87,7 +85,7 @@ UI Atrium_DA {
 	Container Atrium_DA_Section {
 		Container Atrium_DA_AttributeGroup {
 			label: "D A Attributes"
-			Field contentField3 label: "Content" type text , mapped-to Atrium.data.DA.content
+			Field contentField4 label: "Content" type text , mapped-to Atrium.data.AtriumBasicElement.content
 			Field isPartOfSelectionField label: "Is Part Of Selection" type checkbox , mapped-to Atrium.data.DA.isPartOfSelection
 		}
 	}
@@ -106,9 +104,10 @@ UI Atrium_FailureMode {
 	Container Atrium_FailureMode_Section {
 		Container Atrium_FailureMode_AttributeGroup {
 			label: "Failure Mode Attributes"
-			Field contentField4 label: "Content" type text , mapped-to Atrium.data.FailureMode.content
+			Field contentField5 label: "Content" type text , mapped-to Atrium.data.AtriumBasicElement.content
 		}
 	}
 }
+
 
 }

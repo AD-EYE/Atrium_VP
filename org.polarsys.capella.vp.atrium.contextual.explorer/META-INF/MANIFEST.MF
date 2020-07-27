@@ -9,6 +9,7 @@ Require-Bundle: org.eclipse.emf.ecore,
  org.polarsys.capella.vp.atrium.model.edit
 Export-Package: org.polarsys.capella.vp.atrium.contextual.explorer.queries.assumption,
  org.polarsys.capella.vp.atrium.contextual.explorer.queries.assumption_list,
+ org.polarsys.capella.vp.atrium.contextual.explorer.queries.atriumbasicelement,
  org.polarsys.capella.vp.atrium.contextual.explorer.queries.cfa,
  org.polarsys.capella.vp.atrium.contextual.explorer.queries.cfa_list,
  org.polarsys.capella.vp.atrium.contextual.explorer.queries.cfalist,

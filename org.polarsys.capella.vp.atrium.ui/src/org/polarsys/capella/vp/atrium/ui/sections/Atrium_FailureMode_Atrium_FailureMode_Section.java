@@ -24,6 +24,7 @@ import org.polarsys.capella.core.ui.properties.fields.*;
 
 import org.polarsys.capella.core.data.capellacore.CapellaElement;
 import org.polarsys.capella.vp.atrium.Atrium.AtriumPackage;
+import org.polarsys.capella.vp.atrium.Atrium.AtriumBasicElement;
 import org.polarsys.capella.vp.atrium.Atrium.FailureMode;
 
 /**
@@ -45,7 +46,7 @@ public class Atrium_FailureMode_Atrium_FailureMode_Section extends AbstractSecti
 	* <!-- end-user-doc -->
 	* @generated
 	*/
-	private TextValueGroup ContentField4;
+	private TextValueGroup ContentField5;
 
 	/**
 	* <!-- begin-model-doc -->
@@ -67,10 +68,10 @@ public class Atrium_FailureMode_Atrium_FailureMode_Section extends AbstractSecti
 
 		if (eObjectToTest == null) {
 			return false;
-		} else if (eObjectToTest instanceof FailureMode) {
+		} else if (eObjectToTest instanceof AtriumBasicElement) {
 			return true;
 		} else {
-			EObject children = getFailureModeObject(eObjectToTest);
+			EObject children = getAtriumBasicElementObject(eObjectToTest);
 			if (children != null) {
 				return true;
 			}
@@ -89,8 +90,8 @@ public class Atrium_FailureMode_Atrium_FailureMode_Section extends AbstractSecti
 	public void setInput(IWorkbenchPart part, ISelection selection) {
 		EObject newEObject = super.setInputSelection(part, selection);
 
-		if (newEObject != null && !(newEObject instanceof FailureMode))
-			newEObject = getFailureModeObject(newEObject);
+		if (newEObject != null && !(newEObject instanceof AtriumBasicElement))
+			newEObject = getAtriumBasicElementObject(newEObject);
 
 		if (newEObject != null) {
 			loadData(newEObject);
@@ -101,12 +102,12 @@ public class Atrium_FailureMode_Atrium_FailureMode_Section extends AbstractSecti
 
 	/**
 	* <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	* <!-- end-user-doc -->
 	* @param parent: An EObject. It is considered as the Parent of an EMDE extension (a Viewpoint element)
 	* @return 
 	* @generated
 	*/
-	private EObject getFailureModeObject(EObject parent) {
+	private EObject getAtriumBasicElementObject(EObject parent) {
 		if (parent == null)
 			return null;
 
@@ -118,8 +119,8 @@ public class Atrium_FailureMode_Atrium_FailureMode_Section extends AbstractSecti
 
 		EObject result = null;
 		for (EObject iEObject : parent.eContents()) {
-			if (iEObject instanceof FailureMode) {
-				result = (result == null ? (FailureMode) iEObject : null);
+			if (iEObject instanceof AtriumBasicElement) {
+				result = (result == null ? (AtriumBasicElement) iEObject : null);
 				// This case is true when there is more then one extension of the same type. 
 				if (result == null)
 					break;
@@ -158,7 +159,7 @@ public class Atrium_FailureMode_Atrium_FailureMode_Section extends AbstractSecti
 		gdAtrium_FailureMode_AttributeGroup.horizontalSpan = ((GridLayout) rootParentComposite.getLayout()).numColumns;
 		Atrium_FailureMode_AttributeGroup.setLayoutData(gdAtrium_FailureMode_AttributeGroup);
 
-		ContentField4 = new TextValueGroup(Atrium_FailureMode_AttributeGroup, "Content :", getWidgetFactory(), true);
+		ContentField5 = new TextValueGroup(Atrium_FailureMode_AttributeGroup, "Content :", getWidgetFactory(), true);
 
 	}
 
@@ -171,7 +172,7 @@ public class Atrium_FailureMode_Atrium_FailureMode_Section extends AbstractSecti
 	public void loadData(EObject object) {
 		super.loadData(object);
 
-		ContentField4.loadData(object, AtriumPackage.eINSTANCE.getFailureMode_Content());
+		ContentField5.loadData(object, AtriumPackage.eINSTANCE.getAtriumBasicElement_Content());
 
 	}
 
@@ -183,7 +184,7 @@ public class Atrium_FailureMode_Atrium_FailureMode_Section extends AbstractSecti
 	public List<AbstractSemanticField> getSemanticFields() {
 		List<AbstractSemanticField> abstractSemanticFields = new ArrayList<AbstractSemanticField>();
 
-		abstractSemanticFields.add(ContentField4);
+		abstractSemanticFields.add(ContentField5);
 
 		return abstractSemanticFields;
 	}

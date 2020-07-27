@@ -28,6 +28,9 @@
 <!--@generated-->
   <extension point="org.eclipse.ui.views.properties.tabbed.propertySections">
     <propertySections contributorId="org.polarsys.capella.core.data.capellamodeller.properties">
+        <propertySection class="org.polarsys.capella.core.data.core.properties.sections.DefaultNamedElementSection" filter="org.polarsys.capella.vp.atrium.Atrium.provider.sections.AtriumBasicElementSection" id="org.polarsys.capella.vp.atrium.Atrium.provider.contributions.AtriumBasicElementItemContribution.section" tab="BaseCapella">
+            <input type="org.polarsys.capella.vp.atrium.Atrium.AtriumBasicElement"/>
+        </propertySection>
         <propertySection class="org.polarsys.capella.core.data.core.properties.sections.DefaultNamedElementSection" filter="org.polarsys.capella.vp.atrium.Atrium.provider.sections.CFA_listSection" id="org.polarsys.capella.vp.atrium.Atrium.provider.contributions.CFA_listItemContribution.section" tab="BaseCapella">
             <input type="org.polarsys.capella.vp.atrium.Atrium.CFA_list"/>
         </propertySection>
@@ -67,6 +70,8 @@
 <!--@generated-->
   <extension point="org.eclipse.ui.views.properties.tabbed.propertySections">
     <propertySections contributorId="org.eclipse.sirius.diagram.ui">
+        <propertySection class="org.polarsys.capella.vp.atrium.Atrium.provider.sections.AtriumBasicElementSection" filter="org.polarsys.capella.vp.atrium.Atrium.provider.sections.AtriumBasicElementSection" id="org.polarsys.capella.vp.atrium.Atrium.provider.sections.AtriumBasicElementSection.section" tab="BaseSiriusDiagram">
+        </propertySection>
         <propertySection class="org.polarsys.capella.vp.atrium.Atrium.provider.sections.CFA_listSection" filter="org.polarsys.capella.vp.atrium.Atrium.provider.sections.CFA_listSection" id="org.polarsys.capella.vp.atrium.Atrium.provider.sections.CFA_listSection.section" tab="BaseSiriusDiagram">
         </propertySection>
         <propertySection class="org.polarsys.capella.vp.atrium.Atrium.provider.sections.Assumption_listSection" filter="org.polarsys.capella.vp.atrium.Atrium.provider.sections.Assumption_listSection" id="org.polarsys.capella.vp.atrium.Atrium.provider.sections.Assumption_listSection.section" tab="BaseSiriusDiagram">
@@ -77,17 +82,17 @@
         </propertySection>
         <propertySection class="org.polarsys.capella.vp.atrium.Atrium.provider.sections.Failure_listSection" filter="org.polarsys.capella.vp.atrium.Atrium.provider.sections.Failure_listSection" id="org.polarsys.capella.vp.atrium.Atrium.provider.sections.Failure_listSection.section" tab="BaseSiriusDiagram">
         </propertySection>
-        <propertySection class="org.polarsys.capella.vp.atrium.Atrium.provider.sections.CFASection" filter="org.polarsys.capella.vp.atrium.Atrium.provider.sections.CFASection" id="org.polarsys.capella.vp.atrium.Atrium.provider.sections.CFASection.section" tab="BaseSiriusDiagram">
+        <propertySection class="org.polarsys.capella.core.data.core.properties.sections.DefaultNamedElementSection" filter="org.polarsys.capella.vp.atrium.Atrium.provider.sections.CFASection" id="org.polarsys.capella.vp.atrium.Atrium.provider.sections.CFASection.section" tab="BaseSiriusDiagram">
         </propertySection>
-        <propertySection class="org.polarsys.capella.vp.atrium.Atrium.provider.sections.AssumptionSection" filter="org.polarsys.capella.vp.atrium.Atrium.provider.sections.AssumptionSection" id="org.polarsys.capella.vp.atrium.Atrium.provider.sections.AssumptionSection.section" tab="BaseSiriusDiagram">
+        <propertySection class="org.polarsys.capella.core.data.core.properties.sections.DefaultNamedElementSection" filter="org.polarsys.capella.vp.atrium.Atrium.provider.sections.AssumptionSection" id="org.polarsys.capella.vp.atrium.Atrium.provider.sections.AssumptionSection.section" tab="BaseSiriusDiagram">
         </propertySection>
-        <propertySection class="org.polarsys.capella.vp.atrium.Atrium.provider.sections.DGSection" filter="org.polarsys.capella.vp.atrium.Atrium.provider.sections.DGSection" id="org.polarsys.capella.vp.atrium.Atrium.provider.sections.DGSection.section" tab="BaseSiriusDiagram">
+        <propertySection class="org.polarsys.capella.core.data.core.properties.sections.DefaultNamedElementSection" filter="org.polarsys.capella.vp.atrium.Atrium.provider.sections.DGSection" id="org.polarsys.capella.vp.atrium.Atrium.provider.sections.DGSection.section" tab="BaseSiriusDiagram">
         </propertySection>
-        <propertySection class="org.polarsys.capella.vp.atrium.Atrium.provider.sections.DASection" filter="org.polarsys.capella.vp.atrium.Atrium.provider.sections.DASection" id="org.polarsys.capella.vp.atrium.Atrium.provider.sections.DASection.section" tab="BaseSiriusDiagram">
+        <propertySection class="org.polarsys.capella.core.data.core.properties.sections.DefaultNamedElementSection" filter="org.polarsys.capella.vp.atrium.Atrium.provider.sections.DASection" id="org.polarsys.capella.vp.atrium.Atrium.provider.sections.DASection.section" tab="BaseSiriusDiagram">
         </propertySection>
         <propertySection class="org.polarsys.capella.vp.atrium.Atrium.provider.sections.ElementStateAtriumSection" filter="org.polarsys.capella.vp.atrium.Atrium.provider.sections.ElementStateAtriumSection" id="org.polarsys.capella.vp.atrium.Atrium.provider.sections.ElementStateAtriumSection.section" tab="BaseSiriusDiagram">
         </propertySection>
-        <propertySection class="org.polarsys.capella.vp.atrium.Atrium.provider.sections.FailureModeSection" filter="org.polarsys.capella.vp.atrium.Atrium.provider.sections.FailureModeSection" id="org.polarsys.capella.vp.atrium.Atrium.provider.sections.FailureModeSection.section" tab="BaseSiriusDiagram">
+        <propertySection class="org.polarsys.capella.core.data.core.properties.sections.DefaultNamedElementSection" filter="org.polarsys.capella.vp.atrium.Atrium.provider.sections.FailureModeSection" id="org.polarsys.capella.vp.atrium.Atrium.provider.sections.FailureModeSection.section" tab="BaseSiriusDiagram">
         </propertySection>
 </propertySections>
     </extension>

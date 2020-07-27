@@ -26,6 +26,7 @@ import org.polarsys.capella.vp.atrium.ui.fields.AssumptionTypeField_semanticKind
 import org.polarsys.capella.vp.atrium.ui.fields.ValidityField_semanticKindGroup;
 import org.polarsys.capella.core.data.capellacore.CapellaElement;
 import org.polarsys.capella.vp.atrium.Atrium.AtriumPackage;
+import org.polarsys.capella.vp.atrium.Atrium.AtriumBasicElement;
 import org.polarsys.capella.vp.atrium.Atrium.Assumption;
 
 /**
@@ -47,7 +48,7 @@ public class Atrium_Assumption_Atrium_Assumption_Section extends AbstractSection
 	* <!-- end-user-doc -->
 	* @generated
 	*/
-	private TextValueGroup ContentField1;
+	private TextValueGroup ContentField2;
 
 	/**
 	* <!-- begin-model-doc -->
@@ -123,13 +124,8 @@ public class Atrium_Assumption_Atrium_Assumption_Section extends AbstractSection
 
 		if (eObjectToTest == null) {
 			return false;
-		} else if (eObjectToTest instanceof Assumption) {
+		} else if (eObjectToTest instanceof AtriumBasicElement || eObjectToTest instanceof Assumption) {
 			return true;
-		} else {
-			EObject children = getAssumptionObject(eObjectToTest);
-			if (children != null) {
-				return true;
-			}
 		}
 
 		return false;
@@ -144,55 +140,11 @@ public class Atrium_Assumption_Atrium_Assumption_Section extends AbstractSection
 	*/
 	public void setInput(IWorkbenchPart part, ISelection selection) {
 		EObject newEObject = super.setInputSelection(part, selection);
-
-		if (newEObject != null && !(newEObject instanceof Assumption))
-			newEObject = getAssumptionObject(newEObject);
-
 		if (newEObject != null) {
 			loadData(newEObject);
 		} else {
 			return;
 		}
-	}
-
-	/**
-	* <!-- begin-user-doc -->
-	* <!-- end-user-doc -->
-	* @param parent: An EObject. It is considered as the Parent of an EMDE extension (a Viewpoint element)
-	* @return 
-	* @generated
-	*/
-	private EObject getAssumptionObject(EObject parent) {
-		if (parent == null)
-			return null;
-
-		if (!isViewpointActive(parent))
-			return null;
-
-		if (parent.eContents() == null)
-			return null;
-
-		EObject result = null;
-		for (EObject iEObject : parent.eContents()) {
-			if (iEObject instanceof Assumption) {
-				result = (result == null ? (Assumption) iEObject : null);
-				// This case is true when there is more then one extension of the same type. 
-				if (result == null)
-					break;
-			}
-		}
-		return result;
-	}
-
-	/**
-	* <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	* @return True is the AF viewpoint is active. False else. 
-	* @generated
-	*/
-	private boolean isViewpointActive(EObject modelElement) {
-		return ViewpointManager.getInstance(modelElement).isUsed("org.polarsys.capella.vp.atrium")
-				&& !ViewpointManager.getInstance(modelElement).isFiltered("org.polarsys.capella.vp.atrium");
 	}
 
 	/**
@@ -213,10 +165,10 @@ public class Atrium_Assumption_Atrium_Assumption_Section extends AbstractSection
 		gdAtrium_Assumption_AttributeGroup.horizontalSpan = ((GridLayout) rootParentComposite.getLayout()).numColumns;
 		Atrium_Assumption_AttributeGroup.setLayoutData(gdAtrium_Assumption_AttributeGroup);
 
+		ContentField2 = new TextValueGroup(Atrium_Assumption_AttributeGroup, "Content :", getWidgetFactory(), true);
+
 		AssumptionTypeField = new AssumptionTypeField_semanticKindGroup(Atrium_Assumption_AttributeGroup,
 				getWidgetFactory());
-
-		ContentField1 = new TextValueGroup(Atrium_Assumption_AttributeGroup, "Content :", getWidgetFactory(), true);
 
 		RationaleField = new TextValueGroup(Atrium_Assumption_AttributeGroup, "Rationale :", getWidgetFactory(), true);
 
@@ -242,9 +194,9 @@ public class Atrium_Assumption_Atrium_Assumption_Section extends AbstractSection
 	public void loadData(EObject object) {
 		super.loadData(object);
 
-		AssumptionTypeField.loadData(object, AtriumPackage.eINSTANCE.getAssumption_AssumptionType());
+		ContentField2.loadData(object, AtriumPackage.eINSTANCE.getAtriumBasicElement_Content());
 
-		ContentField1.loadData(object, AtriumPackage.eINSTANCE.getAssumption_Content());
+		AssumptionTypeField.loadData(object, AtriumPackage.eINSTANCE.getAssumption_AssumptionType());
 
 		RationaleField.loadData(object, AtriumPackage.eINSTANCE.getAssumption_Rationale());
 
@@ -266,9 +218,9 @@ public class Atrium_Assumption_Atrium_Assumption_Section extends AbstractSection
 	public List<AbstractSemanticField> getSemanticFields() {
 		List<AbstractSemanticField> abstractSemanticFields = new ArrayList<AbstractSemanticField>();
 
-		abstractSemanticFields.add(AssumptionTypeField);
+		abstractSemanticFields.add(ContentField2);
 
-		abstractSemanticFields.add(ContentField1);
+		abstractSemanticFields.add(AssumptionTypeField);
 
 		abstractSemanticFields.add(RationaleField);
 

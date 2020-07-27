@@ -4,6 +4,24 @@
 <extension 
 	point="org.eclipse.amalgam.explorer.contextual.core.contentProviderCategory">
       <category
+            id="org.polarsys.capella.vp.atrium.contextual.explorer.queries.AtriumBasicElement.Parent"
+            isTopLevel="true"
+            name="Parent">
+         <targetExplorerId
+               id="CurrentElementExplorer">
+         </targetExplorerId>
+         <availableForType
+               class="org.polarsys.capella.vp.atrium.Atrium.AtriumBasicElement">
+         </availableForType>
+         <categoryQuery>
+            <basicQuery
+                  class="org.polarsys.capella.vp.atrium.contextual.explorer.queries.atriumbasicelement.ParentQuery">
+            </basicQuery>
+         </categoryQuery>
+      </category>	</extension>
+<extension 
+	point="org.eclipse.amalgam.explorer.contextual.core.contentProviderCategory">
+      <category
             id="org.polarsys.capella.vp.atrium.contextual.explorer.queries.CFA_list.Parent"
             isTopLevel="true"
             name="Parent">

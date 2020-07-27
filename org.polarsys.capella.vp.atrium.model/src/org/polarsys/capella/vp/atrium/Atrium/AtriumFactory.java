@@ -21,6 +21,15 @@ public interface AtriumFactory extends EFactory {
 	AtriumFactory eINSTANCE = org.polarsys.capella.vp.atrium.Atrium.impl.AtriumFactoryImpl.init();
 
 	/**
+	 * Returns a new object of class '<em>Basic Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Basic Element</em>'.
+	 * @generated
+	 */
+	AtriumBasicElement createAtriumBasicElement();
+
+	/**
 	 * Returns a new object of class '<em>CFA list</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

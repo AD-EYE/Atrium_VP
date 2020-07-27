@@ -7,6 +7,11 @@
  *
  */
 Data Atrium.data {
+	Class AtriumBasicElement {
+		extends fa.AbstractFunction
+		Attributes:
+			content type ecore.EString
+	}
 	Class CFA_list {
 		extends la.LogicalComponent
 	}
@@ -23,9 +28,8 @@ Data Atrium.data {
 		extends la.LogicalComponent
 	}
 	Class CFA {
-		extends fa.AbstractFunction
+		superClass AtriumBasicElement
 		Attributes:
-			content type ecore.EString
 			state type ecore.EBoolean
 		Associations:
 			linkedtoElement refers [1,1] external capellacore.CapellaElement
@@ -33,10 +37,9 @@ Data Atrium.data {
 			goal refers [1,1] DG
 	}
 	Class Assumption {
-		extends fa.AbstractFunction
+		superClass AtriumBasicElement
 		Attributes:
 			assumptionType type ecore.EEnumerator values ( Clarification , Task , Risk )
-			content type ecore.EString
 			rationale type ecore.EString
 			validity type ecore.EEnumerator values ( Valid , Invalid )
 			responsibleArchitect type ecore.EString
@@ -44,17 +47,15 @@ Data Atrium.data {
 			dateOfCompletion type ecore.EString
 	}
 	Class DG {
-		extends fa.AbstractFunction
+		superClass AtriumBasicElement
 		Attributes:
-			content type ecore.EString
 		Associations:
 			designAlternative refers [1,*] DA
 			subDGs refers [0,*] DG
 	}
 	Class DA {
-		extends fa.AbstractFunction
+		superClass AtriumBasicElement
 		Attributes:
-			content type ecore.EString
 			isPartOfSelection type ecore.EBoolean
 	}
 	
@@ -65,8 +66,7 @@ Data Atrium.data {
 	}
 	
 	Class FailureMode {
-		extends fa.AbstractFunction
+		superClass AtriumBasicElement
 		Attributes:
-			content type ecore.EString
 	}
 }

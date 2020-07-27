@@ -1,13 +1,31 @@
 package org.polarsys.capella.vp.atrium.design.service.tools;
 
+import javax.swing.JOptionPane;
+
+import org.eclipse.emf.common.util.BasicEList;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.transaction.RecordingCommand;
+import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.emf.transaction.util.TransactionUtil;
+import org.polarsys.capella.core.data.capellacore.NamedElement;
 import org.polarsys.capella.vp.atrium.Atrium.Assumption;
+import org.polarsys.capella.vp.atrium.Atrium.AtriumBasicElement;
+import org.polarsys.capella.vp.atrium.Atrium.CFA;
+import org.polarsys.capella.vp.atrium.Atrium.DA;
+import org.polarsys.capella.vp.atrium.Atrium.DG;
+import org.polarsys.capella.vp.atrium.Atrium.FailureMode;
 import org.polarsys.capella.vp.atrium.Atrium.assumptionType_Type;
 import org.polarsys.capella.vp.atrium.Atrium.validity_Type;
 
 public class EditingPanel extends javax.swing.JFrame {
 
 	AtriumProcess my_parent = null;
+	AtriumBasicElement editedObject=null;
+	EList<CFA> listCFA = new BasicEList<CFA>();
+	EList<DG> listDG = new BasicEList<DG>();
+	EList<DA> listDA = new BasicEList<DA>();
 	
     public EditingPanel(AtriumProcess parent) {
     	my_parent=parent;
@@ -96,11 +114,43 @@ public class EditingPanel extends javax.swing.JFrame {
     }// </editor-fold>                        
 
     private void jButtonSaveEditedObjectActionPerformed(java.awt.event.ActionEvent evt) {                                                        
-        // TODO add your handling code here:
+    	boolean alreadyHere = false; //protection against existing name
+		for (DG dg : listDG){if (jTextNameeditedObject.getText().equals(dg.getName()) && (!(dg.equals((DG) editedObject)))){alreadyHere = true;}}
+		for (DA da : listDA){if (jTextNameeditedObject.getText().equals(da.getName()) && (!(da.equals((DA) editedObject)))){alreadyHere = true;}}
+		for (CFA cfa : listCFA){if (jTextNameeditedObject.getText().equals(cfa.getName()) && (!(cfa.equals((CFA) editedObject)))){alreadyHere = true;}}
+	
+		if (!(alreadyHere))
+		{
+			TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(editedObject);
+			domain.getCommandStack().execute(new RecordingCommand(domain) {
+			        @Override
+			        protected void doExecute() {
+			        	editedObject.setName(jTextNameeditedObject.getText());
+			        	editedObject.setContent(jTextContentEditedObject.getText());
+			        }
+			    });
+			
+			my_parent.updateDisplayCFA();
+			Editingpanel.setVisible(false);
+		}
+		else {JOptionPane.showMessageDialog(getParent(), "There is already an assumption named like that, please chose another name.");}
     }
     
-    public void editing(EObject object)
-    {
+    public void editing(AtriumBasicElement object, EList<DG> listDG_parameter, EList<DA> listDA_parameter, EList<CFA> listCFA_parameter)
+    {	
+    	listDG = listDG_parameter;
+    	listDA = listDA_parameter;
+    	listCFA = listCFA_parameter;
+    	
+    	editedObject=object;
+    	jTextNameeditedObject.setText(object.getName());
+    	jTextContentEditedObject.setText(object.getContent());
+    	
+    	if (object instanceof CFA) {jLabel1.setText("Editing CFA");}
+    	if (object instanceof DG) {jLabel1.setText("Editing DG");}
+    	if (object instanceof DA) {jLabel1.setText("Editing DA");}
+    	if (object instanceof FailureMode) {jLabel1.setText("Editing Failure Mode");}
+    	
     	Editingpanel.setVisible(true);
     }
    

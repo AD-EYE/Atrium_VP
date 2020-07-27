@@ -1,14 +1,11 @@
 
 package org.polarsys.capella.vp.atrium.Atrium.impl;
 
-import java.util.Date;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
-import org.polarsys.capella.core.data.capellacore.impl.NamedElementImpl;
 
 import org.polarsys.capella.vp.atrium.Atrium.Assumption;
 import org.polarsys.capella.vp.atrium.Atrium.AtriumPackage;
@@ -24,7 +21,6 @@ import org.polarsys.capella.vp.atrium.Atrium.validity_Type;
  * </p>
  * <ul>
  *   <li>{@link org.polarsys.capella.vp.atrium.Atrium.impl.AssumptionImpl#getAssumptionType <em>Assumption Type</em>}</li>
- *   <li>{@link org.polarsys.capella.vp.atrium.Atrium.impl.AssumptionImpl#getContent <em>Content</em>}</li>
  *   <li>{@link org.polarsys.capella.vp.atrium.Atrium.impl.AssumptionImpl#getRationale <em>Rationale</em>}</li>
  *   <li>{@link org.polarsys.capella.vp.atrium.Atrium.impl.AssumptionImpl#getValidity <em>Validity</em>}</li>
  *   <li>{@link org.polarsys.capella.vp.atrium.Atrium.impl.AssumptionImpl#getResponsibleArchitect <em>Responsible Architect</em>}</li>
@@ -34,7 +30,7 @@ import org.polarsys.capella.vp.atrium.Atrium.validity_Type;
  *
  * @generated
  */
-public class AssumptionImpl extends NamedElementImpl implements Assumption {
+public class AssumptionImpl extends AtriumBasicElementImpl implements Assumption {
 
 	/**
 	 * The default value of the '{@link #getAssumptionType() <em>Assumption Type</em>}' attribute.
@@ -55,26 +51,6 @@ public class AssumptionImpl extends NamedElementImpl implements Assumption {
 	 * @ordered
 	 */
 	protected assumptionType_Type assumptionType = ASSUMPTION_TYPE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getContent() <em>Content</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContent()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CONTENT_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getContent() <em>Content</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContent()
-	 * @generated
-	 * @ordered
-	 */
-	protected String content = CONTENT_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getRationale() <em>Rationale</em>}' attribute.
@@ -204,9 +180,9 @@ public class AssumptionImpl extends NamedElementImpl implements Assumption {
 	 */
 
 	@Override
-	public String getContent() {
+	public assumptionType_Type getAssumptionType() {
 
-		return content;
+		return assumptionType;
 	}
 
 	/**
@@ -216,13 +192,13 @@ public class AssumptionImpl extends NamedElementImpl implements Assumption {
 	 */
 
 	@Override
-	public void setContent(String newContent) {
+	public void setAssumptionType(assumptionType_Type newAssumptionType) {
 
-		String oldContent = content;
-		content = newContent;
+		assumptionType_Type oldAssumptionType = assumptionType;
+		assumptionType = newAssumptionType == null ? ASSUMPTION_TYPE_EDEFAULT : newAssumptionType;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AtriumPackage.ASSUMPTION__CONTENT, oldContent,
-					content));
+			eNotify(new ENotificationImpl(this, Notification.SET, AtriumPackage.ASSUMPTION__ASSUMPTION_TYPE,
+					oldAssumptionType, assumptionType));
 
 	}
 
@@ -376,42 +352,11 @@ public class AssumptionImpl extends NamedElementImpl implements Assumption {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-
-	@Override
-	public assumptionType_Type getAssumptionType() {
-
-		return assumptionType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-
-	@Override
-	public void setAssumptionType(assumptionType_Type newAssumptionType) {
-
-		assumptionType_Type oldAssumptionType = assumptionType;
-		assumptionType = newAssumptionType == null ? ASSUMPTION_TYPE_EDEFAULT : newAssumptionType;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AtriumPackage.ASSUMPTION__ASSUMPTION_TYPE,
-					oldAssumptionType, assumptionType));
-
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case AtriumPackage.ASSUMPTION__ASSUMPTION_TYPE:
 			return getAssumptionType();
-		case AtriumPackage.ASSUMPTION__CONTENT:
-			return getContent();
 		case AtriumPackage.ASSUMPTION__RATIONALE:
 			return getRationale();
 		case AtriumPackage.ASSUMPTION__VALIDITY:
@@ -436,9 +381,6 @@ public class AssumptionImpl extends NamedElementImpl implements Assumption {
 		switch (featureID) {
 		case AtriumPackage.ASSUMPTION__ASSUMPTION_TYPE:
 			setAssumptionType((assumptionType_Type) newValue);
-			return;
-		case AtriumPackage.ASSUMPTION__CONTENT:
-			setContent((String) newValue);
 			return;
 		case AtriumPackage.ASSUMPTION__RATIONALE:
 			setRationale((String) newValue);
@@ -470,9 +412,6 @@ public class AssumptionImpl extends NamedElementImpl implements Assumption {
 		case AtriumPackage.ASSUMPTION__ASSUMPTION_TYPE:
 			setAssumptionType(ASSUMPTION_TYPE_EDEFAULT);
 			return;
-		case AtriumPackage.ASSUMPTION__CONTENT:
-			setContent(CONTENT_EDEFAULT);
-			return;
 		case AtriumPackage.ASSUMPTION__RATIONALE:
 			setRationale(RATIONALE_EDEFAULT);
 			return;
@@ -502,8 +441,6 @@ public class AssumptionImpl extends NamedElementImpl implements Assumption {
 		switch (featureID) {
 		case AtriumPackage.ASSUMPTION__ASSUMPTION_TYPE:
 			return assumptionType != ASSUMPTION_TYPE_EDEFAULT;
-		case AtriumPackage.ASSUMPTION__CONTENT:
-			return CONTENT_EDEFAULT == null ? content != null : !CONTENT_EDEFAULT.equals(content);
 		case AtriumPackage.ASSUMPTION__RATIONALE:
 			return RATIONALE_EDEFAULT == null ? rationale != null : !RATIONALE_EDEFAULT.equals(rationale);
 		case AtriumPackage.ASSUMPTION__VALIDITY:
@@ -534,8 +471,6 @@ public class AssumptionImpl extends NamedElementImpl implements Assumption {
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (assumptionType: "); //$NON-NLS-1$
 		result.append(assumptionType);
-		result.append(", content: "); //$NON-NLS-1$
-		result.append(content);
 		result.append(", rationale: "); //$NON-NLS-1$
 		result.append(rationale);
 		result.append(", validity: "); //$NON-NLS-1$

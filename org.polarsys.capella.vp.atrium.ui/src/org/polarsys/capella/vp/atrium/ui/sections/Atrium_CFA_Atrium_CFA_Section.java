@@ -28,6 +28,7 @@ import org.polarsys.capella.vp.atrium.ui.fields.StateLinkedElementField_semantic
 import org.polarsys.capella.vp.atrium.ui.controllers.AssumptionAssociationFieldController;
 import org.polarsys.capella.core.data.capellacore.CapellaElement;
 import org.polarsys.capella.vp.atrium.Atrium.AtriumPackage;
+import org.polarsys.capella.vp.atrium.Atrium.AtriumBasicElement;
 import org.polarsys.capella.vp.atrium.Atrium.CFA;
 
 /**
@@ -49,7 +50,7 @@ public class Atrium_CFA_Atrium_CFA_Section extends AbstractSection {
 	* <!-- end-user-doc -->
 	* @generated
 	*/
-	private TextValueGroup ContentField;
+	private TextValueGroup ContentField1;
 
 	/**
 	* <!-- begin-model-doc -->
@@ -63,47 +64,11 @@ public class Atrium_CFA_Atrium_CFA_Section extends AbstractSection {
 	/**
 	* <!-- begin-model-doc -->
 	* <!-- end-model-doc -->
-	* <!-- begin-user-doc -->
-	* <!-- end-user-doc -->
-	* @generated
-	*/
-	private SimpleSemanticField LinkedtoElementAssociation;
-
-	/**
-	* <!-- begin-model-doc -->
-	* <!-- end-model-doc -->
-	* <!-- begin-user-doc -->
-	* <!-- end-user-doc -->
-	* @generated
-	*/
-	private MultipleSemanticField AssumptionAssociation;
-
-	/**
-	* <!-- begin-model-doc -->
-	* <!-- end-model-doc -->
-	* <!-- begin-user-doc -->
-	* <!-- end-user-doc -->
-	* @generated
-	*/
-	private SimpleSemanticField GoalAssociation;
-
-	/**
-	* <!-- begin-model-doc -->
-	* <!-- end-model-doc -->
 		* <!-- begin-user-doc -->
 	* <!-- end-user-doc -->
 		* @generated
 		*/
 	private Group Atrium_CFA_AttributeGroup;
-
-	/**
-	* <!-- begin-model-doc -->
-	* <!-- end-model-doc -->
-		* <!-- begin-user-doc -->
-		* <!-- end-user-doc -->
-		* @generated
-		*/
-	private Group Atrium_CFA_AssociationGroup;
 
 	/**
 	* <!-- begin-user-doc -->
@@ -116,13 +81,8 @@ public class Atrium_CFA_Atrium_CFA_Section extends AbstractSection {
 
 		if (eObjectToTest == null) {
 			return false;
-		} else if (eObjectToTest instanceof CFA) {
+		} else if (eObjectToTest instanceof AtriumBasicElement || eObjectToTest instanceof CFA) {
 			return true;
-		} else {
-			EObject children = getCFAObject(eObjectToTest);
-			if (children != null) {
-				return true;
-			}
 		}
 
 		return false;
@@ -137,55 +97,11 @@ public class Atrium_CFA_Atrium_CFA_Section extends AbstractSection {
 	*/
 	public void setInput(IWorkbenchPart part, ISelection selection) {
 		EObject newEObject = super.setInputSelection(part, selection);
-
-		if (newEObject != null && !(newEObject instanceof CFA))
-			newEObject = getCFAObject(newEObject);
-
 		if (newEObject != null) {
 			loadData(newEObject);
 		} else {
 			return;
 		}
-	}
-
-	/**
-	* <!-- begin-user-doc -->
-	* <!-- end-user-doc -->
-	* @param parent: An EObject. It is considered as the Parent of an EMDE extension (a Viewpoint element)
-	* @return 
-	* @generated
-	*/
-	private EObject getCFAObject(EObject parent) {
-		if (parent == null)
-			return null;
-
-		if (!isViewpointActive(parent))
-			return null;
-
-		if (parent.eContents() == null)
-			return null;
-
-		EObject result = null;
-		for (EObject iEObject : parent.eContents()) {
-			if (iEObject instanceof CFA) {
-				result = (result == null ? (CFA) iEObject : null);
-				// This case is true when there is more then one extension of the same type. 
-				if (result == null)
-					break;
-			}
-		}
-		return result;
-	}
-
-	/**
-	* <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	* @return True is the AF viewpoint is active. False else. 
-	* @generated
-	*/
-	private boolean isViewpointActive(EObject modelElement) {
-		return ViewpointManager.getInstance(modelElement).isUsed("org.polarsys.capella.vp.atrium")
-				&& !ViewpointManager.getInstance(modelElement).isFiltered("org.polarsys.capella.vp.atrium");
 	}
 
 	/**
@@ -206,26 +122,9 @@ public class Atrium_CFA_Atrium_CFA_Section extends AbstractSection {
 		gdAtrium_CFA_AttributeGroup.horizontalSpan = ((GridLayout) rootParentComposite.getLayout()).numColumns;
 		Atrium_CFA_AttributeGroup.setLayoutData(gdAtrium_CFA_AttributeGroup);
 
-		ContentField = new TextValueGroup(Atrium_CFA_AttributeGroup, "Content :", getWidgetFactory(), true);
+		ContentField1 = new TextValueGroup(Atrium_CFA_AttributeGroup, "Content :", getWidgetFactory(), true);
 
 		StateField = new StateField_semanticCheckboxGroup(Atrium_CFA_AttributeGroup, getWidgetFactory());
-
-		Atrium_CFA_AssociationGroup = getWidgetFactory().createGroup(rootParentComposite, "C F A Associations");
-		Atrium_CFA_AssociationGroup.setLayout(new GridLayout(6, false));
-
-		GridData gdAtrium_CFA_AssociationGroup = new GridData(GridData.FILL_HORIZONTAL);
-
-		gdAtrium_CFA_AssociationGroup.horizontalSpan = ((GridLayout) rootParentComposite.getLayout()).numColumns;
-		Atrium_CFA_AssociationGroup.setLayoutData(gdAtrium_CFA_AssociationGroup);
-
-		LinkedtoElementAssociation = new SimpleSemanticField(Atrium_CFA_AssociationGroup, "Linkedto Element :",
-				getWidgetFactory(), new SimpleSemanticFieldController());
-
-		AssumptionAssociation = new MultipleSemanticField(Atrium_CFA_AssociationGroup, "Assumption :",
-				getWidgetFactory(), new AssumptionAssociationFieldController());
-
-		GoalAssociation = new SimpleSemanticField(Atrium_CFA_AssociationGroup, "Goal :", getWidgetFactory(),
-				new SimpleSemanticFieldController());
 
 	}
 
@@ -238,15 +137,9 @@ public class Atrium_CFA_Atrium_CFA_Section extends AbstractSection {
 	public void loadData(EObject object) {
 		super.loadData(object);
 
-		ContentField.loadData(object, AtriumPackage.eINSTANCE.getCFA_Content());
+		ContentField1.loadData(object, AtriumPackage.eINSTANCE.getAtriumBasicElement_Content());
 
 		StateField.loadData(object);
-
-		LinkedtoElementAssociation.loadData(object, AtriumPackage.eINSTANCE.getCFA_LinkedtoElement());
-
-		AssumptionAssociation.loadData(object, AtriumPackage.eINSTANCE.getCFA_Assumption());
-
-		GoalAssociation.loadData(object, AtriumPackage.eINSTANCE.getCFA_Goal());
 
 	}
 
@@ -258,15 +151,9 @@ public class Atrium_CFA_Atrium_CFA_Section extends AbstractSection {
 	public List<AbstractSemanticField> getSemanticFields() {
 		List<AbstractSemanticField> abstractSemanticFields = new ArrayList<AbstractSemanticField>();
 
-		abstractSemanticFields.add(ContentField);
+		abstractSemanticFields.add(ContentField1);
 
 		abstractSemanticFields.add(StateField);
-
-		abstractSemanticFields.add(LinkedtoElementAssociation);
-
-		abstractSemanticFields.add(AssumptionAssociation);
-
-		abstractSemanticFields.add(GoalAssociation);
 
 		return abstractSemanticFields;
 	}

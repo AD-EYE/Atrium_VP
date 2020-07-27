@@ -19,17 +19,15 @@ import org.polarsys.kitalpha.emde.model.ElementExtension;
  *   <li>{@link org.polarsys.capella.vp.atrium.Atrium.CFA#getLinkedtoElement <em>Linkedto Element</em>}</li>
  *   <li>{@link org.polarsys.capella.vp.atrium.Atrium.CFA#getAssumption <em>Assumption</em>}</li>
  *   <li>{@link org.polarsys.capella.vp.atrium.Atrium.CFA#getGoal <em>Goal</em>}</li>
- *   <li>{@link org.polarsys.capella.vp.atrium.Atrium.CFA#getContent <em>Content</em>}</li>
  *   <li>{@link org.polarsys.capella.vp.atrium.Atrium.CFA#isState <em>State</em>}</li>
  * </ul>
  *
  * @see org.polarsys.capella.vp.atrium.Atrium.AtriumPackage#getCFA()
- * @model annotation="http://www.polarsys.org/kitalpha/emde/1.0.0/constraint ExtendedElement=' http://www.polarsys.org/capella/core/fa/1.4.0#//AbstractFunction'"
- *        annotation="http://www.polarsys.org/kitalpha/emde/1.0.0/constraintMapping Mapping=' platform:/plugin/org.polarsys.capella.core.data.gen/model/FunctionalAnalysis.ecore#//AbstractFunction'"
+ * @model
  * @generated
  */
 
-public interface CFA extends NamedElement, ElementExtension {
+public interface CFA extends AtriumBasicElement {
 
 	/**
 	 * Returns the value of the '<em><b>Linkedto Element</b></em>' reference.
@@ -96,32 +94,6 @@ public interface CFA extends NamedElement, ElementExtension {
 	 */
 
 	void setGoal(DG value);
-
-	/**
-	 * Returns the value of the '<em><b>Content</b></em>' attribute.
-	
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Content</em>' attribute.
-	 * @see #setContent(String)
-	 * @see org.polarsys.capella.vp.atrium.Atrium.AtriumPackage#getCFA_Content()
-	 * @model
-	 * @generated
-	 */
-
-	String getContent();
-
-	/**
-	 * Sets the value of the '{@link org.polarsys.capella.vp.atrium.Atrium.CFA#getContent <em>Content</em>}' attribute.
-	
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Content</em>' attribute.
-	 * @see #getContent()
-	 * @generated
-	 */
-
-	void setContent(String value);
 
 	/**
 	 * Returns the value of the '<em><b>State</b></em>' attribute.

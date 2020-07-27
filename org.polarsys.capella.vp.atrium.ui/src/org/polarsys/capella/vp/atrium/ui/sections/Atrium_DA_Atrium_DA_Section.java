@@ -25,6 +25,7 @@ import org.polarsys.capella.core.ui.properties.fields.*;
 import org.polarsys.capella.vp.atrium.ui.fields.IsPartOfSelectionField_semanticCheckboxGroup;
 import org.polarsys.capella.core.data.capellacore.CapellaElement;
 import org.polarsys.capella.vp.atrium.Atrium.AtriumPackage;
+import org.polarsys.capella.vp.atrium.Atrium.AtriumBasicElement;
 import org.polarsys.capella.vp.atrium.Atrium.DA;
 
 /**
@@ -46,7 +47,7 @@ public class Atrium_DA_Atrium_DA_Section extends AbstractSection {
 	* <!-- end-user-doc -->
 	* @generated
 	*/
-	private TextValueGroup ContentField3;
+	private TextValueGroup ContentField4;
 
 	/**
 	* <!-- begin-model-doc -->
@@ -77,13 +78,8 @@ public class Atrium_DA_Atrium_DA_Section extends AbstractSection {
 
 		if (eObjectToTest == null) {
 			return false;
-		} else if (eObjectToTest instanceof DA) {
+		} else if (eObjectToTest instanceof AtriumBasicElement || eObjectToTest instanceof DA) {
 			return true;
-		} else {
-			EObject children = getDAObject(eObjectToTest);
-			if (children != null) {
-				return true;
-			}
 		}
 
 		return false;
@@ -98,55 +94,11 @@ public class Atrium_DA_Atrium_DA_Section extends AbstractSection {
 	*/
 	public void setInput(IWorkbenchPart part, ISelection selection) {
 		EObject newEObject = super.setInputSelection(part, selection);
-
-		if (newEObject != null && !(newEObject instanceof DA))
-			newEObject = getDAObject(newEObject);
-
 		if (newEObject != null) {
 			loadData(newEObject);
 		} else {
 			return;
 		}
-	}
-
-	/**
-	* <!-- begin-user-doc -->
-	* <!-- end-user-doc -->
-	* @param parent: An EObject. It is considered as the Parent of an EMDE extension (a Viewpoint element)
-	* @return 
-	* @generated
-	*/
-	private EObject getDAObject(EObject parent) {
-		if (parent == null)
-			return null;
-
-		if (!isViewpointActive(parent))
-			return null;
-
-		if (parent.eContents() == null)
-			return null;
-
-		EObject result = null;
-		for (EObject iEObject : parent.eContents()) {
-			if (iEObject instanceof DA) {
-				result = (result == null ? (DA) iEObject : null);
-				// This case is true when there is more then one extension of the same type. 
-				if (result == null)
-					break;
-			}
-		}
-		return result;
-	}
-
-	/**
-	* <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	* @return True is the AF viewpoint is active. False else. 
-	* @generated
-	*/
-	private boolean isViewpointActive(EObject modelElement) {
-		return ViewpointManager.getInstance(modelElement).isUsed("org.polarsys.capella.vp.atrium")
-				&& !ViewpointManager.getInstance(modelElement).isFiltered("org.polarsys.capella.vp.atrium");
 	}
 
 	/**
@@ -167,7 +119,7 @@ public class Atrium_DA_Atrium_DA_Section extends AbstractSection {
 		gdAtrium_DA_AttributeGroup.horizontalSpan = ((GridLayout) rootParentComposite.getLayout()).numColumns;
 		Atrium_DA_AttributeGroup.setLayoutData(gdAtrium_DA_AttributeGroup);
 
-		ContentField3 = new TextValueGroup(Atrium_DA_AttributeGroup, "Content :", getWidgetFactory(), true);
+		ContentField4 = new TextValueGroup(Atrium_DA_AttributeGroup, "Content :", getWidgetFactory(), true);
 
 		IsPartOfSelectionField = new IsPartOfSelectionField_semanticCheckboxGroup(Atrium_DA_AttributeGroup,
 				getWidgetFactory());
@@ -183,7 +135,7 @@ public class Atrium_DA_Atrium_DA_Section extends AbstractSection {
 	public void loadData(EObject object) {
 		super.loadData(object);
 
-		ContentField3.loadData(object, AtriumPackage.eINSTANCE.getDA_Content());
+		ContentField4.loadData(object, AtriumPackage.eINSTANCE.getAtriumBasicElement_Content());
 
 		IsPartOfSelectionField.loadData(object);
 
@@ -197,7 +149,7 @@ public class Atrium_DA_Atrium_DA_Section extends AbstractSection {
 	public List<AbstractSemanticField> getSemanticFields() {
 		List<AbstractSemanticField> abstractSemanticFields = new ArrayList<AbstractSemanticField>();
 
-		abstractSemanticFields.add(ContentField3);
+		abstractSemanticFields.add(ContentField4);
 
 		abstractSemanticFields.add(IsPartOfSelectionField);
 

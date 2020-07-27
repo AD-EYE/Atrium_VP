@@ -7,35 +7,35 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
-import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.emf.edit.command.CommandParameter;
 
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import org.polarsys.capella.core.data.capellacore.provider.NamedElementItemProvider;
 
+import org.polarsys.capella.vp.atrium.Atrium.AtriumBasicElement;
 import org.polarsys.capella.vp.atrium.Atrium.AtriumFactory;
 import org.polarsys.capella.vp.atrium.Atrium.AtriumPackage;
-import org.polarsys.capella.vp.atrium.Atrium.DG_list;
 
 import org.polarsys.kitalpha.emde.model.EmdePackage;
 
 import org.polarsys.kitalpha.emde.model.edit.provider.NewChildDescriptorHelper;
 
 /**
- * This is the item provider adapter for a {@link org.polarsys.capella.vp.atrium.Atrium.DG_list} object.
+ * This is the item provider adapter for a {@link org.polarsys.capella.vp.atrium.Atrium.AtriumBasicElement} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class DG_listItemProvider extends NamedElementItemProvider implements IEditingDomainItemProvider,
+public class AtriumBasicElementItemProvider extends NamedElementItemProvider implements IEditingDomainItemProvider,
 		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -43,7 +43,7 @@ public class DG_listItemProvider extends NamedElementItemProvider implements IEd
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DG_listItemProvider(AdapterFactory adapterFactory) {
+	public AtriumBasicElementItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -58,11 +58,34 @@ public class DG_listItemProvider extends NamedElementItemProvider implements IEd
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addContentPropertyDescriptor(object);
 		}
 		// begin-extension-code
 		checkChildCreationExtender(object);
 		// end-extension-code
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Content feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addContentPropertyDescriptor(Object object) {
+
+		// begin-extension-code
+		itemPropertyDescriptors.add(createItemPropertyDescriptor
+		// end-extension-code
+		(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+				getString("_UI_AtriumBasicElement_content_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_AtriumBasicElement_content_feature", //$NON-NLS-1$//$NON-NLS-2$
+						"_UI_AtriumBasicElement_type"), //$NON-NLS-1$
+				AtriumPackage.Literals.ATRIUM_BASIC_ELEMENT__CONTENT, true, false, false,
+				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
+				// begin-extension-code
+				null));
+		// end-extension-code
 	}
 
 	/**
@@ -76,14 +99,14 @@ public class DG_listItemProvider extends NamedElementItemProvider implements IEd
 	}
 
 	/**
-	 * This returns DG_list.gif.
+	 * This returns AtriumBasicElement.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/DG_list")); //$NON-NLS-1$
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/AtriumBasicElement")); //$NON-NLS-1$
 	}
 
 	/**
@@ -95,9 +118,9 @@ public class DG_listItemProvider extends NamedElementItemProvider implements IEd
 	@Override
 	public String getText(Object object) {
 
-		String label = ((DG_list) object).getName();
+		String label = ((AtriumBasicElement) object).getName();
 		// begin-extension-code
-		return label == null || label.length() == 0 ? "[" + getString("_UI_DG_list_type") + "]" : label; //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+		return label == null || label.length() == 0 ? "[" + getString("_UI_AtriumBasicElement_type") + "]" : label; //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 		// end-extension-code
 	}
 
@@ -111,6 +134,13 @@ public class DG_listItemProvider extends NamedElementItemProvider implements IEd
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(AtriumBasicElement.class)) {
+		case AtriumPackage.ATRIUM_BASIC_ELEMENT__CONTENT:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
+		}
+		super.notifyChanged(notification);
 	}
 
 	/**

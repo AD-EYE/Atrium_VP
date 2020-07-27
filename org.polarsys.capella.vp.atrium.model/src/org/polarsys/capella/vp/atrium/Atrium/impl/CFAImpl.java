@@ -2,26 +2,24 @@
 package org.polarsys.capella.vp.atrium.Atrium.impl;
 
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 
-import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
+
 import org.polarsys.capella.core.data.capellacore.CapellaElement;
-import org.polarsys.capella.core.data.capellacore.impl.NamedElementImpl;
 
 import org.polarsys.capella.vp.atrium.Atrium.Assumption;
 import org.polarsys.capella.vp.atrium.Atrium.AtriumPackage;
 import org.polarsys.capella.vp.atrium.Atrium.CFA;
 import org.polarsys.capella.vp.atrium.Atrium.DG;
-import org.polarsys.capella.vp.atrium.Atrium.stateLinkedElement_Type;
 
 /**
  * <!-- begin-user-doc -->
@@ -34,13 +32,12 @@ import org.polarsys.capella.vp.atrium.Atrium.stateLinkedElement_Type;
  *   <li>{@link org.polarsys.capella.vp.atrium.Atrium.impl.CFAImpl#getLinkedtoElement <em>Linkedto Element</em>}</li>
  *   <li>{@link org.polarsys.capella.vp.atrium.Atrium.impl.CFAImpl#getAssumption <em>Assumption</em>}</li>
  *   <li>{@link org.polarsys.capella.vp.atrium.Atrium.impl.CFAImpl#getGoal <em>Goal</em>}</li>
- *   <li>{@link org.polarsys.capella.vp.atrium.Atrium.impl.CFAImpl#getContent <em>Content</em>}</li>
  *   <li>{@link org.polarsys.capella.vp.atrium.Atrium.impl.CFAImpl#isState <em>State</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class CFAImpl extends NamedElementImpl implements CFA {
+public class CFAImpl extends AtriumBasicElementImpl implements CFA {
 
 	/**
 	 * The cached value of the '{@link #getLinkedtoElement() <em>Linkedto Element</em>}' reference.
@@ -71,26 +68,6 @@ public class CFAImpl extends NamedElementImpl implements CFA {
 	 * @ordered
 	 */
 	protected DG goal;
-
-	/**
-	 * The default value of the '{@link #getContent() <em>Content</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContent()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CONTENT_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getContent() <em>Content</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContent()
-	 * @generated
-	 * @ordered
-	 */
-	protected String content = CONTENT_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #isState() <em>State</em>}' attribute.
@@ -251,34 +228,6 @@ public class CFAImpl extends NamedElementImpl implements CFA {
 	 */
 
 	@Override
-	public String getContent() {
-
-		return content;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-
-	@Override
-	public void setContent(String newContent) {
-
-		String oldContent = content;
-		content = newContent;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AtriumPackage.CFA__CONTENT, oldContent, content));
-
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-
-	@Override
 	public boolean isState() {
 
 		return state;
@@ -318,8 +267,6 @@ public class CFAImpl extends NamedElementImpl implements CFA {
 			if (resolve)
 				return getGoal();
 			return basicGetGoal();
-		case AtriumPackage.CFA__CONTENT:
-			return getContent();
 		case AtriumPackage.CFA__STATE:
 			return isState();
 		}
@@ -345,9 +292,6 @@ public class CFAImpl extends NamedElementImpl implements CFA {
 		case AtriumPackage.CFA__GOAL:
 			setGoal((DG) newValue);
 			return;
-		case AtriumPackage.CFA__CONTENT:
-			setContent((String) newValue);
-			return;
 		case AtriumPackage.CFA__STATE:
 			setState((Boolean) newValue);
 			return;
@@ -372,9 +316,6 @@ public class CFAImpl extends NamedElementImpl implements CFA {
 		case AtriumPackage.CFA__GOAL:
 			setGoal((DG) null);
 			return;
-		case AtriumPackage.CFA__CONTENT:
-			setContent(CONTENT_EDEFAULT);
-			return;
 		case AtriumPackage.CFA__STATE:
 			setState(STATE_EDEFAULT);
 			return;
@@ -396,8 +337,6 @@ public class CFAImpl extends NamedElementImpl implements CFA {
 			return assumption != null && !assumption.isEmpty();
 		case AtriumPackage.CFA__GOAL:
 			return goal != null;
-		case AtriumPackage.CFA__CONTENT:
-			return CONTENT_EDEFAULT == null ? content != null : !CONTENT_EDEFAULT.equals(content);
 		case AtriumPackage.CFA__STATE:
 			return state != STATE_EDEFAULT;
 		}
@@ -415,9 +354,7 @@ public class CFAImpl extends NamedElementImpl implements CFA {
 			return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (content: "); //$NON-NLS-1$
-		result.append(content);
-		result.append(", state: "); //$NON-NLS-1$
+		result.append(" (state: "); //$NON-NLS-1$
 		result.append(state);
 		result.append(')');
 		return result.toString();

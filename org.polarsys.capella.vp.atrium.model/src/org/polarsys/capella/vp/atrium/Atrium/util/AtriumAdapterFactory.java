@@ -78,6 +78,11 @@ public class AtriumAdapterFactory extends AdapterFactoryImpl {
 	 */
 	protected AtriumSwitch<Adapter> modelSwitch = new AtriumSwitch<Adapter>() {
 		@Override
+		public Adapter caseAtriumBasicElement(AtriumBasicElement object) {
+			return createAtriumBasicElementAdapter();
+		}
+
+		@Override
 		public Adapter caseCFA_list(CFA_list object) {
 			return createCFA_listAdapter();
 		}
@@ -194,6 +199,20 @@ public class AtriumAdapterFactory extends AdapterFactoryImpl {
 	@Override
 	public Adapter createAdapter(Notifier target) {
 		return modelSwitch.doSwitch((EObject) target);
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.polarsys.capella.vp.atrium.Atrium.AtriumBasicElement <em>Basic Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.polarsys.capella.vp.atrium.Atrium.AtriumBasicElement
+	 * @generated
+	 */
+	public Adapter createAtriumBasicElementAdapter() {
+		return null;
 	}
 
 	/**

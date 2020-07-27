@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 
 import org.polarsys.capella.common.model.helpers.IHelper;
 
+import org.polarsys.capella.vp.atrium.Atrium.AtriumBasicElement;
 import org.polarsys.capella.vp.atrium.Atrium.CFA_list;
 import org.polarsys.capella.vp.atrium.Atrium.Assumption_list;
 import org.polarsys.capella.vp.atrium.Atrium.DG_list;
@@ -39,6 +40,9 @@ public class AtriumPackageHelper implements IHelper {
 	public Object getValue(EObject object, EStructuralFeature feature, EAnnotation annotation) {
 		Object ret = null;
 
+		if (ret == null && object instanceof AtriumBasicElement) {
+			ret = AtriumBasicElementHelper.getInstance().doSwitch((AtriumBasicElement) object, feature);
+		}
 		if (ret == null && object instanceof CFA_list) {
 			ret = CFA_listHelper.getInstance().doSwitch((CFA_list) object, feature);
 		}

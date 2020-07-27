@@ -58,6 +58,8 @@ public class AtriumFactoryImpl extends EFactoryImpl implements AtriumFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
+		case AtriumPackage.ATRIUM_BASIC_ELEMENT:
+			return createAtriumBasicElement();
 		case AtriumPackage.CFA_LIST:
 			return createCFA_list();
 		case AtriumPackage.ASSUMPTION_LIST:
@@ -117,6 +119,21 @@ public class AtriumFactoryImpl extends EFactoryImpl implements AtriumFactory {
 		default:
 			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AtriumBasicElement createAtriumBasicElement() {
+		AtriumBasicElementImpl atriumBasicElement = new AtriumBasicElementImpl();
+		//begin-capella-code
+
+		atriumBasicElement.setId(IdGenerator.createId());
+
+		//end-capella-code
+		return atriumBasicElement;
 	}
 
 	/**
@@ -348,6 +365,21 @@ public class AtriumFactoryImpl extends EFactoryImpl implements AtriumFactory {
 		return AtriumPackage.eINSTANCE;
 	}
 
+	//begin-capella-code
+
+	/**
+	 * Creates class and sets its name
+	 * (This method comes from a customization of the standard EMF generator)
+	 *
+	 * @param name_p : default name of created element
+	 * @generated
+	 */
+	public AtriumBasicElement createAtriumBasicElement(String name_p) {
+		AtriumBasicElement atriumBasicElement = createAtriumBasicElement();
+		atriumBasicElement.setName(name_p);
+		return atriumBasicElement;
+	}
+
 	/**
 	 * Creates class and sets its name
 	 * (This method comes from a customization of the standard EMF generator)
@@ -412,8 +444,6 @@ public class AtriumFactoryImpl extends EFactoryImpl implements AtriumFactory {
 		failure_list.setName(name_p);
 		return failure_list;
 	}
-
-	//begin-capella-code
 
 	/**
 	 * Creates class and sets its name

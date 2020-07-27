@@ -1,21 +1,10 @@
 
 package org.polarsys.capella.vp.atrium.Atrium.impl;
 
-import java.util.Collection;
-
-import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.polarsys.capella.core.data.capellacore.impl.NamedElementImpl;
 
-import org.polarsys.capella.vp.atrium.Atrium.Assumption;
 import org.polarsys.capella.vp.atrium.Atrium.Assumption_list;
 import org.polarsys.capella.vp.atrium.Atrium.AtriumPackage;
 
@@ -27,7 +16,6 @@ import org.polarsys.capella.vp.atrium.Atrium.AtriumPackage;
  * @generated
  */
 public class Assumption_listImpl extends NamedElementImpl implements Assumption_list {
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -15,7 +15,6 @@ import org.polarsys.kitalpha.emde.model.ElementExtension;
  * </p>
  * <ul>
  *   <li>{@link org.polarsys.capella.vp.atrium.Atrium.Assumption#getAssumptionType <em>Assumption Type</em>}</li>
- *   <li>{@link org.polarsys.capella.vp.atrium.Atrium.Assumption#getContent <em>Content</em>}</li>
  *   <li>{@link org.polarsys.capella.vp.atrium.Atrium.Assumption#getRationale <em>Rationale</em>}</li>
  *   <li>{@link org.polarsys.capella.vp.atrium.Atrium.Assumption#getValidity <em>Validity</em>}</li>
  *   <li>{@link org.polarsys.capella.vp.atrium.Atrium.Assumption#getResponsibleArchitect <em>Responsible Architect</em>}</li>
@@ -24,38 +23,11 @@ import org.polarsys.kitalpha.emde.model.ElementExtension;
  * </ul>
  *
  * @see org.polarsys.capella.vp.atrium.Atrium.AtriumPackage#getAssumption()
- * @model annotation="http://www.polarsys.org/kitalpha/emde/1.0.0/constraint ExtendedElement=' http://www.polarsys.org/capella/core/fa/1.4.0#//AbstractFunction'"
- *        annotation="http://www.polarsys.org/kitalpha/emde/1.0.0/constraintMapping Mapping=' platform:/plugin/org.polarsys.capella.core.data.gen/model/FunctionalAnalysis.ecore#//AbstractFunction'"
+ * @model
  * @generated
  */
 
-public interface Assumption extends NamedElement, ElementExtension {
-
-	/**
-	 * Returns the value of the '<em><b>Content</b></em>' attribute.
-	
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Content</em>' attribute.
-	 * @see #setContent(String)
-	 * @see org.polarsys.capella.vp.atrium.Atrium.AtriumPackage#getAssumption_Content()
-	 * @model
-	 * @generated
-	 */
-
-	String getContent();
-
-	/**
-	 * Sets the value of the '{@link org.polarsys.capella.vp.atrium.Atrium.Assumption#getContent <em>Content</em>}' attribute.
-	
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Content</em>' attribute.
-	 * @see #getContent()
-	 * @generated
-	 */
-
-	void setContent(String value);
+public interface Assumption extends AtriumBasicElement {
 
 	/**
 	 * Returns the value of the '<em><b>Rationale</b></em>' attribute.

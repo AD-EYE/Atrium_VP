@@ -7,50 +7,52 @@ import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.polarsys.capella.core.data.capellacore.impl.NamedElementImpl;
+
+import org.polarsys.capella.vp.atrium.Atrium.AtriumBasicElement;
 import org.polarsys.capella.vp.atrium.Atrium.AtriumPackage;
-import org.polarsys.capella.vp.atrium.Atrium.DA;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>DA</b></em>'.
+ * An implementation of the model object '<em><b>Basic Element</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.polarsys.capella.vp.atrium.Atrium.impl.DAImpl#isIsPartOfSelection <em>Is Part Of Selection</em>}</li>
+ *   <li>{@link org.polarsys.capella.vp.atrium.Atrium.impl.AtriumBasicElementImpl#getContent <em>Content</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class DAImpl extends AtriumBasicElementImpl implements DA {
+public class AtriumBasicElementImpl extends NamedElementImpl implements AtriumBasicElement {
 
 	/**
-	 * The default value of the '{@link #isIsPartOfSelection() <em>Is Part Of Selection</em>}' attribute.
+	 * The default value of the '{@link #getContent() <em>Content</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isIsPartOfSelection()
+	 * @see #getContent()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final boolean IS_PART_OF_SELECTION_EDEFAULT = false;
+	protected static final String CONTENT_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #isIsPartOfSelection() <em>Is Part Of Selection</em>}' attribute.
+	 * The cached value of the '{@link #getContent() <em>Content</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isIsPartOfSelection()
+	 * @see #getContent()
 	 * @generated
 	 * @ordered
 	 */
-	protected boolean isPartOfSelection = IS_PART_OF_SELECTION_EDEFAULT;
+	protected String content = CONTENT_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected DAImpl() {
+	protected AtriumBasicElementImpl() {
 
 		super();
 
@@ -63,7 +65,7 @@ public class DAImpl extends AtriumBasicElementImpl implements DA {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return AtriumPackage.Literals.DA;
+		return AtriumPackage.Literals.ATRIUM_BASIC_ELEMENT;
 	}
 
 	/**
@@ -73,9 +75,9 @@ public class DAImpl extends AtriumBasicElementImpl implements DA {
 	 */
 
 	@Override
-	public boolean isIsPartOfSelection() {
+	public String getContent() {
 
-		return isPartOfSelection;
+		return content;
 	}
 
 	/**
@@ -85,13 +87,13 @@ public class DAImpl extends AtriumBasicElementImpl implements DA {
 	 */
 
 	@Override
-	public void setIsPartOfSelection(boolean newIsPartOfSelection) {
+	public void setContent(String newContent) {
 
-		boolean oldIsPartOfSelection = isPartOfSelection;
-		isPartOfSelection = newIsPartOfSelection;
+		String oldContent = content;
+		content = newContent;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AtriumPackage.DA__IS_PART_OF_SELECTION,
-					oldIsPartOfSelection, isPartOfSelection));
+			eNotify(new ENotificationImpl(this, Notification.SET, AtriumPackage.ATRIUM_BASIC_ELEMENT__CONTENT,
+					oldContent, content));
 
 	}
 
@@ -103,8 +105,8 @@ public class DAImpl extends AtriumBasicElementImpl implements DA {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case AtriumPackage.DA__IS_PART_OF_SELECTION:
-			return isIsPartOfSelection();
+		case AtriumPackage.ATRIUM_BASIC_ELEMENT__CONTENT:
+			return getContent();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -117,8 +119,8 @@ public class DAImpl extends AtriumBasicElementImpl implements DA {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case AtriumPackage.DA__IS_PART_OF_SELECTION:
-			setIsPartOfSelection((Boolean) newValue);
+		case AtriumPackage.ATRIUM_BASIC_ELEMENT__CONTENT:
+			setContent((String) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -132,8 +134,8 @@ public class DAImpl extends AtriumBasicElementImpl implements DA {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case AtriumPackage.DA__IS_PART_OF_SELECTION:
-			setIsPartOfSelection(IS_PART_OF_SELECTION_EDEFAULT);
+		case AtriumPackage.ATRIUM_BASIC_ELEMENT__CONTENT:
+			setContent(CONTENT_EDEFAULT);
 			return;
 		}
 		super.eUnset(featureID);
@@ -147,8 +149,8 @@ public class DAImpl extends AtriumBasicElementImpl implements DA {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case AtriumPackage.DA__IS_PART_OF_SELECTION:
-			return isPartOfSelection != IS_PART_OF_SELECTION_EDEFAULT;
+		case AtriumPackage.ATRIUM_BASIC_ELEMENT__CONTENT:
+			return CONTENT_EDEFAULT == null ? content != null : !CONTENT_EDEFAULT.equals(content);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -164,10 +166,10 @@ public class DAImpl extends AtriumBasicElementImpl implements DA {
 			return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (isPartOfSelection: "); //$NON-NLS-1$
-		result.append(isPartOfSelection);
+		result.append(" (content: "); //$NON-NLS-1$
+		result.append(content);
 		result.append(')');
 		return result.toString();
 	}
 
-} //DAImpl
+} //AtriumBasicElementImpl

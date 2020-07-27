@@ -5,8 +5,8 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.EReference;
+
 import org.polarsys.capella.core.data.capellacore.CapellacorePackage;
 
 /**
@@ -58,6 +58,232 @@ public interface AtriumPackage extends EPackage {
 	AtriumPackage eINSTANCE = org.polarsys.capella.vp.atrium.Atrium.impl.AtriumPackageImpl.init();
 
 	/**
+	 * The meta object id for the '{@link org.polarsys.capella.vp.atrium.Atrium.impl.AtriumBasicElementImpl <em>Basic Element</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.capella.vp.atrium.Atrium.impl.AtriumBasicElementImpl
+	 * @see org.polarsys.capella.vp.atrium.Atrium.impl.AtriumPackageImpl#getAtriumBasicElement()
+	 * @generated
+	 */
+	int ATRIUM_BASIC_ELEMENT = 0;
+
+	/**
+	 * The feature id for the '<em><b>Owned Extensions</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATRIUM_BASIC_ELEMENT__OWNED_EXTENSIONS = CapellacorePackage.NAMED_ELEMENT__OWNED_EXTENSIONS;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATRIUM_BASIC_ELEMENT__ID = CapellacorePackage.NAMED_ELEMENT__ID;
+
+	/**
+	 * The feature id for the '<em><b>Sid</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATRIUM_BASIC_ELEMENT__SID = CapellacorePackage.NAMED_ELEMENT__SID;
+
+	/**
+	 * The feature id for the '<em><b>Constraints</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATRIUM_BASIC_ELEMENT__CONSTRAINTS = CapellacorePackage.NAMED_ELEMENT__CONSTRAINTS;
+
+	/**
+	 * The feature id for the '<em><b>Owned Constraints</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATRIUM_BASIC_ELEMENT__OWNED_CONSTRAINTS = CapellacorePackage.NAMED_ELEMENT__OWNED_CONSTRAINTS;
+
+	/**
+	 * The feature id for the '<em><b>Owned Migrated Elements</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATRIUM_BASIC_ELEMENT__OWNED_MIGRATED_ELEMENTS = CapellacorePackage.NAMED_ELEMENT__OWNED_MIGRATED_ELEMENTS;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATRIUM_BASIC_ELEMENT__NAME = CapellacorePackage.NAMED_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Incoming Traces</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATRIUM_BASIC_ELEMENT__INCOMING_TRACES = CapellacorePackage.NAMED_ELEMENT__INCOMING_TRACES;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing Traces</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATRIUM_BASIC_ELEMENT__OUTGOING_TRACES = CapellacorePackage.NAMED_ELEMENT__OUTGOING_TRACES;
+
+	/**
+	 * The feature id for the '<em><b>Visible In Doc</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATRIUM_BASIC_ELEMENT__VISIBLE_IN_DOC = CapellacorePackage.NAMED_ELEMENT__VISIBLE_IN_DOC;
+
+	/**
+	 * The feature id for the '<em><b>Visible In LM</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATRIUM_BASIC_ELEMENT__VISIBLE_IN_LM = CapellacorePackage.NAMED_ELEMENT__VISIBLE_IN_LM;
+
+	/**
+	 * The feature id for the '<em><b>Summary</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATRIUM_BASIC_ELEMENT__SUMMARY = CapellacorePackage.NAMED_ELEMENT__SUMMARY;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATRIUM_BASIC_ELEMENT__DESCRIPTION = CapellacorePackage.NAMED_ELEMENT__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Review</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATRIUM_BASIC_ELEMENT__REVIEW = CapellacorePackage.NAMED_ELEMENT__REVIEW;
+
+	/**
+	 * The feature id for the '<em><b>Owned Property Values</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATRIUM_BASIC_ELEMENT__OWNED_PROPERTY_VALUES = CapellacorePackage.NAMED_ELEMENT__OWNED_PROPERTY_VALUES;
+
+	/**
+	 * The feature id for the '<em><b>Owned Enumeration Property Types</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATRIUM_BASIC_ELEMENT__OWNED_ENUMERATION_PROPERTY_TYPES = CapellacorePackage.NAMED_ELEMENT__OWNED_ENUMERATION_PROPERTY_TYPES;
+
+	/**
+	 * The feature id for the '<em><b>Applied Property Values</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATRIUM_BASIC_ELEMENT__APPLIED_PROPERTY_VALUES = CapellacorePackage.NAMED_ELEMENT__APPLIED_PROPERTY_VALUES;
+
+	/**
+	 * The feature id for the '<em><b>Owned Property Value Groups</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATRIUM_BASIC_ELEMENT__OWNED_PROPERTY_VALUE_GROUPS = CapellacorePackage.NAMED_ELEMENT__OWNED_PROPERTY_VALUE_GROUPS;
+
+	/**
+	 * The feature id for the '<em><b>Applied Property Value Groups</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATRIUM_BASIC_ELEMENT__APPLIED_PROPERTY_VALUE_GROUPS = CapellacorePackage.NAMED_ELEMENT__APPLIED_PROPERTY_VALUE_GROUPS;
+
+	/**
+	 * The feature id for the '<em><b>Status</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATRIUM_BASIC_ELEMENT__STATUS = CapellacorePackage.NAMED_ELEMENT__STATUS;
+
+	/**
+	 * The feature id for the '<em><b>Features</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATRIUM_BASIC_ELEMENT__FEATURES = CapellacorePackage.NAMED_ELEMENT__FEATURES;
+
+	/**
+	 * The feature id for the '<em><b>Applied Requirements</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATRIUM_BASIC_ELEMENT__APPLIED_REQUIREMENTS = CapellacorePackage.NAMED_ELEMENT__APPLIED_REQUIREMENTS;
+
+	/**
+	 * The feature id for the '<em><b>Content</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATRIUM_BASIC_ELEMENT__CONTENT = CapellacorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Basic Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATRIUM_BASIC_ELEMENT_FEATURE_COUNT = CapellacorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
 	 * The meta object id for the '{@link org.polarsys.capella.vp.atrium.Atrium.impl.CFA_listImpl <em>CFA list</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -65,7 +291,7 @@ public interface AtriumPackage extends EPackage {
 	 * @see org.polarsys.capella.vp.atrium.Atrium.impl.AtriumPackageImpl#getCFA_list()
 	 * @generated
 	 */
-	int CFA_LIST = 0;
+	int CFA_LIST = 1;
 
 	/**
 	 * The feature id for the '<em><b>Owned Extensions</b></em>' containment reference list.
@@ -282,7 +508,7 @@ public interface AtriumPackage extends EPackage {
 	 * @see org.polarsys.capella.vp.atrium.Atrium.impl.AtriumPackageImpl#getAssumption_list()
 	 * @generated
 	 */
-	int ASSUMPTION_LIST = 1;
+	int ASSUMPTION_LIST = 2;
 
 	/**
 	 * The feature id for the '<em><b>Owned Extensions</b></em>' containment reference list.
@@ -499,7 +725,7 @@ public interface AtriumPackage extends EPackage {
 	 * @see org.polarsys.capella.vp.atrium.Atrium.impl.AtriumPackageImpl#getDG_list()
 	 * @generated
 	 */
-	int DG_LIST = 2;
+	int DG_LIST = 3;
 
 	/**
 	 * The feature id for the '<em><b>Owned Extensions</b></em>' containment reference list.
@@ -716,7 +942,7 @@ public interface AtriumPackage extends EPackage {
 	 * @see org.polarsys.capella.vp.atrium.Atrium.impl.AtriumPackageImpl#getDA_list()
 	 * @generated
 	 */
-	int DA_LIST = 3;
+	int DA_LIST = 4;
 
 	/**
 	 * The feature id for the '<em><b>Owned Extensions</b></em>' containment reference list.
@@ -933,7 +1159,7 @@ public interface AtriumPackage extends EPackage {
 	 * @see org.polarsys.capella.vp.atrium.Atrium.impl.AtriumPackageImpl#getFailure_list()
 	 * @generated
 	 */
-	int FAILURE_LIST = 4;
+	int FAILURE_LIST = 5;
 
 	/**
 	 * The feature id for the '<em><b>Owned Extensions</b></em>' containment reference list.
@@ -1150,7 +1376,7 @@ public interface AtriumPackage extends EPackage {
 	 * @see org.polarsys.capella.vp.atrium.Atrium.impl.AtriumPackageImpl#getCFA()
 	 * @generated
 	 */
-	int CFA = 5;
+	int CFA = 6;
 
 	/**
 	 * The feature id for the '<em><b>Owned Extensions</b></em>' containment reference list.
@@ -1159,7 +1385,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CFA__OWNED_EXTENSIONS = CapellacorePackage.NAMED_ELEMENT__OWNED_EXTENSIONS;
+	int CFA__OWNED_EXTENSIONS = ATRIUM_BASIC_ELEMENT__OWNED_EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -1168,7 +1394,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CFA__ID = CapellacorePackage.NAMED_ELEMENT__ID;
+	int CFA__ID = ATRIUM_BASIC_ELEMENT__ID;
 
 	/**
 	 * The feature id for the '<em><b>Sid</b></em>' attribute.
@@ -1177,7 +1403,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CFA__SID = CapellacorePackage.NAMED_ELEMENT__SID;
+	int CFA__SID = ATRIUM_BASIC_ELEMENT__SID;
 
 	/**
 	 * The feature id for the '<em><b>Constraints</b></em>' reference list.
@@ -1186,7 +1412,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CFA__CONSTRAINTS = CapellacorePackage.NAMED_ELEMENT__CONSTRAINTS;
+	int CFA__CONSTRAINTS = ATRIUM_BASIC_ELEMENT__CONSTRAINTS;
 
 	/**
 	 * The feature id for the '<em><b>Owned Constraints</b></em>' containment reference list.
@@ -1195,7 +1421,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CFA__OWNED_CONSTRAINTS = CapellacorePackage.NAMED_ELEMENT__OWNED_CONSTRAINTS;
+	int CFA__OWNED_CONSTRAINTS = ATRIUM_BASIC_ELEMENT__OWNED_CONSTRAINTS;
 
 	/**
 	 * The feature id for the '<em><b>Owned Migrated Elements</b></em>' containment reference list.
@@ -1204,7 +1430,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CFA__OWNED_MIGRATED_ELEMENTS = CapellacorePackage.NAMED_ELEMENT__OWNED_MIGRATED_ELEMENTS;
+	int CFA__OWNED_MIGRATED_ELEMENTS = ATRIUM_BASIC_ELEMENT__OWNED_MIGRATED_ELEMENTS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1213,7 +1439,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CFA__NAME = CapellacorePackage.NAMED_ELEMENT__NAME;
+	int CFA__NAME = ATRIUM_BASIC_ELEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Incoming Traces</b></em>' reference list.
@@ -1222,7 +1448,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CFA__INCOMING_TRACES = CapellacorePackage.NAMED_ELEMENT__INCOMING_TRACES;
+	int CFA__INCOMING_TRACES = ATRIUM_BASIC_ELEMENT__INCOMING_TRACES;
 
 	/**
 	 * The feature id for the '<em><b>Outgoing Traces</b></em>' reference list.
@@ -1231,7 +1457,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CFA__OUTGOING_TRACES = CapellacorePackage.NAMED_ELEMENT__OUTGOING_TRACES;
+	int CFA__OUTGOING_TRACES = ATRIUM_BASIC_ELEMENT__OUTGOING_TRACES;
 
 	/**
 	 * The feature id for the '<em><b>Visible In Doc</b></em>' attribute.
@@ -1240,7 +1466,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CFA__VISIBLE_IN_DOC = CapellacorePackage.NAMED_ELEMENT__VISIBLE_IN_DOC;
+	int CFA__VISIBLE_IN_DOC = ATRIUM_BASIC_ELEMENT__VISIBLE_IN_DOC;
 
 	/**
 	 * The feature id for the '<em><b>Visible In LM</b></em>' attribute.
@@ -1249,7 +1475,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CFA__VISIBLE_IN_LM = CapellacorePackage.NAMED_ELEMENT__VISIBLE_IN_LM;
+	int CFA__VISIBLE_IN_LM = ATRIUM_BASIC_ELEMENT__VISIBLE_IN_LM;
 
 	/**
 	 * The feature id for the '<em><b>Summary</b></em>' attribute.
@@ -1258,7 +1484,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CFA__SUMMARY = CapellacorePackage.NAMED_ELEMENT__SUMMARY;
+	int CFA__SUMMARY = ATRIUM_BASIC_ELEMENT__SUMMARY;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -1267,7 +1493,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CFA__DESCRIPTION = CapellacorePackage.NAMED_ELEMENT__DESCRIPTION;
+	int CFA__DESCRIPTION = ATRIUM_BASIC_ELEMENT__DESCRIPTION;
 
 	/**
 	 * The feature id for the '<em><b>Review</b></em>' attribute.
@@ -1276,7 +1502,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CFA__REVIEW = CapellacorePackage.NAMED_ELEMENT__REVIEW;
+	int CFA__REVIEW = ATRIUM_BASIC_ELEMENT__REVIEW;
 
 	/**
 	 * The feature id for the '<em><b>Owned Property Values</b></em>' containment reference list.
@@ -1285,7 +1511,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CFA__OWNED_PROPERTY_VALUES = CapellacorePackage.NAMED_ELEMENT__OWNED_PROPERTY_VALUES;
+	int CFA__OWNED_PROPERTY_VALUES = ATRIUM_BASIC_ELEMENT__OWNED_PROPERTY_VALUES;
 
 	/**
 	 * The feature id for the '<em><b>Owned Enumeration Property Types</b></em>' containment reference list.
@@ -1294,7 +1520,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CFA__OWNED_ENUMERATION_PROPERTY_TYPES = CapellacorePackage.NAMED_ELEMENT__OWNED_ENUMERATION_PROPERTY_TYPES;
+	int CFA__OWNED_ENUMERATION_PROPERTY_TYPES = ATRIUM_BASIC_ELEMENT__OWNED_ENUMERATION_PROPERTY_TYPES;
 
 	/**
 	 * The feature id for the '<em><b>Applied Property Values</b></em>' reference list.
@@ -1303,7 +1529,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CFA__APPLIED_PROPERTY_VALUES = CapellacorePackage.NAMED_ELEMENT__APPLIED_PROPERTY_VALUES;
+	int CFA__APPLIED_PROPERTY_VALUES = ATRIUM_BASIC_ELEMENT__APPLIED_PROPERTY_VALUES;
 
 	/**
 	 * The feature id for the '<em><b>Owned Property Value Groups</b></em>' containment reference list.
@@ -1312,7 +1538,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CFA__OWNED_PROPERTY_VALUE_GROUPS = CapellacorePackage.NAMED_ELEMENT__OWNED_PROPERTY_VALUE_GROUPS;
+	int CFA__OWNED_PROPERTY_VALUE_GROUPS = ATRIUM_BASIC_ELEMENT__OWNED_PROPERTY_VALUE_GROUPS;
 
 	/**
 	 * The feature id for the '<em><b>Applied Property Value Groups</b></em>' reference list.
@@ -1321,7 +1547,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CFA__APPLIED_PROPERTY_VALUE_GROUPS = CapellacorePackage.NAMED_ELEMENT__APPLIED_PROPERTY_VALUE_GROUPS;
+	int CFA__APPLIED_PROPERTY_VALUE_GROUPS = ATRIUM_BASIC_ELEMENT__APPLIED_PROPERTY_VALUE_GROUPS;
 
 	/**
 	 * The feature id for the '<em><b>Status</b></em>' reference.
@@ -1330,7 +1556,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CFA__STATUS = CapellacorePackage.NAMED_ELEMENT__STATUS;
+	int CFA__STATUS = ATRIUM_BASIC_ELEMENT__STATUS;
 
 	/**
 	 * The feature id for the '<em><b>Features</b></em>' reference list.
@@ -1339,7 +1565,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CFA__FEATURES = CapellacorePackage.NAMED_ELEMENT__FEATURES;
+	int CFA__FEATURES = ATRIUM_BASIC_ELEMENT__FEATURES;
 
 	/**
 	 * The feature id for the '<em><b>Applied Requirements</b></em>' reference list.
@@ -1348,34 +1574,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CFA__APPLIED_REQUIREMENTS = CapellacorePackage.NAMED_ELEMENT__APPLIED_REQUIREMENTS;
-
-	/**
-	 * The feature id for the '<em><b>Linkedto Element</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CFA__LINKEDTO_ELEMENT = CapellacorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Assumption</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CFA__ASSUMPTION = CapellacorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Goal</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CFA__GOAL = CapellacorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int CFA__APPLIED_REQUIREMENTS = ATRIUM_BASIC_ELEMENT__APPLIED_REQUIREMENTS;
 
 	/**
 	 * The feature id for the '<em><b>Content</b></em>' attribute.
@@ -1384,7 +1583,34 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CFA__CONTENT = CapellacorePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int CFA__CONTENT = ATRIUM_BASIC_ELEMENT__CONTENT;
+
+	/**
+	 * The feature id for the '<em><b>Linkedto Element</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CFA__LINKEDTO_ELEMENT = ATRIUM_BASIC_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Assumption</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CFA__ASSUMPTION = ATRIUM_BASIC_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Goal</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CFA__GOAL = ATRIUM_BASIC_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>State</b></em>' attribute.
@@ -1393,7 +1619,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CFA__STATE = CapellacorePackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
+	int CFA__STATE = ATRIUM_BASIC_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>CFA</em>' class.
@@ -1402,7 +1628,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CFA_FEATURE_COUNT = CapellacorePackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
+	int CFA_FEATURE_COUNT = ATRIUM_BASIC_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.capella.vp.atrium.Atrium.impl.AssumptionImpl <em>Assumption</em>}' class.
@@ -1412,7 +1638,7 @@ public interface AtriumPackage extends EPackage {
 	 * @see org.polarsys.capella.vp.atrium.Atrium.impl.AtriumPackageImpl#getAssumption()
 	 * @generated
 	 */
-	int ASSUMPTION = 6;
+	int ASSUMPTION = 7;
 
 	/**
 	 * The feature id for the '<em><b>Owned Extensions</b></em>' containment reference list.
@@ -1421,7 +1647,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSUMPTION__OWNED_EXTENSIONS = CapellacorePackage.NAMED_ELEMENT__OWNED_EXTENSIONS;
+	int ASSUMPTION__OWNED_EXTENSIONS = ATRIUM_BASIC_ELEMENT__OWNED_EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -1430,7 +1656,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSUMPTION__ID = CapellacorePackage.NAMED_ELEMENT__ID;
+	int ASSUMPTION__ID = ATRIUM_BASIC_ELEMENT__ID;
 
 	/**
 	 * The feature id for the '<em><b>Sid</b></em>' attribute.
@@ -1439,7 +1665,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSUMPTION__SID = CapellacorePackage.NAMED_ELEMENT__SID;
+	int ASSUMPTION__SID = ATRIUM_BASIC_ELEMENT__SID;
 
 	/**
 	 * The feature id for the '<em><b>Constraints</b></em>' reference list.
@@ -1448,7 +1674,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSUMPTION__CONSTRAINTS = CapellacorePackage.NAMED_ELEMENT__CONSTRAINTS;
+	int ASSUMPTION__CONSTRAINTS = ATRIUM_BASIC_ELEMENT__CONSTRAINTS;
 
 	/**
 	 * The feature id for the '<em><b>Owned Constraints</b></em>' containment reference list.
@@ -1457,7 +1683,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSUMPTION__OWNED_CONSTRAINTS = CapellacorePackage.NAMED_ELEMENT__OWNED_CONSTRAINTS;
+	int ASSUMPTION__OWNED_CONSTRAINTS = ATRIUM_BASIC_ELEMENT__OWNED_CONSTRAINTS;
 
 	/**
 	 * The feature id for the '<em><b>Owned Migrated Elements</b></em>' containment reference list.
@@ -1466,7 +1692,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSUMPTION__OWNED_MIGRATED_ELEMENTS = CapellacorePackage.NAMED_ELEMENT__OWNED_MIGRATED_ELEMENTS;
+	int ASSUMPTION__OWNED_MIGRATED_ELEMENTS = ATRIUM_BASIC_ELEMENT__OWNED_MIGRATED_ELEMENTS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1475,7 +1701,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSUMPTION__NAME = CapellacorePackage.NAMED_ELEMENT__NAME;
+	int ASSUMPTION__NAME = ATRIUM_BASIC_ELEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Incoming Traces</b></em>' reference list.
@@ -1484,7 +1710,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSUMPTION__INCOMING_TRACES = CapellacorePackage.NAMED_ELEMENT__INCOMING_TRACES;
+	int ASSUMPTION__INCOMING_TRACES = ATRIUM_BASIC_ELEMENT__INCOMING_TRACES;
 
 	/**
 	 * The feature id for the '<em><b>Outgoing Traces</b></em>' reference list.
@@ -1493,7 +1719,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSUMPTION__OUTGOING_TRACES = CapellacorePackage.NAMED_ELEMENT__OUTGOING_TRACES;
+	int ASSUMPTION__OUTGOING_TRACES = ATRIUM_BASIC_ELEMENT__OUTGOING_TRACES;
 
 	/**
 	 * The feature id for the '<em><b>Visible In Doc</b></em>' attribute.
@@ -1502,7 +1728,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSUMPTION__VISIBLE_IN_DOC = CapellacorePackage.NAMED_ELEMENT__VISIBLE_IN_DOC;
+	int ASSUMPTION__VISIBLE_IN_DOC = ATRIUM_BASIC_ELEMENT__VISIBLE_IN_DOC;
 
 	/**
 	 * The feature id for the '<em><b>Visible In LM</b></em>' attribute.
@@ -1511,7 +1737,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSUMPTION__VISIBLE_IN_LM = CapellacorePackage.NAMED_ELEMENT__VISIBLE_IN_LM;
+	int ASSUMPTION__VISIBLE_IN_LM = ATRIUM_BASIC_ELEMENT__VISIBLE_IN_LM;
 
 	/**
 	 * The feature id for the '<em><b>Summary</b></em>' attribute.
@@ -1520,7 +1746,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSUMPTION__SUMMARY = CapellacorePackage.NAMED_ELEMENT__SUMMARY;
+	int ASSUMPTION__SUMMARY = ATRIUM_BASIC_ELEMENT__SUMMARY;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -1529,7 +1755,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSUMPTION__DESCRIPTION = CapellacorePackage.NAMED_ELEMENT__DESCRIPTION;
+	int ASSUMPTION__DESCRIPTION = ATRIUM_BASIC_ELEMENT__DESCRIPTION;
 
 	/**
 	 * The feature id for the '<em><b>Review</b></em>' attribute.
@@ -1538,7 +1764,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSUMPTION__REVIEW = CapellacorePackage.NAMED_ELEMENT__REVIEW;
+	int ASSUMPTION__REVIEW = ATRIUM_BASIC_ELEMENT__REVIEW;
 
 	/**
 	 * The feature id for the '<em><b>Owned Property Values</b></em>' containment reference list.
@@ -1547,7 +1773,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSUMPTION__OWNED_PROPERTY_VALUES = CapellacorePackage.NAMED_ELEMENT__OWNED_PROPERTY_VALUES;
+	int ASSUMPTION__OWNED_PROPERTY_VALUES = ATRIUM_BASIC_ELEMENT__OWNED_PROPERTY_VALUES;
 
 	/**
 	 * The feature id for the '<em><b>Owned Enumeration Property Types</b></em>' containment reference list.
@@ -1556,7 +1782,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSUMPTION__OWNED_ENUMERATION_PROPERTY_TYPES = CapellacorePackage.NAMED_ELEMENT__OWNED_ENUMERATION_PROPERTY_TYPES;
+	int ASSUMPTION__OWNED_ENUMERATION_PROPERTY_TYPES = ATRIUM_BASIC_ELEMENT__OWNED_ENUMERATION_PROPERTY_TYPES;
 
 	/**
 	 * The feature id for the '<em><b>Applied Property Values</b></em>' reference list.
@@ -1565,7 +1791,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSUMPTION__APPLIED_PROPERTY_VALUES = CapellacorePackage.NAMED_ELEMENT__APPLIED_PROPERTY_VALUES;
+	int ASSUMPTION__APPLIED_PROPERTY_VALUES = ATRIUM_BASIC_ELEMENT__APPLIED_PROPERTY_VALUES;
 
 	/**
 	 * The feature id for the '<em><b>Owned Property Value Groups</b></em>' containment reference list.
@@ -1574,7 +1800,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSUMPTION__OWNED_PROPERTY_VALUE_GROUPS = CapellacorePackage.NAMED_ELEMENT__OWNED_PROPERTY_VALUE_GROUPS;
+	int ASSUMPTION__OWNED_PROPERTY_VALUE_GROUPS = ATRIUM_BASIC_ELEMENT__OWNED_PROPERTY_VALUE_GROUPS;
 
 	/**
 	 * The feature id for the '<em><b>Applied Property Value Groups</b></em>' reference list.
@@ -1583,7 +1809,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSUMPTION__APPLIED_PROPERTY_VALUE_GROUPS = CapellacorePackage.NAMED_ELEMENT__APPLIED_PROPERTY_VALUE_GROUPS;
+	int ASSUMPTION__APPLIED_PROPERTY_VALUE_GROUPS = ATRIUM_BASIC_ELEMENT__APPLIED_PROPERTY_VALUE_GROUPS;
 
 	/**
 	 * The feature id for the '<em><b>Status</b></em>' reference.
@@ -1592,7 +1818,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSUMPTION__STATUS = CapellacorePackage.NAMED_ELEMENT__STATUS;
+	int ASSUMPTION__STATUS = ATRIUM_BASIC_ELEMENT__STATUS;
 
 	/**
 	 * The feature id for the '<em><b>Features</b></em>' reference list.
@@ -1601,7 +1827,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSUMPTION__FEATURES = CapellacorePackage.NAMED_ELEMENT__FEATURES;
+	int ASSUMPTION__FEATURES = ATRIUM_BASIC_ELEMENT__FEATURES;
 
 	/**
 	 * The feature id for the '<em><b>Applied Requirements</b></em>' reference list.
@@ -1610,16 +1836,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSUMPTION__APPLIED_REQUIREMENTS = CapellacorePackage.NAMED_ELEMENT__APPLIED_REQUIREMENTS;
-
-	/**
-	 * The feature id for the '<em><b>Assumption Type</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ASSUMPTION__ASSUMPTION_TYPE = CapellacorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int ASSUMPTION__APPLIED_REQUIREMENTS = ATRIUM_BASIC_ELEMENT__APPLIED_REQUIREMENTS;
 
 	/**
 	 * The feature id for the '<em><b>Content</b></em>' attribute.
@@ -1628,7 +1845,16 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSUMPTION__CONTENT = CapellacorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int ASSUMPTION__CONTENT = ATRIUM_BASIC_ELEMENT__CONTENT;
+
+	/**
+	 * The feature id for the '<em><b>Assumption Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSUMPTION__ASSUMPTION_TYPE = ATRIUM_BASIC_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Rationale</b></em>' attribute.
@@ -1637,7 +1863,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSUMPTION__RATIONALE = CapellacorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int ASSUMPTION__RATIONALE = ATRIUM_BASIC_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Validity</b></em>' attribute.
@@ -1646,7 +1872,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSUMPTION__VALIDITY = CapellacorePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int ASSUMPTION__VALIDITY = ATRIUM_BASIC_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Responsible Architect</b></em>' attribute.
@@ -1655,7 +1881,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSUMPTION__RESPONSIBLE_ARCHITECT = CapellacorePackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
+	int ASSUMPTION__RESPONSIBLE_ARCHITECT = ATRIUM_BASIC_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Responsible Expert</b></em>' attribute.
@@ -1664,7 +1890,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSUMPTION__RESPONSIBLE_EXPERT = CapellacorePackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
+	int ASSUMPTION__RESPONSIBLE_EXPERT = ATRIUM_BASIC_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Date Of Completion</b></em>' attribute.
@@ -1673,7 +1899,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSUMPTION__DATE_OF_COMPLETION = CapellacorePackage.NAMED_ELEMENT_FEATURE_COUNT + 6;
+	int ASSUMPTION__DATE_OF_COMPLETION = ATRIUM_BASIC_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Assumption</em>' class.
@@ -1682,7 +1908,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSUMPTION_FEATURE_COUNT = CapellacorePackage.NAMED_ELEMENT_FEATURE_COUNT + 7;
+	int ASSUMPTION_FEATURE_COUNT = ATRIUM_BASIC_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.capella.vp.atrium.Atrium.impl.DGImpl <em>DG</em>}' class.
@@ -1692,7 +1918,7 @@ public interface AtriumPackage extends EPackage {
 	 * @see org.polarsys.capella.vp.atrium.Atrium.impl.AtriumPackageImpl#getDG()
 	 * @generated
 	 */
-	int DG = 7;
+	int DG = 8;
 
 	/**
 	 * The feature id for the '<em><b>Owned Extensions</b></em>' containment reference list.
@@ -1701,7 +1927,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DG__OWNED_EXTENSIONS = CapellacorePackage.NAMED_ELEMENT__OWNED_EXTENSIONS;
+	int DG__OWNED_EXTENSIONS = ATRIUM_BASIC_ELEMENT__OWNED_EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -1710,7 +1936,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DG__ID = CapellacorePackage.NAMED_ELEMENT__ID;
+	int DG__ID = ATRIUM_BASIC_ELEMENT__ID;
 
 	/**
 	 * The feature id for the '<em><b>Sid</b></em>' attribute.
@@ -1719,7 +1945,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DG__SID = CapellacorePackage.NAMED_ELEMENT__SID;
+	int DG__SID = ATRIUM_BASIC_ELEMENT__SID;
 
 	/**
 	 * The feature id for the '<em><b>Constraints</b></em>' reference list.
@@ -1728,7 +1954,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DG__CONSTRAINTS = CapellacorePackage.NAMED_ELEMENT__CONSTRAINTS;
+	int DG__CONSTRAINTS = ATRIUM_BASIC_ELEMENT__CONSTRAINTS;
 
 	/**
 	 * The feature id for the '<em><b>Owned Constraints</b></em>' containment reference list.
@@ -1737,7 +1963,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DG__OWNED_CONSTRAINTS = CapellacorePackage.NAMED_ELEMENT__OWNED_CONSTRAINTS;
+	int DG__OWNED_CONSTRAINTS = ATRIUM_BASIC_ELEMENT__OWNED_CONSTRAINTS;
 
 	/**
 	 * The feature id for the '<em><b>Owned Migrated Elements</b></em>' containment reference list.
@@ -1746,7 +1972,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DG__OWNED_MIGRATED_ELEMENTS = CapellacorePackage.NAMED_ELEMENT__OWNED_MIGRATED_ELEMENTS;
+	int DG__OWNED_MIGRATED_ELEMENTS = ATRIUM_BASIC_ELEMENT__OWNED_MIGRATED_ELEMENTS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1755,7 +1981,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DG__NAME = CapellacorePackage.NAMED_ELEMENT__NAME;
+	int DG__NAME = ATRIUM_BASIC_ELEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Incoming Traces</b></em>' reference list.
@@ -1764,7 +1990,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DG__INCOMING_TRACES = CapellacorePackage.NAMED_ELEMENT__INCOMING_TRACES;
+	int DG__INCOMING_TRACES = ATRIUM_BASIC_ELEMENT__INCOMING_TRACES;
 
 	/**
 	 * The feature id for the '<em><b>Outgoing Traces</b></em>' reference list.
@@ -1773,7 +1999,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DG__OUTGOING_TRACES = CapellacorePackage.NAMED_ELEMENT__OUTGOING_TRACES;
+	int DG__OUTGOING_TRACES = ATRIUM_BASIC_ELEMENT__OUTGOING_TRACES;
 
 	/**
 	 * The feature id for the '<em><b>Visible In Doc</b></em>' attribute.
@@ -1782,7 +2008,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DG__VISIBLE_IN_DOC = CapellacorePackage.NAMED_ELEMENT__VISIBLE_IN_DOC;
+	int DG__VISIBLE_IN_DOC = ATRIUM_BASIC_ELEMENT__VISIBLE_IN_DOC;
 
 	/**
 	 * The feature id for the '<em><b>Visible In LM</b></em>' attribute.
@@ -1791,7 +2017,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DG__VISIBLE_IN_LM = CapellacorePackage.NAMED_ELEMENT__VISIBLE_IN_LM;
+	int DG__VISIBLE_IN_LM = ATRIUM_BASIC_ELEMENT__VISIBLE_IN_LM;
 
 	/**
 	 * The feature id for the '<em><b>Summary</b></em>' attribute.
@@ -1800,7 +2026,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DG__SUMMARY = CapellacorePackage.NAMED_ELEMENT__SUMMARY;
+	int DG__SUMMARY = ATRIUM_BASIC_ELEMENT__SUMMARY;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -1809,7 +2035,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DG__DESCRIPTION = CapellacorePackage.NAMED_ELEMENT__DESCRIPTION;
+	int DG__DESCRIPTION = ATRIUM_BASIC_ELEMENT__DESCRIPTION;
 
 	/**
 	 * The feature id for the '<em><b>Review</b></em>' attribute.
@@ -1818,7 +2044,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DG__REVIEW = CapellacorePackage.NAMED_ELEMENT__REVIEW;
+	int DG__REVIEW = ATRIUM_BASIC_ELEMENT__REVIEW;
 
 	/**
 	 * The feature id for the '<em><b>Owned Property Values</b></em>' containment reference list.
@@ -1827,7 +2053,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DG__OWNED_PROPERTY_VALUES = CapellacorePackage.NAMED_ELEMENT__OWNED_PROPERTY_VALUES;
+	int DG__OWNED_PROPERTY_VALUES = ATRIUM_BASIC_ELEMENT__OWNED_PROPERTY_VALUES;
 
 	/**
 	 * The feature id for the '<em><b>Owned Enumeration Property Types</b></em>' containment reference list.
@@ -1836,7 +2062,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DG__OWNED_ENUMERATION_PROPERTY_TYPES = CapellacorePackage.NAMED_ELEMENT__OWNED_ENUMERATION_PROPERTY_TYPES;
+	int DG__OWNED_ENUMERATION_PROPERTY_TYPES = ATRIUM_BASIC_ELEMENT__OWNED_ENUMERATION_PROPERTY_TYPES;
 
 	/**
 	 * The feature id for the '<em><b>Applied Property Values</b></em>' reference list.
@@ -1845,7 +2071,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DG__APPLIED_PROPERTY_VALUES = CapellacorePackage.NAMED_ELEMENT__APPLIED_PROPERTY_VALUES;
+	int DG__APPLIED_PROPERTY_VALUES = ATRIUM_BASIC_ELEMENT__APPLIED_PROPERTY_VALUES;
 
 	/**
 	 * The feature id for the '<em><b>Owned Property Value Groups</b></em>' containment reference list.
@@ -1854,7 +2080,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DG__OWNED_PROPERTY_VALUE_GROUPS = CapellacorePackage.NAMED_ELEMENT__OWNED_PROPERTY_VALUE_GROUPS;
+	int DG__OWNED_PROPERTY_VALUE_GROUPS = ATRIUM_BASIC_ELEMENT__OWNED_PROPERTY_VALUE_GROUPS;
 
 	/**
 	 * The feature id for the '<em><b>Applied Property Value Groups</b></em>' reference list.
@@ -1863,7 +2089,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DG__APPLIED_PROPERTY_VALUE_GROUPS = CapellacorePackage.NAMED_ELEMENT__APPLIED_PROPERTY_VALUE_GROUPS;
+	int DG__APPLIED_PROPERTY_VALUE_GROUPS = ATRIUM_BASIC_ELEMENT__APPLIED_PROPERTY_VALUE_GROUPS;
 
 	/**
 	 * The feature id for the '<em><b>Status</b></em>' reference.
@@ -1872,7 +2098,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DG__STATUS = CapellacorePackage.NAMED_ELEMENT__STATUS;
+	int DG__STATUS = ATRIUM_BASIC_ELEMENT__STATUS;
 
 	/**
 	 * The feature id for the '<em><b>Features</b></em>' reference list.
@@ -1881,7 +2107,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DG__FEATURES = CapellacorePackage.NAMED_ELEMENT__FEATURES;
+	int DG__FEATURES = ATRIUM_BASIC_ELEMENT__FEATURES;
 
 	/**
 	 * The feature id for the '<em><b>Applied Requirements</b></em>' reference list.
@@ -1890,25 +2116,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DG__APPLIED_REQUIREMENTS = CapellacorePackage.NAMED_ELEMENT__APPLIED_REQUIREMENTS;
-
-	/**
-	 * The feature id for the '<em><b>Design Alternative</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DG__DESIGN_ALTERNATIVE = CapellacorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Sub DGs</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DG__SUB_DGS = CapellacorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int DG__APPLIED_REQUIREMENTS = ATRIUM_BASIC_ELEMENT__APPLIED_REQUIREMENTS;
 
 	/**
 	 * The feature id for the '<em><b>Content</b></em>' attribute.
@@ -1917,7 +2125,25 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DG__CONTENT = CapellacorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int DG__CONTENT = ATRIUM_BASIC_ELEMENT__CONTENT;
+
+	/**
+	 * The feature id for the '<em><b>Design Alternative</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DG__DESIGN_ALTERNATIVE = ATRIUM_BASIC_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Sub DGs</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DG__SUB_DGS = ATRIUM_BASIC_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>DG</em>' class.
@@ -1926,7 +2152,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DG_FEATURE_COUNT = CapellacorePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int DG_FEATURE_COUNT = ATRIUM_BASIC_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.capella.vp.atrium.Atrium.impl.DAImpl <em>DA</em>}' class.
@@ -1936,7 +2162,7 @@ public interface AtriumPackage extends EPackage {
 	 * @see org.polarsys.capella.vp.atrium.Atrium.impl.AtriumPackageImpl#getDA()
 	 * @generated
 	 */
-	int DA = 8;
+	int DA = 9;
 
 	/**
 	 * The feature id for the '<em><b>Owned Extensions</b></em>' containment reference list.
@@ -1945,7 +2171,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DA__OWNED_EXTENSIONS = CapellacorePackage.NAMED_ELEMENT__OWNED_EXTENSIONS;
+	int DA__OWNED_EXTENSIONS = ATRIUM_BASIC_ELEMENT__OWNED_EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -1954,7 +2180,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DA__ID = CapellacorePackage.NAMED_ELEMENT__ID;
+	int DA__ID = ATRIUM_BASIC_ELEMENT__ID;
 
 	/**
 	 * The feature id for the '<em><b>Sid</b></em>' attribute.
@@ -1963,7 +2189,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DA__SID = CapellacorePackage.NAMED_ELEMENT__SID;
+	int DA__SID = ATRIUM_BASIC_ELEMENT__SID;
 
 	/**
 	 * The feature id for the '<em><b>Constraints</b></em>' reference list.
@@ -1972,7 +2198,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DA__CONSTRAINTS = CapellacorePackage.NAMED_ELEMENT__CONSTRAINTS;
+	int DA__CONSTRAINTS = ATRIUM_BASIC_ELEMENT__CONSTRAINTS;
 
 	/**
 	 * The feature id for the '<em><b>Owned Constraints</b></em>' containment reference list.
@@ -1981,7 +2207,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DA__OWNED_CONSTRAINTS = CapellacorePackage.NAMED_ELEMENT__OWNED_CONSTRAINTS;
+	int DA__OWNED_CONSTRAINTS = ATRIUM_BASIC_ELEMENT__OWNED_CONSTRAINTS;
 
 	/**
 	 * The feature id for the '<em><b>Owned Migrated Elements</b></em>' containment reference list.
@@ -1990,7 +2216,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DA__OWNED_MIGRATED_ELEMENTS = CapellacorePackage.NAMED_ELEMENT__OWNED_MIGRATED_ELEMENTS;
+	int DA__OWNED_MIGRATED_ELEMENTS = ATRIUM_BASIC_ELEMENT__OWNED_MIGRATED_ELEMENTS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1999,7 +2225,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DA__NAME = CapellacorePackage.NAMED_ELEMENT__NAME;
+	int DA__NAME = ATRIUM_BASIC_ELEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Incoming Traces</b></em>' reference list.
@@ -2008,7 +2234,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DA__INCOMING_TRACES = CapellacorePackage.NAMED_ELEMENT__INCOMING_TRACES;
+	int DA__INCOMING_TRACES = ATRIUM_BASIC_ELEMENT__INCOMING_TRACES;
 
 	/**
 	 * The feature id for the '<em><b>Outgoing Traces</b></em>' reference list.
@@ -2017,7 +2243,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DA__OUTGOING_TRACES = CapellacorePackage.NAMED_ELEMENT__OUTGOING_TRACES;
+	int DA__OUTGOING_TRACES = ATRIUM_BASIC_ELEMENT__OUTGOING_TRACES;
 
 	/**
 	 * The feature id for the '<em><b>Visible In Doc</b></em>' attribute.
@@ -2026,7 +2252,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DA__VISIBLE_IN_DOC = CapellacorePackage.NAMED_ELEMENT__VISIBLE_IN_DOC;
+	int DA__VISIBLE_IN_DOC = ATRIUM_BASIC_ELEMENT__VISIBLE_IN_DOC;
 
 	/**
 	 * The feature id for the '<em><b>Visible In LM</b></em>' attribute.
@@ -2035,7 +2261,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DA__VISIBLE_IN_LM = CapellacorePackage.NAMED_ELEMENT__VISIBLE_IN_LM;
+	int DA__VISIBLE_IN_LM = ATRIUM_BASIC_ELEMENT__VISIBLE_IN_LM;
 
 	/**
 	 * The feature id for the '<em><b>Summary</b></em>' attribute.
@@ -2044,7 +2270,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DA__SUMMARY = CapellacorePackage.NAMED_ELEMENT__SUMMARY;
+	int DA__SUMMARY = ATRIUM_BASIC_ELEMENT__SUMMARY;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -2053,7 +2279,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DA__DESCRIPTION = CapellacorePackage.NAMED_ELEMENT__DESCRIPTION;
+	int DA__DESCRIPTION = ATRIUM_BASIC_ELEMENT__DESCRIPTION;
 
 	/**
 	 * The feature id for the '<em><b>Review</b></em>' attribute.
@@ -2062,7 +2288,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DA__REVIEW = CapellacorePackage.NAMED_ELEMENT__REVIEW;
+	int DA__REVIEW = ATRIUM_BASIC_ELEMENT__REVIEW;
 
 	/**
 	 * The feature id for the '<em><b>Owned Property Values</b></em>' containment reference list.
@@ -2071,7 +2297,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DA__OWNED_PROPERTY_VALUES = CapellacorePackage.NAMED_ELEMENT__OWNED_PROPERTY_VALUES;
+	int DA__OWNED_PROPERTY_VALUES = ATRIUM_BASIC_ELEMENT__OWNED_PROPERTY_VALUES;
 
 	/**
 	 * The feature id for the '<em><b>Owned Enumeration Property Types</b></em>' containment reference list.
@@ -2080,7 +2306,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DA__OWNED_ENUMERATION_PROPERTY_TYPES = CapellacorePackage.NAMED_ELEMENT__OWNED_ENUMERATION_PROPERTY_TYPES;
+	int DA__OWNED_ENUMERATION_PROPERTY_TYPES = ATRIUM_BASIC_ELEMENT__OWNED_ENUMERATION_PROPERTY_TYPES;
 
 	/**
 	 * The feature id for the '<em><b>Applied Property Values</b></em>' reference list.
@@ -2089,7 +2315,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DA__APPLIED_PROPERTY_VALUES = CapellacorePackage.NAMED_ELEMENT__APPLIED_PROPERTY_VALUES;
+	int DA__APPLIED_PROPERTY_VALUES = ATRIUM_BASIC_ELEMENT__APPLIED_PROPERTY_VALUES;
 
 	/**
 	 * The feature id for the '<em><b>Owned Property Value Groups</b></em>' containment reference list.
@@ -2098,7 +2324,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DA__OWNED_PROPERTY_VALUE_GROUPS = CapellacorePackage.NAMED_ELEMENT__OWNED_PROPERTY_VALUE_GROUPS;
+	int DA__OWNED_PROPERTY_VALUE_GROUPS = ATRIUM_BASIC_ELEMENT__OWNED_PROPERTY_VALUE_GROUPS;
 
 	/**
 	 * The feature id for the '<em><b>Applied Property Value Groups</b></em>' reference list.
@@ -2107,7 +2333,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DA__APPLIED_PROPERTY_VALUE_GROUPS = CapellacorePackage.NAMED_ELEMENT__APPLIED_PROPERTY_VALUE_GROUPS;
+	int DA__APPLIED_PROPERTY_VALUE_GROUPS = ATRIUM_BASIC_ELEMENT__APPLIED_PROPERTY_VALUE_GROUPS;
 
 	/**
 	 * The feature id for the '<em><b>Status</b></em>' reference.
@@ -2116,7 +2342,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DA__STATUS = CapellacorePackage.NAMED_ELEMENT__STATUS;
+	int DA__STATUS = ATRIUM_BASIC_ELEMENT__STATUS;
 
 	/**
 	 * The feature id for the '<em><b>Features</b></em>' reference list.
@@ -2125,7 +2351,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DA__FEATURES = CapellacorePackage.NAMED_ELEMENT__FEATURES;
+	int DA__FEATURES = ATRIUM_BASIC_ELEMENT__FEATURES;
 
 	/**
 	 * The feature id for the '<em><b>Applied Requirements</b></em>' reference list.
@@ -2134,7 +2360,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DA__APPLIED_REQUIREMENTS = CapellacorePackage.NAMED_ELEMENT__APPLIED_REQUIREMENTS;
+	int DA__APPLIED_REQUIREMENTS = ATRIUM_BASIC_ELEMENT__APPLIED_REQUIREMENTS;
 
 	/**
 	 * The feature id for the '<em><b>Content</b></em>' attribute.
@@ -2143,7 +2369,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DA__CONTENT = CapellacorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int DA__CONTENT = ATRIUM_BASIC_ELEMENT__CONTENT;
 
 	/**
 	 * The feature id for the '<em><b>Is Part Of Selection</b></em>' attribute.
@@ -2152,7 +2378,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DA__IS_PART_OF_SELECTION = CapellacorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int DA__IS_PART_OF_SELECTION = ATRIUM_BASIC_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>DA</em>' class.
@@ -2161,7 +2387,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DA_FEATURE_COUNT = CapellacorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int DA_FEATURE_COUNT = ATRIUM_BASIC_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.capella.vp.atrium.Atrium.impl.ElementStateAtriumImpl <em>Element State Atrium</em>}' class.
@@ -2171,7 +2397,7 @@ public interface AtriumPackage extends EPackage {
 	 * @see org.polarsys.capella.vp.atrium.Atrium.impl.AtriumPackageImpl#getElementStateAtrium()
 	 * @generated
 	 */
-	int ELEMENT_STATE_ATRIUM = 9;
+	int ELEMENT_STATE_ATRIUM = 10;
 
 	/**
 	 * The feature id for the '<em><b>Owned Extensions</b></em>' containment reference list.
@@ -2397,7 +2623,7 @@ public interface AtriumPackage extends EPackage {
 	 * @see org.polarsys.capella.vp.atrium.Atrium.impl.AtriumPackageImpl#getFailureMode()
 	 * @generated
 	 */
-	int FAILURE_MODE = 10;
+	int FAILURE_MODE = 11;
 
 	/**
 	 * The feature id for the '<em><b>Owned Extensions</b></em>' containment reference list.
@@ -2406,7 +2632,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FAILURE_MODE__OWNED_EXTENSIONS = CapellacorePackage.NAMED_ELEMENT__OWNED_EXTENSIONS;
+	int FAILURE_MODE__OWNED_EXTENSIONS = ATRIUM_BASIC_ELEMENT__OWNED_EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -2415,7 +2641,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FAILURE_MODE__ID = CapellacorePackage.NAMED_ELEMENT__ID;
+	int FAILURE_MODE__ID = ATRIUM_BASIC_ELEMENT__ID;
 
 	/**
 	 * The feature id for the '<em><b>Sid</b></em>' attribute.
@@ -2424,7 +2650,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FAILURE_MODE__SID = CapellacorePackage.NAMED_ELEMENT__SID;
+	int FAILURE_MODE__SID = ATRIUM_BASIC_ELEMENT__SID;
 
 	/**
 	 * The feature id for the '<em><b>Constraints</b></em>' reference list.
@@ -2433,7 +2659,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FAILURE_MODE__CONSTRAINTS = CapellacorePackage.NAMED_ELEMENT__CONSTRAINTS;
+	int FAILURE_MODE__CONSTRAINTS = ATRIUM_BASIC_ELEMENT__CONSTRAINTS;
 
 	/**
 	 * The feature id for the '<em><b>Owned Constraints</b></em>' containment reference list.
@@ -2442,7 +2668,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FAILURE_MODE__OWNED_CONSTRAINTS = CapellacorePackage.NAMED_ELEMENT__OWNED_CONSTRAINTS;
+	int FAILURE_MODE__OWNED_CONSTRAINTS = ATRIUM_BASIC_ELEMENT__OWNED_CONSTRAINTS;
 
 	/**
 	 * The feature id for the '<em><b>Owned Migrated Elements</b></em>' containment reference list.
@@ -2451,7 +2677,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FAILURE_MODE__OWNED_MIGRATED_ELEMENTS = CapellacorePackage.NAMED_ELEMENT__OWNED_MIGRATED_ELEMENTS;
+	int FAILURE_MODE__OWNED_MIGRATED_ELEMENTS = ATRIUM_BASIC_ELEMENT__OWNED_MIGRATED_ELEMENTS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2460,7 +2686,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FAILURE_MODE__NAME = CapellacorePackage.NAMED_ELEMENT__NAME;
+	int FAILURE_MODE__NAME = ATRIUM_BASIC_ELEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Incoming Traces</b></em>' reference list.
@@ -2469,7 +2695,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FAILURE_MODE__INCOMING_TRACES = CapellacorePackage.NAMED_ELEMENT__INCOMING_TRACES;
+	int FAILURE_MODE__INCOMING_TRACES = ATRIUM_BASIC_ELEMENT__INCOMING_TRACES;
 
 	/**
 	 * The feature id for the '<em><b>Outgoing Traces</b></em>' reference list.
@@ -2478,7 +2704,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FAILURE_MODE__OUTGOING_TRACES = CapellacorePackage.NAMED_ELEMENT__OUTGOING_TRACES;
+	int FAILURE_MODE__OUTGOING_TRACES = ATRIUM_BASIC_ELEMENT__OUTGOING_TRACES;
 
 	/**
 	 * The feature id for the '<em><b>Visible In Doc</b></em>' attribute.
@@ -2487,7 +2713,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FAILURE_MODE__VISIBLE_IN_DOC = CapellacorePackage.NAMED_ELEMENT__VISIBLE_IN_DOC;
+	int FAILURE_MODE__VISIBLE_IN_DOC = ATRIUM_BASIC_ELEMENT__VISIBLE_IN_DOC;
 
 	/**
 	 * The feature id for the '<em><b>Visible In LM</b></em>' attribute.
@@ -2496,7 +2722,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FAILURE_MODE__VISIBLE_IN_LM = CapellacorePackage.NAMED_ELEMENT__VISIBLE_IN_LM;
+	int FAILURE_MODE__VISIBLE_IN_LM = ATRIUM_BASIC_ELEMENT__VISIBLE_IN_LM;
 
 	/**
 	 * The feature id for the '<em><b>Summary</b></em>' attribute.
@@ -2505,7 +2731,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FAILURE_MODE__SUMMARY = CapellacorePackage.NAMED_ELEMENT__SUMMARY;
+	int FAILURE_MODE__SUMMARY = ATRIUM_BASIC_ELEMENT__SUMMARY;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -2514,7 +2740,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FAILURE_MODE__DESCRIPTION = CapellacorePackage.NAMED_ELEMENT__DESCRIPTION;
+	int FAILURE_MODE__DESCRIPTION = ATRIUM_BASIC_ELEMENT__DESCRIPTION;
 
 	/**
 	 * The feature id for the '<em><b>Review</b></em>' attribute.
@@ -2523,7 +2749,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FAILURE_MODE__REVIEW = CapellacorePackage.NAMED_ELEMENT__REVIEW;
+	int FAILURE_MODE__REVIEW = ATRIUM_BASIC_ELEMENT__REVIEW;
 
 	/**
 	 * The feature id for the '<em><b>Owned Property Values</b></em>' containment reference list.
@@ -2532,7 +2758,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FAILURE_MODE__OWNED_PROPERTY_VALUES = CapellacorePackage.NAMED_ELEMENT__OWNED_PROPERTY_VALUES;
+	int FAILURE_MODE__OWNED_PROPERTY_VALUES = ATRIUM_BASIC_ELEMENT__OWNED_PROPERTY_VALUES;
 
 	/**
 	 * The feature id for the '<em><b>Owned Enumeration Property Types</b></em>' containment reference list.
@@ -2541,7 +2767,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FAILURE_MODE__OWNED_ENUMERATION_PROPERTY_TYPES = CapellacorePackage.NAMED_ELEMENT__OWNED_ENUMERATION_PROPERTY_TYPES;
+	int FAILURE_MODE__OWNED_ENUMERATION_PROPERTY_TYPES = ATRIUM_BASIC_ELEMENT__OWNED_ENUMERATION_PROPERTY_TYPES;
 
 	/**
 	 * The feature id for the '<em><b>Applied Property Values</b></em>' reference list.
@@ -2550,7 +2776,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FAILURE_MODE__APPLIED_PROPERTY_VALUES = CapellacorePackage.NAMED_ELEMENT__APPLIED_PROPERTY_VALUES;
+	int FAILURE_MODE__APPLIED_PROPERTY_VALUES = ATRIUM_BASIC_ELEMENT__APPLIED_PROPERTY_VALUES;
 
 	/**
 	 * The feature id for the '<em><b>Owned Property Value Groups</b></em>' containment reference list.
@@ -2559,7 +2785,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FAILURE_MODE__OWNED_PROPERTY_VALUE_GROUPS = CapellacorePackage.NAMED_ELEMENT__OWNED_PROPERTY_VALUE_GROUPS;
+	int FAILURE_MODE__OWNED_PROPERTY_VALUE_GROUPS = ATRIUM_BASIC_ELEMENT__OWNED_PROPERTY_VALUE_GROUPS;
 
 	/**
 	 * The feature id for the '<em><b>Applied Property Value Groups</b></em>' reference list.
@@ -2568,7 +2794,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FAILURE_MODE__APPLIED_PROPERTY_VALUE_GROUPS = CapellacorePackage.NAMED_ELEMENT__APPLIED_PROPERTY_VALUE_GROUPS;
+	int FAILURE_MODE__APPLIED_PROPERTY_VALUE_GROUPS = ATRIUM_BASIC_ELEMENT__APPLIED_PROPERTY_VALUE_GROUPS;
 
 	/**
 	 * The feature id for the '<em><b>Status</b></em>' reference.
@@ -2577,7 +2803,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FAILURE_MODE__STATUS = CapellacorePackage.NAMED_ELEMENT__STATUS;
+	int FAILURE_MODE__STATUS = ATRIUM_BASIC_ELEMENT__STATUS;
 
 	/**
 	 * The feature id for the '<em><b>Features</b></em>' reference list.
@@ -2586,7 +2812,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FAILURE_MODE__FEATURES = CapellacorePackage.NAMED_ELEMENT__FEATURES;
+	int FAILURE_MODE__FEATURES = ATRIUM_BASIC_ELEMENT__FEATURES;
 
 	/**
 	 * The feature id for the '<em><b>Applied Requirements</b></em>' reference list.
@@ -2595,7 +2821,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FAILURE_MODE__APPLIED_REQUIREMENTS = CapellacorePackage.NAMED_ELEMENT__APPLIED_REQUIREMENTS;
+	int FAILURE_MODE__APPLIED_REQUIREMENTS = ATRIUM_BASIC_ELEMENT__APPLIED_REQUIREMENTS;
 
 	/**
 	 * The feature id for the '<em><b>Content</b></em>' attribute.
@@ -2604,7 +2830,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FAILURE_MODE__CONTENT = CapellacorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int FAILURE_MODE__CONTENT = ATRIUM_BASIC_ELEMENT__CONTENT;
 
 	/**
 	 * The number of structural features of the '<em>Failure Mode</em>' class.
@@ -2613,7 +2839,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FAILURE_MODE_FEATURE_COUNT = CapellacorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int FAILURE_MODE_FEATURE_COUNT = ATRIUM_BASIC_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.capella.vp.atrium.Atrium.assumptionType_Type <em>assumption Type Type</em>}' enum.
@@ -2623,7 +2849,7 @@ public interface AtriumPackage extends EPackage {
 	 * @see org.polarsys.capella.vp.atrium.Atrium.impl.AtriumPackageImpl#getassumptionType_Type()
 	 * @generated
 	 */
-	int ASSUMPTION_TYPE_TYPE = 11;
+	int ASSUMPTION_TYPE_TYPE = 12;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.capella.vp.atrium.Atrium.validity_Type <em>validity Type</em>}' enum.
@@ -2633,7 +2859,28 @@ public interface AtriumPackage extends EPackage {
 	 * @see org.polarsys.capella.vp.atrium.Atrium.impl.AtriumPackageImpl#getvalidity_Type()
 	 * @generated
 	 */
-	int VALIDITY_TYPE = 12;
+	int VALIDITY_TYPE = 13;
+
+	/**
+	 * Returns the meta object for class '{@link org.polarsys.capella.vp.atrium.Atrium.AtriumBasicElement <em>Basic Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Basic Element</em>'.
+	 * @see org.polarsys.capella.vp.atrium.Atrium.AtriumBasicElement
+	 * @generated
+	 */
+	EClass getAtriumBasicElement();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.polarsys.capella.vp.atrium.Atrium.AtriumBasicElement#getContent <em>Content</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Content</em>'.
+	 * @see org.polarsys.capella.vp.atrium.Atrium.AtriumBasicElement#getContent()
+	 * @see #getAtriumBasicElement()
+	 * @generated
+	 */
+	EAttribute getAtriumBasicElement_Content();
 
 	/**
 	 * Returns the meta object for class '{@link org.polarsys.capella.vp.atrium.Atrium.CFA_list <em>CFA list</em>}'.
@@ -2729,17 +2976,6 @@ public interface AtriumPackage extends EPackage {
 	EReference getCFA_Goal();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.polarsys.capella.vp.atrium.Atrium.CFA#getContent <em>Content</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Content</em>'.
-	 * @see org.polarsys.capella.vp.atrium.Atrium.CFA#getContent()
-	 * @see #getCFA()
-	 * @generated
-	 */
-	EAttribute getCFA_Content();
-
-	/**
 	 * Returns the meta object for the attribute '{@link org.polarsys.capella.vp.atrium.Atrium.CFA#isState <em>State</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2761,15 +2997,15 @@ public interface AtriumPackage extends EPackage {
 	EClass getAssumption();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.polarsys.capella.vp.atrium.Atrium.Assumption#getContent <em>Content</em>}'.
+	 * Returns the meta object for the attribute '{@link org.polarsys.capella.vp.atrium.Atrium.Assumption#getAssumptionType <em>Assumption Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Content</em>'.
-	 * @see org.polarsys.capella.vp.atrium.Atrium.Assumption#getContent()
+	 * @return the meta object for the attribute '<em>Assumption Type</em>'.
+	 * @see org.polarsys.capella.vp.atrium.Atrium.Assumption#getAssumptionType()
 	 * @see #getAssumption()
 	 * @generated
 	 */
-	EAttribute getAssumption_Content();
+	EAttribute getAssumption_AssumptionType();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.polarsys.capella.vp.atrium.Atrium.Assumption#getRationale <em>Rationale</em>}'.
@@ -2827,17 +3063,6 @@ public interface AtriumPackage extends EPackage {
 	EAttribute getAssumption_DateOfCompletion();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.polarsys.capella.vp.atrium.Atrium.Assumption#getAssumptionType <em>Assumption Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Assumption Type</em>'.
-	 * @see org.polarsys.capella.vp.atrium.Atrium.Assumption#getAssumptionType()
-	 * @see #getAssumption()
-	 * @generated
-	 */
-	EAttribute getAssumption_AssumptionType();
-
-	/**
 	 * Returns the meta object for class '{@link org.polarsys.capella.vp.atrium.Atrium.DG <em>DG</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2870,17 +3095,6 @@ public interface AtriumPackage extends EPackage {
 	EReference getDG_SubDGs();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.polarsys.capella.vp.atrium.Atrium.DG#getContent <em>Content</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Content</em>'.
-	 * @see org.polarsys.capella.vp.atrium.Atrium.DG#getContent()
-	 * @see #getDG()
-	 * @generated
-	 */
-	EAttribute getDG_Content();
-
-	/**
 	 * Returns the meta object for class '{@link org.polarsys.capella.vp.atrium.Atrium.DA <em>DA</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2889,17 +3103,6 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getDA();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.polarsys.capella.vp.atrium.Atrium.DA#getContent <em>Content</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Content</em>'.
-	 * @see org.polarsys.capella.vp.atrium.Atrium.DA#getContent()
-	 * @see #getDA()
-	 * @generated
-	 */
-	EAttribute getDA_Content();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.polarsys.capella.vp.atrium.Atrium.DA#isIsPartOfSelection <em>Is Part Of Selection</em>}'.
@@ -2944,17 +3147,6 @@ public interface AtriumPackage extends EPackage {
 	EClass getFailureMode();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.polarsys.capella.vp.atrium.Atrium.FailureMode#getContent <em>Content</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Content</em>'.
-	 * @see org.polarsys.capella.vp.atrium.Atrium.FailureMode#getContent()
-	 * @see #getFailureMode()
-	 * @generated
-	 */
-	EAttribute getFailureMode_Content();
-
-	/**
 	 * Returns the meta object for enum '{@link org.polarsys.capella.vp.atrium.Atrium.assumptionType_Type <em>assumption Type Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2996,6 +3188,24 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 */
 	interface Literals {
+		/**
+		 * The meta object literal for the '{@link org.polarsys.capella.vp.atrium.Atrium.impl.AtriumBasicElementImpl <em>Basic Element</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.polarsys.capella.vp.atrium.Atrium.impl.AtriumBasicElementImpl
+		 * @see org.polarsys.capella.vp.atrium.Atrium.impl.AtriumPackageImpl#getAtriumBasicElement()
+		 * @generated
+		 */
+		EClass ATRIUM_BASIC_ELEMENT = eINSTANCE.getAtriumBasicElement();
+
+		/**
+		 * The meta object literal for the '<em><b>Content</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ATRIUM_BASIC_ELEMENT__CONTENT = eINSTANCE.getAtriumBasicElement_Content();
+
 		/**
 		 * The meta object literal for the '{@link org.polarsys.capella.vp.atrium.Atrium.impl.CFA_listImpl <em>CFA list</em>}' class.
 		 * <!-- begin-user-doc -->
@@ -3081,14 +3291,6 @@ public interface AtriumPackage extends EPackage {
 		EReference CFA__GOAL = eINSTANCE.getCFA_Goal();
 
 		/**
-		 * The meta object literal for the '<em><b>Content</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CFA__CONTENT = eINSTANCE.getCFA_Content();
-
-		/**
 		 * The meta object literal for the '<em><b>State</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3107,12 +3309,12 @@ public interface AtriumPackage extends EPackage {
 		EClass ASSUMPTION = eINSTANCE.getAssumption();
 
 		/**
-		 * The meta object literal for the '<em><b>Content</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Assumption Type</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ASSUMPTION__CONTENT = eINSTANCE.getAssumption_Content();
+		EAttribute ASSUMPTION__ASSUMPTION_TYPE = eINSTANCE.getAssumption_AssumptionType();
 
 		/**
 		 * The meta object literal for the '<em><b>Rationale</b></em>' attribute feature.
@@ -3155,14 +3357,6 @@ public interface AtriumPackage extends EPackage {
 		EAttribute ASSUMPTION__DATE_OF_COMPLETION = eINSTANCE.getAssumption_DateOfCompletion();
 
 		/**
-		 * The meta object literal for the '<em><b>Assumption Type</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ASSUMPTION__ASSUMPTION_TYPE = eINSTANCE.getAssumption_AssumptionType();
-
-		/**
 		 * The meta object literal for the '{@link org.polarsys.capella.vp.atrium.Atrium.impl.DGImpl <em>DG</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3189,14 +3383,6 @@ public interface AtriumPackage extends EPackage {
 		EReference DG__SUB_DGS = eINSTANCE.getDG_SubDGs();
 
 		/**
-		 * The meta object literal for the '<em><b>Content</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute DG__CONTENT = eINSTANCE.getDG_Content();
-
-		/**
 		 * The meta object literal for the '{@link org.polarsys.capella.vp.atrium.Atrium.impl.DAImpl <em>DA</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3205,14 +3391,6 @@ public interface AtriumPackage extends EPackage {
 		 * @generated
 		 */
 		EClass DA = eINSTANCE.getDA();
-
-		/**
-		 * The meta object literal for the '<em><b>Content</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute DA__CONTENT = eINSTANCE.getDA_Content();
 
 		/**
 		 * The meta object literal for the '<em><b>Is Part Of Selection</b></em>' attribute feature.
@@ -3249,14 +3427,6 @@ public interface AtriumPackage extends EPackage {
 		 * @generated
 		 */
 		EClass FAILURE_MODE = eINSTANCE.getFailureMode();
-
-		/**
-		 * The meta object literal for the '<em><b>Content</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute FAILURE_MODE__CONTENT = eINSTANCE.getFailureMode_Content();
 
 		/**
 		 * The meta object literal for the '{@link org.polarsys.capella.vp.atrium.Atrium.assumptionType_Type <em>assumption Type Type</em>}' enum.

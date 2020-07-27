@@ -245,7 +245,6 @@ public class EditingFrameAssumption extends javax.swing.JFrame {
 			Editingframe.setVisible(false);
 		}
 		else {JOptionPane.showMessageDialog(getParent(), "There is already an assumption named like that, please chose another name.");}
-    	
     }
     
     public void editAssumption(Assumption edited_assumption_parameter, EList<Assumption> listAssumption_parameter)
