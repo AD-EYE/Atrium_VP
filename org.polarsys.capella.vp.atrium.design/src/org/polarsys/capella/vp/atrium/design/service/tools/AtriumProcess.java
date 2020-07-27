@@ -54,7 +54,8 @@ public class AtriumProcess extends javax.swing.JFrame {
 	DG_list the_DG_list = null;
 	DA_list the_DA_list= null;
 	
-	EditingFrameAssumption myEditor = null;
+	EditingFrameAssumption myAssumptionEditor = null;
+	EditingPanel myEditor = null;
 	
 	
 	public AtriumProcess(EObject element) {
@@ -65,7 +66,8 @@ public class AtriumProcess extends javax.swing.JFrame {
 			//TODO add protection there
 		}
 		
-		myEditor = new EditingFrameAssumption(this);
+		myAssumptionEditor = new EditingFrameAssumption(this);
+		myEditor = new EditingPanel(this);
 
 		initComponents(root);
 		this.setVisible(true);
@@ -1137,7 +1139,7 @@ public class AtriumProcess extends javax.swing.JFrame {
     		{
     			if (a.getName().equals(selectedAssumptionName)){edited_assumption=a;}
     		}
-            myEditor.editAssumption(edited_assumption);
+            myAssumptionEditor.editAssumption(edited_assumption);
         } 
     }
 	
@@ -1149,7 +1151,7 @@ public class AtriumProcess extends javax.swing.JFrame {
     		{
     			if (a.getName().equals(selectedAssumptionName)){edited_assumption=a;}
     		}
-            myEditor.editAssumption(edited_assumption);
+            myAssumptionEditor.editAssumption(edited_assumption);
         } 
     }                                             
 
@@ -1167,6 +1169,7 @@ public class AtriumProcess extends javax.swing.JFrame {
 
     private void jButtonAddDGActionPerformed(java.awt.event.ActionEvent evt) {                                             
         // TODO add your handling code here:
+    	myEditor.editing();
     }                                            
 
     private void jButtonAddDAActionPerformed(java.awt.event.ActionEvent evt) {                                             
