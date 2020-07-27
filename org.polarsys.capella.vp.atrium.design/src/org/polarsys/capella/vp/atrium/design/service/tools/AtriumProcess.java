@@ -70,6 +70,7 @@ public class AtriumProcess extends javax.swing.JFrame {
 		this.setVisible(true);
 	}
 
+	@SuppressWarnings("serial")
 	private void initComponents(EObject root) {
 
 		jTabbedPane = new javax.swing.JTabbedPane();
@@ -208,7 +209,7 @@ public class AtriumProcess extends javax.swing.JFrame {
 		}
 		
 		Collections.sort(ListCapellaElementName);
-		DefaultComboBoxModel <String> ListCapellaElementNameBox = new DefaultComboBoxModel<String>(ListCapellaElementName.toArray(new String[ListCapellaElementName.size()]));
+		//DefaultComboBoxModel <String> ListCapellaElementNameBox = new DefaultComboBoxModel<String>(ListCapellaElementName.toArray(new String[ListCapellaElementName.size()]));
 		
 		TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(root);
 		domain.getCommandStack().execute(new RecordingCommand(domain) { // in a transaction context, create any list that has not been found
@@ -248,6 +249,40 @@ public class AtriumProcess extends javax.swing.JFrame {
 	    });
 		
 		
+		//create CFAs in CFA list
+		for (String el : ListCapellaElementName)
+		{
+			for (int i =0; i<ListFailureMode.getSize();i++)
+			{
+				boolean found = false;
+				
+				for (CFA cfa : listCFA)
+				{
+					if (cfa.getName().equals("{ " + el + " : " + ListFailureMode.getElementAt(i) + " }"))
+					{
+						found = true;
+					}
+				}
+				
+				if (!(found))
+				{
+					final CFA newCFA = AtriumFactoryImpl.eINSTANCE.createCFA();
+					newCFA.setContent("Some content");
+					newCFA.setState(true);
+					newCFA.setName("{ " + el + " : " + ListFailureMode.getElementAt(i) + " }");
+	
+					domain.getCommandStack().execute(new RecordingCommand(domain) {
+					        @Override
+					        protected void doExecute() {
+					        	((ExtensibleElement) the_CFA_list).getOwnedExtensions().add((ElementExtension) newCFA);//the add action is done there, within a transaction context
+					        }
+					    });
+					 
+					listCFA.add(newCFA);//updating our local list
+				}
+			}
+		}
+		
 		jListLinkedAssumptions.addMouseListener(new java.awt.event.MouseAdapter() {
 	            public void mouseClicked(java.awt.event.MouseEvent evt) {
 	                jListLinkedAssumptionMouseClicked(evt);
@@ -277,7 +312,11 @@ public class AtriumProcess extends javax.swing.JFrame {
 			}
 		});
         
-        jComboBoxCFA.setModel(new javax.swing.DefaultComboBoxModel<String>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+		DefaultComboBoxModel <String> CbCFA= new DefaultComboBoxModel<String>();
+		for (int i = 0; i < listCFA.size(); i++) {
+			CbCFA.addElement(listCFA.get(i).getName());
+		}
+        jComboBoxCFA.setModel(CbCFA);
         jComboBoxCFA.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBoxCFAActionPerformed(evt);
@@ -1009,35 +1048,7 @@ public class AtriumProcess extends javax.swing.JFrame {
 		updateDisplayCFA();//because the lists have changed
 	}
 	
-//	private void createCFAifNew()
-//	{
-//		if ((CapellaElementName!="Capella Element Example")&&(FailureName!="Failure Example"))//do nothing if a CFA is not chosen yet
-//		{
-//			boolean found=false;
-//			for (CFA myCFA : listCFA)//we are not sure to find a matching CFA
-//			{
-//				if (myCFA.getName().equals(jTextFieldResultingCFA.getText())){found=true;}
-//			}
-//			if (!(found))//if the CFA doesnt exist, then we create it
-//			{
-//				final CFA newCFA = AtriumFactoryImpl.eINSTANCE.createCFA();
-//				newCFA.setContent("Some content");
-//				newCFA.setState(true);
-//				newCFA.setName(jTextFieldResultingCFA.getText());
-//
-//				TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(the_CFA_list);
-//				domain.getCommandStack().execute(new RecordingCommand(domain) {
-//				        @Override
-//				        protected void doExecute() {
-//				        	((ExtensibleElement) the_CFA_list).getOwnedExtensions().add((ElementExtension) newCFA);//the add action is done there, within a transaction context
-//				        }
-//				    });
-//				 
-//				listCFA.add(newCFA);//updating our local list
-//			}
-//		}
-//	}
-//	
+
 	private void createFailureMode(String name) {
 		final FailureMode newFailure = AtriumFactoryImpl.eINSTANCE.createFailureMode();
 		newFailure.setContent("Some content");

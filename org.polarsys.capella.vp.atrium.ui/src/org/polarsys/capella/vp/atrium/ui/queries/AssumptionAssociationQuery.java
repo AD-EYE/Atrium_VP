@@ -297,6 +297,11 @@ import org.polarsys.capella.vp.atrium.Atrium.AtriumPackage;
 import org.polarsys.capella.vp.atrium.Atrium.AtriumPackage;
 import org.polarsys.capella.vp.atrium.Atrium.AtriumPackage;
 import org.polarsys.capella.vp.atrium.Atrium.AtriumPackage;
+import org.polarsys.capella.vp.atrium.Atrium.AtriumPackage;
+import org.polarsys.capella.vp.atrium.Atrium.AtriumPackage;
+import org.polarsys.capella.vp.atrium.Atrium.AtriumPackage;
+import org.polarsys.capella.vp.atrium.Atrium.AtriumPackage;
+import org.polarsys.capella.vp.atrium.Atrium.AtriumPackage;
 
 import org.polarsys.capella.vp.atrium.Atrium.CFA;
 
