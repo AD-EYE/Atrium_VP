@@ -241,7 +241,7 @@ public class EditingFrameAssumption extends javax.swing.JFrame {
 			        }
 			    });
 			
-			my_parent.updateDisplay();
+			my_parent.updateDisplayTab3();
 			Editingframe.setVisible(false);
 		}
 		else {JOptionPane.showMessageDialog(getParent(), "There is already an assumption named like that, please chose another name.");}

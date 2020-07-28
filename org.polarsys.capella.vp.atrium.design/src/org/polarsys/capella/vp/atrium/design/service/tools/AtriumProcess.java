@@ -81,6 +81,7 @@ public class AtriumProcess extends javax.swing.JFrame {
 		myEditor = new EditingPanel(this);
 
 		initComponents(root);
+		updateDisplayTab0();
 		this.setVisible(true);
 	}
 
@@ -323,7 +324,7 @@ public class AtriumProcess extends javax.swing.JFrame {
 			}
 		}
 		
-		updateDisplay();
+		
 		
 		jListLinkedAssumptions.addMouseListener(new java.awt.event.MouseAdapter() {
 	            public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -470,6 +471,11 @@ public class AtriumProcess extends javax.swing.JFrame {
         );
 
         jTabbedPane.addTab("Linking DG and Assumptions to CFA", jPanel1);
+        jTabbedPane.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTabbedPaneMouseClicked(evt);
+            }
+        });
 
         jListUnlinkedDA.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -985,31 +991,42 @@ public class AtriumProcess extends javax.swing.JFrame {
     }// </editor-fold>                                  
 	
 	
-//	public void updateDisplayCFA()
-//	{
-//		nameLinkedAssumption=new DefaultListModel<String>();
-//		nameUnlinkedAssumption=new DefaultListModel<String>();
-//		CFA the_CFA=null;
-//		
-//		if ((CapellaElementName!="Capella Element Example")&&(FailureName!="Failure Example"))
-//		{	
-//			for (CFA myCFA : listCFA) //look for the CFA that we are interested in
-//			{
-//				if (myCFA.getName().equals(jComboBoxCFA.getSelectedItem())){the_CFA = myCFA;}
-//			}
-//			
-//			for (Assumption a : listAssumption) //go through all the Assumptions to find those linked with the_CFA
-//			{
-//				if (the_CFA.getAssumption().contains(a)){nameLinkedAssumption.addElement(a.getName());}
-//				else{nameUnlinkedAssumption.addElement(a.getName());}
-//			}
-//			
-//			jListUnlinkedAssumptions.setModel(nameUnlinkedAssumption); //update list of assumptions
-//			jListLinkedAssumptions.setModel(nameLinkedAssumption);
-//		}
-//	}
+	public void updateDisplayTab0()
+	{
+		nameLinkedAssumption=new DefaultListModel<String>();
+		nameUnlinkedAssumption=new DefaultListModel<String>();
+		CFA the_CFA=null;
+			
+		for (CFA myCFA : listCFA) //look for the CFA that we are interested in
+		{
+			if (myCFA.getName().equals(jComboBoxCFA.getSelectedItem())){the_CFA = myCFA;}
+		}
+		
+		for (Assumption a : listAssumption) //go through all the Assumptions to find those linked with the_CFA
+		{
+			if (the_CFA.getAssumption().contains(a)){nameLinkedAssumption.addElement(a.getName());}
+			else{nameUnlinkedAssumption.addElement(a.getName());}
+		}
+		
+		jListUnlinkedAssumptions.setModel(nameUnlinkedAssumption); //update display list of assumptions
+		jListLinkedAssumptions.setModel(nameLinkedAssumption);
+		
+		
+		
+		DefaultComboBoxModel<String> listDGcbModel= new DefaultComboBoxModel<String>();
+        for (DG dg : listDG) {listDGcbModel.addElement(dg.getName());}
+        jComboBoxDG2.setModel(listDGcbModel);
+		
+	}
 	
-	public void updateDisplay()
+	public void updateDisplayTab1()
+	{
+		DefaultComboBoxModel<String> listDGcbModel= new DefaultComboBoxModel<String>();
+        for (DG dg : listDG) {listDGcbModel.addElement(dg.getName());}
+        jComboBoxDG.setModel(listDGcbModel);
+	}
+	
+	public void updateDisplayTab2()
 	{
 		DefaultListModel <String> listModelDG = new DefaultListModel<String>();
         for (DG dg : listDG){listModelDG.addElement(dg.getName());}
@@ -1026,70 +1043,247 @@ public class AtriumProcess extends javax.swing.JFrame {
         DefaultListModel <String> listModelsDG = new DefaultListModel<String>();
         for (sDG sdg : listsDG){listModelsDG.addElement(sdg.getName());}
         jListSDG.setModel(listModelsDG);
-        
-        DefaultListModel <String> listModelsAssumptions = new DefaultListModel<String>();
-        for (Assumption a : listAssumption){listModelsAssumptions.addElement(a.getName());}
-        jListAssumption.setModel(listModelsAssumptions);
-        
-        DefaultListModel <String> listModelFailure = new DefaultListModel<String>();
-        for (FailureMode f : ListFailureMode){listModelFailure.addElement(f.getName());}
-        jListFailure.setModel(listModelFailure);
-        
-        DefaultComboBoxModel<String> listDGcbModel= new DefaultComboBoxModel<String>();
-        for (DG dg : listDG) {listDGcbModel.addElement(dg.getName());}
-        jComboBoxDG.setModel(listDGcbModel);
-        jComboBoxDG2.setModel(listDGcbModel);
 	}
 	
-//	private void moveAssumption(String action) //action="add" or "remove"
-//	{
-//		CFA the_CFA = null;
-//		String movingAssumption = null;
-//		Assumption the_moving_assumption = null;
-//		
-//		//decide on which list should we look for the Assumptions based on if we want to add or remove a link
-//		if (action=="add") {movingAssumption = jListUnlinkedAssumptions.getSelectedValue();}
-//		else if (action=="remove") {movingAssumption = jListLinkedAssumptions.getSelectedValue();}
-//		else {System.out.println("The moveAssumption action you want to do is unclear...");}
-//		
-//		for (Assumption a : listAssumption) //Go through all the assumptions to find the one with the same name
-//		{
-//			if (a.getName().equals(movingAssumption)){the_moving_assumption=a;}
-//		}
-//		
-//		for (CFA myCFA : listCFA) //look for the CFA that we are interested in
-//		{
-//			if (myCFA.getName().equals(jComboBoxCFA.getSelectedItem())){the_CFA=myCFA;}
-//		}
-//		
-//		final CFA CFA_parameter = the_CFA;
-//		final Assumption assumption_parameter = the_moving_assumption;
-//		TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(the_CFA_list);
-//		
-//		if (action=="remove")
-//		{
-//			domain.getCommandStack().execute(new RecordingCommand(domain) {
-//			        @Override
-//			        protected void doExecute() {
-//			        	CFA_parameter.getAssumption().remove(assumption_parameter);//the remove action is done there, within a transaction context
-//			        }
-//			    });
-//		}
-//		else if (action=="add")
-//		{
-//			 domain.getCommandStack().execute(new RecordingCommand(domain) {
-//			        @Override
-//			        protected void doExecute() {
-//			        	CFA_parameter.getAssumption().add(assumption_parameter);//the add action is done there, within a transaction context
-//			        }
-//			    });
-//		}
-//		else {System.out.println("The moveAssumption action you want to do is unclear...twice");}
-//		
-//		updateDisplayCFA();//because the lists have changed
-//	}
+	public void updateDisplayTab3()
+	{
+		DefaultListModel <String> listModelsAssumptions = new DefaultListModel<String>();
+        for (Assumption a : listAssumption){listModelsAssumptions.addElement(a.getName());}
+        jListAssumption.setModel(listModelsAssumptions);
+	}
+	
+	public void updateDisplayTab4()
+	{
+		DefaultListModel <String> listModelFailure = new DefaultListModel<String>();
+        for (FailureMode f : ListFailureMode){listModelFailure.addElement(f.getName());}
+        jListFailure.setModel(listModelFailure); 
+	}
+	
+	private void moveAssumption(String action) //action="add" or "remove"
+	{
+		CFA the_CFA = null;
+		String movingAssumption = null;
+		Assumption the_moving_assumption = null;
+		
+		//decide on which list should we look for the Assumptions based on if we want to add or remove a link
+		if (action=="add") {movingAssumption = jListUnlinkedAssumptions.getSelectedValue();}
+		else if (action=="remove") {movingAssumption = jListLinkedAssumptions.getSelectedValue();}
+		else {System.out.println("The moveAssumption action you want to do is unclear...");}
+		
+		for (Assumption a : listAssumption) //Go through all the assumptions to find the one with the same name
+		{
+			if (a.getName().equals(movingAssumption)){the_moving_assumption=a;}
+		}
+		
+		for (CFA myCFA : listCFA) //look for the CFA that we are interested in
+		{
+			if (myCFA.getName().equals(jComboBoxCFA.getSelectedItem())){the_CFA=myCFA;}
+		}
+		
+		final CFA CFA_parameter = the_CFA;
+		final Assumption assumption_parameter = the_moving_assumption;
+		TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(the_CFA_list);
+		
+		if (action=="remove")
+		{
+			domain.getCommandStack().execute(new RecordingCommand(domain) {
+			        @Override
+			        protected void doExecute() {
+			        	CFA_parameter.getAssumption().remove(assumption_parameter);//the remove action is done there, within a transaction context
+			        }
+			    });
+		}
+		else if (action=="add")
+		{
+			 domain.getCommandStack().execute(new RecordingCommand(domain) {
+			        @Override
+			        protected void doExecute() {
+			        	CFA_parameter.getAssumption().add(assumption_parameter);//the add action is done there, within a transaction context
+			        }
+			    });
+		}
+		else {System.out.println("The moveAssumption action you want to do is unclear...twice");}
+		
+		updateDisplayTab0();//because the lists have changed
+	}
 	
 
+	
+
+	
+	private void jButtonAddLinkedActionPerformed(java.awt.event.ActionEvent evt) {
+		if (!(jListUnlinkedAssumptions.getSelectedValue()==null)) //if one unlinked assumption is selected
+		{
+			moveAssumption("add");
+		}
+	}
+	
+	private void jButtonRemoveLinkedActionPerformed(java.awt.event.ActionEvent evt) {
+		if (!(jListLinkedAssumptions.getSelectedValue()==null)) //if one linked assumption is selected
+		{
+			moveAssumption("remove");
+		}
+	}
+	
+	private void jComboBoxCFAActionPerformed(java.awt.event.ActionEvent evt) {
+		updateDisplayTab0();
+	}
+	
+	
+	
+	private void jListLinkedAssumptionMouseClicked(java.awt.event.MouseEvent evt) {
+		Assumption edited_assumption = null;
+        if (evt.getClickCount() == 2) {
+        	String selectedAssumptionName = jListLinkedAssumptions.getSelectedValue();
+        	for (Assumption a : listAssumption) //Go through all the assumptions to find the one with the same name
+    		{
+    			if (a.getName().equals(selectedAssumptionName)){edited_assumption=a;}
+    		}
+            myAssumptionEditor.editAssumption(edited_assumption, listAssumption);
+        } 
+    }
+	
+	private void jListUnlinkedAssumptionMouseClicked(java.awt.event.MouseEvent evt) {
+		Assumption edited_assumption = null;
+        if (evt.getClickCount() == 2) {
+        	String selectedAssumptionName = jListUnlinkedAssumptions.getSelectedValue();
+        	for (Assumption a : listAssumption) //Go through all the assumptions to find the one with the same name
+    		{
+    			if (a.getName().equals(selectedAssumptionName)){edited_assumption=a;}
+    		}
+            myAssumptionEditor.editAssumption(edited_assumption, listAssumption);
+        } 
+    }                                             
+
+    private void jListLinkedDAMouseClicked(java.awt.event.MouseEvent evt) {                                           
+        // TODO add your handling code here:
+    }                                          
+
+    private void jButtonAddLinkedDAActionPerformed(java.awt.event.ActionEvent evt) {                                                   
+        // TODO add your handling code here:
+    }                                                  
+
+    private void jButtonRemoveLinkedDAActionPerformed(java.awt.event.ActionEvent evt) {                                                      
+    	// TODO add your handling code here:
+    }                                                                                           
+
+    private void jButtonAddODDActionPerformed(java.awt.event.ActionEvent evt) {                                              
+        // TODO add your handling code here:
+    }                                             
+
+    private void jButtonAddLinkedSDGActionPerformed(java.awt.event.ActionEvent evt) {                                                    
+    	// TODO add your handling code here:
+    }                                                   
+
+    private void jButtonRemoveLinkedSDGActionPerformed(java.awt.event.ActionEvent evt) {                                                       
+        // TODO add your handling code here:
+    }                                                      
+
+    private void jComboBoxDGActionPerformed(java.awt.event.ActionEvent evt) {                                            
+        // TODO add your handling code here:
+    }
+    
+    private void jTabbedPaneMouseClicked(java.awt.event.MouseEvent evt) {                                         
+        if(jTabbedPane.getSelectedIndex()==0) {
+        	updateDisplayTab0();
+        }
+        if(jTabbedPane.getSelectedIndex()==1) {
+        	updateDisplayTab1();
+        }
+        if(jTabbedPane.getSelectedIndex()==2) {
+        	updateDisplayTab2();
+        }
+        if(jTabbedPane.getSelectedIndex()==3) {
+        	updateDisplayTab3();
+        }
+        if(jTabbedPane.getSelectedIndex()==4) {
+        	updateDisplayTab4();
+        }
+    }    
+    
+    
+    ///////////////////////////////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////HANDLERS TO ADD OBJECTS///////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////////////////
+    private void jButtonAddsDGActionPerformed(java.awt.event.ActionEvent evt) {                                            
+    	String name = JOptionPane.showInputDialog(getParent(), "Please name the new sDG", "MyNewsDG");
+		if (name != null) { //if the user has not pressed "cancel"
+			
+			boolean alreadyHere = false; //protection against existing name
+			for (sDG sdg : listsDG)
+			{
+				if (name.equals(sdg.getName())){alreadyHere = true;}
+			}
+			if (!(alreadyHere)) {createsDG(name);}
+			else {JOptionPane.showMessageDialog(getParent(), "There is already a subDesign Goal named like that, please chose another name.");}
+		}
+    }
+    
+    private void jButtonAddDGActionPerformed(java.awt.event.ActionEvent evt) {                                             
+    	String name = JOptionPane.showInputDialog(getParent(), "Please name the new DG", "MyNewDG");
+		if (name != null) { //if the user has not pressed "cancel"
+			
+			boolean alreadyHere = false; //protection against existing name
+			for (DG dg : listDG)
+			{
+				if (name.equals(dg.getName())){alreadyHere = true;}
+			}
+			if (!(alreadyHere)) {createDG(name);}
+			else {JOptionPane.showMessageDialog(getParent(), "There is already a Design Goal named like that, please chose another name.");}
+		}
+    }                                            
+
+    private void jButtonAddDAActionPerformed(java.awt.event.ActionEvent evt) {                                             
+    	String name = JOptionPane.showInputDialog(getParent(), "Please name the new DA", "MyNewDA");
+		if (name != null) { //if the user has not pressed "cancel"
+			
+			boolean alreadyHere = false; //protection against existing name
+			for (DA da : listDA)
+			{
+				if (name.equals(da.getName())){alreadyHere = true;}
+			}
+			if (!(alreadyHere)) {createDA(name);}
+			else {JOptionPane.showMessageDialog(getParent(), "There is already a Design Alternative named like that, please chose another name.");}
+		}
+    }   
+    
+    private void jButtonAddFailureActionPerformed(java.awt.event.ActionEvent evt) {
+		String name = JOptionPane.showInputDialog(getParent(), "Please name the new Failure Mode", "MyNewFailure");
+		if (name != null) //if the user has not pressed "cancel"
+		{ 
+			boolean alreadyHere = false; //protection against existing name
+			for (FailureMode f : ListFailureMode)
+			{
+				if (name.equals(f.getName())){alreadyHere = true;}
+			}
+			if (!(alreadyHere)) {createFailureMode(name);}
+			else {JOptionPane.showMessageDialog(getParent(), "There is already a failure named like that, please chose another name.");}
+		}
+	}
+	
+	private void jButtonAddAssumptionActionPerformed(java.awt.event.ActionEvent evt) {
+		String name = JOptionPane.showInputDialog(getParent(), "Please name the new Assumption", "MyNewAssumption");
+		if (name != null) { //if the user has not pressed "cancel"
+			
+			boolean alreadyHere = false; //protection against existing name
+			for (Assumption a : listAssumption)
+			{
+				if (name.equals(a.getName())){alreadyHere = true;}
+			}
+			if (!(alreadyHere)) {createAssumption(name);}
+			else {JOptionPane.showMessageDialog(getParent(), "There is already an assumption named like that, please chose another name.");}
+		}
+    }
+	///////////////////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////////////////
+	
+    ///////////////////////////////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////CREATORS TO ADD OBJECTS///////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////////////////
 	private void createFailureMode(String name) {
 		final FailureMode newFailure = AtriumFactoryImpl.eINSTANCE.createFailureMode();
 		newFailure.setContent("Some content");
@@ -1173,152 +1367,12 @@ public class AtriumProcess extends javax.swing.JFrame {
 		AtriumBasicElement newsDG_parameter = (AtriumBasicElement) newsDG;
 		myEditor.editing(newsDG_parameter, listDG, listDA, listCFA, listsDG, ListFailureMode);
 	}
-
 	
-	private void jButtonAddLinkedActionPerformed(java.awt.event.ActionEvent evt) {
-		if (!(jListUnlinkedAssumptions.getSelectedValue()==null)) //if one unlinked assumption is selected
-		{
-			//moveAssumption("add");
-		}
-	}
-	
-	private void jButtonRemoveLinkedActionPerformed(java.awt.event.ActionEvent evt) {
-		if (!(jListLinkedAssumptions.getSelectedValue()==null)) //if one linked assumption is selected
-		{
-			//moveAssumption("remove");
-		}
-	}
-	
-	private void jComboBoxCFAActionPerformed(java.awt.event.ActionEvent evt) {
-		CapellaElementName = (String) jComboBoxCFA.getSelectedItem();
-		//updateDisplayCFA();
-	}
-	
-	private void jButtonAddFailureActionPerformed(java.awt.event.ActionEvent evt) {
-		String name = JOptionPane.showInputDialog(getParent(), "Please name the new Failure Mode", "MyNewFailure");
-		if (name != null) //if the user has not pressed "cancel"
-		{ 
-			boolean alreadyHere = false; //protection against existing name
-			for (FailureMode f : ListFailureMode)
-			{
-				if (name.equals(f.getName())){alreadyHere = true;}
-			}
-			if (!(alreadyHere)) {createFailureMode(name);}
-			else {JOptionPane.showMessageDialog(getParent(), "There is already a failure named like that, please chose another name.");}
-		}
-	}
-	
-	private void jButtonAddAssumptionActionPerformed(java.awt.event.ActionEvent evt) {
-		String name = JOptionPane.showInputDialog(getParent(), "Please name the new Assumption", "MyNewAssumption");
-		if (name != null) { //if the user has not pressed "cancel"
-			
-			boolean alreadyHere = false; //protection against existing name
-			for (Assumption a : listAssumption)
-			{
-				if (name.equals(a.getName())){alreadyHere = true;}
-			}
-			if (!(alreadyHere)) {createAssumption(name);}
-			else {JOptionPane.showMessageDialog(getParent(), "There is already an assumption named like that, please chose another name.");}
-		}
-    }   
-	
-	private void jListLinkedAssumptionMouseClicked(java.awt.event.MouseEvent evt) {
-		Assumption edited_assumption = null;
-        if (evt.getClickCount() == 2) {
-        	String selectedAssumptionName = jListLinkedAssumptions.getSelectedValue();
-        	for (Assumption a : listAssumption) //Go through all the assumptions to find the one with the same name
-    		{
-    			if (a.getName().equals(selectedAssumptionName)){edited_assumption=a;}
-    		}
-            myAssumptionEditor.editAssumption(edited_assumption, listAssumption);
-        } 
-    }
-	
-	private void jListUnlinkedAssumptionMouseClicked(java.awt.event.MouseEvent evt) {
-		Assumption edited_assumption = null;
-        if (evt.getClickCount() == 2) {
-        	String selectedAssumptionName = jListUnlinkedAssumptions.getSelectedValue();
-        	for (Assumption a : listAssumption) //Go through all the assumptions to find the one with the same name
-    		{
-    			if (a.getName().equals(selectedAssumptionName)){edited_assumption=a;}
-    		}
-            myAssumptionEditor.editAssumption(edited_assumption, listAssumption);
-        } 
-    }                                             
 
-    private void jListLinkedDAMouseClicked(java.awt.event.MouseEvent evt) {                                           
-        // TODO add your handling code here:
-    }                                          
-
-    private void jButtonAddLinkedDAActionPerformed(java.awt.event.ActionEvent evt) {                                                   
-        // TODO add your handling code here:
-    }                                                  
-
-    private void jButtonRemoveLinkedDAActionPerformed(java.awt.event.ActionEvent evt) {                                                      
-    	// TODO add your handling code here:
-    }                                                     
-
-    private void jButtonAddDGActionPerformed(java.awt.event.ActionEvent evt) {                                             
-    	String name = JOptionPane.showInputDialog(getParent(), "Please name the new DG", "MyNewDG");
-		if (name != null) { //if the user has not pressed "cancel"
-			
-			boolean alreadyHere = false; //protection against existing name
-			for (DG dg : listDG)
-			{
-				if (name.equals(dg.getName())){alreadyHere = true;}
-			}
-			if (!(alreadyHere)) {createDG(name);}
-			else {JOptionPane.showMessageDialog(getParent(), "There is already a Design Goal named like that, please chose another name.");}
-		}
-    }                                            
-
-    private void jButtonAddDAActionPerformed(java.awt.event.ActionEvent evt) {                                             
-    	String name = JOptionPane.showInputDialog(getParent(), "Please name the new DA", "MyNewDA");
-		if (name != null) { //if the user has not pressed "cancel"
-			
-			boolean alreadyHere = false; //protection against existing name
-			for (DA da : listDA)
-			{
-				if (name.equals(da.getName())){alreadyHere = true;}
-			}
-			if (!(alreadyHere)) {createDA(name);}
-			else {JOptionPane.showMessageDialog(getParent(), "There is already a Design Alternative named like that, please chose another name.");}
-		}
-    }                                            
-
-    private void jButtonAddODDActionPerformed(java.awt.event.ActionEvent evt) {                                              
-        // TODO add your handling code here:
-    }                                             
-
-    private void jButtonAddLinkedSDGActionPerformed(java.awt.event.ActionEvent evt) {                                                    
-    	// TODO add your handling code here:
-    }                                                   
-
-    private void jButtonRemoveLinkedSDGActionPerformed(java.awt.event.ActionEvent evt) {                                                       
-        // TODO add your handling code here:
-    }                                                      
-
-    private void jComboBoxDGActionPerformed(java.awt.event.ActionEvent evt) {                                            
-        // TODO add your handling code here:
-    }
-    
-    private void jButtonAddsDGActionPerformed(java.awt.event.ActionEvent evt) {                                            
-    	String name = JOptionPane.showInputDialog(getParent(), "Please name the new sDG", "MyNewsDG");
-		if (name != null) { //if the user has not pressed "cancel"
-			
-			boolean alreadyHere = false; //protection against existing name
-			for (sDG sdg : listsDG)
-			{
-				if (name.equals(sdg.getName())){alreadyHere = true;}
-			}
-			if (!(alreadyHere)) {createsDG(name);}
-			else {JOptionPane.showMessageDialog(getParent(), "There is already a subDesign Goal named like that, please chose another name.");}
-		}
-    }
+	///////////////////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////////////////
     
 
-	private String CapellaElementName= "Capella Element Example";
-	private String FailureName= "Failure Example";
 	private javax.swing.JButton jButtonAddAssumption;
     private javax.swing.JButton jButtonAddDA;
     private javax.swing.JButton jButtonAddDG;

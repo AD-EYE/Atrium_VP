@@ -135,7 +135,9 @@ public class EditingPanel extends javax.swing.JFrame {
 			        }
 			    });
 			
-			my_parent.updateDisplay();
+			my_parent.updateDisplayTab2();
+			my_parent.updateDisplayTab3();
+			my_parent.updateDisplayTab4();
 			Editingpanel.setVisible(false);
 		}
 		else {JOptionPane.showMessageDialog(getParent(), "There is already an assumption named like that, please chose another name.");}
