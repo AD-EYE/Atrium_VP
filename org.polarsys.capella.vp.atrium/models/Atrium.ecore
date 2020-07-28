@@ -78,7 +78,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="designAlternative" lowerBound="1"
         upperBound="-1" eType="#//DA"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="subDGs" upperBound="-1"
-        eType="#//DG"/>
+        eType="#//sDG"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="sDG" eSuperTypes="#//AtriumBasicElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="DA" eSuperTypes="#//AtriumBasicElement">

@@ -771,7 +771,7 @@ public class AtriumPackageImpl extends EPackageImpl implements AtriumPackage {
 		initEReference(getDG_DesignAlternative(), this.getDA(), null, "designAlternative", null, 1, -1, //$NON-NLS-1$
 				org.polarsys.capella.vp.atrium.Atrium.DG.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
 				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDG_SubDGs(), this.getDG(), null, "subDGs", null, 0, -1, //$NON-NLS-1$
+		initEReference(getDG_SubDGs(), this.getsDG(), null, "subDGs", null, 0, -1, //$NON-NLS-1$
 				org.polarsys.capella.vp.atrium.Atrium.DG.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
 				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

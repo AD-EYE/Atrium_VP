@@ -54,7 +54,7 @@ Data Atrium.data {
 		Attributes:
 		Associations:
 			designAlternative refers [1,*] DA
-			subDGs refers [0,*] DG
+			subDGs refers [0,*] sDG
 	}
 	Class sDG {
 		superClass AtriumBasicElement

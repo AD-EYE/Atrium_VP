@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.polarsys.capella.vp.atrium.Atrium.AtriumPackage;
 import org.polarsys.capella.vp.atrium.Atrium.DA;
 import org.polarsys.capella.vp.atrium.Atrium.DG;
+import org.polarsys.capella.vp.atrium.Atrium.sDG;
 
 /**
  * <!-- begin-user-doc -->
@@ -47,7 +48,7 @@ public class DGImpl extends AtriumBasicElementImpl implements DG {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<DG> subDGs;
+	protected EList<sDG> subDGs;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -92,10 +93,10 @@ public class DGImpl extends AtriumBasicElementImpl implements DG {
 	 */
 
 	@Override
-	public EList<DG> getSubDGs() {
+	public EList<sDG> getSubDGs() {
 
 		if (subDGs == null) {
-			subDGs = new EObjectResolvingEList<DG>(DG.class, this, AtriumPackage.DG__SUB_DGS);
+			subDGs = new EObjectResolvingEList<sDG>(sDG.class, this, AtriumPackage.DG__SUB_DGS);
 		}
 		return subDGs;
 	}
@@ -131,7 +132,7 @@ public class DGImpl extends AtriumBasicElementImpl implements DG {
 			return;
 		case AtriumPackage.DG__SUB_DGS:
 			getSubDGs().clear();
-			getSubDGs().addAll((Collection<? extends DG>) newValue);
+			getSubDGs().addAll((Collection<? extends sDG>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);

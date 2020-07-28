@@ -55,6 +55,13 @@ public class AtriumProcess extends javax.swing.JFrame {
 	
 	DefaultListModel<String> nameLinkedAssumption = new DefaultListModel<String>();
 	DefaultListModel<String> nameUnlinkedAssumption = new DefaultListModel<String>();
+	
+	DefaultListModel<String> nameLinkedsDG = new DefaultListModel<String>();
+	DefaultListModel<String> nameUnlinkedsDG = new DefaultListModel<String>();
+	
+	DefaultListModel<String> nameLinkedDA = new DefaultListModel<String>();
+	DefaultListModel<String> nameUnlinkedDA = new DefaultListModel<String>();
+	
 
 	LogicalComponentPkg the_LogicalComponentPkg = null;
 	
@@ -82,6 +89,10 @@ public class AtriumProcess extends javax.swing.JFrame {
 
 		initComponents(root);
 		updateDisplayTab0();
+		updateDisplayTab1();
+		updateDisplayTab2();
+		updateDisplayTab3();
+		updateDisplayTab4();
 		this.setVisible(true);
 	}
 
@@ -377,6 +388,12 @@ public class AtriumProcess extends javax.swing.JFrame {
         });
 
         jLabel21.setText("Design Goal");
+        
+        jComboBoxDG2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxDG2ActionPerformed(evt);
+            }
+        });
 
       
 
@@ -471,24 +488,24 @@ public class AtriumProcess extends javax.swing.JFrame {
         );
 
         jTabbedPane.addTab("Linking DG and Assumptions to CFA", jPanel1);
-        jTabbedPane.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jTabbedPaneMouseClicked(evt);
-            }
-        });
+//        jTabbedPane.addMouseListener(new java.awt.event.MouseAdapter() {
+//            public void mouseClicked(java.awt.event.MouseEvent evt) {
+//                jTabbedPaneMouseClicked(evt);
+//            }
+//        });
 
-        jListUnlinkedDA.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
+//        jListUnlinkedDA.setModel(new javax.swing.AbstractListModel<String>() {
+//            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+//            public int getSize() { return strings.length; }
+//            public String getElementAt(int i) { return strings[i]; }
+//        });
         jScrollPane3.setViewportView(jListUnlinkedDA);
 
-        jListLinkedDA.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
+//        jListLinkedDA.setModel(new javax.swing.AbstractListModel<String>() {
+//            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+//            public int getSize() { return strings.length; }
+//            public String getElementAt(int i) { return strings[i]; }
+//        });
         jListLinkedDA.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jListLinkedDAMouseClicked(evt);
@@ -520,20 +537,20 @@ public class AtriumProcess extends javax.swing.JFrame {
 
         jLabel23.setText("Linked Design Alternative");
 
-        jListUnlinkedSDG.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
+//        jListUnlinkedSDG.setModel(new javax.swing.AbstractListModel<String>() {
+//            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+//            public int getSize() { return strings.length; }
+//            public String getElementAt(int i) { return strings[i]; }
+//        });
         jScrollPane14.setViewportView(jListUnlinkedSDG);
 
         jLabel37.setText("Unlinked Sub-Design Goal");
 
-        jListLinkedSDG.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
+//        jListLinkedSDG.setModel(new javax.swing.AbstractListModel<String>() {
+//            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+//            public int getSize() { return strings.length; }
+//            public String getElementAt(int i) { return strings[i]; }
+//        });
         jScrollPane15.setViewportView(jListLinkedSDG);
 
         jLabel38.setText("Linked Sub-Design Goal");
@@ -1002,28 +1019,59 @@ public class AtriumProcess extends javax.swing.JFrame {
 			if (myCFA.getName().equals(jComboBoxCFA.getSelectedItem())){the_CFA = myCFA;}
 		}
 		
-		for (Assumption a : listAssumption) //go through all the Assumptions to find those linked with the_CFA
+		if (the_CFA!=null)
 		{
-			if (the_CFA.getAssumption().contains(a)){nameLinkedAssumption.addElement(a.getName());}
-			else{nameUnlinkedAssumption.addElement(a.getName());}
+			for (Assumption a : listAssumption) //go through all the Assumptions to find those linked with the_CFA
+			{
+				if (the_CFA.getAssumption().contains(a)){nameLinkedAssumption.addElement(a.getName());}
+				else{nameUnlinkedAssumption.addElement(a.getName());}
+			}
+			
+			jListUnlinkedAssumptions.setModel(nameUnlinkedAssumption); //update display list of assumptions
+			jListLinkedAssumptions.setModel(nameLinkedAssumption);
 		}
 		
-		jListUnlinkedAssumptions.setModel(nameUnlinkedAssumption); //update display list of assumptions
-		jListLinkedAssumptions.setModel(nameLinkedAssumption);
-		
-		
-		
-		DefaultComboBoxModel<String> listDGcbModel= new DefaultComboBoxModel<String>();
-        for (DG dg : listDG) {listDGcbModel.addElement(dg.getName());}
-        jComboBoxDG2.setModel(listDGcbModel);
-		
+		//jComboBoxDG.setSelectedItem(anObject);
 	}
 	
 	public void updateDisplayTab1()
 	{
-		DefaultComboBoxModel<String> listDGcbModel= new DefaultComboBoxModel<String>();
-        for (DG dg : listDG) {listDGcbModel.addElement(dg.getName());}
-        jComboBoxDG.setModel(listDGcbModel);
+		
+		nameLinkedsDG = new DefaultListModel<String>();
+		nameUnlinkedsDG = new DefaultListModel<String>();
+		
+		nameLinkedDA = new DefaultListModel<String>();
+		nameUnlinkedDA = new DefaultListModel<String>();
+		
+		DG the_DG=null;
+		
+		for (DG myDG : listDG) //look for the DG that we are interested in
+		{
+			if (myDG.getName().equals(jComboBoxDG2.getSelectedItem())){the_DG = myDG;}
+		}
+		
+		if (the_DG!=null)
+		{
+			for (sDG sdg : listsDG) //go through all the sDG to find those linked with the_DG
+			{
+				if (the_DG.getSubDGs().contains(sdg)){nameLinkedsDG.addElement(sdg.getName());}
+				else{nameUnlinkedsDG.addElement(sdg.getName());}
+			}
+			jListUnlinkedSDG.setModel(nameUnlinkedsDG); //update display list of sDG
+			jListLinkedSDG.setModel(nameLinkedsDG);
+			
+			for (DA da : listDA) //go through all the DA to find those linked with the_DG
+			{
+				if (the_DG.getDesignAlternative().contains(da)){nameLinkedDA.addElement(da.getName());}
+				else{nameUnlinkedDA.addElement(da.getName());}
+			}
+			
+			jListUnlinkedDA.setModel(nameUnlinkedDA); //update display list of sDG
+			jListLinkedDA.setModel(nameLinkedDA);
+		}
+		
+		
+		
 	}
 	
 	public void updateDisplayTab2()
@@ -1043,6 +1091,11 @@ public class AtriumProcess extends javax.swing.JFrame {
         DefaultListModel <String> listModelsDG = new DefaultListModel<String>();
         for (sDG sdg : listsDG){listModelsDG.addElement(sdg.getName());}
         jListSDG.setModel(listModelsDG);
+        
+        DefaultComboBoxModel<String> listDGcbModel= new DefaultComboBoxModel<String>();
+        for (DG dg : listDG) {listDGcbModel.addElement(dg.getName());}
+        jComboBoxDG2.setModel(listDGcbModel);
+        jComboBoxDG.setModel(listDGcbModel);
 	}
 	
 	public void updateDisplayTab3()
@@ -1107,27 +1160,152 @@ public class AtriumProcess extends javax.swing.JFrame {
 		updateDisplayTab0();//because the lists have changed
 	}
 	
-
+	private void movesDG(String action) //action="add" or "remove"
+	{
+		DG the_DG = null;
+		String movingsDG = null;
+		sDG the_moving_sDG = null;
+		
+		//decide on which list should we look for the sDG based on if we want to add or remove a link
+		if (action=="add") {movingsDG = jListUnlinkedSDG.getSelectedValue();}
+		else if (action=="remove") {movingsDG = jListLinkedSDG.getSelectedValue();}
+		else {System.out.println("The movesDG action you want to do is unclear...");}
+		
+		for (sDG sdg : listsDG) //Go through all the dDG to find the one with the same name
+		{
+			if (sdg.getName().equals(movingsDG)){the_moving_sDG=sdg;}
+		}
+		
+		for (DG myDG : listDG) //look for the CFA that we are interested in
+		{
+			if (myDG.getName().equals(jComboBoxDG2.getSelectedItem())){the_DG=myDG;}
+		}
+		
+		final DG DG_parameter = the_DG;
+		final sDG sDG_parameter = the_moving_sDG;
+		TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(the_DG_list);
+		
+		if (action=="remove")
+		{
+			domain.getCommandStack().execute(new RecordingCommand(domain) {
+			        @Override
+			        protected void doExecute() {
+			        	DG_parameter.getSubDGs().remove(sDG_parameter);//the remove action is done there, within a transaction context
+			        }
+			    });
+		}
+		else if (action=="add")
+		{
+			 domain.getCommandStack().execute(new RecordingCommand(domain) {
+			        @Override
+			        protected void doExecute() {
+			        	DG_parameter.getSubDGs().add(sDG_parameter);//the add action is done there, within a transaction context
+			        }
+			    });
+		}
+		else {System.out.println("The movesDG action you want to do is unclear...twice");}
+		
+		updateDisplayTab1();//because the lists have changed
+	}
 	
-
+	private void moveDA(String action) //action="add" or "remove"
+	{
+		DG the_DG = null;
+		String movingDA = null;
+		DA the_moving_DA = null;
+		
+		//decide on which list should we look for the sDG based on if we want to add or remove a link
+		if (action=="add") {movingDA = jListUnlinkedDA.getSelectedValue();}
+		else if (action=="remove") {movingDA = jListLinkedDA.getSelectedValue();}
+		else {System.out.println("The movesDA action you want to do is unclear...");}
+		
+		for (DA da : listDA) //Go through all the dDG to find the one with the same name
+		{
+			if (da.getName().equals(movingDA)){the_moving_DA=da;}
+		}
+		
+		for (DG myDG : listDG) //look for the CFA that we are interested in
+		{
+			if (myDG.getName().equals(jComboBoxDG2.getSelectedItem())){the_DG=myDG;}
+		}
+		
+		final DG DG_parameter = the_DG;
+		final DA DA_parameter = the_moving_DA;
+		TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(the_DG_list);
+		
+		if (action=="remove")
+		{
+			domain.getCommandStack().execute(new RecordingCommand(domain) {
+			        @Override
+			        protected void doExecute() {
+			        	DG_parameter.getDesignAlternative().remove(DA_parameter);//the remove action is done there, within a transaction context
+			        }
+			    });
+		}
+		else if (action=="add")
+		{
+			 domain.getCommandStack().execute(new RecordingCommand(domain) {
+			        @Override
+			        protected void doExecute() {
+			        	DG_parameter.getDesignAlternative().add(DA_parameter);//the add action is done there, within a transaction context
+			        }
+			    });
+		}
+		else {System.out.println("The movesDA action you want to do is unclear...twice");}
+		
+		updateDisplayTab1();//because the lists have changed
+	}
+	
+	private void jComboBoxCFAActionPerformed(java.awt.event.ActionEvent evt) {
+		updateDisplayTab0();
+	}
 	
 	private void jButtonAddLinkedActionPerformed(java.awt.event.ActionEvent evt) {
-		if (!(jListUnlinkedAssumptions.getSelectedValue()==null)) //if one unlinked assumption is selected
+		if (!(jListUnlinkedAssumptions.getSelectedValue()==null))
 		{
 			moveAssumption("add");
 		}
 	}
 	
 	private void jButtonRemoveLinkedActionPerformed(java.awt.event.ActionEvent evt) {
-		if (!(jListLinkedAssumptions.getSelectedValue()==null)) //if one linked assumption is selected
+		if (!(jListLinkedAssumptions.getSelectedValue()==null))
 		{
 			moveAssumption("remove");
 		}
 	}
 	
-	private void jComboBoxCFAActionPerformed(java.awt.event.ActionEvent evt) {
-		updateDisplayTab0();
-	}
+	private void jComboBoxDG2ActionPerformed(java.awt.event.ActionEvent evt) {                                             
+		updateDisplayTab1();
+    }
+	
+	private void jButtonAddLinkedDAActionPerformed(java.awt.event.ActionEvent evt) {                                                   
+		if (!(jListUnlinkedDA.getSelectedValue()==null))
+		{
+			moveDA("add");
+		}
+    }                                                  
+
+    private void jButtonRemoveLinkedDAActionPerformed(java.awt.event.ActionEvent evt) {                                                      
+    	if (!(jListLinkedDA.getSelectedValue()==null))
+		{
+			moveDA("remove");
+		}
+    }
+	
+    private void jButtonAddLinkedSDGActionPerformed(java.awt.event.ActionEvent evt) {                                                    
+    	if (!(jListUnlinkedSDG.getSelectedValue()==null))
+		{
+			movesDG("add");
+		}
+    }                                                   
+
+    private void jButtonRemoveLinkedSDGActionPerformed(java.awt.event.ActionEvent evt) {                                                       
+    	if (!(jListLinkedSDG.getSelectedValue()==null))
+		{
+			movesDG("remove");
+		}
+    }
+	
 	
 	
 	
@@ -1159,47 +1337,32 @@ public class AtriumProcess extends javax.swing.JFrame {
         // TODO add your handling code here:
     }                                          
 
-    private void jButtonAddLinkedDAActionPerformed(java.awt.event.ActionEvent evt) {                                                   
-        // TODO add your handling code here:
-    }                                                  
-
-    private void jButtonRemoveLinkedDAActionPerformed(java.awt.event.ActionEvent evt) {                                                      
-    	// TODO add your handling code here:
-    }                                                                                           
-
     private void jButtonAddODDActionPerformed(java.awt.event.ActionEvent evt) {                                              
         // TODO add your handling code here:
-    }                                             
-
-    private void jButtonAddLinkedSDGActionPerformed(java.awt.event.ActionEvent evt) {                                                    
-    	// TODO add your handling code here:
-    }                                                   
-
-    private void jButtonRemoveLinkedSDGActionPerformed(java.awt.event.ActionEvent evt) {                                                       
-        // TODO add your handling code here:
-    }                                                      
+    }                                                                                                   
 
     private void jComboBoxDGActionPerformed(java.awt.event.ActionEvent evt) {                                            
         // TODO add your handling code here:
     }
     
-    private void jTabbedPaneMouseClicked(java.awt.event.MouseEvent evt) {                                         
-        if(jTabbedPane.getSelectedIndex()==0) {
-        	updateDisplayTab0();
-        }
-        if(jTabbedPane.getSelectedIndex()==1) {
-        	updateDisplayTab1();
-        }
-        if(jTabbedPane.getSelectedIndex()==2) {
-        	updateDisplayTab2();
-        }
-        if(jTabbedPane.getSelectedIndex()==3) {
-        	updateDisplayTab3();
-        }
-        if(jTabbedPane.getSelectedIndex()==4) {
-        	updateDisplayTab4();
-        }
-    }    
+//    private void jTabbedPaneMouseClicked(java.awt.event.MouseEvent evt) {
+//    	//about to be deleted
+//        if(jTabbedPane.getSelectedIndex()==0) {
+//        	updateDisplayTab0();
+//        }
+//        if(jTabbedPane.getSelectedIndex()==1) {
+//        	updateDisplayTab1();
+//        }
+//        if(jTabbedPane.getSelectedIndex()==2) {
+//        	updateDisplayTab2();
+//        }
+//        if(jTabbedPane.getSelectedIndex()==3) {
+//        	updateDisplayTab3();
+//        }
+//        if(jTabbedPane.getSelectedIndex()==4) {
+//        	updateDisplayTab4();
+//        }
+//    }    
     
     
     ///////////////////////////////////////////////////////////////////////////////////////

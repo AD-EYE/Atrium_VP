@@ -41,7 +41,7 @@ public interface DG extends AtriumBasicElement {
 
 	/**
 	 * Returns the value of the '<em><b>Sub DGs</b></em>' reference list.
-	 * The list contents are of type {@link org.polarsys.capella.vp.atrium.Atrium.DG}.
+	 * The list contents are of type {@link org.polarsys.capella.vp.atrium.Atrium.sDG}.
 	
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -51,6 +51,6 @@ public interface DG extends AtriumBasicElement {
 	 * @generated
 	 */
 
-	EList<DG> getSubDGs();
+	EList<sDG> getSubDGs();
 
 } // DG

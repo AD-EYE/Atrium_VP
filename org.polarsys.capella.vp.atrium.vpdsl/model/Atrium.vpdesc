@@ -80,7 +80,7 @@
     </VP_Classes>
     <VP_Classes name="DG">
       <VP_Classes_Associations xsi:type="vpdesc:LocalClassAssociation" name="designAlternative" cardinality="1..*" type="reference" LocalTarget="//@VP_Data/@VP_Classes.11"/>
-      <VP_Classes_Associations xsi:type="vpdesc:LocalClassAssociation" name="subDGs" cardinality="0..*" type="reference" LocalTarget="//@VP_Data/@VP_Classes.9"/>
+      <VP_Classes_Associations xsi:type="vpdesc:LocalClassAssociation" name="subDGs" cardinality="0..*" type="reference" LocalTarget="//@VP_Data/@VP_Classes.10"/>
       <Inheritences xsi:type="vpdesc:LocalSuperClass" superClass="//@VP_Data/@VP_Classes.0"/>
     </VP_Classes>
     <VP_Classes name="sDG">
