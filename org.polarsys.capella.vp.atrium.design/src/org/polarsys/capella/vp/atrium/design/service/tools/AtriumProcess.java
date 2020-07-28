@@ -1029,9 +1029,19 @@ public class AtriumProcess extends javax.swing.JFrame {
 			
 			jListUnlinkedAssumptions.setModel(nameUnlinkedAssumption); //update display list of assumptions
 			jListLinkedAssumptions.setModel(nameLinkedAssumption);
+			
+			if (listDG.contains(the_CFA.getGoal()))
+			{
+				jComboBoxDG.setSelectedItem(the_CFA.getGoal().getName());
+			}
+			else
+			{
+				jComboBoxDG.setSelectedItem("-- NONE --");
+			}
 		}
 		
-		//jComboBoxDG.setSelectedItem(anObject);
+		
+		
 	}
 	
 	public void updateDisplayTab1()
@@ -1057,20 +1067,19 @@ public class AtriumProcess extends javax.swing.JFrame {
 				if (the_DG.getSubDGs().contains(sdg)){nameLinkedsDG.addElement(sdg.getName());}
 				else{nameUnlinkedsDG.addElement(sdg.getName());}
 			}
-			jListUnlinkedSDG.setModel(nameUnlinkedsDG); //update display list of sDG
-			jListLinkedSDG.setModel(nameLinkedsDG);
 			
 			for (DA da : listDA) //go through all the DA to find those linked with the_DG
 			{
 				if (the_DG.getDesignAlternative().contains(da)){nameLinkedDA.addElement(da.getName());}
 				else{nameUnlinkedDA.addElement(da.getName());}
 			}
-			
-			jListUnlinkedDA.setModel(nameUnlinkedDA); //update display list of sDG
-			jListLinkedDA.setModel(nameLinkedDA);
 		}
 		
+		jListUnlinkedSDG.setModel(nameUnlinkedsDG); //update display list of sDG
+		jListLinkedSDG.setModel(nameLinkedsDG);
 		
+		jListUnlinkedDA.setModel(nameUnlinkedDA); //update display list of DA
+		jListLinkedDA.setModel(nameLinkedDA);
 		
 	}
 	
@@ -1093,9 +1102,11 @@ public class AtriumProcess extends javax.swing.JFrame {
         jListSDG.setModel(listModelsDG);
         
         DefaultComboBoxModel<String> listDGcbModel= new DefaultComboBoxModel<String>();
+        listDGcbModel.addElement("-- NONE --");
         for (DG dg : listDG) {listDGcbModel.addElement(dg.getName());}
         jComboBoxDG2.setModel(listDGcbModel);
         jComboBoxDG.setModel(listDGcbModel);
+        jComboBoxDG.setSelectedIndex(0);
 	}
 	
 	public void updateDisplayTab3()
@@ -1256,6 +1267,48 @@ public class AtriumProcess extends javax.swing.JFrame {
 		updateDisplayTab1();//because the lists have changed
 	}
 	
+	
+	private void linkCFAwithDG()
+	{
+		TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(the_CFA_list);
+		
+		CFA the_CFA = null;
+		DG the_DG = null;
+		
+		for (CFA myCFA : listCFA) //look for the CFA that we are interested in
+		{
+			if (myCFA.getName().equals(jComboBoxCFA.getSelectedItem())){the_CFA=myCFA;}
+		}
+		
+		for (DG myDG : listDG) //look for the DG that we are interested in
+		{
+			if (myDG.getName().equals(jComboBoxDG.getSelectedItem())){the_DG=myDG;}
+		}
+		
+		final CFA CFA_parameter = the_CFA;
+		final DG DG_parameter = the_DG;
+		
+		if (jComboBoxDG.getSelectedItem()!="--NONE--")
+		{
+			
+			domain.getCommandStack().execute(new RecordingCommand(domain) {
+		        @Override
+		        protected void doExecute() {
+		        	CFA_parameter.setGoal(DG_parameter);//the set action is done there, within a transaction context
+		        }
+		    });
+		}
+		else
+		{
+			domain.getCommandStack().execute(new RecordingCommand(domain) {
+		        @Override
+		        protected void doExecute() {
+		        	CFA_parameter.setGoal(null);//the set action is done there, within a transaction context
+		        }
+		    });
+		}
+	}
+	
 	private void jComboBoxCFAActionPerformed(java.awt.event.ActionEvent evt) {
 		updateDisplayTab0();
 	}
@@ -1341,8 +1394,11 @@ public class AtriumProcess extends javax.swing.JFrame {
         // TODO add your handling code here:
     }                                                                                                   
 
-    private void jComboBoxDGActionPerformed(java.awt.event.ActionEvent evt) {                                            
-        // TODO add your handling code here:
+    private void jComboBoxDGActionPerformed(java.awt.event.ActionEvent evt) {
+    	if (jComboBoxCFA.getSelectedItem()!=null)
+    	{
+    		linkCFAwithDG();
+    	} 
     }
     
 //    private void jTabbedPaneMouseClicked(java.awt.event.MouseEvent evt) {

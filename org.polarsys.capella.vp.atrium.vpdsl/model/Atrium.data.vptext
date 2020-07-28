@@ -37,7 +37,7 @@ Data Atrium.data {
 		Associations:
 			linkedtoElement refers [1,1] external capellacore.CapellaElement
 			assumption refers [0,*] Assumption
-			goal refers [1,1] DG
+			goal refers [0,1] DG
 	}
 	Class Assumption {
 		superClass AtriumBasicElement

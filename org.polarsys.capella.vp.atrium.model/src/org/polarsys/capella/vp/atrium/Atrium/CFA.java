@@ -77,7 +77,7 @@ public interface CFA extends AtriumBasicElement {
 	 * @return the value of the '<em>Goal</em>' reference.
 	 * @see #setGoal(DG)
 	 * @see org.polarsys.capella.vp.atrium.Atrium.AtriumPackage#getCFA_Goal()
-	 * @model required="true"
+	 * @model
 	 * @generated
 	 */
 
