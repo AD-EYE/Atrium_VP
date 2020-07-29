@@ -64,6 +64,8 @@ public class AtriumProcess extends javax.swing.JFrame {
 	
 	DefaultComboBoxModel<String> listDGcbModel= new DefaultComboBoxModel<String>();
 	
+	EList<String> ListCapellaElementName = new BasicEList<String>();
+	
 
 	LogicalComponentPkg the_LogicalComponentPkg = null;
 	
@@ -186,7 +188,7 @@ public class AtriumProcess extends javax.swing.JFrame {
         jLabel22 = new javax.swing.JLabel();
         jLabel28 = new javax.swing.JLabel();
 		
-		EList<String> ListCapellaElementName = new BasicEList<String>();
+		
 		
 		LogicalArchitecture logArch = (LogicalArchitecture) root;
 		TreeIterator<EObject> treeArch = logArch.eAllContents();
@@ -378,6 +380,11 @@ public class AtriumProcess extends javax.swing.JFrame {
             	jListMouseClicked(evt,jListDA, "DA");
             }
         });
+		jListFailure.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+            	jListMouseClicked(evt,jListFailure, "Failure");
+            }
+        });
 //		jListAssumption.addMouseListener(new java.awt.event.MouseAdapter() {
 //            public void mouseClicked(java.awt.event.MouseEvent evt) {
 //                jListMouseClicked(evt);
@@ -447,17 +454,11 @@ public class AtriumProcess extends javax.swing.JFrame {
             }
         });
 
-      
-
         jLabel1.setText("Add to linked");
 		jLabel2.setText("Remove from linked");
 		jLabel3.setText("Unlinked Assumptions");
 		jLabel4.setText("Linked Assumptions");
 		jLabel5.setText("Linking CFAs and Assumptions");
-		jLabel6.setText("Capella Element");
-		jLabel7.setText("+");
-		jLabel8.setText("Failure Mode");
-		jLabel9.setText("Resulting CFA");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -955,7 +956,7 @@ public class AtriumProcess extends javax.swing.JFrame {
             }
         });
 
-        jLabel24.setText("Failure list");
+        jLabel24.setText("Failure List (please restart that UI after creating/editing one)");
         
         
         DefaultListModel <String> listModel = new DefaultListModel<String>();
@@ -1473,6 +1474,14 @@ public class AtriumProcess extends javax.swing.JFrame {
     	    			if (sdg.getName().equals(selectedElementName)){edited_object=(AtriumBasicElement) sdg;}
     	    		}
     		 }
+    		 if (type=="Failure") 
+    		 {
+    			 for (FailureMode f : ListFailureMode)
+    	    		{
+    	    			if (f.getName().equals(selectedElementName)){edited_object=(AtriumBasicElement) f;}
+    	    		}
+    		 }
+    		 
     		 myEditor.editing(edited_object, listDG, listDA, listCFA, listsDG, ListFailureMode);
     	}
     	
@@ -1489,25 +1498,6 @@ public class AtriumProcess extends javax.swing.JFrame {
     		linkCFAwithDG();
     	} 
     }
-    
-//    private void jTabbedPaneMouseClicked(java.awt.event.MouseEvent evt) {
-//    	//about to be deleted
-//        if(jTabbedPane.getSelectedIndex()==0) {
-//        	updateDisplayTab0();
-//        }
-//        if(jTabbedPane.getSelectedIndex()==1) {
-//        	updateDisplayTab1();
-//        }
-//        if(jTabbedPane.getSelectedIndex()==2) {
-//        	updateDisplayTab2();
-//        }
-//        if(jTabbedPane.getSelectedIndex()==3) {
-//        	updateDisplayTab3();
-//        }
-//        if(jTabbedPane.getSelectedIndex()==4) {
-//        	updateDisplayTab4();
-//        }
-//    }    
     
     
     ///////////////////////////////////////////////////////////////////////////////////////
@@ -1586,6 +1576,28 @@ public class AtriumProcess extends javax.swing.JFrame {
     }
 	///////////////////////////////////////////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////////////////////////////////
+	
+	public void FailureModeModified(AtriumBasicElement editedFailure)
+	{
+//		TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(the_CFA_list);
+//		for (String el : ListCapellaElementName)
+//		{
+//			
+//				final CFA newCFA = AtriumFactoryImpl.eINSTANCE.createCFA();
+//				newCFA.setContent("Some content");
+//				newCFA.setState(true);
+//				newCFA.setName("{ " + el + " : " + editedFailure.getName() + " }");
+//				
+//				domain.getCommandStack().execute(new RecordingCommand(domain) {
+//				        @Override
+//				        protected void doExecute() {
+//				        	((ExtensibleElement) the_CFA_list).getOwnedExtensions().add((ElementExtension) newCFA);//the add action is done there, within a transaction context
+//				        }
+//				    });
+//				 
+//				listCFA.add(newCFA);//updating our local list
+//		}
+	}
 	
     ///////////////////////////////////////////////////////////////////////////////////////
     ///////////////////////////////////////////////////////////////////////////////////////
