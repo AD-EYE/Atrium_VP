@@ -677,14 +677,14 @@ public class AtriumProcess extends javax.swing.JFrame {
         jButtonAddDG.setText("Add Design Goal");
         jButtonAddDG.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonAddDGActionPerformed(evt);
+                jButtonAdd(evt,2);
             }
         });
 
         jButtonAddDA.setText("Add Design Alternative");
         jButtonAddDA.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonAddDAActionPerformed(evt);
+                jButtonAdd(evt,3);
             }
         });
 
@@ -700,7 +700,7 @@ public class AtriumProcess extends javax.swing.JFrame {
         jButtonAddSDG.setText("Add Sub-Design Goal");
         jButtonAddSDG.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonAddsDGActionPerformed(evt);
+                jButtonAdd(evt,4);
             }
         });
 
@@ -895,7 +895,7 @@ public class AtriumProcess extends javax.swing.JFrame {
         jButtonAddFailure.setText("Add Failure Mode");
         jButtonAddFailure.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonAddFailureActionPerformed(evt);
+                jButtonAdd(evt,1);
             }
         });
 
@@ -1449,61 +1449,45 @@ public class AtriumProcess extends javax.swing.JFrame {
     /////////////////////////////HANDLERS TO ADD OBJECTS///////////////////////////////////
     ///////////////////////////////////////////////////////////////////////////////////////
     ///////////////////////////////////////////////////////////////////////////////////////
-    private void jButtonAddsDGActionPerformed(java.awt.event.ActionEvent evt) {                                            
-    	String name = JOptionPane.showInputDialog(getParent(), "Please name the new sDG", "MyNewsDG");
-		if (name != null) { //if the user has not pressed "cancel"
-			
-			boolean alreadyHere = false; //protection against existing name
-			for (sDG sdg : listsDG)
-			{
-				if (name.equals(sdg.getName())){alreadyHere = true;}
-			}
-			if (!(alreadyHere)) {createTool(name,4);}
-			else {JOptionPane.showMessageDialog(getParent(), "There is already a subDesign Goal named like that, please chose another name.");}
+    
+    private void jButtonAdd(java.awt.event.ActionEvent evt, int type)
+    {
+    	String DialogString = null;
+    	String DefaultName = null;
+		EList ObjectList = null;
+		
+    	switch (type)
+    	{
+    	case 1:
+    		DialogString = "Failure";
+    		DefaultName = "MyNewFailureTEMP";
+    		ObjectList = ListFailureMode;
+    		break;
+    	case 2:
+    		DialogString = "Design Goal";
+    		DefaultName = "MyNewDG";
+    		ObjectList = listDG;
+    		break;
+    	case 3:
+    		DialogString = "Design Alternative";
+    		DefaultName = "MyNewDA";
+    		ObjectList = listDA;
+    		break;
+    	case 4:
+    		DialogString = "SubDesign Goal";
+    		DefaultName = "MyNewSubDG";
+    		ObjectList = listsDG;
+    		break;
+    	}
+    	
+    	String name = JOptionPane.showInputDialog(getParent(), "Please name the new " + DialogString, DefaultName);
+    	
+    	if (name != null)  //if the user has not pressed "cancel"
+    	{
+			if (ObjectList.contains(name)){JOptionPane.showMessageDialog(getParent(), "There is already a " + DialogString + " named like that, please chose another name.");}
+			else{createTool(name,type);}
 		}
     }
-    
-    private void jButtonAddDGActionPerformed(java.awt.event.ActionEvent evt) {                                             
-    	String name = JOptionPane.showInputDialog(getParent(), "Please name the new DG", "MyNewDG");
-		if (name != null) { //if the user has not pressed "cancel"
-			
-			boolean alreadyHere = false; //protection against existing name
-			for (DG dg : listDG)
-			{
-				if (name.equals(dg.getName())){alreadyHere = true;}
-			}
-			if (!(alreadyHere)) {createTool(name,2);}
-			else {JOptionPane.showMessageDialog(getParent(), "There is already a Design Goal named like that, please chose another name.");}
-		}
-    }                                            
-
-    private void jButtonAddDAActionPerformed(java.awt.event.ActionEvent evt) {                                             
-    	String name = JOptionPane.showInputDialog(getParent(), "Please name the new DA", "MyNewDA");
-		if (name != null) { //if the user has not pressed "cancel"
-			
-			boolean alreadyHere = false; //protection against existing name
-			for (DA da : listDA)
-			{
-				if (name.equals(da.getName())){alreadyHere = true;}
-			}
-			if (!(alreadyHere)) {createTool(name,3);}
-			else {JOptionPane.showMessageDialog(getParent(), "There is already a Design Alternative named like that, please chose another name.");}
-		}
-    }   
-    
-    private void jButtonAddFailureActionPerformed(java.awt.event.ActionEvent evt) {
-		String name = JOptionPane.showInputDialog(getParent(), "Please name the new Failure Mode", "MyNewFailure");
-		if (name != null) //if the user has not pressed "cancel"
-		{ 
-			boolean alreadyHere = false; //protection against existing name
-			for (FailureMode f : ListFailureMode)
-			{
-				if (name.equals(f.getName())){alreadyHere = true;}
-			}
-			if (!(alreadyHere)) {createTool(name,1);}
-			else {JOptionPane.showMessageDialog(getParent(), "There is already a failure named like that, please chose another name.");}
-		}
-	}
 	
 	private void jButtonAddAssumptionActionPerformed(java.awt.event.ActionEvent evt) {
 		String name = JOptionPane.showInputDialog(getParent(), "Please name the new Assumption", "MyNewAssumption");
@@ -1562,7 +1546,6 @@ public class AtriumProcess extends javax.swing.JFrame {
 				newObject = AtriumFactoryImpl.eINSTANCE.createsDG();
 				break;
 		}
-		
 
 		final EObject Extensible_list2 = Extensible_list;
 		final AtriumBasicElement newObject2 = newObject;
