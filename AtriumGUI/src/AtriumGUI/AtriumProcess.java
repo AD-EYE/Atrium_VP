@@ -263,6 +263,11 @@ public class AtriumProcess extends javax.swing.JFrame {
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
+        jListUnlinkedDA.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jListUnlinkedDAMouseClicked(evt);
+            }
+        });
         jScrollPane3.setViewportView(jListUnlinkedDA);
 
         jListLinkedDA.setModel(new javax.swing.AbstractListModel<String>() {
@@ -298,6 +303,11 @@ public class AtriumProcess extends javax.swing.JFrame {
         jLabel7.setText("Design Goal");
 
         jComboBoxDG2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBoxDG2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxDG2ActionPerformed(evt);
+            }
+        });
 
         jLabel9.setText("Unlinked Design Alternative");
 
@@ -308,6 +318,11 @@ public class AtriumProcess extends javax.swing.JFrame {
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
+        jListUnlinkedSDG.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jListUnlinkedSDGMouseClicked(evt);
+            }
+        });
         jScrollPane14.setViewportView(jListUnlinkedSDG);
 
         jLabel37.setText("Unlinked Sub-Design Goal");
@@ -316,6 +331,11 @@ public class AtriumProcess extends javax.swing.JFrame {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
+        });
+        jListLinkedSDG.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jListLinkedSDGMouseClicked(evt);
+            }
         });
         jScrollPane15.setViewportView(jListLinkedSDG);
 
@@ -445,12 +465,22 @@ public class AtriumProcess extends javax.swing.JFrame {
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
+        jListDG.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jListDGMouseClicked(evt);
+            }
+        });
         jScrollPane8.setViewportView(jListDG);
 
         jListDA.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
+        });
+        jListDA.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jListDAMouseClicked(evt);
+            }
         });
         jScrollPane6.setViewportView(jListDA);
 
@@ -473,6 +503,11 @@ public class AtriumProcess extends javax.swing.JFrame {
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
+        jListCFA.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jListCFAMouseClicked(evt);
+            }
+        });
         jScrollPane9.setViewportView(jListCFA);
 
         jLabel25.setText("CFA list");
@@ -487,6 +522,11 @@ public class AtriumProcess extends javax.swing.JFrame {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
+        });
+        jListSDG.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jListSDGMouseClicked(evt);
+            }
         });
         jScrollPane13.setViewportView(jListSDG);
 
@@ -521,15 +561,21 @@ public class AtriumProcess extends javax.swing.JFrame {
                                 .addGap(12, 12, 12)
                                 .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel29)
-                            .addComponent(jLabel36)
-                            .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jLabel36))
+                        .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                        .addComponent(jButtonAddDA)
-                        .addGap(67, 67, 67))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                        .addComponent(jButtonAddSDG)
-                        .addGap(73, 73, 73))))
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                                .addComponent(jButtonAddDA)
+                                .addGap(67, 67, 67))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                                .addComponent(jButtonAddSDG)
+                                .addGap(73, 73, 73))))))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -541,6 +587,8 @@ public class AtriumProcess extends javax.swing.JFrame {
                     .addComponent(jLabel36))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane9, javax.swing.GroupLayout.DEFAULT_SIZE, 432, Short.MAX_VALUE)
+                    .addComponent(jScrollPane8, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -548,9 +596,7 @@ public class AtriumProcess extends javax.swing.JFrame {
                         .addGap(30, 30, 30)
                         .addComponent(jLabel29)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane9, javax.swing.GroupLayout.DEFAULT_SIZE, 432, Short.MAX_VALUE)
-                    .addComponent(jScrollPane8, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel26)
@@ -566,6 +612,11 @@ public class AtriumProcess extends javax.swing.JFrame {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
+        });
+        jListAssumption.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jListAssumptionMouseClicked(evt);
+            }
         });
         jScrollPane7.setViewportView(jListAssumption);
 
@@ -583,12 +634,22 @@ public class AtriumProcess extends javax.swing.JFrame {
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
+        jListODD.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jListODDMouseClicked(evt);
+            }
+        });
         jScrollPane11.setViewportView(jListODD);
 
         jListFR.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
+        });
+        jListFR.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jListFRMouseClicked(evt);
+            }
         });
         jScrollPane12.setViewportView(jListFR);
 
@@ -678,6 +739,11 @@ public class AtriumProcess extends javax.swing.JFrame {
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
+        jListFailure.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jListFailureMouseClicked(evt);
+            }
+        });
         jScrollPane5.setViewportView(jListFailure);
 
         jButtonAddFailure.setText("Add Failure Mode");
@@ -693,6 +759,11 @@ public class AtriumProcess extends javax.swing.JFrame {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
+        });
+        jListCapella.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jListCapellaMouseClicked(evt);
+            }
         });
         jScrollPane10.setViewportView(jListCapella);
 
@@ -840,6 +911,58 @@ public class AtriumProcess extends javax.swing.JFrame {
     private void jTabbedPaneMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTabbedPaneMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_jTabbedPaneMouseClicked
+
+    private void jComboBoxDG2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxDG2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBoxDG2ActionPerformed
+
+    private void jListUnlinkedDAMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListUnlinkedDAMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jListUnlinkedDAMouseClicked
+
+    private void jListUnlinkedSDGMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListUnlinkedSDGMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jListUnlinkedSDGMouseClicked
+
+    private void jListLinkedSDGMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListLinkedSDGMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jListLinkedSDGMouseClicked
+
+    private void jListCFAMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListCFAMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jListCFAMouseClicked
+
+    private void jListDGMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListDGMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jListDGMouseClicked
+
+    private void jListSDGMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListSDGMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jListSDGMouseClicked
+
+    private void jListDAMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListDAMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jListDAMouseClicked
+
+    private void jListAssumptionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListAssumptionMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jListAssumptionMouseClicked
+
+    private void jListODDMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListODDMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jListODDMouseClicked
+
+    private void jListFRMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListFRMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jListFRMouseClicked
+
+    private void jListCapellaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListCapellaMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jListCapellaMouseClicked
+
+    private void jListFailureMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListFailureMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jListFailureMouseClicked
 
     
     

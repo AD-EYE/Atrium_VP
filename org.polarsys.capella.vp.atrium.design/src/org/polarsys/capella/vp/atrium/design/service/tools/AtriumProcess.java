@@ -62,6 +62,8 @@ public class AtriumProcess extends javax.swing.JFrame {
 	DefaultListModel<String> nameLinkedDA = new DefaultListModel<String>();
 	DefaultListModel<String> nameUnlinkedDA = new DefaultListModel<String>();
 	
+	DefaultComboBoxModel<String> listDGcbModel= new DefaultComboBoxModel<String>();
+	
 
 	LogicalComponentPkg the_LogicalComponentPkg = null;
 	
@@ -93,6 +95,7 @@ public class AtriumProcess extends javax.swing.JFrame {
 		updateDisplayTab2();
 		updateDisplayTab3();
 		updateDisplayTab4();
+		ObjectAdded();
 		this.setVisible(true);
 	}
 
@@ -335,6 +338,55 @@ public class AtriumProcess extends javax.swing.JFrame {
 			}
 		}
 		
+		jListUnlinkedDA.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jListMouseClicked(evt,jListUnlinkedDA, "DA");
+            }
+        });
+		jListLinkedDA.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+            	jListMouseClicked(evt,jListLinkedDA, "DA");
+            }
+        });
+		jListUnlinkedSDG.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+            	jListMouseClicked(evt,jListUnlinkedSDG, "sDG");
+            }
+        });
+		jListLinkedSDG.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+            	jListMouseClicked(evt,jListLinkedSDG, "sDG");
+            }
+        });
+		jListCFA.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+            	jListMouseClicked(evt,jListCFA, "CFA");
+            }
+        });
+		jListDG.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+            	jListMouseClicked(evt,jListDG, "DG");
+            }
+        });
+		jListSDG.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+            	jListMouseClicked(evt,jListSDG, "sDG");
+            }
+        });
+		jListDA.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+            	jListMouseClicked(evt,jListDA, "DA");
+            }
+        });
+//		jListAssumption.addMouseListener(new java.awt.event.MouseAdapter() {
+//            public void mouseClicked(java.awt.event.MouseEvent evt) {
+//                jListMouseClicked(evt);
+//            }
+//        });
+		
+		
+		
+		
 		
 		
 		jListLinkedAssumptions.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -488,29 +540,11 @@ public class AtriumProcess extends javax.swing.JFrame {
         );
 
         jTabbedPane.addTab("Linking DG and Assumptions to CFA", jPanel1);
-//        jTabbedPane.addMouseListener(new java.awt.event.MouseAdapter() {
-//            public void mouseClicked(java.awt.event.MouseEvent evt) {
-//                jTabbedPaneMouseClicked(evt);
-//            }
-//        });
 
-//        jListUnlinkedDA.setModel(new javax.swing.AbstractListModel<String>() {
-//            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-//            public int getSize() { return strings.length; }
-//            public String getElementAt(int i) { return strings[i]; }
-//        });
         jScrollPane3.setViewportView(jListUnlinkedDA);
 
-//        jListLinkedDA.setModel(new javax.swing.AbstractListModel<String>() {
-//            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-//            public int getSize() { return strings.length; }
-//            public String getElementAt(int i) { return strings[i]; }
-//        });
-        jListLinkedDA.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jListLinkedDAMouseClicked(evt);
-            }
-        });
+
+       
         jScrollPane4.setViewportView(jListLinkedDA);
 
         jLabel5.setText("Add to linked");
@@ -811,6 +845,12 @@ public class AtriumProcess extends javax.swing.JFrame {
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
+//        jListODD.addMouseListener(new java.awt.event.MouseAdapter() {
+//            public void mouseClicked(java.awt.event.MouseEvent evt) {
+//                jListMouseClicked(evt);
+//            }
+//        });
+        
         jScrollPane11.setViewportView(jListODD);
 
         jListFR.setModel(new javax.swing.AbstractListModel<String>() {
@@ -818,6 +858,11 @@ public class AtriumProcess extends javax.swing.JFrame {
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
+//        jListFR.addMouseListener(new java.awt.event.MouseAdapter() {
+//            public void mouseClicked(java.awt.event.MouseEvent evt) {
+//                jListMouseClicked(evt);
+//            }
+//        });
         jScrollPane12.setViewportView(jListFR);
 
         jLabel32.setText("Operational Design Domain");
@@ -1013,6 +1058,11 @@ public class AtriumProcess extends javax.swing.JFrame {
 		nameLinkedAssumption=new DefaultListModel<String>();
 		nameUnlinkedAssumption=new DefaultListModel<String>();
 		CFA the_CFA=null;
+		
+		DefaultComboBoxModel<String> listDGcbModel= new DefaultComboBoxModel<String>();
+        listDGcbModel.addElement("-- NONE --");
+        for (DG dg : listDG) {listDGcbModel.addElement(dg.getName());}
+        jComboBoxDG.setModel(listDGcbModel);
 			
 		for (CFA myCFA : listCFA) //look for the CFA that we are interested in
 		{
@@ -1040,8 +1090,14 @@ public class AtriumProcess extends javax.swing.JFrame {
 			}
 		}
 		
-		
-		
+	}
+	
+	public void ObjectAdded()
+	{
+		DefaultComboBoxModel<String> listDGcbModel= new DefaultComboBoxModel<String>();
+        listDGcbModel.addElement("-- NONE --");
+        for (DG dg : listDG) {listDGcbModel.addElement(dg.getName());}
+        jComboBoxDG2.setModel(listDGcbModel);
 	}
 	
 	public void updateDisplayTab1()
@@ -1101,12 +1157,7 @@ public class AtriumProcess extends javax.swing.JFrame {
         for (sDG sdg : listsDG){listModelsDG.addElement(sdg.getName());}
         jListSDG.setModel(listModelsDG);
         
-        DefaultComboBoxModel<String> listDGcbModel= new DefaultComboBoxModel<String>();
-        listDGcbModel.addElement("-- NONE --");
-        for (DG dg : listDG) {listDGcbModel.addElement(dg.getName());}
-        jComboBoxDG2.setModel(listDGcbModel);
-        jComboBoxDG.setModel(listDGcbModel);
-        jComboBoxDG.setSelectedIndex(0);
+
 	}
 	
 	public void updateDisplayTab3()
@@ -1386,9 +1437,47 @@ public class AtriumProcess extends javax.swing.JFrame {
         } 
     }                                             
 
-    private void jListLinkedDAMouseClicked(java.awt.event.MouseEvent evt) {                                           
-        // TODO add your handling code here:
-    }                                          
+    private void jListMouseClicked(java.awt.event.MouseEvent evt, javax.swing.JList<String> list, String type) {
+    	AtriumBasicElement edited_object = null;
+    	if (evt.getClickCount() == 2) 
+    	{
+    		 String selectedElementName = list.getSelectedValue();
+    		 
+    		 
+    		 
+    		 if (type=="DA") 
+    		 {
+    			 for (DA da : listDA)
+    	    		{
+    	    			if (da.getName().equals(selectedElementName)){edited_object=(AtriumBasicElement) da;}
+    	    		}
+    		 }
+    		 if (type=="DG") 
+    		 {
+    			 for (DG dg : listDG)
+    	    		{
+    	    			if (dg.getName().equals(selectedElementName)){edited_object=(AtriumBasicElement) dg;}
+    	    		}
+    		 }
+    		 if (type=="CFA") 
+    		 {
+    			 for (CFA cfa : listCFA)
+    	    		{
+    	    			if (cfa.getName().equals(selectedElementName)){edited_object=(AtriumBasicElement) cfa;}
+    	    		}
+    		 }
+    		 if (type=="sDG") 
+    		 {
+    			 for (sDG sdg : listsDG)
+    	    		{
+    	    			if (sdg.getName().equals(selectedElementName)){edited_object=(AtriumBasicElement) sdg;}
+    	    		}
+    		 }
+    		 myEditor.editing(edited_object, listDG, listDA, listCFA, listsDG, ListFailureMode);
+    	}
+    	
+    }
+    
 
     private void jButtonAddODDActionPerformed(java.awt.event.ActionEvent evt) {                                              
         // TODO add your handling code here:

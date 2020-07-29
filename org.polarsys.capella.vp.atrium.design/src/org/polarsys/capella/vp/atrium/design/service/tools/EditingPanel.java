@@ -118,11 +118,11 @@ public class EditingPanel extends javax.swing.JFrame {
 
     private void jButtonSaveEditedObjectActionPerformed(java.awt.event.ActionEvent evt) {                                                        
     	boolean alreadyHere = false; //protection against existing name
-		for (DG dg : listDG){if (jTextNameeditedObject.getText().equals(dg.getName()) && (!(dg.equals((DG) editedObject)))){alreadyHere = true;}}
-		for (DA da : listDA){if (jTextNameeditedObject.getText().equals(da.getName()) && (!(da.equals((DA) editedObject)))){alreadyHere = true;}}
-		for (CFA cfa : listCFA){if (jTextNameeditedObject.getText().equals(cfa.getName()) && (!(cfa.equals((CFA) editedObject)))){alreadyHere = true;}}
-		for (sDG sdg : listsDG){if (jTextNameeditedObject.getText().equals(sdg.getName()) && (!(sdg.equals((sDG) editedObject)))){alreadyHere = true;}}
-		for (FailureMode f : listFailure){if (jTextNameeditedObject.getText().equals(f.getName()) && (!(f.equals((FailureMode) editedObject)))){alreadyHere = true;}}
+    	if (editedObject instanceof DG) {for (DG dg : listDG){if (jTextNameeditedObject.getText().equals(dg.getName()) && (!(dg.equals((DG) editedObject)))){alreadyHere = true;}}}
+    	if (editedObject instanceof DA) {for (DA da : listDA){if (jTextNameeditedObject.getText().equals(da.getName()) && (!(da.equals((DA) editedObject)))){alreadyHere = true;}}}
+    	if (editedObject instanceof CFA) {for (CFA cfa : listCFA){if (jTextNameeditedObject.getText().equals(cfa.getName()) && (!(cfa.equals((CFA) editedObject)))){alreadyHere = true;}}}
+    	if (editedObject instanceof sDG) {for (sDG sdg : listsDG){if (jTextNameeditedObject.getText().equals(sdg.getName()) && (!(sdg.equals((sDG) editedObject)))){alreadyHere = true;}}}
+    	if (editedObject instanceof FailureMode) {for (FailureMode f : listFailure){if (jTextNameeditedObject.getText().equals(f.getName()) && (!(f.equals((FailureMode) editedObject)))){alreadyHere = true;}}}
 	
 		if (!(alreadyHere))
 		{
@@ -135,6 +135,9 @@ public class EditingPanel extends javax.swing.JFrame {
 			        }
 			    });
 			
+			
+			my_parent.updateDisplayTab0();
+			my_parent.updateDisplayTab1();
 			my_parent.updateDisplayTab2();
 			my_parent.updateDisplayTab3();
 			my_parent.updateDisplayTab4();
