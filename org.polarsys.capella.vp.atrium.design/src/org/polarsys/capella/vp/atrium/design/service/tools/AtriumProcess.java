@@ -385,11 +385,12 @@ public class AtriumProcess extends javax.swing.JFrame {
             	jListMouseClicked(evt,jListFailure, "Failure");
             }
         });
-//		jListAssumption.addMouseListener(new java.awt.event.MouseAdapter() {
-//            public void mouseClicked(java.awt.event.MouseEvent evt) {
-//                jListMouseClicked(evt);
-//            }
-//        });
+		
+		jListAssumption.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jListAssumptionMouseClicked(evt);
+            }
+        });
 		
 		
 		
@@ -1436,15 +1437,26 @@ public class AtriumProcess extends javax.swing.JFrame {
     		}
             myAssumptionEditor.editAssumption(edited_assumption, listAssumption);
         } 
-    }                                             
+    }
+	
+	private void jListAssumptionMouseClicked(java.awt.event.MouseEvent evt) {                                             
+		Assumption edited_assumption = null;
+        if (evt.getClickCount() == 2) {
+        	String selectedAssumptionName = jListAssumption.getSelectedValue();
+        	for (Assumption a : listAssumption) //Go through all the assumptions to find the one with the same name
+    		{
+    			if (a.getName().equals(selectedAssumptionName)){edited_assumption=a;}
+    		}
+            myAssumptionEditor.editAssumption(edited_assumption, listAssumption);
+        } 
+    }  
+	
 
     private void jListMouseClicked(java.awt.event.MouseEvent evt, javax.swing.JList<String> list, String type) {
     	AtriumBasicElement edited_object = null;
     	if (evt.getClickCount() == 2) 
     	{
     		 String selectedElementName = list.getSelectedValue();
-    		 
-    		 
     		 
     		 if (type=="DA") 
     		 {

@@ -241,6 +241,7 @@ public class EditingFrameAssumption extends javax.swing.JFrame {
 			        }
 			    });
 			
+			my_parent.updateDisplayTab0();
 			my_parent.updateDisplayTab3();
 			Editingframe.setVisible(false);
 		}
