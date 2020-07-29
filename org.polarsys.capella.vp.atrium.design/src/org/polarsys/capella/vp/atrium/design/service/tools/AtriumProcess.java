@@ -1640,6 +1640,7 @@ public class AtriumProcess extends javax.swing.JFrame {
 		listDG.add(newDG);//updating our local list
 		AtriumBasicElement newDG_parameter = (AtriumBasicElement) newDG;
 		myEditor.editing(newDG_parameter, listDG, listDA, listCFA, listsDG, ListFailureMode);
+		ObjectAdded();
 	}
 	
 	private void createDA(String name) {

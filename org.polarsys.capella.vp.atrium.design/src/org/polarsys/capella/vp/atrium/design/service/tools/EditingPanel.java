@@ -142,6 +142,8 @@ public class EditingPanel extends javax.swing.JFrame {
 			my_parent.updateDisplayTab3();
 			my_parent.updateDisplayTab4();
 			Editingpanel.setVisible(false);
+			
+			if (editedObject instanceof DG) {my_parent.ObjectAdded();}
 		}
 		else {JOptionPane.showMessageDialog(getParent(), "There is already an assumption named like that, please chose another name.");}
     }
