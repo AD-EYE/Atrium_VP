@@ -1328,6 +1328,8 @@ public class AtriumProcess extends javax.swing.JFrame {
 		updateDisplayTab1();
     }
 	
+	
+	
 	private void jButtonAddLinkedActionPerformed(java.awt.event.ActionEvent evt) {
 		if (!(jListUnlinkedAssumptions.getSelectedValue()==null))
 		{
@@ -1409,6 +1411,7 @@ public class AtriumProcess extends javax.swing.JFrame {
         } 
     }  
 	
+	@SuppressWarnings("rawtypes")
 	private void jListMouseClicked(java.awt.event.MouseEvent evt, javax.swing.JList<String> jlist, EList list) {
 		AtriumBasicElement edited_object = null;
     	if (evt.getClickCount() == 2) 
@@ -1559,6 +1562,15 @@ public class AtriumProcess extends javax.swing.JFrame {
 		AtriumBasicElement newObject_parameter = (AtriumBasicElement) newObject;
 		
 		myEditor.editing(newObject_parameter, listDG, listDA, listCFA, listsDG, ListFailureMode);
+		
+		if ((type==5))
+		{
+			createAssumption("MyAssumption [created from ODD " + name + "]");
+		}
+		if ((type==6))
+		{
+			createAssumption("MyAssumption [created from FR " + name + "]");
+		}
 	}
 
 	private void createAssumption(String name) {
