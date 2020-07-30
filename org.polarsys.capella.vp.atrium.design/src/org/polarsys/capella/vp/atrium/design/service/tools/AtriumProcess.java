@@ -799,7 +799,7 @@ public class AtriumProcess extends javax.swing.JFrame {
         jButtonAddAssumption.setText("Add Assumption");
         jButtonAddAssumption.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonAddAssumptionActionPerformed(evt);
+                jButtonAdd(evt,7);
             }
         });
 
@@ -1474,6 +1474,10 @@ public class AtriumProcess extends javax.swing.JFrame {
     		DefaultName = "MyNewFR";
     		ObjectList = listFR;
     		break;
+    	case 7:
+    		DialogString = "Assumption";
+    		DefaultName = "MyNewAssumption";
+    		ObjectList = listAssumption;
     	}
     	
     	String name = JOptionPane.showInputDialog(getParent(), "Please name the new " + DialogString, DefaultName);
@@ -1482,20 +1486,6 @@ public class AtriumProcess extends javax.swing.JFrame {
     	{
 			if (ObjectList.contains(name)){JOptionPane.showMessageDialog(getParent(), "There is already a " + DialogString + " named like that, please chose another name.");}
 			else{createTool(name,type);}
-		}
-    }
-	
-	private void jButtonAddAssumptionActionPerformed(java.awt.event.ActionEvent evt) {
-		String name = JOptionPane.showInputDialog(getParent(), "Please name the new Assumption", "MyNewAssumption");
-		if (name != null) { //if the user has not pressed "cancel"
-			
-			boolean alreadyHere = false; //protection against existing name
-			for (Assumption a : listAssumption)
-			{
-				if (name.equals(a.getName())){alreadyHere = true;}
-			}
-			if (!(alreadyHere)) {createAssumption(name);}
-			else {JOptionPane.showMessageDialog(getParent(), "There is already an assumption named like that, please chose another name.");}
 		}
     }
 	
@@ -1544,6 +1534,12 @@ public class AtriumProcess extends javax.swing.JFrame {
 				Extensible_list = the_FR_list;
 				newObject = AtriumFactoryImpl.eINSTANCE.createFR();
 				break;
+				
+			case 7:
+				ObjectList = listAssumption;
+				Extensible_list = the_Assumption_list;
+				newObject = AtriumFactoryImpl.eINSTANCE.createAssumption();
+				break;
 		}
 
 		final EObject Extensible_list2 = Extensible_list;
@@ -1561,32 +1557,17 @@ public class AtriumProcess extends javax.swing.JFrame {
 		ObjectList.add(newObject);//updating our local list
 		AtriumBasicElement newObject_parameter = (AtriumBasicElement) newObject;
 		
-		myEditor.editing(newObject_parameter, listDG, listDA, listCFA, listsDG, ListFailureMode);
+		if (type==7) {myAssumptionEditor.editAssumption((Assumption) newObject, listAssumption);}
+		else{myEditor.editing(newObject_parameter, listDG, listDA, listCFA, listsDG, ListFailureMode);}
 		
 		if ((type==5))
 		{
-			createAssumption("MyAssumption [created from ODD " + name + "]");
+			createTool("MyAssumption [created from ODD " + name + "]",7);
 		}
 		if ((type==6))
 		{
-			createAssumption("MyAssumption [created from FR " + name + "]");
+			createTool("MyAssumption [created from FR " + name + "]",7);
 		}
-	}
-
-	private void createAssumption(String name) {
-		final Assumption newAssumption = AtriumFactoryImpl.eINSTANCE.createAssumption();
-		newAssumption.setName(name);
-		
-		TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(the_Assumption_list);
-		domain.getCommandStack().execute(new RecordingCommand(domain) {
-		        @Override
-		        protected void doExecute() {
-		        	((ExtensibleElement) the_Assumption_list).getOwnedExtensions().add((ElementExtension) newAssumption);//the add action is done there, within a transaction context
-		        }
-		    });
-		
-		listAssumption.add(newAssumption);//updating our local list
-		myAssumptionEditor.editAssumption(newAssumption, listAssumption);
 	}
 
 	///////////////////////////////////////////////////////////////////////////////////////
