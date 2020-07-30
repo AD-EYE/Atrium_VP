@@ -328,62 +328,61 @@ public class AtriumProcess extends javax.swing.JFrame {
 		
 		jListUnlinkedDA.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jListMouseClicked(evt,jListUnlinkedDA, "DA");
+                jListMouseClicked(evt,jListUnlinkedDA, listDA);
             }
         });
 		jListLinkedDA.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-            	jListMouseClicked(evt,jListLinkedDA, "DA");
+            	jListMouseClicked(evt,jListLinkedDA, listDA);
             }
         });
 		jListUnlinkedSDG.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-            	jListMouseClicked(evt,jListUnlinkedSDG, "sDG");
+            	jListMouseClicked(evt,jListUnlinkedSDG, listsDG);
             }
         });
 		jListLinkedSDG.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-            	jListMouseClicked(evt,jListLinkedSDG, "sDG");
+            	jListMouseClicked(evt,jListLinkedSDG, listsDG);
             }
         });
 		jListCFA.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-            	jListMouseClicked(evt,jListCFA, "CFA");
+            	jListMouseClicked(evt,jListCFA, listCFA);
             }
         });
 		jListDG.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-            	jListMouseClicked(evt,jListDG, "DG");
+            	jListMouseClicked(evt,jListDG, listDG);
             }
         });
 		jListSDG.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-            	jListMouseClicked(evt,jListSDG, "sDG");
+            	jListMouseClicked(evt,jListSDG, listsDG);
             }
         });
 		jListDA.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-            	jListMouseClicked(evt,jListDA, "DA");
+            	jListMouseClicked(evt,jListDA, listDA);
             }
         });
 		jListFailure.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-            	jListMouseClicked(evt,jListFailure, "Failure");
+            	jListMouseClicked(evt,jListFailure, ListFailureMode);
             }
         });
+		jListODD.addMouseListener(new java.awt.event.MouseAdapter() {
+			public void mouseClicked(java.awt.event.MouseEvent evt) {
+				jListMouseClicked(evt,jListODD,listODD);
+			}
+		});			
+		jListFR.addMouseListener(new java.awt.event.MouseAdapter() {
+			public void mouseClicked(java.awt.event.MouseEvent evt) {
+				jListMouseClicked(evt,jListFR, listFR);
+			}
+		});
 		
 		
-//      jListODD.addMouseListener(new java.awt.event.MouseAdapter() {
-//      public void mouseClicked(java.awt.event.MouseEvent evt) {
-//          jListMouseClicked(evt);
-//      }
-//  });
-		
-//      jListFR.addMouseListener(new java.awt.event.MouseAdapter() {
-//      public void mouseClicked(java.awt.event.MouseEvent evt) {
-//          jListMouseClicked(evt);
-//      }
-//  });
 		
 		jListAssumption.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -1410,53 +1409,21 @@ public class AtriumProcess extends javax.swing.JFrame {
         } 
     }  
 	
-
-    private void jListMouseClicked(java.awt.event.MouseEvent evt, javax.swing.JList<String> list, String type) {
-    	AtriumBasicElement edited_object = null;
+	private void jListMouseClicked(java.awt.event.MouseEvent evt, javax.swing.JList<String> jlist, EList list) {
+		AtriumBasicElement edited_object = null;
     	if (evt.getClickCount() == 2) 
     	{
-    		 String selectedElementName = list.getSelectedValue();
-    		 
-    		 if (type=="DA") 
-    		 {
-    			 for (DA da : listDA)
-    	    		{
-    	    			if (da.getName().equals(selectedElementName)){edited_object=(AtriumBasicElement) da;}
-    	    		}
-    		 }
-    		 if (type=="DG") 
-    		 {
-    			 for (DG dg : listDG)
-    	    		{
-    	    			if (dg.getName().equals(selectedElementName)){edited_object=(AtriumBasicElement) dg;}
-    	    		}
-    		 }
-    		 if (type=="CFA") 
-    		 {
-    			 for (CFA cfa : listCFA)
-    	    		{
-    	    			if (cfa.getName().equals(selectedElementName)){edited_object=(AtriumBasicElement) cfa;}
-    	    		}
-    		 }
-    		 if (type=="sDG") 
-    		 {
-    			 for (sDG sdg : listsDG)
-    			 	{
-    				 	if (sdg.getName().equals(selectedElementName)){edited_object=(AtriumBasicElement) sdg;}
-    				}
-    		 }
-    		 if (type=="Failure") 
-    		 {
-    			 for (FailureMode f : ListFailureMode)
-    	    		{
-    	    			if (f.getName().equals(selectedElementName)){edited_object=(AtriumBasicElement) f;}
-    	    		}
-    		 }
-    		 
+    		String selectedElementName = jlist.getSelectedValue();
+    		
+    		for (Object o : list)
+    		{
+    			AtriumBasicElement abe = (AtriumBasicElement) o;
+    			if (abe.getName().equals(selectedElementName)){edited_object=abe;}
+    		}
+    		
     		 myEditor.editing(edited_object, listDG, listDA, listCFA, listsDG, ListFailureMode);
     	}
-    	
-    }                                                                                             
+	}                                                                                       
 
     private void jComboBoxDGActionPerformed(java.awt.event.ActionEvent evt) {
     	if (jComboBoxCFA.getSelectedItem()!=null)
