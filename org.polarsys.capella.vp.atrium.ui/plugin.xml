@@ -23,6 +23,13 @@
 			<propertyTab
 		    	afterTab="BaseSiriusDiagram"
 		        category="semantic &amp; extension"
+		        id="Atrium_sDG_list"
+		        label="Atrium">
+		    </propertyTab> 
+			
+			<propertyTab
+		    	afterTab="BaseSiriusDiagram"
+		        category="semantic &amp; extension"
 		        id="Atrium_Assumption_list"
 		        label="Atrium">
 		    </propertyTab> 
@@ -45,6 +52,20 @@
 		    	afterTab="BaseSiriusDiagram"
 		        category="semantic &amp; extension"
 		        id="Atrium_Failure_list"
+		        label="Atrium">
+		    </propertyTab> 
+			
+			<propertyTab
+		    	afterTab="BaseSiriusDiagram"
+		        category="semantic &amp; extension"
+		        id="Atrium_ODD_list"
+		        label="Atrium">
+		    </propertyTab> 
+			
+			<propertyTab
+		    	afterTab="BaseSiriusDiagram"
+		        category="semantic &amp; extension"
+		        id="Atrium_FR_list"
 		        label="Atrium">
 		    </propertyTab> 
 			
@@ -94,6 +115,20 @@
 		    	afterTab="BaseSiriusDiagram"
 		        category="semantic &amp; extension"
 		        id="Atrium_FailureMode"
+		        label="Atrium">
+		    </propertyTab> 
+			
+			<propertyTab
+		    	afterTab="BaseSiriusDiagram"
+		        category="semantic &amp; extension"
+		        id="Atrium_ODD"
+		        label="Atrium">
+		    </propertyTab> 
+			
+			<propertyTab
+		    	afterTab="BaseSiriusDiagram"
+		        category="semantic &amp; extension"
+		        id="Atrium_FR"
 		        label="Atrium">
 		    </propertyTab> 
 			
@@ -121,6 +156,13 @@
 			<propertyTab
 		    	afterTab="BaseCapella"
 		        category="default"
+		        id="Atrium_sDG_list"
+		        label="Atrium">
+		    </propertyTab> 
+			
+			<propertyTab
+		    	afterTab="BaseCapella"
+		        category="default"
 		        id="Atrium_Assumption_list"
 		        label="Atrium">
 		    </propertyTab> 
@@ -143,6 +185,20 @@
 		    	afterTab="BaseCapella"
 		        category="default"
 		        id="Atrium_Failure_list"
+		        label="Atrium">
+		    </propertyTab> 
+			
+			<propertyTab
+		    	afterTab="BaseCapella"
+		        category="default"
+		        id="Atrium_ODD_list"
+		        label="Atrium">
+		    </propertyTab> 
+			
+			<propertyTab
+		    	afterTab="BaseCapella"
+		        category="default"
+		        id="Atrium_FR_list"
 		        label="Atrium">
 		    </propertyTab> 
 			
@@ -195,6 +251,20 @@
 		        label="Atrium">
 		    </propertyTab> 
 			
+			<propertyTab
+		    	afterTab="BaseCapella"
+		        category="default"
+		        id="Atrium_ODD"
+		        label="Atrium">
+		    </propertyTab> 
+			
+			<propertyTab
+		    	afterTab="BaseCapella"
+		        category="default"
+		        id="Atrium_FR"
+		        label="Atrium">
+		    </propertyTab> 
+			
 	</propertyTabs>
 </extension> 
 <extension
@@ -213,6 +283,13 @@
 		        filter="org.polarsys.capella.vp.atrium.ui.sections.Atrium_CFA_list_Atrium_CFA_list_Section"
 		        id="Atrium_CFA_list.Atrium_CFA_list_Section"
 		        tab="Atrium_CFA_list">
+		        
+		    </propertySection> 
+		    			<propertySection
+		    	class="org.polarsys.capella.vp.atrium.ui.sections.Atrium_sDG_list_Atrium_sDG_list_Section"
+		        filter="org.polarsys.capella.vp.atrium.ui.sections.Atrium_sDG_list_Atrium_sDG_list_Section"
+		        id="Atrium_sDG_list.Atrium_sDG_list_Section"
+		        tab="Atrium_sDG_list">
 		        
 		    </propertySection> 
 		    			<propertySection
@@ -241,6 +318,20 @@
 		        filter="org.polarsys.capella.vp.atrium.ui.sections.Atrium_Failure_list_Atrium_Failure_list_Section"
 		        id="Atrium_Failure_list.Atrium_Failure_list_Section"
 		        tab="Atrium_Failure_list">
+		        
+		    </propertySection> 
+		    			<propertySection
+		    	class="org.polarsys.capella.vp.atrium.ui.sections.Atrium_ODD_list_Atrium_ODD_list_Section"
+		        filter="org.polarsys.capella.vp.atrium.ui.sections.Atrium_ODD_list_Atrium_ODD_list_Section"
+		        id="Atrium_ODD_list.Atrium_ODD_list_Section"
+		        tab="Atrium_ODD_list">
+		        
+		    </propertySection> 
+		    			<propertySection
+		    	class="org.polarsys.capella.vp.atrium.ui.sections.Atrium_FR_list_Atrium_FR_list_Section"
+		        filter="org.polarsys.capella.vp.atrium.ui.sections.Atrium_FR_list_Atrium_FR_list_Section"
+		        id="Atrium_FR_list.Atrium_FR_list_Section"
+		        tab="Atrium_FR_list">
 		        
 		    </propertySection> 
 		    			<propertySection
@@ -290,6 +381,20 @@
 		        filter="org.polarsys.capella.vp.atrium.ui.sections.Atrium_FailureMode_Atrium_FailureMode_Section"
 		        id="Atrium_FailureMode.Atrium_FailureMode_Section"
 		        tab="Atrium_FailureMode">
+		        
+		    </propertySection> 
+		    			<propertySection
+		    	class="org.polarsys.capella.vp.atrium.ui.sections.Atrium_ODD_Atrium_ODD_Section"
+		        filter="org.polarsys.capella.vp.atrium.ui.sections.Atrium_ODD_Atrium_ODD_Section"
+		        id="Atrium_ODD.Atrium_ODD_Section"
+		        tab="Atrium_ODD">
+		        
+		    </propertySection> 
+		    			<propertySection
+		    	class="org.polarsys.capella.vp.atrium.ui.sections.Atrium_FR_Atrium_FR_Section"
+		        filter="org.polarsys.capella.vp.atrium.ui.sections.Atrium_FR_Atrium_FR_Section"
+		        id="Atrium_FR.Atrium_FR_Section"
+		        tab="Atrium_FR">
 		        
 		    </propertySection> 
 		    </propertySections>
@@ -313,6 +418,13 @@
 		        
 		    </propertySection> 
 		    			<propertySection
+		    	class="org.polarsys.capella.vp.atrium.ui.sections.Atrium_sDG_list_Atrium_sDG_list_Section"
+		        filter="org.polarsys.capella.vp.atrium.ui.sections.Atrium_sDG_list_Atrium_sDG_list_Section"
+		        id="Atrium_sDG_list.Atrium_sDG_list_Section"
+		        tab="Atrium_sDG_list">
+		        
+		    </propertySection> 
+		    			<propertySection
 		    	class="org.polarsys.capella.vp.atrium.ui.sections.Atrium_Assumption_list_Atrium_Assumption_list_Section"
 		        filter="org.polarsys.capella.vp.atrium.ui.sections.Atrium_Assumption_list_Atrium_Assumption_list_Section"
 		        id="Atrium_Assumption_list.Atrium_Assumption_list_Section"
@@ -338,6 +450,20 @@
 		        filter="org.polarsys.capella.vp.atrium.ui.sections.Atrium_Failure_list_Atrium_Failure_list_Section"
 		        id="Atrium_Failure_list.Atrium_Failure_list_Section"
 		        tab="Atrium_Failure_list">
+		        
+		    </propertySection> 
+		    			<propertySection
+		    	class="org.polarsys.capella.vp.atrium.ui.sections.Atrium_ODD_list_Atrium_ODD_list_Section"
+		        filter="org.polarsys.capella.vp.atrium.ui.sections.Atrium_ODD_list_Atrium_ODD_list_Section"
+		        id="Atrium_ODD_list.Atrium_ODD_list_Section"
+		        tab="Atrium_ODD_list">
+		        
+		    </propertySection> 
+		    			<propertySection
+		    	class="org.polarsys.capella.vp.atrium.ui.sections.Atrium_FR_list_Atrium_FR_list_Section"
+		        filter="org.polarsys.capella.vp.atrium.ui.sections.Atrium_FR_list_Atrium_FR_list_Section"
+		        id="Atrium_FR_list.Atrium_FR_list_Section"
+		        tab="Atrium_FR_list">
 		        
 		    </propertySection> 
 		    			<propertySection
@@ -387,6 +513,20 @@
 		        filter="org.polarsys.capella.vp.atrium.ui.sections.Atrium_FailureMode_Atrium_FailureMode_Section"
 		        id="Atrium_FailureMode.Atrium_FailureMode_Section"
 		        tab="Atrium_FailureMode">
+		        
+		    </propertySection> 
+		    			<propertySection
+		    	class="org.polarsys.capella.vp.atrium.ui.sections.Atrium_ODD_Atrium_ODD_Section"
+		        filter="org.polarsys.capella.vp.atrium.ui.sections.Atrium_ODD_Atrium_ODD_Section"
+		        id="Atrium_ODD.Atrium_ODD_Section"
+		        tab="Atrium_ODD">
+		        
+		    </propertySection> 
+		    			<propertySection
+		    	class="org.polarsys.capella.vp.atrium.ui.sections.Atrium_FR_Atrium_FR_Section"
+		        filter="org.polarsys.capella.vp.atrium.ui.sections.Atrium_FR_Atrium_FR_Section"
+		        id="Atrium_FR.Atrium_FR_Section"
+		        tab="Atrium_FR">
 		        
 		    </propertySection> 
 		    </propertySections>

@@ -4,11 +4,7 @@ import java.util.Collections;
 
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
-import javax.swing.JList;
 import javax.swing.JOptionPane;
-import javax.swing.ListModel;
-import javax.swing.UIManager;
-import javax.xml.soap.Node;
 
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
@@ -24,7 +20,6 @@ import org.polarsys.capella.core.data.la.LogicalArchitecture;
 import org.polarsys.capella.core.data.la.LogicalComponent;
 import org.polarsys.capella.core.data.la.LogicalComponentPkg;
 import org.polarsys.capella.core.data.la.LogicalFunction;
-import org.polarsys.capella.core.data.la.LogicalFunctionPkg;
 import org.polarsys.capella.vp.atrium.Atrium.Assumption;
 import org.polarsys.capella.vp.atrium.Atrium.Assumption_list;
 import org.polarsys.capella.vp.atrium.Atrium.AtriumBasicElement;
@@ -34,16 +29,19 @@ import org.polarsys.capella.vp.atrium.Atrium.DA;
 import org.polarsys.capella.vp.atrium.Atrium.DA_list;
 import org.polarsys.capella.vp.atrium.Atrium.DG;
 import org.polarsys.capella.vp.atrium.Atrium.DG_list;
-import org.polarsys.capella.vp.atrium.Atrium.ElementStateAtrium;
+import org.polarsys.capella.vp.atrium.Atrium.FR;
+import org.polarsys.capella.vp.atrium.Atrium.FR_list;
 import org.polarsys.capella.vp.atrium.Atrium.FailureMode;
 import org.polarsys.capella.vp.atrium.Atrium.Failure_list;
+import org.polarsys.capella.vp.atrium.Atrium.ODD;
+import org.polarsys.capella.vp.atrium.Atrium.ODD_list;
 import org.polarsys.capella.vp.atrium.Atrium.sDG;
 import org.polarsys.capella.vp.atrium.Atrium.sDG_list;
 import org.polarsys.capella.vp.atrium.Atrium.impl.AtriumFactoryImpl;
 import org.polarsys.kitalpha.emde.model.ElementExtension;
 import org.polarsys.kitalpha.emde.model.ExtensibleElement;
-import org.w3c.dom.ls.LSInput;
 
+@SuppressWarnings("serial")
 public class AtriumProcess extends javax.swing.JFrame {
 	
 	EList<CFA> listCFA = new BasicEList<CFA>();
@@ -52,6 +50,8 @@ public class AtriumProcess extends javax.swing.JFrame {
 	EList<DA> listDA = new BasicEList<DA>();
 	EList<sDG> listsDG = new BasicEList<sDG>();
 	EList<FailureMode> ListFailureMode = new BasicEList<FailureMode>();
+	EList<ODD> listODD = new BasicEList<ODD>();
+	EList<FR> listFR = new BasicEList<FR>();
 	
 	DefaultListModel<String> nameLinkedAssumption = new DefaultListModel<String>();
 	DefaultListModel<String> nameUnlinkedAssumption = new DefaultListModel<String>();
@@ -75,6 +75,8 @@ public class AtriumProcess extends javax.swing.JFrame {
 	Assumption_list the_Assumption_list = null;
 	DG_list the_DG_list = null;
 	DA_list the_DA_list= null;
+	ODD_list the_ODD_list = null;
+	FR_list the_FR_list = null;
 	
 	EditingFrameAssumption myAssumptionEditor = null;
 	EditingPanel myEditor = null;
@@ -134,7 +136,9 @@ public class AtriumProcess extends javax.swing.JFrame {
 		  if (node instanceof DG){listDG.add((DG) node);}
 		  if (node instanceof DA){listDA.add((DA) node);}
 		  if (node instanceof sDG){listsDG.add((sDG) node);}
-		  if (node instanceof CFA){listCFA.add((CFA) node);} 
+		  if (node instanceof CFA){listCFA.add((CFA) node);}
+		  if (node instanceof ODD){listODD.add((ODD) node);} 
+		  if (node instanceof FR){listFR.add((FR) node);} 
 		  if (node instanceof Assumption){listAssumption.add((Assumption) node);}
 		  if (node instanceof LogicalComponentPkg){the_LogicalComponentPkg = (LogicalComponentPkg) node;} 
 		  if (node instanceof CFA_list){the_CFA_list = (CFA_list) node;}
@@ -143,6 +147,8 @@ public class AtriumProcess extends javax.swing.JFrame {
 		  if (node instanceof Assumption_list){the_Assumption_list = (Assumption_list) node;}
 		  if (node instanceof DA_list){the_DA_list = (DA_list) node;}
 		  if (node instanceof DG_list){the_DG_list = (DG_list) node;}
+		  if (node instanceof ODD_list){the_ODD_list = (ODD_list) node;}
+		  if (node instanceof FR_list){the_FR_list = (FR_list) node;}
 		}
 		
 		Collections.sort(ListCapellaElementName);
@@ -187,6 +193,18 @@ public class AtriumProcess extends javax.swing.JFrame {
 	        		((CapellaElement) the_sDG_list).setId(EcoreUtil.generateUUID());
 	        		((ExtensibleElement) the_LogicalComponentPkg).getOwnedExtensions().add((ElementExtension) the_sDG_list);
 	        	}
+	        	if (the_ODD_list==null)
+	        	{
+	        		the_ODD_list = AtriumFactoryImpl.eINSTANCE.createODD_list();
+	        		((CapellaElement) the_ODD_list).setId(EcoreUtil.generateUUID());
+	        		((ExtensibleElement) the_LogicalComponentPkg).getOwnedExtensions().add((ElementExtension) the_ODD_list);
+	        	}
+	        	if (the_FR_list==null)
+	        	{
+	        		the_FR_list = AtriumFactoryImpl.eINSTANCE.createFR_list();
+	        		((CapellaElement) the_FR_list).setId(EcoreUtil.generateUUID());
+	        		((ExtensibleElement) the_LogicalComponentPkg).getOwnedExtensions().add((ElementExtension) the_FR_list);
+	        	}
 	        }
 	    });
 		
@@ -198,13 +216,7 @@ public class AtriumProcess extends javax.swing.JFrame {
 			{
 				boolean found = false;
 				
-				for (CFA cfa : listCFA)
-				{
-					if (cfa.getName().equals("{ " + el + " : " + f.getName() + " }"))
-					{
-						found = true;
-					}
-				}
+				for (CFA cfa : listCFA){if (cfa.getName().equals("{ " + el + " : " + f.getName() + " }")) {found = true;}}
 				
 				if (!(found))
 				{
@@ -228,7 +240,7 @@ public class AtriumProcess extends javax.swing.JFrame {
 	
 	
 	@SuppressWarnings("serial")
-	private void initComponents() { //this function has been auto-generated by netbeans. I have only changed what should be displayed inside each component
+	private void initComponents() { //this function has been auto-generated by netbeans. You do not have to go through it, I barely changed anything except the handlers
 
 		jTabbedPane = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
@@ -360,6 +372,19 @@ public class AtriumProcess extends javax.swing.JFrame {
             }
         });
 		
+		
+//      jListODD.addMouseListener(new java.awt.event.MouseAdapter() {
+//      public void mouseClicked(java.awt.event.MouseEvent evt) {
+//          jListMouseClicked(evt);
+//      }
+//  });
+		
+//      jListFR.addMouseListener(new java.awt.event.MouseAdapter() {
+//      public void mouseClicked(java.awt.event.MouseEvent evt) {
+//          jListMouseClicked(evt);
+//      }
+//  });
+		
 		jListAssumption.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jListAssumptionMouseClicked(evt);
@@ -377,18 +402,6 @@ public class AtriumProcess extends javax.swing.JFrame {
 	                jListUnlinkedAssumptionMouseClicked(evt);
 	            }
 	        });
-//      jListODD.addMouseListener(new java.awt.event.MouseAdapter() {
-//      public void mouseClicked(java.awt.event.MouseEvent evt) {
-//          jListMouseClicked(evt);
-//      }
-//  });
-		
-//      jListFR.addMouseListener(new java.awt.event.MouseAdapter() {
-//      public void mouseClicked(java.awt.event.MouseEvent evt) {
-//          jListMouseClicked(evt);
-//      }
-//  });
-		
 		
 
 		jScrollPane1.setViewportView(jListUnlinkedAssumptions);
@@ -818,11 +831,17 @@ public class AtriumProcess extends javax.swing.JFrame {
         jButtonAddODD.setText("Add ODD");
         jButtonAddODD.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonAddODDActionPerformed(evt);
+                jButtonAdd(evt,5);
             }
         });
 
         jButtonAddFR.setText("Add Functional Requirement");
+        jButtonAddFR.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonAdd(evt,6);
+            }
+        });
+        
         jLabel34.setText("(will add the corresponding assumption)");
         jLabel35.setText("(will add the corresponding assumption)");
 
@@ -1091,6 +1110,14 @@ public class AtriumProcess extends javax.swing.JFrame {
 		DefaultListModel <String> listModelsAssumptions = new DefaultListModel<String>();
         for (Assumption a : listAssumption){listModelsAssumptions.addElement(a.getName());}
         jListAssumption.setModel(listModelsAssumptions);
+        
+        DefaultListModel <String> listModelODD = new DefaultListModel<String>();
+        for (ODD odd : listODD){listModelODD.addElement(odd.getName());}
+        jListODD.setModel(listModelODD);
+        
+        DefaultListModel <String> listModelFR = new DefaultListModel<String>();
+        for (FR fr : listFR){listModelFR.addElement(fr.getName());}
+        jListFR.setModel(listModelFR);
 	}
 	
 	public void updateDisplayTab4()
@@ -1429,12 +1456,7 @@ public class AtriumProcess extends javax.swing.JFrame {
     		 myEditor.editing(edited_object, listDG, listDA, listCFA, listsDG, ListFailureMode);
     	}
     	
-    }
-    
-
-    private void jButtonAddODDActionPerformed(java.awt.event.ActionEvent evt) {                                              
-        // TODO add your handling code here:
-    }                                                                                                   
+    }                                                                                             
 
     private void jComboBoxDGActionPerformed(java.awt.event.ActionEvent evt) {
     	if (jComboBoxCFA.getSelectedItem()!=null)
@@ -1443,14 +1465,8 @@ public class AtriumProcess extends javax.swing.JFrame {
     	} 
     }
     
-    
-    ///////////////////////////////////////////////////////////////////////////////////////
-    ///////////////////////////////////////////////////////////////////////////////////////
-    /////////////////////////////HANDLERS TO ADD OBJECTS///////////////////////////////////
-    ///////////////////////////////////////////////////////////////////////////////////////
-    ///////////////////////////////////////////////////////////////////////////////////////
-    
-    private void jButtonAdd(java.awt.event.ActionEvent evt, int type)
+    @SuppressWarnings("rawtypes")
+	private void jButtonAdd(java.awt.event.ActionEvent evt, int type)
     {
     	String DialogString = null;
     	String DefaultName = null;
@@ -1478,6 +1494,16 @@ public class AtriumProcess extends javax.swing.JFrame {
     		DefaultName = "MyNewSubDG";
     		ObjectList = listsDG;
     		break;
+    	case 5:
+    		DialogString = "Operational Design Domain";
+    		DefaultName = "MyNewODD";
+    		ObjectList = listODD;
+    		break;
+    	case 6:
+    		DialogString = "Functional Requirements";
+    		DefaultName = "MyNewFR";
+    		ObjectList = listFR;
+    		break;
     	}
     	
     	String name = JOptionPane.showInputDialog(getParent(), "Please name the new " + DialogString, DefaultName);
@@ -1502,15 +1528,6 @@ public class AtriumProcess extends javax.swing.JFrame {
 			else {JOptionPane.showMessageDialog(getParent(), "There is already an assumption named like that, please chose another name.");}
 		}
     }
-	///////////////////////////////////////////////////////////////////////////////////////
-	///////////////////////////////////////////////////////////////////////////////////////
-	
-	
-    ///////////////////////////////////////////////////////////////////////////////////////
-    ///////////////////////////////////////////////////////////////////////////////////////
-    /////////////////////////////CREATORS TO ADD OBJECTS///////////////////////////////////
-    ///////////////////////////////////////////////////////////////////////////////////////
-    ///////////////////////////////////////////////////////////////////////////////////////
 	
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	private void createTool(String name, int type)
@@ -1544,6 +1561,18 @@ public class AtriumProcess extends javax.swing.JFrame {
 				ObjectList = listsDG;
 				Extensible_list = the_sDG_list;
 				newObject = AtriumFactoryImpl.eINSTANCE.createsDG();
+				break;
+				
+			case 5:
+				ObjectList = listODD;
+				Extensible_list = the_ODD_list;
+				newObject = AtriumFactoryImpl.eINSTANCE.createODD();
+				break;
+				
+			case 6:
+				ObjectList = listFR;
+				Extensible_list = the_FR_list;
+				newObject = AtriumFactoryImpl.eINSTANCE.createFR();
 				break;
 		}
 

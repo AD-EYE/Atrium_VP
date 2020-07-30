@@ -252,6 +252,56 @@ public class AtriumSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
+		case AtriumPackage.ODD_LIST: {
+			ODD_list odD_list = (ODD_list) theEObject;
+			T result = caseODD_list(odD_list);
+			if (result == null)
+				result = caseNamedElement(odD_list);
+			if (result == null)
+				result = caseElementExtension(odD_list);
+			if (result == null)
+				result = caseAbstractNamedElement(odD_list);
+			if (result == null)
+				result = caseCapellaElement(odD_list);
+			if (result == null)
+				result = caseTraceableElement(odD_list);
+			if (result == null)
+				result = casePublishableElement(odD_list);
+			if (result == null)
+				result = caseModelElement(odD_list);
+			if (result == null)
+				result = caseExtensibleElement(odD_list);
+			if (result == null)
+				result = caseElement(odD_list);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case AtriumPackage.FR_LIST: {
+			FR_list fR_list = (FR_list) theEObject;
+			T result = caseFR_list(fR_list);
+			if (result == null)
+				result = caseNamedElement(fR_list);
+			if (result == null)
+				result = caseElementExtension(fR_list);
+			if (result == null)
+				result = caseAbstractNamedElement(fR_list);
+			if (result == null)
+				result = caseCapellaElement(fR_list);
+			if (result == null)
+				result = caseTraceableElement(fR_list);
+			if (result == null)
+				result = casePublishableElement(fR_list);
+			if (result == null)
+				result = caseModelElement(fR_list);
+			if (result == null)
+				result = caseExtensibleElement(fR_list);
+			if (result == null)
+				result = caseElement(fR_list);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
 		case AtriumPackage.CFA: {
 			CFA cfa = (CFA) theEObject;
 			T result = caseCFA(cfa);
@@ -439,6 +489,60 @@ public class AtriumSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
+		case AtriumPackage.ODD: {
+			ODD odd = (ODD) theEObject;
+			T result = caseODD(odd);
+			if (result == null)
+				result = caseAtriumBasicElement(odd);
+			if (result == null)
+				result = caseNamedElement(odd);
+			if (result == null)
+				result = caseElementExtension(odd);
+			if (result == null)
+				result = caseAbstractNamedElement(odd);
+			if (result == null)
+				result = caseCapellaElement(odd);
+			if (result == null)
+				result = caseTraceableElement(odd);
+			if (result == null)
+				result = casePublishableElement(odd);
+			if (result == null)
+				result = caseModelElement(odd);
+			if (result == null)
+				result = caseExtensibleElement(odd);
+			if (result == null)
+				result = caseElement(odd);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case AtriumPackage.FR: {
+			FR fr = (FR) theEObject;
+			T result = caseFR(fr);
+			if (result == null)
+				result = caseAtriumBasicElement(fr);
+			if (result == null)
+				result = caseNamedElement(fr);
+			if (result == null)
+				result = caseElementExtension(fr);
+			if (result == null)
+				result = caseAbstractNamedElement(fr);
+			if (result == null)
+				result = caseCapellaElement(fr);
+			if (result == null)
+				result = caseTraceableElement(fr);
+			if (result == null)
+				result = casePublishableElement(fr);
+			if (result == null)
+				result = caseModelElement(fr);
+			if (result == null)
+				result = caseExtensibleElement(fr);
+			if (result == null)
+				result = caseElement(fr);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
 		default:
 			return defaultCase(theEObject);
 		}
@@ -550,6 +654,36 @@ public class AtriumSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>ODD list</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>ODD list</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseODD_list(ODD_list object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>FR list</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>FR list</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseFR_list(FR_list object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>CFA</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -651,6 +785,36 @@ public class AtriumSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseFailureMode(FailureMode object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>ODD</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>ODD</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseODD(ODD object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>FR</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>FR</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseFR(FR object) {
 		return null;
 	}
 

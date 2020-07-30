@@ -20,6 +20,10 @@ Export-Package: org.polarsys.capella.vp.atrium.contextual.explorer.queries.assum
  org.polarsys.capella.vp.atrium.contextual.explorer.queries.elementstateatrium,
  org.polarsys.capella.vp.atrium.contextual.explorer.queries.failure_list,
  org.polarsys.capella.vp.atrium.contextual.explorer.queries.failuremode,
+ org.polarsys.capella.vp.atrium.contextual.explorer.queries.fr,
+ org.polarsys.capella.vp.atrium.contextual.explorer.queries.fr_list,
  org.polarsys.capella.vp.atrium.contextual.explorer.queries.goal_list,
+ org.polarsys.capella.vp.atrium.contextual.explorer.queries.odd,
+ org.polarsys.capella.vp.atrium.contextual.explorer.queries.odd_list,
  org.polarsys.capella.vp.atrium.contextual.explorer.queries.sdg,
  org.polarsys.capella.vp.atrium.contextual.explorer.queries.sdg_list

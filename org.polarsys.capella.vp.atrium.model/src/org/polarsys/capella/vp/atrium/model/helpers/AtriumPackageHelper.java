@@ -21,6 +21,8 @@ import org.polarsys.capella.vp.atrium.Atrium.Assumption_list;
 import org.polarsys.capella.vp.atrium.Atrium.DG_list;
 import org.polarsys.capella.vp.atrium.Atrium.DA_list;
 import org.polarsys.capella.vp.atrium.Atrium.Failure_list;
+import org.polarsys.capella.vp.atrium.Atrium.ODD_list;
+import org.polarsys.capella.vp.atrium.Atrium.FR_list;
 import org.polarsys.capella.vp.atrium.Atrium.Goal_list;
 import org.polarsys.capella.vp.atrium.Atrium.CFAlist;
 import org.polarsys.capella.vp.atrium.Atrium.CFA;
@@ -30,6 +32,8 @@ import org.polarsys.capella.vp.atrium.Atrium.sDG;
 import org.polarsys.capella.vp.atrium.Atrium.DA;
 import org.polarsys.capella.vp.atrium.Atrium.ElementStateAtrium;
 import org.polarsys.capella.vp.atrium.Atrium.FailureMode;
+import org.polarsys.capella.vp.atrium.Atrium.ODD;
+import org.polarsys.capella.vp.atrium.Atrium.FR;
 
 /**
  * @generated 
@@ -63,6 +67,12 @@ public class AtriumPackageHelper implements IHelper {
 		if (ret == null && object instanceof Failure_list) {
 			ret = Failure_listHelper.getInstance().doSwitch((Failure_list) object, feature);
 		}
+		if (ret == null && object instanceof ODD_list) {
+			ret = ODD_listHelper.getInstance().doSwitch((ODD_list) object, feature);
+		}
+		if (ret == null && object instanceof FR_list) {
+			ret = FR_listHelper.getInstance().doSwitch((FR_list) object, feature);
+		}
 		if (ret == null && object instanceof CFA) {
 			ret = CFAHelper.getInstance().doSwitch((CFA) object, feature);
 		}
@@ -83,6 +93,12 @@ public class AtriumPackageHelper implements IHelper {
 		}
 		if (ret == null && object instanceof FailureMode) {
 			ret = FailureModeHelper.getInstance().doSwitch((FailureMode) object, feature);
+		}
+		if (ret == null && object instanceof ODD) {
+			ret = ODDHelper.getInstance().doSwitch((ODD) object, feature);
+		}
+		if (ret == null && object instanceof FR) {
+			ret = FRHelper.getInstance().doSwitch((FR) object, feature);
 		}
 		return ret;
 	}

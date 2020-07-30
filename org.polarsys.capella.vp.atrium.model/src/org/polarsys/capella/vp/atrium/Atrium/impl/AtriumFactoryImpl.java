@@ -72,6 +72,10 @@ public class AtriumFactoryImpl extends EFactoryImpl implements AtriumFactory {
 			return createDA_list();
 		case AtriumPackage.FAILURE_LIST:
 			return createFailure_list();
+		case AtriumPackage.ODD_LIST:
+			return createODD_list();
+		case AtriumPackage.FR_LIST:
+			return createFR_list();
 		case AtriumPackage.CFA:
 			return createCFA();
 		case AtriumPackage.ASSUMPTION:
@@ -86,6 +90,10 @@ public class AtriumFactoryImpl extends EFactoryImpl implements AtriumFactory {
 			return createElementStateAtrium();
 		case AtriumPackage.FAILURE_MODE:
 			return createFailureMode();
+		case AtriumPackage.ODD:
+			return createODD();
+		case AtriumPackage.FR:
+			return createFR();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
@@ -235,6 +243,36 @@ public class AtriumFactoryImpl extends EFactoryImpl implements AtriumFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public ODD_list createODD_list() {
+		ODD_listImpl odD_list = new ODD_listImpl();
+		//begin-capella-code
+
+		odD_list.setId(IdGenerator.createId());
+
+		//end-capella-code
+		return odD_list;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FR_list createFR_list() {
+		FR_listImpl fR_list = new FR_listImpl();
+		//begin-capella-code
+
+		fR_list.setId(IdGenerator.createId());
+
+		//end-capella-code
+		return fR_list;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public CFA createCFA() {
 		CFAImpl cfa = new CFAImpl();
 		//begin-capella-code
@@ -333,6 +371,36 @@ public class AtriumFactoryImpl extends EFactoryImpl implements AtriumFactory {
 
 		//end-capella-code
 		return failureMode;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ODD createODD() {
+		ODDImpl odd = new ODDImpl();
+		//begin-capella-code
+
+		odd.setId(IdGenerator.createId());
+
+		//end-capella-code
+		return odd;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FR createFR() {
+		FRImpl fr = new FRImpl();
+		//begin-capella-code
+
+		fr.setId(IdGenerator.createId());
+
+		//end-capella-code
+		return fr;
 	}
 
 	/**
@@ -499,6 +567,32 @@ public class AtriumFactoryImpl extends EFactoryImpl implements AtriumFactory {
 	 * @param name_p : default name of created element
 	 * @generated
 	 */
+	public ODD_list createODD_list(String name_p) {
+		ODD_list odD_list = createODD_list();
+		odD_list.setName(name_p);
+		return odD_list;
+	}
+
+	/**
+	 * Creates class and sets its name
+	 * (This method comes from a customization of the standard EMF generator)
+	 *
+	 * @param name_p : default name of created element
+	 * @generated
+	 */
+	public FR_list createFR_list(String name_p) {
+		FR_list fR_list = createFR_list();
+		fR_list.setName(name_p);
+		return fR_list;
+	}
+
+	/**
+	 * Creates class and sets its name
+	 * (This method comes from a customization of the standard EMF generator)
+	 *
+	 * @param name_p : default name of created element
+	 * @generated
+	 */
 	public CFA createCFA(String name_p) {
 		CFA cfa = createCFA();
 		cfa.setName(name_p);
@@ -581,6 +675,32 @@ public class AtriumFactoryImpl extends EFactoryImpl implements AtriumFactory {
 		FailureMode failureMode = createFailureMode();
 		failureMode.setName(name_p);
 		return failureMode;
+	}
+
+	/**
+	 * Creates class and sets its name
+	 * (This method comes from a customization of the standard EMF generator)
+	 *
+	 * @param name_p : default name of created element
+	 * @generated
+	 */
+	public ODD createODD(String name_p) {
+		ODD odd = createODD();
+		odd.setName(name_p);
+		return odd;
+	}
+
+	/**
+	 * Creates class and sets its name
+	 * (This method comes from a customization of the standard EMF generator)
+	 *
+	 * @param name_p : default name of created element
+	 * @generated
+	 */
+	public FR createFR(String name_p) {
+		FR fr = createFR();
+		fr.setName(name_p);
+		return fr;
 	}
 
 	//end-capella-code

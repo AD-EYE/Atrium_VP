@@ -49,6 +49,12 @@
         <propertySection class="org.polarsys.capella.core.data.core.properties.sections.DefaultNamedElementSection" filter="org.polarsys.capella.vp.atrium.Atrium.provider.sections.Failure_listSection" id="org.polarsys.capella.vp.atrium.Atrium.provider.contributions.Failure_listItemContribution.section" tab="BaseCapella">
             <input type="org.polarsys.capella.vp.atrium.Atrium.Failure_list"/>
         </propertySection>
+        <propertySection class="org.polarsys.capella.core.data.core.properties.sections.DefaultNamedElementSection" filter="org.polarsys.capella.vp.atrium.Atrium.provider.sections.ODD_listSection" id="org.polarsys.capella.vp.atrium.Atrium.provider.contributions.ODD_listItemContribution.section" tab="BaseCapella">
+            <input type="org.polarsys.capella.vp.atrium.Atrium.ODD_list"/>
+        </propertySection>
+        <propertySection class="org.polarsys.capella.core.data.core.properties.sections.DefaultNamedElementSection" filter="org.polarsys.capella.vp.atrium.Atrium.provider.sections.FR_listSection" id="org.polarsys.capella.vp.atrium.Atrium.provider.contributions.FR_listItemContribution.section" tab="BaseCapella">
+            <input type="org.polarsys.capella.vp.atrium.Atrium.FR_list"/>
+        </propertySection>
         <propertySection class="org.polarsys.capella.core.data.core.properties.sections.DefaultNamedElementSection" filter="org.polarsys.capella.vp.atrium.Atrium.provider.sections.CFASection" id="org.polarsys.capella.vp.atrium.Atrium.provider.contributions.CFAItemContribution.section" tab="BaseCapella">
             <input type="org.polarsys.capella.vp.atrium.Atrium.CFA"/>
         </propertySection>
@@ -70,6 +76,12 @@
         <propertySection class="org.polarsys.capella.core.data.core.properties.sections.DefaultNamedElementSection" filter="org.polarsys.capella.vp.atrium.Atrium.provider.sections.FailureModeSection" id="org.polarsys.capella.vp.atrium.Atrium.provider.contributions.FailureModeItemContribution.section" tab="BaseCapella">
             <input type="org.polarsys.capella.vp.atrium.Atrium.FailureMode"/>
         </propertySection>
+        <propertySection class="org.polarsys.capella.core.data.core.properties.sections.DefaultNamedElementSection" filter="org.polarsys.capella.vp.atrium.Atrium.provider.sections.ODDSection" id="org.polarsys.capella.vp.atrium.Atrium.provider.contributions.ODDItemContribution.section" tab="BaseCapella">
+            <input type="org.polarsys.capella.vp.atrium.Atrium.ODD"/>
+        </propertySection>
+        <propertySection class="org.polarsys.capella.core.data.core.properties.sections.DefaultNamedElementSection" filter="org.polarsys.capella.vp.atrium.Atrium.provider.sections.FRSection" id="org.polarsys.capella.vp.atrium.Atrium.provider.contributions.FRItemContribution.section" tab="BaseCapella">
+            <input type="org.polarsys.capella.vp.atrium.Atrium.FR"/>
+        </propertySection>
 </propertySections>
     </extension>
 
@@ -90,6 +102,10 @@
         </propertySection>
         <propertySection class="org.polarsys.capella.vp.atrium.Atrium.provider.sections.Failure_listSection" filter="org.polarsys.capella.vp.atrium.Atrium.provider.sections.Failure_listSection" id="org.polarsys.capella.vp.atrium.Atrium.provider.sections.Failure_listSection.section" tab="BaseSiriusDiagram">
         </propertySection>
+        <propertySection class="org.polarsys.capella.vp.atrium.Atrium.provider.sections.ODD_listSection" filter="org.polarsys.capella.vp.atrium.Atrium.provider.sections.ODD_listSection" id="org.polarsys.capella.vp.atrium.Atrium.provider.sections.ODD_listSection.section" tab="BaseSiriusDiagram">
+        </propertySection>
+        <propertySection class="org.polarsys.capella.vp.atrium.Atrium.provider.sections.FR_listSection" filter="org.polarsys.capella.vp.atrium.Atrium.provider.sections.FR_listSection" id="org.polarsys.capella.vp.atrium.Atrium.provider.sections.FR_listSection.section" tab="BaseSiriusDiagram">
+        </propertySection>
         <propertySection class="org.polarsys.capella.core.data.core.properties.sections.DefaultNamedElementSection" filter="org.polarsys.capella.vp.atrium.Atrium.provider.sections.CFASection" id="org.polarsys.capella.vp.atrium.Atrium.provider.sections.CFASection.section" tab="BaseSiriusDiagram">
         </propertySection>
         <propertySection class="org.polarsys.capella.core.data.core.properties.sections.DefaultNamedElementSection" filter="org.polarsys.capella.vp.atrium.Atrium.provider.sections.AssumptionSection" id="org.polarsys.capella.vp.atrium.Atrium.provider.sections.AssumptionSection.section" tab="BaseSiriusDiagram">
@@ -103,6 +119,10 @@
         <propertySection class="org.polarsys.capella.vp.atrium.Atrium.provider.sections.ElementStateAtriumSection" filter="org.polarsys.capella.vp.atrium.Atrium.provider.sections.ElementStateAtriumSection" id="org.polarsys.capella.vp.atrium.Atrium.provider.sections.ElementStateAtriumSection.section" tab="BaseSiriusDiagram">
         </propertySection>
         <propertySection class="org.polarsys.capella.core.data.core.properties.sections.DefaultNamedElementSection" filter="org.polarsys.capella.vp.atrium.Atrium.provider.sections.FailureModeSection" id="org.polarsys.capella.vp.atrium.Atrium.provider.sections.FailureModeSection.section" tab="BaseSiriusDiagram">
+        </propertySection>
+        <propertySection class="org.polarsys.capella.core.data.core.properties.sections.DefaultNamedElementSection" filter="org.polarsys.capella.vp.atrium.Atrium.provider.sections.ODDSection" id="org.polarsys.capella.vp.atrium.Atrium.provider.sections.ODDSection.section" tab="BaseSiriusDiagram">
+        </propertySection>
+        <propertySection class="org.polarsys.capella.core.data.core.properties.sections.DefaultNamedElementSection" filter="org.polarsys.capella.vp.atrium.Atrium.provider.sections.FRSection" id="org.polarsys.capella.vp.atrium.Atrium.provider.sections.FRSection.section" tab="BaseSiriusDiagram">
         </propertySection>
 </propertySections>
     </extension>

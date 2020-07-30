@@ -113,6 +113,16 @@ public class AtriumAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseODD_list(ODD_list object) {
+			return createODD_listAdapter();
+		}
+
+		@Override
+		public Adapter caseFR_list(FR_list object) {
+			return createFR_listAdapter();
+		}
+
+		@Override
 		public Adapter caseCFA(CFA object) {
 			return createCFAAdapter();
 		}
@@ -145,6 +155,16 @@ public class AtriumAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseFailureMode(FailureMode object) {
 			return createFailureModeAdapter();
+		}
+
+		@Override
+		public Adapter caseODD(ODD object) {
+			return createODDAdapter();
+		}
+
+		@Override
+		public Adapter caseFR(FR object) {
+			return createFRAdapter();
 		}
 
 		@Override
@@ -310,6 +330,34 @@ public class AtriumAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link org.polarsys.capella.vp.atrium.Atrium.ODD_list <em>ODD list</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.polarsys.capella.vp.atrium.Atrium.ODD_list
+	 * @generated
+	 */
+	public Adapter createODD_listAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.polarsys.capella.vp.atrium.Atrium.FR_list <em>FR list</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.polarsys.capella.vp.atrium.Atrium.FR_list
+	 * @generated
+	 */
+	public Adapter createFR_listAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link org.polarsys.capella.vp.atrium.Atrium.CFA <em>CFA</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -404,6 +452,34 @@ public class AtriumAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createFailureModeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.polarsys.capella.vp.atrium.Atrium.ODD <em>ODD</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.polarsys.capella.vp.atrium.Atrium.ODD
+	 * @generated
+	 */
+	public Adapter createODDAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.polarsys.capella.vp.atrium.Atrium.FR <em>FR</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.polarsys.capella.vp.atrium.Atrium.FR
+	 * @generated
+	 */
+	public Adapter createFRAdapter() {
 		return null;
 	}
 

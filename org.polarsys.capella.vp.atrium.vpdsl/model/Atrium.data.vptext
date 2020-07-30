@@ -30,6 +30,12 @@ Data Atrium.data {
 	Class Failure_list {
 		extends la.LogicalComponent
 	}
+	Class ODD_list{
+		extends la.LogicalComponent
+	}
+	Class FR_list{
+		extends la.LogicalComponent
+	}
 	Class CFA {
 		superClass AtriumBasicElement
 		Attributes:
@@ -74,5 +80,11 @@ Data Atrium.data {
 	Class FailureMode {
 		superClass AtriumBasicElement
 		Attributes:
+	}
+	Class ODD {
+		superClass AtriumBasicElement
+	}
+	Class FR {
+		superClass AtriumBasicElement
 	}
 }

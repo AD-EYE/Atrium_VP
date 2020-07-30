@@ -238,6 +238,74 @@ Diagrams Atrium.diagram {
 					}
 				}
 			}
+			
+			Container Container_ODD {
+				domain-context: Atrium.data.ODD_list
+				provided-by association external emde.ExtensibleElement.ownedExtensions content-layout: List
+				Representation {
+					Label {
+						content: "ODD list"
+						police: black
+					}
+					Style {
+						FlatStyle {
+							background: light_chocolate foreground: white
+						}
+					}
+				}
+				Contains {
+					Node node_ODD {
+						domain-context: Atrium.data.ODD
+						provided-by association external emde.ExtensibleElement.ownedExtensions
+						Representation {
+							Label {
+								content: "[ODD] " + "aql:self.name"
+								police: black
+								alignment: center
+							}
+							Style {
+								BasicStyle {
+									border-color: black background: light_gray form: Square
+								}
+							}
+						}
+					}
+				}
+			}
+			
+			Container Container_FR {
+				domain-context: Atrium.data.FR_list
+				provided-by association external emde.ExtensibleElement.ownedExtensions content-layout: List
+				Representation {
+					Label {
+						content: "FR list"
+						police: black
+					}
+					Style {
+						FlatStyle {
+							background: light_chocolate foreground: white
+						}
+					}
+				}
+				Contains {
+					Node node_FR {
+						domain-context: Atrium.data.FR
+						provided-by association external emde.ExtensibleElement.ownedExtensions
+						Representation {
+							Label {
+								content: "[FR] " + "aql:self.name"
+								police: black
+								alignment: center
+							}
+							Style {
+								BasicStyle {
+									border-color: black background: light_gray form: Square
+								}
+							}
+						}
+					}
+				}
+			}
 
 			///Import Capella Element + giving them a condition
 			Container ContainerLC {

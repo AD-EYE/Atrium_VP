@@ -27,12 +27,18 @@
     <VP_Classes name="Failure_list">
       <extends href="http://www.polarsys.org/capella/core/la/1.4.0#//LogicalComponent"/>
     </VP_Classes>
+    <VP_Classes name="ODD_list">
+      <extends href="http://www.polarsys.org/capella/core/la/1.4.0#//LogicalComponent"/>
+    </VP_Classes>
+    <VP_Classes name="FR_list">
+      <extends href="http://www.polarsys.org/capella/core/la/1.4.0#//LogicalComponent"/>
+    </VP_Classes>
     <VP_Classes name="CFA">
       <VP_Classes_Associations xsi:type="vpdesc:ExternalClassAssociation" name="linkedtoElement" cardinality="1" type="reference">
         <ExternalTarget href="http://www.polarsys.org/capella/core/core/1.4.0#//CapellaElement"/>
       </VP_Classes_Associations>
-      <VP_Classes_Associations xsi:type="vpdesc:LocalClassAssociation" name="assumption" cardinality="0..*" type="reference" LocalTarget="//@VP_Data/@VP_Classes.8"/>
-      <VP_Classes_Associations xsi:type="vpdesc:LocalClassAssociation" name="goal" type="reference" LocalTarget="//@VP_Data/@VP_Classes.9"/>
+      <VP_Classes_Associations xsi:type="vpdesc:LocalClassAssociation" name="assumption" cardinality="0..*" type="reference" LocalTarget="//@VP_Data/@VP_Classes.10"/>
+      <VP_Classes_Associations xsi:type="vpdesc:LocalClassAssociation" name="goal" type="reference" LocalTarget="//@VP_Data/@VP_Classes.11"/>
       <VP_Class_Attributes name="state">
         <owned_type xsi:type="vpdesc:ExternalAttributeType">
           <type href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
@@ -79,8 +85,8 @@
       <Inheritences xsi:type="vpdesc:LocalSuperClass" superClass="//@VP_Data/@VP_Classes.0"/>
     </VP_Classes>
     <VP_Classes name="DG">
-      <VP_Classes_Associations xsi:type="vpdesc:LocalClassAssociation" name="designAlternative" cardinality="1..*" type="reference" LocalTarget="//@VP_Data/@VP_Classes.11"/>
-      <VP_Classes_Associations xsi:type="vpdesc:LocalClassAssociation" name="subDGs" cardinality="0..*" type="reference" LocalTarget="//@VP_Data/@VP_Classes.10"/>
+      <VP_Classes_Associations xsi:type="vpdesc:LocalClassAssociation" name="designAlternative" cardinality="1..*" type="reference" LocalTarget="//@VP_Data/@VP_Classes.13"/>
+      <VP_Classes_Associations xsi:type="vpdesc:LocalClassAssociation" name="subDGs" cardinality="0..*" type="reference" LocalTarget="//@VP_Data/@VP_Classes.12"/>
       <Inheritences xsi:type="vpdesc:LocalSuperClass" superClass="//@VP_Data/@VP_Classes.0"/>
     </VP_Classes>
     <VP_Classes name="sDG">
@@ -103,6 +109,12 @@
       <extends href="http://www.polarsys.org/capella/core/core/1.4.0#//CapellaElement"/>
     </VP_Classes>
     <VP_Classes name="FailureMode">
+      <Inheritences xsi:type="vpdesc:LocalSuperClass" superClass="//@VP_Data/@VP_Classes.0"/>
+    </VP_Classes>
+    <VP_Classes name="ODD">
+      <Inheritences xsi:type="vpdesc:LocalSuperClass" superClass="//@VP_Data/@VP_Classes.0"/>
+    </VP_Classes>
+    <VP_Classes name="FR">
       <Inheritences xsi:type="vpdesc:LocalSuperClass" superClass="//@VP_Data/@VP_Classes.0"/>
     </VP_Classes>
   </VP_Data>
@@ -131,6 +143,9 @@
     <UIs name="Atrium_CFA_list" label="Atrium">
       <UI_Containers name="Atrium_CFA_list_Section"/>
     </UIs>
+    <UIs name="Atrium_sDG_list" label="Atrium">
+      <UI_Containers name="Atrium_sDG_list_Section"/>
+    </UIs>
     <UIs name="Atrium_Assumption_list" label="Atrium">
       <UI_Containers name="Atrium_Assumption_list_Section"/>
     </UIs>
@@ -143,6 +158,12 @@
     <UIs name="Atrium_Failure_list" label="Atrium">
       <UI_Containers name="Atrium_Failure_list_Section"/>
     </UIs>
+    <UIs name="Atrium_ODD_list" label="Atrium">
+      <UI_Containers name="Atrium_ODD_list_Section"/>
+    </UIs>
+    <UIs name="Atrium_FR_list" label="Atrium">
+      <UI_Containers name="Atrium_FR_list_Section"/>
+    </UIs>
     <UIs name="Atrium_CFA" label="Atrium">
       <UI_Containers name="Atrium_CFA_Section">
         <subContainers name="Atrium_CFA_AttributeGroup" label="C F A Attributes">
@@ -150,7 +171,7 @@
             <Mapping UI_Field_Mapped_To="//@VP_Data/@VP_Classes.0/@VP_Class_Attributes.0"/>
           </UI_fields>
           <UI_fields name="stateField" label="State" type="checkbox">
-            <Mapping UI_Field_Mapped_To="//@VP_Data/@VP_Classes.7/@VP_Class_Attributes.0"/>
+            <Mapping UI_Field_Mapped_To="//@VP_Data/@VP_Classes.9/@VP_Class_Attributes.0"/>
           </UI_fields>
         </subContainers>
       </UI_Containers>
@@ -162,22 +183,22 @@
             <Mapping UI_Field_Mapped_To="//@VP_Data/@VP_Classes.0/@VP_Class_Attributes.0"/>
           </UI_fields>
           <UI_fields name="assumptionTypeField" label="Assumption Type" type="radiobox">
-            <Mapping UI_Field_Mapped_To="//@VP_Data/@VP_Classes.8/@VP_Class_Attributes.0"/>
+            <Mapping UI_Field_Mapped_To="//@VP_Data/@VP_Classes.10/@VP_Class_Attributes.0"/>
           </UI_fields>
           <UI_fields name="rationaleField" label="Rationale">
-            <Mapping UI_Field_Mapped_To="//@VP_Data/@VP_Classes.8/@VP_Class_Attributes.1"/>
+            <Mapping UI_Field_Mapped_To="//@VP_Data/@VP_Classes.10/@VP_Class_Attributes.1"/>
           </UI_fields>
           <UI_fields name="validityField" label="Validity" type="radiobox">
-            <Mapping UI_Field_Mapped_To="//@VP_Data/@VP_Classes.8/@VP_Class_Attributes.2"/>
+            <Mapping UI_Field_Mapped_To="//@VP_Data/@VP_Classes.10/@VP_Class_Attributes.2"/>
           </UI_fields>
           <UI_fields name="responsibleArchitectField" label="Responsible Architect">
-            <Mapping UI_Field_Mapped_To="//@VP_Data/@VP_Classes.8/@VP_Class_Attributes.3"/>
+            <Mapping UI_Field_Mapped_To="//@VP_Data/@VP_Classes.10/@VP_Class_Attributes.3"/>
           </UI_fields>
           <UI_fields name="responsibleExpertField" label="Responsible Expert">
-            <Mapping UI_Field_Mapped_To="//@VP_Data/@VP_Classes.8/@VP_Class_Attributes.4"/>
+            <Mapping UI_Field_Mapped_To="//@VP_Data/@VP_Classes.10/@VP_Class_Attributes.4"/>
           </UI_fields>
           <UI_fields name="dateOfCompletionField" label="Date Of Completion">
-            <Mapping UI_Field_Mapped_To="//@VP_Data/@VP_Classes.8/@VP_Class_Attributes.5"/>
+            <Mapping UI_Field_Mapped_To="//@VP_Data/@VP_Classes.10/@VP_Class_Attributes.5"/>
           </UI_fields>
         </subContainers>
       </UI_Containers>
@@ -207,7 +228,7 @@
             <Mapping UI_Field_Mapped_To="//@VP_Data/@VP_Classes.0/@VP_Class_Attributes.0"/>
           </UI_fields>
           <UI_fields name="isPartOfSelectionField" label="Is Part Of Selection" type="checkbox">
-            <Mapping UI_Field_Mapped_To="//@VP_Data/@VP_Classes.11/@VP_Class_Attributes.0"/>
+            <Mapping UI_Field_Mapped_To="//@VP_Data/@VP_Classes.13/@VP_Class_Attributes.0"/>
           </UI_fields>
         </subContainers>
       </UI_Containers>
@@ -216,7 +237,7 @@
       <UI_Containers name="Atrium_ElementStateAtrium_Section">
         <subContainers name="Atrium_ElementStateAtrium_AttributeGroup" label="Element State Atrium Attributes">
           <UI_fields name="isNewDevelopmentField" label="Is New Development" type="checkbox">
-            <Mapping UI_Field_Mapped_To="//@VP_Data/@VP_Classes.12/@VP_Class_Attributes.0"/>
+            <Mapping UI_Field_Mapped_To="//@VP_Data/@VP_Classes.14/@VP_Class_Attributes.0"/>
           </UI_fields>
         </subContainers>
       </UI_Containers>
@@ -225,6 +246,24 @@
       <UI_Containers name="Atrium_FailureMode_Section">
         <subContainers name="Atrium_FailureMode_AttributeGroup" label="Failure Mode Attributes">
           <UI_fields name="contentField6" label="Content">
+            <Mapping UI_Field_Mapped_To="//@VP_Data/@VP_Classes.0/@VP_Class_Attributes.0"/>
+          </UI_fields>
+        </subContainers>
+      </UI_Containers>
+    </UIs>
+    <UIs name="Atrium_ODD" label="Atrium">
+      <UI_Containers name="Atrium_ODD_Section">
+        <subContainers name="Atrium_ODD_AttributeGroup" label="O D D Attributes">
+          <UI_fields name="contentField7" label="Content">
+            <Mapping UI_Field_Mapped_To="//@VP_Data/@VP_Classes.0/@VP_Class_Attributes.0"/>
+          </UI_fields>
+        </subContainers>
+      </UI_Containers>
+    </UIs>
+    <UIs name="Atrium_FR" label="Atrium">
+      <UI_Containers name="Atrium_FR_Section">
+        <subContainers name="Atrium_FR_AttributeGroup" label="F R Attributes">
+          <UI_fields name="contentField8" label="Content">
             <Mapping UI_Field_Mapped_To="//@VP_Data/@VP_Classes.0/@VP_Class_Attributes.0"/>
           </UI_fields>
         </subContainers>
@@ -252,7 +291,7 @@
           <children>
             <owned_nodes xsi:type="vpdiagram:Node" name="node_CFA">
               <the_domain>
-                <domain_Class xsi:type="commondata:LocalClass" class="//@VP_Data/@VP_Classes.7"/>
+                <domain_Class xsi:type="commondata:LocalClass" class="//@VP_Data/@VP_Classes.9"/>
                 <chlidren_list xsi:type="commondata:ExternalAssociation">
                   <reference href="http://www.polarsys.org/kitalpha/emde/1.0.0#//ExtensibleElement/ownedExtensions"/>
                 </chlidren_list>
@@ -287,7 +326,7 @@
           <children>
             <owned_nodes xsi:type="vpdiagram:Node" name="node_assumption">
               <the_domain>
-                <domain_Class xsi:type="commondata:LocalClass" class="//@VP_Data/@VP_Classes.8"/>
+                <domain_Class xsi:type="commondata:LocalClass" class="//@VP_Data/@VP_Classes.10"/>
                 <chlidren_list xsi:type="commondata:ExternalAssociation">
                   <reference href="http://www.polarsys.org/kitalpha/emde/1.0.0#//ExtensibleElement/ownedExtensions"/>
                 </chlidren_list>
@@ -346,7 +385,7 @@
           <children>
             <owned_nodes xsi:type="vpdiagram:Node" name="node_DG">
               <the_domain>
-                <domain_Class xsi:type="commondata:LocalClass" class="//@VP_Data/@VP_Classes.9"/>
+                <domain_Class xsi:type="commondata:LocalClass" class="//@VP_Data/@VP_Classes.11"/>
                 <chlidren_list xsi:type="commondata:ExternalAssociation">
                   <reference href="http://www.polarsys.org/kitalpha/emde/1.0.0#//ExtensibleElement/ownedExtensions"/>
                 </chlidren_list>
@@ -381,7 +420,7 @@
           <children>
             <owned_nodes xsi:type="vpdiagram:Node" name="node_sDG">
               <the_domain>
-                <domain_Class xsi:type="commondata:LocalClass" class="//@VP_Data/@VP_Classes.10"/>
+                <domain_Class xsi:type="commondata:LocalClass" class="//@VP_Data/@VP_Classes.12"/>
                 <chlidren_list xsi:type="commondata:ExternalAssociation">
                   <reference href="http://www.polarsys.org/kitalpha/emde/1.0.0#//ExtensibleElement/ownedExtensions"/>
                 </chlidren_list>
@@ -416,7 +455,7 @@
           <children>
             <owned_nodes xsi:type="vpdiagram:Node" name="node_DA">
               <the_domain>
-                <domain_Class xsi:type="commondata:LocalClass" class="//@VP_Data/@VP_Classes.11"/>
+                <domain_Class xsi:type="commondata:LocalClass" class="//@VP_Data/@VP_Classes.13"/>
                 <chlidren_list xsi:type="commondata:ExternalAssociation">
                   <reference href="http://www.polarsys.org/kitalpha/emde/1.0.0#//ExtensibleElement/ownedExtensions"/>
                 </chlidren_list>
@@ -451,7 +490,7 @@
           <children>
             <owned_nodes xsi:type="vpdiagram:Node" name="node_Failure">
               <the_domain>
-                <domain_Class xsi:type="commondata:LocalClass" class="//@VP_Data/@VP_Classes.13"/>
+                <domain_Class xsi:type="commondata:LocalClass" class="//@VP_Data/@VP_Classes.15"/>
                 <chlidren_list xsi:type="commondata:ExternalAssociation">
                   <reference href="http://www.polarsys.org/kitalpha/emde/1.0.0#//ExtensibleElement/ownedExtensions"/>
                 </chlidren_list>
@@ -460,6 +499,76 @@
                 <node_Label>
                   <value>
                     <expressionElements xsi:type="expression:StringElement" value="[Failure] "/>
+                    <expressionElements xsi:type="expression:StringElement" value="aql:self.name"/>
+                  </value>
+                </node_Label>
+                <style xsi:type="vpdiagram:BasicStyle" backgroundColor="light_gray"/>
+              </style>
+            </owned_nodes>
+          </children>
+        </diagram_Elements>
+        <diagram_Elements xsi:type="vpdiagram:Container" name="Container_ODD" contentLayout="List">
+          <the_domain>
+            <domain_Class xsi:type="commondata:LocalClass" class="//@VP_Data/@VP_Classes.7"/>
+            <chlidren_list xsi:type="commondata:ExternalAssociation">
+              <reference href="http://www.polarsys.org/kitalpha/emde/1.0.0#//ExtensibleElement/ownedExtensions"/>
+            </chlidren_list>
+          </the_domain>
+          <style>
+            <node_Label>
+              <value>
+                <expressionElements xsi:type="expression:StringElement" value="ODD list"/>
+              </value>
+            </node_Label>
+            <style xsi:type="vpdiagram:FlatStyle" backgroundColor="light_chocolate" forgroundColor="white"/>
+          </style>
+          <children>
+            <owned_nodes xsi:type="vpdiagram:Node" name="node_ODD">
+              <the_domain>
+                <domain_Class xsi:type="commondata:LocalClass" class="//@VP_Data/@VP_Classes.16"/>
+                <chlidren_list xsi:type="commondata:ExternalAssociation">
+                  <reference href="http://www.polarsys.org/kitalpha/emde/1.0.0#//ExtensibleElement/ownedExtensions"/>
+                </chlidren_list>
+              </the_domain>
+              <style>
+                <node_Label>
+                  <value>
+                    <expressionElements xsi:type="expression:StringElement" value="[ODD] "/>
+                    <expressionElements xsi:type="expression:StringElement" value="aql:self.name"/>
+                  </value>
+                </node_Label>
+                <style xsi:type="vpdiagram:BasicStyle" backgroundColor="light_gray"/>
+              </style>
+            </owned_nodes>
+          </children>
+        </diagram_Elements>
+        <diagram_Elements xsi:type="vpdiagram:Container" name="Container_FR" contentLayout="List">
+          <the_domain>
+            <domain_Class xsi:type="commondata:LocalClass" class="//@VP_Data/@VP_Classes.8"/>
+            <chlidren_list xsi:type="commondata:ExternalAssociation">
+              <reference href="http://www.polarsys.org/kitalpha/emde/1.0.0#//ExtensibleElement/ownedExtensions"/>
+            </chlidren_list>
+          </the_domain>
+          <style>
+            <node_Label>
+              <value>
+                <expressionElements xsi:type="expression:StringElement" value="FR list"/>
+              </value>
+            </node_Label>
+            <style xsi:type="vpdiagram:FlatStyle" backgroundColor="light_chocolate" forgroundColor="white"/>
+          </style>
+          <children>
+            <owned_nodes xsi:type="vpdiagram:Node" name="node_FR">
+              <the_domain>
+                <domain_Class xsi:type="commondata:LocalClass" class="//@VP_Data/@VP_Classes.17"/>
+                <chlidren_list xsi:type="commondata:ExternalAssociation">
+                  <reference href="http://www.polarsys.org/kitalpha/emde/1.0.0#//ExtensibleElement/ownedExtensions"/>
+                </chlidren_list>
+              </the_domain>
+              <style>
+                <node_Label>
+                  <value>
+                    <expressionElements xsi:type="expression:StringElement" value="[FR] "/>
                     <expressionElements xsi:type="expression:StringElement" value="aql:self.name"/>
                   </value>
                 </node_Label>

@@ -58,6 +58,22 @@
       <details key="Mapping" value=" platform:/plugin/org.polarsys.capella.core.data.gen/model/LogicalArchitecture.ecore#//LogicalComponent"/>
     </eAnnotations>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ODD_list" eSuperTypes="platform:/plugin/org.polarsys.capella.core.data.gen/model/CapellaCore.ecore#//NamedElement platform:/plugin/org.polarsys.kitalpha.emde/model/eMDE.ecore#//ElementExtension">
+    <eAnnotations source="http://www.polarsys.org/kitalpha/emde/1.0.0/constraint">
+      <details key="ExtendedElement" value=" http://www.polarsys.org/capella/core/la/1.4.0#//LogicalComponent"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.polarsys.org/kitalpha/emde/1.0.0/constraintMapping">
+      <details key="Mapping" value=" platform:/plugin/org.polarsys.capella.core.data.gen/model/LogicalArchitecture.ecore#//LogicalComponent"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FR_list" eSuperTypes="platform:/plugin/org.polarsys.capella.core.data.gen/model/CapellaCore.ecore#//NamedElement platform:/plugin/org.polarsys.kitalpha.emde/model/eMDE.ecore#//ElementExtension">
+    <eAnnotations source="http://www.polarsys.org/kitalpha/emde/1.0.0/constraint">
+      <details key="ExtendedElement" value=" http://www.polarsys.org/capella/core/la/1.4.0#//LogicalComponent"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.polarsys.org/kitalpha/emde/1.0.0/constraintMapping">
+      <details key="Mapping" value=" platform:/plugin/org.polarsys.capella.core.data.gen/model/LogicalArchitecture.ecore#//LogicalComponent"/>
+    </eAnnotations>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CFA" eSuperTypes="#//AtriumBasicElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="linkedtoElement" lowerBound="1"
         eType="ecore:EClass platform:/plugin/org.polarsys.capella.core.data.gen/model/CapellaCore.ecore#//CapellaElement"/>
@@ -94,6 +110,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isNewDevelopment" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="FailureMode" eSuperTypes="#//AtriumBasicElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ODD" eSuperTypes="#//AtriumBasicElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="FR" eSuperTypes="#//AtriumBasicElement"/>
   <eClassifiers xsi:type="ecore:EEnum" name="assumptionType_Type">
     <eLiterals name="Clarification" literal="Clarification"/>
     <eLiterals name="Task" value="1" literal="Task"/>

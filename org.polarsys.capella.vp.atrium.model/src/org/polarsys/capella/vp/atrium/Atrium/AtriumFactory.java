@@ -84,6 +84,24 @@ public interface AtriumFactory extends EFactory {
 	Failure_list createFailure_list();
 
 	/**
+	 * Returns a new object of class '<em>ODD list</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>ODD list</em>'.
+	 * @generated
+	 */
+	ODD_list createODD_list();
+
+	/**
+	 * Returns a new object of class '<em>FR list</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>FR list</em>'.
+	 * @generated
+	 */
+	FR_list createFR_list();
+
+	/**
 	 * Returns a new object of class '<em>CFA</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -145,6 +163,24 @@ public interface AtriumFactory extends EFactory {
 	 * @generated
 	 */
 	FailureMode createFailureMode();
+
+	/**
+	 * Returns a new object of class '<em>ODD</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>ODD</em>'.
+	 * @generated
+	 */
+	ODD createODD();
+
+	/**
+	 * Returns a new object of class '<em>FR</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>FR</em>'.
+	 * @generated
+	 */
+	FR createFR();
 
 	/**
 	 * Returns the package supported by this factory.
