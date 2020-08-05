@@ -85,6 +85,9 @@ public class AtriumProcess extends javax.swing.JFrame {
         jListSDG = new javax.swing.JList<>();
         jButtonAddSDG = new javax.swing.JButton();
         jLabel36 = new javax.swing.JLabel();
+        jButtonRemoveDG = new javax.swing.JButton();
+        jButtonDeleteDA = new javax.swing.JButton();
+        jButtonRemoveSDG = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         jScrollPane7 = new javax.swing.JScrollPane();
         jListAssumption = new javax.swing.JList<>();
@@ -98,8 +101,9 @@ public class AtriumProcess extends javax.swing.JFrame {
         jLabel33 = new javax.swing.JLabel();
         jButtonAddODD = new javax.swing.JButton();
         jButtonAddFR = new javax.swing.JButton();
-        jLabel34 = new javax.swing.JLabel();
-        jLabel35 = new javax.swing.JLabel();
+        jButtonRemoveAssumption = new javax.swing.JButton();
+        jButtonRemoveODD = new javax.swing.JButton();
+        jButtonRemoveFR = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jScrollPane5 = new javax.swing.JScrollPane();
         jListFailure = new javax.swing.JList<>();
@@ -109,6 +113,7 @@ public class AtriumProcess extends javax.swing.JFrame {
         jListCapella = new javax.swing.JList<>();
         jLabel30 = new javax.swing.JLabel();
         jLabel31 = new javax.swing.JLabel();
+        jButtonRemoveFM = new javax.swing.JButton();
         jLabel22 = new javax.swing.JLabel();
         jLabel28 = new javax.swing.JLabel();
 
@@ -484,14 +489,14 @@ public class AtriumProcess extends javax.swing.JFrame {
         });
         jScrollPane6.setViewportView(jListDA);
 
-        jButtonAddDG.setText("Add Design Goal");
+        jButtonAddDG.setText("Add DGl");
         jButtonAddDG.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonAddDGActionPerformed(evt);
             }
         });
 
-        jButtonAddDA.setText("Add Design Alternative");
+        jButtonAddDA.setText("Add DA");
         jButtonAddDA.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonAddDAActionPerformed(evt);
@@ -530,9 +535,15 @@ public class AtriumProcess extends javax.swing.JFrame {
         });
         jScrollPane13.setViewportView(jListSDG);
 
-        jButtonAddSDG.setText("Add Sub-Design Goal");
+        jButtonAddSDG.setText("Add sDG");
 
         jLabel36.setText("Sub-Design Goal list");
+
+        jButtonRemoveDG.setText("Remove DG");
+
+        jButtonDeleteDA.setText("Delete DA");
+
+        jButtonRemoveSDG.setText("Remove sDG");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -540,42 +551,46 @@ public class AtriumProcess extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 497, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel25)
+                    .addComponent(jLabel26))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 497, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel25))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel27)
-                            .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jLabel26)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButtonAddDG)
-                        .addGap(86, 86, 86)))
+                        .addGap(22, 22, 22)
+                        .addComponent(jButtonAddDG, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(30, 30, 30)
+                        .addComponent(jButtonRemoveDG))
+                    .addComponent(jLabel27)
+                    .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGap(12, 12, 12)
-                                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel29)
-                            .addComponent(jLabel36))
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel3Layout.createSequentialGroup()
+                                        .addGap(12, 12, 12)
+                                        .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel3Layout.createSequentialGroup()
+                                        .addGap(64, 64, 64)
+                                        .addComponent(jButtonAddDA, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jButtonDeleteDA))
+                                    .addGroup(jPanel3Layout.createSequentialGroup()
+                                        .addGap(50, 50, 50)
+                                        .addComponent(jButtonAddSDG, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jButtonRemoveSDG)))
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel36)
+                                .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                                .addComponent(jButtonAddDA)
-                                .addGap(67, 67, 67))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                                .addComponent(jButtonAddSDG)
-                                .addGap(73, 73, 73))))))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel29)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -592,17 +607,22 @@ public class AtriumProcess extends javax.swing.JFrame {
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButtonAddSDG)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButtonRemoveSDG)
+                            .addComponent(jButtonAddSDG))
                         .addGap(30, 30, 30)
                         .addComponent(jLabel29)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel26)
                     .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jButtonAddDA)
-                        .addComponent(jButtonAddDG)))
+                        .addComponent(jLabel26)
+                        .addComponent(jButtonRemoveDG)
+                        .addComponent(jButtonAddDG))
+                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jButtonDeleteDA)
+                        .addComponent(jButtonAddDA)))
                 .addGap(30, 30, 30))
         );
 
@@ -664,46 +684,52 @@ public class AtriumProcess extends javax.swing.JFrame {
             }
         });
 
-        jButtonAddFR.setText("Add Functional Requirement");
+        jButtonAddFR.setText("Add FR");
 
-        jLabel34.setText("(will add the corresponding assumption)");
+        jButtonRemoveAssumption.setText("Remove Assumption");
 
-        jLabel35.setText("(will add the corresponding assumption)");
+        jButtonRemoveODD.setText("Remove ODD");
+
+        jButtonRemoveFR.setText("Remove FR");
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                .addContainerGap()
+            .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel8))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane11)
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(jLabel32)
-                        .addGap(0, 241, Short.MAX_VALUE)))
-                .addGap(18, 18, 18)
+                        .addContainerGap()
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel8))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane11)
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addComponent(jLabel32)
+                                .addGap(0, 243, Short.MAX_VALUE)))
+                        .addGap(18, 18, 18))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(37, 37, 37)
+                        .addComponent(jButtonAddAssumption, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButtonRemoveAssumption)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 111, Short.MAX_VALUE)
+                        .addComponent(jButtonAddODD, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(52, 52, 52)
+                        .addComponent(jButtonRemoveODD, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(66, 66, 66)))
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel33))
+                    .addComponent(jLabel33)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(58, 58, 58)
+                        .addComponent(jButtonAddFR, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(37, 37, 37)
+                        .addComponent(jButtonRemoveFR, javax.swing.GroupLayout.DEFAULT_SIZE, 104, Short.MAX_VALUE)
+                        .addGap(45, 45, 45)))
                 .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                .addGap(110, 110, 110)
-                .addComponent(jButtonAddAssumption)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButtonAddODD)
-                .addGap(249, 249, 249)
-                .addComponent(jButtonAddFR)
-                .addGap(89, 89, 89))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel34)
-                .addGap(155, 155, 155)
-                .addComponent(jLabel35)
-                .addGap(77, 77, 77))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -715,21 +741,20 @@ public class AtriumProcess extends javax.swing.JFrame {
                     .addComponent(jLabel33))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jScrollPane12)
-                            .addComponent(jScrollPane11)
-                            .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 414, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(32, 32, 32))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jButtonAddAssumption)
-                        .addComponent(jButtonAddODD)
-                        .addComponent(jButtonAddFR, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel35)
-                    .addComponent(jLabel34, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(12, Short.MAX_VALUE))
+                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jScrollPane12, javax.swing.GroupLayout.DEFAULT_SIZE, 414, Short.MAX_VALUE)
+                        .addComponent(jScrollPane11))
+                    .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 414, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jButtonRemoveAssumption, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButtonAddAssumption, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jButtonRemoveODD, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButtonAddODD, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButtonAddFR, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButtonRemoveFR, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(30, 30, 30))
         );
 
         jTabbedPane.addTab("Edit Assumption, ODD, FR", jPanel5);
@@ -771,6 +796,8 @@ public class AtriumProcess extends javax.swing.JFrame {
 
         jLabel31.setText("Capella element");
 
+        jButtonRemoveFM.setText("Remove Failure Mode");
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
@@ -790,9 +817,11 @@ public class AtriumProcess extends javax.swing.JFrame {
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGap(10, 10, 10)
                         .addComponent(jLabel30)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(126, 126, 126)
                         .addComponent(jButtonAddFailure)
-                        .addGap(206, 206, 206))))
+                        .addGap(90, 90, 90)
+                        .addComponent(jButtonRemoveFM)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -807,7 +836,9 @@ public class AtriumProcess extends javax.swing.JFrame {
                     .addComponent(jScrollPane10))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButtonAddFailure)
+                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jButtonAddFailure)
+                        .addComponent(jButtonRemoveFM))
                     .addComponent(jLabel30))
                 .addContainerGap(36, Short.MAX_VALUE))
         );
@@ -864,10 +895,6 @@ public class AtriumProcess extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonAddFailureActionPerformed
 
-    private void jButtonAddAssumptionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAddAssumptionActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonAddAssumptionActionPerformed
-
     private void jListLinkedAssumptionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListLinkedAssumptionMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_jListLinkedAssumptionMouseClicked
@@ -891,10 +918,6 @@ public class AtriumProcess extends javax.swing.JFrame {
     private void jButtonAddDAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAddDAActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonAddDAActionPerformed
-
-    private void jButtonAddODDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAddODDActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonAddODDActionPerformed
 
     private void jButtonAddLinkedSDGActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAddLinkedSDGActionPerformed
         // TODO add your handling code here:
@@ -944,18 +967,6 @@ public class AtriumProcess extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jListDAMouseClicked
 
-    private void jListAssumptionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListAssumptionMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jListAssumptionMouseClicked
-
-    private void jListODDMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListODDMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jListODDMouseClicked
-
-    private void jListFRMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListFRMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jListFRMouseClicked
-
     private void jListCapellaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListCapellaMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_jListCapellaMouseClicked
@@ -963,6 +974,26 @@ public class AtriumProcess extends javax.swing.JFrame {
     private void jListFailureMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListFailureMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_jListFailureMouseClicked
+
+    private void jButtonAddODDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAddODDActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonAddODDActionPerformed
+
+    private void jListFRMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListFRMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jListFRMouseClicked
+
+    private void jListODDMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListODDMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jListODDMouseClicked
+
+    private void jButtonAddAssumptionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAddAssumptionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonAddAssumptionActionPerformed
+
+    private void jListAssumptionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListAssumptionMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jListAssumptionMouseClicked
 
     
     
@@ -1014,9 +1045,16 @@ public class AtriumProcess extends javax.swing.JFrame {
     private javax.swing.JButton jButtonAddLinkedSDG;
     private javax.swing.JButton jButtonAddODD;
     private javax.swing.JButton jButtonAddSDG;
+    private javax.swing.JButton jButtonDeleteDA;
+    private javax.swing.JButton jButtonRemoveAssumption;
+    private javax.swing.JButton jButtonRemoveDG;
+    private javax.swing.JButton jButtonRemoveFM;
+    private javax.swing.JButton jButtonRemoveFR;
     private javax.swing.JButton jButtonRemoveLinked;
     private javax.swing.JButton jButtonRemoveLinkedDA;
     private javax.swing.JButton jButtonRemoveLinkedSDG;
+    private javax.swing.JButton jButtonRemoveODD;
+    private javax.swing.JButton jButtonRemoveSDG;
     private javax.swing.JComboBox<String> jComboBoxCFA;
     private javax.swing.JComboBox<String> jComboBoxDG;
     private javax.swing.JComboBox<String> jComboBoxDG2;
@@ -1038,8 +1076,6 @@ public class AtriumProcess extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
-    private javax.swing.JLabel jLabel34;
-    private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel38;
