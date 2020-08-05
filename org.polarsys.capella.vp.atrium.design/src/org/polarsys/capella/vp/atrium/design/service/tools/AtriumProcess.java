@@ -37,6 +37,7 @@ import org.polarsys.capella.vp.atrium.Atrium.ODD;
 import org.polarsys.capella.vp.atrium.Atrium.ODD_list;
 import org.polarsys.capella.vp.atrium.Atrium.sDG;
 import org.polarsys.capella.vp.atrium.Atrium.sDG_list;
+import org.polarsys.capella.vp.atrium.Atrium.state_Type;
 import org.polarsys.capella.vp.atrium.Atrium.impl.AtriumFactoryImpl;
 import org.polarsys.kitalpha.emde.model.ElementExtension;
 import org.polarsys.kitalpha.emde.model.ExtensibleElement;
@@ -222,7 +223,7 @@ public class AtriumProcess extends javax.swing.JFrame {
 				{
 					final CFA newCFA = AtriumFactoryImpl.eINSTANCE.createCFA();
 					newCFA.setContent("Some content");
-					newCFA.setState(true);
+					newCFA.setState(state_Type.UNPROCESSED);
 					newCFA.setName("{ " + el + " : " + f.getName() + " }");
 	
 					domain.getCommandStack().execute(new RecordingCommand(domain) {
@@ -1165,6 +1166,7 @@ public class AtriumProcess extends javax.swing.JFrame {
 			        @Override
 			        protected void doExecute() {
 			        	CFA_parameter.getAssumption().remove(assumption_parameter);//the remove action is done there, within a transaction context
+			        	assumption_parameter.getLinkedWithCFAs().remove(CFA_parameter); //bidirectional link
 			        }
 			    });
 		}
@@ -1174,6 +1176,7 @@ public class AtriumProcess extends javax.swing.JFrame {
 			        @Override
 			        protected void doExecute() {
 			        	CFA_parameter.getAssumption().add(assumption_parameter);//the add action is done there, within a transaction context
+			        	assumption_parameter.getLinkedWithCFAs().add(CFA_parameter); //bidirectional link
 			        }
 			    });
 		}

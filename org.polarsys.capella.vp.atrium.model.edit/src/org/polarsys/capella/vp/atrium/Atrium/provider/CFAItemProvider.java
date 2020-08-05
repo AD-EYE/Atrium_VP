@@ -53,6 +53,13 @@ public class CFAItemProvider extends AtriumBasicElementItemProvider implements I
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	protected IItemPropertyDescriptor linkedtoFailurePropertyDescriptor;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	protected IItemPropertyDescriptor goalPropertyDescriptor;
 
 	/**
@@ -88,6 +95,19 @@ public class CFAItemProvider extends AtriumBasicElementItemProvider implements I
 					itemPropertyDescriptors.add(linkedtoElementPropertyDescriptor);
 				}
 			}
+			// Process AtriumPackage.Literals.CFA__LINKEDTO_FAILURE
+			if (linkedtoFailurePropertyDescriptor != null) {
+				Object linkedtoFailureValue = eObject.eGet(AtriumPackage.Literals.CFA__LINKEDTO_FAILURE, true);
+				if (linkedtoFailureValue != null && linkedtoFailureValue instanceof EObject && ModelExtensionHelper
+						.getInstance(eObject).isExtensionModelDisabled((EObject) linkedtoFailureValue)) {
+					itemPropertyDescriptors.remove(linkedtoFailurePropertyDescriptor);
+				} else if (linkedtoFailureValue == null && ExtensionModelManager.getAnyType(eObject,
+						AtriumPackage.Literals.CFA__LINKEDTO_FAILURE) != null) {
+					itemPropertyDescriptors.remove(linkedtoFailurePropertyDescriptor);
+				} else if (itemPropertyDescriptors.contains(linkedtoFailurePropertyDescriptor) == false) {
+					itemPropertyDescriptors.add(linkedtoFailurePropertyDescriptor);
+				}
+			}
 			// Process AtriumPackage.Literals.CFA__GOAL
 			if (goalPropertyDescriptor != null) {
 				Object goalValue = eObject.eGet(AtriumPackage.Literals.CFA__GOAL, true);
@@ -116,6 +136,7 @@ public class CFAItemProvider extends AtriumBasicElementItemProvider implements I
 			super.getPropertyDescriptors(object);
 
 			addLinkedtoElementPropertyDescriptor(object);
+			addLinkedtoFailurePropertyDescriptor(object);
 			addAssumptionPropertyDescriptor(object);
 			addGoalPropertyDescriptor(object);
 			addStatePropertyDescriptor(object);
@@ -143,6 +164,26 @@ public class CFAItemProvider extends AtriumBasicElementItemProvider implements I
 				// begin-extension-code
 				null);
 		itemPropertyDescriptors.add(linkedtoElementPropertyDescriptor);
+		// end-extension-code
+	}
+
+	/**
+	 * This adds a property descriptor for the Linkedto Failure feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addLinkedtoFailurePropertyDescriptor(Object object) {
+		// begin-extension-code
+		linkedtoFailurePropertyDescriptor = createItemPropertyDescriptor
+		// end-extension-code		
+		(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+				getString("_UI_CFA_linkedtoFailure_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_CFA_linkedtoFailure_feature", "_UI_CFA_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				AtriumPackage.Literals.CFA__LINKEDTO_FAILURE, true, false, true, null, null,
+				// begin-extension-code
+				null);
+		itemPropertyDescriptors.add(linkedtoFailurePropertyDescriptor);
 		// end-extension-code
 	}
 
@@ -200,7 +241,7 @@ public class CFAItemProvider extends AtriumBasicElementItemProvider implements I
 		(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
 				getString("_UI_CFA_state_feature"), //$NON-NLS-1$
 				getString("_UI_PropertyDescriptor_description", "_UI_CFA_state_feature", "_UI_CFA_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				AtriumPackage.Literals.CFA__STATE, true, false, false, ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null,
+				AtriumPackage.Literals.CFA__STATE, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
 				// begin-extension-code
 				null));
 		// end-extension-code

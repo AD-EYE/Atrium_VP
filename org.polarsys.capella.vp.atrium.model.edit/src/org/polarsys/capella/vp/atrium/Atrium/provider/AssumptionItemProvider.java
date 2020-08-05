@@ -58,6 +58,7 @@ public class AssumptionItemProvider extends AtriumBasicElementItemProvider imple
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addLinkedWithCFAsPropertyDescriptor(object);
 			addAssumptionTypePropertyDescriptor(object);
 			addRationalePropertyDescriptor(object);
 			addValidityPropertyDescriptor(object);
@@ -69,6 +70,27 @@ public class AssumptionItemProvider extends AtriumBasicElementItemProvider imple
 		checkChildCreationExtender(object);
 		// end-extension-code
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Linked With CF As feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addLinkedWithCFAsPropertyDescriptor(Object object) {
+
+		// begin-extension-code
+		itemPropertyDescriptors.add(createItemPropertyDescriptor
+		// end-extension-code
+		(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+				getString("_UI_Assumption_linkedWithCFAs_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_Assumption_linkedWithCFAs_feature", //$NON-NLS-1$//$NON-NLS-2$
+						"_UI_Assumption_type"), //$NON-NLS-1$
+				AtriumPackage.Literals.ASSUMPTION__LINKED_WITH_CF_AS, true, false, true, null, null,
+				// begin-extension-code
+				null));
+		// end-extension-code
 	}
 
 	/**

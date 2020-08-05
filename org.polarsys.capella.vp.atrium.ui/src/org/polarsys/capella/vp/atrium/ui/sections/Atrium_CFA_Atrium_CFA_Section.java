@@ -22,6 +22,7 @@ import org.polarsys.kitalpha.ad.services.manager.ViewpointManager;
 
 import org.polarsys.capella.core.ui.properties.fields.*;
 
+import org.polarsys.capella.vp.atrium.ui.fields.StateField_semanticKindGroup;
 import org.polarsys.capella.vp.atrium.ui.fields.StateField_semanticCheckboxGroup;
 
 import org.polarsys.capella.vp.atrium.ui.fields.StateLinkedElementField_semanticKindGroup;
@@ -59,7 +60,7 @@ public class Atrium_CFA_Atrium_CFA_Section extends AbstractSection {
 	* <!-- end-user-doc -->
 	* @generated
 	*/
-	private StateField_semanticCheckboxGroup StateField;
+	private StateField_semanticKindGroup StateField;
 
 	/**
 	* <!-- begin-model-doc -->
@@ -124,7 +125,7 @@ public class Atrium_CFA_Atrium_CFA_Section extends AbstractSection {
 
 		ContentField1 = new TextValueGroup(Atrium_CFA_AttributeGroup, "Content :", getWidgetFactory(), true);
 
-		StateField = new StateField_semanticCheckboxGroup(Atrium_CFA_AttributeGroup, getWidgetFactory());
+		StateField = new StateField_semanticKindGroup(Atrium_CFA_AttributeGroup, getWidgetFactory());
 
 	}
 
@@ -139,7 +140,7 @@ public class Atrium_CFA_Atrium_CFA_Section extends AbstractSection {
 
 		ContentField1.loadData(object, AtriumPackage.eINSTANCE.getAtriumBasicElement_Content());
 
-		StateField.loadData(object);
+		StateField.loadData(object, AtriumPackage.eINSTANCE.getCFA_State());
 
 	}
 

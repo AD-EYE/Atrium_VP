@@ -39,9 +39,10 @@ Data Atrium.data {
 	Class CFA {
 		superClass AtriumBasicElement
 		Attributes:
-			state type ecore.EBoolean
+			state type ecore.EEnumerator values (Processed , Unprocessed )
 		Associations:
 			linkedtoElement refers [1,1] external capellacore.CapellaElement
+			linkedtoFailure refers [1,1] FailureMode
 			assumption refers [0,*] Assumption
 			goal refers [0,1] DG
 	}
@@ -54,6 +55,8 @@ Data Atrium.data {
 			responsibleArchitect type ecore.EString
 			responsibleExpert type ecore.EString
 			dateOfCompletion type ecore.EString
+		Associations:
+			linkedWithCFAs refers [0,*] CFA
 	}
 	Class DG {
 		superClass AtriumBasicElement

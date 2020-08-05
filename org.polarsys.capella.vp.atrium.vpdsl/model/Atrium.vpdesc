@@ -37,16 +37,20 @@
       <VP_Classes_Associations xsi:type="vpdesc:ExternalClassAssociation" name="linkedtoElement" cardinality="1" type="reference">
         <ExternalTarget href="http://www.polarsys.org/capella/core/core/1.4.0#//CapellaElement"/>
       </VP_Classes_Associations>
+      <VP_Classes_Associations xsi:type="vpdesc:LocalClassAssociation" name="linkedtoFailure" cardinality="1" type="reference" LocalTarget="//@VP_Data/@VP_Classes.15"/>
       <VP_Classes_Associations xsi:type="vpdesc:LocalClassAssociation" name="assumption" cardinality="0..*" type="reference" LocalTarget="//@VP_Data/@VP_Classes.10"/>
       <VP_Classes_Associations xsi:type="vpdesc:LocalClassAssociation" name="goal" type="reference" LocalTarget="//@VP_Data/@VP_Classes.11"/>
       <VP_Class_Attributes name="state">
+        <owned_values name="Processed" literal="Processed"/>
+        <owned_values name="Unprocessed" literal="Unprocessed"/>
         <owned_type xsi:type="vpdesc:ExternalAttributeType">
-          <type href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+          <type href="http://www.eclipse.org/emf/2002/Ecore#//EEnumerator"/>
         </owned_type>
       </VP_Class_Attributes>
       <Inheritences xsi:type="vpdesc:LocalSuperClass" superClass="//@VP_Data/@VP_Classes.0"/>
     </VP_Classes>
     <VP_Classes name="Assumption">
+      <VP_Classes_Associations xsi:type="vpdesc:LocalClassAssociation" name="linkedWithCFAs" cardinality="0..*" type="reference" LocalTarget="//@VP_Data/@VP_Classes.9"/>
       <VP_Class_Attributes name="assumptionType">
         <owned_values name="Clarification" literal="Clarification"/>
         <owned_values name="Task" literal="Task"/>
@@ -170,7 +174,7 @@
           <UI_fields name="contentField1" label="Content">
             <Mapping UI_Field_Mapped_To="//@VP_Data/@VP_Classes.0/@VP_Class_Attributes.0"/>
           </UI_fields>
-          <UI_fields name="stateField" label="State" type="checkbox">
+          <UI_fields name="stateField" label="State" type="radiobox">
             <Mapping UI_Field_Mapped_To="//@VP_Data/@VP_Classes.9/@VP_Class_Attributes.0"/>
           </UI_fields>
         </subContainers>
@@ -606,16 +610,6 @@
         </diagram_Elements>
       </the_MappingSet>
       <the_ActionSet>
-        <openActions name="create_CFA_list" label="Create CFA List"/>
-        <openActions name="create_Assumption_list" label="Create Assumption List"/>
-        <openActions name="create_DG_list" label="Create DG List"/>
-        <openActions name="create_DA_list" label="Create DA List"/>
-        <openActions name="create_Failure_list" label="Create Failure List"/>
-        <openActions name="add_CFA" label="Add CFA"/>
-        <openActions name="add_assumption" label="Add Assumption"/>
-        <openActions name="add_DG" label="Add DG"/>
-        <openActions name="add_DA" label="Add DA"/>
-        <openActions name="add_failure" label="Add Failure"/>
         <openActions name="ElementNewDevelopment" label="ElementNewDevelopment"/>
         <openActions name="ElementLegacy" label="ElementLegacy"/>
         <openActions name="openSwing" label="Open Swing"/>

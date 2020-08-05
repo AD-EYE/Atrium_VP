@@ -1,6 +1,7 @@
 
 package org.polarsys.capella.vp.atrium.Atrium;
 
+import org.eclipse.emf.common.util.EList;
 import java.util.Date;
 import org.polarsys.capella.core.data.capellacore.NamedElement;
 import org.polarsys.kitalpha.emde.model.ElementExtension;
@@ -14,6 +15,7 @@ import org.polarsys.kitalpha.emde.model.ElementExtension;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.polarsys.capella.vp.atrium.Atrium.Assumption#getLinkedWithCFAs <em>Linked With CF As</em>}</li>
  *   <li>{@link org.polarsys.capella.vp.atrium.Atrium.Assumption#getAssumptionType <em>Assumption Type</em>}</li>
  *   <li>{@link org.polarsys.capella.vp.atrium.Atrium.Assumption#getRationale <em>Rationale</em>}</li>
  *   <li>{@link org.polarsys.capella.vp.atrium.Atrium.Assumption#getValidity <em>Validity</em>}</li>
@@ -28,6 +30,20 @@ import org.polarsys.kitalpha.emde.model.ElementExtension;
  */
 
 public interface Assumption extends AtriumBasicElement {
+
+	/**
+	 * Returns the value of the '<em><b>Linked With CF As</b></em>' reference list.
+	 * The list contents are of type {@link org.polarsys.capella.vp.atrium.Atrium.CFA}.
+	
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Linked With CF As</em>' reference list.
+	 * @see org.polarsys.capella.vp.atrium.Atrium.AtriumPackage#getAssumption_LinkedWithCFAs()
+	 * @model
+	 * @generated
+	 */
+
+	EList<CFA> getLinkedWithCFAs();
 
 	/**
 	 * Returns the value of the '<em><b>Rationale</b></em>' attribute.

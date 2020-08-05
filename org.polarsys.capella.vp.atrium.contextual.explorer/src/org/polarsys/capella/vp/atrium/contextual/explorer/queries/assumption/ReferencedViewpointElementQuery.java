@@ -1,7 +1,7 @@
 
-// Generated on 09.07.2020 at 04:22:35 CEST by Viewpoint DSL Generator V 0.1
+// Generated on 05.08.2020 at 11:14:55 CEST by Viewpoint DSL Generator V 0.1
 
-package org.polarsys.capella.vp.atrium.contextual.explorer.queries.cfa;
+package org.polarsys.capella.vp.atrium.contextual.explorer.queries.assumption;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,7 +10,7 @@ import org.eclipse.emf.ecore.EObject;
 
 import org.eclipse.amalgam.explorer.contextual.core.query.IQuery;
 
-import org.polarsys.capella.vp.atrium.Atrium.CFA;
+import org.polarsys.capella.vp.atrium.Atrium.Assumption;
 
 /**
  * <!-- begin-user-doc -->
@@ -41,13 +41,9 @@ public class ReferencedViewpointElementQuery implements IQuery {
 	*/
 	public List<Object> compute(Object object_p) {
 		List<Object> result = new ArrayList<Object>();
-		CFA object = (CFA) object_p;
-		if (object.getLinkedtoFailure() != null)
-			result.add(object.getLinkedtoFailure());
-		for (EObject eObject : object.getAssumption())
+		Assumption object = (Assumption) object_p;
+		for (EObject eObject : object.getLinkedWithCFAs())
 			result.add(eObject);
-		if (object.getGoal() != null)
-			result.add(object.getGoal());
 
 		return result;
 	}

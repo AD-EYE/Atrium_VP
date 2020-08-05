@@ -26,6 +26,7 @@ import org.polarsys.capella.vp.atrium.Atrium.DG_list;
 import org.polarsys.capella.vp.atrium.Atrium.ElementStateAtrium;
 import org.polarsys.capella.vp.atrium.Atrium.FailureMode;
 import org.polarsys.capella.vp.atrium.Atrium.Failure_list;
+import org.polarsys.capella.vp.atrium.Atrium.state_Type;
 import org.polarsys.capella.vp.atrium.Atrium.validity_Type;
 import org.polarsys.capella.vp.atrium.Atrium.impl.AtriumFactoryImpl;
 import org.polarsys.capella.vp.atrium.Atrium.Assumption;
@@ -139,7 +140,7 @@ public class OpenActionService {
 			myCFA = AtriumFactoryImpl.eINSTANCE.createCFA();
 
 			myCFA.setContent("Some content");
-			myCFA.setState(true);
+			myCFA.setState(state_Type.UNPROCESSED);
 
 			((CapellaElement) myCFA).setId(EcoreUtil.generateUUID());
 			((ExtensibleElement) my_list).getOwnedExtensions().add((ElementExtension) myCFA);

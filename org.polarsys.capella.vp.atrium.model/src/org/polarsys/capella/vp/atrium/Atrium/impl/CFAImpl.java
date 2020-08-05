@@ -20,6 +20,8 @@ import org.polarsys.capella.vp.atrium.Atrium.Assumption;
 import org.polarsys.capella.vp.atrium.Atrium.AtriumPackage;
 import org.polarsys.capella.vp.atrium.Atrium.CFA;
 import org.polarsys.capella.vp.atrium.Atrium.DG;
+import org.polarsys.capella.vp.atrium.Atrium.FailureMode;
+import org.polarsys.capella.vp.atrium.Atrium.state_Type;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,9 +32,10 @@ import org.polarsys.capella.vp.atrium.Atrium.DG;
  * </p>
  * <ul>
  *   <li>{@link org.polarsys.capella.vp.atrium.Atrium.impl.CFAImpl#getLinkedtoElement <em>Linkedto Element</em>}</li>
+ *   <li>{@link org.polarsys.capella.vp.atrium.Atrium.impl.CFAImpl#getLinkedtoFailure <em>Linkedto Failure</em>}</li>
  *   <li>{@link org.polarsys.capella.vp.atrium.Atrium.impl.CFAImpl#getAssumption <em>Assumption</em>}</li>
  *   <li>{@link org.polarsys.capella.vp.atrium.Atrium.impl.CFAImpl#getGoal <em>Goal</em>}</li>
- *   <li>{@link org.polarsys.capella.vp.atrium.Atrium.impl.CFAImpl#isState <em>State</em>}</li>
+ *   <li>{@link org.polarsys.capella.vp.atrium.Atrium.impl.CFAImpl#getState <em>State</em>}</li>
  * </ul>
  *
  * @generated
@@ -48,6 +51,16 @@ public class CFAImpl extends AtriumBasicElementImpl implements CFA {
 	 * @ordered
 	 */
 	protected CapellaElement linkedtoElement;
+
+	/**
+	 * The cached value of the '{@link #getLinkedtoFailure() <em>Linkedto Failure</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLinkedtoFailure()
+	 * @generated
+	 * @ordered
+	 */
+	protected FailureMode linkedtoFailure;
 
 	/**
 	 * The cached value of the '{@link #getAssumption() <em>Assumption</em>}' reference list.
@@ -70,24 +83,24 @@ public class CFAImpl extends AtriumBasicElementImpl implements CFA {
 	protected DG goal;
 
 	/**
-	 * The default value of the '{@link #isState() <em>State</em>}' attribute.
+	 * The default value of the '{@link #getState() <em>State</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isState()
+	 * @see #getState()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final boolean STATE_EDEFAULT = false;
+	protected static final state_Type STATE_EDEFAULT = state_Type.PROCESSED;
 
 	/**
-	 * The cached value of the '{@link #isState() <em>State</em>}' attribute.
+	 * The cached value of the '{@link #getState() <em>State</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isState()
+	 * @see #getState()
 	 * @generated
 	 * @ordered
 	 */
-	protected boolean state = STATE_EDEFAULT;
+	protected state_Type state = STATE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -166,6 +179,55 @@ public class CFAImpl extends AtriumBasicElementImpl implements CFA {
 	 */
 
 	@Override
+	public FailureMode getLinkedtoFailure() {
+
+		if (linkedtoFailure != null && linkedtoFailure.eIsProxy()) {
+			InternalEObject oldLinkedtoFailure = (InternalEObject) linkedtoFailure;
+			linkedtoFailure = (FailureMode) eResolveProxy(oldLinkedtoFailure);
+			if (linkedtoFailure != oldLinkedtoFailure) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AtriumPackage.CFA__LINKEDTO_FAILURE,
+							oldLinkedtoFailure, linkedtoFailure));
+			}
+		}
+		return linkedtoFailure;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+
+	public FailureMode basicGetLinkedtoFailure() {
+
+		return linkedtoFailure;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+
+	@Override
+	public void setLinkedtoFailure(FailureMode newLinkedtoFailure) {
+
+		FailureMode oldLinkedtoFailure = linkedtoFailure;
+		linkedtoFailure = newLinkedtoFailure;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AtriumPackage.CFA__LINKEDTO_FAILURE,
+					oldLinkedtoFailure, linkedtoFailure));
+
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+
+	@Override
 	public EList<Assumption> getAssumption() {
 
 		if (assumption == null) {
@@ -228,7 +290,7 @@ public class CFAImpl extends AtriumBasicElementImpl implements CFA {
 	 */
 
 	@Override
-	public boolean isState() {
+	public state_Type getState() {
 
 		return state;
 	}
@@ -240,10 +302,10 @@ public class CFAImpl extends AtriumBasicElementImpl implements CFA {
 	 */
 
 	@Override
-	public void setState(boolean newState) {
+	public void setState(state_Type newState) {
 
-		boolean oldState = state;
-		state = newState;
+		state_Type oldState = state;
+		state = newState == null ? STATE_EDEFAULT : newState;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, AtriumPackage.CFA__STATE, oldState, state));
 
@@ -261,6 +323,10 @@ public class CFAImpl extends AtriumBasicElementImpl implements CFA {
 			if (resolve)
 				return getLinkedtoElement();
 			return basicGetLinkedtoElement();
+		case AtriumPackage.CFA__LINKEDTO_FAILURE:
+			if (resolve)
+				return getLinkedtoFailure();
+			return basicGetLinkedtoFailure();
 		case AtriumPackage.CFA__ASSUMPTION:
 			return getAssumption();
 		case AtriumPackage.CFA__GOAL:
@@ -268,7 +334,7 @@ public class CFAImpl extends AtriumBasicElementImpl implements CFA {
 				return getGoal();
 			return basicGetGoal();
 		case AtriumPackage.CFA__STATE:
-			return isState();
+			return getState();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -285,6 +351,9 @@ public class CFAImpl extends AtriumBasicElementImpl implements CFA {
 		case AtriumPackage.CFA__LINKEDTO_ELEMENT:
 			setLinkedtoElement((CapellaElement) newValue);
 			return;
+		case AtriumPackage.CFA__LINKEDTO_FAILURE:
+			setLinkedtoFailure((FailureMode) newValue);
+			return;
 		case AtriumPackage.CFA__ASSUMPTION:
 			getAssumption().clear();
 			getAssumption().addAll((Collection<? extends Assumption>) newValue);
@@ -293,7 +362,7 @@ public class CFAImpl extends AtriumBasicElementImpl implements CFA {
 			setGoal((DG) newValue);
 			return;
 		case AtriumPackage.CFA__STATE:
-			setState((Boolean) newValue);
+			setState((state_Type) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -309,6 +378,9 @@ public class CFAImpl extends AtriumBasicElementImpl implements CFA {
 		switch (featureID) {
 		case AtriumPackage.CFA__LINKEDTO_ELEMENT:
 			setLinkedtoElement((CapellaElement) null);
+			return;
+		case AtriumPackage.CFA__LINKEDTO_FAILURE:
+			setLinkedtoFailure((FailureMode) null);
 			return;
 		case AtriumPackage.CFA__ASSUMPTION:
 			getAssumption().clear();
@@ -333,6 +405,8 @@ public class CFAImpl extends AtriumBasicElementImpl implements CFA {
 		switch (featureID) {
 		case AtriumPackage.CFA__LINKEDTO_ELEMENT:
 			return linkedtoElement != null;
+		case AtriumPackage.CFA__LINKEDTO_FAILURE:
+			return linkedtoFailure != null;
 		case AtriumPackage.CFA__ASSUMPTION:
 			return assumption != null && !assumption.isEmpty();
 		case AtriumPackage.CFA__GOAL:

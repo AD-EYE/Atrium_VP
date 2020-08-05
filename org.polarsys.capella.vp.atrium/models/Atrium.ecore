@@ -77,12 +77,16 @@
   <eClassifiers xsi:type="ecore:EClass" name="CFA" eSuperTypes="#//AtriumBasicElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="linkedtoElement" lowerBound="1"
         eType="ecore:EClass platform:/plugin/org.polarsys.capella.core.data.gen/model/CapellaCore.ecore#//CapellaElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="linkedtoFailure" lowerBound="1"
+        eType="#//FailureMode"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="assumption" upperBound="-1"
         eType="#//Assumption"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="goal" eType="#//DG"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="state" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="state" eType="#//state_Type"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Assumption" eSuperTypes="#//AtriumBasicElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="linkedWithCFAs" upperBound="-1"
+        eType="#//CFA"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="assumptionType" eType="#//assumptionType_Type"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="rationale" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="validity" eType="#//validity_Type"/>
@@ -112,6 +116,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="FailureMode" eSuperTypes="#//AtriumBasicElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="ODD" eSuperTypes="#//AtriumBasicElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="FR" eSuperTypes="#//AtriumBasicElement"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="state_Type">
+    <eLiterals name="Processed" literal="Processed"/>
+    <eLiterals name="Unprocessed" value="1" literal="Unprocessed"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="assumptionType_Type">
     <eLiterals name="Clarification" literal="Clarification"/>
     <eLiterals name="Task" value="1" literal="Task"/>

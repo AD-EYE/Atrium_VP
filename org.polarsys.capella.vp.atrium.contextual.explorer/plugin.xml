@@ -229,18 +229,18 @@
             </basicQuery>
          </categoryQuery>
       </category>      <category
-            id="org.polarsys.capella.vp.atrium.contextual.explorer.queries.Assumption.ReferencingViewpointElements"
+            id="org.polarsys.capella.vp.atrium.contextual.explorer.queries.Assumption.ReferencedViewpointElements"
             isTopLevel="true"
-            name="Referencing Viewpoint Element">
+            name="Referenced viewpoint elements">
          <targetExplorerId
-               id="ReferencingElementExplorer">
+               id="ReferencedElementExplorer">
          </targetExplorerId>
          <availableForType
                class="org.polarsys.capella.vp.atrium.Atrium.Assumption">
          </availableForType>
          <categoryQuery>
             <basicQuery
-                  class="org.polarsys.capella.vp.atrium.contextual.explorer.queries.assumption.ReferencingViewpointElementQuery">
+                  class="org.polarsys.capella.vp.atrium.contextual.explorer.queries.assumption.ReferencedViewpointElementQuery">
             </basicQuery>
          </categoryQuery>
       </category>	</extension>
@@ -346,6 +346,21 @@
          <categoryQuery>
             <basicQuery
                   class="org.polarsys.capella.vp.atrium.contextual.explorer.queries.failuremode.ParentQuery">
+            </basicQuery>
+         </categoryQuery>
+      </category>      <category
+            id="org.polarsys.capella.vp.atrium.contextual.explorer.queries.FailureMode.ReferencingViewpointElements"
+            isTopLevel="true"
+            name="Referencing Viewpoint Element">
+         <targetExplorerId
+               id="ReferencingElementExplorer">
+         </targetExplorerId>
+         <availableForType
+               class="org.polarsys.capella.vp.atrium.Atrium.FailureMode">
+         </availableForType>
+         <categoryQuery>
+            <basicQuery
+                  class="org.polarsys.capella.vp.atrium.contextual.explorer.queries.failuremode.ReferencingViewpointElementQuery">
             </basicQuery>
          </categoryQuery>
       </category>	</extension>

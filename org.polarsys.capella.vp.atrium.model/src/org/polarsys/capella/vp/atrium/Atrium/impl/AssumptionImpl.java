@@ -1,14 +1,18 @@
 
 package org.polarsys.capella.vp.atrium.Atrium.impl;
 
+import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.polarsys.capella.vp.atrium.Atrium.Assumption;
 import org.polarsys.capella.vp.atrium.Atrium.AtriumPackage;
+import org.polarsys.capella.vp.atrium.Atrium.CFA;
 import org.polarsys.capella.vp.atrium.Atrium.assumptionType_Type;
 import org.polarsys.capella.vp.atrium.Atrium.validity_Type;
 
@@ -20,6 +24,7 @@ import org.polarsys.capella.vp.atrium.Atrium.validity_Type;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.polarsys.capella.vp.atrium.Atrium.impl.AssumptionImpl#getLinkedWithCFAs <em>Linked With CF As</em>}</li>
  *   <li>{@link org.polarsys.capella.vp.atrium.Atrium.impl.AssumptionImpl#getAssumptionType <em>Assumption Type</em>}</li>
  *   <li>{@link org.polarsys.capella.vp.atrium.Atrium.impl.AssumptionImpl#getRationale <em>Rationale</em>}</li>
  *   <li>{@link org.polarsys.capella.vp.atrium.Atrium.impl.AssumptionImpl#getValidity <em>Validity</em>}</li>
@@ -31,6 +36,16 @@ import org.polarsys.capella.vp.atrium.Atrium.validity_Type;
  * @generated
  */
 public class AssumptionImpl extends AtriumBasicElementImpl implements Assumption {
+
+	/**
+	 * The cached value of the '{@link #getLinkedWithCFAs() <em>Linked With CF As</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLinkedWithCFAs()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<CFA> linkedWithCFAs;
 
 	/**
 	 * The default value of the '{@link #getAssumptionType() <em>Assumption Type</em>}' attribute.
@@ -171,6 +186,22 @@ public class AssumptionImpl extends AtriumBasicElementImpl implements Assumption
 	@Override
 	protected EClass eStaticClass() {
 		return AtriumPackage.Literals.ASSUMPTION;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+
+	@Override
+	public EList<CFA> getLinkedWithCFAs() {
+
+		if (linkedWithCFAs == null) {
+			linkedWithCFAs = new EObjectResolvingEList<CFA>(CFA.class, this,
+					AtriumPackage.ASSUMPTION__LINKED_WITH_CF_AS);
+		}
+		return linkedWithCFAs;
 	}
 
 	/**
@@ -355,6 +386,8 @@ public class AssumptionImpl extends AtriumBasicElementImpl implements Assumption
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+		case AtriumPackage.ASSUMPTION__LINKED_WITH_CF_AS:
+			return getLinkedWithCFAs();
 		case AtriumPackage.ASSUMPTION__ASSUMPTION_TYPE:
 			return getAssumptionType();
 		case AtriumPackage.ASSUMPTION__RATIONALE:
@@ -376,9 +409,14 @@ public class AssumptionImpl extends AtriumBasicElementImpl implements Assumption
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+		case AtriumPackage.ASSUMPTION__LINKED_WITH_CF_AS:
+			getLinkedWithCFAs().clear();
+			getLinkedWithCFAs().addAll((Collection<? extends CFA>) newValue);
+			return;
 		case AtriumPackage.ASSUMPTION__ASSUMPTION_TYPE:
 			setAssumptionType((assumptionType_Type) newValue);
 			return;
@@ -409,6 +447,9 @@ public class AssumptionImpl extends AtriumBasicElementImpl implements Assumption
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+		case AtriumPackage.ASSUMPTION__LINKED_WITH_CF_AS:
+			getLinkedWithCFAs().clear();
+			return;
 		case AtriumPackage.ASSUMPTION__ASSUMPTION_TYPE:
 			setAssumptionType(ASSUMPTION_TYPE_EDEFAULT);
 			return;
@@ -439,6 +480,8 @@ public class AssumptionImpl extends AtriumBasicElementImpl implements Assumption
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+		case AtriumPackage.ASSUMPTION__LINKED_WITH_CF_AS:
+			return linkedWithCFAs != null && !linkedWithCFAs.isEmpty();
 		case AtriumPackage.ASSUMPTION__ASSUMPTION_TYPE:
 			return assumptionType != ASSUMPTION_TYPE_EDEFAULT;
 		case AtriumPackage.ASSUMPTION__RATIONALE:

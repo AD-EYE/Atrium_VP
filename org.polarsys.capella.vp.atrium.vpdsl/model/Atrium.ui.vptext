@@ -70,7 +70,7 @@ UI Atrium_CFA {
 		Container Atrium_CFA_AttributeGroup {
 			label: "C F A Attributes"
 			Field contentField1 label: "Content" type text , mapped-to Atrium.data.AtriumBasicElement.content
-			Field stateField label: "State" type checkbox , mapped-to Atrium.data.CFA.state
+			Field stateField label: "State" type radiobox , mapped-to Atrium.data.CFA.state
 		}
 	}
 }
@@ -153,5 +153,4 @@ UI Atrium_FR {
 		}
 	}
 }
-
 }

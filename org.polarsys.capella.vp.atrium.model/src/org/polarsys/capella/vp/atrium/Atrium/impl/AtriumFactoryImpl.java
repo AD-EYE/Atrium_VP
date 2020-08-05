@@ -107,6 +107,8 @@ public class AtriumFactoryImpl extends EFactoryImpl implements AtriumFactory {
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
+		case AtriumPackage.STATE_TYPE:
+			return createstate_TypeFromString(eDataType, initialValue);
 		case AtriumPackage.ASSUMPTION_TYPE_TYPE:
 			return createassumptionType_TypeFromString(eDataType, initialValue);
 		case AtriumPackage.VALIDITY_TYPE:
@@ -124,6 +126,8 @@ public class AtriumFactoryImpl extends EFactoryImpl implements AtriumFactory {
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
+		case AtriumPackage.STATE_TYPE:
+			return convertstate_TypeToString(eDataType, instanceValue);
 		case AtriumPackage.ASSUMPTION_TYPE_TYPE:
 			return convertassumptionType_TypeToString(eDataType, instanceValue);
 		case AtriumPackage.VALIDITY_TYPE:
@@ -401,6 +405,28 @@ public class AtriumFactoryImpl extends EFactoryImpl implements AtriumFactory {
 
 		//end-capella-code
 		return fr;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public state_Type createstate_TypeFromString(EDataType eDataType, String initialValue) {
+		state_Type result = state_Type.get(initialValue);
+		if (result == null)
+			throw new IllegalArgumentException(
+					"The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertstate_TypeToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
 	}
 
 	/**

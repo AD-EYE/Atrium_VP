@@ -341,36 +341,36 @@ Diagrams Atrium.diagram {
 
 		}
 		Actions {
-			OpenAction create_CFA_list {
-				label: "Create CFA List"
-			}
-			OpenAction create_Assumption_list {
-				label: "Create Assumption List"
-			}
-			OpenAction create_DG_list {
-				label: "Create DG List"
-			}
-			OpenAction create_DA_list {
-				label: "Create DA List"
-			}
-			OpenAction create_Failure_list {
-				label: "Create Failure List"
-			}
-			OpenAction add_CFA {
-				label: "Add CFA"
-			}
-			OpenAction add_assumption {
-				label: "Add Assumption"
-			}
-			OpenAction add_DG {
-				label: "Add DG"
-			}
-			OpenAction add_DA {
-				label: "Add DA"
-			}
-			OpenAction add_failure {
-				label: "Add Failure"
-			}
+//			OpenAction create_CFA_list {
+//				label: "Create CFA List"
+//			}
+//			OpenAction create_Assumption_list {
+//				label: "Create Assumption List"
+//			}
+//			OpenAction create_DG_list {
+//				label: "Create DG List"
+//			}
+//			OpenAction create_DA_list {
+//				label: "Create DA List"
+//			}
+//			OpenAction create_Failure_list {
+//				label: "Create Failure List"
+//			}
+//			OpenAction add_CFA {
+//				label: "Add CFA"
+//			}
+//			OpenAction add_assumption {
+//				label: "Add Assumption"
+//			}
+//			OpenAction add_DG {
+//				label: "Add DG"
+//			}
+//			OpenAction add_DA {
+//				label: "Add DA"
+//			}
+//			OpenAction add_failure {
+//				label: "Add Failure"
+//			}
 			OpenAction ElementNewDevelopment {
 				label: "ElementNewDevelopment"
 			}

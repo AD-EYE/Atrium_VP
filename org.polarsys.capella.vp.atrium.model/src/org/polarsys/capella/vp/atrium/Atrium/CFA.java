@@ -17,9 +17,10 @@ import org.polarsys.kitalpha.emde.model.ElementExtension;
  * </p>
  * <ul>
  *   <li>{@link org.polarsys.capella.vp.atrium.Atrium.CFA#getLinkedtoElement <em>Linkedto Element</em>}</li>
+ *   <li>{@link org.polarsys.capella.vp.atrium.Atrium.CFA#getLinkedtoFailure <em>Linkedto Failure</em>}</li>
  *   <li>{@link org.polarsys.capella.vp.atrium.Atrium.CFA#getAssumption <em>Assumption</em>}</li>
  *   <li>{@link org.polarsys.capella.vp.atrium.Atrium.CFA#getGoal <em>Goal</em>}</li>
- *   <li>{@link org.polarsys.capella.vp.atrium.Atrium.CFA#isState <em>State</em>}</li>
+ *   <li>{@link org.polarsys.capella.vp.atrium.Atrium.CFA#getState <em>State</em>}</li>
  * </ul>
  *
  * @see org.polarsys.capella.vp.atrium.Atrium.AtriumPackage#getCFA()
@@ -54,6 +55,32 @@ public interface CFA extends AtriumBasicElement {
 	 */
 
 	void setLinkedtoElement(CapellaElement value);
+
+	/**
+	 * Returns the value of the '<em><b>Linkedto Failure</b></em>' reference.
+	
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Linkedto Failure</em>' reference.
+	 * @see #setLinkedtoFailure(FailureMode)
+	 * @see org.polarsys.capella.vp.atrium.Atrium.AtriumPackage#getCFA_LinkedtoFailure()
+	 * @model required="true"
+	 * @generated
+	 */
+
+	FailureMode getLinkedtoFailure();
+
+	/**
+	 * Sets the value of the '{@link org.polarsys.capella.vp.atrium.Atrium.CFA#getLinkedtoFailure <em>Linkedto Failure</em>}' reference.
+	
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Linkedto Failure</em>' reference.
+	 * @see #getLinkedtoFailure()
+	 * @generated
+	 */
+
+	void setLinkedtoFailure(FailureMode value);
 
 	/**
 	 * Returns the value of the '<em><b>Assumption</b></em>' reference list.
@@ -97,28 +124,31 @@ public interface CFA extends AtriumBasicElement {
 
 	/**
 	 * Returns the value of the '<em><b>State</b></em>' attribute.
+	 * The literals are from the enumeration {@link org.polarsys.capella.vp.atrium.Atrium.state_Type}.
 	
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>State</em>' attribute.
-	 * @see #setState(boolean)
+	 * @see org.polarsys.capella.vp.atrium.Atrium.state_Type
+	 * @see #setState(state_Type)
 	 * @see org.polarsys.capella.vp.atrium.Atrium.AtriumPackage#getCFA_State()
 	 * @model
 	 * @generated
 	 */
 
-	boolean isState();
+	state_Type getState();
 
 	/**
-	 * Sets the value of the '{@link org.polarsys.capella.vp.atrium.Atrium.CFA#isState <em>State</em>}' attribute.
+	 * Sets the value of the '{@link org.polarsys.capella.vp.atrium.Atrium.CFA#getState <em>State</em>}' attribute.
 	
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>State</em>' attribute.
-	 * @see #isState()
+	 * @see org.polarsys.capella.vp.atrium.Atrium.state_Type
+	 * @see #getState()
 	 * @generated
 	 */
 
-	void setState(boolean value);
+	void setState(state_Type value);
 
 } // CFA

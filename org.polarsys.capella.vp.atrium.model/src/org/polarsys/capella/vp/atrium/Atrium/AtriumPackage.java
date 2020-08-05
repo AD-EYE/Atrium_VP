@@ -2246,13 +2246,22 @@ public interface AtriumPackage extends EPackage {
 	int CFA__LINKEDTO_ELEMENT = ATRIUM_BASIC_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Linkedto Failure</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CFA__LINKEDTO_FAILURE = ATRIUM_BASIC_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
 	 * The feature id for the '<em><b>Assumption</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CFA__ASSUMPTION = ATRIUM_BASIC_ELEMENT_FEATURE_COUNT + 1;
+	int CFA__ASSUMPTION = ATRIUM_BASIC_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Goal</b></em>' reference.
@@ -2261,7 +2270,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CFA__GOAL = ATRIUM_BASIC_ELEMENT_FEATURE_COUNT + 2;
+	int CFA__GOAL = ATRIUM_BASIC_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>State</b></em>' attribute.
@@ -2270,7 +2279,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CFA__STATE = ATRIUM_BASIC_ELEMENT_FEATURE_COUNT + 3;
+	int CFA__STATE = ATRIUM_BASIC_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>CFA</em>' class.
@@ -2279,7 +2288,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CFA_FEATURE_COUNT = ATRIUM_BASIC_ELEMENT_FEATURE_COUNT + 4;
+	int CFA_FEATURE_COUNT = ATRIUM_BASIC_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.capella.vp.atrium.Atrium.impl.AssumptionImpl <em>Assumption</em>}' class.
@@ -2499,13 +2508,22 @@ public interface AtriumPackage extends EPackage {
 	int ASSUMPTION__CONTENT = ATRIUM_BASIC_ELEMENT__CONTENT;
 
 	/**
+	 * The feature id for the '<em><b>Linked With CF As</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSUMPTION__LINKED_WITH_CF_AS = ATRIUM_BASIC_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Assumption Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ASSUMPTION__ASSUMPTION_TYPE = ATRIUM_BASIC_ELEMENT_FEATURE_COUNT + 0;
+	int ASSUMPTION__ASSUMPTION_TYPE = ATRIUM_BASIC_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Rationale</b></em>' attribute.
@@ -2514,7 +2532,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSUMPTION__RATIONALE = ATRIUM_BASIC_ELEMENT_FEATURE_COUNT + 1;
+	int ASSUMPTION__RATIONALE = ATRIUM_BASIC_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Validity</b></em>' attribute.
@@ -2523,7 +2541,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSUMPTION__VALIDITY = ATRIUM_BASIC_ELEMENT_FEATURE_COUNT + 2;
+	int ASSUMPTION__VALIDITY = ATRIUM_BASIC_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Responsible Architect</b></em>' attribute.
@@ -2532,7 +2550,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSUMPTION__RESPONSIBLE_ARCHITECT = ATRIUM_BASIC_ELEMENT_FEATURE_COUNT + 3;
+	int ASSUMPTION__RESPONSIBLE_ARCHITECT = ATRIUM_BASIC_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Responsible Expert</b></em>' attribute.
@@ -2541,7 +2559,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSUMPTION__RESPONSIBLE_EXPERT = ATRIUM_BASIC_ELEMENT_FEATURE_COUNT + 4;
+	int ASSUMPTION__RESPONSIBLE_EXPERT = ATRIUM_BASIC_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Date Of Completion</b></em>' attribute.
@@ -2550,7 +2568,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSUMPTION__DATE_OF_COMPLETION = ATRIUM_BASIC_ELEMENT_FEATURE_COUNT + 5;
+	int ASSUMPTION__DATE_OF_COMPLETION = ATRIUM_BASIC_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of structural features of the '<em>Assumption</em>' class.
@@ -2559,7 +2577,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSUMPTION_FEATURE_COUNT = ATRIUM_BASIC_ELEMENT_FEATURE_COUNT + 6;
+	int ASSUMPTION_FEATURE_COUNT = ATRIUM_BASIC_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.capella.vp.atrium.Atrium.impl.DGImpl <em>DG</em>}' class.
@@ -4171,6 +4189,16 @@ public interface AtriumPackage extends EPackage {
 	int FR_FEATURE_COUNT = ATRIUM_BASIC_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link org.polarsys.capella.vp.atrium.Atrium.state_Type <em>state Type</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.capella.vp.atrium.Atrium.state_Type
+	 * @see org.polarsys.capella.vp.atrium.Atrium.impl.AtriumPackageImpl#getstate_Type()
+	 * @generated
+	 */
+	int STATE_TYPE = 18;
+
+	/**
 	 * The meta object id for the '{@link org.polarsys.capella.vp.atrium.Atrium.assumptionType_Type <em>assumption Type Type</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4178,7 +4206,7 @@ public interface AtriumPackage extends EPackage {
 	 * @see org.polarsys.capella.vp.atrium.Atrium.impl.AtriumPackageImpl#getassumptionType_Type()
 	 * @generated
 	 */
-	int ASSUMPTION_TYPE_TYPE = 18;
+	int ASSUMPTION_TYPE_TYPE = 19;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.capella.vp.atrium.Atrium.validity_Type <em>validity Type</em>}' enum.
@@ -4188,7 +4216,7 @@ public interface AtriumPackage extends EPackage {
 	 * @see org.polarsys.capella.vp.atrium.Atrium.impl.AtriumPackageImpl#getvalidity_Type()
 	 * @generated
 	 */
-	int VALIDITY_TYPE = 19;
+	int VALIDITY_TYPE = 20;
 
 	/**
 	 * Returns the meta object for class '{@link org.polarsys.capella.vp.atrium.Atrium.AtriumBasicElement <em>Basic Element</em>}'.
@@ -4313,6 +4341,17 @@ public interface AtriumPackage extends EPackage {
 	EReference getCFA_LinkedtoElement();
 
 	/**
+	 * Returns the meta object for the reference '{@link org.polarsys.capella.vp.atrium.Atrium.CFA#getLinkedtoFailure <em>Linkedto Failure</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Linkedto Failure</em>'.
+	 * @see org.polarsys.capella.vp.atrium.Atrium.CFA#getLinkedtoFailure()
+	 * @see #getCFA()
+	 * @generated
+	 */
+	EReference getCFA_LinkedtoFailure();
+
+	/**
 	 * Returns the meta object for the reference list '{@link org.polarsys.capella.vp.atrium.Atrium.CFA#getAssumption <em>Assumption</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4335,11 +4374,11 @@ public interface AtriumPackage extends EPackage {
 	EReference getCFA_Goal();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.polarsys.capella.vp.atrium.Atrium.CFA#isState <em>State</em>}'.
+	 * Returns the meta object for the attribute '{@link org.polarsys.capella.vp.atrium.Atrium.CFA#getState <em>State</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>State</em>'.
-	 * @see org.polarsys.capella.vp.atrium.Atrium.CFA#isState()
+	 * @see org.polarsys.capella.vp.atrium.Atrium.CFA#getState()
 	 * @see #getCFA()
 	 * @generated
 	 */
@@ -4354,6 +4393,17 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getAssumption();
+
+	/**
+	 * Returns the meta object for the reference list '{@link org.polarsys.capella.vp.atrium.Atrium.Assumption#getLinkedWithCFAs <em>Linked With CF As</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Linked With CF As</em>'.
+	 * @see org.polarsys.capella.vp.atrium.Atrium.Assumption#getLinkedWithCFAs()
+	 * @see #getAssumption()
+	 * @generated
+	 */
+	EReference getAssumption_LinkedWithCFAs();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.polarsys.capella.vp.atrium.Atrium.Assumption#getAssumptionType <em>Assumption Type</em>}'.
@@ -4536,6 +4586,16 @@ public interface AtriumPackage extends EPackage {
 	EClass getFR();
 
 	/**
+	 * Returns the meta object for enum '{@link org.polarsys.capella.vp.atrium.Atrium.state_Type <em>state Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>state Type</em>'.
+	 * @see org.polarsys.capella.vp.atrium.Atrium.state_Type
+	 * @generated
+	 */
+	EEnum getstate_Type();
+
+	/**
 	 * Returns the meta object for enum '{@link org.polarsys.capella.vp.atrium.Atrium.assumptionType_Type <em>assumption Type Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4694,6 +4754,14 @@ public interface AtriumPackage extends EPackage {
 		EReference CFA__LINKEDTO_ELEMENT = eINSTANCE.getCFA_LinkedtoElement();
 
 		/**
+		 * The meta object literal for the '<em><b>Linkedto Failure</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CFA__LINKEDTO_FAILURE = eINSTANCE.getCFA_LinkedtoFailure();
+
+		/**
 		 * The meta object literal for the '<em><b>Assumption</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4726,6 +4794,14 @@ public interface AtriumPackage extends EPackage {
 		 * @generated
 		 */
 		EClass ASSUMPTION = eINSTANCE.getAssumption();
+
+		/**
+		 * The meta object literal for the '<em><b>Linked With CF As</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ASSUMPTION__LINKED_WITH_CF_AS = eINSTANCE.getAssumption_LinkedWithCFAs();
 
 		/**
 		 * The meta object literal for the '<em><b>Assumption Type</b></em>' attribute feature.
@@ -4876,6 +4952,16 @@ public interface AtriumPackage extends EPackage {
 		 * @generated
 		 */
 		EClass FR = eINSTANCE.getFR();
+
+		/**
+		 * The meta object literal for the '{@link org.polarsys.capella.vp.atrium.Atrium.state_Type <em>state Type</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.polarsys.capella.vp.atrium.Atrium.state_Type
+		 * @see org.polarsys.capella.vp.atrium.Atrium.impl.AtriumPackageImpl#getstate_Type()
+		 * @generated
+		 */
+		EEnum STATE_TYPE = eINSTANCE.getstate_Type();
 
 		/**
 		 * The meta object literal for the '{@link org.polarsys.capella.vp.atrium.Atrium.assumptionType_Type <em>assumption Type Type</em>}' enum.
