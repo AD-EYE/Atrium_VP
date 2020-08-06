@@ -97,14 +97,14 @@ public class AtriumProcess extends javax.swing.JFrame {
 		myEditor = new EditingPanel(this);
 		
 		sortAtriumElementOnce(root);
+		updateCFA();
 		initComponents();
+		ObjectAdded();
 		updateDisplayTab0();
 		updateDisplayTab1();
 		updateDisplayTab2();
 		updateDisplayTab3();
 		updateDisplayTab4();
-		ObjectAdded();
-		updateCFA();
 		this.setVisible(true);
 	}
 
@@ -221,8 +221,28 @@ public class AtriumProcess extends javax.swing.JFrame {
 	
 	private void updateCFA()
 	{
-		//create CFAs in CFA list
+		//create or delete CFAs in CFA list
 		TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(the_CFA_list);
+		
+				EList<CFA> temp_listCFA = new BasicEList<CFA>();
+				for (CFA cfa : listCFA) {temp_listCFA.add(cfa);}
+		
+				for (CFA cfa : temp_listCFA)
+				{
+					if ((cfa.getLinkedtoElement()==null) || (cfa.getLinkedtoFailure()==null))
+					{
+						final CFA old_cfa=cfa;
+						domain.getCommandStack().execute(new RecordingCommand(domain) {
+					        @Override
+					        protected void doExecute() {
+					        	((ExtensibleElement) the_CFA_list).getOwnedExtensions().remove(old_cfa);//the remove action is done there, within a transaction context
+					        }
+					    });
+						listCFA.remove(cfa);
+					}
+				}
+		
+		
 				for (EObject obj : ListCapellaElement)
 				{
 					NamedElement el = (NamedElement) obj;
@@ -1572,32 +1592,10 @@ public class AtriumProcess extends javax.swing.JFrame {
     		AtriumBasicElement abe = (AtriumBasicElement) obj;
     		if (abe.getName()==strToDelete) {elToDelete=abe;}
     	}
-    	
-    	
-    	if (type==1) //failure
-    	{
-    		System.out.println("ah");
-    		EList<CFA> temp_listCFA = new BasicEList<CFA>();
-    		for (CFA cfa : listCFA) {temp_listCFA.add(cfa);}
-    		for (CFA cfa : temp_listCFA)
-    		{
-    			if (cfa.getLinkedtoFailure()==(FailureMode) elToDelete)
-    			{
-    				final CFA cfa_to_delete=cfa;
-    				domain.getCommandStack().execute(new RecordingCommand(domain) {
-    			        @Override
-    			        protected void doExecute() {
-    			        	((ExtensibleElement) the_CFA_list).getOwnedExtensions().remove(cfa_to_delete);//the remove action is done there, within a transaction context
-    			        }
-    			    });
-    				listCFA.remove(cfa);
-    			}
-    		}
-    	}
+  
     	
     	final AtriumBasicElement elToDelete_param = elToDelete;
     	final EObject Extensible_list_param = Extensible_list; 
-    	
     	
     	domain.getCommandStack().execute(new RecordingCommand(domain) {
 	        @Override
