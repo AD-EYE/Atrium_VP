@@ -37,6 +37,7 @@ public class EditingPanel extends javax.swing.JFrame {
                         
     private void initComponents() {
 
+    	buttonGroup1 = new javax.swing.ButtonGroup();
     	Editingpanel = new javax.swing.JFrame();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -44,6 +45,10 @@ public class EditingPanel extends javax.swing.JFrame {
         jTextNameeditedObject = new javax.swing.JTextField();
         jTextContentEditedObject = new javax.swing.JTextField();
         jButtonSaveEditedObject = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        jRadioButtonYes = new javax.swing.JRadioButton();
+        jRadioButtonNo = new javax.swing.JRadioButton();
+
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -66,28 +71,49 @@ public class EditingPanel extends javax.swing.JFrame {
                 jButtonSaveEditedObjectActionPerformed(evt);
             }
         });
+        
+        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel4.setText("Selection ?");
+
+        buttonGroup1.add(jRadioButtonYes);
+        jRadioButtonYes.setText("Yes");
+
+        buttonGroup1.add(jRadioButtonNo);
+        jRadioButtonNo.setText("No");
+        
+        Editingpanel.setAlwaysOnTop(true);
+        Editingpanel.setBounds(new java.awt.Rectangle(0, 0, 0, 0));
+        Editingpanel.setSize(new java.awt.Dimension(560, 260));
+        Editingpanel.setType(java.awt.Window.Type.POPUP);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(Editingpanel.getContentPane());
         Editingpanel.getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButtonSaveEditedObject, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(224, 224, 224)
-                            .addComponent(jLabel1))
-                        .addGroup(layout.createSequentialGroup()
-                            .addContainerGap()
-                            .addComponent(jLabel2)
-                            .addGap(33, 33, 33)
-                            .addComponent(jTextNameeditedObject, javax.swing.GroupLayout.PREFERRED_SIZE, 443, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createSequentialGroup()
-                            .addContainerGap()
-                            .addComponent(jLabel3)
-                            .addGap(18, 18, 18)
-                            .addComponent(jTextContentEditedObject))))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(224, 224, 224)
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel2)
+                        .addGap(33, 33, 33)
+                        .addComponent(jTextNameeditedObject, javax.swing.GroupLayout.PREFERRED_SIZE, 443, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel3)
+                        .addGap(18, 18, 18)
+                        .addComponent(jTextContentEditedObject))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel4)
+                        .addGap(18, 18, 18)
+                        .addComponent(jRadioButtonYes)
+                        .addGap(18, 18, 18)
+                        .addComponent(jRadioButtonNo)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButtonSaveEditedObject, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(30, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -103,20 +129,20 @@ public class EditingPanel extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(jTextContentEditedObject, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
-                .addComponent(jButtonSaveEditedObject)
-                .addGap(21, 21, 21))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(jButtonSaveEditedObject)
+                    .addComponent(jRadioButtonYes)
+                    .addComponent(jRadioButtonNo))
+                .addGap(34, 34, 34))
         );
-        
-        Editingpanel.setAlwaysOnTop(true);
-        Editingpanel.setBounds(new java.awt.Rectangle(0, 0, 0, 0));
-        Editingpanel.setSize(new java.awt.Dimension(560, 260));
-        Editingpanel.setType(java.awt.Window.Type.POPUP);
 
         pack();
     }// </editor-fold>                        
 
-    private void jButtonSaveEditedObjectActionPerformed(java.awt.event.ActionEvent evt) {                                                        
+    private void jButtonSaveEditedObjectActionPerformed(java.awt.event.ActionEvent evt) {      
+    	TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(editedObject);
     	boolean alreadyHere = false; //protection against existing name
     	if (editedObject instanceof DG) {for (DG dg : listDG){if (jTextNameeditedObject.getText().equals(dg.getName()) && (!(dg.equals((DG) editedObject)))){alreadyHere = true;}}}
     	if (editedObject instanceof DA) {for (DA da : listDA){if (jTextNameeditedObject.getText().equals(da.getName()) && (!(da.equals((DA) editedObject)))){alreadyHere = true;}}}
@@ -126,15 +152,13 @@ public class EditingPanel extends javax.swing.JFrame {
 	
 		if (!(alreadyHere))
 		{
-			TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(editedObject);
 			domain.getCommandStack().execute(new RecordingCommand(domain) {
 			        @Override
 			        protected void doExecute() {
 			        	editedObject.setName(jTextNameeditedObject.getText());
 			        	editedObject.setContent(jTextContentEditedObject.getText());
 			        }
-			    });
-			
+			    });	
 			
 			my_parent.updateDisplayTab0();
 			my_parent.updateDisplayTab1();
@@ -144,6 +168,18 @@ public class EditingPanel extends javax.swing.JFrame {
 			Editingpanel.setVisible(false);
 			
 			if (editedObject instanceof DG) {my_parent.ObjectAdded();}
+			
+			if (editedObject instanceof DA)
+			{
+				domain.getCommandStack().execute(new RecordingCommand(domain) {
+			        @Override
+			        protected void doExecute() {
+			        	DA da = (DA) editedObject;
+			        	da.setIsPartOfSelection(jRadioButtonYes.isSelected());
+			        }
+			    });	
+			}
+			
 		}
 		else {JOptionPane.showMessageDialog(getParent(), "There is already an assumption named like that, please chose another name.");}
     }
@@ -162,20 +198,41 @@ public class EditingPanel extends javax.swing.JFrame {
     	
     	if (object instanceof CFA) {jLabel1.setText("Editing CFA");}
     	if (object instanceof DG) {jLabel1.setText("Editing Design Goal");}
-    	if (object instanceof DA) {jLabel1.setText("Editing Design alternative");}
     	if (object instanceof FailureMode) {jLabel1.setText("Editing Failure Mode");}
     	if (object instanceof sDG) {jLabel1.setText("Editing subDesign Goal");}
+    	
+    	if (object instanceof DA) 
+    	{
+    		jLabel1.setText("Editing Design alternative");
+    		jRadioButtonNo.setVisible(true);
+    		jRadioButtonYes.setVisible(true);
+    		jLabel4.setVisible(true);
+    		
+    		DA da = (DA) object;
+    		if (da.isIsPartOfSelection()){jRadioButtonYes.setSelected(true);}
+    		else {jRadioButtonNo.setSelected(true);}
+    	}
+    	else 
+    	{
+    		jRadioButtonNo.setVisible(false);
+    		jRadioButtonYes.setVisible(false);
+    		jLabel4.setVisible(false);
+    	}
     	
     	Editingpanel.setVisible(true);
     }
    
 
     // Variables declaration - do not modify
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JFrame Editingpanel;
     private javax.swing.JButton jButtonSaveEditedObject;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JRadioButton jRadioButtonNo;
+    private javax.swing.JRadioButton jRadioButtonYes;
     private javax.swing.JTextField jTextContentEditedObject;
     private javax.swing.JTextField jTextNameeditedObject;
     // End of variables declaration                   
