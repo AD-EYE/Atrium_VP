@@ -104,6 +104,7 @@ public class AtriumProcess extends javax.swing.JFrame {
 		updateDisplayTab3();
 		updateDisplayTab4();
 		ObjectAdded();
+		updateCFA();
 		this.setVisible(true);
 	}
 
@@ -215,38 +216,44 @@ public class AtriumProcess extends javax.swing.JFrame {
 	    });
 		
 		
-		//create CFAs in CFA list
-		for (EObject obj : ListCapellaElement)
-		{
-			NamedElement el = (NamedElement) obj;
-			
-			for (FailureMode f : ListFailureMode)
-			{
-				boolean found = false;
-				
-				for (CFA cfa : listCFA){if (cfa.getName().equals("{ " + el.getName() + " : " + f.getName() + " }")) {found = true;}}
-				
-				if (!(found))
-				{
-					final CFA newCFA = AtriumFactoryImpl.eINSTANCE.createCFA();
-					newCFA.setContent("Some content");
-					newCFA.setState(state_Type.UNPROCESSED);
-					newCFA.setName("{ " + el.getName() + " : " + f.getName() + " }");
-					newCFA.setLinkedtoElement(el);
-					newCFA.setLinkedtoFailure(f);
-					
+		
+	}
 	
-					domain.getCommandStack().execute(new RecordingCommand(domain) {
-					        @Override
-					        protected void doExecute() {
-					        	((ExtensibleElement) the_CFA_list).getOwnedExtensions().add((ElementExtension) newCFA);//the add action is done there, within a transaction context
-					        }
-					    });
-					 
-					listCFA.add(newCFA);//updating our local list
+	private void updateCFA()
+	{
+		//create CFAs in CFA list
+		TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(the_CFA_list);
+				for (EObject obj : ListCapellaElement)
+				{
+					NamedElement el = (NamedElement) obj;
+					
+					for (FailureMode f : ListFailureMode)
+					{
+						boolean found = false;
+						
+						for (CFA cfa : listCFA){if (cfa.getName().equals("{ " + el.getName() + " : " + f.getName() + " }")) {found = true;}}
+						
+						if (!(found))
+						{
+							final CFA newCFA = AtriumFactoryImpl.eINSTANCE.createCFA();
+							newCFA.setContent("Some content");
+							newCFA.setState(state_Type.UNPROCESSED);
+							newCFA.setName("{ " + el.getName() + " : " + f.getName() + " }");
+							newCFA.setLinkedtoElement(el);
+							newCFA.setLinkedtoFailure(f);
+							
+			
+							domain.getCommandStack().execute(new RecordingCommand(domain) {
+							        @Override
+							        protected void doExecute() {
+							        	((ExtensibleElement) the_CFA_list).getOwnedExtensions().add((ElementExtension) newCFA);//the add action is done there, within a transaction context
+							        }
+							    });
+							 
+							listCFA.add(newCFA);//updating our local list
+						}
+					}
 				}
-			}
-		}
 	}
 	
 	
@@ -1509,9 +1516,10 @@ public class AtriumProcess extends javax.swing.JFrame {
     	} 
     }
     
-    @SuppressWarnings({ "rawtypes", "unchecked" })
+    @SuppressWarnings({ "rawtypes" })
 	private void jButtonRemoveObject(java.awt.event.ActionEvent evt, int type)
     {
+    	TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(the_CFA_list); //arbitrary
     	javax.swing.JList<String> jlist = null;
     	EList listObject = null;
     	EObject Extensible_list = null;
@@ -1565,21 +1573,44 @@ public class AtriumProcess extends javax.swing.JFrame {
     		if (abe.getName()==strToDelete) {elToDelete=abe;}
     	}
     	
+    	
+    	if (type==1) //failure
+    	{
+    		System.out.println("ah");
+    		EList<CFA> temp_listCFA = new BasicEList<CFA>();
+    		for (CFA cfa : listCFA) {temp_listCFA.add(cfa);}
+    		for (CFA cfa : temp_listCFA)
+    		{
+    			if (cfa.getLinkedtoFailure()==(FailureMode) elToDelete)
+    			{
+    				final CFA cfa_to_delete=cfa;
+    				domain.getCommandStack().execute(new RecordingCommand(domain) {
+    			        @Override
+    			        protected void doExecute() {
+    			        	((ExtensibleElement) the_CFA_list).getOwnedExtensions().remove(cfa_to_delete);//the remove action is done there, within a transaction context
+    			        }
+    			    });
+    				listCFA.remove(cfa);
+    			}
+    		}
+    	}
+    	
     	final AtriumBasicElement elToDelete_param = elToDelete;
     	final EObject Extensible_list_param = Extensible_list; 
     	
-    	TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(the_CFA_list); //arbitrary
+    	
     	domain.getCommandStack().execute(new RecordingCommand(domain) {
 	        @Override
 	        protected void doExecute() {
-	        	((ExtensibleElement) Extensible_list_param).getOwnedExtensions().remove(elToDelete_param);//the add action is done there, within a transaction context
+	        	((ExtensibleElement) Extensible_list_param).getOwnedExtensions().remove(elToDelete_param);//the remove action is done there, within a transaction context
 	        }
 	    });
-    	
+        	
     	listObject.remove(elToDelete);
     	updateDisplayTab2();
     	updateDisplayTab3();
     	updateDisplayTab4();
+    	
     }
     
     
@@ -1594,7 +1625,7 @@ public class AtriumProcess extends javax.swing.JFrame {
     	{
     	case 1:
     		DialogString = "Failure";
-    		DefaultName = "MyNewFailureTEMP";
+    		DefaultName = "MyNewFailure";
     		ObjectList = ListFailureMode;
     		break;
     	case 2:
@@ -1708,14 +1739,8 @@ public class AtriumProcess extends javax.swing.JFrame {
 		if (type==7) {myAssumptionEditor.editAssumption((Assumption) newObject, listAssumption);}
 		else{myEditor.editing(newObject_parameter, listDG, listDA, listCFA, listsDG, ListFailureMode);}
 		
-		if ((type==5))
-		{
-			createTool("MyAssumption [created from ODD " + name + "]",7);
-		}
-		if ((type==6))
-		{
-			createTool("MyAssumption [created from FR " + name + "]",7);
-		}
+		if ((type==5)){createTool("MyAssumption [created from ODD " + name + "]",7);}
+		if ((type==6)){createTool("MyAssumption [created from FR " + name + "]",7);}
 	}
 
 	///////////////////////////////////////////////////////////////////////////////////////

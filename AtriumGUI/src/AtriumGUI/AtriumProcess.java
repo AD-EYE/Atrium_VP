@@ -86,7 +86,7 @@ public class AtriumProcess extends javax.swing.JFrame {
         jButtonAddSDG = new javax.swing.JButton();
         jLabel36 = new javax.swing.JLabel();
         jButtonRemoveDG = new javax.swing.JButton();
-        jButtonDeleteDA = new javax.swing.JButton();
+        jButtonRemoveDA = new javax.swing.JButton();
         jButtonRemoveSDG = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         jScrollPane7 = new javax.swing.JScrollPane();
@@ -541,7 +541,7 @@ public class AtriumProcess extends javax.swing.JFrame {
 
         jButtonRemoveDG.setText("Remove DG");
 
-        jButtonDeleteDA.setText("Delete DA");
+        jButtonRemoveDA.setText("Delete DA");
 
         jButtonRemoveSDG.setText("Remove sDG");
 
@@ -576,7 +576,7 @@ public class AtriumProcess extends javax.swing.JFrame {
                                         .addGap(64, 64, 64)
                                         .addComponent(jButtonAddDA, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(18, 18, 18)
-                                        .addComponent(jButtonDeleteDA))
+                                        .addComponent(jButtonRemoveDA))
                                     .addGroup(jPanel3Layout.createSequentialGroup()
                                         .addGap(50, 50, 50)
                                         .addComponent(jButtonAddSDG, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -621,7 +621,7 @@ public class AtriumProcess extends javax.swing.JFrame {
                         .addComponent(jButtonRemoveDG)
                         .addComponent(jButtonAddDG))
                     .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jButtonDeleteDA)
+                        .addComponent(jButtonRemoveDA)
                         .addComponent(jButtonAddDA)))
                 .addGap(30, 30, 30))
         );
@@ -697,9 +697,9 @@ public class AtriumProcess extends javax.swing.JFrame {
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addContainerGap()
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel8))
@@ -708,11 +708,11 @@ public class AtriumProcess extends javax.swing.JFrame {
                             .addComponent(jScrollPane11)
                             .addGroup(jPanel5Layout.createSequentialGroup()
                                 .addComponent(jLabel32)
-                                .addGap(0, 243, Short.MAX_VALUE)))
+                                .addGap(0, 245, Short.MAX_VALUE)))
                         .addGap(18, 18, 18))
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(37, 37, 37)
-                        .addComponent(jButtonAddAssumption, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(jButtonAddAssumption, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jButtonRemoveAssumption)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 111, Short.MAX_VALUE)
@@ -727,7 +727,7 @@ public class AtriumProcess extends javax.swing.JFrame {
                         .addGap(58, 58, 58)
                         .addComponent(jButtonAddFR, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(37, 37, 37)
-                        .addComponent(jButtonRemoveFR, javax.swing.GroupLayout.DEFAULT_SIZE, 104, Short.MAX_VALUE)
+                        .addComponent(jButtonRemoveFR, javax.swing.GroupLayout.DEFAULT_SIZE, 106, Short.MAX_VALUE)
                         .addGap(45, 45, 45)))
                 .addContainerGap())
         );
@@ -1045,8 +1045,8 @@ public class AtriumProcess extends javax.swing.JFrame {
     private javax.swing.JButton jButtonAddLinkedSDG;
     private javax.swing.JButton jButtonAddODD;
     private javax.swing.JButton jButtonAddSDG;
-    private javax.swing.JButton jButtonDeleteDA;
     private javax.swing.JButton jButtonRemoveAssumption;
+    private javax.swing.JButton jButtonRemoveDA;
     private javax.swing.JButton jButtonRemoveDG;
     private javax.swing.JButton jButtonRemoveFM;
     private javax.swing.JButton jButtonRemoveFR;
