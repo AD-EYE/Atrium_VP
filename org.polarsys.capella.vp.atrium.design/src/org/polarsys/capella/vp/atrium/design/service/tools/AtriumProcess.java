@@ -46,6 +46,10 @@ import org.polarsys.kitalpha.emde.model.ExtensibleElement;
 @SuppressWarnings("serial")
 public class AtriumProcess extends javax.swing.JFrame {
 	
+	//required to legally write in the EMF file
+	TransactionalEditingDomain domain = null;
+	
+	//internal list of element
 	EList<CFA> listCFA = new BasicEList<CFA>();
 	EList<Assumption> listAssumption = new BasicEList<Assumption>();
 	EList<DG> listDG = new BasicEList<DG>();
@@ -54,24 +58,20 @@ public class AtriumProcess extends javax.swing.JFrame {
 	EList<FailureMode> ListFailureMode = new BasicEList<FailureMode>();
 	EList<ODD> listODD = new BasicEList<ODD>();
 	EList<FR> listFR = new BasicEList<FR>();
+	EList<EObject> ListCapellaElement = new BasicEList<EObject>();
 	
+	EList<String> ListCapellaElementName = new BasicEList<String>();
+	
+	//Displayed list 
 	DefaultListModel<String> nameLinkedAssumption = new DefaultListModel<String>();
 	DefaultListModel<String> nameUnlinkedAssumption = new DefaultListModel<String>();
-	
 	DefaultListModel<String> nameLinkedsDG = new DefaultListModel<String>();
 	DefaultListModel<String> nameUnlinkedsDG = new DefaultListModel<String>();
-	
 	DefaultListModel<String> nameLinkedDA = new DefaultListModel<String>();
 	DefaultListModel<String> nameUnlinkedDA = new DefaultListModel<String>();
 	
-	DefaultComboBoxModel<String> listDGcbModel= new DefaultComboBoxModel<String>();
-	
-	EList<String> ListCapellaElementName = new BasicEList<String>();
-	EList<EObject> ListCapellaElement = new BasicEList<EObject>();
-	
-
+	//determined sortAtriumElementOnce and are then constant
 	LogicalComponentPkg the_LogicalComponentPkg = null;
-	
 	sDG_list the_sDG_list = null;
 	CFA_list the_CFA_list = null;
 	Failure_list the_Failure_list = null;
@@ -81,6 +81,7 @@ public class AtriumProcess extends javax.swing.JFrame {
 	ODD_list the_ODD_list = null;
 	FR_list the_FR_list = null;
 	
+	//Auxiliary editors (described in the corresponding file)
 	EditingFrameAssumption myAssumptionEditor = null;
 	EditingPanel myEditor = null;
 	
@@ -92,6 +93,8 @@ public class AtriumProcess extends javax.swing.JFrame {
 			root = root.eContainer();
 			//TODO add protection there
 		}
+		
+		domain = TransactionUtil.getEditingDomain(root);
 		
 		myAssumptionEditor = new EditingFrameAssumption(this);
 		myEditor = new EditingPanel(this);
@@ -160,7 +163,7 @@ public class AtriumProcess extends javax.swing.JFrame {
 		
 		Collections.sort(ListCapellaElementName);
 		
-		TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(root);
+		
 		domain.getCommandStack().execute(new RecordingCommand(domain) { // in a transaction context, create any list that has not been found
 	        @Override
 	        protected void doExecute() {
@@ -222,7 +225,6 @@ public class AtriumProcess extends javax.swing.JFrame {
 	private void updateCFA()
 	{
 		//create or delete CFAs in CFA list
-		TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(the_CFA_list);
 		
 				EList<CFA> temp_listCFA = new BasicEList<CFA>();
 				for (CFA cfa : listCFA) {temp_listCFA.add(cfa);}
@@ -1256,7 +1258,6 @@ public class AtriumProcess extends javax.swing.JFrame {
 		
 		final CFA CFA_parameter = the_CFA;
 		final Assumption assumption_parameter = the_moving_assumption;
-		TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(the_CFA_list);
 		
 		if (action=="remove")
 		{
@@ -1306,7 +1307,6 @@ public class AtriumProcess extends javax.swing.JFrame {
 		
 		final DG DG_parameter = the_DG;
 		final sDG sDG_parameter = the_moving_sDG;
-		TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(the_DG_list);
 		
 		if (action=="remove")
 		{
@@ -1354,7 +1354,6 @@ public class AtriumProcess extends javax.swing.JFrame {
 		
 		final DG DG_parameter = the_DG;
 		final DA DA_parameter = the_moving_DA;
-		TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(the_DG_list);
 		
 		if (action=="remove")
 		{
@@ -1382,7 +1381,6 @@ public class AtriumProcess extends javax.swing.JFrame {
 	
 	private void linkCFAwithDG()
 	{
-		TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(the_CFA_list);
 		
 		CFA the_CFA = null;
 		DG the_DG = null;
@@ -1539,7 +1537,6 @@ public class AtriumProcess extends javax.swing.JFrame {
     @SuppressWarnings({ "rawtypes" })
 	private void jButtonRemoveObject(java.awt.event.ActionEvent evt, int type)
     {
-    	TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(the_CFA_list); //arbitrary
     	javax.swing.JList<String> jlist = null;
     	EList listObject = null;
     	EObject Extensible_list = null;
@@ -1673,7 +1670,6 @@ public class AtriumProcess extends javax.swing.JFrame {
 		AtriumBasicElement newObject = null;
 		EList ObjectList = null;
 		
-		TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(the_CFA_list); //arbitrary
 		switch (type)
 		{
 			case 1:
