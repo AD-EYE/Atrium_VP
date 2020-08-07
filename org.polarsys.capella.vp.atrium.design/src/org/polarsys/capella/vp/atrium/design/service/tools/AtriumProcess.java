@@ -1,6 +1,8 @@
 package org.polarsys.capella.vp.atrium.design.service.tools;
 
+
 import java.util.Collections;
+import java.util.List;
 
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
@@ -1238,48 +1240,53 @@ public class AtriumProcess extends javax.swing.JFrame {
 	private void moveAssumption(String action) //action="add" or "remove"
 	{
 		CFA the_CFA = null;
-		String movingAssumption = null;
+		List<String> movingAssumption = null;
 		Assumption the_moving_assumption = null;
 		
 		//decide on which list should we look for the Assumptions based on if we want to add or remove a link
-		if (action=="add") {movingAssumption = jListUnlinkedAssumptions.getSelectedValue();}
-		else if (action=="remove") {movingAssumption = jListLinkedAssumptions.getSelectedValue();}
+		if (action=="add") {movingAssumption = jListUnlinkedAssumptions.getSelectedValuesList();}
+		else if (action=="remove") {movingAssumption = jListLinkedAssumptions.getSelectedValuesList();}
 		else {System.out.println("The moveAssumption action you want to do is unclear...");}
 		
-		for (Assumption a : listAssumption) //Go through all the assumptions to find the one with the same name
+		for (String assumptionString : movingAssumption) 
 		{
-			if (a.getName().equals(movingAssumption)){the_moving_assumption=a;}
+			for (Assumption a : listAssumption) //Go through all the assumptions to find the one with the same name
+			{
+				if (a.getName().equals(assumptionString)){the_moving_assumption=a;}
+			}
+			
+			for (CFA myCFA : listCFA) //look for the CFA that we are interested in
+			{
+				if (myCFA.getName().equals(jComboBoxCFA.getSelectedItem())){the_CFA=myCFA;}
+			}
+			
+			final CFA CFA_parameter = the_CFA;
+			final Assumption assumption_parameter = the_moving_assumption;
+			
+			if (action=="remove")
+			{
+				domain.getCommandStack().execute(new RecordingCommand(domain) {
+				        @Override
+				        protected void doExecute() {
+				        	CFA_parameter.getAssumption().remove(assumption_parameter);//the remove action is done there, within a transaction context
+				        	assumption_parameter.getLinkedWithCFAs().remove(CFA_parameter); //bidirectional link
+				        }
+				    });
+			}
+			else if (action=="add")
+			{
+				 domain.getCommandStack().execute(new RecordingCommand(domain) {
+				        @Override
+				        protected void doExecute() {
+				        	CFA_parameter.getAssumption().add(assumption_parameter);//the add action is done there, within a transaction context
+				        	assumption_parameter.getLinkedWithCFAs().add(CFA_parameter); //bidirectional link
+				        }
+				    });
+			}
+			else {System.out.println("The moveAssumption action you want to do is unclear...twice");}
 		}
 		
-		for (CFA myCFA : listCFA) //look for the CFA that we are interested in
-		{
-			if (myCFA.getName().equals(jComboBoxCFA.getSelectedItem())){the_CFA=myCFA;}
-		}
 		
-		final CFA CFA_parameter = the_CFA;
-		final Assumption assumption_parameter = the_moving_assumption;
-		
-		if (action=="remove")
-		{
-			domain.getCommandStack().execute(new RecordingCommand(domain) {
-			        @Override
-			        protected void doExecute() {
-			        	CFA_parameter.getAssumption().remove(assumption_parameter);//the remove action is done there, within a transaction context
-			        	assumption_parameter.getLinkedWithCFAs().remove(CFA_parameter); //bidirectional link
-			        }
-			    });
-		}
-		else if (action=="add")
-		{
-			 domain.getCommandStack().execute(new RecordingCommand(domain) {
-			        @Override
-			        protected void doExecute() {
-			        	CFA_parameter.getAssumption().add(assumption_parameter);//the add action is done there, within a transaction context
-			        	assumption_parameter.getLinkedWithCFAs().add(CFA_parameter); //bidirectional link
-			        }
-			    });
-		}
-		else {System.out.println("The moveAssumption action you want to do is unclear...twice");}
 		
 		updateDisplayTab0();//because the lists have changed
 	}
@@ -1287,46 +1294,49 @@ public class AtriumProcess extends javax.swing.JFrame {
 	private void movesDG(String action) //action="add" or "remove"
 	{
 		DG the_DG = null;
-		String movingsDG = null;
+		List<String> movingsDG = null;
 		sDG the_moving_sDG = null;
 		
 		//decide on which list should we look for the sDG based on if we want to add or remove a link
-		if (action=="add") {movingsDG = jListUnlinkedSDG.getSelectedValue();}
-		else if (action=="remove") {movingsDG = jListLinkedSDG.getSelectedValue();}
+		if (action=="add") {movingsDG = jListUnlinkedSDG.getSelectedValuesList();}
+		else if (action=="remove") {movingsDG = jListLinkedSDG.getSelectedValuesList();}
 		else {System.out.println("The movesDG action you want to do is unclear...");}
 		
-		for (sDG sdg : listsDG) //Go through all the dDG to find the one with the same name
+		for (String assumptionsDG : movingsDG)
 		{
-			if (sdg.getName().equals(movingsDG)){the_moving_sDG=sdg;}
+			for (sDG sdg : listsDG) //Go through all the dDG to find the one with the same name
+			{
+				if (sdg.getName().equals(assumptionsDG)){the_moving_sDG=sdg;}
+			}
+			
+			for (DG myDG : listDG) //look for the CFA that we are interested in
+			{
+				if (myDG.getName().equals(jComboBoxDG2.getSelectedItem())){the_DG=myDG;}
+			}
+			
+			final DG DG_parameter = the_DG;
+			final sDG sDG_parameter = the_moving_sDG;
+			
+			if (action=="remove")
+			{
+				domain.getCommandStack().execute(new RecordingCommand(domain) {
+				        @Override
+				        protected void doExecute() {
+				        	DG_parameter.getSubDGs().remove(sDG_parameter);//the remove action is done there, within a transaction context
+				        }
+				    });
+			}
+			else if (action=="add")
+			{
+				 domain.getCommandStack().execute(new RecordingCommand(domain) {
+				        @Override
+				        protected void doExecute() {
+				        	DG_parameter.getSubDGs().add(sDG_parameter);//the add action is done there, within a transaction context
+				        }
+				    });
+			}
+			else {System.out.println("The movesDG action you want to do is unclear...twice");}
 		}
-		
-		for (DG myDG : listDG) //look for the CFA that we are interested in
-		{
-			if (myDG.getName().equals(jComboBoxDG2.getSelectedItem())){the_DG=myDG;}
-		}
-		
-		final DG DG_parameter = the_DG;
-		final sDG sDG_parameter = the_moving_sDG;
-		
-		if (action=="remove")
-		{
-			domain.getCommandStack().execute(new RecordingCommand(domain) {
-			        @Override
-			        protected void doExecute() {
-			        	DG_parameter.getSubDGs().remove(sDG_parameter);//the remove action is done there, within a transaction context
-			        }
-			    });
-		}
-		else if (action=="add")
-		{
-			 domain.getCommandStack().execute(new RecordingCommand(domain) {
-			        @Override
-			        protected void doExecute() {
-			        	DG_parameter.getSubDGs().add(sDG_parameter);//the add action is done there, within a transaction context
-			        }
-			    });
-		}
-		else {System.out.println("The movesDG action you want to do is unclear...twice");}
 		
 		updateDisplayTab1();//because the lists have changed
 	}
@@ -1334,47 +1344,50 @@ public class AtriumProcess extends javax.swing.JFrame {
 	private void moveDA(String action) //action="add" or "remove"
 	{
 		DG the_DG = null;
-		String movingDA = null;
+		List <String> movingDA = null;
 		DA the_moving_DA = null;
 		
-		//decide on which list should we look for the sDG based on if we want to add or remove a link
-		if (action=="add") {movingDA = jListUnlinkedDA.getSelectedValue();}
-		else if (action=="remove") {movingDA = jListLinkedDA.getSelectedValue();}
+		//decide on which list should we look for the DA based on if we want to add or remove a link
+		if (action=="add") {movingDA = jListUnlinkedDA.getSelectedValuesList();}
+		else if (action=="remove") {movingDA = jListLinkedDA.getSelectedValuesList();}
 		else {System.out.println("The movesDA action you want to do is unclear...");}
 		
-		for (DA da : listDA) //Go through all the dDG to find the one with the same name
+		for (String DAstring : movingDA)
 		{
-			if (da.getName().equals(movingDA)){the_moving_DA=da;}
+			for (DA da : listDA) //Go through all the DA to find the one with the same name
+			{
+				if (da.getName().equals(DAstring)){the_moving_DA=da;}
+			}
+			
+			for (DG myDG : listDG) //look for the DG that we are interested in
+			{
+				if (myDG.getName().equals(jComboBoxDG2.getSelectedItem())){the_DG=myDG;}
+			}
+			
+			final DG DG_parameter = the_DG;
+			final DA DA_parameter = the_moving_DA;
+			
+			if (action=="remove")
+			{
+				domain.getCommandStack().execute(new RecordingCommand(domain) {
+				        @Override
+				        protected void doExecute() {
+				        	DG_parameter.getDesignAlternative().remove(DA_parameter);//the remove action is done there, within a transaction context
+				        }
+				    });
+			}
+			else if (action=="add")
+			{
+				 domain.getCommandStack().execute(new RecordingCommand(domain) {
+				        @Override
+				        protected void doExecute() {
+				        	DG_parameter.getDesignAlternative().add(DA_parameter);//the add action is done there, within a transaction context
+				        }
+				    });
+			}
+			else {System.out.println("The movesDA action you want to do is unclear...twice");}
 		}
-		
-		for (DG myDG : listDG) //look for the CFA that we are interested in
-		{
-			if (myDG.getName().equals(jComboBoxDG2.getSelectedItem())){the_DG=myDG;}
-		}
-		
-		final DG DG_parameter = the_DG;
-		final DA DA_parameter = the_moving_DA;
-		
-		if (action=="remove")
-		{
-			domain.getCommandStack().execute(new RecordingCommand(domain) {
-			        @Override
-			        protected void doExecute() {
-			        	DG_parameter.getDesignAlternative().remove(DA_parameter);//the remove action is done there, within a transaction context
-			        }
-			    });
-		}
-		else if (action=="add")
-		{
-			 domain.getCommandStack().execute(new RecordingCommand(domain) {
-			        @Override
-			        protected void doExecute() {
-			        	DG_parameter.getDesignAlternative().add(DA_parameter);//the add action is done there, within a transaction context
-			        }
-			    });
-		}
-		else {System.out.println("The movesDA action you want to do is unclear...twice");}
-		
+	
 		updateDisplayTab1();//because the lists have changed
 	}
 	
@@ -1427,10 +1440,8 @@ public class AtriumProcess extends javax.swing.JFrame {
 		updateDisplayTab1();
     }
 	
-	
-	
 	private void jButtonAddLinkedActionPerformed(java.awt.event.ActionEvent evt) {
-		if (!(jListUnlinkedAssumptions.getSelectedValue()==null))
+		if (!(jListUnlinkedAssumptions.getSelectedValuesList()==null))
 		{
 			moveAssumption("add");
 		}
