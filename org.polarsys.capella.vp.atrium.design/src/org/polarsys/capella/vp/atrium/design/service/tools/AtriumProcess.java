@@ -146,6 +146,8 @@ public class AtriumProcess extends javax.swing.JFrame {
 			  ListCapellaElementName.add("[FE] " + fe.getName());
 		  }
 		  
+		  //if you want that UI to process other capella element, add your code here !
+		  
 		  if (node instanceof FailureMode){ListFailureMode.add((FailureMode) node);}
 		  if (node instanceof DG){listDG.add((DG) node);}
 		  if (node instanceof DA){listDA.add((DA) node);}
@@ -166,7 +168,6 @@ public class AtriumProcess extends javax.swing.JFrame {
 		}
 		
 		Collections.sort(ListCapellaElementName);
-		
 		
 		domain.getCommandStack().execute(new RecordingCommand(domain) { // in a transaction context, create any list that has not been found
 	        @Override
@@ -221,65 +222,73 @@ public class AtriumProcess extends javax.swing.JFrame {
 	        	}
 	        }
 	    });
-		
-		
-		
 	}
 	
 	private void updateCFA()
 	{
-		//create or delete CFAs in CFA list
+		//first rename CFA whose failure might have been renamed
+		for (CFA cfa : listCFA)
+		{
+			NamedElement capella_object = (NamedElement) cfa.getLinkedtoElement();
+			String name = capella_object.getName();
+			String failure = cfa.getLinkedtoFailure().getName();
+			if (!(cfa.getName().equals("{ " + name + " : " + failure + " }")))
+			{
+				cfa.setName("{ " + name + " : " + failure + " }");
+			}
+		}
 		
-				EList<CFA> temp_listCFA = new BasicEList<CFA>();
-				for (CFA cfa : listCFA) {temp_listCFA.add(cfa);}
 		
-				for (CFA cfa : temp_listCFA)
+		//create or delete CFAs in CFA list that have not been found yet
+		EList<CFA> temp_listCFA = new BasicEList<CFA>();
+		for (CFA cfa : listCFA) {temp_listCFA.add(cfa);}
+
+		for (CFA cfa : temp_listCFA)
+		{
+			if ((cfa.getLinkedtoElement()==null) || (cfa.getLinkedtoFailure()==null))
+			{
+				final CFA old_cfa=cfa;
+				domain.getCommandStack().execute(new RecordingCommand(domain) {
+			        @Override
+			        protected void doExecute() {
+			        	((ExtensibleElement) the_CFA_list).getOwnedExtensions().remove(old_cfa);//the remove action is done there, within a transaction context
+			        }
+			    });
+				listCFA.remove(cfa);
+			}
+		}
+
+		for (EObject obj : ListCapellaElement)
+		{
+			NamedElement el = (NamedElement) obj;
+			
+			for (FailureMode f : ListFailureMode)
+			{
+				boolean found = false;
+				
+				for (CFA cfa : listCFA){if (cfa.getName().equals("{ " + el.getName() + " : " + f.getName() + " }")) {found = true;}}
+				
+				if (!(found))
 				{
-					if ((cfa.getLinkedtoElement()==null) || (cfa.getLinkedtoFailure()==null))
-					{
-						final CFA old_cfa=cfa;
-						domain.getCommandStack().execute(new RecordingCommand(domain) {
+					final CFA newCFA = AtriumFactoryImpl.eINSTANCE.createCFA();
+					newCFA.setContent("Some content");
+					newCFA.setState(state_Type.UNPROCESSED);
+					newCFA.setName("{ " + el.getName() + " : " + f.getName() + " }");
+					newCFA.setLinkedtoElement(el);
+					newCFA.setLinkedtoFailure(f);
+					
+	
+					domain.getCommandStack().execute(new RecordingCommand(domain) {
 					        @Override
 					        protected void doExecute() {
-					        	((ExtensibleElement) the_CFA_list).getOwnedExtensions().remove(old_cfa);//the remove action is done there, within a transaction context
+					        	((ExtensibleElement) the_CFA_list).getOwnedExtensions().add((ElementExtension) newCFA);//the add action is done there, within a transaction context
 					        }
 					    });
-						listCFA.remove(cfa);
-					}
+					 
+					listCFA.add(newCFA);//updating our local list
 				}
-		
-		
-				for (EObject obj : ListCapellaElement)
-				{
-					NamedElement el = (NamedElement) obj;
-					
-					for (FailureMode f : ListFailureMode)
-					{
-						boolean found = false;
-						
-						for (CFA cfa : listCFA){if (cfa.getName().equals("{ " + el.getName() + " : " + f.getName() + " }")) {found = true;}}
-						
-						if (!(found))
-						{
-							final CFA newCFA = AtriumFactoryImpl.eINSTANCE.createCFA();
-							newCFA.setContent("Some content");
-							newCFA.setState(state_Type.UNPROCESSED);
-							newCFA.setName("{ " + el.getName() + " : " + f.getName() + " }");
-							newCFA.setLinkedtoElement(el);
-							newCFA.setLinkedtoFailure(f);
-							
-			
-							domain.getCommandStack().execute(new RecordingCommand(domain) {
-							        @Override
-							        protected void doExecute() {
-							        	((ExtensibleElement) the_CFA_list).getOwnedExtensions().add((ElementExtension) newCFA);//the add action is done there, within a transaction context
-							        }
-							    });
-							 
-							listCFA.add(newCFA);//updating our local list
-						}
-					}
-				}
+			}
+		}
 	}
 	
 	
@@ -519,6 +528,8 @@ public class AtriumProcess extends javax.swing.JFrame {
                 jComboBoxCFAActionPerformed(evt);
             }
         });
+        jComboBoxCFA.setMaximumRowCount(20);
+
 
         jLabel19.setText("CFA");
 
@@ -529,6 +540,7 @@ public class AtriumProcess extends javax.swing.JFrame {
                 jComboBoxDGActionPerformed(evt);
             }
         });
+        jComboBoxDG.setMaximumRowCount(20);
 
         jLabel21.setText("Design Goal");
         
@@ -1014,7 +1026,7 @@ public class AtriumProcess extends javax.swing.JFrame {
             }
         });
 
-        jLabel24.setText("Failure List (please restart that UI after creating/editing one)");
+        jLabel24.setText("Failure List (please restart that UI after creating/deleting/renaming to update the list of CFA)");
         
         
         DefaultListModel <String> listModel = new DefaultListModel<String>();
@@ -1236,6 +1248,7 @@ public class AtriumProcess extends javax.swing.JFrame {
         jComboBoxDG2.setModel(listDGcbModel);
 	}
 	
+	@SuppressWarnings("rawtypes")
 	private void moveObject(int type)
 	{
 		AtriumBasicElement rootObject = null;
@@ -1346,7 +1359,7 @@ public class AtriumProcess extends javax.swing.JFrame {
 		}
 	
 		updateDisplayTab1();//because the lists have changed
-		updateDisplayTab2();
+		updateDisplayTab0();
 	}
 	
 	private void linkCFAwithDG()
@@ -1656,9 +1669,6 @@ public class AtriumProcess extends javax.swing.JFrame {
 		
 		if (type==7) {myAssumptionEditor.editAssumption((Assumption) newObject, listAssumption);}
 		else{myEditor.editing(newObject_parameter, listDG, listDA, listCFA, listsDG, ListFailureMode);}
-		
-		if ((type==5)){createTool("MyAssumption [created from ODD " + name + "]",7);}
-		if ((type==6)){createTool("MyAssumption [created from FR " + name + "]",7);}
 	}
 
 	///////////////////////////////////////////////////////////////////////////////////////
