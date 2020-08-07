@@ -6,6 +6,8 @@ import java.util.List;
 
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
+import javax.swing.JComboBox;
+import javax.swing.JList;
 import javax.swing.JOptionPane;
 
 import org.eclipse.emf.common.util.BasicEList;
@@ -489,9 +491,6 @@ public class AtriumProcess extends javax.swing.JFrame {
 				jButtonRemoveObject(evt,7);
 			}
 		});
-	
-		
-		
 		
 		jScrollPane1.setViewportView(jListUnlinkedAssumptions);
 		jScrollPane2.setViewportView(jListLinkedAssumptions);
@@ -499,14 +498,14 @@ public class AtriumProcess extends javax.swing.JFrame {
 		jButtonAddLinked.setText("=>");
 		jButtonAddLinked.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
-				jButtonAddLinkedActionPerformed(evt);
+				moveObject(1);
 			}
 		});
 
 		jButtonRemoveLinked.setText("<=");
 		jButtonRemoveLinked.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
-				jButtonRemoveLinkedActionPerformed(evt);
+				moveObject(2);
 			}
 		});
         
@@ -635,7 +634,7 @@ public class AtriumProcess extends javax.swing.JFrame {
         jButtonAddLinkedDA.setText("=>");
         jButtonAddLinkedDA.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonAddLinkedDAActionPerformed(evt);
+                moveObject(5);
             }
         });
 
@@ -644,7 +643,7 @@ public class AtriumProcess extends javax.swing.JFrame {
         jButtonRemoveLinkedDA.setText("<=");
         jButtonRemoveLinkedDA.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonRemoveLinkedDAActionPerformed(evt);
+            	moveObject(6);
             }
         });
 
@@ -661,14 +660,14 @@ public class AtriumProcess extends javax.swing.JFrame {
         jButtonAddLinkedSDG.setText("=>");
         jButtonAddLinkedSDG.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonAddLinkedSDGActionPerformed(evt);
+            	moveObject(3);
             }
         });
 
         jButtonRemoveLinkedSDG.setText("<=");
         jButtonRemoveLinkedSDG.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonRemoveLinkedSDGActionPerformed(evt);
+            	moveObject(4);
             }
         });
 
@@ -1237,160 +1236,118 @@ public class AtriumProcess extends javax.swing.JFrame {
         jComboBoxDG2.setModel(listDGcbModel);
 	}
 	
-	private void moveAssumption(String action) //action="add" or "remove"
+	private void moveObject(int type)
 	{
-		CFA the_CFA = null;
-		List<String> movingAssumption = null;
-		Assumption the_moving_assumption = null;
+		AtriumBasicElement rootObject = null;
+		AtriumBasicElement the_moving_Object = null;
+		JList<String> fromTo = null;
+		JComboBox<String> RootCombo = null;
+		EList listOfMovingObject = null;
+		EList listOfRootObject = null;
 		
-		//decide on which list should we look for the Assumptions based on if we want to add or remove a link
-		if (action=="add") {movingAssumption = jListUnlinkedAssumptions.getSelectedValuesList();}
-		else if (action=="remove") {movingAssumption = jListLinkedAssumptions.getSelectedValuesList();}
-		else {System.out.println("The moveAssumption action you want to do is unclear...");}
-		
-		for (String assumptionString : movingAssumption) 
+		switch (type)
 		{
-			for (Assumption a : listAssumption) //Go through all the assumptions to find the one with the same name
-			{
-				if (a.getName().equals(assumptionString)){the_moving_assumption=a;}
-			}
+			case 1: //add link assumption --> cfa
+				fromTo=jListUnlinkedAssumptions;
+				RootCombo=jComboBoxCFA;
+				listOfMovingObject=listAssumption;
+				listOfRootObject=listCFA;
+				break;
 			
-			for (CFA myCFA : listCFA) //look for the CFA that we are interested in
-			{
-				if (myCFA.getName().equals(jComboBoxCFA.getSelectedItem())){the_CFA=myCFA;}
-			}
-			
-			final CFA CFA_parameter = the_CFA;
-			final Assumption assumption_parameter = the_moving_assumption;
-			
-			if (action=="remove")
-			{
-				domain.getCommandStack().execute(new RecordingCommand(domain) {
-				        @Override
-				        protected void doExecute() {
-				        	CFA_parameter.getAssumption().remove(assumption_parameter);//the remove action is done there, within a transaction context
-				        	assumption_parameter.getLinkedWithCFAs().remove(CFA_parameter); //bidirectional link
-				        }
-				    });
-			}
-			else if (action=="add")
-			{
-				 domain.getCommandStack().execute(new RecordingCommand(domain) {
-				        @Override
-				        protected void doExecute() {
-				        	CFA_parameter.getAssumption().add(assumption_parameter);//the add action is done there, within a transaction context
-				        	assumption_parameter.getLinkedWithCFAs().add(CFA_parameter); //bidirectional link
-				        }
-				    });
-			}
-			else {System.out.println("The moveAssumption action you want to do is unclear...twice");}
+			case 2: //remove link assumption --> cfa
+				fromTo=jListLinkedAssumptions;
+				RootCombo=jComboBoxCFA;
+				listOfMovingObject=listAssumption;
+				listOfRootObject=listCFA;
+				break;
+				
+			case 3: //add link sDG --> DG
+				fromTo=jListUnlinkedSDG;
+				RootCombo=jComboBoxDG2;
+				listOfMovingObject=listsDG;
+				listOfRootObject=listDG;
+				break;
+				
+			case 4: //remove link sDG --> DG
+				fromTo=jListLinkedSDG;
+				RootCombo=jComboBoxDG2;
+				listOfMovingObject=listsDG;
+				listOfRootObject=listDG;
+				break;
+				
+			case 5: //add link DA --> DG
+				fromTo=jListUnlinkedDA;
+				RootCombo=jComboBoxDG2;
+				listOfMovingObject=listDA;
+				listOfRootObject=listDG;
+				break;
+				
+			case 6: //remove link DA --> DG
+				fromTo=jListLinkedDA;
+				RootCombo=jComboBoxDG2;
+				listOfMovingObject=listDA;
+				listOfRootObject=listDG;
+				break;
+				
 		}
 		
 		
+		List <String> movingStrings = fromTo.getSelectedValuesList();
 		
-		updateDisplayTab0();//because the lists have changed
-	}
-	
-	private void movesDG(String action) //action="add" or "remove"
-	{
-		DG the_DG = null;
-		List<String> movingsDG = null;
-		sDG the_moving_sDG = null;
-		
-		//decide on which list should we look for the sDG based on if we want to add or remove a link
-		if (action=="add") {movingsDG = jListUnlinkedSDG.getSelectedValuesList();}
-		else if (action=="remove") {movingsDG = jListLinkedSDG.getSelectedValuesList();}
-		else {System.out.println("The movesDG action you want to do is unclear...");}
-		
-		for (String assumptionsDG : movingsDG)
+		for (String nameObject : movingStrings)
 		{
-			for (sDG sdg : listsDG) //Go through all the dDG to find the one with the same name
+			for (Object o : listOfMovingObject) //Go through all the DA to find the one with the same name
 			{
-				if (sdg.getName().equals(assumptionsDG)){the_moving_sDG=sdg;}
+				AtriumBasicElement abe = (AtriumBasicElement) o;
+				if (abe.getName().equals(nameObject)){the_moving_Object=abe;}
 			}
 			
-			for (DG myDG : listDG) //look for the CFA that we are interested in
+			for (Object o : listOfRootObject) //look for the DG that we are interested in
 			{
-				if (myDG.getName().equals(jComboBoxDG2.getSelectedItem())){the_DG=myDG;}
+				AtriumBasicElement abe = (AtriumBasicElement) o;
+				if (abe.getName().equals(RootCombo.getSelectedItem())){rootObject=abe;}
 			}
 			
-			final DG DG_parameter = the_DG;
-			final sDG sDG_parameter = the_moving_sDG;
+			final int type_p = type;
+			final AtriumBasicElement rootObject_p = rootObject;
+			final AtriumBasicElement the_moving_Object_p = the_moving_Object;
 			
-			if (action=="remove")
-			{
-				domain.getCommandStack().execute(new RecordingCommand(domain) {
-				        @Override
-				        protected void doExecute() {
-				        	DG_parameter.getSubDGs().remove(sDG_parameter);//the remove action is done there, within a transaction context
-				        }
-				    });
-			}
-			else if (action=="add")
-			{
-				 domain.getCommandStack().execute(new RecordingCommand(domain) {
-				        @Override
-				        protected void doExecute() {
-				        	DG_parameter.getSubDGs().add(sDG_parameter);//the add action is done there, within a transaction context
-				        }
-				    });
-			}
-			else {System.out.println("The movesDG action you want to do is unclear...twice");}
-		}
-		
-		updateDisplayTab1();//because the lists have changed
-	}
-	
-	private void moveDA(String action) //action="add" or "remove"
-	{
-		DG the_DG = null;
-		List <String> movingDA = null;
-		DA the_moving_DA = null;
-		
-		//decide on which list should we look for the DA based on if we want to add or remove a link
-		if (action=="add") {movingDA = jListUnlinkedDA.getSelectedValuesList();}
-		else if (action=="remove") {movingDA = jListLinkedDA.getSelectedValuesList();}
-		else {System.out.println("The movesDA action you want to do is unclear...");}
-		
-		for (String DAstring : movingDA)
-		{
-			for (DA da : listDA) //Go through all the DA to find the one with the same name
-			{
-				if (da.getName().equals(DAstring)){the_moving_DA=da;}
-			}
-			
-			for (DG myDG : listDG) //look for the DG that we are interested in
-			{
-				if (myDG.getName().equals(jComboBoxDG2.getSelectedItem())){the_DG=myDG;}
-			}
-			
-			final DG DG_parameter = the_DG;
-			final DA DA_parameter = the_moving_DA;
-			
-			if (action=="remove")
-			{
-				domain.getCommandStack().execute(new RecordingCommand(domain) {
-				        @Override
-				        protected void doExecute() {
-				        	DG_parameter.getDesignAlternative().remove(DA_parameter);//the remove action is done there, within a transaction context
-				        }
-				    });
-			}
-			else if (action=="add")
-			{
-				 domain.getCommandStack().execute(new RecordingCommand(domain) {
-				        @Override
-				        protected void doExecute() {
-				        	DG_parameter.getDesignAlternative().add(DA_parameter);//the add action is done there, within a transaction context
-				        }
-				    });
-			}
-			else {System.out.println("The movesDA action you want to do is unclear...twice");}
+			domain.getCommandStack().execute(new RecordingCommand(domain) {
+		        @Override
+		        protected void doExecute() {
+		        	switch (type_p)
+		        	{
+		        		case 1: //add link assumption --> cfa
+		        			((CFA) rootObject_p).getAssumption().add((Assumption)the_moving_Object_p);
+		        			break;
+		        			
+		        		case 2: //remove link assumption --> cfa
+		        			((CFA) rootObject_p).getAssumption().remove((Assumption)the_moving_Object_p);
+		        			break;
+		        			
+		        		case 3: //add link sDG --> DG
+		        			((DG) rootObject_p).getSubDGs().add((sDG)the_moving_Object_p);
+		        			break;
+		        			
+		        		case 4: //remove link sDG --> DG
+		        			((DG) rootObject_p).getSubDGs().remove((sDG)the_moving_Object_p);
+		        			break;
+		        			
+		        		case 5: //add link DA --> DG
+		        			((DG) rootObject_p).getDesignAlternative().add((DA)the_moving_Object_p);
+		        			break;
+		        			
+		        		case 6: //remove link DA --> DG
+		        			((DG) rootObject_p).getDesignAlternative().remove((DA)the_moving_Object_p);
+		        			break;	
+		        	}
+		        }
+		    });
 		}
 	
 		updateDisplayTab1();//because the lists have changed
+		updateDisplayTab2();
 	}
-	
 	
 	private void linkCFAwithDG()
 	{
@@ -1438,51 +1395,7 @@ public class AtriumProcess extends javax.swing.JFrame {
 	
 	private void jComboBoxDG2ActionPerformed(java.awt.event.ActionEvent evt) {                                             
 		updateDisplayTab1();
-    }
-	
-	private void jButtonAddLinkedActionPerformed(java.awt.event.ActionEvent evt) {
-		if (!(jListUnlinkedAssumptions.getSelectedValuesList()==null))
-		{
-			moveAssumption("add");
-		}
-	}
-	
-	private void jButtonRemoveLinkedActionPerformed(java.awt.event.ActionEvent evt) {
-		if (!(jListLinkedAssumptions.getSelectedValue()==null))
-		{
-			moveAssumption("remove");
-		}
-	}
-	
-	private void jButtonAddLinkedDAActionPerformed(java.awt.event.ActionEvent evt) {                                                   
-		if (!(jListUnlinkedDA.getSelectedValue()==null))
-		{
-			moveDA("add");
-		}
-    }                                                  
-
-    private void jButtonRemoveLinkedDAActionPerformed(java.awt.event.ActionEvent evt) {                                                      
-    	if (!(jListLinkedDA.getSelectedValue()==null))
-		{
-			moveDA("remove");
-		}
-    }
-	
-    private void jButtonAddLinkedSDGActionPerformed(java.awt.event.ActionEvent evt) {                                                    
-    	if (!(jListUnlinkedSDG.getSelectedValue()==null))
-		{
-			movesDG("add");
-		}
-    }                                                   
-
-    private void jButtonRemoveLinkedSDGActionPerformed(java.awt.event.ActionEvent evt) {                                                       
-    	if (!(jListLinkedSDG.getSelectedValue()==null))
-		{
-			movesDG("remove");
-		}
-    }
-	
-	
+    }	
 	
 	
 	private void jListLinkedAssumptionMouseClicked(java.awt.event.MouseEvent evt) {
