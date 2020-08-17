@@ -552,37 +552,37 @@ public class AtriumProcess extends javax.swing.JFrame {
         });
         jButtonAddDG.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonAdd(evt,2);
+            	createAtriumElement("Default DG Name", 2);
             }
         });
         jButtonAddDA.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonAdd(evt,3);
+            	createAtriumElement("Default DA Name", 3);
             }
         });
         jButtonAddSDG.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonAdd(evt,4);
+            	createAtriumElement("Default sDG Name", 4);
             }
         });
         jButtonAddAssumption.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonAdd(evt,7);
+            	createAtriumElement("Default Assumption Name", 7);
             }
         });
         jButtonAddODD.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonAdd(evt,5);
+            	createAtriumElement("Default ODD Name", 5);
             }
         });
         jButtonAddFR.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonAdd(evt,6);
+            	createAtriumElement("Default FR Name",6);
             }
         });
         jButtonAddFailure.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonAdd(evt,1);
+            	createAtriumElement("Default Failure Name",1);
             }
         });
         
@@ -614,14 +614,14 @@ public class AtriumProcess extends javax.swing.JFrame {
 	        jPanel1.setPreferredSize(new java.awt.Dimension(1600, 1000));
 	        java.awt.GridBagLayout jPanel1Layout = new java.awt.GridBagLayout();
 	        jPanel1Layout.columnWidths = new int[] {0, 30, 0, 30, 0, 30, 0, 30, 0};
-	        jPanel1Layout.rowHeights = new int[] {0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0};
+	        jPanel1Layout.rowHeights = new int[] {0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0};
 	        jPanel1.setLayout(jPanel1Layout);
 
 	        jScrollPane1.setViewportView(jListUnlinkedAssumptions);
 
 	        gridBagConstraints = new java.awt.GridBagConstraints();
 	        gridBagConstraints.gridx = 2;
-	        gridBagConstraints.gridy = 8;
+	        gridBagConstraints.gridy = 10;
 	        gridBagConstraints.gridheight = 9;
 	        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
 	        gridBagConstraints.weightx = 40.0;
@@ -632,7 +632,7 @@ public class AtriumProcess extends javax.swing.JFrame {
 
 	        gridBagConstraints = new java.awt.GridBagConstraints();
 	        gridBagConstraints.gridx = 6;
-	        gridBagConstraints.gridy = 8;
+	        gridBagConstraints.gridy = 10;
 	        gridBagConstraints.gridheight = 9;
 	        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
 	        gridBagConstraints.weightx = 40.0;
@@ -642,53 +642,55 @@ public class AtriumProcess extends javax.swing.JFrame {
 	        jLabel1.setText("Add to linked");
 	        gridBagConstraints = new java.awt.GridBagConstraints();
 	        gridBagConstraints.gridx = 4;
-	        gridBagConstraints.gridy = 8;
+	        gridBagConstraints.gridy = 10;
 	        gridBagConstraints.anchor = java.awt.GridBagConstraints.SOUTH;
-	        gridBagConstraints.weightx = 10.0;
+	        gridBagConstraints.weightx = 5.0;
 	        gridBagConstraints.weighty = 5.0;
 	        jPanel1.add(jLabel1, gridBagConstraints);
 
 	        jButtonAddLinked.setText("=>");
 	        gridBagConstraints = new java.awt.GridBagConstraints();
 	        gridBagConstraints.gridx = 4;
-	        gridBagConstraints.gridy = 10;
+	        gridBagConstraints.gridy = 12;
 	        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
 	        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTH;
-	        gridBagConstraints.weightx = 10.0;
+	        gridBagConstraints.weightx = 5.0;
 	        gridBagConstraints.weighty = 5.0;
 	        jPanel1.add(jButtonAddLinked, gridBagConstraints);
 
 	        jLabel2.setText("Remove from linked");
 	        gridBagConstraints = new java.awt.GridBagConstraints();
 	        gridBagConstraints.gridx = 4;
-	        gridBagConstraints.gridy = 12;
+	        gridBagConstraints.gridy = 14;
 	        gridBagConstraints.anchor = java.awt.GridBagConstraints.SOUTH;
-	        gridBagConstraints.weightx = 10.0;
+	        gridBagConstraints.weightx = 5.0;
 	        gridBagConstraints.weighty = 5.0;
 	        jPanel1.add(jLabel2, gridBagConstraints);
 
 	        jButtonRemoveLinked.setText("<=");
 	        gridBagConstraints = new java.awt.GridBagConstraints();
 	        gridBagConstraints.gridx = 4;
-	        gridBagConstraints.gridy = 14;
+	        gridBagConstraints.gridy = 16;
 	        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
 	        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTH;
-	        gridBagConstraints.weightx = 0.1;
+	        gridBagConstraints.weightx = 5.0;
 	        gridBagConstraints.weighty = 5.0;
 	        jPanel1.add(jButtonRemoveLinked, gridBagConstraints);
 
 	        jLabel3.setText("Unlinked Assumptions");
 	        gridBagConstraints = new java.awt.GridBagConstraints();
 	        gridBagConstraints.gridx = 2;
-	        gridBagConstraints.gridy = 6;
+	        gridBagConstraints.gridy = 8;
 	        gridBagConstraints.anchor = java.awt.GridBagConstraints.SOUTHWEST;
+	        gridBagConstraints.weightx = 40.0;
 	        jPanel1.add(jLabel3, gridBagConstraints);
 
 	        jLabel4.setText("Linked Assumptions");
 	        gridBagConstraints = new java.awt.GridBagConstraints();
 	        gridBagConstraints.gridx = 6;
-	        gridBagConstraints.gridy = 6;
+	        gridBagConstraints.gridy = 8;
 	        gridBagConstraints.anchor = java.awt.GridBagConstraints.SOUTHWEST;
+	        gridBagConstraints.weightx = 40.0;
 	        jPanel1.add(jLabel4, gridBagConstraints);
 	        gridBagConstraints = new java.awt.GridBagConstraints();
 	        gridBagConstraints.gridx = 2;
@@ -703,6 +705,7 @@ public class AtriumProcess extends javax.swing.JFrame {
 	        gridBagConstraints.gridx = 2;
 	        gridBagConstraints.gridy = 2;
 	        gridBagConstraints.anchor = java.awt.GridBagConstraints.SOUTHWEST;
+	        gridBagConstraints.weightx = 40.0;
 	        gridBagConstraints.insets = new java.awt.Insets(10, 0, 0, 0);
 	        jPanel1.add(jLabel19, gridBagConstraints);
 
@@ -711,6 +714,7 @@ public class AtriumProcess extends javax.swing.JFrame {
 	        gridBagConstraints.gridx = 4;
 	        gridBagConstraints.gridy = 4;
 	        gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
+	        gridBagConstraints.weightx = 5.0;
 	        jPanel1.add(jLabel20, gridBagConstraints);
 	        gridBagConstraints = new java.awt.GridBagConstraints();
 	        gridBagConstraints.gridx = 6;
@@ -725,6 +729,7 @@ public class AtriumProcess extends javax.swing.JFrame {
 	        gridBagConstraints.gridx = 6;
 	        gridBagConstraints.gridy = 2;
 	        gridBagConstraints.anchor = java.awt.GridBagConstraints.SOUTHWEST;
+	        gridBagConstraints.weightx = 40.0;
 	        jPanel1.add(jLabel21, gridBagConstraints);
 
 	        jTabbedPane.addTab("Linking DG and Assumptions to CFA", jPanel1);
@@ -1055,7 +1060,7 @@ public class AtriumProcess extends javax.swing.JFrame {
 	        gridBagConstraints.gridwidth = 3;
 	        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
 	        gridBagConstraints.weightx = 1.0;
-	        gridBagConstraints.weighty = 1.0;
+	        gridBagConstraints.weighty = 30.0;
 	        jPanel5.add(jScrollPane11, gridBagConstraints);
 
 	        jScrollPane12.setViewportView(jListFR);
@@ -1066,7 +1071,7 @@ public class AtriumProcess extends javax.swing.JFrame {
 	        gridBagConstraints.gridwidth = 3;
 	        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
 	        gridBagConstraints.weightx = 1.0;
-	        gridBagConstraints.weighty = 1.0;
+	        gridBagConstraints.weighty = 30.0;
 	        jPanel5.add(jScrollPane12, gridBagConstraints);
 
 	        jLabel32.setText("Operational Design Domain");
@@ -1179,7 +1184,7 @@ public class AtriumProcess extends javax.swing.JFrame {
 	        gridBagConstraints.gridwidth = 3;
 	        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
 	        gridBagConstraints.weightx = 1.0;
-	        gridBagConstraints.weighty = 1.0;
+	        gridBagConstraints.weighty = 30.0;
 	        jPanel5.add(jScrollPane10, gridBagConstraints);
 
 	        jScrollPane5.setViewportView(jListCapella);
@@ -1190,7 +1195,7 @@ public class AtriumProcess extends javax.swing.JFrame {
 	        gridBagConstraints.gridwidth = 3;
 	        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
 	        gridBagConstraints.weightx = 1.0;
-	        gridBagConstraints.weighty = 1.0;
+	        gridBagConstraints.weighty = 30.0;
 	        jPanel5.add(jScrollPane5, gridBagConstraints);
 
 	        jTabbedPane.addTab("Edit Assumption, ODD, FR", jPanel5);
@@ -1623,66 +1628,9 @@ public class AtriumProcess extends javax.swing.JFrame {
     	updateDisplayTab3();
     	
     }
-    
-    
-    @SuppressWarnings("rawtypes")
-	private void jButtonAdd(java.awt.event.ActionEvent evt, int type)
-    {
-    	String DialogString = null;
-    	String DefaultName = null;
-		EList ObjectList = null;
-		
-    	switch (type)
-    	{
-    	case 1:
-    		DialogString = "Failure";
-    		DefaultName = "MyNewFailure";
-    		ObjectList = ListFailureMode;
-    		break;
-    	case 2:
-    		DialogString = "Design Goal";
-    		DefaultName = "MyNewDG";
-    		ObjectList = listDG;
-    		break;
-    	case 3:
-    		DialogString = "Design Alternative";
-    		DefaultName = "MyNewDA";
-    		ObjectList = listDA;
-    		break;
-    	case 4:
-    		DialogString = "SubDesign Goal";
-    		DefaultName = "MyNewSubDG";
-    		ObjectList = listsDG;
-    		break;
-    	case 5:
-    		DialogString = "Operational Design Domain";
-    		DefaultName = "MyNewODD";
-    		ObjectList = listODD;
-    		break;
-    	case 6:
-    		DialogString = "Functional Requirements";
-    		DefaultName = "MyNewFR";
-    		ObjectList = listFR;
-    		break;
-    	case 7:
-    		DialogString = "Assumption";
-    		DefaultName = "MyNewAssumption";
-    		ObjectList = listAssumption;
-    	}
-    	
-//    	String name = JOptionPane.showInputDialog(getParent(), "Please name the new " + DialogString, DefaultName);
-//    	
-//    	if (name != null)  //if the user has not pressed "cancel"
-//    	{
-//			if (ObjectList.contains(name)){JOptionPane.showMessageDialog(getParent(), "There is already a " + DialogString + " named like that, please chose another name.");}
-//			else{createTool(name,type);}
-//		}
-    	
-    	createTool("toto",type);
-    }
 	
 	@SuppressWarnings({ "unchecked", "rawtypes" })
-	private void createTool(String name, int type)
+	private void createAtriumElement(String name, int type)
 	{
 		EObject Extensible_list = null;
 		AtriumBasicElement newObject = null;
