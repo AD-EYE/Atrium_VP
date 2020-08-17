@@ -21,7 +21,7 @@ public class AtriumProcess extends javax.swing.JFrame {
         initComponents();
         GraphicsEnvironment env = GraphicsEnvironment.getLocalGraphicsEnvironment();
         this.setMaximizedBounds(env.getMaximumWindowBounds());
-        this.setExtendedState(this.getExtendedState() | this.MAXIMIZED_BOTH);
+        this.setExtendedState(this.getExtendedState() | AtriumProcess.MAXIMIZED_BOTH);
     }
  
     /**
@@ -39,7 +39,7 @@ public class AtriumProcess extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jListUnlinkedAssumptions = new javax.swing.JList<>();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jListLinkedAssumption = new javax.swing.JList<>();
+        jListLinkedAssumptions = new javax.swing.JList<>();
         jLabel1 = new javax.swing.JLabel();
         jButtonAddLinked = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
@@ -120,18 +120,11 @@ public class AtriumProcess extends javax.swing.JFrame {
         jListCapella = new javax.swing.JList<>();
         jLabel22 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(1600, 1000));
         java.awt.GridBagLayout layout = new java.awt.GridBagLayout();
         layout.columnWidths = new int[] {0, 20, 0, 20, 0};
         layout.rowHeights = new int[] {0, 10, 0, 10, 0, 10, 0};
         getContentPane().setLayout(layout);
-
-        jTabbedPane.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jTabbedPaneMouseClicked(evt);
-            }
-        });
 
         jPanel1.setPreferredSize(new java.awt.Dimension(1600, 1000));
         java.awt.GridBagLayout jPanel1Layout = new java.awt.GridBagLayout();
@@ -139,11 +132,6 @@ public class AtriumProcess extends javax.swing.JFrame {
         jPanel1Layout.rowHeights = new int[] {0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0};
         jPanel1.setLayout(jPanel1Layout);
 
-        jListUnlinkedAssumptions.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
         jScrollPane1.setViewportView(jListUnlinkedAssumptions);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -155,17 +143,7 @@ public class AtriumProcess extends javax.swing.JFrame {
         gridBagConstraints.weighty = 0.2;
         jPanel1.add(jScrollPane1, gridBagConstraints);
 
-        jListLinkedAssumption.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        jListLinkedAssumption.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jListLinkedAssumptionMouseClicked(evt);
-            }
-        });
-        jScrollPane2.setViewportView(jListLinkedAssumption);
+        jScrollPane2.setViewportView(jListLinkedAssumptions);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 6;
@@ -186,11 +164,6 @@ public class AtriumProcess extends javax.swing.JFrame {
         jPanel1.add(jLabel1, gridBagConstraints);
 
         jButtonAddLinked.setText("=>");
-        jButtonAddLinked.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonAddLinkedActionPerformed(evt);
-            }
-        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 10;
@@ -210,11 +183,6 @@ public class AtriumProcess extends javax.swing.JFrame {
         jPanel1.add(jLabel2, gridBagConstraints);
 
         jButtonRemoveLinked.setText("<=");
-        jButtonRemoveLinked.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonRemoveLinkedActionPerformed(evt);
-            }
-        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 14;
@@ -237,8 +205,6 @@ public class AtriumProcess extends javax.swing.JFrame {
         gridBagConstraints.gridy = 6;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.SOUTHWEST;
         jPanel1.add(jLabel4, gridBagConstraints);
-
-        jComboBoxCFA.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 4;
@@ -260,13 +226,6 @@ public class AtriumProcess extends javax.swing.JFrame {
         gridBagConstraints.gridy = 4;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
         jPanel1.add(jLabel20, gridBagConstraints);
-
-        jComboBoxDG.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jComboBoxDG.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBoxDGActionPerformed(evt);
-            }
-        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 6;
         gridBagConstraints.gridy = 4;
@@ -288,16 +247,6 @@ public class AtriumProcess extends javax.swing.JFrame {
         jPanel2Layout.rowHeights = new int[] {0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0};
         jPanel2.setLayout(jPanel2Layout);
 
-        jListUnlinkedDA.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        jListUnlinkedDA.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jListUnlinkedDAMouseClicked(evt);
-            }
-        });
         jScrollPane3.setViewportView(jListUnlinkedDA);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -309,16 +258,6 @@ public class AtriumProcess extends javax.swing.JFrame {
         gridBagConstraints.weighty = 1.0;
         jPanel2.add(jScrollPane3, gridBagConstraints);
 
-        jListLinkedDA.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        jListLinkedDA.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jListLinkedDAMouseClicked(evt);
-            }
-        });
         jScrollPane4.setViewportView(jListLinkedDA);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -339,11 +278,6 @@ public class AtriumProcess extends javax.swing.JFrame {
         jPanel2.add(jLabel5, gridBagConstraints);
 
         jButtonAddLinkedDA.setText("=>");
-        jButtonAddLinkedDA.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonAddLinkedDAActionPerformed(evt);
-            }
-        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 10;
@@ -360,11 +294,6 @@ public class AtriumProcess extends javax.swing.JFrame {
         jPanel2.add(jLabel6, gridBagConstraints);
 
         jButtonRemoveLinkedDA.setText("<=");
-        jButtonRemoveLinkedDA.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonRemoveLinkedDAActionPerformed(evt);
-            }
-        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 14;
@@ -379,13 +308,6 @@ public class AtriumProcess extends javax.swing.JFrame {
         gridBagConstraints.gridy = 2;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.SOUTHWEST;
         jPanel2.add(jLabel7, gridBagConstraints);
-
-        jComboBoxDG2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jComboBoxDG2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBoxDG2ActionPerformed(evt);
-            }
-        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 4;
@@ -407,16 +329,6 @@ public class AtriumProcess extends javax.swing.JFrame {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         jPanel2.add(jLabel23, gridBagConstraints);
 
-        jListUnlinkedSDG.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        jListUnlinkedSDG.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jListUnlinkedSDGMouseClicked(evt);
-            }
-        });
         jScrollPane14.setViewportView(jListUnlinkedSDG);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -435,16 +347,6 @@ public class AtriumProcess extends javax.swing.JFrame {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.SOUTHWEST;
         jPanel2.add(jLabel37, gridBagConstraints);
 
-        jListLinkedSDG.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        jListLinkedSDG.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jListLinkedSDGMouseClicked(evt);
-            }
-        });
         jScrollPane15.setViewportView(jListLinkedSDG);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -465,11 +367,6 @@ public class AtriumProcess extends javax.swing.JFrame {
         jPanel2.add(jLabel39, gridBagConstraints);
 
         jButtonAddLinkedSDG.setText("=>");
-        jButtonAddLinkedSDG.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonAddLinkedSDGActionPerformed(evt);
-            }
-        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 24;
@@ -485,11 +382,6 @@ public class AtriumProcess extends javax.swing.JFrame {
         jPanel2.add(jLabel40, gridBagConstraints);
 
         jButtonRemoveLinkedSDG.setText("<=");
-        jButtonRemoveLinkedSDG.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonRemoveLinkedSDGActionPerformed(evt);
-            }
-        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 28;
@@ -506,16 +398,6 @@ public class AtriumProcess extends javax.swing.JFrame {
         jPanel3Layout.rowHeights = new int[] {0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0};
         jPanel3.setLayout(jPanel3Layout);
 
-        jListDG.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        jListDG.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jListDGMouseClicked(evt);
-            }
-        });
         jScrollPane8.setViewportView(jListDG);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -528,16 +410,6 @@ public class AtriumProcess extends javax.swing.JFrame {
         gridBagConstraints.weighty = 1.0;
         jPanel3.add(jScrollPane8, gridBagConstraints);
 
-        jListDA.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        jListDA.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jListDAMouseClicked(evt);
-            }
-        });
         jScrollPane6.setViewportView(jListDA);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -549,12 +421,7 @@ public class AtriumProcess extends javax.swing.JFrame {
         gridBagConstraints.weighty = 1.0;
         jPanel3.add(jScrollPane6, gridBagConstraints);
 
-        jButtonAddDG.setText("Add DGl");
-        jButtonAddDG.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonAddDGActionPerformed(evt);
-            }
-        });
+        jButtonAddDG.setText("Add DG");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 12;
@@ -562,11 +429,6 @@ public class AtriumProcess extends javax.swing.JFrame {
         jPanel3.add(jButtonAddDG, gridBagConstraints);
 
         jButtonAddDA.setText("Add DA");
-        jButtonAddDA.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonAddDAActionPerformed(evt);
-            }
-        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 8;
         gridBagConstraints.gridy = 12;
@@ -574,16 +436,6 @@ public class AtriumProcess extends javax.swing.JFrame {
         gridBagConstraints.weightx = 20.0;
         jPanel3.add(jButtonAddDA, gridBagConstraints);
 
-        jListCFA.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        jListCFA.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jListCFAMouseClicked(evt);
-            }
-        });
         jScrollPane9.setViewportView(jListCFA);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -624,16 +476,6 @@ public class AtriumProcess extends javax.swing.JFrame {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.SOUTHWEST;
         jPanel3.add(jLabel29, gridBagConstraints);
 
-        jListSDG.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        jListSDG.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jListSDGMouseClicked(evt);
-            }
-        });
         jScrollPane13.setViewportView(jListSDG);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -689,16 +531,6 @@ public class AtriumProcess extends javax.swing.JFrame {
         jPanel5Layout.rowHeights = new int[] {0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0};
         jPanel5.setLayout(jPanel5Layout);
 
-        jListAssumption.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        jListAssumption.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jListAssumptionMouseClicked(evt);
-            }
-        });
         jScrollPane7.setViewportView(jListAssumption);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -712,11 +544,6 @@ public class AtriumProcess extends javax.swing.JFrame {
         jPanel5.add(jScrollPane7, gridBagConstraints);
 
         jButtonAddAssumption.setText("Add Assumption");
-        jButtonAddAssumption.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonAddAssumptionActionPerformed(evt);
-            }
-        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 14;
@@ -732,16 +559,6 @@ public class AtriumProcess extends javax.swing.JFrame {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.SOUTHWEST;
         jPanel5.add(jLabel8, gridBagConstraints);
 
-        jListODD.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        jListODD.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jListODDMouseClicked(evt);
-            }
-        });
         jScrollPane11.setViewportView(jListODD);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -753,16 +570,6 @@ public class AtriumProcess extends javax.swing.JFrame {
         gridBagConstraints.weighty = 1.0;
         jPanel5.add(jScrollPane11, gridBagConstraints);
 
-        jListFR.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        jListFR.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jListFRMouseClicked(evt);
-            }
-        });
         jScrollPane12.setViewportView(jListFR);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -790,14 +597,9 @@ public class AtriumProcess extends javax.swing.JFrame {
         jPanel5.add(jLabel33, gridBagConstraints);
 
         jButtonAddODD.setText("Add ODD");
-        jButtonAddODD.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonAddODDActionPerformed(evt);
-            }
-        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 6;
-        gridBagConstraints.gridy = 14;
+        gridBagConstraints.gridy = 6;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTH;
         gridBagConstraints.weightx = 16.0;
         jPanel5.add(jButtonAddODD, gridBagConstraints);
@@ -805,7 +607,7 @@ public class AtriumProcess extends javax.swing.JFrame {
         jButtonAddFR.setText("Add FR");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 6;
-        gridBagConstraints.gridy = 6;
+        gridBagConstraints.gridy = 14;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTH;
         jPanel5.add(jButtonAddFR, gridBagConstraints);
 
@@ -820,7 +622,7 @@ public class AtriumProcess extends javax.swing.JFrame {
         jButtonRemoveODD.setText("Remove ODD");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 8;
-        gridBagConstraints.gridy = 14;
+        gridBagConstraints.gridy = 6;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTH;
         gridBagConstraints.weightx = 16.0;
         jPanel5.add(jButtonRemoveODD, gridBagConstraints);
@@ -828,7 +630,7 @@ public class AtriumProcess extends javax.swing.JFrame {
         jButtonRemoveFR.setText("Remove FR");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 8;
-        gridBagConstraints.gridy = 6;
+        gridBagConstraints.gridy = 14;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTH;
         jPanel5.add(jButtonRemoveFR, gridBagConstraints);
 
@@ -849,11 +651,6 @@ public class AtriumProcess extends javax.swing.JFrame {
         jPanel5.add(jLabel30, gridBagConstraints);
 
         jButtonAddFailure.setText("Add Failure Mode");
-        jButtonAddFailure.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonAddFailureActionPerformed(evt);
-            }
-        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 10;
         gridBagConstraints.gridy = 6;
@@ -877,16 +674,6 @@ public class AtriumProcess extends javax.swing.JFrame {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.SOUTHWEST;
         jPanel5.add(jLabel24, gridBagConstraints);
 
-        jListFailure.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        jListFailure.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jListFailureMouseClicked(evt);
-            }
-        });
         jScrollPane10.setViewportView(jListFailure);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -896,16 +683,6 @@ public class AtriumProcess extends javax.swing.JFrame {
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         jPanel5.add(jScrollPane10, gridBagConstraints);
 
-        jListCapella.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        jListCapella.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jListCapellaMouseClicked(evt);
-            }
-        });
         jScrollPane5.setViewportView(jListCapella);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -935,121 +712,6 @@ public class AtriumProcess extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTabbedPaneMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTabbedPaneMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTabbedPaneMouseClicked
-
-    private void jListCapellaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListCapellaMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jListCapellaMouseClicked
-
-    private void jButtonAddFailureActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAddFailureActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonAddFailureActionPerformed
-
-    private void jListFailureMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListFailureMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jListFailureMouseClicked
-
-    private void jButtonAddODDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAddODDActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonAddODDActionPerformed
-
-    private void jListFRMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListFRMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jListFRMouseClicked
-
-    private void jListODDMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListODDMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jListODDMouseClicked
-
-    private void jButtonAddAssumptionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAddAssumptionActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonAddAssumptionActionPerformed
-
-    private void jListAssumptionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListAssumptionMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jListAssumptionMouseClicked
-
-    private void jListSDGMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListSDGMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jListSDGMouseClicked
-
-    private void jListCFAMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListCFAMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jListCFAMouseClicked
-
-    private void jButtonAddDAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAddDAActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonAddDAActionPerformed
-
-    private void jButtonAddDGActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAddDGActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonAddDGActionPerformed
-
-    private void jListDAMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListDAMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jListDAMouseClicked
-
-    private void jListDGMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListDGMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jListDGMouseClicked
-
-    private void jButtonRemoveLinkedSDGActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRemoveLinkedSDGActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonRemoveLinkedSDGActionPerformed
-
-    private void jButtonAddLinkedSDGActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAddLinkedSDGActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonAddLinkedSDGActionPerformed
-
-    private void jListLinkedSDGMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListLinkedSDGMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jListLinkedSDGMouseClicked
-
-    private void jListUnlinkedSDGMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListUnlinkedSDGMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jListUnlinkedSDGMouseClicked
-
-    private void jComboBoxDG2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxDG2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBoxDG2ActionPerformed
-
-    private void jButtonRemoveLinkedDAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRemoveLinkedDAActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonRemoveLinkedDAActionPerformed
-
-    private void jButtonAddLinkedDAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAddLinkedDAActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonAddLinkedDAActionPerformed
-
-    private void jListLinkedDAMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListLinkedDAMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jListLinkedDAMouseClicked
-
-    private void jListUnlinkedDAMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListUnlinkedDAMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jListUnlinkedDAMouseClicked
-
-    private void jComboBoxDGActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxDGActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBoxDGActionPerformed
-
-    private void jButtonRemoveLinkedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRemoveLinkedActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonRemoveLinkedActionPerformed
-
-    private void jButtonAddLinkedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAddLinkedActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonAddLinkedActionPerformed
-
-    private void jListLinkedAssumptionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListLinkedAssumptionMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jListLinkedAssumptionMouseClicked
-
-    
-    
-       DefaultListModel<String> dml1 = new DefaultListModel<>();
     /**
      * @param args the command line arguments
      */
@@ -1145,7 +807,7 @@ public class AtriumProcess extends javax.swing.JFrame {
     private javax.swing.JList<String> jListDG;
     private javax.swing.JList<String> jListFR;
     private javax.swing.JList<String> jListFailure;
-    private javax.swing.JList<String> jListLinkedAssumption;
+    private javax.swing.JList<String> jListLinkedAssumptions;
     private javax.swing.JList<String> jListLinkedDA;
     private javax.swing.JList<String> jListLinkedSDG;
     private javax.swing.JList<String> jListODD;

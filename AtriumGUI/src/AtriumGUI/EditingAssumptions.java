@@ -145,12 +145,6 @@ public class EditingAssumptions extends javax.swing.JFrame {
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         Editingframe.getContentPane().add(EditingResponsibleExpert, gridBagConstraints);
-
-        EditingContent.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                EditingContentActionPerformed(evt);
-            }
-        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 18;
@@ -159,12 +153,6 @@ public class EditingAssumptions extends javax.swing.JFrame {
         gridBagConstraints.weightx = 50.0;
         gridBagConstraints.weighty = 30.0;
         Editingframe.getContentPane().add(EditingContent, gridBagConstraints);
-
-        EditingRationale.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                EditingRationaleActionPerformed(evt);
-            }
-        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 20;
@@ -224,11 +212,6 @@ public class EditingAssumptions extends javax.swing.JFrame {
 
         buttonGroup1.add(isTask);
         isTask.setText("Task");
-        isTask.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                isTaskActionPerformed(evt);
-            }
-        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 6;
         gridBagConstraints.gridy = 8;
@@ -270,21 +253,6 @@ public class EditingAssumptions extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_FinishAndSaveEditingActionPerformed
 
-    private void EditingContentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditingContentActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_EditingContentActionPerformed
-
-    private void isTaskActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_isTaskActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_isTaskActionPerformed
-
-    private void EditingRationaleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditingRationaleActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_EditingRationaleActionPerformed
-
-    
-    
-       DefaultListModel<String> dml1 = new DefaultListModel<>();
     /**
      * @param args the command line arguments
      */
