@@ -3,6 +3,7 @@ package org.polarsys.capella.vp.atrium.design.service.tools;
 
 import java.awt.Frame;
 import java.awt.GraphicsEnvironment;
+import java.awt.event.MouseEvent;
 import java.util.Collections;
 import java.util.List;
 
@@ -364,7 +365,24 @@ public class AtriumProcess extends javax.swing.JFrame {
         jButtonRemoveSDG = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         jScrollPane7 = new javax.swing.JScrollPane();
-        jListAssumption = new javax.swing.JList();
+        jListAssumption = new javax.swing.JList()
+        {
+        	public String getToolTipText(MouseEvent me) 
+        	{
+        		Assumption edited_assumption=null;
+                int index = locationToIndex(me.getPoint());
+                if (index > -1) 
+                {
+                   String item = (String) getModel().getElementAt(index);
+                   for (Assumption a : listAssumption) //Go through all the assumptions to find the one with the same name
+           		{
+					if (a.getName().equals(item)){edited_assumption=a;}
+           		}
+                   return "<html><p width=\"500\">" + edited_assumption.getContent() + "</p></html>";
+                }
+                return null;
+            }
+        };
         jButtonAddAssumption = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         jScrollPane11 = new javax.swing.JScrollPane();
@@ -464,8 +482,6 @@ public class AtriumProcess extends javax.swing.JFrame {
 	                jListUnlinkedAssumptionMouseClicked(evt);
 	        }
 	    });
-		
-
 		
 		jButtonRemoveFM.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
