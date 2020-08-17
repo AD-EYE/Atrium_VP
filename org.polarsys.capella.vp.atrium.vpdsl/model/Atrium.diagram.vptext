@@ -378,7 +378,7 @@ Diagrams Atrium.diagram {
 				label: "ElementLegacy"
 			}
 			OpenAction openSwing {
-				label: "Open Swing"
+				label: "Open Atrium UI"
 			}
 		}
 	}

@@ -39,8 +39,6 @@ public class EditingAssumptions extends javax.swing.JFrame {
         jLabel16 = new javax.swing.JLabel();
         EditingResponsibleArchitect = new javax.swing.JTextField();
         EditingResponsibleExpert = new javax.swing.JTextField();
-        EditingContent = new javax.swing.JTextField();
-        EditingRationale = new javax.swing.JTextField();
         EditingDate = new javax.swing.JTextField();
         jLabel17 = new javax.swing.JLabel();
         isValid = new javax.swing.JRadioButton();
@@ -50,6 +48,10 @@ public class EditingAssumptions extends javax.swing.JFrame {
         isTask = new javax.swing.JRadioButton();
         jLabel18 = new javax.swing.JLabel();
         EditingName = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        EditingContent = new javax.swing.JTextPane();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        EditingRationale = new javax.swing.JTextPane();
         buttonGroup1 = new javax.swing.ButtonGroup();
         buttonGroup2 = new javax.swing.ButtonGroup();
 
@@ -147,21 +149,6 @@ public class EditingAssumptions extends javax.swing.JFrame {
         Editingframe.getContentPane().add(EditingResponsibleExpert, gridBagConstraints);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 18;
-        gridBagConstraints.gridwidth = 5;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.weightx = 50.0;
-        gridBagConstraints.weighty = 30.0;
-        Editingframe.getContentPane().add(EditingContent, gridBagConstraints);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 20;
-        gridBagConstraints.gridwidth = 5;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.weighty = 30.0;
-        Editingframe.getContentPane().add(EditingRationale, gridBagConstraints);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 14;
         gridBagConstraints.gridwidth = 5;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
@@ -233,6 +220,27 @@ public class EditingAssumptions extends javax.swing.JFrame {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         Editingframe.getContentPane().add(EditingName, gridBagConstraints);
 
+        jScrollPane1.setViewportView(EditingContent);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 18;
+        gridBagConstraints.gridwidth = 5;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.weightx = 70.0;
+        gridBagConstraints.weighty = 30.0;
+        Editingframe.getContentPane().add(jScrollPane1, gridBagConstraints);
+
+        jScrollPane2.setViewportView(EditingRationale);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 20;
+        gridBagConstraints.gridwidth = 5;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.weighty = 30.0;
+        Editingframe.getContentPane().add(jScrollPane2, gridBagConstraints);
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -291,10 +299,10 @@ public class EditingAssumptions extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField EditingContent;
+    private javax.swing.JTextPane EditingContent;
     private javax.swing.JTextField EditingDate;
     private javax.swing.JTextField EditingName;
-    private javax.swing.JTextField EditingRationale;
+    private javax.swing.JTextPane EditingRationale;
     private javax.swing.JTextField EditingResponsibleArchitect;
     private javax.swing.JTextField EditingResponsibleExpert;
     private javax.swing.JFrame Editingframe;
@@ -315,5 +323,7 @@ public class EditingAssumptions extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     // End of variables declaration//GEN-END:variables
 }

@@ -33,13 +33,13 @@ public class EditingPanel extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jTextNameeditedObject = new javax.swing.JTextField();
-        jTextContentEditedObject = new javax.swing.JTextField();
         jButtonSaveEditedObject = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jRadioButtonYes = new javax.swing.JRadioButton();
         jRadioButtonNo = new javax.swing.JRadioButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextContentEditedObject = new javax.swing.JTextPane();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         java.awt.GridBagLayout layout = new java.awt.GridBagLayout();
         layout.columnWidths = new int[] {0, 30, 0, 30, 0, 30, 0, 30, 0, 30, 0, 30, 0};
         layout.rowHeights = new int[] {0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0};
@@ -78,17 +78,6 @@ public class EditingPanel extends javax.swing.JFrame {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         getContentPane().add(jTextNameeditedObject, gridBagConstraints);
 
-        jTextContentEditedObject.setText("jTextField2");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 8;
-        gridBagConstraints.gridwidth = 7;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.weightx = 70.0;
-        gridBagConstraints.weighty = 50.0;
-        getContentPane().add(jTextContentEditedObject, gridBagConstraints);
-
         jButtonSaveEditedObject.setText("Save and Quit");
         jButtonSaveEditedObject.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -126,6 +115,16 @@ public class EditingPanel extends javax.swing.JFrame {
         gridBagConstraints.gridy = 10;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         getContentPane().add(jRadioButtonNo, gridBagConstraints);
+
+        jScrollPane1.setViewportView(jTextContentEditedObject);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 8;
+        gridBagConstraints.gridwidth = 7;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.weighty = 40.0;
+        getContentPane().add(jScrollPane1, gridBagConstraints);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -178,7 +177,8 @@ public class EditingPanel extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JRadioButton jRadioButtonNo;
     private javax.swing.JRadioButton jRadioButtonYes;
-    private javax.swing.JTextField jTextContentEditedObject;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextPane jTextContentEditedObject;
     private javax.swing.JTextField jTextNameeditedObject;
     // End of variables declaration//GEN-END:variables
 }

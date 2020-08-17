@@ -210,6 +210,7 @@ public class AtriumProcess extends javax.swing.JFrame {
         gridBagConstraints.gridy = 4;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.weightx = 40.0;
         jPanel1.add(jComboBoxCFA, gridBagConstraints);
 
         jLabel19.setText("CFA");
@@ -231,6 +232,7 @@ public class AtriumProcess extends javax.swing.JFrame {
         gridBagConstraints.gridy = 4;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.weightx = 40.0;
         jPanel1.add(jComboBoxDG, gridBagConstraints);
 
         jLabel21.setText("Design Goal");
@@ -548,7 +550,8 @@ public class AtriumProcess extends javax.swing.JFrame {
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 14;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTH;
-        gridBagConstraints.weightx = 16.0;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 1.0;
         jPanel5.add(jButtonAddAssumption, gridBagConstraints);
 
         jLabel8.setText("Assumption list");
@@ -601,7 +604,8 @@ public class AtriumProcess extends javax.swing.JFrame {
         gridBagConstraints.gridx = 6;
         gridBagConstraints.gridy = 6;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTH;
-        gridBagConstraints.weightx = 16.0;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 1.0;
         jPanel5.add(jButtonAddODD, gridBagConstraints);
 
         jButtonAddFR.setText("Add FR");
@@ -609,6 +613,8 @@ public class AtriumProcess extends javax.swing.JFrame {
         gridBagConstraints.gridx = 6;
         gridBagConstraints.gridy = 14;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTH;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 1.0;
         jPanel5.add(jButtonAddFR, gridBagConstraints);
 
         jButtonRemoveAssumption.setText("Remove Assumption");
@@ -616,7 +622,8 @@ public class AtriumProcess extends javax.swing.JFrame {
         gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 14;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTH;
-        gridBagConstraints.weightx = 16.0;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 1.0;
         jPanel5.add(jButtonRemoveAssumption, gridBagConstraints);
 
         jButtonRemoveODD.setText("Remove ODD");
@@ -624,7 +631,8 @@ public class AtriumProcess extends javax.swing.JFrame {
         gridBagConstraints.gridx = 8;
         gridBagConstraints.gridy = 6;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTH;
-        gridBagConstraints.weightx = 16.0;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 1.0;
         jPanel5.add(jButtonRemoveODD, gridBagConstraints);
 
         jButtonRemoveFR.setText("Remove FR");
@@ -632,6 +640,8 @@ public class AtriumProcess extends javax.swing.JFrame {
         gridBagConstraints.gridx = 8;
         gridBagConstraints.gridy = 14;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTH;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 1.0;
         jPanel5.add(jButtonRemoveFR, gridBagConstraints);
 
         jLabel31.setText("Capella element");
@@ -655,7 +665,8 @@ public class AtriumProcess extends javax.swing.JFrame {
         gridBagConstraints.gridx = 10;
         gridBagConstraints.gridy = 6;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTH;
-        gridBagConstraints.weightx = 16.0;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 1.0;
         jPanel5.add(jButtonAddFailure, gridBagConstraints);
 
         jButtonRemoveFM.setText("Remove Failure Mode");
@@ -663,7 +674,8 @@ public class AtriumProcess extends javax.swing.JFrame {
         gridBagConstraints.gridx = 12;
         gridBagConstraints.gridy = 6;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTH;
-        gridBagConstraints.weightx = 16.0;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 1.0;
         jPanel5.add(jButtonRemoveFM, gridBagConstraints);
 
         jLabel24.setText("Failure list");
@@ -681,6 +693,8 @@ public class AtriumProcess extends javax.swing.JFrame {
         gridBagConstraints.gridy = 4;
         gridBagConstraints.gridwidth = 3;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 1.0;
         jPanel5.add(jScrollPane10, gridBagConstraints);
 
         jScrollPane5.setViewportView(jListCapella);
@@ -690,6 +704,8 @@ public class AtriumProcess extends javax.swing.JFrame {
         gridBagConstraints.gridy = 12;
         gridBagConstraints.gridwidth = 3;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 1.0;
         jPanel5.add(jScrollPane5, gridBagConstraints);
 
         jTabbedPane.addTab("Edit Assumption, ODD, FR", jPanel5);
