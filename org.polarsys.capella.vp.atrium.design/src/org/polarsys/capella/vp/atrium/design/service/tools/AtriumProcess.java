@@ -655,8 +655,11 @@ public class AtriumProcess extends javax.swing.JFrame {
 	        {
 	            listModel.addElement(ListCapellaElementName.get(i));
 	        }
-	        jListCapella.setModel(listModel);
-		
+	    jListCapella.setModel(listModel);
+	    
+	    AutoCompletion.enable(jComboBoxDG);
+	    AutoCompletion.enable(jComboBoxDG2);
+	    AutoCompletion.enable(jComboBoxCFA);
 	        
 	     //Paste the netBean generated code here (initComponent). Remove all the <>. Cut and paste the variable declaration as well
 

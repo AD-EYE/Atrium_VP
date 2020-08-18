@@ -1,5 +1,8 @@
 package org.polarsys.capella.vp.atrium.design.service.tools;
 
+import java.awt.Dimension;
+import java.awt.Toolkit;
+
 import javax.swing.JOptionPane;
 
 import org.eclipse.emf.common.util.BasicEList;
@@ -38,110 +41,114 @@ public class EditingPanel extends javax.swing.JFrame {
     }
                         
     private void initComponents() {
-    	//paste all the initComponent method from Netbeans here
+    	 //paste all the initComponent method from Netbeans here
+    	 Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+    	 int height = screenSize.height * 1 / 4;
+    	 int width = screenSize.width * 1 / 4;
+    	 setPreferredSize(new Dimension(width, height));
 
-    	java.awt.GridBagConstraints gridBagConstraints;
+    	 java.awt.GridBagConstraints gridBagConstraints;
 
-        buttonGroup1 = new javax.swing.ButtonGroup();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jTextNameeditedObject = new javax.swing.JTextField();
-        jButtonSaveEditedObject = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
-        jRadioButtonYes = new javax.swing.JRadioButton();
-        jRadioButtonNo = new javax.swing.JRadioButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextContentEditedObject = new javax.swing.JTextPane();
+         buttonGroup1 = new javax.swing.ButtonGroup();
+         jLabel1 = new javax.swing.JLabel();
+         jLabel2 = new javax.swing.JLabel();
+         jLabel3 = new javax.swing.JLabel();
+         jTextNameeditedObject = new javax.swing.JTextField();
+         jButtonSaveEditedObject = new javax.swing.JButton();
+         jLabel4 = new javax.swing.JLabel();
+         jRadioButtonYes = new javax.swing.JRadioButton();
+         jRadioButtonNo = new javax.swing.JRadioButton();
+         jScrollPane1 = new javax.swing.JScrollPane();
+         jTextContentEditedObject = new javax.swing.JTextPane();
 
-        java.awt.GridBagLayout layout = new java.awt.GridBagLayout();
-        layout.columnWidths = new int[] {0, 30, 0, 30, 0, 30, 0, 30, 0, 30, 0, 30, 0};
-        layout.rowHeights = new int[] {0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0};
-        getContentPane().setLayout(layout);
+         java.awt.GridBagLayout layout = new java.awt.GridBagLayout();
+         layout.columnWidths = new int[] {0, 30, 0, 30, 0, 30, 0, 30, 0, 30, 0, 30, 0};
+         layout.rowHeights = new int[] {0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0};
+         getContentPane().setLayout(layout);
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel1.setText("Editing [Object]");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.gridwidth = 9;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTH;
-        getContentPane().add(jLabel1, gridBagConstraints);
+         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+         jLabel1.setText("Editing [Object]");
+         gridBagConstraints = new java.awt.GridBagConstraints();
+         gridBagConstraints.gridx = 2;
+         gridBagConstraints.gridy = 2;
+         gridBagConstraints.gridwidth = 9;
+         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTH;
+         getContentPane().add(jLabel1, gridBagConstraints);
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel2.setText("Name :");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 6;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHEAST;
-        getContentPane().add(jLabel2, gridBagConstraints);
+         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+         jLabel2.setText("Name :");
+         gridBagConstraints = new java.awt.GridBagConstraints();
+         gridBagConstraints.gridx = 2;
+         gridBagConstraints.gridy = 6;
+         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHEAST;
+         getContentPane().add(jLabel2, gridBagConstraints);
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel3.setText("Content :");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 8;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHEAST;
-        getContentPane().add(jLabel3, gridBagConstraints);
+         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+         jLabel3.setText("Content :");
+         gridBagConstraints = new java.awt.GridBagConstraints();
+         gridBagConstraints.gridx = 2;
+         gridBagConstraints.gridy = 8;
+         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHEAST;
+         getContentPane().add(jLabel3, gridBagConstraints);
 
-        jTextNameeditedObject.setText("jTextField1");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 6;
-        gridBagConstraints.gridwidth = 7;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        getContentPane().add(jTextNameeditedObject, gridBagConstraints);
+         jTextNameeditedObject.setText("jTextField1");
+         gridBagConstraints = new java.awt.GridBagConstraints();
+         gridBagConstraints.gridx = 4;
+         gridBagConstraints.gridy = 6;
+         gridBagConstraints.gridwidth = 7;
+         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+         getContentPane().add(jTextNameeditedObject, gridBagConstraints);
 
-        jButtonSaveEditedObject.setText("Save and Quit");
-        jButtonSaveEditedObject.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonSaveEditedObjectActionPerformed(evt);
-            }
-        });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 12;
-        gridBagConstraints.gridwidth = 9;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHEAST;
-        gridBagConstraints.weightx = 10.0;
-        getContentPane().add(jButtonSaveEditedObject, gridBagConstraints);
+         jButtonSaveEditedObject.setText("Save and Quit");
+         jButtonSaveEditedObject.addActionListener(new java.awt.event.ActionListener() {
+             public void actionPerformed(java.awt.event.ActionEvent evt) {
+                 jButtonSaveEditedObjectActionPerformed(evt);
+             }
+         });
+         gridBagConstraints = new java.awt.GridBagConstraints();
+         gridBagConstraints.gridx = 2;
+         gridBagConstraints.gridy = 12;
+         gridBagConstraints.gridwidth = 9;
+         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHEAST;
+         gridBagConstraints.weightx = 10.0;
+         getContentPane().add(jButtonSaveEditedObject, gridBagConstraints);
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel4.setText("Selection ?");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 10;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
-        getContentPane().add(jLabel4, gridBagConstraints);
+         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+         jLabel4.setText("Selection ?");
+         gridBagConstraints = new java.awt.GridBagConstraints();
+         gridBagConstraints.gridx = 2;
+         gridBagConstraints.gridy = 10;
+         gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
+         getContentPane().add(jLabel4, gridBagConstraints);
 
-        buttonGroup1.add(jRadioButtonYes);
-        jRadioButtonYes.setText("Yes");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 10;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        getContentPane().add(jRadioButtonYes, gridBagConstraints);
+         buttonGroup1.add(jRadioButtonYes);
+         jRadioButtonYes.setText("Yes");
+         gridBagConstraints = new java.awt.GridBagConstraints();
+         gridBagConstraints.gridx = 4;
+         gridBagConstraints.gridy = 10;
+         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+         getContentPane().add(jRadioButtonYes, gridBagConstraints);
 
-        buttonGroup1.add(jRadioButtonNo);
-        jRadioButtonNo.setText("No");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 6;
-        gridBagConstraints.gridy = 10;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        getContentPane().add(jRadioButtonNo, gridBagConstraints);
+         buttonGroup1.add(jRadioButtonNo);
+         jRadioButtonNo.setText("No");
+         gridBagConstraints = new java.awt.GridBagConstraints();
+         gridBagConstraints.gridx = 6;
+         gridBagConstraints.gridy = 10;
+         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+         getContentPane().add(jRadioButtonNo, gridBagConstraints);
 
-        jScrollPane1.setViewportView(jTextContentEditedObject);
+         jScrollPane1.setViewportView(jTextContentEditedObject);
 
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 8;
-        gridBagConstraints.gridwidth = 7;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.weighty = 40.0;
-        getContentPane().add(jScrollPane1, gridBagConstraints);
+         gridBagConstraints = new java.awt.GridBagConstraints();
+         gridBagConstraints.gridx = 4;
+         gridBagConstraints.gridy = 8;
+         gridBagConstraints.gridwidth = 7;
+         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+         gridBagConstraints.weighty = 40.0;
+         getContentPane().add(jScrollPane1, gridBagConstraints);
 
-        pack();
+         pack();
     }// </editor-fold>                        
 
     private void jButtonSaveEditedObjectActionPerformed(java.awt.event.ActionEvent evt) {      
