@@ -55,6 +55,7 @@ public class EditingAssumptions extends javax.swing.JFrame {
         buttonGroup1 = new javax.swing.ButtonGroup();
         buttonGroup2 = new javax.swing.ButtonGroup();
 
+        Editingframe.setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         Editingframe.setAlwaysOnTop(true);
         Editingframe.setBounds(new java.awt.Rectangle(0, 0, 0, 0));
         Editingframe.setSize(new java.awt.Dimension(770, 430));
