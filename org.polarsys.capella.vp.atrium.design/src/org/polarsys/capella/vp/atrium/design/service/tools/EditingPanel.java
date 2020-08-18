@@ -29,10 +29,12 @@ public class EditingPanel extends javax.swing.JFrame {
 	EList<FR> listFR = new BasicEList<FR>();
 	EList<FailureMode> listFailure = new BasicEList<FailureMode>();
 	
+	boolean is_new_object;
+	
     public EditingPanel(AtriumProcess parent) {
     	my_parent=parent;
         initComponents();
-        setDefaultCloseOperation(EditingFrameAssumption.DO_NOTHING_ON_CLOSE);
+        setDefaultCloseOperation(EditingPanel.DO_NOTHING_ON_CLOSE);
     }
                         
     private void initComponents() {
@@ -184,10 +186,18 @@ public class EditingPanel extends javax.swing.JFrame {
 				        }
 				    });	
 				}
+				if (is_new_object)
+				{
+					if ((editedObject instanceof ODD)||(editedObject instanceof FR))
+					{
+						my_parent.createAssumptionFromODDorFR(editedObject);
+					}
+				}
 			}
 			else {JOptionPane.showMessageDialog(getParent(), "Please fill out the whole form");}
 		}
 		else {JOptionPane.showMessageDialog(getParent(), "There is already an object named like that, please chose another name.");}
+		
     }
     
     public void editing(AtriumBasicElement object, EList<DG> listDG_p, EList<DA> listDA_p, EList<CFA> listCFA_p, EList<sDG> listsDG_p, EList<FailureMode> listFailure_p, EList<ODD> listODD_p, EList<FR> listFR_p)
@@ -203,6 +213,13 @@ public class EditingPanel extends javax.swing.JFrame {
     	editedObject=object;
     	jTextNameeditedObject.setText(object.getName());
     	jTextContentEditedObject.setText(object.getContent());
+    	
+    	is_new_object = false;
+    	
+    	if (jTextContentEditedObject.getText().equals(""))
+    	{
+    		is_new_object=true;
+    	}
     	
     	if (object instanceof CFA) {jLabel1.setText("Editing CFA");}
     	if (object instanceof DG) {jLabel1.setText("Editing Design Goal");}
