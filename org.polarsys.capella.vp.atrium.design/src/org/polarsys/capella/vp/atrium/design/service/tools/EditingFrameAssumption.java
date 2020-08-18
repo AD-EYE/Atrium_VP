@@ -7,6 +7,8 @@ import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.polarsys.capella.vp.atrium.Atrium.Assumption;
+import org.polarsys.capella.vp.atrium.Atrium.FR;
+import org.polarsys.capella.vp.atrium.Atrium.ODD;
 import org.polarsys.capella.vp.atrium.Atrium.assumptionType_Type;
 import org.polarsys.capella.vp.atrium.Atrium.validity_Type;
 
@@ -313,6 +315,15 @@ public class EditingFrameAssumption extends javax.swing.JFrame {
     	EditingResponsibleArchitect.setText(edited_assumption.getResponsibleArchitect());
     	EditingResponsibleExpert.setText(edited_assumption.getResponsibleExpert());
     	EditingDate.setText(edited_assumption.getDateOfCompletion());
+    	
+    	String title = "";
+    	
+    	if (edited_assumption.getCreatedFrom() instanceof ODD) {title="ODD " + edited_assumption.getCreatedFrom().getName();}
+    	else if (edited_assumption.getCreatedFrom() instanceof FR) {title="FR "+ edited_assumption.getCreatedFrom().getName();}
+    	else {title="user";}
+    	
+    	
+    	jLabel17.setText("Editing an Assumption created from " + title);
     	
     	Editingframe.setVisible(true);
     }

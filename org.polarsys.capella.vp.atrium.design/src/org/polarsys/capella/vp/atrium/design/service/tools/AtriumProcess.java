@@ -1755,22 +1755,19 @@ public class AtriumProcess extends javax.swing.JFrame {
 		else{myEditor.editing(newObject_parameter, listDG, listDA, listCFA, listsDG, ListFailureMode, listODD, listFR);}
 	}
 	
-	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public void createAssumptionFromODDorFR(AtriumBasicElement ODDorFR)
 	{	
-		EList ObjectList = listAssumption;
-		EObject Extensible_list = the_Assumption_list;
-		AtriumBasicElement newObject = AtriumFactoryImpl.eINSTANCE.createAssumption();
-		
-		final EObject Extensible_list2 = Extensible_list;
-		final AtriumBasicElement newObject2 = newObject;
+		EList<Assumption> ObjectList = listAssumption;
+		final Assumption_list Extensible_list = the_Assumption_list;
+		final Assumption newObject = AtriumFactoryImpl.eINSTANCE.createAssumption();
 		
 		newObject.setName("New Assumption");
+		newObject.setCreatedFrom(ODDorFR);
 		
 		domain.getCommandStack().execute(new RecordingCommand(domain) {
 	        @Override
 	        protected void doExecute() {
-	        	((ExtensibleElement) Extensible_list2).getOwnedExtensions().add((ElementExtension) newObject2);//the add action is done there, within a transaction context
+	        	((ExtensibleElement) Extensible_list).getOwnedExtensions().add((ElementExtension) newObject);//the add action is done there, within a transaction context
 	        }
 	    });
 		

@@ -7,6 +7,7 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.edit.command.CommandParameter;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
@@ -25,6 +26,8 @@ import org.polarsys.capella.vp.atrium.Atrium.Assumption;
 import org.polarsys.capella.vp.atrium.Atrium.AtriumFactory;
 import org.polarsys.capella.vp.atrium.Atrium.AtriumPackage;
 
+import org.polarsys.kitalpha.emde.extension.ExtensionModelManager;
+import org.polarsys.kitalpha.emde.extension.ModelExtensionHelper;
 import org.polarsys.kitalpha.emde.model.EmdePackage;
 
 import org.polarsys.kitalpha.emde.model.edit.provider.NewChildDescriptorHelper;
@@ -38,6 +41,13 @@ import org.polarsys.kitalpha.emde.model.edit.provider.NewChildDescriptorHelper;
 public class AssumptionItemProvider extends AtriumBasicElementItemProvider implements IEditingDomainItemProvider,
 		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected IItemPropertyDescriptor createdFromPropertyDescriptor;
+
+	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -45,6 +55,32 @@ public class AssumptionItemProvider extends AtriumBasicElementItemProvider imple
 	 */
 	public AssumptionItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void checkChildCreationExtender(Object object) {
+		super.checkChildCreationExtender(object);
+		if (object instanceof EObject) {
+			EObject eObject = (EObject) object;
+			// Process AtriumPackage.Literals.ASSUMPTION__CREATED_FROM
+			if (createdFromPropertyDescriptor != null) {
+				Object createdFromValue = eObject.eGet(AtriumPackage.Literals.ASSUMPTION__CREATED_FROM, true);
+				if (createdFromValue != null && createdFromValue instanceof EObject && ModelExtensionHelper
+						.getInstance(eObject).isExtensionModelDisabled((EObject) createdFromValue)) {
+					itemPropertyDescriptors.remove(createdFromPropertyDescriptor);
+				} else if (createdFromValue == null && ExtensionModelManager.getAnyType(eObject,
+						AtriumPackage.Literals.ASSUMPTION__CREATED_FROM) != null) {
+					itemPropertyDescriptors.remove(createdFromPropertyDescriptor);
+				} else if (itemPropertyDescriptors.contains(createdFromPropertyDescriptor) == false) {
+					itemPropertyDescriptors.add(createdFromPropertyDescriptor);
+				}
+			}
+		}
 	}
 
 	/**
@@ -59,6 +95,7 @@ public class AssumptionItemProvider extends AtriumBasicElementItemProvider imple
 			super.getPropertyDescriptors(object);
 
 			addLinkedWithCFAsPropertyDescriptor(object);
+			addCreatedFromPropertyDescriptor(object);
 			addAssumptionTypePropertyDescriptor(object);
 			addRationalePropertyDescriptor(object);
 			addValidityPropertyDescriptor(object);
@@ -90,6 +127,27 @@ public class AssumptionItemProvider extends AtriumBasicElementItemProvider imple
 				AtriumPackage.Literals.ASSUMPTION__LINKED_WITH_CF_AS, true, false, true, null, null,
 				// begin-extension-code
 				null));
+		// end-extension-code
+	}
+
+	/**
+	 * This adds a property descriptor for the Created From feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCreatedFromPropertyDescriptor(Object object) {
+		// begin-extension-code
+		createdFromPropertyDescriptor = createItemPropertyDescriptor
+		// end-extension-code		
+		(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+				getString("_UI_Assumption_createdFrom_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_Assumption_createdFrom_feature", //$NON-NLS-1$//$NON-NLS-2$
+						"_UI_Assumption_type"), //$NON-NLS-1$
+				AtriumPackage.Literals.ASSUMPTION__CREATED_FROM, true, false, true, null, null,
+				// begin-extension-code
+				null);
+		itemPropertyDescriptors.add(createdFromPropertyDescriptor);
 		// end-extension-code
 	}
 

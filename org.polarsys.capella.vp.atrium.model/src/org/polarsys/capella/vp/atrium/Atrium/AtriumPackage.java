@@ -2517,13 +2517,22 @@ public interface AtriumPackage extends EPackage {
 	int ASSUMPTION__LINKED_WITH_CF_AS = ATRIUM_BASIC_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Created From</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSUMPTION__CREATED_FROM = ATRIUM_BASIC_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
 	 * The feature id for the '<em><b>Assumption Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ASSUMPTION__ASSUMPTION_TYPE = ATRIUM_BASIC_ELEMENT_FEATURE_COUNT + 1;
+	int ASSUMPTION__ASSUMPTION_TYPE = ATRIUM_BASIC_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Rationale</b></em>' attribute.
@@ -2532,7 +2541,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSUMPTION__RATIONALE = ATRIUM_BASIC_ELEMENT_FEATURE_COUNT + 2;
+	int ASSUMPTION__RATIONALE = ATRIUM_BASIC_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Validity</b></em>' attribute.
@@ -2541,7 +2550,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSUMPTION__VALIDITY = ATRIUM_BASIC_ELEMENT_FEATURE_COUNT + 3;
+	int ASSUMPTION__VALIDITY = ATRIUM_BASIC_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Responsible Architect</b></em>' attribute.
@@ -2550,7 +2559,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSUMPTION__RESPONSIBLE_ARCHITECT = ATRIUM_BASIC_ELEMENT_FEATURE_COUNT + 4;
+	int ASSUMPTION__RESPONSIBLE_ARCHITECT = ATRIUM_BASIC_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Responsible Expert</b></em>' attribute.
@@ -2559,7 +2568,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSUMPTION__RESPONSIBLE_EXPERT = ATRIUM_BASIC_ELEMENT_FEATURE_COUNT + 5;
+	int ASSUMPTION__RESPONSIBLE_EXPERT = ATRIUM_BASIC_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Date Of Completion</b></em>' attribute.
@@ -2568,7 +2577,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSUMPTION__DATE_OF_COMPLETION = ATRIUM_BASIC_ELEMENT_FEATURE_COUNT + 6;
+	int ASSUMPTION__DATE_OF_COMPLETION = ATRIUM_BASIC_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of structural features of the '<em>Assumption</em>' class.
@@ -2577,7 +2586,7 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSUMPTION_FEATURE_COUNT = ATRIUM_BASIC_ELEMENT_FEATURE_COUNT + 7;
+	int ASSUMPTION_FEATURE_COUNT = ATRIUM_BASIC_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.capella.vp.atrium.Atrium.impl.DGImpl <em>DG</em>}' class.
@@ -4406,6 +4415,17 @@ public interface AtriumPackage extends EPackage {
 	EReference getAssumption_LinkedWithCFAs();
 
 	/**
+	 * Returns the meta object for the reference '{@link org.polarsys.capella.vp.atrium.Atrium.Assumption#getCreatedFrom <em>Created From</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Created From</em>'.
+	 * @see org.polarsys.capella.vp.atrium.Atrium.Assumption#getCreatedFrom()
+	 * @see #getAssumption()
+	 * @generated
+	 */
+	EReference getAssumption_CreatedFrom();
+
+	/**
 	 * Returns the meta object for the attribute '{@link org.polarsys.capella.vp.atrium.Atrium.Assumption#getAssumptionType <em>Assumption Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4802,6 +4822,14 @@ public interface AtriumPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ASSUMPTION__LINKED_WITH_CF_AS = eINSTANCE.getAssumption_LinkedWithCFAs();
+
+		/**
+		 * The meta object literal for the '<em><b>Created From</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ASSUMPTION__CREATED_FROM = eINSTANCE.getAssumption_CreatedFrom();
 
 		/**
 		 * The meta object literal for the '<em><b>Assumption Type</b></em>' attribute feature.

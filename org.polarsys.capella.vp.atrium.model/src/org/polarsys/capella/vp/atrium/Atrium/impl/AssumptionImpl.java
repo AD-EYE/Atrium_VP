@@ -7,10 +7,12 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.polarsys.capella.vp.atrium.Atrium.Assumption;
+import org.polarsys.capella.vp.atrium.Atrium.AtriumBasicElement;
 import org.polarsys.capella.vp.atrium.Atrium.AtriumPackage;
 import org.polarsys.capella.vp.atrium.Atrium.CFA;
 import org.polarsys.capella.vp.atrium.Atrium.assumptionType_Type;
@@ -25,6 +27,7 @@ import org.polarsys.capella.vp.atrium.Atrium.validity_Type;
  * </p>
  * <ul>
  *   <li>{@link org.polarsys.capella.vp.atrium.Atrium.impl.AssumptionImpl#getLinkedWithCFAs <em>Linked With CF As</em>}</li>
+ *   <li>{@link org.polarsys.capella.vp.atrium.Atrium.impl.AssumptionImpl#getCreatedFrom <em>Created From</em>}</li>
  *   <li>{@link org.polarsys.capella.vp.atrium.Atrium.impl.AssumptionImpl#getAssumptionType <em>Assumption Type</em>}</li>
  *   <li>{@link org.polarsys.capella.vp.atrium.Atrium.impl.AssumptionImpl#getRationale <em>Rationale</em>}</li>
  *   <li>{@link org.polarsys.capella.vp.atrium.Atrium.impl.AssumptionImpl#getValidity <em>Validity</em>}</li>
@@ -46,6 +49,16 @@ public class AssumptionImpl extends AtriumBasicElementImpl implements Assumption
 	 * @ordered
 	 */
 	protected EList<CFA> linkedWithCFAs;
+
+	/**
+	 * The cached value of the '{@link #getCreatedFrom() <em>Created From</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCreatedFrom()
+	 * @generated
+	 * @ordered
+	 */
+	protected AtriumBasicElement createdFrom;
 
 	/**
 	 * The default value of the '{@link #getAssumptionType() <em>Assumption Type</em>}' attribute.
@@ -202,6 +215,55 @@ public class AssumptionImpl extends AtriumBasicElementImpl implements Assumption
 					AtriumPackage.ASSUMPTION__LINKED_WITH_CF_AS);
 		}
 		return linkedWithCFAs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+
+	@Override
+	public AtriumBasicElement getCreatedFrom() {
+
+		if (createdFrom != null && createdFrom.eIsProxy()) {
+			InternalEObject oldCreatedFrom = (InternalEObject) createdFrom;
+			createdFrom = (AtriumBasicElement) eResolveProxy(oldCreatedFrom);
+			if (createdFrom != oldCreatedFrom) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AtriumPackage.ASSUMPTION__CREATED_FROM,
+							oldCreatedFrom, createdFrom));
+			}
+		}
+		return createdFrom;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+
+	public AtriumBasicElement basicGetCreatedFrom() {
+
+		return createdFrom;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+
+	@Override
+	public void setCreatedFrom(AtriumBasicElement newCreatedFrom) {
+
+		AtriumBasicElement oldCreatedFrom = createdFrom;
+		createdFrom = newCreatedFrom;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AtriumPackage.ASSUMPTION__CREATED_FROM,
+					oldCreatedFrom, createdFrom));
+
 	}
 
 	/**
@@ -388,6 +450,10 @@ public class AssumptionImpl extends AtriumBasicElementImpl implements Assumption
 		switch (featureID) {
 		case AtriumPackage.ASSUMPTION__LINKED_WITH_CF_AS:
 			return getLinkedWithCFAs();
+		case AtriumPackage.ASSUMPTION__CREATED_FROM:
+			if (resolve)
+				return getCreatedFrom();
+			return basicGetCreatedFrom();
 		case AtriumPackage.ASSUMPTION__ASSUMPTION_TYPE:
 			return getAssumptionType();
 		case AtriumPackage.ASSUMPTION__RATIONALE:
@@ -416,6 +482,9 @@ public class AssumptionImpl extends AtriumBasicElementImpl implements Assumption
 		case AtriumPackage.ASSUMPTION__LINKED_WITH_CF_AS:
 			getLinkedWithCFAs().clear();
 			getLinkedWithCFAs().addAll((Collection<? extends CFA>) newValue);
+			return;
+		case AtriumPackage.ASSUMPTION__CREATED_FROM:
+			setCreatedFrom((AtriumBasicElement) newValue);
 			return;
 		case AtriumPackage.ASSUMPTION__ASSUMPTION_TYPE:
 			setAssumptionType((assumptionType_Type) newValue);
@@ -450,6 +519,9 @@ public class AssumptionImpl extends AtriumBasicElementImpl implements Assumption
 		case AtriumPackage.ASSUMPTION__LINKED_WITH_CF_AS:
 			getLinkedWithCFAs().clear();
 			return;
+		case AtriumPackage.ASSUMPTION__CREATED_FROM:
+			setCreatedFrom((AtriumBasicElement) null);
+			return;
 		case AtriumPackage.ASSUMPTION__ASSUMPTION_TYPE:
 			setAssumptionType(ASSUMPTION_TYPE_EDEFAULT);
 			return;
@@ -482,6 +554,8 @@ public class AssumptionImpl extends AtriumBasicElementImpl implements Assumption
 		switch (featureID) {
 		case AtriumPackage.ASSUMPTION__LINKED_WITH_CF_AS:
 			return linkedWithCFAs != null && !linkedWithCFAs.isEmpty();
+		case AtriumPackage.ASSUMPTION__CREATED_FROM:
+			return createdFrom != null;
 		case AtriumPackage.ASSUMPTION__ASSUMPTION_TYPE:
 			return assumptionType != ASSUMPTION_TYPE_EDEFAULT;
 		case AtriumPackage.ASSUMPTION__RATIONALE:

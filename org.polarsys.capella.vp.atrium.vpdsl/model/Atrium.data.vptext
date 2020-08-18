@@ -57,6 +57,7 @@ Data Atrium.data {
 			dateOfCompletion type ecore.EString
 		Associations:
 			linkedWithCFAs refers [0,*] CFA
+			createdFrom refers [1,1] AtriumBasicElement
 	}
 	Class DG {
 		superClass AtriumBasicElement

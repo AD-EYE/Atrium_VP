@@ -87,6 +87,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="Assumption" eSuperTypes="#//AtriumBasicElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="linkedWithCFAs" upperBound="-1"
         eType="#//CFA"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="createdFrom" lowerBound="1"
+        eType="#//AtriumBasicElement"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="assumptionType" eType="#//assumptionType_Type"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="rationale" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="validity" eType="#//validity_Type"/>

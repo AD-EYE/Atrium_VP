@@ -51,6 +51,7 @@
     </VP_Classes>
     <VP_Classes name="Assumption">
       <VP_Classes_Associations xsi:type="vpdesc:LocalClassAssociation" name="linkedWithCFAs" cardinality="0..*" type="reference" LocalTarget="//@VP_Data/@VP_Classes.9"/>
+      <VP_Classes_Associations xsi:type="vpdesc:LocalClassAssociation" name="createdFrom" cardinality="1" type="reference" LocalTarget="//@VP_Data/@VP_Classes.0"/>
       <VP_Class_Attributes name="assumptionType">
         <owned_values name="Clarification" literal="Clarification"/>
         <owned_values name="Task" literal="Task"/>

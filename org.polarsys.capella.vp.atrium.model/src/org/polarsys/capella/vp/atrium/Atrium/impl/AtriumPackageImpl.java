@@ -488,8 +488,8 @@ public class AtriumPackageImpl extends EPackageImpl implements AtriumPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getAssumption_AssumptionType() {
-		return (EAttribute) assumptionEClass.getEStructuralFeatures().get(1);
+	public EReference getAssumption_CreatedFrom() {
+		return (EReference) assumptionEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -498,7 +498,7 @@ public class AtriumPackageImpl extends EPackageImpl implements AtriumPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getAssumption_Rationale() {
+	public EAttribute getAssumption_AssumptionType() {
 		return (EAttribute) assumptionEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -508,7 +508,7 @@ public class AtriumPackageImpl extends EPackageImpl implements AtriumPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getAssumption_Validity() {
+	public EAttribute getAssumption_Rationale() {
 		return (EAttribute) assumptionEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -518,7 +518,7 @@ public class AtriumPackageImpl extends EPackageImpl implements AtriumPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getAssumption_ResponsibleArchitect() {
+	public EAttribute getAssumption_Validity() {
 		return (EAttribute) assumptionEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -528,7 +528,7 @@ public class AtriumPackageImpl extends EPackageImpl implements AtriumPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getAssumption_ResponsibleExpert() {
+	public EAttribute getAssumption_ResponsibleArchitect() {
 		return (EAttribute) assumptionEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -538,8 +538,18 @@ public class AtriumPackageImpl extends EPackageImpl implements AtriumPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getAssumption_DateOfCompletion() {
+	public EAttribute getAssumption_ResponsibleExpert() {
 		return (EAttribute) assumptionEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getAssumption_DateOfCompletion() {
+		return (EAttribute) assumptionEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -740,6 +750,7 @@ public class AtriumPackageImpl extends EPackageImpl implements AtriumPackage {
 
 		assumptionEClass = createEClass(ASSUMPTION);
 		createEReference(assumptionEClass, ASSUMPTION__LINKED_WITH_CF_AS);
+		createEReference(assumptionEClass, ASSUMPTION__CREATED_FROM);
 		createEAttribute(assumptionEClass, ASSUMPTION__ASSUMPTION_TYPE);
 		createEAttribute(assumptionEClass, ASSUMPTION__RATIONALE);
 		createEAttribute(assumptionEClass, ASSUMPTION__VALIDITY);
@@ -883,6 +894,9 @@ public class AtriumPackageImpl extends EPackageImpl implements AtriumPackage {
 		initEClass(assumptionEClass, Assumption.class, "Assumption", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
 				IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getAssumption_LinkedWithCFAs(), this.getCFA(), null, "linkedWithCFAs", null, 0, -1, //$NON-NLS-1$
+				Assumption.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAssumption_CreatedFrom(), this.getAtriumBasicElement(), null, "createdFrom", null, 1, 1, //$NON-NLS-1$
 				Assumption.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAssumption_AssumptionType(), this.getassumptionType_Type(), "assumptionType", null, 0, 1, //$NON-NLS-1$

@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.amalgam.explorer.contextual.core.query.IQuery;
 
 import org.polarsys.capella.vp.atrium.Atrium.CFA;
+import org.polarsys.capella.vp.atrium.Atrium.Assumption;
 
 /**
  * <!-- begin-user-doc -->
@@ -52,6 +53,13 @@ public class ReferencingViewpointElementQuery implements IQuery {
 					CFA referencingElement = (CFA) eObject;
 					if (referencingElement.getLinkedtoFailure() != null
 							&& referencingElement.getLinkedtoFailure().equals(object_p))
+						result.add(eObject);
+				}
+
+				if (eObject instanceof Assumption) {
+					Assumption referencingElement = (Assumption) eObject;
+					if (referencingElement.getCreatedFrom() != null
+							&& referencingElement.getCreatedFrom().equals(object_p))
 						result.add(eObject);
 				}
 			}

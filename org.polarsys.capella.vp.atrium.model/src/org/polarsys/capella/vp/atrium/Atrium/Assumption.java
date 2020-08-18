@@ -16,6 +16,7 @@ import org.polarsys.kitalpha.emde.model.ElementExtension;
  * </p>
  * <ul>
  *   <li>{@link org.polarsys.capella.vp.atrium.Atrium.Assumption#getLinkedWithCFAs <em>Linked With CF As</em>}</li>
+ *   <li>{@link org.polarsys.capella.vp.atrium.Atrium.Assumption#getCreatedFrom <em>Created From</em>}</li>
  *   <li>{@link org.polarsys.capella.vp.atrium.Atrium.Assumption#getAssumptionType <em>Assumption Type</em>}</li>
  *   <li>{@link org.polarsys.capella.vp.atrium.Atrium.Assumption#getRationale <em>Rationale</em>}</li>
  *   <li>{@link org.polarsys.capella.vp.atrium.Atrium.Assumption#getValidity <em>Validity</em>}</li>
@@ -44,6 +45,32 @@ public interface Assumption extends AtriumBasicElement {
 	 */
 
 	EList<CFA> getLinkedWithCFAs();
+
+	/**
+	 * Returns the value of the '<em><b>Created From</b></em>' reference.
+	
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Created From</em>' reference.
+	 * @see #setCreatedFrom(AtriumBasicElement)
+	 * @see org.polarsys.capella.vp.atrium.Atrium.AtriumPackage#getAssumption_CreatedFrom()
+	 * @model required="true"
+	 * @generated
+	 */
+
+	AtriumBasicElement getCreatedFrom();
+
+	/**
+	 * Sets the value of the '{@link org.polarsys.capella.vp.atrium.Atrium.Assumption#getCreatedFrom <em>Created From</em>}' reference.
+	
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Created From</em>' reference.
+	 * @see #getCreatedFrom()
+	 * @generated
+	 */
+
+	void setCreatedFrom(AtriumBasicElement value);
 
 	/**
 	 * Returns the value of the '<em><b>Rationale</b></em>' attribute.

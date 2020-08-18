@@ -44,6 +44,8 @@ public class ReferencedViewpointElementQuery implements IQuery {
 		Assumption object = (Assumption) object_p;
 		for (EObject eObject : object.getLinkedWithCFAs())
 			result.add(eObject);
+		if (object.getCreatedFrom() != null)
+			result.add(object.getCreatedFrom());
 
 		return result;
 	}
