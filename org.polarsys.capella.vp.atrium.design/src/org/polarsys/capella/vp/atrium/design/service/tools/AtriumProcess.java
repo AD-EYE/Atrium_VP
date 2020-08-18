@@ -1600,7 +1600,7 @@ public class AtriumProcess extends javax.swing.JFrame {
     			if (abe.getName().equals(selectedElementName)){edited_object=abe;}
     		}
     		
-    		 myEditor.editing(edited_object, listDG, listDA, listCFA, listsDG, ListFailureMode);
+    		 myEditor.editing(edited_object, listDG, listDA, listCFA, listsDG, ListFailureMode, listODD, listFR);
     	}
 	}                                                                                       
 
@@ -1752,7 +1752,7 @@ public class AtriumProcess extends javax.swing.JFrame {
 		AtriumBasicElement newObject_parameter = (AtriumBasicElement) newObject;
 		
 		if (type==7) {myAssumptionEditor.editAssumption((Assumption) newObject, listAssumption);}
-		else{myEditor.editing(newObject_parameter, listDG, listDA, listCFA, listsDG, ListFailureMode);}
+		else{myEditor.editing(newObject_parameter, listDG, listDA, listCFA, listsDG, ListFailureMode, listODD, listFR);}
 	}
 
 	///////////////////////////////////////////////////////////////////////////////////////

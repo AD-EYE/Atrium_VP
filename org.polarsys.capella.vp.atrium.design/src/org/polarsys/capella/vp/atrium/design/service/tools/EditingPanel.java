@@ -11,7 +11,9 @@ import org.polarsys.capella.vp.atrium.Atrium.AtriumBasicElement;
 import org.polarsys.capella.vp.atrium.Atrium.CFA;
 import org.polarsys.capella.vp.atrium.Atrium.DA;
 import org.polarsys.capella.vp.atrium.Atrium.DG;
+import org.polarsys.capella.vp.atrium.Atrium.FR;
 import org.polarsys.capella.vp.atrium.Atrium.FailureMode;
+import org.polarsys.capella.vp.atrium.Atrium.ODD;
 import org.polarsys.capella.vp.atrium.Atrium.sDG;
 
 @SuppressWarnings("serial")
@@ -23,11 +25,14 @@ public class EditingPanel extends javax.swing.JFrame {
 	EList<DG> listDG = new BasicEList<DG>();
 	EList<DA> listDA = new BasicEList<DA>();
 	EList<sDG> listsDG = new BasicEList<sDG>();
+	EList<ODD> listODD = new BasicEList<ODD>();
+	EList<FR> listFR = new BasicEList<FR>();
 	EList<FailureMode> listFailure = new BasicEList<FailureMode>();
 	
     public EditingPanel(AtriumProcess parent) {
     	my_parent=parent;
         initComponents();
+        setDefaultCloseOperation(EditingFrameAssumption.DO_NOTHING_ON_CLOSE);
     }
                         
     private void initComponents() {
@@ -145,10 +150,15 @@ public class EditingPanel extends javax.swing.JFrame {
     	if (editedObject instanceof CFA) {for (CFA cfa : listCFA){if (jTextNameeditedObject.getText().equals(cfa.getName()) && (!(cfa.equals((CFA) editedObject)))){alreadyHere = true;}}}
     	if (editedObject instanceof sDG) {for (sDG sdg : listsDG){if (jTextNameeditedObject.getText().equals(sdg.getName()) && (!(sdg.equals((sDG) editedObject)))){alreadyHere = true;}}}
     	if (editedObject instanceof FailureMode) {for (FailureMode f : listFailure){if (jTextNameeditedObject.getText().equals(f.getName()) && (!(f.equals((FailureMode) editedObject)))){alreadyHere = true;}}}
-	
+    	if (editedObject instanceof ODD) {for (ODD odd : listODD){if (jTextNameeditedObject.getText().equals(odd.getName()) && (!(odd.equals((ODD) editedObject)))){alreadyHere = true;}}}
+    	if (editedObject instanceof FR) {for (FR fr : listFR){if (jTextNameeditedObject.getText().equals(fr.getName()) && (!(fr.equals((FR) editedObject)))){alreadyHere = true;}}}
+    	
+    	
 		if (!(alreadyHere))
 		{
-			domain.getCommandStack().execute(new RecordingCommand(domain) {
+			if (!(jTextNameeditedObject.getText().equals(null)||jTextContentEditedObject.getText().equals("")))
+			{
+				domain.getCommandStack().execute(new RecordingCommand(domain) {
 			        @Override
 			        protected void doExecute() {
 			        	editedObject.setName(jTextNameeditedObject.getText());
@@ -156,36 +166,39 @@ public class EditingPanel extends javax.swing.JFrame {
 			        }
 			    });	
 			
-			my_parent.updateDisplayTab0();
-			my_parent.updateDisplayTab1();
-			my_parent.updateDisplayTab2();
-			my_parent.updateDisplayTab3();
-			this.setVisible(false);
-			
-			if (editedObject instanceof DG) {my_parent.ObjectAdded();}
-			
-			if (editedObject instanceof DA)
-			{
-				domain.getCommandStack().execute(new RecordingCommand(domain) {
-			        @Override
-			        protected void doExecute() {
-			        	DA da = (DA) editedObject;
-			        	da.setIsPartOfSelection(jRadioButtonYes.isSelected());
-			        }
-			    });	
+				my_parent.updateDisplayTab0();
+				my_parent.updateDisplayTab1();
+				my_parent.updateDisplayTab2();
+				my_parent.updateDisplayTab3();
+				this.setVisible(false);
+				
+				if (editedObject instanceof DG) {my_parent.ObjectAdded();}
+				
+				if (editedObject instanceof DA)
+				{
+					domain.getCommandStack().execute(new RecordingCommand(domain) {
+				        @Override
+				        protected void doExecute() {
+				        	DA da = (DA) editedObject;
+				        	da.setIsPartOfSelection(jRadioButtonYes.isSelected());
+				        }
+				    });	
+				}
 			}
-			
+			else {JOptionPane.showMessageDialog(getParent(), "Please fill out the whole form");}
 		}
-		else {JOptionPane.showMessageDialog(getParent(), "There is already an assumption named like that, please chose another name.");}
+		else {JOptionPane.showMessageDialog(getParent(), "There is already an object named like that, please chose another name.");}
     }
     
-    public void editing(AtriumBasicElement object, EList<DG> listDG_p, EList<DA> listDA_p, EList<CFA> listCFA_p, EList<sDG> listsDG_p, EList<FailureMode> listFailure_p)
+    public void editing(AtriumBasicElement object, EList<DG> listDG_p, EList<DA> listDA_p, EList<CFA> listCFA_p, EList<sDG> listsDG_p, EList<FailureMode> listFailure_p, EList<ODD> listODD_p, EList<FR> listFR_p)
     {	
     	listDG = listDG_p;
     	listDA = listDA_p;
     	listCFA = listCFA_p;
     	listsDG = listsDG_p;
     	listFailure = listFailure_p;
+    	listODD = listODD_p;
+    	listFR = listFR_p;
     	
     	editedObject=object;
     	jTextNameeditedObject.setText(object.getName());
@@ -195,6 +208,8 @@ public class EditingPanel extends javax.swing.JFrame {
     	if (object instanceof DG) {jLabel1.setText("Editing Design Goal");}
     	if (object instanceof FailureMode) {jLabel1.setText("Editing Failure Mode");}
     	if (object instanceof sDG) {jLabel1.setText("Editing subDesign Goal");}
+    	if (object instanceof FR) {jLabel1.setText("Editing Functional Requirement");}
+    	if (object instanceof ODD) {jLabel1.setText("Editing Operational Domain Design");}
     	
     	if (object instanceof DA) 
     	{

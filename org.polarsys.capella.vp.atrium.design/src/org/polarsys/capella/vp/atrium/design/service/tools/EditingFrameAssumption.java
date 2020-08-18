@@ -266,27 +266,32 @@ public class EditingFrameAssumption extends javax.swing.JFrame {
 		
 		if (!(alreadyHere))
 		{
-			TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(edited_assumption);
-			domain.getCommandStack().execute(new RecordingCommand(domain) {
-			        @Override
-			        protected void doExecute() {
-			        	edited_assumption.setName(EditingName.getText());
-			        	if (isRisk.isSelected()){edited_assumption.setAssumptionType(assumptionType_Type.RISK);}
-			        	else if (isTask.isSelected()){edited_assumption.setAssumptionType(assumptionType_Type.TASK);}
-			        	else if (isClarification.isSelected()){edited_assumption.setAssumptionType(assumptionType_Type.CLARIFICATION);}
-			        	edited_assumption.setContent(EditingContent.getText());
-			        	edited_assumption.setRationale(EditingRationale.getText());
-			        	if (isValid.isSelected()) {edited_assumption.setValidity(validity_Type.VALID);}
-			        	else if (isInvalid.isSelected()) {edited_assumption.setValidity(validity_Type.INVALID);}
-			        	edited_assumption.setResponsibleArchitect(EditingResponsibleArchitect.getText());
-			        	edited_assumption.setResponsibleExpert(EditingResponsibleExpert.getText());
-			        	edited_assumption.setDateOfCompletion(EditingDate.getText());
-			        }
-			    });
-			
-			my_parent.updateDisplayTab0();
-			my_parent.updateDisplayTab3();
-			Editingframe.setVisible(false);
+			if ((!(EditingName.getText().equals("")||EditingContent.getText().equals("")||EditingRationale.getText().equals("")
+				||EditingResponsibleArchitect.getText().equals("")||EditingResponsibleExpert.getText().equals("")||EditingDate.getText().equals("")))) //radio buttons always selected
+			{
+				TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(edited_assumption);
+				domain.getCommandStack().execute(new RecordingCommand(domain) {
+				        @Override
+				        protected void doExecute() {
+				        	edited_assumption.setName(EditingName.getText());
+				        	if (isRisk.isSelected()){edited_assumption.setAssumptionType(assumptionType_Type.RISK);}
+				        	else if (isTask.isSelected()){edited_assumption.setAssumptionType(assumptionType_Type.TASK);}
+				        	else if (isClarification.isSelected()){edited_assumption.setAssumptionType(assumptionType_Type.CLARIFICATION);}
+				        	edited_assumption.setContent(EditingContent.getText());
+				        	edited_assumption.setRationale(EditingRationale.getText());
+				        	if (isValid.isSelected()) {edited_assumption.setValidity(validity_Type.VALID);}
+				        	else if (isInvalid.isSelected()) {edited_assumption.setValidity(validity_Type.INVALID);}
+				        	edited_assumption.setResponsibleArchitect(EditingResponsibleArchitect.getText());
+				        	edited_assumption.setResponsibleExpert(EditingResponsibleExpert.getText());
+				        	edited_assumption.setDateOfCompletion(EditingDate.getText());
+				        }
+				    });
+				
+				my_parent.updateDisplayTab0();
+				my_parent.updateDisplayTab3();
+				Editingframe.setVisible(false);
+			}
+			else {JOptionPane.showMessageDialog(getParent(), "Please fill out the whole form");}		
 		}
 		else {JOptionPane.showMessageDialog(getParent(), "There is already an assumption named like that, please chose another name.");}
     }
