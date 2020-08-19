@@ -83,12 +83,15 @@ Data Atrium.data {
 	
 	Class FailureMode {
 		superClass AtriumBasicElement
-		Attributes:
 	}
 	Class ODD {
 		superClass AtriumBasicElement
+		Associations:
+			linkedAssumption refers [1,1] Assumption
 	}
 	Class FR {
 		superClass AtriumBasicElement
+		Associations:
+			linkedAssumption refers [1,1] Assumption
 	}
 }

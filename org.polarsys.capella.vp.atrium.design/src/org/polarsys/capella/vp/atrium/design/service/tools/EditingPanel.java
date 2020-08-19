@@ -10,6 +10,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
+import org.polarsys.capella.vp.atrium.Atrium.Assumption;
 import org.polarsys.capella.vp.atrium.Atrium.AtriumBasicElement;
 import org.polarsys.capella.vp.atrium.Atrium.CFA;
 import org.polarsys.capella.vp.atrium.Atrium.DA;
@@ -195,10 +196,23 @@ public class EditingPanel extends javax.swing.JFrame {
 				}
 				if (is_new_object)
 				{
-					if ((editedObject instanceof ODD)||(editedObject instanceof FR))
-					{
-						my_parent.createAssumptionFromODDorFR(editedObject);
-					}
+					
+					domain.getCommandStack().execute(new RecordingCommand(domain) {
+				        @Override
+				        protected void doExecute() {
+				        	Assumption new_assumption = null;
+							if (editedObject instanceof ODD)
+							{
+								new_assumption = my_parent.createAssumptionFromODDorFR(editedObject);
+								((ODD) editedObject).setLinkedAssumption(new_assumption);
+							}
+							if (editedObject instanceof FR)
+							{
+								new_assumption = my_parent.createAssumptionFromODDorFR(editedObject);
+								((FR) editedObject).setLinkedAssumption(new_assumption);
+							}
+				        }
+				    });	
 				}
 			}
 			else {JOptionPane.showMessageDialog(getParent(), "Please fill out the whole form");}
@@ -232,8 +246,22 @@ public class EditingPanel extends javax.swing.JFrame {
     	if (object instanceof DG) {jLabel1.setText("Editing Design Goal");}
     	if (object instanceof FailureMode) {jLabel1.setText("Editing Failure Mode");}
     	if (object instanceof sDG) {jLabel1.setText("Editing subDesign Goal");}
-    	if (object instanceof FR) {jLabel1.setText("Editing Functional Requirement");}
-    	if (object instanceof ODD) {jLabel1.setText("Editing Operational Domain Design");}
+    	if (object instanceof ODD)
+    	{
+    		if (!(is_new_object))
+    		{
+    			jLabel1.setText("Editing Operational Domain Design that created Assumption " + ((ODD) object).getLinkedAssumption().getName());
+    		}
+    		else {jLabel1.setText("Editing Operational Domain Design");}
+    	}
+    	if (object instanceof FR)
+    	{
+    		if (!(is_new_object))
+    		{
+    			jLabel1.setText("Editing Functional Requirement that created Assumption " + ((FR) object).getLinkedAssumption().getName());
+    		}
+    		else {jLabel1.setText("Editing Functional Requirement");}
+    	}
     	
     	if (object instanceof DA) 
     	{

@@ -3963,13 +3963,22 @@ public interface AtriumPackage extends EPackage {
 	int ODD__CONTENT = ATRIUM_BASIC_ELEMENT__CONTENT;
 
 	/**
+	 * The feature id for the '<em><b>Linked Assumption</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ODD__LINKED_ASSUMPTION = ATRIUM_BASIC_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>ODD</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ODD_FEATURE_COUNT = ATRIUM_BASIC_ELEMENT_FEATURE_COUNT + 0;
+	int ODD_FEATURE_COUNT = ATRIUM_BASIC_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.capella.vp.atrium.Atrium.impl.FRImpl <em>FR</em>}' class.
@@ -4189,13 +4198,22 @@ public interface AtriumPackage extends EPackage {
 	int FR__CONTENT = ATRIUM_BASIC_ELEMENT__CONTENT;
 
 	/**
+	 * The feature id for the '<em><b>Linked Assumption</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FR__LINKED_ASSUMPTION = ATRIUM_BASIC_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>FR</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FR_FEATURE_COUNT = ATRIUM_BASIC_ELEMENT_FEATURE_COUNT + 0;
+	int FR_FEATURE_COUNT = ATRIUM_BASIC_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.capella.vp.atrium.Atrium.state_Type <em>state Type</em>}' enum.
@@ -4596,6 +4614,17 @@ public interface AtriumPackage extends EPackage {
 	EClass getODD();
 
 	/**
+	 * Returns the meta object for the reference '{@link org.polarsys.capella.vp.atrium.Atrium.ODD#getLinkedAssumption <em>Linked Assumption</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Linked Assumption</em>'.
+	 * @see org.polarsys.capella.vp.atrium.Atrium.ODD#getLinkedAssumption()
+	 * @see #getODD()
+	 * @generated
+	 */
+	EReference getODD_LinkedAssumption();
+
+	/**
 	 * Returns the meta object for class '{@link org.polarsys.capella.vp.atrium.Atrium.FR <em>FR</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4604,6 +4633,17 @@ public interface AtriumPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getFR();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.polarsys.capella.vp.atrium.Atrium.FR#getLinkedAssumption <em>Linked Assumption</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Linked Assumption</em>'.
+	 * @see org.polarsys.capella.vp.atrium.Atrium.FR#getLinkedAssumption()
+	 * @see #getFR()
+	 * @generated
+	 */
+	EReference getFR_LinkedAssumption();
 
 	/**
 	 * Returns the meta object for enum '{@link org.polarsys.capella.vp.atrium.Atrium.state_Type <em>state Type</em>}'.
@@ -4972,6 +5012,14 @@ public interface AtriumPackage extends EPackage {
 		EClass ODD = eINSTANCE.getODD();
 
 		/**
+		 * The meta object literal for the '<em><b>Linked Assumption</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ODD__LINKED_ASSUMPTION = eINSTANCE.getODD_LinkedAssumption();
+
+		/**
 		 * The meta object literal for the '{@link org.polarsys.capella.vp.atrium.Atrium.impl.FRImpl <em>FR</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4980,6 +5028,14 @@ public interface AtriumPackage extends EPackage {
 		 * @generated
 		 */
 		EClass FR = eINSTANCE.getFR();
+
+		/**
+		 * The meta object literal for the '<em><b>Linked Assumption</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference FR__LINKED_ASSUMPTION = eINSTANCE.getFR_LinkedAssumption();
 
 		/**
 		 * The meta object literal for the '{@link org.polarsys.capella.vp.atrium.Atrium.state_Type <em>state Type</em>}' enum.

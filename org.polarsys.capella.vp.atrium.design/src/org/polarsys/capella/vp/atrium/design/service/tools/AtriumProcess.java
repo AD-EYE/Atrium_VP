@@ -239,9 +239,9 @@ public class AtriumProcess extends javax.swing.JFrame {
 			NamedElement capella_object = (NamedElement) cfa.getLinkedtoElement();
 			String name = capella_object.getName();
 			String failure = cfa.getLinkedtoFailure().getName();
-			if (!(cfa.getName().equals("{ " + name + " : " + failure + " }")))
+			if (!(cfa.getName().equals(name + " : " + failure)))
 			{
-				cfa.setName("{ " + name + " : " + failure + " }");
+				cfa.setName(name + " : " + failure);
 			}
 		}
 		
@@ -273,14 +273,14 @@ public class AtriumProcess extends javax.swing.JFrame {
 			{
 				boolean found = false;
 				
-				for (CFA cfa : listCFA){if (cfa.getName().equals("{ " + el.getName() + " : " + f.getName() + " }")) {found = true;}}
+				for (CFA cfa : listCFA){if (cfa.getName().equals(el.getName() + " : " + f.getName())) {found = true;}}
 				
 				if (!(found))
 				{
 					final CFA newCFA = AtriumFactoryImpl.eINSTANCE.createCFA();
 					newCFA.setContent("Some content");
 					newCFA.setState(state_Type.UNPROCESSED);
-					newCFA.setName("{ " + el.getName() + " : " + f.getName() + " }");
+					newCFA.setName(el.getName() + " : " + f.getName());
 					newCFA.setLinkedtoElement(el);
 					newCFA.setLinkedtoFailure(f);
 					
@@ -1669,6 +1669,10 @@ public class AtriumProcess extends javax.swing.JFrame {
     		AtriumBasicElement abe = (AtriumBasicElement) obj;
     		if (abe.getName()==strToDelete) {elToDelete=abe;}
     	}
+    	
+    	
+    	if (type==7) {deleteLinkedODDorFR(((Assumption)elToDelete));}
+    	if ((type==5)||(type==6)) {deleteLinkedAssumption(elToDelete);}
   
     	
     	final AtriumBasicElement elToDelete_param = elToDelete;
@@ -1686,6 +1690,53 @@ public class AtriumProcess extends javax.swing.JFrame {
     	updateDisplayTab3();
     	
     }
+    
+    private void deleteLinkedODDorFR(Assumption assumption)
+    {
+    	if (assumption.getCreatedFrom() instanceof ODD)
+    	{
+    		final AtriumBasicElement elToDelete_param = assumption.getCreatedFrom();
+    		domain.getCommandStack().execute(new RecordingCommand(domain) {
+    	        @Override
+    	        protected void doExecute() {
+    	        	((ExtensibleElement) the_ODD_list).getOwnedExtensions().remove(elToDelete_param);//the remove action is done there, within a transaction context
+    	        }
+    	    });
+    		
+    		listODD.remove(elToDelete_param);
+    	}
+    	else if (assumption.getCreatedFrom() instanceof FR)
+    	{
+    		final AtriumBasicElement elToDelete_param = assumption.getCreatedFrom();
+    		domain.getCommandStack().execute(new RecordingCommand(domain) {
+    	        @Override
+    	        protected void doExecute() {
+    	        	((ExtensibleElement) the_FR_list).getOwnedExtensions().remove(elToDelete_param);//the remove action is done there, within a transaction context
+    	        }
+    	    });
+    		
+    		listFR.remove(elToDelete_param);
+    	}
+    }
+    
+    private void deleteLinkedAssumption(AtriumBasicElement ODDorFR)
+    {
+    	Assumption linkedAssumption = null;
+    	if (ODDorFR instanceof ODD){linkedAssumption=((ODD) ODDorFR).getLinkedAssumption();}
+    	else {linkedAssumption=((FR) ODDorFR).getLinkedAssumption();}
+    	
+    	final Assumption assumption_param=linkedAssumption;
+    	
+    	domain.getCommandStack().execute(new RecordingCommand(domain) {
+	        @Override
+	        protected void doExecute() {
+	        	((ExtensibleElement) the_Assumption_list).getOwnedExtensions().remove(assumption_param);//the remove action is done there, within a transaction context
+	        }
+	    });
+    	
+    	listAssumption.remove(assumption_param);
+    }
+    //TESTER DELETE DES ASSUMPTION VERS FR/ODD
 	
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	private void createAtriumElement(String name, int type)
@@ -1758,7 +1809,7 @@ public class AtriumProcess extends javax.swing.JFrame {
 		else{myEditor.editing(newObject_parameter, listDG, listDA, listCFA, listsDG, ListFailureMode, listODD, listFR);}
 	}
 	
-	public void createAssumptionFromODDorFR(AtriumBasicElement ODDorFR)
+	public Assumption createAssumptionFromODDorFR(AtriumBasicElement ODDorFR)
 	{	
 		EList<Assumption> ObjectList = listAssumption;
 		final Assumption_list Extensible_list = the_Assumption_list;
@@ -1776,6 +1827,9 @@ public class AtriumProcess extends javax.swing.JFrame {
 		
 		ObjectList.add(newObject);//updating our local list
 		myAssumptionEditor.editAssumption((Assumption) newObject, listAssumption);
+		
+		
+		return newObject;
 	}
 
 	///////////////////////////////////////////////////////////////////////////////////////

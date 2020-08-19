@@ -116,8 +116,14 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isNewDevelopment" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="FailureMode" eSuperTypes="#//AtriumBasicElement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ODD" eSuperTypes="#//AtriumBasicElement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="FR" eSuperTypes="#//AtriumBasicElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ODD" eSuperTypes="#//AtriumBasicElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="linkedAssumption" lowerBound="1"
+        eType="#//Assumption"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FR" eSuperTypes="#//AtriumBasicElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="linkedAssumption" lowerBound="1"
+        eType="#//Assumption"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="state_Type">
     <eLiterals name="Processed" literal="Processed"/>
     <eLiterals name="Unprocessed" value="1" literal="Unprocessed"/>

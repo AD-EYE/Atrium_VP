@@ -381,6 +381,21 @@
                   class="org.polarsys.capella.vp.atrium.contextual.explorer.queries.odd.ParentQuery">
             </basicQuery>
          </categoryQuery>
+      </category>      <category
+            id="org.polarsys.capella.vp.atrium.contextual.explorer.queries.ODD.ReferencedViewpointElements"
+            isTopLevel="true"
+            name="Referenced viewpoint elements">
+         <targetExplorerId
+               id="ReferencedElementExplorer">
+         </targetExplorerId>
+         <availableForType
+               class="org.polarsys.capella.vp.atrium.Atrium.ODD">
+         </availableForType>
+         <categoryQuery>
+            <basicQuery
+                  class="org.polarsys.capella.vp.atrium.contextual.explorer.queries.odd.ReferencedViewpointElementQuery">
+            </basicQuery>
+         </categoryQuery>
       </category>	</extension>
 <extension 
 	point="org.eclipse.amalgam.explorer.contextual.core.contentProviderCategory">
@@ -397,6 +412,21 @@
          <categoryQuery>
             <basicQuery
                   class="org.polarsys.capella.vp.atrium.contextual.explorer.queries.fr.ParentQuery">
+            </basicQuery>
+         </categoryQuery>
+      </category>      <category
+            id="org.polarsys.capella.vp.atrium.contextual.explorer.queries.FR.ReferencedViewpointElements"
+            isTopLevel="true"
+            name="Referenced viewpoint elements">
+         <targetExplorerId
+               id="ReferencedElementExplorer">
+         </targetExplorerId>
+         <availableForType
+               class="org.polarsys.capella.vp.atrium.Atrium.FR">
+         </availableForType>
+         <categoryQuery>
+            <basicQuery
+                  class="org.polarsys.capella.vp.atrium.contextual.explorer.queries.fr.ReferencedViewpointElementQuery">
             </basicQuery>
          </categoryQuery>
       </category>	</extension>

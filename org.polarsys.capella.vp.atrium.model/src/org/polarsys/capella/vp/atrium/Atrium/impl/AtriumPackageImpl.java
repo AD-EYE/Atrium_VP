@@ -658,8 +658,28 @@ public class AtriumPackageImpl extends EPackageImpl implements AtriumPackage {
 	 * @generated
 	 */
 	@Override
+	public EReference getODD_LinkedAssumption() {
+		return (EReference) oddEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getFR() {
 		return frEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getFR_LinkedAssumption() {
+		return (EReference) frEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -773,8 +793,10 @@ public class AtriumPackageImpl extends EPackageImpl implements AtriumPackage {
 		failureModeEClass = createEClass(FAILURE_MODE);
 
 		oddEClass = createEClass(ODD);
+		createEReference(oddEClass, ODD__LINKED_ASSUMPTION);
 
 		frEClass = createEClass(FR);
+		createEReference(frEClass, FR__LINKED_ASSUMPTION);
 
 		// Create enums
 		state_TypeEEnum = createEEnum(STATE_TYPE);
@@ -944,9 +966,15 @@ public class AtriumPackageImpl extends EPackageImpl implements AtriumPackage {
 
 		initEClass(oddEClass, org.polarsys.capella.vp.atrium.Atrium.ODD.class, "ODD", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
 				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getODD_LinkedAssumption(), this.getAssumption(), null, "linkedAssumption", null, 1, 1, //$NON-NLS-1$
+				org.polarsys.capella.vp.atrium.Atrium.ODD.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(frEClass, org.polarsys.capella.vp.atrium.Atrium.FR.class, "FR", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
 				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getFR_LinkedAssumption(), this.getAssumption(), null, "linkedAssumption", null, 1, 1, //$NON-NLS-1$
+				org.polarsys.capella.vp.atrium.Atrium.FR.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(state_TypeEEnum, state_Type.class, "state_Type"); //$NON-NLS-1$
