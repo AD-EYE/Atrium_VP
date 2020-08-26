@@ -1328,8 +1328,13 @@ public class AtriumProcess extends javax.swing.JFrame {
 		{
 			for (sDG sdg : listsDG) //go through all the sDG to find those linked with the_DG
 			{
-				if (the_DG.getSubDGs().contains(sdg)){nameLinkedsDG.addElement(sdg.getName());}
+				if (the_DG.getSubDGs().contains(sdg)){/*nameLinkedsDG.addElement(sdg.getName());*/}
 				else{nameUnlinkedsDG.addElement(sdg.getName());}
+			}
+			
+			for (sDG sdg : the_DG.getSubDGs())
+			{
+				nameLinkedsDG.addElement(sdg.getName());
 			}
 			
 			for (DA da : listDA) //go through all the DA to find those linked with the_DG
@@ -1736,7 +1741,6 @@ public class AtriumProcess extends javax.swing.JFrame {
     	
     	listAssumption.remove(assumption_param);
     }
-    //TESTER DELETE DES ASSUMPTION VERS FR/ODD
 	
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	private void createAtriumElement(String name, int type)

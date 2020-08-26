@@ -43,10 +43,6 @@ public class EditingPanel extends javax.swing.JFrame {
                         
     private void initComponents() {
     	 //paste all the initComponent method from Netbeans here
-    	 Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-    	 int height = screenSize.height * 1 / 4;
-    	 int width = screenSize.width * 1 / 4;
-    	 setPreferredSize(new Dimension(width, height));
 
     	 java.awt.GridBagConstraints gridBagConstraints;
 
@@ -61,6 +57,10 @@ public class EditingPanel extends javax.swing.JFrame {
          jRadioButtonNo = new javax.swing.JRadioButton();
          jScrollPane1 = new javax.swing.JScrollPane();
          jTextContentEditedObject = new javax.swing.JTextPane();
+         
+         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+         setPreferredSize(new java.awt.Dimension(850, 500));
+         setType(java.awt.Window.Type.POPUP);
 
          java.awt.GridBagLayout layout = new java.awt.GridBagLayout();
          layout.columnWidths = new int[] {0, 30, 0, 30, 0, 30, 0, 30, 0, 30, 0, 30, 0};
