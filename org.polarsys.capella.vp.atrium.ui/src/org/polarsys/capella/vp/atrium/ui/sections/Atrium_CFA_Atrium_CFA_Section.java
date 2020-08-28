@@ -23,6 +23,7 @@ import org.polarsys.kitalpha.ad.services.manager.ViewpointManager;
 import org.polarsys.capella.core.ui.properties.fields.*;
 
 import org.polarsys.capella.vp.atrium.ui.fields.StateField_semanticKindGroup;
+import org.polarsys.capella.vp.atrium.ui.fields.NonApplicableField_semanticCheckboxGroup;
 import org.polarsys.capella.vp.atrium.ui.fields.StateField_semanticCheckboxGroup;
 
 import org.polarsys.capella.vp.atrium.ui.fields.StateLinkedElementField_semanticKindGroup;
@@ -51,7 +52,7 @@ public class Atrium_CFA_Atrium_CFA_Section extends AbstractSection {
 	* <!-- end-user-doc -->
 	* @generated
 	*/
-	private TextValueGroup ContentField1;
+	private StateField_semanticKindGroup StateField;
 
 	/**
 	* <!-- begin-model-doc -->
@@ -60,7 +61,7 @@ public class Atrium_CFA_Atrium_CFA_Section extends AbstractSection {
 	* <!-- end-user-doc -->
 	* @generated
 	*/
-	private StateField_semanticKindGroup StateField;
+	private NonApplicableField_semanticCheckboxGroup NonApplicableField;
 
 	/**
 	* <!-- begin-model-doc -->
@@ -82,7 +83,7 @@ public class Atrium_CFA_Atrium_CFA_Section extends AbstractSection {
 
 		if (eObjectToTest == null) {
 			return false;
-		} else if (eObjectToTest instanceof AtriumBasicElement || eObjectToTest instanceof CFA) {
+		} else if (eObjectToTest instanceof CFA) {
 			return true;
 		}
 
@@ -123,9 +124,10 @@ public class Atrium_CFA_Atrium_CFA_Section extends AbstractSection {
 		gdAtrium_CFA_AttributeGroup.horizontalSpan = ((GridLayout) rootParentComposite.getLayout()).numColumns;
 		Atrium_CFA_AttributeGroup.setLayoutData(gdAtrium_CFA_AttributeGroup);
 
-		ContentField1 = new TextValueGroup(Atrium_CFA_AttributeGroup, "Content :", getWidgetFactory(), true);
-
 		StateField = new StateField_semanticKindGroup(Atrium_CFA_AttributeGroup, getWidgetFactory());
+
+		NonApplicableField = new NonApplicableField_semanticCheckboxGroup(Atrium_CFA_AttributeGroup,
+				getWidgetFactory());
 
 	}
 
@@ -138,9 +140,9 @@ public class Atrium_CFA_Atrium_CFA_Section extends AbstractSection {
 	public void loadData(EObject object) {
 		super.loadData(object);
 
-		ContentField1.loadData(object, AtriumPackage.eINSTANCE.getAtriumBasicElement_Content());
-
 		StateField.loadData(object, AtriumPackage.eINSTANCE.getCFA_State());
+
+		NonApplicableField.loadData(object);
 
 	}
 
@@ -152,9 +154,9 @@ public class Atrium_CFA_Atrium_CFA_Section extends AbstractSection {
 	public List<AbstractSemanticField> getSemanticFields() {
 		List<AbstractSemanticField> abstractSemanticFields = new ArrayList<AbstractSemanticField>();
 
-		abstractSemanticFields.add(ContentField1);
-
 		abstractSemanticFields.add(StateField);
+
+		abstractSemanticFields.add(NonApplicableField);
 
 		return abstractSemanticFields;
 	}

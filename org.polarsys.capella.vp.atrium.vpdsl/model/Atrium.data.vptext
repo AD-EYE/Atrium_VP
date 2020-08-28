@@ -40,6 +40,7 @@ Data Atrium.data {
 		superClass AtriumBasicElement
 		Attributes:
 			state type ecore.EEnumerator values (Processed , Unprocessed )
+			NonApplicable type ecore.EBoolean
 		Associations:
 			linkedtoElement refers [1,1] external capellacore.CapellaElement
 			linkedtoFailure refers [1,1] FailureMode

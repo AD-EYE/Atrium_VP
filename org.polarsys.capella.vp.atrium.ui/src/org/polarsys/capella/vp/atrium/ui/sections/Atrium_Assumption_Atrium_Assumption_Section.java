@@ -48,15 +48,6 @@ public class Atrium_Assumption_Atrium_Assumption_Section extends AbstractSection
 	* <!-- end-user-doc -->
 	* @generated
 	*/
-	private TextValueGroup ContentField2;
-
-	/**
-	* <!-- begin-model-doc -->
-	* <!-- end-model-doc -->
-	* <!-- begin-user-doc -->
-	* <!-- end-user-doc -->
-	* @generated
-	*/
 	private TextValueGroup RationaleField;
 
 	/**
@@ -124,7 +115,7 @@ public class Atrium_Assumption_Atrium_Assumption_Section extends AbstractSection
 
 		if (eObjectToTest == null) {
 			return false;
-		} else if (eObjectToTest instanceof AtriumBasicElement || eObjectToTest instanceof Assumption) {
+		} else if (eObjectToTest instanceof Assumption) {
 			return true;
 		}
 
@@ -165,8 +156,6 @@ public class Atrium_Assumption_Atrium_Assumption_Section extends AbstractSection
 		gdAtrium_Assumption_AttributeGroup.horizontalSpan = ((GridLayout) rootParentComposite.getLayout()).numColumns;
 		Atrium_Assumption_AttributeGroup.setLayoutData(gdAtrium_Assumption_AttributeGroup);
 
-		ContentField2 = new TextValueGroup(Atrium_Assumption_AttributeGroup, "Content :", getWidgetFactory(), true);
-
 		AssumptionTypeField = new AssumptionTypeField_semanticKindGroup(Atrium_Assumption_AttributeGroup,
 				getWidgetFactory());
 
@@ -194,8 +183,6 @@ public class Atrium_Assumption_Atrium_Assumption_Section extends AbstractSection
 	public void loadData(EObject object) {
 		super.loadData(object);
 
-		ContentField2.loadData(object, AtriumPackage.eINSTANCE.getAtriumBasicElement_Content());
-
 		AssumptionTypeField.loadData(object, AtriumPackage.eINSTANCE.getAssumption_AssumptionType());
 
 		RationaleField.loadData(object, AtriumPackage.eINSTANCE.getAssumption_Rationale());
@@ -217,8 +204,6 @@ public class Atrium_Assumption_Atrium_Assumption_Section extends AbstractSection
 	*/
 	public List<AbstractSemanticField> getSemanticFields() {
 		List<AbstractSemanticField> abstractSemanticFields = new ArrayList<AbstractSemanticField>();
-
-		abstractSemanticFields.add(ContentField2);
 
 		abstractSemanticFields.add(AssumptionTypeField);
 

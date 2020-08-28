@@ -27,6 +27,7 @@ import org.polarsys.capella.vp.atrium.ui.fields.IsNewDevelopmentField_semanticCh
 import org.polarsys.capella.core.data.capellacore.CapellaElement;
 import org.polarsys.capella.vp.atrium.Atrium.AtriumPackage;
 import org.polarsys.capella.vp.atrium.Atrium.ElementStateAtrium;
+import org.polarsys.capella.vp.atrium.Atrium.AtriumBasicElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -103,7 +104,7 @@ public class Atrium_ElementStateAtrium_Atrium_ElementStateAtrium_Section extends
 
 	/**
 	* <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	* <!-- end-user-doc -->
 	* @param parent: An EObject. It is considered as the Parent of an EMDE extension (a Viewpoint element)
 	* @return 
 	* @generated

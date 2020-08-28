@@ -47,15 +47,6 @@ public class Atrium_DA_Atrium_DA_Section extends AbstractSection {
 	* <!-- end-user-doc -->
 	* @generated
 	*/
-	private TextValueGroup ContentField5;
-
-	/**
-	* <!-- begin-model-doc -->
-	* <!-- end-model-doc -->
-	* <!-- begin-user-doc -->
-	* <!-- end-user-doc -->
-	* @generated
-	*/
 	private IsPartOfSelectionField_semanticCheckboxGroup IsPartOfSelectionField;
 
 	/**
@@ -78,7 +69,7 @@ public class Atrium_DA_Atrium_DA_Section extends AbstractSection {
 
 		if (eObjectToTest == null) {
 			return false;
-		} else if (eObjectToTest instanceof AtriumBasicElement || eObjectToTest instanceof DA) {
+		} else if (eObjectToTest instanceof DA) {
 			return true;
 		}
 
@@ -119,8 +110,6 @@ public class Atrium_DA_Atrium_DA_Section extends AbstractSection {
 		gdAtrium_DA_AttributeGroup.horizontalSpan = ((GridLayout) rootParentComposite.getLayout()).numColumns;
 		Atrium_DA_AttributeGroup.setLayoutData(gdAtrium_DA_AttributeGroup);
 
-		ContentField5 = new TextValueGroup(Atrium_DA_AttributeGroup, "Content :", getWidgetFactory(), true);
-
 		IsPartOfSelectionField = new IsPartOfSelectionField_semanticCheckboxGroup(Atrium_DA_AttributeGroup,
 				getWidgetFactory());
 
@@ -135,8 +124,6 @@ public class Atrium_DA_Atrium_DA_Section extends AbstractSection {
 	public void loadData(EObject object) {
 		super.loadData(object);
 
-		ContentField5.loadData(object, AtriumPackage.eINSTANCE.getAtriumBasicElement_Content());
-
 		IsPartOfSelectionField.loadData(object);
 
 	}
@@ -148,8 +135,6 @@ public class Atrium_DA_Atrium_DA_Section extends AbstractSection {
 	*/
 	public List<AbstractSemanticField> getSemanticFields() {
 		List<AbstractSemanticField> abstractSemanticFields = new ArrayList<AbstractSemanticField>();
-
-		abstractSemanticFields.add(ContentField5);
 
 		abstractSemanticFields.add(IsPartOfSelectionField);
 

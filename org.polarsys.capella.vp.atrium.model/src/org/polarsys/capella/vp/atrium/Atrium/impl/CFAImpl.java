@@ -36,6 +36,7 @@ import org.polarsys.capella.vp.atrium.Atrium.state_Type;
  *   <li>{@link org.polarsys.capella.vp.atrium.Atrium.impl.CFAImpl#getAssumption <em>Assumption</em>}</li>
  *   <li>{@link org.polarsys.capella.vp.atrium.Atrium.impl.CFAImpl#getGoal <em>Goal</em>}</li>
  *   <li>{@link org.polarsys.capella.vp.atrium.Atrium.impl.CFAImpl#getState <em>State</em>}</li>
+ *   <li>{@link org.polarsys.capella.vp.atrium.Atrium.impl.CFAImpl#isNonApplicable <em>Non Applicable</em>}</li>
  * </ul>
  *
  * @generated
@@ -101,6 +102,26 @@ public class CFAImpl extends AtriumBasicElementImpl implements CFA {
 	 * @ordered
 	 */
 	protected state_Type state = STATE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isNonApplicable() <em>Non Applicable</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isNonApplicable()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean NON_APPLICABLE_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isNonApplicable() <em>Non Applicable</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isNonApplicable()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean nonApplicable = NON_APPLICABLE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -316,6 +337,35 @@ public class CFAImpl extends AtriumBasicElementImpl implements CFA {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+
+	@Override
+	public boolean isNonApplicable() {
+
+		return nonApplicable;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+
+	@Override
+	public void setNonApplicable(boolean newNonApplicable) {
+
+		boolean oldNonApplicable = nonApplicable;
+		nonApplicable = newNonApplicable;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AtriumPackage.CFA__NON_APPLICABLE, oldNonApplicable,
+					nonApplicable));
+
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -335,6 +385,8 @@ public class CFAImpl extends AtriumBasicElementImpl implements CFA {
 			return basicGetGoal();
 		case AtriumPackage.CFA__STATE:
 			return getState();
+		case AtriumPackage.CFA__NON_APPLICABLE:
+			return isNonApplicable();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -364,6 +416,9 @@ public class CFAImpl extends AtriumBasicElementImpl implements CFA {
 		case AtriumPackage.CFA__STATE:
 			setState((state_Type) newValue);
 			return;
+		case AtriumPackage.CFA__NON_APPLICABLE:
+			setNonApplicable((Boolean) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -391,6 +446,9 @@ public class CFAImpl extends AtriumBasicElementImpl implements CFA {
 		case AtriumPackage.CFA__STATE:
 			setState(STATE_EDEFAULT);
 			return;
+		case AtriumPackage.CFA__NON_APPLICABLE:
+			setNonApplicable(NON_APPLICABLE_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -413,6 +471,8 @@ public class CFAImpl extends AtriumBasicElementImpl implements CFA {
 			return goal != null;
 		case AtriumPackage.CFA__STATE:
 			return state != STATE_EDEFAULT;
+		case AtriumPackage.CFA__NON_APPLICABLE:
+			return nonApplicable != NON_APPLICABLE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -430,6 +490,8 @@ public class CFAImpl extends AtriumBasicElementImpl implements CFA {
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (state: "); //$NON-NLS-1$
 		result.append(state);
+		result.append(", NonApplicable: "); //$NON-NLS-1$
+		result.append(nonApplicable);
 		result.append(')');
 		return result.toString();
 	}

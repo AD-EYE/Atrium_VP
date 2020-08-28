@@ -10,126 +10,63 @@
 		    	afterTab="BaseSiriusDiagram"
 		        category="semantic &amp; extension"
 		        id="Atrium_AtriumBasicElement"
-		        label="Atrium">
-		    </propertyTab> 
-			
-			<propertyTab
-		    	afterTab="BaseSiriusDiagram"
-		        category="semantic &amp; extension"
-		        id="Atrium_CFA_list"
-		        label="Atrium">
-		    </propertyTab> 
-			
-			<propertyTab
-		    	afterTab="BaseSiriusDiagram"
-		        category="semantic &amp; extension"
-		        id="Atrium_sDG_list"
-		        label="Atrium">
-		    </propertyTab> 
-			
-			<propertyTab
-		    	afterTab="BaseSiriusDiagram"
-		        category="semantic &amp; extension"
-		        id="Atrium_Assumption_list"
-		        label="Atrium">
-		    </propertyTab> 
-			
-			<propertyTab
-		    	afterTab="BaseSiriusDiagram"
-		        category="semantic &amp; extension"
-		        id="Atrium_DG_list"
-		        label="Atrium">
-		    </propertyTab> 
-			
-			<propertyTab
-		    	afterTab="BaseSiriusDiagram"
-		        category="semantic &amp; extension"
-		        id="Atrium_DA_list"
-		        label="Atrium">
-		    </propertyTab> 
-			
-			<propertyTab
-		    	afterTab="BaseSiriusDiagram"
-		        category="semantic &amp; extension"
-		        id="Atrium_Failure_list"
-		        label="Atrium">
-		    </propertyTab> 
-			
-			<propertyTab
-		    	afterTab="BaseSiriusDiagram"
-		        category="semantic &amp; extension"
-		        id="Atrium_ODD_list"
-		        label="Atrium">
-		    </propertyTab> 
-			
-			<propertyTab
-		    	afterTab="BaseSiriusDiagram"
-		        category="semantic &amp; extension"
-		        id="Atrium_FR_list"
-		        label="Atrium">
+		        label="Atrium - Basic">
 		    </propertyTab> 
 			
 			<propertyTab
 		    	afterTab="BaseSiriusDiagram"
 		        category="semantic &amp; extension"
 		        id="Atrium_CFA"
-		        label="Atrium">
+		        label="Atrium - CFA">
 		    </propertyTab> 
 			
 			<propertyTab
 		    	afterTab="BaseSiriusDiagram"
 		        category="semantic &amp; extension"
 		        id="Atrium_Assumption"
-		        label="Atrium">
+		        label="Atrium - Assumption">
 		    </propertyTab> 
 			
 			<propertyTab
 		    	afterTab="BaseSiriusDiagram"
 		        category="semantic &amp; extension"
 		        id="Atrium_DG"
-		        label="Atrium">
+		        label="Atrium - DG">
 		    </propertyTab> 
 			
 			<propertyTab
 		    	afterTab="BaseSiriusDiagram"
 		        category="semantic &amp; extension"
 		        id="Atrium_sDG"
-		        label="Atrium">
+		        label="Atrium - sDG">
 		    </propertyTab> 
 			
 			<propertyTab
 		    	afterTab="BaseSiriusDiagram"
 		        category="semantic &amp; extension"
 		        id="Atrium_DA"
-		        label="Atrium">
-		    </propertyTab> 
-			
-			<propertyTab
-		    	afterTab="BaseSiriusDiagram"
-		        category="semantic &amp; extension"
-		        id="Atrium_ElementStateAtrium"
-		        label="Atrium">
+		        label="Atrium - DA">
 		    </propertyTab> 
 			
 			<propertyTab
 		    	afterTab="BaseSiriusDiagram"
 		        category="semantic &amp; extension"
 		        id="Atrium_FailureMode"
-		        label="Atrium">
+		        label="Atrium - FailureMode">
 		    </propertyTab> 
 			
 			<propertyTab
 		    	afterTab="BaseSiriusDiagram"
 		        category="semantic &amp; extension"
 		        id="Atrium_ODD"
-		        label="Atrium">
+		        label="Atrium - ODD">
 		    </propertyTab> 
 			
 			<propertyTab
 		    	afterTab="BaseSiriusDiagram"
 		        category="semantic &amp; extension"
 		        id="Atrium_FR"
-		        label="Atrium">
+		        label="Atrium - FR">
 		    </propertyTab> 
 			
 	</propertyTabs>
@@ -143,126 +80,63 @@
 		    	afterTab="BaseCapella"
 		        category="default"
 		        id="Atrium_AtriumBasicElement"
-		        label="Atrium">
-		    </propertyTab> 
-			
-			<propertyTab
-		    	afterTab="BaseCapella"
-		        category="default"
-		        id="Atrium_CFA_list"
-		        label="Atrium">
-		    </propertyTab> 
-			
-			<propertyTab
-		    	afterTab="BaseCapella"
-		        category="default"
-		        id="Atrium_sDG_list"
-		        label="Atrium">
-		    </propertyTab> 
-			
-			<propertyTab
-		    	afterTab="BaseCapella"
-		        category="default"
-		        id="Atrium_Assumption_list"
-		        label="Atrium">
-		    </propertyTab> 
-			
-			<propertyTab
-		    	afterTab="BaseCapella"
-		        category="default"
-		        id="Atrium_DG_list"
-		        label="Atrium">
-		    </propertyTab> 
-			
-			<propertyTab
-		    	afterTab="BaseCapella"
-		        category="default"
-		        id="Atrium_DA_list"
-		        label="Atrium">
-		    </propertyTab> 
-			
-			<propertyTab
-		    	afterTab="BaseCapella"
-		        category="default"
-		        id="Atrium_Failure_list"
-		        label="Atrium">
-		    </propertyTab> 
-			
-			<propertyTab
-		    	afterTab="BaseCapella"
-		        category="default"
-		        id="Atrium_ODD_list"
-		        label="Atrium">
-		    </propertyTab> 
-			
-			<propertyTab
-		    	afterTab="BaseCapella"
-		        category="default"
-		        id="Atrium_FR_list"
-		        label="Atrium">
+		        label="Atrium - Basic">
 		    </propertyTab> 
 			
 			<propertyTab
 		    	afterTab="BaseCapella"
 		        category="default"
 		        id="Atrium_CFA"
-		        label="Atrium">
+		        label="Atrium - CFA">
 		    </propertyTab> 
 			
 			<propertyTab
 		    	afterTab="BaseCapella"
 		        category="default"
 		        id="Atrium_Assumption"
-		        label="Atrium">
+		        label="Atrium - Assumption">
 		    </propertyTab> 
 			
 			<propertyTab
 		    	afterTab="BaseCapella"
 		        category="default"
 		        id="Atrium_DG"
-		        label="Atrium">
+		        label="Atrium - DG">
 		    </propertyTab> 
 			
 			<propertyTab
 		    	afterTab="BaseCapella"
 		        category="default"
 		        id="Atrium_sDG"
-		        label="Atrium">
+		        label="Atrium - sDG">
 		    </propertyTab> 
 			
 			<propertyTab
 		    	afterTab="BaseCapella"
 		        category="default"
 		        id="Atrium_DA"
-		        label="Atrium">
-		    </propertyTab> 
-			
-			<propertyTab
-		    	afterTab="BaseCapella"
-		        category="default"
-		        id="Atrium_ElementStateAtrium"
-		        label="Atrium">
+		        label="Atrium - DA">
 		    </propertyTab> 
 			
 			<propertyTab
 		    	afterTab="BaseCapella"
 		        category="default"
 		        id="Atrium_FailureMode"
-		        label="Atrium">
+		        label="Atrium - FailureMode">
 		    </propertyTab> 
 			
 			<propertyTab
 		    	afterTab="BaseCapella"
 		        category="default"
 		        id="Atrium_ODD"
-		        label="Atrium">
+		        label="Atrium - ODD">
 		    </propertyTab> 
 			
 			<propertyTab
 		    	afterTab="BaseCapella"
 		        category="default"
 		        id="Atrium_FR"
-		        label="Atrium">
+		        label="Atrium - FR">
 		    </propertyTab> 
 			
 	</propertyTabs>
@@ -272,66 +146,10 @@
 		<propertySections
 			contributorId="org.eclipse.sirius.diagram.ui">
 			<propertySection
-		    	class="org.polarsys.capella.vp.atrium.ui.sections.Atrium_AtriumBasicElement_Atrium_AtriumBasicElement_Section"
-		        filter="org.polarsys.capella.vp.atrium.ui.sections.Atrium_AtriumBasicElement_Atrium_AtriumBasicElement_Section"
-		        id="Atrium_AtriumBasicElement.Atrium_AtriumBasicElement_Section"
+		    	class="org.polarsys.capella.vp.atrium.ui.sections.Atrium_AtriumBasicElement_AtriumSection"
+		        filter="org.polarsys.capella.vp.atrium.ui.sections.Atrium_AtriumBasicElement_AtriumSection"
+		        id="Atrium_AtriumBasicElement.AtriumSection"
 		        tab="Atrium_AtriumBasicElement">
-		        
-		    </propertySection> 
-		    			<propertySection
-		    	class="org.polarsys.capella.vp.atrium.ui.sections.Atrium_CFA_list_Atrium_CFA_list_Section"
-		        filter="org.polarsys.capella.vp.atrium.ui.sections.Atrium_CFA_list_Atrium_CFA_list_Section"
-		        id="Atrium_CFA_list.Atrium_CFA_list_Section"
-		        tab="Atrium_CFA_list">
-		        
-		    </propertySection> 
-		    			<propertySection
-		    	class="org.polarsys.capella.vp.atrium.ui.sections.Atrium_sDG_list_Atrium_sDG_list_Section"
-		        filter="org.polarsys.capella.vp.atrium.ui.sections.Atrium_sDG_list_Atrium_sDG_list_Section"
-		        id="Atrium_sDG_list.Atrium_sDG_list_Section"
-		        tab="Atrium_sDG_list">
-		        
-		    </propertySection> 
-		    			<propertySection
-		    	class="org.polarsys.capella.vp.atrium.ui.sections.Atrium_Assumption_list_Atrium_Assumption_list_Section"
-		        filter="org.polarsys.capella.vp.atrium.ui.sections.Atrium_Assumption_list_Atrium_Assumption_list_Section"
-		        id="Atrium_Assumption_list.Atrium_Assumption_list_Section"
-		        tab="Atrium_Assumption_list">
-		        
-		    </propertySection> 
-		    			<propertySection
-		    	class="org.polarsys.capella.vp.atrium.ui.sections.Atrium_DG_list_Atrium_DG_list_Section"
-		        filter="org.polarsys.capella.vp.atrium.ui.sections.Atrium_DG_list_Atrium_DG_list_Section"
-		        id="Atrium_DG_list.Atrium_DG_list_Section"
-		        tab="Atrium_DG_list">
-		        
-		    </propertySection> 
-		    			<propertySection
-		    	class="org.polarsys.capella.vp.atrium.ui.sections.Atrium_DA_list_Atrium_DA_list_Section"
-		        filter="org.polarsys.capella.vp.atrium.ui.sections.Atrium_DA_list_Atrium_DA_list_Section"
-		        id="Atrium_DA_list.Atrium_DA_list_Section"
-		        tab="Atrium_DA_list">
-		        
-		    </propertySection> 
-		    			<propertySection
-		    	class="org.polarsys.capella.vp.atrium.ui.sections.Atrium_Failure_list_Atrium_Failure_list_Section"
-		        filter="org.polarsys.capella.vp.atrium.ui.sections.Atrium_Failure_list_Atrium_Failure_list_Section"
-		        id="Atrium_Failure_list.Atrium_Failure_list_Section"
-		        tab="Atrium_Failure_list">
-		        
-		    </propertySection> 
-		    			<propertySection
-		    	class="org.polarsys.capella.vp.atrium.ui.sections.Atrium_ODD_list_Atrium_ODD_list_Section"
-		        filter="org.polarsys.capella.vp.atrium.ui.sections.Atrium_ODD_list_Atrium_ODD_list_Section"
-		        id="Atrium_ODD_list.Atrium_ODD_list_Section"
-		        tab="Atrium_ODD_list">
-		        
-		    </propertySection> 
-		    			<propertySection
-		    	class="org.polarsys.capella.vp.atrium.ui.sections.Atrium_FR_list_Atrium_FR_list_Section"
-		        filter="org.polarsys.capella.vp.atrium.ui.sections.Atrium_FR_list_Atrium_FR_list_Section"
-		        id="Atrium_FR_list.Atrium_FR_list_Section"
-		        tab="Atrium_FR_list">
 		        
 		    </propertySection> 
 		    			<propertySection
@@ -367,13 +185,6 @@
 		        filter="org.polarsys.capella.vp.atrium.ui.sections.Atrium_DA_Atrium_DA_Section"
 		        id="Atrium_DA.Atrium_DA_Section"
 		        tab="Atrium_DA">
-		        
-		    </propertySection> 
-		    			<propertySection
-		    	class="org.polarsys.capella.vp.atrium.ui.sections.Atrium_ElementStateAtrium_Atrium_ElementStateAtrium_Section"
-		        filter="org.polarsys.capella.vp.atrium.ui.sections.Atrium_ElementStateAtrium_Atrium_ElementStateAtrium_Section"
-		        id="Atrium_ElementStateAtrium.Atrium_ElementStateAtrium_Section"
-		        tab="Atrium_ElementStateAtrium">
 		        
 		    </propertySection> 
 		    			<propertySection
@@ -404,66 +215,10 @@
 		<propertySections
 			contributorId="org.polarsys.capella.core.data.capellamodeller.properties">
 			<propertySection
-		    	class="org.polarsys.capella.vp.atrium.ui.sections.Atrium_AtriumBasicElement_Atrium_AtriumBasicElement_Section"
-		        filter="org.polarsys.capella.vp.atrium.ui.sections.Atrium_AtriumBasicElement_Atrium_AtriumBasicElement_Section"
-		        id="Atrium_AtriumBasicElement.Atrium_AtriumBasicElement_Section"
+		    	class="org.polarsys.capella.vp.atrium.ui.sections.Atrium_AtriumBasicElement_AtriumSection"
+		        filter="org.polarsys.capella.vp.atrium.ui.sections.Atrium_AtriumBasicElement_AtriumSection"
+		        id="Atrium_AtriumBasicElement.AtriumSection"
 		        tab="Atrium_AtriumBasicElement">
-		        
-		    </propertySection> 
-		    			<propertySection
-		    	class="org.polarsys.capella.vp.atrium.ui.sections.Atrium_CFA_list_Atrium_CFA_list_Section"
-		        filter="org.polarsys.capella.vp.atrium.ui.sections.Atrium_CFA_list_Atrium_CFA_list_Section"
-		        id="Atrium_CFA_list.Atrium_CFA_list_Section"
-		        tab="Atrium_CFA_list">
-		        
-		    </propertySection> 
-		    			<propertySection
-		    	class="org.polarsys.capella.vp.atrium.ui.sections.Atrium_sDG_list_Atrium_sDG_list_Section"
-		        filter="org.polarsys.capella.vp.atrium.ui.sections.Atrium_sDG_list_Atrium_sDG_list_Section"
-		        id="Atrium_sDG_list.Atrium_sDG_list_Section"
-		        tab="Atrium_sDG_list">
-		        
-		    </propertySection> 
-		    			<propertySection
-		    	class="org.polarsys.capella.vp.atrium.ui.sections.Atrium_Assumption_list_Atrium_Assumption_list_Section"
-		        filter="org.polarsys.capella.vp.atrium.ui.sections.Atrium_Assumption_list_Atrium_Assumption_list_Section"
-		        id="Atrium_Assumption_list.Atrium_Assumption_list_Section"
-		        tab="Atrium_Assumption_list">
-		        
-		    </propertySection> 
-		    			<propertySection
-		    	class="org.polarsys.capella.vp.atrium.ui.sections.Atrium_DG_list_Atrium_DG_list_Section"
-		        filter="org.polarsys.capella.vp.atrium.ui.sections.Atrium_DG_list_Atrium_DG_list_Section"
-		        id="Atrium_DG_list.Atrium_DG_list_Section"
-		        tab="Atrium_DG_list">
-		        
-		    </propertySection> 
-		    			<propertySection
-		    	class="org.polarsys.capella.vp.atrium.ui.sections.Atrium_DA_list_Atrium_DA_list_Section"
-		        filter="org.polarsys.capella.vp.atrium.ui.sections.Atrium_DA_list_Atrium_DA_list_Section"
-		        id="Atrium_DA_list.Atrium_DA_list_Section"
-		        tab="Atrium_DA_list">
-		        
-		    </propertySection> 
-		    			<propertySection
-		    	class="org.polarsys.capella.vp.atrium.ui.sections.Atrium_Failure_list_Atrium_Failure_list_Section"
-		        filter="org.polarsys.capella.vp.atrium.ui.sections.Atrium_Failure_list_Atrium_Failure_list_Section"
-		        id="Atrium_Failure_list.Atrium_Failure_list_Section"
-		        tab="Atrium_Failure_list">
-		        
-		    </propertySection> 
-		    			<propertySection
-		    	class="org.polarsys.capella.vp.atrium.ui.sections.Atrium_ODD_list_Atrium_ODD_list_Section"
-		        filter="org.polarsys.capella.vp.atrium.ui.sections.Atrium_ODD_list_Atrium_ODD_list_Section"
-		        id="Atrium_ODD_list.Atrium_ODD_list_Section"
-		        tab="Atrium_ODD_list">
-		        
-		    </propertySection> 
-		    			<propertySection
-		    	class="org.polarsys.capella.vp.atrium.ui.sections.Atrium_FR_list_Atrium_FR_list_Section"
-		        filter="org.polarsys.capella.vp.atrium.ui.sections.Atrium_FR_list_Atrium_FR_list_Section"
-		        id="Atrium_FR_list.Atrium_FR_list_Section"
-		        tab="Atrium_FR_list">
 		        
 		    </propertySection> 
 		    			<propertySection
@@ -499,13 +254,6 @@
 		        filter="org.polarsys.capella.vp.atrium.ui.sections.Atrium_DA_Atrium_DA_Section"
 		        id="Atrium_DA.Atrium_DA_Section"
 		        tab="Atrium_DA">
-		        
-		    </propertySection> 
-		    			<propertySection
-		    	class="org.polarsys.capella.vp.atrium.ui.sections.Atrium_ElementStateAtrium_Atrium_ElementStateAtrium_Section"
-		        filter="org.polarsys.capella.vp.atrium.ui.sections.Atrium_ElementStateAtrium_Atrium_ElementStateAtrium_Section"
-		        id="Atrium_ElementStateAtrium.Atrium_ElementStateAtrium_Section"
-		        tab="Atrium_ElementStateAtrium">
 		        
 		    </propertySection> 
 		    			<propertySection

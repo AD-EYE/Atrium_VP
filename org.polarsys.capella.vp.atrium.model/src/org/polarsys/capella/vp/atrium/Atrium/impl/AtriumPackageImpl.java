@@ -468,6 +468,16 @@ public class AtriumPackageImpl extends EPackageImpl implements AtriumPackage {
 	 * @generated
 	 */
 	@Override
+	public EAttribute getCFA_NonApplicable() {
+		return (EAttribute) cfaEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getAssumption() {
 		return assumptionEClass;
 	}
@@ -767,6 +777,7 @@ public class AtriumPackageImpl extends EPackageImpl implements AtriumPackage {
 		createEReference(cfaEClass, CFA__ASSUMPTION);
 		createEReference(cfaEClass, CFA__GOAL);
 		createEAttribute(cfaEClass, CFA__STATE);
+		createEAttribute(cfaEClass, CFA__NON_APPLICABLE);
 
 		assumptionEClass = createEClass(ASSUMPTION);
 		createEReference(assumptionEClass, ASSUMPTION__LINKED_WITH_CF_AS);
@@ -910,6 +921,9 @@ public class AtriumPackageImpl extends EPackageImpl implements AtriumPackage {
 				org.polarsys.capella.vp.atrium.Atrium.CFA.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
 				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCFA_State(), this.getstate_Type(), "state", null, 0, 1, //$NON-NLS-1$
+				org.polarsys.capella.vp.atrium.Atrium.CFA.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCFA_NonApplicable(), ecorePackage.getEBoolean(), "NonApplicable", null, 0, 1, //$NON-NLS-1$
 				org.polarsys.capella.vp.atrium.Atrium.CFA.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
 				!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

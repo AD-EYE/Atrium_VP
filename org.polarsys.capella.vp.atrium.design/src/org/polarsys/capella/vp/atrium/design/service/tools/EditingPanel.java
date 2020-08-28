@@ -57,14 +57,13 @@ public class EditingPanel extends javax.swing.JFrame {
          jRadioButtonNo = new javax.swing.JRadioButton();
          jScrollPane1 = new javax.swing.JScrollPane();
          jTextContentEditedObject = new javax.swing.JTextPane();
-         
-         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
-         setPreferredSize(new java.awt.Dimension(850, 500));
-         setType(java.awt.Window.Type.POPUP);
+         jLabel5 = new javax.swing.JLabel();
+         isNonApplicable = new javax.swing.JCheckBox();
 
+         setPreferredSize(new java.awt.Dimension(850, 500));
          java.awt.GridBagLayout layout = new java.awt.GridBagLayout();
          layout.columnWidths = new int[] {0, 30, 0, 30, 0, 30, 0, 30, 0, 30, 0, 30, 0};
-         layout.rowHeights = new int[] {0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0};
+         layout.rowHeights = new int[] {0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0};
          getContentPane().setLayout(layout);
 
          jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -108,9 +107,9 @@ public class EditingPanel extends javax.swing.JFrame {
              }
          });
          gridBagConstraints = new java.awt.GridBagConstraints();
-         gridBagConstraints.gridx = 2;
-         gridBagConstraints.gridy = 12;
-         gridBagConstraints.gridwidth = 9;
+         gridBagConstraints.gridx = 4;
+         gridBagConstraints.gridy = 14;
+         gridBagConstraints.gridwidth = 7;
          gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHEAST;
          gridBagConstraints.weightx = 10.0;
          getContentPane().add(jButtonSaveEditedObject, gridBagConstraints);
@@ -149,7 +148,21 @@ public class EditingPanel extends javax.swing.JFrame {
          gridBagConstraints.weighty = 40.0;
          getContentPane().add(jScrollPane1, gridBagConstraints);
 
+         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+         jLabel5.setText("Non Applicable ?");
+         gridBagConstraints = new java.awt.GridBagConstraints();
+         gridBagConstraints.gridx = 2;
+         gridBagConstraints.gridy = 12;
+         getContentPane().add(jLabel5, gridBagConstraints);
+
+         isNonApplicable.setText("Yes");
+         gridBagConstraints = new java.awt.GridBagConstraints();
+         gridBagConstraints.gridx = 4;
+         gridBagConstraints.gridy = 12;
+         getContentPane().add(isNonApplicable, gridBagConstraints);
+         
          pack();
+         
     }// </editor-fold>                        
 
     private void jButtonSaveEditedObjectActionPerformed(java.awt.event.ActionEvent evt) {      
@@ -194,6 +207,18 @@ public class EditingPanel extends javax.swing.JFrame {
 				        }
 				    });	
 				}
+				
+				if (editedObject instanceof CFA)
+				{
+					domain.getCommandStack().execute(new RecordingCommand(domain) {
+				        @Override
+				        protected void doExecute() {
+				        	CFA cfa = (CFA) editedObject;
+				        	cfa.setNonApplicable(isNonApplicable.isSelected());
+				        }
+				    });	
+				}
+				
 				if (is_new_object)
 				{
 					
@@ -242,7 +267,7 @@ public class EditingPanel extends javax.swing.JFrame {
     		is_new_object=true;
     	}
     	
-    	if (object instanceof CFA) {jLabel1.setText("Editing CFA");}
+    	
     	if (object instanceof DG) {jLabel1.setText("Editing Design Goal");}
     	if (object instanceof FailureMode) {jLabel1.setText("Editing Failure Mode");}
     	if (object instanceof sDG) {jLabel1.setText("Editing subDesign Goal");}
@@ -281,12 +306,27 @@ public class EditingPanel extends javax.swing.JFrame {
     		jLabel4.setVisible(false);
     	}
     	
+    	if (object instanceof CFA)
+    	{
+    		jLabel1.setText("Editing CFA");
+    		isNonApplicable.setVisible(true);
+    		jLabel5.setVisible(true);
+    		CFA cfa = (CFA) object;
+    		if(cfa.isNonApplicable()) {isNonApplicable.setSelected(true);}
+    		else {isNonApplicable.setSelected(false);}
+    	}
+    	else
+    	{
+    		jLabel5.setVisible(false);
+    		isNonApplicable.setVisible(false);
+    	}
     	this.setVisible(true);
     }
    
 
     // Variables declaration - do not modify
     private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JCheckBox isNonApplicable;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextPane jTextContentEditedObject;
     private javax.swing.JButton jButtonSaveEditedObject;
@@ -294,6 +334,7 @@ public class EditingPanel extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JRadioButton jRadioButtonNo;
     private javax.swing.JRadioButton jRadioButtonYes;
     private javax.swing.JTextField jTextNameeditedObject;

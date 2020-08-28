@@ -140,6 +140,7 @@ public class CFAItemProvider extends AtriumBasicElementItemProvider implements I
 			addAssumptionPropertyDescriptor(object);
 			addGoalPropertyDescriptor(object);
 			addStatePropertyDescriptor(object);
+			addNonApplicablePropertyDescriptor(object);
 		}
 		// begin-extension-code
 		checkChildCreationExtender(object);
@@ -248,6 +249,27 @@ public class CFAItemProvider extends AtriumBasicElementItemProvider implements I
 	}
 
 	/**
+	 * This adds a property descriptor for the Non Applicable feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addNonApplicablePropertyDescriptor(Object object) {
+
+		// begin-extension-code
+		itemPropertyDescriptors.add(createItemPropertyDescriptor
+		// end-extension-code
+		(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+				getString("_UI_CFA_NonApplicable_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_CFA_NonApplicable_feature", "_UI_CFA_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				AtriumPackage.Literals.CFA__NON_APPLICABLE, true, false, false,
+				ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null,
+				// begin-extension-code
+				null));
+		// end-extension-code
+	}
+
+	/**
 	 * This returns CFA.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -286,6 +308,7 @@ public class CFAItemProvider extends AtriumBasicElementItemProvider implements I
 
 		switch (notification.getFeatureID(CFA.class)) {
 		case AtriumPackage.CFA__STATE:
+		case AtriumPackage.CFA__NON_APPLICABLE:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}

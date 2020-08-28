@@ -2282,13 +2282,22 @@ public interface AtriumPackage extends EPackage {
 	int CFA__STATE = ATRIUM_BASIC_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
+	 * The feature id for the '<em><b>Non Applicable</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CFA__NON_APPLICABLE = ATRIUM_BASIC_ELEMENT_FEATURE_COUNT + 5;
+
+	/**
 	 * The number of structural features of the '<em>CFA</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CFA_FEATURE_COUNT = ATRIUM_BASIC_ELEMENT_FEATURE_COUNT + 5;
+	int CFA_FEATURE_COUNT = ATRIUM_BASIC_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.capella.vp.atrium.Atrium.impl.AssumptionImpl <em>Assumption</em>}' class.
@@ -4412,6 +4421,17 @@ public interface AtriumPackage extends EPackage {
 	EAttribute getCFA_State();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.polarsys.capella.vp.atrium.Atrium.CFA#isNonApplicable <em>Non Applicable</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Non Applicable</em>'.
+	 * @see org.polarsys.capella.vp.atrium.Atrium.CFA#isNonApplicable()
+	 * @see #getCFA()
+	 * @generated
+	 */
+	EAttribute getCFA_NonApplicable();
+
+	/**
 	 * Returns the meta object for class '{@link org.polarsys.capella.vp.atrium.Atrium.Assumption <em>Assumption</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4844,6 +4864,14 @@ public interface AtriumPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute CFA__STATE = eINSTANCE.getCFA_State();
+
+		/**
+		 * The meta object literal for the '<em><b>Non Applicable</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CFA__NON_APPLICABLE = eINSTANCE.getCFA_NonApplicable();
 
 		/**
 		 * The meta object literal for the '{@link org.polarsys.capella.vp.atrium.Atrium.impl.AssumptionImpl <em>Assumption</em>}' class.

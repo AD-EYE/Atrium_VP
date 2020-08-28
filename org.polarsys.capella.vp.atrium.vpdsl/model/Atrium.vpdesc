@@ -47,6 +47,11 @@
           <type href="http://www.eclipse.org/emf/2002/Ecore#//EEnumerator"/>
         </owned_type>
       </VP_Class_Attributes>
+      <VP_Class_Attributes name="NonApplicable">
+        <owned_type xsi:type="vpdesc:ExternalAttributeType">
+          <type href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+        </owned_type>
+      </VP_Class_Attributes>
       <Inheritences xsi:type="vpdesc:LocalSuperClass" superClass="//@VP_Data/@VP_Classes.0"/>
     </VP_Classes>
     <VP_Classes name="Assumption">
@@ -138,57 +143,28 @@
     </vpConfigurationElements>
   </VP_Aspects>
   <VP_Aspects xsi:type="vpui:UIDescription" name="Atrium.ui">
-    <UIs name="Atrium_AtriumBasicElement" label="Atrium">
-      <UI_Containers name="Atrium_AtriumBasicElement_Section">
-        <subContainers name="Atrium_AtriumBasicElement_AttributeGroup" label="Atrium Basic Element Attributes">
-          <UI_fields name="contentField" label="Content">
-            <Mapping UI_Field_Mapped_To="//@VP_Data/@VP_Classes.0/@VP_Class_Attributes.0"/>
-          </UI_fields>
-        </subContainers>
+    <UIs name="Atrium_AtriumBasicElement" label="Atrium - Basic">
+      <UI_Containers name="AtriumSection">
+        <UI_fields name="Content">
+          <Mapping UI_Field_Mapped_To="//@VP_Data/@VP_Classes.0/@VP_Class_Attributes.0"/>
+        </UI_fields>
       </UI_Containers>
     </UIs>
-    <UIs name="Atrium_CFA_list" label="Atrium">
-      <UI_Containers name="Atrium_CFA_list_Section"/>
-    </UIs>
-    <UIs name="Atrium_sDG_list" label="Atrium">
-      <UI_Containers name="Atrium_sDG_list_Section"/>
-    </UIs>
-    <UIs name="Atrium_Assumption_list" label="Atrium">
-      <UI_Containers name="Atrium_Assumption_list_Section"/>
-    </UIs>
-    <UIs name="Atrium_DG_list" label="Atrium">
-      <UI_Containers name="Atrium_DG_list_Section"/>
-    </UIs>
-    <UIs name="Atrium_DA_list" label="Atrium">
-      <UI_Containers name="Atrium_DA_list_Section"/>
-    </UIs>
-    <UIs name="Atrium_Failure_list" label="Atrium">
-      <UI_Containers name="Atrium_Failure_list_Section"/>
-    </UIs>
-    <UIs name="Atrium_ODD_list" label="Atrium">
-      <UI_Containers name="Atrium_ODD_list_Section"/>
-    </UIs>
-    <UIs name="Atrium_FR_list" label="Atrium">
-      <UI_Containers name="Atrium_FR_list_Section"/>
-    </UIs>
-    <UIs name="Atrium_CFA" label="Atrium">
+    <UIs name="Atrium_CFA" label="Atrium - CFA">
       <UI_Containers name="Atrium_CFA_Section">
         <subContainers name="Atrium_CFA_AttributeGroup" label="C F A Attributes">
-          <UI_fields name="contentField1" label="Content">
-            <Mapping UI_Field_Mapped_To="//@VP_Data/@VP_Classes.0/@VP_Class_Attributes.0"/>
-          </UI_fields>
           <UI_fields name="stateField" label="State" type="radiobox">
             <Mapping UI_Field_Mapped_To="//@VP_Data/@VP_Classes.9/@VP_Class_Attributes.0"/>
           </UI_fields>
+          <UI_fields name="NonApplicableField" label="Non Applicable" type="checkbox">
+            <Mapping UI_Field_Mapped_To="//@VP_Data/@VP_Classes.9/@VP_Class_Attributes.1"/>
+          </UI_fields>
         </subContainers>
       </UI_Containers>
     </UIs>
-    <UIs name="Atrium_Assumption" label="Atrium">
+    <UIs name="Atrium_Assumption" label="Atrium - Assumption">
       <UI_Containers name="Atrium_Assumption_Section">
         <subContainers name="Atrium_Assumption_AttributeGroup" label="Assumption Attributes">
-          <UI_fields name="contentField2" label="Content">
-            <Mapping UI_Field_Mapped_To="//@VP_Data/@VP_Classes.0/@VP_Class_Attributes.0"/>
-          </UI_fields>
           <UI_fields name="assumptionTypeField" label="Assumption Type" type="radiobox">
             <Mapping UI_Field_Mapped_To="//@VP_Data/@VP_Classes.10/@VP_Class_Attributes.0"/>
           </UI_fields>
@@ -210,70 +186,38 @@
         </subContainers>
       </UI_Containers>
     </UIs>
-    <UIs name="Atrium_DG" label="Atrium">
+    <UIs name="Atrium_DG" label="Atrium - DG">
       <UI_Containers name="Atrium_DG_Section">
-        <subContainers name="Atrium_DG_AttributeGroup" label="D G Attributes">
-          <UI_fields name="contentField3" label="Content">
-            <Mapping UI_Field_Mapped_To="//@VP_Data/@VP_Classes.0/@VP_Class_Attributes.0"/>
-          </UI_fields>
-        </subContainers>
+        <subContainers name="Atrium_DG_AttributeGroup" label="D G Attributes"/>
       </UI_Containers>
     </UIs>
-    <UIs name="Atrium_sDG" label="Atrium">
+    <UIs name="Atrium_sDG" label="Atrium - sDG">
       <UI_Containers name="Atrium_sDG_Section">
-        <subContainers name="Atrium_sDG_AttributeGroup" label="S D G Attributes">
-          <UI_fields name="contentField4" label="Content">
-            <Mapping UI_Field_Mapped_To="//@VP_Data/@VP_Classes.0/@VP_Class_Attributes.0"/>
-          </UI_fields>
-        </subContainers>
+        <subContainers name="Atrium_sDG_AttributeGroup" label="S D G Attributes"/>
       </UI_Containers>
     </UIs>
-    <UIs name="Atrium_DA" label="Atrium">
+    <UIs name="Atrium_DA" label="Atrium - DA">
       <UI_Containers name="Atrium_DA_Section">
         <subContainers name="Atrium_DA_AttributeGroup" label="D A Attributes">
-          <UI_fields name="contentField5" label="Content">
-            <Mapping UI_Field_Mapped_To="//@VP_Data/@VP_Classes.0/@VP_Class_Attributes.0"/>
-          </UI_fields>
           <UI_fields name="isPartOfSelectionField" label="Is Part Of Selection" type="checkbox">
             <Mapping UI_Field_Mapped_To="//@VP_Data/@VP_Classes.13/@VP_Class_Attributes.0"/>
           </UI_fields>
         </subContainers>
       </UI_Containers>
     </UIs>
-    <UIs name="Atrium_ElementStateAtrium" label="Atrium">
-      <UI_Containers name="Atrium_ElementStateAtrium_Section">
-        <subContainers name="Atrium_ElementStateAtrium_AttributeGroup" label="Element State Atrium Attributes">
-          <UI_fields name="isNewDevelopmentField" label="Is New Development" type="checkbox">
-            <Mapping UI_Field_Mapped_To="//@VP_Data/@VP_Classes.14/@VP_Class_Attributes.0"/>
-          </UI_fields>
-        </subContainers>
-      </UI_Containers>
-    </UIs>
-    <UIs name="Atrium_FailureMode" label="Atrium">
+    <UIs name="Atrium_FailureMode" label="Atrium - FailureMode">
       <UI_Containers name="Atrium_FailureMode_Section">
-        <subContainers name="Atrium_FailureMode_AttributeGroup" label="Failure Mode Attributes">
-          <UI_fields name="contentField6" label="Content">
-            <Mapping UI_Field_Mapped_To="//@VP_Data/@VP_Classes.0/@VP_Class_Attributes.0"/>
-          </UI_fields>
-        </subContainers>
+        <subContainers name="Atrium_FailureMode_AttributeGroup" label="Failure Mode Attributes"/>
       </UI_Containers>
     </UIs>
-    <UIs name="Atrium_ODD" label="Atrium">
+    <UIs name="Atrium_ODD" label="Atrium - ODD">
       <UI_Containers name="Atrium_ODD_Section">
-        <subContainers name="Atrium_ODD_AttributeGroup" label="O D D Attributes">
-          <UI_fields name="contentField7" label="Content">
-            <Mapping UI_Field_Mapped_To="//@VP_Data/@VP_Classes.0/@VP_Class_Attributes.0"/>
-          </UI_fields>
-        </subContainers>
+        <subContainers name="Atrium_ODD_AttributeGroup" label="O D D Attributes"/>
       </UI_Containers>
     </UIs>
-    <UIs name="Atrium_FR" label="Atrium">
+    <UIs name="Atrium_FR" label="Atrium - FR">
       <UI_Containers name="Atrium_FR_Section">
-        <subContainers name="Atrium_FR_AttributeGroup" label="F R Attributes">
-          <UI_fields name="contentField8" label="Content">
-            <Mapping UI_Field_Mapped_To="//@VP_Data/@VP_Classes.0/@VP_Class_Attributes.0"/>
-          </UI_fields>
-        </subContainers>
+        <subContainers name="Atrium_FR_AttributeGroup" label="F R Attributes"/>
       </UI_Containers>
     </UIs>
   </VP_Aspects>

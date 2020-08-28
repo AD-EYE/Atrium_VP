@@ -83,6 +83,7 @@
         eType="#//Assumption"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="goal" eType="#//DG"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="state" eType="#//state_Type"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="NonApplicable" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Assumption" eSuperTypes="#//AtriumBasicElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="linkedWithCFAs" upperBound="-1"

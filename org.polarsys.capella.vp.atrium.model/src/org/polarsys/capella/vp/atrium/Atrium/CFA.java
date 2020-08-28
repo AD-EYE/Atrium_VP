@@ -21,6 +21,7 @@ import org.polarsys.kitalpha.emde.model.ElementExtension;
  *   <li>{@link org.polarsys.capella.vp.atrium.Atrium.CFA#getAssumption <em>Assumption</em>}</li>
  *   <li>{@link org.polarsys.capella.vp.atrium.Atrium.CFA#getGoal <em>Goal</em>}</li>
  *   <li>{@link org.polarsys.capella.vp.atrium.Atrium.CFA#getState <em>State</em>}</li>
+ *   <li>{@link org.polarsys.capella.vp.atrium.Atrium.CFA#isNonApplicable <em>Non Applicable</em>}</li>
  * </ul>
  *
  * @see org.polarsys.capella.vp.atrium.Atrium.AtriumPackage#getCFA()
@@ -150,5 +151,31 @@ public interface CFA extends AtriumBasicElement {
 	 */
 
 	void setState(state_Type value);
+
+	/**
+	 * Returns the value of the '<em><b>Non Applicable</b></em>' attribute.
+	
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Non Applicable</em>' attribute.
+	 * @see #setNonApplicable(boolean)
+	 * @see org.polarsys.capella.vp.atrium.Atrium.AtriumPackage#getCFA_NonApplicable()
+	 * @model
+	 * @generated
+	 */
+
+	boolean isNonApplicable();
+
+	/**
+	 * Sets the value of the '{@link org.polarsys.capella.vp.atrium.Atrium.CFA#isNonApplicable <em>Non Applicable</em>}' attribute.
+	
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Non Applicable</em>' attribute.
+	 * @see #isNonApplicable()
+	 * @generated
+	 */
+
+	void setNonApplicable(boolean value);
 
 } // CFA
