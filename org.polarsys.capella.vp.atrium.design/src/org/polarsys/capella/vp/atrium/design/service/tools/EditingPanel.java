@@ -193,6 +193,7 @@ public class EditingPanel extends javax.swing.JFrame {
 				my_parent.updateDisplayTab1();
 				my_parent.updateDisplayTab2();
 				my_parent.updateDisplayTab3();
+				my_parent.enableAllComponent();
 				this.setVisible(false);
 				
 				if (editedObject instanceof DG) {my_parent.ObjectAdded();}
@@ -239,6 +240,7 @@ public class EditingPanel extends javax.swing.JFrame {
 				        }
 				    });	
 				}
+				
 			}
 			else {JOptionPane.showMessageDialog(getParent(), "Please fill out the whole form");}
 		}

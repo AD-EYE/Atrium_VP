@@ -1,9 +1,12 @@
 package org.polarsys.capella.vp.atrium.design.service.tools;
 
 
+import java.awt.Component;
+import java.awt.Container;
 import java.awt.Frame;
 import java.awt.GraphicsEnvironment;
 import java.awt.event.MouseEvent;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -1569,6 +1572,7 @@ public class AtriumProcess extends javax.swing.JFrame {
     			if (a.getName().equals(selectedAssumptionName)){edited_assumption=a;}
     		}
             myAssumptionEditor.editAssumption(edited_assumption, listAssumption);
+            disableAllComponent();
         } 
     }
 	
@@ -1581,6 +1585,7 @@ public class AtriumProcess extends javax.swing.JFrame {
     			if (a.getName().equals(selectedAssumptionName)){edited_assumption=a;}
     		}
             myAssumptionEditor.editAssumption(edited_assumption, listAssumption);
+            disableAllComponent();
         } 
     }
 	
@@ -1593,6 +1598,7 @@ public class AtriumProcess extends javax.swing.JFrame {
     			if (a.getName().equals(selectedAssumptionName)){edited_assumption=a;}
     		}
             myAssumptionEditor.editAssumption(edited_assumption, listAssumption);
+            disableAllComponent();
         } 
     }  
 	
@@ -1610,6 +1616,7 @@ public class AtriumProcess extends javax.swing.JFrame {
     		}
     		
     		 myEditor.editing(edited_object, listDG, listDA, listCFA, listsDG, ListFailureMode, listODD, listFR);
+    		 disableAllComponent();
     	}
 	}                                                                                       
 
@@ -1811,7 +1818,11 @@ public class AtriumProcess extends javax.swing.JFrame {
 		AtriumBasicElement newObject_parameter = (AtriumBasicElement) newObject;
 		
 		if (type==7) {myAssumptionEditor.editAssumption((Assumption) newObject, listAssumption);}
-		else{myEditor.editing(newObject_parameter, listDG, listDA, listCFA, listsDG, ListFailureMode, listODD, listFR);}
+		else
+		{
+			myEditor.editing(newObject_parameter, listDG, listDA, listCFA, listsDG, ListFailureMode, listODD, listFR);
+		}
+		disableAllComponent();
 	}
 	
 	public Assumption createAssumptionFromODDorFR(AtriumBasicElement ODDorFR)
@@ -1832,9 +1843,35 @@ public class AtriumProcess extends javax.swing.JFrame {
 		
 		ObjectList.add(newObject);//updating our local list
 		myAssumptionEditor.editAssumption((Assumption) newObject, listAssumption);
-		
-		
+		disableAllComponent();
 		return newObject;
+	}
+	
+	private List<Component> getAllComponents(final Container c) {
+        Component[] comps = c.getComponents();
+        List<Component> compList = new ArrayList<Component>();
+        for (Component comp : comps) {
+            compList.add(comp);
+            if (comp instanceof Container)
+                compList.addAll(getAllComponents((Container) comp));
+        }
+        return compList;
+}
+	
+	private void disableAllComponent()
+	{
+		List<Component> comps = getAllComponents(jTabbedPane);
+		for (Component comp : comps) {
+		       comp.setEnabled(false);
+		}
+	}
+	
+	public void enableAllComponent()
+	{
+		List<Component> comps = getAllComponents(jTabbedPane);
+		for (Component comp : comps) {
+		       comp.setEnabled(true);
+		}
 	}
 
 	///////////////////////////////////////////////////////////////////////////////////////
