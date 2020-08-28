@@ -645,8 +645,13 @@ public class AtriumProcess extends javax.swing.JFrame {
 		
         DefaultComboBoxModel <String> CbCFA= new DefaultComboBoxModel<String>();
 		for (int i = 0; i < listCFA.size(); i++) {
-			CbCFA.addElement(listCFA.get(i).getName());
+			if (!(listCFA.get(i).isNonApplicable())){CbCFA.addElement(listCFA.get(i).getName());}	
 		}
+		
+		DefaultListModel <String> listModelCFA = new DefaultListModel<String>();
+        for (CFA cfa : listCFA){if(!(cfa.isNonApplicable())) {listModelCFA.addElement(cfa.getName());}}
+        jListCFA.setModel(listModelCFA);
+        
 		jComboBoxCFA.setModel(CbCFA);
 		jComboBoxCFA.setMaximumRowCount(20);
 		jComboBoxDG.setMaximumRowCount(20);
@@ -1360,10 +1365,6 @@ public class AtriumProcess extends javax.swing.JFrame {
         DefaultListModel <String> listModelDA = new DefaultListModel<String>();
         for (DA da : listDA){listModelDA.addElement(da.getName());}
         jListDA.setModel(listModelDA);
-        
-        DefaultListModel <String> listModelCFA = new DefaultListModel<String>();
-        for (CFA cfa : listCFA){listModelCFA.addElement(cfa.getName());}
-        jListCFA.setModel(listModelCFA);
         
         DefaultListModel <String> listModelsDG = new DefaultListModel<String>();
         for (sDG sdg : listsDG){listModelsDG.addElement(sdg.getName());}

@@ -308,6 +308,7 @@ public class EditingPanel extends javax.swing.JFrame {
     	
     	if (object instanceof CFA)
     	{
+    		jTextNameeditedObject.setEditable(false);
     		jLabel1.setText("Editing CFA");
     		isNonApplicable.setVisible(true);
     		jLabel5.setVisible(true);
@@ -317,6 +318,7 @@ public class EditingPanel extends javax.swing.JFrame {
     	}
     	else
     	{
+    		jTextNameeditedObject.setEditable(true);
     		jLabel5.setVisible(false);
     		isNonApplicable.setVisible(false);
     	}
