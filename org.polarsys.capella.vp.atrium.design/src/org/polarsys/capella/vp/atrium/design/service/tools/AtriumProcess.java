@@ -390,6 +390,7 @@ public class AtriumProcess extends javax.swing.JFrame {
         jScrollPane5 = new javax.swing.JScrollPane();
         jListCapella = new javax.swing.JList();
         jLabel22 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
         
         
         //three lists have been overridden here
@@ -671,617 +672,623 @@ public class AtriumProcess extends javax.swing.JFrame {
 	        
 	     //Paste the netBean generated code here (initComponent). Remove all the <>. Cut and paste the variable declaration as well
 
-	        setPreferredSize(new java.awt.Dimension(1600, 1000));
-	        java.awt.GridBagLayout layout = new java.awt.GridBagLayout();
-	        layout.columnWidths = new int[] {0, 20, 0, 20, 0};
-	        layout.rowHeights = new int[] {0, 10, 0, 10, 0, 10, 0};
-	        getContentPane().setLayout(layout);
-
-	        jPanel1.setPreferredSize(new java.awt.Dimension(1600, 1000));
-	        java.awt.GridBagLayout jPanel1Layout = new java.awt.GridBagLayout();
-	        jPanel1Layout.columnWidths = new int[] {0, 30, 0, 30, 0, 30, 0, 30, 0};
-	        jPanel1Layout.rowHeights = new int[] {0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0};
-	        jPanel1.setLayout(jPanel1Layout);
-
-	        jScrollPane1.setViewportView(jListUnlinkedAssumptions);
-
-	        gridBagConstraints = new java.awt.GridBagConstraints();
-	        gridBagConstraints.gridx = 2;
-	        gridBagConstraints.gridy = 10;
-	        gridBagConstraints.gridheight = 9;
-	        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-	        gridBagConstraints.weightx = 40.0;
-	        gridBagConstraints.weighty = 0.2;
-	        jPanel1.add(jScrollPane1, gridBagConstraints);
-
-	        jScrollPane2.setViewportView(jListLinkedAssumptions);
-
-	        gridBagConstraints = new java.awt.GridBagConstraints();
-	        gridBagConstraints.gridx = 6;
-	        gridBagConstraints.gridy = 10;
-	        gridBagConstraints.gridheight = 9;
-	        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-	        gridBagConstraints.weightx = 40.0;
-	        gridBagConstraints.weighty = 0.2;
-	        jPanel1.add(jScrollPane2, gridBagConstraints);
-
-	        jLabel1.setText("Add to linked");
-	        gridBagConstraints = new java.awt.GridBagConstraints();
-	        gridBagConstraints.gridx = 4;
-	        gridBagConstraints.gridy = 10;
-	        gridBagConstraints.anchor = java.awt.GridBagConstraints.SOUTH;
-	        gridBagConstraints.weightx = 5.0;
-	        gridBagConstraints.weighty = 5.0;
-	        jPanel1.add(jLabel1, gridBagConstraints);
-
-	        jButtonAddLinked.setText("=>");
-	        gridBagConstraints = new java.awt.GridBagConstraints();
-	        gridBagConstraints.gridx = 4;
-	        gridBagConstraints.gridy = 12;
-	        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-	        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTH;
-	        gridBagConstraints.weightx = 5.0;
-	        gridBagConstraints.weighty = 5.0;
-	        jPanel1.add(jButtonAddLinked, gridBagConstraints);
-
-	        jLabel2.setText("Remove from linked");
-	        gridBagConstraints = new java.awt.GridBagConstraints();
-	        gridBagConstraints.gridx = 4;
-	        gridBagConstraints.gridy = 14;
-	        gridBagConstraints.anchor = java.awt.GridBagConstraints.SOUTH;
-	        gridBagConstraints.weightx = 5.0;
-	        gridBagConstraints.weighty = 5.0;
-	        jPanel1.add(jLabel2, gridBagConstraints);
-
-	        jButtonRemoveLinked.setText("<=");
-	        gridBagConstraints = new java.awt.GridBagConstraints();
-	        gridBagConstraints.gridx = 4;
-	        gridBagConstraints.gridy = 16;
-	        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-	        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTH;
-	        gridBagConstraints.weightx = 5.0;
-	        gridBagConstraints.weighty = 5.0;
-	        jPanel1.add(jButtonRemoveLinked, gridBagConstraints);
-
-	        jLabel3.setText("Unlinked Assumptions");
-	        gridBagConstraints = new java.awt.GridBagConstraints();
-	        gridBagConstraints.gridx = 2;
-	        gridBagConstraints.gridy = 8;
-	        gridBagConstraints.anchor = java.awt.GridBagConstraints.SOUTHWEST;
-	        gridBagConstraints.weightx = 40.0;
-	        jPanel1.add(jLabel3, gridBagConstraints);
-
-	        jLabel4.setText("Linked Assumptions");
-	        gridBagConstraints = new java.awt.GridBagConstraints();
-	        gridBagConstraints.gridx = 6;
-	        gridBagConstraints.gridy = 8;
-	        gridBagConstraints.anchor = java.awt.GridBagConstraints.SOUTHWEST;
-	        gridBagConstraints.weightx = 40.0;
-	        jPanel1.add(jLabel4, gridBagConstraints);
-	        gridBagConstraints = new java.awt.GridBagConstraints();
-	        gridBagConstraints.gridx = 2;
-	        gridBagConstraints.gridy = 4;
-	        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-	        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-	        gridBagConstraints.weightx = 40.0;
-	        jPanel1.add(jComboBoxCFA, gridBagConstraints);
-
-	        jLabel19.setText("CFA");
-	        gridBagConstraints = new java.awt.GridBagConstraints();
-	        gridBagConstraints.gridx = 2;
-	        gridBagConstraints.gridy = 2;
-	        gridBagConstraints.anchor = java.awt.GridBagConstraints.SOUTHWEST;
-	        gridBagConstraints.weightx = 40.0;
-	        gridBagConstraints.insets = new java.awt.Insets(10, 0, 0, 0);
-	        jPanel1.add(jLabel19, gridBagConstraints);
-
-	        jLabel20.setText("linked to :");
-	        gridBagConstraints = new java.awt.GridBagConstraints();
-	        gridBagConstraints.gridx = 4;
-	        gridBagConstraints.gridy = 4;
-	        gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
-	        gridBagConstraints.weightx = 5.0;
-	        jPanel1.add(jLabel20, gridBagConstraints);
-	        gridBagConstraints = new java.awt.GridBagConstraints();
-	        gridBagConstraints.gridx = 6;
-	        gridBagConstraints.gridy = 4;
-	        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-	        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-	        gridBagConstraints.weightx = 40.0;
-	        jPanel1.add(jComboBoxDG, gridBagConstraints);
-
-	        jLabel21.setText("Design Goal");
-	        gridBagConstraints = new java.awt.GridBagConstraints();
-	        gridBagConstraints.gridx = 6;
-	        gridBagConstraints.gridy = 2;
-	        gridBagConstraints.anchor = java.awt.GridBagConstraints.SOUTHWEST;
-	        gridBagConstraints.weightx = 40.0;
-	        jPanel1.add(jLabel21, gridBagConstraints);
-
-	        jTabbedPane.addTab("Linking DG and Assumptions to CFA", jPanel1);
-
-	        java.awt.GridBagLayout jPanel2Layout = new java.awt.GridBagLayout();
-	        jPanel2Layout.columnWidths = new int[] {0, 30, 0, 30, 0, 30, 0, 30, 0};
-	        jPanel2Layout.rowHeights = new int[] {0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0};
-	        jPanel2.setLayout(jPanel2Layout);
-
-	        jScrollPane3.setViewportView(jListUnlinkedDA);
-
-	        gridBagConstraints = new java.awt.GridBagConstraints();
-	        gridBagConstraints.gridx = 2;
-	        gridBagConstraints.gridy = 8;
-	        gridBagConstraints.gridheight = 9;
-	        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-	        gridBagConstraints.weightx = 40.0;
-	        gridBagConstraints.weighty = 1.0;
-	        jPanel2.add(jScrollPane3, gridBagConstraints);
-
-	        jScrollPane4.setViewportView(jListLinkedDA);
-
-	        gridBagConstraints = new java.awt.GridBagConstraints();
-	        gridBagConstraints.gridx = 6;
-	        gridBagConstraints.gridy = 8;
-	        gridBagConstraints.gridheight = 9;
-	        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-	        gridBagConstraints.weightx = 40.0;
-	        gridBagConstraints.weighty = 1.0;
-	        jPanel2.add(jScrollPane4, gridBagConstraints);
-
-	        jLabel5.setText("Add to linked");
-	        gridBagConstraints = new java.awt.GridBagConstraints();
-	        gridBagConstraints.gridx = 4;
-	        gridBagConstraints.gridy = 8;
-	        gridBagConstraints.anchor = java.awt.GridBagConstraints.SOUTH;
-	        gridBagConstraints.weighty = 10.0;
-	        jPanel2.add(jLabel5, gridBagConstraints);
-
-	        jButtonAddLinkedDA.setText("=>");
-	        gridBagConstraints = new java.awt.GridBagConstraints();
-	        gridBagConstraints.gridx = 4;
-	        gridBagConstraints.gridy = 10;
-	        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-	        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-	        gridBagConstraints.weightx = 10.0;
-	        jPanel2.add(jButtonAddLinkedDA, gridBagConstraints);
-
-	        jLabel6.setText("Remove from linked");
-	        gridBagConstraints = new java.awt.GridBagConstraints();
-	        gridBagConstraints.gridx = 4;
-	        gridBagConstraints.gridy = 12;
-	        gridBagConstraints.anchor = java.awt.GridBagConstraints.SOUTH;
-	        jPanel2.add(jLabel6, gridBagConstraints);
-
-	        jButtonRemoveLinkedDA.setText("<=");
-	        gridBagConstraints = new java.awt.GridBagConstraints();
-	        gridBagConstraints.gridx = 4;
-	        gridBagConstraints.gridy = 14;
-	        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-	        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTH;
-	        gridBagConstraints.weighty = 10.0;
-	        jPanel2.add(jButtonRemoveLinkedDA, gridBagConstraints);
-
-	        jLabel7.setText("Design Goal");
-	        gridBagConstraints = new java.awt.GridBagConstraints();
-	        gridBagConstraints.gridx = 2;
-	        gridBagConstraints.gridy = 2;
-	        gridBagConstraints.anchor = java.awt.GridBagConstraints.SOUTHWEST;
-	        jPanel2.add(jLabel7, gridBagConstraints);
-	        gridBagConstraints = new java.awt.GridBagConstraints();
-	        gridBagConstraints.gridx = 2;
-	        gridBagConstraints.gridy = 4;
-	        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-	        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-	        jPanel2.add(jComboBoxDG2, gridBagConstraints);
-
-	        jLabel9.setText("Unlinked Design Alternative");
-	        gridBagConstraints = new java.awt.GridBagConstraints();
-	        gridBagConstraints.gridx = 2;
-	        gridBagConstraints.gridy = 6;
-	        gridBagConstraints.anchor = java.awt.GridBagConstraints.SOUTHWEST;
-	        jPanel2.add(jLabel9, gridBagConstraints);
-
-	        jLabel23.setText("Linked Design Alternative");
-	        gridBagConstraints = new java.awt.GridBagConstraints();
-	        gridBagConstraints.gridx = 6;
-	        gridBagConstraints.gridy = 6;
-	        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-	        jPanel2.add(jLabel23, gridBagConstraints);
-
-	        jScrollPane14.setViewportView(jListUnlinkedSDG);
-
-	        gridBagConstraints = new java.awt.GridBagConstraints();
-	        gridBagConstraints.gridx = 2;
-	        gridBagConstraints.gridy = 20;
-	        gridBagConstraints.gridheight = 9;
-	        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-	        gridBagConstraints.weightx = 40.0;
-	        gridBagConstraints.weighty = 1.0;
-	        jPanel2.add(jScrollPane14, gridBagConstraints);
-
-	        jLabel37.setText("Unlinked Sub-Design Goal");
-	        gridBagConstraints = new java.awt.GridBagConstraints();
-	        gridBagConstraints.gridx = 2;
-	        gridBagConstraints.gridy = 18;
-	        gridBagConstraints.anchor = java.awt.GridBagConstraints.SOUTHWEST;
-	        jPanel2.add(jLabel37, gridBagConstraints);
-
-	        jScrollPane15.setViewportView(jListLinkedSDG);
-
-	        gridBagConstraints = new java.awt.GridBagConstraints();
-	        gridBagConstraints.gridx = 6;
-	        gridBagConstraints.gridy = 20;
-	        gridBagConstraints.gridheight = 9;
-	        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-	        gridBagConstraints.weightx = 40.0;
-	        gridBagConstraints.weighty = 1.0;
-	        jPanel2.add(jScrollPane15, gridBagConstraints);
-
-	        jLabel39.setText("Add to linked");
-	        gridBagConstraints = new java.awt.GridBagConstraints();
-	        gridBagConstraints.gridx = 4;
-	        gridBagConstraints.gridy = 22;
-	        gridBagConstraints.anchor = java.awt.GridBagConstraints.SOUTH;
-	        gridBagConstraints.weighty = 10.0;
-	        jPanel2.add(jLabel39, gridBagConstraints);
-
-	        jButtonAddLinkedSDG.setText("=>");
-	        gridBagConstraints = new java.awt.GridBagConstraints();
-	        gridBagConstraints.gridx = 4;
-	        gridBagConstraints.gridy = 24;
-	        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-	        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTH;
-	        jPanel2.add(jButtonAddLinkedSDG, gridBagConstraints);
-
-	        jLabel40.setText("Remove from linked");
-	        gridBagConstraints = new java.awt.GridBagConstraints();
-	        gridBagConstraints.gridx = 4;
-	        gridBagConstraints.gridy = 26;
-	        gridBagConstraints.anchor = java.awt.GridBagConstraints.SOUTH;
-	        jPanel2.add(jLabel40, gridBagConstraints);
-
-	        jButtonRemoveLinkedSDG.setText("<=");
-	        gridBagConstraints = new java.awt.GridBagConstraints();
-	        gridBagConstraints.gridx = 4;
-	        gridBagConstraints.gridy = 28;
-	        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-	        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-	        gridBagConstraints.weightx = 10.0;
-	        gridBagConstraints.weighty = 20.0;
-	        jPanel2.add(jButtonRemoveLinkedSDG, gridBagConstraints);
-
-	        jTabbedPane.addTab("Linking DG and DA", jPanel2);
-
-	        java.awt.GridBagLayout jPanel3Layout = new java.awt.GridBagLayout();
-	        jPanel3Layout.columnWidths = new int[] {0, 30, 0, 30, 0, 30, 0, 30, 0, 30, 0, 30, 0};
-	        jPanel3Layout.rowHeights = new int[] {0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0};
-	        jPanel3.setLayout(jPanel3Layout);
-
-	        jScrollPane8.setViewportView(jListDG);
-
-	        gridBagConstraints = new java.awt.GridBagConstraints();
-	        gridBagConstraints.gridx = 4;
-	        gridBagConstraints.gridy = 4;
-	        gridBagConstraints.gridwidth = 3;
-	        gridBagConstraints.gridheight = 7;
-	        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-	        gridBagConstraints.weightx = 1.0;
-	        gridBagConstraints.weighty = 1.0;
-	        jPanel3.add(jScrollPane8, gridBagConstraints);
-
-	        jScrollPane6.setViewportView(jListDA);
-
-	        gridBagConstraints = new java.awt.GridBagConstraints();
-	        gridBagConstraints.gridx = 8;
-	        gridBagConstraints.gridy = 10;
-	        gridBagConstraints.gridwidth = 3;
-	        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-	        gridBagConstraints.weightx = 1.0;
-	        gridBagConstraints.weighty = 1.0;
-	        jPanel3.add(jScrollPane6, gridBagConstraints);
-
-	        jButtonAddDG.setText("Add DG");
-	        gridBagConstraints = new java.awt.GridBagConstraints();
-	        gridBagConstraints.gridx = 4;
-	        gridBagConstraints.gridy = 12;
-	        gridBagConstraints.weightx = 20.0;
-	        jPanel3.add(jButtonAddDG, gridBagConstraints);
-
-	        jButtonAddDA.setText("Add DA");
-	        gridBagConstraints = new java.awt.GridBagConstraints();
-	        gridBagConstraints.gridx = 8;
-	        gridBagConstraints.gridy = 12;
-	        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTH;
-	        gridBagConstraints.weightx = 20.0;
-	        jPanel3.add(jButtonAddDA, gridBagConstraints);
-
-	        jScrollPane9.setViewportView(jListCFA);
-
-	        gridBagConstraints = new java.awt.GridBagConstraints();
-	        gridBagConstraints.gridx = 2;
-	        gridBagConstraints.gridy = 4;
-	        gridBagConstraints.gridheight = 7;
-	        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-	        gridBagConstraints.weightx = 1.0;
-	        gridBagConstraints.weighty = 1.0;
-	        jPanel3.add(jScrollPane9, gridBagConstraints);
-
-	        jLabel25.setText("CFA list");
-	        gridBagConstraints = new java.awt.GridBagConstraints();
-	        gridBagConstraints.gridx = 2;
-	        gridBagConstraints.gridy = 2;
-	        gridBagConstraints.anchor = java.awt.GridBagConstraints.SOUTHWEST;
-	        jPanel3.add(jLabel25, gridBagConstraints);
-
-	        jLabel26.setText("Restart this UI to create CFA");
-	        gridBagConstraints = new java.awt.GridBagConstraints();
-	        gridBagConstraints.gridx = 2;
-	        gridBagConstraints.gridy = 12;
-	        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTH;
-	        gridBagConstraints.weightx = 20.0;
-	        jPanel3.add(jLabel26, gridBagConstraints);
-
-	        jLabel27.setText("Design Goal List");
-	        gridBagConstraints = new java.awt.GridBagConstraints();
-	        gridBagConstraints.gridx = 4;
-	        gridBagConstraints.gridy = 2;
-	        gridBagConstraints.anchor = java.awt.GridBagConstraints.SOUTHWEST;
-	        jPanel3.add(jLabel27, gridBagConstraints);
-
-	        jLabel29.setText("Design Alternative List");
-	        gridBagConstraints = new java.awt.GridBagConstraints();
-	        gridBagConstraints.gridx = 8;
-	        gridBagConstraints.gridy = 8;
-	        gridBagConstraints.anchor = java.awt.GridBagConstraints.SOUTHWEST;
-	        jPanel3.add(jLabel29, gridBagConstraints);
-
-	        jScrollPane13.setViewportView(jListSDG);
-
-	        gridBagConstraints = new java.awt.GridBagConstraints();
-	        gridBagConstraints.gridx = 8;
-	        gridBagConstraints.gridy = 4;
-	        gridBagConstraints.gridwidth = 3;
-	        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-	        gridBagConstraints.weightx = 1.0;
-	        gridBagConstraints.weighty = 1.0;
-	        jPanel3.add(jScrollPane13, gridBagConstraints);
-
-	        jButtonAddSDG.setText("Add sDG");
-	        gridBagConstraints = new java.awt.GridBagConstraints();
-	        gridBagConstraints.gridx = 8;
-	        gridBagConstraints.gridy = 6;
-	        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTH;
-	        jPanel3.add(jButtonAddSDG, gridBagConstraints);
-
-	        jLabel36.setText("Sub-Design Goal list");
-	        gridBagConstraints = new java.awt.GridBagConstraints();
-	        gridBagConstraints.gridx = 8;
-	        gridBagConstraints.gridy = 2;
-	        gridBagConstraints.anchor = java.awt.GridBagConstraints.SOUTHWEST;
-	        jPanel3.add(jLabel36, gridBagConstraints);
-
-	        jButtonRemoveDG.setText("Remove DG");
-	        gridBagConstraints = new java.awt.GridBagConstraints();
-	        gridBagConstraints.gridx = 6;
-	        gridBagConstraints.gridy = 12;
-	        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTH;
-	        gridBagConstraints.weightx = 20.0;
-	        jPanel3.add(jButtonRemoveDG, gridBagConstraints);
-
-	        jButtonRemoveDA.setText("Delete DA");
-	        gridBagConstraints = new java.awt.GridBagConstraints();
-	        gridBagConstraints.gridx = 10;
-	        gridBagConstraints.gridy = 12;
-	        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTH;
-	        gridBagConstraints.weightx = 20.0;
-	        jPanel3.add(jButtonRemoveDA, gridBagConstraints);
-
-	        jButtonRemoveSDG.setText("Remove sDG");
-	        gridBagConstraints = new java.awt.GridBagConstraints();
-	        gridBagConstraints.gridx = 10;
-	        gridBagConstraints.gridy = 6;
-	        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTH;
-	        jPanel3.add(jButtonRemoveSDG, gridBagConstraints);
-
-	        jTabbedPane.addTab("Edit DG, sDG, DA, CFA", jPanel3);
-
-	        java.awt.GridBagLayout jPanel5Layout = new java.awt.GridBagLayout();
-	        jPanel5Layout.columnWidths = new int[] {0, 30, 0, 30, 0, 30, 0, 30, 0, 30, 0, 30, 0, 30, 0};
-	        jPanel5Layout.rowHeights = new int[] {0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0};
-	        jPanel5.setLayout(jPanel5Layout);
-
-	        jScrollPane7.setViewportView(jListAssumption);
-
-	        gridBagConstraints = new java.awt.GridBagConstraints();
-	        gridBagConstraints.gridx = 2;
-	        gridBagConstraints.gridy = 4;
-	        gridBagConstraints.gridwidth = 3;
-	        gridBagConstraints.gridheight = 9;
-	        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-	        gridBagConstraints.weightx = 1.0;
-	        gridBagConstraints.weighty = 1.0;
-	        jPanel5.add(jScrollPane7, gridBagConstraints);
-
-	        jButtonAddAssumption.setText("Add Assumption");
-	        gridBagConstraints = new java.awt.GridBagConstraints();
-	        gridBagConstraints.gridx = 2;
-	        gridBagConstraints.gridy = 14;
-	        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTH;
-	        gridBagConstraints.weightx = 1.0;
-	        gridBagConstraints.weighty = 1.0;
-	        jPanel5.add(jButtonAddAssumption, gridBagConstraints);
-
-	        jLabel8.setText("Assumption list");
-	        gridBagConstraints = new java.awt.GridBagConstraints();
-	        gridBagConstraints.gridx = 2;
-	        gridBagConstraints.gridy = 2;
-	        gridBagConstraints.gridwidth = 3;
-	        gridBagConstraints.anchor = java.awt.GridBagConstraints.SOUTHWEST;
-	        jPanel5.add(jLabel8, gridBagConstraints);
-
-	        jScrollPane11.setViewportView(jListODD);
-
-	        gridBagConstraints = new java.awt.GridBagConstraints();
-	        gridBagConstraints.gridx = 6;
-	        gridBagConstraints.gridy = 4;
-	        gridBagConstraints.gridwidth = 3;
-	        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-	        gridBagConstraints.weightx = 1.0;
-	        gridBagConstraints.weighty = 30.0;
-	        jPanel5.add(jScrollPane11, gridBagConstraints);
-
-	        jScrollPane12.setViewportView(jListFR);
-
-	        gridBagConstraints = new java.awt.GridBagConstraints();
-	        gridBagConstraints.gridx = 6;
-	        gridBagConstraints.gridy = 12;
-	        gridBagConstraints.gridwidth = 3;
-	        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-	        gridBagConstraints.weightx = 1.0;
-	        gridBagConstraints.weighty = 30.0;
-	        jPanel5.add(jScrollPane12, gridBagConstraints);
-
-	        jLabel32.setText("Operational Design Domain");
-	        gridBagConstraints = new java.awt.GridBagConstraints();
-	        gridBagConstraints.gridx = 6;
-	        gridBagConstraints.gridy = 2;
-	        gridBagConstraints.gridwidth = 3;
-	        gridBagConstraints.anchor = java.awt.GridBagConstraints.SOUTHWEST;
-	        jPanel5.add(jLabel32, gridBagConstraints);
-
-	        jLabel33.setText("Functional Requirements");
-	        gridBagConstraints = new java.awt.GridBagConstraints();
-	        gridBagConstraints.gridx = 6;
-	        gridBagConstraints.gridy = 10;
-	        gridBagConstraints.anchor = java.awt.GridBagConstraints.SOUTHWEST;
-	        jPanel5.add(jLabel33, gridBagConstraints);
-
-	        jButtonAddODD.setText("Add ODD");
-	        gridBagConstraints = new java.awt.GridBagConstraints();
-	        gridBagConstraints.gridx = 6;
-	        gridBagConstraints.gridy = 6;
-	        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTH;
-	        gridBagConstraints.weightx = 1.0;
-	        gridBagConstraints.weighty = 1.0;
-	        jPanel5.add(jButtonAddODD, gridBagConstraints);
-
-	        jButtonAddFR.setText("Add FR");
-	        gridBagConstraints = new java.awt.GridBagConstraints();
-	        gridBagConstraints.gridx = 6;
-	        gridBagConstraints.gridy = 14;
-	        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTH;
-	        gridBagConstraints.weightx = 1.0;
-	        gridBagConstraints.weighty = 1.0;
-	        jPanel5.add(jButtonAddFR, gridBagConstraints);
-
-	        jButtonRemoveAssumption.setText("Remove Assumption");
-	        gridBagConstraints = new java.awt.GridBagConstraints();
-	        gridBagConstraints.gridx = 4;
-	        gridBagConstraints.gridy = 14;
-	        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTH;
-	        gridBagConstraints.weightx = 1.0;
-	        gridBagConstraints.weighty = 1.0;
-	        jPanel5.add(jButtonRemoveAssumption, gridBagConstraints);
-
-	        jButtonRemoveODD.setText("Remove ODD");
-	        gridBagConstraints = new java.awt.GridBagConstraints();
-	        gridBagConstraints.gridx = 8;
-	        gridBagConstraints.gridy = 6;
-	        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTH;
-	        gridBagConstraints.weightx = 1.0;
-	        gridBagConstraints.weighty = 1.0;
-	        jPanel5.add(jButtonRemoveODD, gridBagConstraints);
-
-	        jButtonRemoveFR.setText("Remove FR");
-	        gridBagConstraints = new java.awt.GridBagConstraints();
-	        gridBagConstraints.gridx = 8;
-	        gridBagConstraints.gridy = 14;
-	        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTH;
-	        gridBagConstraints.weightx = 1.0;
-	        gridBagConstraints.weighty = 1.0;
-	        jPanel5.add(jButtonRemoveFR, gridBagConstraints);
-
-	        jLabel31.setText("Capella element");
-	        gridBagConstraints = new java.awt.GridBagConstraints();
-	        gridBagConstraints.gridx = 10;
-	        gridBagConstraints.gridy = 10;
-	        gridBagConstraints.gridwidth = 3;
-	        gridBagConstraints.anchor = java.awt.GridBagConstraints.SOUTHWEST;
-	        jPanel5.add(jLabel31, gridBagConstraints);
-
-	        jLabel30.setText("Restart the UI to process new element");
-	        gridBagConstraints = new java.awt.GridBagConstraints();
-	        gridBagConstraints.gridx = 10;
-	        gridBagConstraints.gridy = 14;
-	        gridBagConstraints.gridwidth = 3;
-	        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTH;
-	        jPanel5.add(jLabel30, gridBagConstraints);
-
-	        jButtonAddFailure.setText("Add Failure Mode");
-	        gridBagConstraints = new java.awt.GridBagConstraints();
-	        gridBagConstraints.gridx = 10;
-	        gridBagConstraints.gridy = 6;
-	        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTH;
-	        gridBagConstraints.weightx = 1.0;
-	        gridBagConstraints.weighty = 1.0;
-	        jPanel5.add(jButtonAddFailure, gridBagConstraints);
-
-	        jButtonRemoveFM.setText("Remove Failure Mode");
-	        gridBagConstraints = new java.awt.GridBagConstraints();
-	        gridBagConstraints.gridx = 12;
-	        gridBagConstraints.gridy = 6;
-	        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTH;
-	        gridBagConstraints.weightx = 1.0;
-	        gridBagConstraints.weighty = 1.0;
-	        jPanel5.add(jButtonRemoveFM, gridBagConstraints);
-
-	        jLabel24.setText("Failure list");
-	        gridBagConstraints = new java.awt.GridBagConstraints();
-	        gridBagConstraints.gridx = 10;
-	        gridBagConstraints.gridy = 2;
-	        gridBagConstraints.gridwidth = 3;
-	        gridBagConstraints.anchor = java.awt.GridBagConstraints.SOUTHWEST;
-	        jPanel5.add(jLabel24, gridBagConstraints);
-
-	        jScrollPane10.setViewportView(jListFailure);
-
-	        gridBagConstraints = new java.awt.GridBagConstraints();
-	        gridBagConstraints.gridx = 10;
-	        gridBagConstraints.gridy = 4;
-	        gridBagConstraints.gridwidth = 3;
-	        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-	        gridBagConstraints.weightx = 1.0;
-	        gridBagConstraints.weighty = 30.0;
-	        jPanel5.add(jScrollPane10, gridBagConstraints);
-
-	        jScrollPane5.setViewportView(jListCapella);
-
-	        gridBagConstraints = new java.awt.GridBagConstraints();
-	        gridBagConstraints.gridx = 10;
-	        gridBagConstraints.gridy = 12;
-	        gridBagConstraints.gridwidth = 3;
-	        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-	        gridBagConstraints.weightx = 1.0;
-	        gridBagConstraints.weighty = 30.0;
-	        jPanel5.add(jScrollPane5, gridBagConstraints);
-
-	        jTabbedPane.addTab("Edit Assumption, ODD, FR", jPanel5);
-
-	        gridBagConstraints = new java.awt.GridBagConstraints();
-	        gridBagConstraints.gridx = 2;
-	        gridBagConstraints.gridy = 4;
-	        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-	        gridBagConstraints.weightx = 100.0;
-	        gridBagConstraints.weighty = 100.0;
-	        getContentPane().add(jTabbedPane, gridBagConstraints);
-
-	        jLabel22.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-	        jLabel22.setText("ATRIUM process");
-	        gridBagConstraints = new java.awt.GridBagConstraints();
-	        gridBagConstraints.gridx = 2;
-	        gridBagConstraints.gridy = 2;
-	        getContentPane().add(jLabel22, gridBagConstraints);
-
-	        pack();
+	    java.awt.GridBagLayout layout = new java.awt.GridBagLayout();
+        layout.columnWidths = new int[] {0, 20, 0, 20, 0};
+        layout.rowHeights = new int[] {0, 10, 0, 10, 0, 10, 0};
+        getContentPane().setLayout(layout);
+
+        jPanel1.setPreferredSize(new java.awt.Dimension(1600, 1000));
+        java.awt.GridBagLayout jPanel1Layout = new java.awt.GridBagLayout();
+        jPanel1Layout.columnWidths = new int[] {0, 30, 0, 30, 0, 30, 0, 30, 0};
+        jPanel1Layout.rowHeights = new int[] {0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0};
+        jPanel1.setLayout(jPanel1Layout);
+
+        jScrollPane1.setViewportView(jListUnlinkedAssumptions);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 10;
+        gridBagConstraints.gridheight = 9;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.weightx = 40.0;
+        gridBagConstraints.weighty = 0.2;
+        jPanel1.add(jScrollPane1, gridBagConstraints);
+
+        jScrollPane2.setViewportView(jListLinkedAssumptions);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridy = 10;
+        gridBagConstraints.gridheight = 9;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.weightx = 40.0;
+        gridBagConstraints.weighty = 0.2;
+        jPanel1.add(jScrollPane2, gridBagConstraints);
+
+        jLabel1.setText("Add to linked");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 10;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.SOUTH;
+        gridBagConstraints.weightx = 5.0;
+        gridBagConstraints.weighty = 5.0;
+        jPanel1.add(jLabel1, gridBagConstraints);
+
+        jButtonAddLinked.setText("=>");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 12;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTH;
+        gridBagConstraints.weightx = 5.0;
+        gridBagConstraints.weighty = 5.0;
+        jPanel1.add(jButtonAddLinked, gridBagConstraints);
+
+        jLabel2.setText("Remove from linked");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 14;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.SOUTH;
+        gridBagConstraints.weightx = 5.0;
+        gridBagConstraints.weighty = 5.0;
+        jPanel1.add(jLabel2, gridBagConstraints);
+
+        jButtonRemoveLinked.setText("<=");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 16;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTH;
+        gridBagConstraints.weightx = 5.0;
+        gridBagConstraints.weighty = 5.0;
+        jPanel1.add(jButtonRemoveLinked, gridBagConstraints);
+
+        jLabel3.setText("Unlinked Assumptions");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 8;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.SOUTHWEST;
+        gridBagConstraints.weightx = 40.0;
+        jPanel1.add(jLabel3, gridBagConstraints);
+
+        jLabel4.setText("Linked Assumptions");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridy = 8;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.SOUTHWEST;
+        gridBagConstraints.weightx = 40.0;
+        jPanel1.add(jLabel4, gridBagConstraints);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.weightx = 40.0;
+        jPanel1.add(jComboBoxCFA, gridBagConstraints);
+
+        jLabel19.setText("CFA");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.SOUTHWEST;
+        gridBagConstraints.weightx = 40.0;
+        gridBagConstraints.insets = new java.awt.Insets(10, 0, 0, 0);
+        jPanel1.add(jLabel19, gridBagConstraints);
+
+        jLabel20.setText("linked to :");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
+        gridBagConstraints.weightx = 5.0;
+        jPanel1.add(jLabel20, gridBagConstraints);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.weightx = 40.0;
+        jPanel1.add(jComboBoxDG, gridBagConstraints);
+
+        jLabel21.setText("Design Goal");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.SOUTHWEST;
+        gridBagConstraints.weightx = 40.0;
+        jPanel1.add(jLabel21, gridBagConstraints);
+
+        jTabbedPane.addTab("Linking DG and Assumptions to CFA", jPanel1);
+
+        java.awt.GridBagLayout jPanel2Layout = new java.awt.GridBagLayout();
+        jPanel2Layout.columnWidths = new int[] {0, 30, 0, 30, 0, 30, 0, 30, 0};
+        jPanel2Layout.rowHeights = new int[] {0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0};
+        jPanel2.setLayout(jPanel2Layout);
+
+        jScrollPane3.setViewportView(jListUnlinkedDA);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 8;
+        gridBagConstraints.gridheight = 9;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.weightx = 40.0;
+        gridBagConstraints.weighty = 1.0;
+        jPanel2.add(jScrollPane3, gridBagConstraints);
+
+        jScrollPane4.setViewportView(jListLinkedDA);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridy = 8;
+        gridBagConstraints.gridheight = 9;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.weightx = 40.0;
+        gridBagConstraints.weighty = 1.0;
+        jPanel2.add(jScrollPane4, gridBagConstraints);
+
+        jLabel5.setText("Add to linked");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 8;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.SOUTH;
+        gridBagConstraints.weighty = 10.0;
+        jPanel2.add(jLabel5, gridBagConstraints);
+
+        jButtonAddLinkedDA.setText("=>");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 10;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.weightx = 10.0;
+        jPanel2.add(jButtonAddLinkedDA, gridBagConstraints);
+
+        jLabel6.setText("Remove from linked");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 12;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.SOUTH;
+        jPanel2.add(jLabel6, gridBagConstraints);
+
+        jButtonRemoveLinkedDA.setText("<=");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 14;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTH;
+        gridBagConstraints.weighty = 10.0;
+        jPanel2.add(jButtonRemoveLinkedDA, gridBagConstraints);
+
+        jLabel7.setText("Design Goal");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.SOUTHWEST;
+        jPanel2.add(jLabel7, gridBagConstraints);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        jPanel2.add(jComboBoxDG2, gridBagConstraints);
+
+        jLabel9.setText("Unlinked Design Alternative");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 6;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.SOUTHWEST;
+        jPanel2.add(jLabel9, gridBagConstraints);
+
+        jLabel23.setText("Linked Design Alternative");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridy = 6;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        jPanel2.add(jLabel23, gridBagConstraints);
+
+        jScrollPane14.setViewportView(jListUnlinkedSDG);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 22;
+        gridBagConstraints.gridheight = 9;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.weightx = 40.0;
+        gridBagConstraints.weighty = 1.0;
+        jPanel2.add(jScrollPane14, gridBagConstraints);
+
+        jLabel37.setText("Unlinked Sub-Design Goal");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 20;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.SOUTHWEST;
+        jPanel2.add(jLabel37, gridBagConstraints);
+
+        jScrollPane15.setViewportView(jListLinkedSDG);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridy = 22;
+        gridBagConstraints.gridheight = 9;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.weightx = 40.0;
+        gridBagConstraints.weighty = 1.0;
+        jPanel2.add(jScrollPane15, gridBagConstraints);
+
+        jLabel39.setText("Add to linked");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 24;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.SOUTH;
+        gridBagConstraints.weighty = 10.0;
+        jPanel2.add(jLabel39, gridBagConstraints);
+
+        jButtonAddLinkedSDG.setText("=>");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 26;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTH;
+        jPanel2.add(jButtonAddLinkedSDG, gridBagConstraints);
+
+        jLabel40.setText("Remove from linked");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 28;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.SOUTH;
+        jPanel2.add(jLabel40, gridBagConstraints);
+
+        jButtonRemoveLinkedSDG.setText("<=");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 30;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.weightx = 10.0;
+        gridBagConstraints.weighty = 20.0;
+        jPanel2.add(jButtonRemoveLinkedSDG, gridBagConstraints);
+
+        jLabel10.setText("Linked Sub-Design Goal");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridy = 20;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LAST_LINE_START;
+        jPanel2.add(jLabel10, gridBagConstraints);
+
+        jTabbedPane.addTab("Linking DG and DA", jPanel2);
+
+        java.awt.GridBagLayout jPanel3Layout = new java.awt.GridBagLayout();
+        jPanel3Layout.columnWidths = new int[] {0, 30, 0, 30, 0, 30, 0, 30, 0, 30, 0, 30, 0};
+        jPanel3Layout.rowHeights = new int[] {0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0};
+        jPanel3.setLayout(jPanel3Layout);
+
+        jScrollPane8.setViewportView(jListDG);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.gridheight = 7;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 1.0;
+        jPanel3.add(jScrollPane8, gridBagConstraints);
+
+        jScrollPane6.setViewportView(jListDA);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 8;
+        gridBagConstraints.gridy = 10;
+        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 1.0;
+        jPanel3.add(jScrollPane6, gridBagConstraints);
+
+        jButtonAddDG.setText("Add DG");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 12;
+        gridBagConstraints.weightx = 20.0;
+        jPanel3.add(jButtonAddDG, gridBagConstraints);
+
+        jButtonAddDA.setText("Add DA");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 8;
+        gridBagConstraints.gridy = 12;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTH;
+        gridBagConstraints.weightx = 20.0;
+        jPanel3.add(jButtonAddDA, gridBagConstraints);
+
+        jScrollPane9.setViewportView(jListCFA);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.gridheight = 7;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 1.0;
+        jPanel3.add(jScrollPane9, gridBagConstraints);
+
+        jLabel25.setText("CFA list");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.SOUTHWEST;
+        jPanel3.add(jLabel25, gridBagConstraints);
+
+        jLabel26.setText("Restart this UI to create CFA");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 12;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTH;
+        gridBagConstraints.weightx = 20.0;
+        jPanel3.add(jLabel26, gridBagConstraints);
+
+        jLabel27.setText("Design Goal List");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.SOUTHWEST;
+        jPanel3.add(jLabel27, gridBagConstraints);
+
+        jLabel29.setText("Design Alternative List");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 8;
+        gridBagConstraints.gridy = 8;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.SOUTHWEST;
+        jPanel3.add(jLabel29, gridBagConstraints);
+
+        jScrollPane13.setViewportView(jListSDG);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 8;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 1.0;
+        jPanel3.add(jScrollPane13, gridBagConstraints);
+
+        jButtonAddSDG.setText("Add sDG");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 8;
+        gridBagConstraints.gridy = 6;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTH;
+        jPanel3.add(jButtonAddSDG, gridBagConstraints);
+
+        jLabel36.setText("Sub-Design Goal list");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 8;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.SOUTHWEST;
+        jPanel3.add(jLabel36, gridBagConstraints);
+
+        jButtonRemoveDG.setText("Remove DG");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridy = 12;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTH;
+        gridBagConstraints.weightx = 20.0;
+        jPanel3.add(jButtonRemoveDG, gridBagConstraints);
+
+        jButtonRemoveDA.setText("Delete DA");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 10;
+        gridBagConstraints.gridy = 12;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTH;
+        gridBagConstraints.weightx = 20.0;
+        jPanel3.add(jButtonRemoveDA, gridBagConstraints);
+
+        jButtonRemoveSDG.setText("Remove sDG");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 10;
+        gridBagConstraints.gridy = 6;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTH;
+        jPanel3.add(jButtonRemoveSDG, gridBagConstraints);
+
+        jTabbedPane.addTab("Edit DG, sDG, DA, CFA", jPanel3);
+
+        java.awt.GridBagLayout jPanel5Layout = new java.awt.GridBagLayout();
+        jPanel5Layout.columnWidths = new int[] {0, 30, 0, 30, 0, 30, 0, 30, 0, 30, 0, 30, 0, 30, 0};
+        jPanel5Layout.rowHeights = new int[] {0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0};
+        jPanel5.setLayout(jPanel5Layout);
+
+        jScrollPane7.setViewportView(jListAssumption);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.gridheight = 9;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 1.0;
+        jPanel5.add(jScrollPane7, gridBagConstraints);
+
+        jButtonAddAssumption.setText("Add Assumption");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 14;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTH;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 1.0;
+        jPanel5.add(jButtonAddAssumption, gridBagConstraints);
+
+        jLabel8.setText("Assumption list");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.SOUTHWEST;
+        jPanel5.add(jLabel8, gridBagConstraints);
+
+        jScrollPane11.setViewportView(jListODD);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 30.0;
+        jPanel5.add(jScrollPane11, gridBagConstraints);
+
+        jScrollPane12.setViewportView(jListFR);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridy = 12;
+        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 30.0;
+        jPanel5.add(jScrollPane12, gridBagConstraints);
+
+        jLabel32.setText("Operational Design Domain");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.SOUTHWEST;
+        jPanel5.add(jLabel32, gridBagConstraints);
+
+        jLabel33.setText("Functional Requirements");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridy = 10;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.SOUTHWEST;
+        jPanel5.add(jLabel33, gridBagConstraints);
+
+        jButtonAddODD.setText("Add ODD");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridy = 6;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTH;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 1.0;
+        jPanel5.add(jButtonAddODD, gridBagConstraints);
+
+        jButtonAddFR.setText("Add FR");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridy = 14;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTH;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 1.0;
+        jPanel5.add(jButtonAddFR, gridBagConstraints);
+
+        jButtonRemoveAssumption.setText("Remove Assumption");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 14;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTH;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 1.0;
+        jPanel5.add(jButtonRemoveAssumption, gridBagConstraints);
+
+        jButtonRemoveODD.setText("Remove ODD");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 8;
+        gridBagConstraints.gridy = 6;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTH;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 1.0;
+        jPanel5.add(jButtonRemoveODD, gridBagConstraints);
+
+        jButtonRemoveFR.setText("Remove FR");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 8;
+        gridBagConstraints.gridy = 14;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTH;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 1.0;
+        jPanel5.add(jButtonRemoveFR, gridBagConstraints);
+
+        jLabel31.setText("Capella element");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 10;
+        gridBagConstraints.gridy = 10;
+        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.SOUTHWEST;
+        jPanel5.add(jLabel31, gridBagConstraints);
+
+        jLabel30.setText("Restart the UI to process new element");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 10;
+        gridBagConstraints.gridy = 14;
+        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTH;
+        jPanel5.add(jLabel30, gridBagConstraints);
+
+        jButtonAddFailure.setText("Add Failure Mode");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 10;
+        gridBagConstraints.gridy = 6;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTH;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 1.0;
+        jPanel5.add(jButtonAddFailure, gridBagConstraints);
+
+        jButtonRemoveFM.setText("Remove Failure Mode");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 12;
+        gridBagConstraints.gridy = 6;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTH;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 1.0;
+        jPanel5.add(jButtonRemoveFM, gridBagConstraints);
+
+        jLabel24.setText("Failure list");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 10;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.SOUTHWEST;
+        jPanel5.add(jLabel24, gridBagConstraints);
+
+        jScrollPane10.setViewportView(jListFailure);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 10;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 30.0;
+        jPanel5.add(jScrollPane10, gridBagConstraints);
+
+        jScrollPane5.setViewportView(jListCapella);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 10;
+        gridBagConstraints.gridy = 12;
+        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 30.0;
+        jPanel5.add(jScrollPane5, gridBagConstraints);
+
+        jTabbedPane.addTab("Edit Assumption, ODD, FR", jPanel5);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.weightx = 100.0;
+        gridBagConstraints.weighty = 100.0;
+        getContentPane().add(jTabbedPane, gridBagConstraints);
+
+        jLabel22.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel22.setText("ATRIUM process");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 2;
+        getContentPane().add(jLabel22, gridBagConstraints);
+
+        pack();
     }// </editor-fold>
 	
 	public void updateDisplayTab0()
@@ -1927,6 +1934,7 @@ public class AtriumProcess extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JList<String> jListAssumption;
     private javax.swing.JList<String> jListCFA;
     private javax.swing.JList<String> jListCapella;
