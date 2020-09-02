@@ -14,7 +14,6 @@ import org.polarsys.capella.core.data.la.LogicalArchitecture;
 import org.polarsys.capella.core.data.la.LogicalComponentPkg;
 import org.polarsys.capella.vp.atrium.Atrium.CFA;
 import org.polarsys.capella.vp.atrium.Atrium.ElementStateAtrium;
-import org.polarsys.capella.vp.atrium.Atrium.stateLinkedElement_Type;
 
 /**
  * <!-- begin-user-doc -->

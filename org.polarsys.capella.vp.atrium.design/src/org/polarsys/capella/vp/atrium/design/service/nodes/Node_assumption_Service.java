@@ -12,7 +12,6 @@ import org.eclipse.sirius.diagram.DDiagram;
 import org.eclipse.sirius.diagram.DDiagramElement;
 import org.polarsys.capella.vp.atrium.Atrium.Assumption;
 import org.polarsys.capella.vp.atrium.Atrium.assumptionType_Type;
-import org.polarsys.capella.vp.atrium.Atrium.stateLinkedElement_Type;
 
 /**
  * <!-- begin-user-doc -->
