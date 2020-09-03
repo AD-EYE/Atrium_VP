@@ -1,5 +1,5 @@
 
-// Generated on 03.07.2020 at 03:27:13 CEST by Viewpoint DSL Generator V 0.1
+// Generated on 03.09.2020 at 03:24:54 CEST by Viewpoint DSL Generator V 0.1
 
 package org.polarsys.capella.vp.atrium.design.service;
 

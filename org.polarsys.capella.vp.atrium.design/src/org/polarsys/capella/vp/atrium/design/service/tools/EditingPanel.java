@@ -196,7 +196,7 @@ public class EditingPanel extends javax.swing.JFrame {
 				my_parent.enableAllComponent();
 				this.setVisible(false);
 				
-				if (editedObject instanceof DG) {my_parent.ObjectAdded();}
+				if (editedObject instanceof DG) {my_parent.updateDGComboBox();}
 				
 				if (editedObject instanceof DA)
 				{

@@ -97,26 +97,19 @@ public class AtriumProcess extends javax.swing.JFrame {
 	
 	
 	public AtriumProcess(EObject element) {
-		EObject root = element;
-		while (!(root instanceof LogicalArchitecture))
-		{
-			root = root.eContainer();
-			//TODO add protection there
-		}
+		domain = TransactionUtil.getEditingDomain(element);
 		
-		domain = TransactionUtil.getEditingDomain(root);
-		
-		myAssumptionEditor = new EditingFrameAssumption(this);
-		myEditor = new EditingPanel(this);
-		
-		sortAtriumElementOnce(root);
+		sortAtriumElementOnce(element);
 		updateCFA();
 		initComponents();
-		ObjectAdded();
+		updateDGComboBox();
 		updateDisplayTab0();
 		updateDisplayTab1();
 		updateDisplayTab2();
 		updateDisplayTab3();
+		
+		myAssumptionEditor = new EditingFrameAssumption(this);
+		myEditor = new EditingPanel(this);
 		
 		GraphicsEnvironment env = GraphicsEnvironment.getLocalGraphicsEnvironment();
         this.setMaximizedBounds(env.getMaximumWindowBounds());
@@ -125,8 +118,14 @@ public class AtriumProcess extends javax.swing.JFrame {
 		this.setVisible(true);
 	}
 
-	private void sortAtriumElementOnce(EObject root)
+	private void sortAtriumElementOnce(EObject element)
 	{
+		EObject root = element;
+		while (!(root instanceof LogicalArchitecture))
+		{
+			root = root.eContainer();
+		}
+		
 		LogicalArchitecture logArch = (LogicalArchitecture) root;
 		TreeIterator<EObject> treeArch = logArch.eAllContents();
 		
@@ -1401,7 +1400,7 @@ public class AtriumProcess extends javax.swing.JFrame {
 	}
 
 	
-	public void ObjectAdded()
+	public void updateDGComboBox()
 	{
 		DefaultComboBoxModel<String> listDGcbModel= new DefaultComboBoxModel<String>();
         listDGcbModel.addElement("-- NONE --");
