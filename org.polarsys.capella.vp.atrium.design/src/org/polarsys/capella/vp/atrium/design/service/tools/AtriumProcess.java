@@ -108,7 +108,6 @@ public class AtriumProcess extends javax.swing.JFrame {
 	
 	
 	public AtriumProcess(EObject element) {
-		domain = TransactionUtil.getEditingDomain(element);
 		
 		EObject root = element; 
 		while (!(root instanceof LogicalArchitecture)){root = root.eContainer();}
@@ -121,6 +120,7 @@ public class AtriumProcess extends javax.swing.JFrame {
         Resource resource = resourceSet.getResource(URI1, true);
         treeArchList.add(((CapellamodellerResourceImpl) resource).getContents().get(0).eAllContents());
         
+        domain = TransactionUtil.getEditingDomain(element);
 		sortAtriumElementOnce(treeArchList);
 		createLists();
 		updateCFA();
@@ -325,6 +325,7 @@ public class AtriumProcess extends javax.swing.JFrame {
 		
 		java.awt.GridBagConstraints gridBagConstraints;
 		
+		//First paste all the variable declaration here
         jTabbedPane = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -467,6 +468,31 @@ public class AtriumProcess extends javax.swing.JFrame {
                 return null;
             }
         };
+        
+        //all modified initializations are there
+		
+        DefaultComboBoxModel <String> CbCFA= new DefaultComboBoxModel<String>();
+		for (int i = 0; i < listCFA.size(); i++) {
+			if (!(listCFA.get(i).isNonApplicable())){CbCFA.addElement(listCFA.get(i).getName());}	
+		}
+		
+		DefaultListModel <String> listModelCFA = new DefaultListModel<String>();
+        for (CFA cfa : listCFA){if(!(cfa.isNonApplicable())) {listModelCFA.addElement(cfa.getName());}}
+        jListCFA.setModel(listModelCFA);
+        
+		jComboBoxCFA.setModel(CbCFA);
+		jComboBoxCFA.setMaximumRowCount(20);
+		jComboBoxDG.setMaximumRowCount(20);
+		DefaultListModel <String> listModel = new DefaultListModel<String>();
+	        for (int i = 0; i < ListCapellaElementName.size(); i++)
+	        {
+	            listModel.addElement(ListCapellaElementName.get(i));
+	        }
+	    jListCapella.setModel(listModel);
+	    
+	    AutoCompletion.enable(jComboBoxDG);
+	    AutoCompletion.enable(jComboBoxDG2);
+	    AutoCompletion.enable(jComboBoxCFA);
         
         //all listeners have been put below
 		jListUnlinkedDA.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -661,33 +687,8 @@ public class AtriumProcess extends javax.swing.JFrame {
             	createAtriumElement("Default Failure Name",1);
             }
         });
-        
-        //all modified initializations are there
-		
-        DefaultComboBoxModel <String> CbCFA= new DefaultComboBoxModel<String>();
-		for (int i = 0; i < listCFA.size(); i++) {
-			if (!(listCFA.get(i).isNonApplicable())){CbCFA.addElement(listCFA.get(i).getName());}	
-		}
-		
-		DefaultListModel <String> listModelCFA = new DefaultListModel<String>();
-        for (CFA cfa : listCFA){if(!(cfa.isNonApplicable())) {listModelCFA.addElement(cfa.getName());}}
-        jListCFA.setModel(listModelCFA);
-        
-		jComboBoxCFA.setModel(CbCFA);
-		jComboBoxCFA.setMaximumRowCount(20);
-		jComboBoxDG.setMaximumRowCount(20);
-		DefaultListModel <String> listModel = new DefaultListModel<String>();
-	        for (int i = 0; i < ListCapellaElementName.size(); i++)
-	        {
-	            listModel.addElement(ListCapellaElementName.get(i));
-	        }
-	    jListCapella.setModel(listModel);
-	    
-	    AutoCompletion.enable(jComboBoxDG);
-	    AutoCompletion.enable(jComboBoxDG2);
-	    AutoCompletion.enable(jComboBoxCFA);
 	        
-	     //Paste the netBean generated code here (initComponent). Remove all the <>. Cut and paste the variable declaration as well
+	     //Paste the netBean generated code here (initComponent). Remove all the <>. Cut and paste the variable declaration as well to the top
 
 	    java.awt.GridBagLayout layout = new java.awt.GridBagLayout();
         layout.columnWidths = new int[] {0, 20, 0, 20, 0};
