@@ -19,13 +19,24 @@ import javax.swing.JOptionPane;
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.TreeIterator;
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.resource.URIConverter;
+import org.eclipse.emf.ecore.resource.impl.ResourceImpl;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.emf.ecore.xml.type.internal.DataValue;
+
+import org.eclipse.emf.ecore.xml.type.internal.DataValue.URI.MalformedURIException;
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
+import org.polarsys.capella.common.helpers.EcoreUtil2;
 import org.polarsys.capella.core.data.capellacore.CapellaElement;
 import org.polarsys.capella.core.data.capellacore.NamedElement;
+import org.polarsys.capella.core.data.capellamodeller.util.CapellamodellerResourceImpl;
 import org.polarsys.capella.core.data.fa.FunctionalExchange;
 import org.polarsys.capella.core.data.la.LogicalArchitecture;
 import org.polarsys.capella.core.data.la.LogicalComponent;
@@ -119,8 +130,15 @@ public class AtriumProcess extends javax.swing.JFrame {
 	}
 
 	private void sortAtriumElementOnce(EObject element)
-	{
+	{   
+        
+		URI URI1 = URI.createFileURI("C:/capellaStudio/runtime-New_configuration/Testel/Testel.melodymodeller");  
+        ResourceSet resourceSet = new ResourceSetImpl();
+        Resource resource = resourceSet.getResource(URI1, true);
+        TreeIterator<EObject> treeArch2 = ((CapellamodellerResourceImpl) resource).getContents().get(0).eAllContents();
+              
 		EObject root = element;
+        
 		while (!(root instanceof LogicalArchitecture))
 		{
 			root = root.eContainer();
@@ -134,11 +152,13 @@ public class AtriumProcess extends javax.swing.JFrame {
 		while(treeArch.hasNext())
 		{
 		  node = treeArch.next();
+		  System.out.println(node);
 		  if (node instanceof LogicalFunction)
 		  {
 			  LogicalFunction lf = (LogicalFunction) node;
 			  ListCapellaElement.add(lf);
 			  ListCapellaElementName.add("[LF] " + lf.getName());
+			  
 		  }
 		  
 		  if (node instanceof LogicalComponent)
