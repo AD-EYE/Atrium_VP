@@ -110,7 +110,19 @@ public class AtriumProcess extends javax.swing.JFrame {
 	public AtriumProcess(EObject element) {
 		domain = TransactionUtil.getEditingDomain(element);
 		
-		sortAtriumElementOnce(element);
+		EObject root = element; 
+		while (!(root instanceof LogicalArchitecture)){root = root.eContainer();}
+		EList<TreeIterator <EObject>> treeArchList = new BasicEList<TreeIterator <EObject>>();;
+		treeArchList.add(root.eAllContents());
+		
+		//hardcoded path of the libraries melodymodeller files
+		URI URI1 = URI.createFileURI("C:/capellaStudio/runtime-New_configuration/Libel/Libel.melodymodeller");  
+        ResourceSet resourceSet = new ResourceSetImpl();
+        Resource resource = resourceSet.getResource(URI1, true);
+        treeArchList.add(((CapellamodellerResourceImpl) resource).getContents().get(0).eAllContents());
+        
+		sortAtriumElementOnce(treeArchList);
+		createLists();
 		updateCFA();
 		initComponents();
 		updateDGComboBox();
@@ -129,75 +141,61 @@ public class AtriumProcess extends javax.swing.JFrame {
 		this.setVisible(true);
 	}
 
-	private void sortAtriumElementOnce(EObject element)
-	{   
-        
-		URI URI1 = URI.createFileURI("C:/capellaStudio/runtime-New_configuration/Testel/Testel.melodymodeller");  
-        ResourceSet resourceSet = new ResourceSetImpl();
-        Resource resource = resourceSet.getResource(URI1, true);
-        TreeIterator<EObject> treeArch2 = ((CapellamodellerResourceImpl) resource).getContents().get(0).eAllContents();
-              
-		EObject root = element;
-        
-		while (!(root instanceof LogicalArchitecture))
+	private void sortAtriumElementOnce(EList<TreeIterator<EObject>> treeArchList)
+	{       
+		for (TreeIterator<EObject> treeArch : treeArchList)
 		{
-			root = root.eContainer();
-		}
-		
-		LogicalArchitecture logArch = (LogicalArchitecture) root;
-		TreeIterator<EObject> treeArch = logArch.eAllContents();
-		
-		EObject node = null;
-		
-		while(treeArch.hasNext())
-		{
-		  node = treeArch.next();
-		  System.out.println(node);
-		  if (node instanceof LogicalFunction)
-		  {
-			  LogicalFunction lf = (LogicalFunction) node;
-			  ListCapellaElement.add(lf);
-			  ListCapellaElementName.add("[LF] " + lf.getName());
+			EObject node = null;
+			while(treeArch.hasNext())
+			{
+			  node = treeArch.next();
+			  if (node instanceof LogicalFunction)
+			  {
+				  LogicalFunction lf = (LogicalFunction) node;
+				  ListCapellaElement.add(lf);
+				  ListCapellaElementName.add("[LF] " + lf.getName());
+			  }
 			  
-		  }
-		  
-		  if (node instanceof LogicalComponent)
-		  {
-			  LogicalComponent lc = (LogicalComponent) node;
-			  ListCapellaElement.add(lc);
-			  ListCapellaElementName.add("[LC] " + lc.getName());
-		  }
-		  
-		  if (node instanceof FunctionalExchange)
-		  {
-			  FunctionalExchange fe = (FunctionalExchange) node;
-			  ListCapellaElement.add(fe);
-			  ListCapellaElementName.add("[FE] " + fe.getName());
-		  }
-		  
-		  //if you want that UI to process other capella element, add your code here !
-		  
-		  if (node instanceof FailureMode){ListFailureMode.add((FailureMode) node);}
-		  if (node instanceof DG){listDG.add((DG) node);}
-		  if (node instanceof DA){listDA.add((DA) node);}
-		  if (node instanceof sDG){listsDG.add((sDG) node);}
-		  if (node instanceof CFA){listCFA.add((CFA) node);}
-		  if (node instanceof ODD){listODD.add((ODD) node);} 
-		  if (node instanceof FR){listFR.add((FR) node);} 
-		  if (node instanceof Assumption){listAssumption.add((Assumption) node);}
-		  if (node instanceof LogicalComponentPkg){the_LogicalComponentPkg = (LogicalComponentPkg) node;} 
-		  if (node instanceof CFA_list){the_CFA_list = (CFA_list) node;}
-		  if (node instanceof sDG_list){the_sDG_list = (sDG_list) node;}
-		  if (node instanceof Failure_list){the_Failure_list = (Failure_list) node;}
-		  if (node instanceof Assumption_list){the_Assumption_list = (Assumption_list) node;}
-		  if (node instanceof DA_list){the_DA_list = (DA_list) node;}
-		  if (node instanceof DG_list){the_DG_list = (DG_list) node;}
-		  if (node instanceof ODD_list){the_ODD_list = (ODD_list) node;}
-		  if (node instanceof FR_list){the_FR_list = (FR_list) node;}
+			  if (node instanceof LogicalComponent)
+			  {
+				  LogicalComponent lc = (LogicalComponent) node;
+				  ListCapellaElement.add(lc);
+				  ListCapellaElementName.add("[LC] " + lc.getName());
+			  }
+			  
+			  if (node instanceof FunctionalExchange)
+			  {
+				  FunctionalExchange fe = (FunctionalExchange) node;
+				  ListCapellaElement.add(fe);
+				  ListCapellaElementName.add("[FE] " + fe.getName());
+			  }
+			  
+			  //if you want that UI to process other capella element, add some code here !
+			  
+			  if (node instanceof FailureMode){ListFailureMode.add((FailureMode) node);}
+			  if (node instanceof DG){listDG.add((DG) node);}
+			  if (node instanceof DA){listDA.add((DA) node);}
+			  if (node instanceof sDG){listsDG.add((sDG) node);}
+			  if (node instanceof CFA){listCFA.add((CFA) node);}
+			  if (node instanceof ODD){listODD.add((ODD) node);} 
+			  if (node instanceof FR){listFR.add((FR) node);} 
+			  if (node instanceof Assumption){listAssumption.add((Assumption) node);}
+			  if (node instanceof LogicalComponentPkg){the_LogicalComponentPkg = (LogicalComponentPkg) node;} 
+			  if (node instanceof CFA_list){the_CFA_list = (CFA_list) node;}
+			  if (node instanceof sDG_list){the_sDG_list = (sDG_list) node;}
+			  if (node instanceof Failure_list){the_Failure_list = (Failure_list) node;}
+			  if (node instanceof Assumption_list){the_Assumption_list = (Assumption_list) node;}
+			  if (node instanceof DA_list){the_DA_list = (DA_list) node;}
+			  if (node instanceof DG_list){the_DG_list = (DG_list) node;}
+			  if (node instanceof ODD_list){the_ODD_list = (ODD_list) node;}
+			  if (node instanceof FR_list){the_FR_list = (FR_list) node;}
+			}
 		}
 		
 		Collections.sort(ListCapellaElementName);
-		
+	}
+	
+	private void createLists() {
 		domain.getCommandStack().execute(new RecordingCommand(domain) { // in a transaction context, create any list that has not been found
 	        @Override
 	        protected void doExecute() {
