@@ -108,4 +108,16 @@ public class OpenActionService {
 		new AtriumProcess(element);
 		return true;
 	}
+
+	/**
+	* <!-- begin-user-doc -->
+	* <!-- end-user-doc -->
+	* @param element : the element
+	* @param newSemanticContainer : the element view
+	* @generated NOT
+	*/
+	public boolean openSelectedSwing(EObject element, EObject newSemanticContainer) {
+		new DiagramSelection(element);
+		return true;
+	}
 }

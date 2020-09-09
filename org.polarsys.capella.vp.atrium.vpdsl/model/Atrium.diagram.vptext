@@ -350,6 +350,9 @@ Diagrams Atrium.diagram {
 			OpenAction openSwing {
 				label: "Open Atrium UI"
 			}
+			OpenAction openSelectedSwing {
+				label: "Open Atrium UI for diagram ..."
+			}
 		}
 	}
 }

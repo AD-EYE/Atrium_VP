@@ -33,6 +33,12 @@ import org.eclipse.emf.ecore.xml.type.internal.DataValue.URI.MalformedURIExcepti
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
+import org.eclipse.sirius.business.api.dialect.DialectManager;
+import org.eclipse.sirius.business.api.session.Session;
+import org.eclipse.sirius.business.api.session.SessionManager;
+import org.eclipse.sirius.diagram.DDiagram;
+import org.eclipse.sirius.diagram.DDiagramElement;
+import org.eclipse.sirius.viewpoint.DRepresentationDescriptor;
 import org.polarsys.capella.common.helpers.EcoreUtil2;
 import org.polarsys.capella.core.data.capellacore.CapellaElement;
 import org.polarsys.capella.core.data.capellacore.NamedElement;
@@ -130,6 +136,40 @@ public class AtriumProcess extends javax.swing.JFrame {
 		updateDisplayTab1();
 		updateDisplayTab2();
 		updateDisplayTab3();
+		
+		
+		//my main
+		Session session = SessionManager.INSTANCE.getSession(root);
+		for (DRepresentationDescriptor descriptor :  DialectManager.INSTANCE.getRepresentationDescriptors(element, session))
+		{
+			   DDiagram diagram = (DDiagram)descriptor.getRepresentation();
+			   System.out.print("Diagram : " + diagram.getName());	
+			   System.out.println(descriptor.getRepresentation()+ " : "); //will return the diagram
+			   for (DDiagramElement element2: diagram.getDiagramElements())
+			   { 		//for all main elements in diagram
+//				   if (element2.getName().equals("HEJ"))
+//				   {
+//					   System.out.println("HEJ found : ");
+////					   System.out.println(element2.getTarget().eContents());
+////					   LogicalComponent lc = (LogicalComponent) element2.getTarget().eCrossReferences().get(0);// weird
+////					   System.out.println(lc.getId());
+////					   LogicalFunction lf = (LogicalFunction) element2.getTarget();
+////					   System.out.println(lf.getId());
+//					   System.out.println(element2.getTarget());
+//					   FunctionalExchange fe = (FunctionalExchange) element2.getTarget();
+//					   System.out.println(fe.getId());
+//					   System.out.println("End content");
+//				   }
+//				   else
+//				   {
+					   System.out.print(element2.getName() +" ; ");
+//				   }
+				   
+			   }
+			   System.out.println("End");
+		}
+		
+		//end of
 		
 		myAssumptionEditor = new EditingFrameAssumption(this);
 		myEditor = new EditingPanel(this);
