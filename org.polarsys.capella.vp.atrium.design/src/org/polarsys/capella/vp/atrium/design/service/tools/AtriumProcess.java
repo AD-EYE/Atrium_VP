@@ -38,16 +38,23 @@ import org.eclipse.sirius.business.api.session.Session;
 import org.eclipse.sirius.business.api.session.SessionManager;
 import org.eclipse.sirius.diagram.DDiagram;
 import org.eclipse.sirius.diagram.DDiagramElement;
+import org.eclipse.sirius.diagram.DEdge;
+import org.eclipse.sirius.diagram.DNode;
+import org.eclipse.sirius.diagram.business.internal.metamodel.spec.DEdgeSpec;
+import org.eclipse.sirius.diagram.business.internal.metamodel.spec.DNodeSpec;
 import org.eclipse.sirius.viewpoint.DRepresentationDescriptor;
 import org.polarsys.capella.common.helpers.EcoreUtil2;
 import org.polarsys.capella.core.data.capellacore.CapellaElement;
 import org.polarsys.capella.core.data.capellacore.NamedElement;
 import org.polarsys.capella.core.data.capellamodeller.util.CapellamodellerResourceImpl;
+import org.polarsys.capella.core.data.cs.impl.PartImpl;
 import org.polarsys.capella.core.data.fa.FunctionalExchange;
+import org.polarsys.capella.core.data.fa.impl.FunctionalExchangeImpl;
 import org.polarsys.capella.core.data.la.LogicalArchitecture;
 import org.polarsys.capella.core.data.la.LogicalComponent;
 import org.polarsys.capella.core.data.la.LogicalComponentPkg;
 import org.polarsys.capella.core.data.la.LogicalFunction;
+import org.polarsys.capella.core.data.la.impl.LogicalFunctionImpl;
 import org.polarsys.capella.vp.atrium.Atrium.Assumption;
 import org.polarsys.capella.vp.atrium.Atrium.Assumption_list;
 import org.polarsys.capella.vp.atrium.Atrium.AtriumBasicElement;
@@ -113,11 +120,11 @@ public class AtriumProcess extends javax.swing.JFrame {
 	EditingPanel myEditor = null;
 	
 	
-	public AtriumProcess(EObject element) {
+	public AtriumProcess(EObject element, List<String> selectedList) {
 		
 		EObject root = element; 
-		while (!(root instanceof LogicalArchitecture)){root = root.eContainer();}
-		EList<TreeIterator <EObject>> treeArchList = new BasicEList<TreeIterator <EObject>>();;
+		while (!((root==null)||(root instanceof LogicalArchitecture))){root = root.eContainer();}
+		EList<TreeIterator <EObject>> treeArchList = new BasicEList<TreeIterator <EObject>>();
 		treeArchList.add(root.eAllContents());
 		
 		//hardcoded path of the libraries melodymodeller files
@@ -127,7 +134,15 @@ public class AtriumProcess extends javax.swing.JFrame {
         treeArchList.add(((CapellamodellerResourceImpl) resource).getContents().get(0).eAllContents());
         
         domain = TransactionUtil.getEditingDomain(element);
+      
 		sortAtriumElementOnce(treeArchList);
+		
+		EList<TreeIterator <EObject>> treeArchList2 = new BasicEList<TreeIterator <EObject>>();
+		treeArchList2.add(root.eAllContents());
+		treeArchList2.add(((CapellamodellerResourceImpl) resource).getContents().get(0).eAllContents());
+		
+		if (selectedList==null) {sortCapellaElementOnce(treeArchList2);}
+		else {sortCapellaElementOnceDiagram(selectedList, root);}
 		createLists();
 		updateCFA();
 		initComponents();
@@ -136,40 +151,6 @@ public class AtriumProcess extends javax.swing.JFrame {
 		updateDisplayTab1();
 		updateDisplayTab2();
 		updateDisplayTab3();
-		
-		
-		//my main
-		Session session = SessionManager.INSTANCE.getSession(root);
-		for (DRepresentationDescriptor descriptor :  DialectManager.INSTANCE.getRepresentationDescriptors(element, session))
-		{
-			   DDiagram diagram = (DDiagram)descriptor.getRepresentation();
-			   System.out.print("Diagram : " + diagram.getName());	
-			   System.out.println(descriptor.getRepresentation()+ " : "); //will return the diagram
-			   for (DDiagramElement element2: diagram.getDiagramElements())
-			   { 		//for all main elements in diagram
-//				   if (element2.getName().equals("HEJ"))
-//				   {
-//					   System.out.println("HEJ found : ");
-////					   System.out.println(element2.getTarget().eContents());
-////					   LogicalComponent lc = (LogicalComponent) element2.getTarget().eCrossReferences().get(0);// weird
-////					   System.out.println(lc.getId());
-////					   LogicalFunction lf = (LogicalFunction) element2.getTarget();
-////					   System.out.println(lf.getId());
-//					   System.out.println(element2.getTarget());
-//					   FunctionalExchange fe = (FunctionalExchange) element2.getTarget();
-//					   System.out.println(fe.getId());
-//					   System.out.println("End content");
-//				   }
-//				   else
-//				   {
-					   System.out.print(element2.getName() +" ; ");
-//				   }
-				   
-			   }
-			   System.out.println("End");
-		}
-		
-		//end of
 		
 		myAssumptionEditor = new EditingFrameAssumption(this);
 		myEditor = new EditingPanel(this);
@@ -189,29 +170,6 @@ public class AtriumProcess extends javax.swing.JFrame {
 			while(treeArch.hasNext())
 			{
 			  node = treeArch.next();
-			  if (node instanceof LogicalFunction)
-			  {
-				  LogicalFunction lf = (LogicalFunction) node;
-				  ListCapellaElement.add(lf);
-				  ListCapellaElementName.add("[LF] " + lf.getName());
-			  }
-			  
-			  if (node instanceof LogicalComponent)
-			  {
-				  LogicalComponent lc = (LogicalComponent) node;
-				  ListCapellaElement.add(lc);
-				  ListCapellaElementName.add("[LC] " + lc.getName());
-			  }
-			  
-			  if (node instanceof FunctionalExchange)
-			  {
-				  FunctionalExchange fe = (FunctionalExchange) node;
-				  ListCapellaElement.add(fe);
-				  ListCapellaElementName.add("[FE] " + fe.getName());
-			  }
-			  
-			  //if you want that UI to process other capella element, add some code here !
-			  
 			  if (node instanceof FailureMode){ListFailureMode.add((FailureMode) node);}
 			  if (node instanceof DG){listDG.add((DG) node);}
 			  if (node instanceof DA){listDA.add((DA) node);}
@@ -231,8 +189,77 @@ public class AtriumProcess extends javax.swing.JFrame {
 			  if (node instanceof FR_list){the_FR_list = (FR_list) node;}
 			}
 		}
-		
+	}
+	
+	private void sortCapellaElementOnce(EList<TreeIterator<EObject>> treeArchList)
+	{
+		for (TreeIterator<EObject> treeArch : treeArchList)
+		{
+			EObject node = null;
+			while(treeArch.hasNext())
+			{
+				node = treeArch.next();
+				if (node instanceof LogicalFunction)
+				{
+					LogicalFunction lf = (LogicalFunction) node;
+					ListCapellaElement.add(lf);
+					ListCapellaElementName.add("[LF] " + lf.getName());
+				}
+				
+				if (node instanceof LogicalComponent)
+				{
+					LogicalComponent lc = (LogicalComponent) node;
+					ListCapellaElement.add(lc);
+					ListCapellaElementName.add("[LC] " + lc.getName());
+				}
+				
+				if (node instanceof FunctionalExchange)
+				{
+					FunctionalExchange fe = (FunctionalExchange) node;
+					ListCapellaElement.add(fe);
+					ListCapellaElementName.add("[FE] " + fe.getName());
+				}
+			}
+		}
 		Collections.sort(ListCapellaElementName);
+	}
+	
+	private void sortCapellaElementOnceDiagram(List<String> selectedList, EObject root)
+	{
+		Session session = SessionManager.INSTANCE.getSession(root);
+		for (DRepresentationDescriptor descriptor :  DialectManager.INSTANCE.getAllRepresentationDescriptors(session))
+		{
+			   DDiagram diagram = (DDiagram)descriptor.getRepresentation();
+			   if (selectedList.contains(diagram.getName()))
+			   {
+				   for (DDiagramElement element: diagram.getDiagramElements())
+				   {
+					   if (element.getTarget() instanceof PartImpl)
+					   {  
+						   LogicalComponent lc = (LogicalComponent) element.getTarget().eCrossReferences().get(0); // strange
+						   ListCapellaElement.add(lc);
+						   ListCapellaElementName.add("[LC] " + lc.getName());
+					   }
+					   else {
+						   System.out.println(element.getTarget().getClass());
+					   }
+					   if (element.getTarget() instanceof FunctionalExchangeImpl)
+					   {
+						   System.out.println("spotted fe");
+						   FunctionalExchange fe = (FunctionalExchange) element.getTarget();
+						   ListCapellaElement.add(fe);
+						   ListCapellaElementName.add("[FE] " + fe.getName());
+					   }
+					   if (element.getTarget() instanceof LogicalFunctionImpl)
+					   {  
+						   System.out.println("spotted lf");
+						   LogicalFunction lf = (LogicalFunction) element.getTarget();
+						   ListCapellaElement.add(lf);
+						   ListCapellaElementName.add("[LF] " + lf.getName());
+					   }  
+				   }
+			   }
+		}
 	}
 	
 	private void createLists() {

@@ -105,7 +105,7 @@ public class OpenActionService {
 	*/
 	public boolean openSwing(EObject element, EObject newSemanticContainer) {
 
-		new AtriumProcess(element);
+		new AtriumProcess(element, null);
 		return true;
 	}
 
