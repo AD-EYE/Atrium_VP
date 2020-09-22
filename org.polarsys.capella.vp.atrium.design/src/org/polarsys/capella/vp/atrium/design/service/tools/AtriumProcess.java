@@ -48,7 +48,9 @@ import org.polarsys.capella.core.data.capellacore.CapellaElement;
 import org.polarsys.capella.core.data.capellacore.NamedElement;
 import org.polarsys.capella.core.data.capellamodeller.util.CapellamodellerResourceImpl;
 import org.polarsys.capella.core.data.cs.impl.PartImpl;
+import org.polarsys.capella.core.data.fa.ComponentExchange;
 import org.polarsys.capella.core.data.fa.FunctionalExchange;
+import org.polarsys.capella.core.data.fa.impl.ComponentExchangeImpl;
 import org.polarsys.capella.core.data.fa.impl.FunctionalExchangeImpl;
 import org.polarsys.capella.core.data.la.LogicalArchitecture;
 import org.polarsys.capella.core.data.la.LogicalComponent;
@@ -219,6 +221,13 @@ public class AtriumProcess extends javax.swing.JFrame {
 					ListCapellaElement.add(fe);
 					ListCapellaElementName.add("[FE] " + fe.getName());
 				}
+				
+				if (node instanceof ComponentExchange)
+				{
+					ComponentExchange ce = (ComponentExchange) node;
+					ListCapellaElement.add(ce);
+					ListCapellaElementName.add("[CE] " + ce.getName());
+				}
 			}
 		}
 		Collections.sort(ListCapellaElementName);
@@ -240,19 +249,20 @@ public class AtriumProcess extends javax.swing.JFrame {
 						   ListCapellaElement.add(lc);
 						   ListCapellaElementName.add("[LC] " + lc.getName());
 					   }
-					   else {
-						   System.out.println(element.getTarget().getClass());
-					   }
 					   if (element.getTarget() instanceof FunctionalExchangeImpl)
 					   {
-						   System.out.println("spotted fe");
 						   FunctionalExchange fe = (FunctionalExchange) element.getTarget();
 						   ListCapellaElement.add(fe);
 						   ListCapellaElementName.add("[FE] " + fe.getName());
 					   }
+					   if (element.getTarget() instanceof ComponentExchangeImpl)
+					   {
+						   ComponentExchange ce = (ComponentExchange) element.getTarget();
+						   ListCapellaElement.add(ce);
+						   ListCapellaElementName.add("[CE] " + ce.getName());
+					   }
 					   if (element.getTarget() instanceof LogicalFunctionImpl)
-					   {  
-						   System.out.println("spotted lf");
+					   { 
 						   LogicalFunction lf = (LogicalFunction) element.getTarget();
 						   ListCapellaElement.add(lf);
 						   ListCapellaElementName.add("[LF] " + lf.getName());
@@ -1247,7 +1257,7 @@ public class AtriumProcess extends javax.swing.JFrame {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.SOUTHWEST;
         jPanel5.add(jLabel33, gridBagConstraints);
 
-        jButtonAddODD.setText("Add ODD");
+        jButtonAddODD.setText("Add ODD Requirement");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 6;
         gridBagConstraints.gridy = 6;
@@ -1274,7 +1284,7 @@ public class AtriumProcess extends javax.swing.JFrame {
         gridBagConstraints.weighty = 1.0;
         jPanel5.add(jButtonRemoveAssumption, gridBagConstraints);
 
-        jButtonRemoveODD.setText("Remove ODD");
+        jButtonRemoveODD.setText("Remove ODD Requirement");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 8;
         gridBagConstraints.gridy = 6;

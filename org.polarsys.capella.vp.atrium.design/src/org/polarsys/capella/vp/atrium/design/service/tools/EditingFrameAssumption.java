@@ -269,8 +269,7 @@ public class EditingFrameAssumption extends javax.swing.JFrame {
 		
 		if (!(alreadyHere))
 		{
-			if ((!(EditingName.getText().equals("")||EditingContent.getText().equals("")||EditingRationale.getText().equals("")
-				||EditingResponsibleArchitect.getText().equals("")||EditingResponsibleExpert.getText().equals("")||EditingDate.getText().equals("")))) //radio buttons always selected
+			if ((!(EditingName.getText().equals("")||EditingContent.getText().equals("")||EditingRationale.getText().equals("")))) //radio buttons always selected, experts and date not necessary
 			{
 				TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(edited_assumption);
 				domain.getCommandStack().execute(new RecordingCommand(domain) {
@@ -295,7 +294,7 @@ public class EditingFrameAssumption extends javax.swing.JFrame {
 				my_parent.enableAllComponent();
 				Editingframe.setVisible(false);
 			}
-			else {JOptionPane.showMessageDialog(getParent(), "Please fill out the whole form");}		
+			else {JOptionPane.showMessageDialog(getParent(), "Please fill out at least the name, content and rationale of the assumption");}		
 		}
 		else {JOptionPane.showMessageDialog(getParent(), "There is already an assumption named like that, please chose another name.");}
     }
@@ -319,8 +318,8 @@ public class EditingFrameAssumption extends javax.swing.JFrame {
     	
     	String title = "";
     	
-    	if (edited_assumption.getCreatedFrom() instanceof ODD) {title="ODD " + edited_assumption.getCreatedFrom().getName();}
-    	else if (edited_assumption.getCreatedFrom() instanceof FR) {title="FR "+ edited_assumption.getCreatedFrom().getName();}
+    	if (edited_assumption.getCreatedFrom() instanceof ODD) {title="ODD Requirement ´" + edited_assumption.getCreatedFrom().getName()+"´";}
+    	else if (edited_assumption.getCreatedFrom() instanceof FR) {title="FR ´"+ edited_assumption.getCreatedFrom().getName()+"´";}
     	else {title="user";}
     	
     	
