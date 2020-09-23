@@ -3,8 +3,15 @@
 
 package org.polarsys.capella.vp.atrium.design.service.tools;
 
+import java.awt.FlowLayout;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.swing.JFileChooser;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.sirius.diagram.DDiagram;
 import org.eclipse.sirius.diagram.DDiagramElement;
@@ -104,8 +111,9 @@ public class OpenActionService {
 	* @generated NOT
 	*/
 	public boolean openSwing(EObject element, EObject newSemanticContainer) {
-
-		new AtriumProcess(element, null);
+		String library_path = JOptionPane.showInputDialog(
+				"Enter a library path to process it. Ex : C:/capellaStudio/workspace/myLib/myLib.melodymodeller");
+		new AtriumProcess(element, null, library_path);
 		return true;
 	}
 

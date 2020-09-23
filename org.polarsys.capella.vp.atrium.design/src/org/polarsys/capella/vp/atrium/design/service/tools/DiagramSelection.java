@@ -87,7 +87,7 @@ public class DiagramSelection extends javax.swing.JFrame{
     private void proceedButtonActionPerformed(java.awt.event.ActionEvent evt) {                                              
        java.util.List<String> selectedList = listDiagram.getSelectedValuesList();
        this.setVisible(false);
-       new AtriumProcess(element,selectedList);
+       new AtriumProcess(element,selectedList,"");
     }                                             
 
     // Variables declaration - do not modify                     

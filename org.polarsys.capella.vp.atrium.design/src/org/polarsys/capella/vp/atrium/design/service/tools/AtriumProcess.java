@@ -13,8 +13,10 @@ import java.util.List;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
 import javax.swing.JComboBox;
+import javax.swing.JFileChooser;
 import javax.swing.JList;
 import javax.swing.JOptionPane;
+import javax.swing.filechooser.FileNameExtensionFilter;
 
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
@@ -122,26 +124,40 @@ public class AtriumProcess extends javax.swing.JFrame {
 	EditingPanel myEditor = null;
 	
 	
-	public AtriumProcess(EObject element, List<String> selectedList) {
+	public AtriumProcess(EObject element, List<String> selectedList, String library_path) {
 		
-		EObject root = element; 
+		EObject root = element;
 		while (!((root==null)||(root instanceof LogicalArchitecture))){root = root.eContainer();}
 		EList<TreeIterator <EObject>> treeArchList = new BasicEList<TreeIterator <EObject>>();
 		treeArchList.add(root.eAllContents());
 		
-		//hardcoded path of the libraries melodymodeller files
-		URI URI1 = URI.createFileURI("C:/capellaStudio/runtime-New_configuration/Libel/Libel.melodymodeller");  
-        ResourceSet resourceSet = new ResourceSetImpl();
-        Resource resource = resourceSet.getResource(URI1, true);
-        treeArchList.add(((CapellamodellerResourceImpl) resource).getContents().get(0).eAllContents());
-        
+		ResourceSet resourceSet = new ResourceSetImpl();
+		Resource resource = null;
+		
+		URI URI1=null;
+		
+		try {
+			URI1 = URI.createFileURI(library_path);  
+			//C:/capellaStudio/runtime-New_configuration/Libel/Libel.melodymodeller -> example
+			 resource = resourceSet.getResource(URI1, true);
+			 treeArchList.add(((CapellamodellerResourceImpl) resource).getContents().get(0).eAllContents());
+		} catch (Exception exception) {
+			System.out.println("Problem with the library name");
+		}
+		
         domain = TransactionUtil.getEditingDomain(element);
       
 		sortAtriumElementOnce(treeArchList);
 		
+		//recreate the iterator as they cannot be reset
 		EList<TreeIterator <EObject>> treeArchList2 = new BasicEList<TreeIterator <EObject>>();
 		treeArchList2.add(root.eAllContents());
-		treeArchList2.add(((CapellamodellerResourceImpl) resource).getContents().get(0).eAllContents());
+		try {
+			treeArchList2.add(((CapellamodellerResourceImpl) resource).getContents().get(0).eAllContents());
+		} catch (Exception e) {
+			System.out.println("Problem with the library name");
+		}
+		
 		
 		if (selectedList==null) {sortCapellaElementOnce(treeArchList2);}
 		else {sortCapellaElementOnceDiagram(selectedList, root);}
