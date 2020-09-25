@@ -261,38 +261,41 @@ public class AtriumProcess extends javax.swing.JFrame {
 			   {
 				   for (DDiagramElement element: diagram.getDiagramElements())
 				   {
-					   if (element.getTarget() instanceof PartImpl)
-					   {  
-						   System.out.println(element.getName());
-						   System.out.println(element.getUid());
-						   System.out.println(element.getTarget().eCrossReferences().get(0));
-						   LogicalComponent lc = null;
-						   EList<EObject> list = element.getTarget().eCrossReferences(); // strange
-						   for (EObject eo : list)
-						   {
-							   if (eo instanceof LogicalComponent){lc = (LogicalComponent) eo;}
+					   if ((element.isVisible()))
+					   {
+						   if (element.getTarget() instanceof PartImpl)
+						   {  
+							   System.out.println(element.getName());
+							   System.out.println(element.getUid());
+							   System.out.println(element.getTarget().eCrossReferences().get(0));
+							   LogicalComponent lc = null;
+							   EList<EObject> list = element.getTarget().eCrossReferences(); // strange
+							   for (EObject eo : list)
+							   {
+								   if (eo instanceof LogicalComponent){lc = (LogicalComponent) eo;}
+							   }
+							   ListCapellaElement.add(lc);
+							   ListCapellaElementName.add("[LC] " + lc.getName());
 						   }
-						   ListCapellaElement.add(lc);
-						   ListCapellaElementName.add("[LC] " + lc.getName());
+						   if (element.getTarget() instanceof FunctionalExchangeImpl)
+						   {
+							   FunctionalExchange fe = (FunctionalExchange) element.getTarget();
+							   ListCapellaElement.add(fe);
+							   ListCapellaElementName.add("[FE] " + fe.getName());
+						   }
+						   if (element.getTarget() instanceof ComponentExchangeImpl)
+						   {
+							   ComponentExchange ce = (ComponentExchange) element.getTarget();
+							   ListCapellaElement.add(ce);
+							   ListCapellaElementName.add("[CE] " + ce.getName());
+						   }
+						   if (element.getTarget() instanceof LogicalFunctionImpl)
+						   { 
+							   LogicalFunction lf = (LogicalFunction) element.getTarget();
+							   ListCapellaElement.add(lf);
+							   ListCapellaElementName.add("[LF] " + lf.getName());
+						   }
 					   }
-					   if (element.getTarget() instanceof FunctionalExchangeImpl)
-					   {
-						   FunctionalExchange fe = (FunctionalExchange) element.getTarget();
-						   ListCapellaElement.add(fe);
-						   ListCapellaElementName.add("[FE] " + fe.getName());
-					   }
-					   if (element.getTarget() instanceof ComponentExchangeImpl)
-					   {
-						   ComponentExchange ce = (ComponentExchange) element.getTarget();
-						   ListCapellaElement.add(ce);
-						   ListCapellaElementName.add("[CE] " + ce.getName());
-					   }
-					   if (element.getTarget() instanceof LogicalFunctionImpl)
-					   { 
-						   LogicalFunction lf = (LogicalFunction) element.getTarget();
-						   ListCapellaElement.add(lf);
-						   ListCapellaElementName.add("[LF] " + lf.getName());
-					   }  
 				   }
 			   }
 		}
