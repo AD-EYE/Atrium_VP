@@ -46,6 +46,8 @@ import org.eclipse.sirius.diagram.business.internal.metamodel.spec.DEdgeSpec;
 import org.eclipse.sirius.diagram.business.internal.metamodel.spec.DNodeSpec;
 import org.eclipse.sirius.viewpoint.DRepresentationDescriptor;
 import org.polarsys.capella.common.helpers.EcoreUtil2;
+import org.polarsys.capella.core.data.capellacommon.TransfoLink;
+import org.polarsys.capella.core.data.capellacommon.impl.TransfoLinkImpl;
 import org.polarsys.capella.core.data.capellacore.CapellaElement;
 import org.polarsys.capella.core.data.capellacore.NamedElement;
 import org.polarsys.capella.core.data.capellamodeller.util.CapellamodellerResourceImpl;
@@ -261,7 +263,15 @@ public class AtriumProcess extends javax.swing.JFrame {
 				   {
 					   if (element.getTarget() instanceof PartImpl)
 					   {  
-						   LogicalComponent lc = (LogicalComponent) element.getTarget().eCrossReferences().get(0); // strange
+						   System.out.println(element.getName());
+						   System.out.println(element.getUid());
+						   System.out.println(element.getTarget().eCrossReferences().get(0));
+						   LogicalComponent lc = null;
+						   EList<EObject> list = element.getTarget().eCrossReferences(); // strange
+						   for (EObject eo : list)
+						   {
+							   if (eo instanceof LogicalComponent){lc = (LogicalComponent) eo;}
+						   }
 						   ListCapellaElement.add(lc);
 						   ListCapellaElementName.add("[LC] " + lc.getName());
 					   }
