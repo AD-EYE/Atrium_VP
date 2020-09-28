@@ -133,7 +133,7 @@
   <VP_Aspects xsi:type="vpconf:Configuration" name="Atrium.conf">
     <vpConfigurationElements xsi:type="vpconf:TargetApplication" type="Capella"/>
     <vpConfigurationElements xsi:type="vpconf:GenerationConfiguration" projectName="org.polarsys.capella.vp.atrium" nsuri="http://www.polarsys.org/capella/Atrium"/>
-    <vpConfigurationElements xsi:type="vpconf:Release" viewpointVersion="0.9.2" viewpointDescription="Viewpoint Description of the Atrium process">
+    <vpConfigurationElements xsi:type="vpconf:Release" viewpointVersion="0.9.3" viewpointDescription="Viewpoint Description of the Atrium process">
       <requiredExecutionEnvironment>JavaSE-1.6</requiredExecutionEnvironment>
     </vpConfigurationElements>
     <vpConfigurationElements xsi:type="vpconf:Generation">

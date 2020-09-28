@@ -138,13 +138,16 @@ public class AtriumProcess extends javax.swing.JFrame {
 		
 		URI URI1=null;
 		
-		try {
-			URI1 = URI.createFileURI(library_path);  
-			//C:/capellaStudio/runtime-New_configuration/Libel/Libel.melodymodeller -> example
-			 resource = resourceSet.getResource(URI1, true);
-			 treeArchList.add(((CapellamodellerResourceImpl) resource).getContents().get(0).eAllContents());
-		} catch (Exception exception) {
-			System.out.println("Problem with the library name");
+		if (!(library_path.equals("")))
+		{
+			try {
+				URI1 = URI.createFileURI(library_path);  
+				//C:/capellaStudio/runtime-New_configuration/Libel/Libel.melodymodeller -> example
+				 resource = resourceSet.getResource(URI1, true);
+				 treeArchList.add(((CapellamodellerResourceImpl) resource).getContents().get(0).eAllContents());
+			} catch (Exception exception) {
+				System.out.println("Unable to open the additional ressource. Please double check the library path.");
+			}
 		}
 		
         domain = TransactionUtil.getEditingDomain(element);
@@ -154,10 +157,14 @@ public class AtriumProcess extends javax.swing.JFrame {
 		//recreate the iterator as they cannot be reset
 		EList<TreeIterator <EObject>> treeArchList2 = new BasicEList<TreeIterator <EObject>>();
 		treeArchList2.add(root.eAllContents());
-		try {
-			treeArchList2.add(((CapellamodellerResourceImpl) resource).getContents().get(0).eAllContents());
-		} catch (Exception e) {
-			System.out.println("Problem with the library name");
+		
+		if (!(library_path.equals("")))
+		{
+			try {
+				treeArchList2.add(((CapellamodellerResourceImpl) resource).getContents().get(0).eAllContents());
+			} catch (Exception e) {
+				System.out.println("Unable to open the additional ressource. Please double check the library path.");
+			}
 		}
 		
 		
@@ -265,9 +272,6 @@ public class AtriumProcess extends javax.swing.JFrame {
 					   {
 						   if (element.getTarget() instanceof PartImpl)
 						   {  
-							   System.out.println(element.getName());
-							   System.out.println(element.getUid());
-							   System.out.println(element.getTarget().eCrossReferences().get(0));
 							   LogicalComponent lc = null;
 							   EList<EObject> list = element.getTarget().eCrossReferences(); // strange
 							   for (EObject eo : list)
@@ -1073,14 +1077,14 @@ public class AtriumProcess extends javax.swing.JFrame {
         gridBagConstraints.weighty = 20.0;
         jPanel2.add(jButtonRemoveLinkedSDG, gridBagConstraints);
 
-        jLabel10.setText("Linked Sub-Design Goal");
+        jLabel10.setText("Linked Sub-Design Goal (the order is kept and meaningful");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 6;
         gridBagConstraints.gridy = 20;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LAST_LINE_START;
         jPanel2.add(jLabel10, gridBagConstraints);
 
-        jTabbedPane.addTab("Linking DG and DA", jPanel2);
+        jTabbedPane.addTab("Linking DG with DA and sDG", jPanel2);
 
         java.awt.GridBagLayout jPanel3Layout = new java.awt.GridBagLayout();
         jPanel3Layout.columnWidths = new int[] {0, 30, 0, 30, 0, 30, 0, 30, 0, 30, 0, 30, 0};
