@@ -53,10 +53,10 @@ public class AtriumProcess extends javax.swing.JFrame {
         jLabel21 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jScrollPane17 = new javax.swing.JScrollPane();
-        jListDAproposal = new javax.swing.JList<>();
+        jListLinkedDAtoCFA = new javax.swing.JList<>();
         jLabel12 = new javax.swing.JLabel();
         jScrollPane16 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
+        jListUnlinkedDAtoCFA = new javax.swing.JList<>();
         jButtonAddLinkedDAtoCFA = new javax.swing.JButton();
         jButtonRemoveDAtoCFA = new javax.swing.JButton();
         jLabel13 = new javax.swing.JLabel();
@@ -186,11 +186,6 @@ public class AtriumProcess extends javax.swing.JFrame {
         jPanel1.add(jLabel1, gridBagConstraints);
 
         jButtonAddLinked.setText("=>");
-        jButtonAddLinked.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonAddLinkedActionPerformed(evt);
-            }
-        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 10;
@@ -280,7 +275,7 @@ public class AtriumProcess extends javax.swing.JFrame {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LAST_LINE_START;
         jPanel1.add(jLabel11, gridBagConstraints);
 
-        jScrollPane17.setViewportView(jListDAproposal);
+        jScrollPane17.setViewportView(jListLinkedDAtoCFA);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 6;
@@ -298,7 +293,7 @@ public class AtriumProcess extends javax.swing.JFrame {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.SOUTHWEST;
         jPanel1.add(jLabel12, gridBagConstraints);
 
-        jScrollPane16.setViewportView(jList1);
+        jScrollPane16.setViewportView(jListUnlinkedDAtoCFA);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
@@ -926,10 +921,6 @@ public class AtriumProcess extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButtonAddLinkedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAddLinkedActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonAddLinkedActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -1033,24 +1024,24 @@ public class AtriumProcess extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JList<String> jList1;
     private javax.swing.JList<String> jListAssumption;
     private javax.swing.JList<String> jListCFA;
     private javax.swing.JList<String> jListCapella;
     private javax.swing.JList<String> jListDA;
-    private javax.swing.JList<String> jListDAproposal;
     private javax.swing.JList<String> jListDG;
     private javax.swing.JList<String> jListFR;
     private javax.swing.JList<String> jListFailure;
     private javax.swing.JList<String> jListLinkedAssumptions;
     private javax.swing.JList<String> jListLinkedCFA;
     private javax.swing.JList<String> jListLinkedDA;
+    private javax.swing.JList<String> jListLinkedDAtoCFA;
     private javax.swing.JList<String> jListLinkedSDG;
     private javax.swing.JList<String> jListODD;
     private javax.swing.JList<String> jListSDG;
     private javax.swing.JList<String> jListUnlinkedAssumptions;
     private javax.swing.JList<String> jListUnlinkedCFA;
     private javax.swing.JList<String> jListUnlinkedDA;
+    private javax.swing.JList<String> jListUnlinkedDAtoCFA;
     private javax.swing.JList<String> jListUnlinkedSDG;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
