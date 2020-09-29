@@ -1957,7 +1957,7 @@ public class AtriumProcess extends javax.swing.JFrame {
 		        			break;
 		        		case 10: //remove link CFA->Assumption
 		        			((Assumption) rootObject_p).getLinkedWithCFAs().remove((CFA)the_moving_Object_p);
-		        			((CFA) the_moving_Object_p).getAssumption().add((Assumption) rootObject_p);//Bidirectional association
+		        			((CFA) the_moving_Object_p).getAssumption().remove((Assumption) rootObject_p);//Bidirectional association
 		        			break;
 		        	}
 		        }
