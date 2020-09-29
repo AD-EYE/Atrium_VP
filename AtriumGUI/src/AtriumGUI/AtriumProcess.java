@@ -51,6 +51,16 @@ public class AtriumProcess extends javax.swing.JFrame {
         jLabel20 = new javax.swing.JLabel();
         jComboBoxDG = new javax.swing.JComboBox<>();
         jLabel21 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jScrollPane17 = new javax.swing.JScrollPane();
+        jListDAproposal = new javax.swing.JList<>();
+        jLabel12 = new javax.swing.JLabel();
+        jScrollPane16 = new javax.swing.JScrollPane();
+        jList1 = new javax.swing.JList<>();
+        jButtonAddLinkedDAtoCFA = new javax.swing.JButton();
+        jButtonRemoveDAtoCFA = new javax.swing.JButton();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         jListUnlinkedDA = new javax.swing.JList<>();
@@ -119,6 +129,19 @@ public class AtriumProcess extends javax.swing.JFrame {
         jListFailure = new javax.swing.JList<>();
         jScrollPane5 = new javax.swing.JScrollPane();
         jListCapella = new javax.swing.JList<>();
+        jPanel4 = new javax.swing.JPanel();
+        jScrollPane18 = new javax.swing.JScrollPane();
+        jListUnlinkedCFA = new javax.swing.JList<>();
+        jScrollPane19 = new javax.swing.JScrollPane();
+        jListLinkedCFA = new javax.swing.JList<>();
+        jLabel15 = new javax.swing.JLabel();
+        jButtonAddLinkedCFA = new javax.swing.JButton();
+        jLabel16 = new javax.swing.JLabel();
+        jButtonRemoveLinkedCFA = new javax.swing.JButton();
+        jLabel17 = new javax.swing.JLabel();
+        jComboBoxDG3 = new javax.swing.JComboBox<>();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
 
         java.awt.GridBagLayout layout = new java.awt.GridBagLayout();
@@ -129,25 +152,25 @@ public class AtriumProcess extends javax.swing.JFrame {
         jPanel1.setPreferredSize(new java.awt.Dimension(1600, 1000));
         java.awt.GridBagLayout jPanel1Layout = new java.awt.GridBagLayout();
         jPanel1Layout.columnWidths = new int[] {0, 30, 0, 30, 0, 30, 0, 30, 0};
-        jPanel1Layout.rowHeights = new int[] {0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0};
+        jPanel1Layout.rowHeights = new int[] {0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0};
         jPanel1.setLayout(jPanel1Layout);
 
         jScrollPane1.setViewportView(jListUnlinkedAssumptions);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 10;
+        gridBagConstraints.gridy = 8;
         gridBagConstraints.gridheight = 9;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.weightx = 40.0;
-        gridBagConstraints.weighty = 0.2;
+        gridBagConstraints.weighty = 40.0;
         jPanel1.add(jScrollPane1, gridBagConstraints);
 
         jScrollPane2.setViewportView(jListLinkedAssumptions);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 6;
-        gridBagConstraints.gridy = 10;
+        gridBagConstraints.gridy = 8;
         gridBagConstraints.gridheight = 9;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.weightx = 40.0;
@@ -157,45 +180,48 @@ public class AtriumProcess extends javax.swing.JFrame {
         jLabel1.setText("Add to linked");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 10;
+        gridBagConstraints.gridy = 8;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.SOUTH;
         gridBagConstraints.weightx = 5.0;
-        gridBagConstraints.weighty = 5.0;
         jPanel1.add(jLabel1, gridBagConstraints);
 
         jButtonAddLinked.setText("=>");
+        jButtonAddLinked.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonAddLinkedActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 12;
+        gridBagConstraints.gridy = 10;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTH;
-        gridBagConstraints.weightx = 5.0;
+        gridBagConstraints.weightx = 10.0;
         gridBagConstraints.weighty = 5.0;
         jPanel1.add(jButtonAddLinked, gridBagConstraints);
 
         jLabel2.setText("Remove from linked");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 14;
+        gridBagConstraints.gridy = 12;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.SOUTH;
         gridBagConstraints.weightx = 5.0;
-        gridBagConstraints.weighty = 5.0;
         jPanel1.add(jLabel2, gridBagConstraints);
 
         jButtonRemoveLinked.setText("<=");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 16;
+        gridBagConstraints.gridy = 14;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTH;
-        gridBagConstraints.weightx = 5.0;
+        gridBagConstraints.weightx = 10.0;
         gridBagConstraints.weighty = 5.0;
         jPanel1.add(jButtonRemoveLinked, gridBagConstraints);
 
         jLabel3.setText("Unlinked Assumptions");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 8;
+        gridBagConstraints.gridy = 6;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.SOUTHWEST;
         gridBagConstraints.weightx = 40.0;
         jPanel1.add(jLabel3, gridBagConstraints);
@@ -203,7 +229,7 @@ public class AtriumProcess extends javax.swing.JFrame {
         jLabel4.setText("Linked Assumptions");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 6;
-        gridBagConstraints.gridy = 8;
+        gridBagConstraints.gridy = 6;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.SOUTHWEST;
         gridBagConstraints.weightx = 40.0;
         jPanel1.add(jLabel4, gridBagConstraints);
@@ -246,6 +272,76 @@ public class AtriumProcess extends javax.swing.JFrame {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.SOUTHWEST;
         gridBagConstraints.weightx = 40.0;
         jPanel1.add(jLabel21, gridBagConstraints);
+
+        jLabel11.setText("Linked DA");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridy = 20;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LAST_LINE_START;
+        jPanel1.add(jLabel11, gridBagConstraints);
+
+        jScrollPane17.setViewportView(jListDAproposal);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridy = 22;
+        gridBagConstraints.gridheight = 9;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.weightx = 40.0;
+        gridBagConstraints.weighty = 0.2;
+        jPanel1.add(jScrollPane17, gridBagConstraints);
+
+        jLabel12.setText("Unlinked DA");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 20;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.SOUTHWEST;
+        jPanel1.add(jLabel12, gridBagConstraints);
+
+        jScrollPane16.setViewportView(jList1);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 22;
+        gridBagConstraints.gridheight = 9;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.weightx = 40.0;
+        gridBagConstraints.weighty = 40.0;
+        jPanel1.add(jScrollPane16, gridBagConstraints);
+
+        jButtonAddLinkedDAtoCFA.setText("=>");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 26;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTH;
+        gridBagConstraints.weightx = 10.0;
+        gridBagConstraints.weighty = 5.0;
+        jPanel1.add(jButtonAddLinkedDAtoCFA, gridBagConstraints);
+
+        jButtonRemoveDAtoCFA.setText("<=");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 30;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTH;
+        gridBagConstraints.weightx = 10.0;
+        gridBagConstraints.weighty = 5.0;
+        jPanel1.add(jButtonRemoveDAtoCFA, gridBagConstraints);
+
+        jLabel13.setText("Remove from linked");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 28;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.SOUTH;
+        jPanel1.add(jLabel13, gridBagConstraints);
+
+        jLabel14.setText("Add to linked");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 24;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.SOUTH;
+        jPanel1.add(jLabel14, gridBagConstraints);
 
         jTabbedPane.addTab("Linking DG and Assumptions to CFA", jPanel1);
 
@@ -722,6 +818,96 @@ public class AtriumProcess extends javax.swing.JFrame {
 
         jTabbedPane.addTab("Edit Assumption, ODD, FR", jPanel5);
 
+        java.awt.GridBagLayout jPanel4Layout = new java.awt.GridBagLayout();
+        jPanel4Layout.columnWidths = new int[] {0, 30, 0, 30, 0, 30, 0, 30, 0};
+        jPanel4Layout.rowHeights = new int[] {0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0};
+        jPanel4.setLayout(jPanel4Layout);
+
+        jScrollPane18.setViewportView(jListUnlinkedCFA);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 8;
+        gridBagConstraints.gridheight = 9;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.weightx = 40.0;
+        gridBagConstraints.weighty = 1.0;
+        jPanel4.add(jScrollPane18, gridBagConstraints);
+
+        jScrollPane19.setViewportView(jListLinkedCFA);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridy = 8;
+        gridBagConstraints.gridheight = 9;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.weightx = 40.0;
+        gridBagConstraints.weighty = 1.0;
+        jPanel4.add(jScrollPane19, gridBagConstraints);
+
+        jLabel15.setText("Add to linked");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 8;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.SOUTH;
+        gridBagConstraints.weighty = 10.0;
+        jPanel4.add(jLabel15, gridBagConstraints);
+
+        jButtonAddLinkedCFA.setText("=>");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 10;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.weightx = 10.0;
+        jPanel4.add(jButtonAddLinkedCFA, gridBagConstraints);
+
+        jLabel16.setText("Remove from linked");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 12;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.SOUTH;
+        jPanel4.add(jLabel16, gridBagConstraints);
+
+        jButtonRemoveLinkedCFA.setText("<=");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 14;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTH;
+        gridBagConstraints.weighty = 10.0;
+        jPanel4.add(jButtonRemoveLinkedCFA, gridBagConstraints);
+
+        jLabel17.setText("Assumption");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.SOUTHWEST;
+        jPanel4.add(jLabel17, gridBagConstraints);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.gridwidth = 5;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        jPanel4.add(jComboBoxDG3, gridBagConstraints);
+
+        jLabel18.setText("Unlinked CFAs");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 6;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.SOUTHWEST;
+        jPanel4.add(jLabel18, gridBagConstraints);
+
+        jLabel28.setText("Linked CFAs");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridy = 6;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        jPanel4.add(jLabel28, gridBagConstraints);
+
+        jTabbedPane.addTab("Linking CFA to Assumptions", jPanel4);
+
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 4;
@@ -739,6 +925,10 @@ public class AtriumProcess extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButtonAddLinkedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAddLinkedActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonAddLinkedActionPerformed
 
     /**
      * @param args the command line arguments
@@ -784,16 +974,20 @@ public class AtriumProcess extends javax.swing.JFrame {
     private javax.swing.JButton jButtonAddFR;
     private javax.swing.JButton jButtonAddFailure;
     private javax.swing.JButton jButtonAddLinked;
+    private javax.swing.JButton jButtonAddLinkedCFA;
     private javax.swing.JButton jButtonAddLinkedDA;
+    private javax.swing.JButton jButtonAddLinkedDAtoCFA;
     private javax.swing.JButton jButtonAddLinkedSDG;
     private javax.swing.JButton jButtonAddODD;
     private javax.swing.JButton jButtonAddSDG;
     private javax.swing.JButton jButtonRemoveAssumption;
     private javax.swing.JButton jButtonRemoveDA;
+    private javax.swing.JButton jButtonRemoveDAtoCFA;
     private javax.swing.JButton jButtonRemoveDG;
     private javax.swing.JButton jButtonRemoveFM;
     private javax.swing.JButton jButtonRemoveFR;
     private javax.swing.JButton jButtonRemoveLinked;
+    private javax.swing.JButton jButtonRemoveLinkedCFA;
     private javax.swing.JButton jButtonRemoveLinkedDA;
     private javax.swing.JButton jButtonRemoveLinkedSDG;
     private javax.swing.JButton jButtonRemoveODD;
@@ -801,8 +995,17 @@ public class AtriumProcess extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jComboBoxCFA;
     private javax.swing.JComboBox<String> jComboBoxDG;
     private javax.swing.JComboBox<String> jComboBoxDG2;
+    private javax.swing.JComboBox<String> jComboBoxDG3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
@@ -813,6 +1016,7 @@ public class AtriumProcess extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
@@ -829,24 +1033,29 @@ public class AtriumProcess extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JList<String> jList1;
     private javax.swing.JList<String> jListAssumption;
     private javax.swing.JList<String> jListCFA;
     private javax.swing.JList<String> jListCapella;
     private javax.swing.JList<String> jListDA;
+    private javax.swing.JList<String> jListDAproposal;
     private javax.swing.JList<String> jListDG;
     private javax.swing.JList<String> jListFR;
     private javax.swing.JList<String> jListFailure;
     private javax.swing.JList<String> jListLinkedAssumptions;
+    private javax.swing.JList<String> jListLinkedCFA;
     private javax.swing.JList<String> jListLinkedDA;
     private javax.swing.JList<String> jListLinkedSDG;
     private javax.swing.JList<String> jListODD;
     private javax.swing.JList<String> jListSDG;
     private javax.swing.JList<String> jListUnlinkedAssumptions;
+    private javax.swing.JList<String> jListUnlinkedCFA;
     private javax.swing.JList<String> jListUnlinkedDA;
     private javax.swing.JList<String> jListUnlinkedSDG;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane10;
@@ -855,6 +1064,10 @@ public class AtriumProcess extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane13;
     private javax.swing.JScrollPane jScrollPane14;
     private javax.swing.JScrollPane jScrollPane15;
+    private javax.swing.JScrollPane jScrollPane16;
+    private javax.swing.JScrollPane jScrollPane17;
+    private javax.swing.JScrollPane jScrollPane18;
+    private javax.swing.JScrollPane jScrollPane19;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
