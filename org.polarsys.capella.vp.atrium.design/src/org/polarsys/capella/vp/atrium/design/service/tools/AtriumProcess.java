@@ -111,6 +111,8 @@ public class AtriumProcess extends javax.swing.JFrame {
 	DefaultListModel<String> nameUnlinkedsDG = new DefaultListModel<String>();
 	DefaultListModel<String> nameLinkedDA = new DefaultListModel<String>();
 	DefaultListModel<String> nameUnlinkedDA = new DefaultListModel<String>();
+	DefaultListModel<String> nameLinkedCFA = new DefaultListModel<String>();
+	DefaultListModel<String> nameUnlinkedCFA = new DefaultListModel<String>();
 	
 	//determined sortAtriumElementOnce and are then constant
 	LogicalComponentPkg the_LogicalComponentPkg = null;
@@ -176,10 +178,12 @@ public class AtriumProcess extends javax.swing.JFrame {
 		updateCFA();
 		initComponents();
 		updateDGComboBox();
+		updateComboBoxAssumption();
 		updateDisplayTab0();
 		updateDisplayTab1();
 		updateDisplayTab2();
 		updateDisplayTab3();
+		updateDisplayTab4();
 		
 		myAssumptionEditor = new EditingFrameAssumption(this);
 		myEditor = new EditingPanel(this);
@@ -543,7 +547,7 @@ public class AtriumProcess extends javax.swing.JFrame {
 	        jLabel16 = new javax.swing.JLabel();
 	        jButtonRemoveLinkedCFA = new javax.swing.JButton();
 	        jLabel17 = new javax.swing.JLabel();
-	        jComboBoxDG3 = new javax.swing.JComboBox();
+	        jComboBoxAssumption = new javax.swing.JComboBox();
 	        jLabel18 = new javax.swing.JLabel();
 	        jLabel28 = new javax.swing.JLabel();
 	        jLabel22 = new javax.swing.JLabel();
@@ -618,6 +622,8 @@ public class AtriumProcess extends javax.swing.JFrame {
         for (CFA cfa : listCFA){if(!(cfa.isNonApplicable())) {listModelCFA.addElement(cfa.getName());}}
         jListCFA.setModel(listModelCFA);
         
+        
+        jComboBoxAssumption.setMaximumRowCount(20);
 		jComboBoxCFA.setModel(CbCFA);
 		jComboBoxCFA.setMaximumRowCount(20);
 		jComboBoxDG.setMaximumRowCount(20);
@@ -631,8 +637,19 @@ public class AtriumProcess extends javax.swing.JFrame {
 	    AutoCompletion.enable(jComboBoxDG);
 	    AutoCompletion.enable(jComboBoxDG2);
 	    AutoCompletion.enable(jComboBoxCFA);
+	    AutoCompletion.enable(jComboBoxAssumption);
         
         //all listeners have been put below
+	    jListUnlinkedDAtoCFA.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jListMouseClicked(evt,jListUnlinkedDAtoCFA, listDA);
+            }
+        });
+	    jListLinkedDAtoCFA.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jListMouseClicked(evt,jListLinkedDAtoCFA, listDA);
+            }
+        });
 		jListUnlinkedDA.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jListMouseClicked(evt,jListUnlinkedDA, listDA);
@@ -654,7 +671,16 @@ public class AtriumProcess extends javax.swing.JFrame {
             }
         });
 		
-		
+		jListUnlinkedCFA.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+            	jListMouseClicked(evt,jListUnlinkedCFA, listCFA);
+            }
+        });
+		jListLinkedCFA.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+            	jListMouseClicked(evt,jListLinkedCFA, listCFA);
+            }
+        });
 		jListCFA.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
             	jListMouseClicked(evt,jListCFA, listCFA);
@@ -770,6 +796,11 @@ public class AtriumProcess extends javax.swing.JFrame {
                 jComboBoxDG2ActionPerformed(evt);
             }
         });
+        jComboBoxAssumption.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+            	jComboBoxAssumptionActionPerformed(evt);
+            }
+        });
         jButtonAddLinkedDA.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 moveObject(5);
@@ -823,6 +854,26 @@ public class AtriumProcess extends javax.swing.JFrame {
         jButtonAddFailure.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
             	createAtriumElement("Default Failure Name",1);
+            }
+        }); 
+        jButtonAddLinkedDAtoCFA.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+            	moveObject(7);
+            }
+        });
+        jButtonRemoveDAtoCFA.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+            	moveObject(8);
+            }
+        });
+        jButtonAddLinkedCFA.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+            	moveObject(9);
+            }
+        });
+        jButtonRemoveLinkedCFA.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+            	moveObject(10);
             }
         });
 	        
@@ -1173,14 +1224,14 @@ public class AtriumProcess extends javax.swing.JFrame {
         gridBagConstraints.weighty = 20.0;
         jPanel2.add(jButtonRemoveLinkedSDG, gridBagConstraints);
 
-        jLabel10.setText("Linked Sub-Design Goal");
+        jLabel10.setText("Linked Sub-Design Goal (the order is kept and meaningful)");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 6;
         gridBagConstraints.gridy = 20;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LAST_LINE_START;
         jPanel2.add(jLabel10, gridBagConstraints);
 
-        jTabbedPane.addTab("Linking DG and DA", jPanel2);
+        jTabbedPane.addTab("Linking DG with DA and sDG", jPanel2);
 
         java.awt.GridBagLayout jPanel3Layout = new java.awt.GridBagLayout();
         jPanel3Layout.columnWidths = new int[] {0, 30, 0, 30, 0, 30, 0, 30, 0, 30, 0, 30, 0};
@@ -1569,7 +1620,7 @@ public class AtriumProcess extends javax.swing.JFrame {
         gridBagConstraints.gridwidth = 5;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        jPanel4.add(jComboBoxDG3, gridBagConstraints);
+        jPanel4.add(jComboBoxAssumption, gridBagConstraints);
 
         jLabel18.setText("Unlinked CFAs");
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -1723,6 +1774,30 @@ public class AtriumProcess extends javax.swing.JFrame {
         for (FailureMode f : ListFailureMode){listModelFailure.addElement(f.getName());}
         jListFailure.setModel(listModelFailure); 
 	}
+	
+	public void updateDisplayTab4()
+	{
+		nameLinkedCFA = new DefaultListModel<String>();
+		nameUnlinkedCFA = new DefaultListModel<String>();
+		
+		Assumption the_Assumption=null;
+		
+		for (Assumption a : listAssumption) //look for the Assumption that we are interested in
+		{
+			if (a.getName().equals(jComboBoxAssumption.getSelectedItem())){the_Assumption = a;}
+		}
+		
+		if (the_Assumption!=null)
+		{
+			for (CFA cfa : listCFA) //go through all the CFA to find those linked with the_Assumption
+			{
+				if (the_Assumption.getLinkedWithCFAs().contains(cfa)){nameLinkedCFA.addElement(cfa.getName());}
+				else{nameUnlinkedCFA.addElement(cfa.getName());}
+			}		
+		}
+		jListUnlinkedCFA.setModel(nameUnlinkedCFA); //update display list of CFA
+		jListLinkedCFA.setModel(nameLinkedCFA);
+	}
 
 	
 	public void updateDGComboBox()
@@ -1731,6 +1806,13 @@ public class AtriumProcess extends javax.swing.JFrame {
         listDGcbModel.addElement("-- NONE --");
         for (DG dg : listDG) {listDGcbModel.addElement(dg.getName());}
         jComboBoxDG2.setModel(listDGcbModel);
+	}
+	
+	public void updateComboBoxAssumption()
+	{
+		DefaultComboBoxModel<String> listComboBoxModelAssumption= new DefaultComboBoxModel<String>();
+        for (Assumption a : listAssumption) {listComboBoxModelAssumption.addElement(a.getName());}
+        jComboBoxAssumption.setModel(listComboBoxModelAssumption);
 	}
 	
 	@SuppressWarnings("rawtypes")
@@ -1786,6 +1868,35 @@ public class AtriumProcess extends javax.swing.JFrame {
 				listOfMovingObject=listDA;
 				listOfRootObject=listDG;
 				break;	
+				
+			case 7: //add link DA->CFA
+				fromTo=jListUnlinkedDAtoCFA;
+				RootCombo=jComboBoxCFA;
+				listOfMovingObject=listDA;
+				listOfRootObject=listCFA;
+				break;
+				
+			case 8: //remove link DA->CFA
+				fromTo=jListLinkedDAtoCFA;
+				RootCombo=jComboBoxCFA;
+				listOfMovingObject=listDA;
+				listOfRootObject=listCFA;
+				break;
+				
+			case 9: //add link CFA->Assumption
+				fromTo=jListUnlinkedCFA;
+				RootCombo=jComboBoxAssumption;
+				listOfMovingObject=listCFA;
+				listOfRootObject=listAssumption;
+				break;
+				
+			case 10: //remove link CFA->Assumption
+				fromTo=jListLinkedCFA;
+				RootCombo=jComboBoxAssumption;
+				listOfMovingObject=listCFA;
+				listOfRootObject=listAssumption;
+				break;
+		
 		}
 		
 		
@@ -1816,27 +1927,38 @@ public class AtriumProcess extends javax.swing.JFrame {
 		        	{
 		        		case 1: //add link assumption --> cfa
 		        			((CFA) rootObject_p).getAssumption().add((Assumption)the_moving_Object_p);
+		        			((Assumption) the_moving_Object_p).getLinkedWithCFAs().add((CFA) rootObject_p);//Bidirectional association
 		        			break;
-		        			
 		        		case 2: //remove link assumption --> cfa
 		        			((CFA) rootObject_p).getAssumption().remove((Assumption)the_moving_Object_p);
+		        			((Assumption) the_moving_Object_p).getLinkedWithCFAs().remove((CFA) rootObject_p);//Bidirectional association
 		        			break;
-		        			
 		        		case 3: //add link sDG --> DG
 		        			((DG) rootObject_p).getSubDGs().add((sDG)the_moving_Object_p);
 		        			break;
-		        			
 		        		case 4: //remove link sDG --> DG
 		        			((DG) rootObject_p).getSubDGs().remove((sDG)the_moving_Object_p);
 		        			break;
-		        			
 		        		case 5: //add link DA --> DG
 		        			((DG) rootObject_p).getDesignAlternative().add((DA)the_moving_Object_p);
 		        			break;
-		        			
 		        		case 6: //remove link DA --> DG
 		        			((DG) rootObject_p).getDesignAlternative().remove((DA)the_moving_Object_p);
-		        			break;	
+		        			break;
+		        		case 7: //add link DA --> CFA
+		        			((CFA) rootObject_p).getDesignAlternative().add((DA)the_moving_Object_p);
+		        			break;
+		        		case 8: //remove link DA --> CFA
+		        			((CFA) rootObject_p).getDesignAlternative().remove((DA)the_moving_Object_p);
+		        			break;
+		        		case 9: //add link CFA->Assumption
+		        			((Assumption) rootObject_p).getLinkedWithCFAs().add((CFA)the_moving_Object_p);
+		        			((CFA) the_moving_Object_p).getAssumption().add((Assumption) rootObject_p);//Bidirectional association
+		        			break;
+		        		case 10: //remove link CFA->Assumption
+		        			((Assumption) rootObject_p).getLinkedWithCFAs().remove((CFA)the_moving_Object_p);
+		        			((CFA) the_moving_Object_p).getAssumption().add((Assumption) rootObject_p);//Bidirectional association
+		        			break;
 		        	}
 		        }
 		    });
@@ -1844,6 +1966,7 @@ public class AtriumProcess extends javax.swing.JFrame {
 	
 		updateDisplayTab1();//because the lists have changed
 		updateDisplayTab0();
+		updateDisplayTab4();
 	}
 	
 	private void linkCFAwithDG()
@@ -1891,7 +2014,11 @@ public class AtriumProcess extends javax.swing.JFrame {
 	
 	private void jComboBoxDG2ActionPerformed(java.awt.event.ActionEvent evt) {                                             
 		updateDisplayTab1();
-    }	
+    }
+	
+	private void jComboBoxAssumptionActionPerformed(java.awt.event.ActionEvent evt) {                                             
+		updateDisplayTab4();
+    }
 	
 	
 	private void jListLinkedAssumptionsMouseClicked(java.awt.event.MouseEvent evt) {
@@ -2030,6 +2157,7 @@ public class AtriumProcess extends javax.swing.JFrame {
 	    });
         	
     	listObject.remove(elToDelete);
+    	updateDisplayTab1();
     	updateDisplayTab2();
     	updateDisplayTab3();
     	
@@ -2235,7 +2363,7 @@ public class AtriumProcess extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jComboBoxCFA;
     private javax.swing.JComboBox<String> jComboBoxDG;
     private javax.swing.JComboBox<String> jComboBoxDG2;
-    private javax.swing.JComboBox<String> jComboBoxDG3;
+    private javax.swing.JComboBox<String> jComboBoxAssumption;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

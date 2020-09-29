@@ -291,6 +291,8 @@ public class EditingFrameAssumption extends javax.swing.JFrame {
 				
 				my_parent.updateDisplayTab0();
 				my_parent.updateDisplayTab3();
+				my_parent.updateDisplayTab4();
+				my_parent.updateComboBoxAssumption();
 				my_parent.enableAllComponent();
 				Editingframe.setVisible(false);
 			}

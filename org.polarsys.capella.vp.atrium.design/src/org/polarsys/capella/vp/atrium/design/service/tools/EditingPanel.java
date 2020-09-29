@@ -193,6 +193,7 @@ public class EditingPanel extends javax.swing.JFrame {
 				my_parent.updateDisplayTab1();
 				my_parent.updateDisplayTab2();
 				my_parent.updateDisplayTab3();
+				my_parent.updateDisplayTab4();
 				my_parent.enableAllComponent();
 				this.setVisible(false);
 				

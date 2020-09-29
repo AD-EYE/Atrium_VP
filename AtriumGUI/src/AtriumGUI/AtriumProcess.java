@@ -139,7 +139,7 @@ public class AtriumProcess extends javax.swing.JFrame {
         jLabel16 = new javax.swing.JLabel();
         jButtonRemoveLinkedCFA = new javax.swing.JButton();
         jLabel17 = new javax.swing.JLabel();
-        jComboBoxDG3 = new javax.swing.JComboBox<>();
+        jComboBoxAssumption = new javax.swing.JComboBox<>();
         jLabel18 = new javax.swing.JLabel();
         jLabel28 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
@@ -489,14 +489,14 @@ public class AtriumProcess extends javax.swing.JFrame {
         gridBagConstraints.weighty = 20.0;
         jPanel2.add(jButtonRemoveLinkedSDG, gridBagConstraints);
 
-        jLabel10.setText("Linked Sub-Design Goal");
+        jLabel10.setText("Linked Sub-Design Goal (the order is kept and meaningful)");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 6;
         gridBagConstraints.gridy = 20;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LAST_LINE_START;
         jPanel2.add(jLabel10, gridBagConstraints);
 
-        jTabbedPane.addTab("Linking DG and DA", jPanel2);
+        jTabbedPane.addTab("Linking DG with DA and sDG", jPanel2);
 
         java.awt.GridBagLayout jPanel3Layout = new java.awt.GridBagLayout();
         jPanel3Layout.columnWidths = new int[] {0, 30, 0, 30, 0, 30, 0, 30, 0, 30, 0, 30, 0};
@@ -885,7 +885,7 @@ public class AtriumProcess extends javax.swing.JFrame {
         gridBagConstraints.gridwidth = 5;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        jPanel4.add(jComboBoxDG3, gridBagConstraints);
+        jPanel4.add(jComboBoxAssumption, gridBagConstraints);
 
         jLabel18.setText("Unlinked CFAs");
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -983,10 +983,10 @@ public class AtriumProcess extends javax.swing.JFrame {
     private javax.swing.JButton jButtonRemoveLinkedSDG;
     private javax.swing.JButton jButtonRemoveODD;
     private javax.swing.JButton jButtonRemoveSDG;
+    private javax.swing.JComboBox<String> jComboBoxAssumption;
     private javax.swing.JComboBox<String> jComboBoxCFA;
     private javax.swing.JComboBox<String> jComboBoxDG;
     private javax.swing.JComboBox<String> jComboBoxDG2;
-    private javax.swing.JComboBox<String> jComboBoxDG3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
