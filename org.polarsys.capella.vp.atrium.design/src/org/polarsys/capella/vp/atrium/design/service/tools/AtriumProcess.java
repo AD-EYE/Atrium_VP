@@ -377,7 +377,15 @@ public class AtriumProcess extends javax.swing.JFrame {
 			String failure = cfa.getLinkedtoFailure().getName();
 			if (!(cfa.getName().equals(name + " : " + failure)))
 			{
-				cfa.setName(name + " : " + failure);
+				final CFA cfa_p=cfa;
+				final String name_p=name;
+				final String failure_p=failure;
+				domain.getCommandStack().execute(new RecordingCommand(domain) {
+			        @Override
+			        protected void doExecute() {
+			        	cfa_p.setName(name_p + " : " + failure_p);
+			        }
+			    });
 			}
 		}
 		
@@ -628,10 +636,10 @@ public class AtriumProcess extends javax.swing.JFrame {
 		jComboBoxCFA.setMaximumRowCount(20);
 		jComboBoxDG.setMaximumRowCount(20);
 		DefaultListModel <String> listModel = new DefaultListModel<String>();
-	        for (int i = 0; i < ListCapellaElementName.size(); i++)
-	        {
-	            listModel.addElement(ListCapellaElementName.get(i));
-	        }
+        for (int i = 0; i < ListCapellaElementName.size(); i++)
+        {
+            listModel.addElement(ListCapellaElementName.get(i));
+        }
 	    jListCapella.setModel(listModel);
 	    
 	    AutoCompletion.enable(jComboBoxDG);
@@ -1663,11 +1671,6 @@ public class AtriumProcess extends javax.swing.JFrame {
 		nameUnlinkedDAtoCFA=new DefaultListModel<String>();
 		nameUnlinkedAssumption=new DefaultListModel<String>();
 		CFA the_CFA=null;
-		
-		DefaultComboBoxModel<String> listDGcbModel= new DefaultComboBoxModel<String>();
-        listDGcbModel.addElement("-- NONE --");
-        for (DG dg : listDG) {listDGcbModel.addElement(dg.getName());}
-        jComboBoxDG.setModel(listDGcbModel);
 			
 		for (CFA myCFA : listCFA) //look for the CFA that we are interested in
 		{
@@ -1805,7 +1808,12 @@ public class AtriumProcess extends javax.swing.JFrame {
 		DefaultComboBoxModel<String> listDGcbModel= new DefaultComboBoxModel<String>();
         listDGcbModel.addElement("-- NONE --");
         for (DG dg : listDG) {listDGcbModel.addElement(dg.getName());}
-        jComboBoxDG2.setModel(listDGcbModel);
+        jComboBoxDG.setModel(listDGcbModel);
+        
+		DefaultComboBoxModel<String> listDGcbModel2= new DefaultComboBoxModel<String>();
+        listDGcbModel2.addElement("-- NONE --");
+        for (DG dg : listDG) {listDGcbModel2.addElement(dg.getName());}
+        jComboBoxDG2.setModel(listDGcbModel2);
 	}
 	
 	public void updateComboBoxAssumption()
@@ -2160,6 +2168,8 @@ public class AtriumProcess extends javax.swing.JFrame {
     	updateDisplayTab1();
     	updateDisplayTab2();
     	updateDisplayTab3();
+    	
+    	updateDGComboBox();
     	
     }
     
