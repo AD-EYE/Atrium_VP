@@ -2165,9 +2165,11 @@ public class AtriumProcess extends javax.swing.JFrame {
 	    });
         	
     	listObject.remove(elToDelete);
+    	updateDisplayTab0();
     	updateDisplayTab1();
     	updateDisplayTab2();
     	updateDisplayTab3();
+    	updateDisplayTab4();
     	
     	updateDGComboBox();
     	

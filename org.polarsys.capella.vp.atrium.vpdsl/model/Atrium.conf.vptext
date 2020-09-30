@@ -11,7 +11,7 @@ Configuration Atrium.conf {
 	project org.polarsys.capella.vp.atrium
 	nsuri "http://www.polarsys.org/capella/Atrium"
 	release {
-		version : 0.9.6
+		version : 0.9.7
 		description : "Viewpoint Description of the Atrium process"
 		execution environments : "JavaSE-1.6"
 	}
