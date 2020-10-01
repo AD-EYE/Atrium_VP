@@ -84,6 +84,9 @@ import org.polarsys.kitalpha.emde.model.ElementExtension;
 import org.polarsys.kitalpha.emde.model.ExtensibleElement;
 
 @SuppressWarnings("serial")
+/**
+ * @brief  Class that launches the UI - AtriumProcess
+ */
 public class AtriumProcess extends javax.swing.JFrame {
 	
 	//required to legally write in the EMF file
@@ -129,7 +132,12 @@ public class AtriumProcess extends javax.swing.JFrame {
 	EditingFrameAssumption myAssumptionEditor = null;
 	EditingPanel myEditor = null;
 	
-	
+	/**
+     * @brief  Atrium constructor - Gather ressources and library, then launch the Atrium process and UI
+     * @param element The element the user clicked to lauch the UI
+     * @param selectedList The list of diagram the user want to process, if null it process the whole model + library
+     * @param library_path The absolute path of the library 
+     */
 	public AtriumProcess(EObject element, List<String> selectedList, String library_path) {
 		
 		EObject root = element;
@@ -195,6 +203,10 @@ public class AtriumProcess extends javax.swing.JFrame {
 		this.setVisible(true);
 	}
 
+	/**
+     * @brief  On UI start, sort all AtriumBasicElement in the model + library in order to be processed later
+     * @param treeArchList The list of iterators used to go through the whole model + library
+     */
 	private void sortAtriumElementOnce(EList<TreeIterator<EObject>> treeArchList)
 	{       
 		for (TreeIterator<EObject> treeArch : treeArchList)
@@ -224,6 +236,10 @@ public class AtriumProcess extends javax.swing.JFrame {
 		}
 	}
 	
+	/**
+     * @brief  On UI start, sort all Capella element in the model + library in order to be processed later'
+     * @param treeArchList The list of iterators used to go through the whole model + library
+     */
 	private void sortCapellaElementOnce(EList<TreeIterator<EObject>> treeArchList)
 	{
 		for (TreeIterator<EObject> treeArch : treeArchList)
@@ -264,6 +280,11 @@ public class AtriumProcess extends javax.swing.JFrame {
 		Collections.sort(ListCapellaElementName);
 	}
 	
+	/**
+     * @brief  On UI start, sort all Capella element in the diagram in list in order to be processed later
+     * @param selectedList The selected list of diagrams the user want to process
+     * @param root The root of the project, currently the logical architecture
+     */
 	private void sortCapellaElementOnceDiagram(List<String> selectedList, EObject root)
 	{
 		Session session = SessionManager.INSTANCE.getSession(root);
@@ -311,6 +332,9 @@ public class AtriumProcess extends javax.swing.JFrame {
 		}
 	}
 	
+	/**
+     * @brief  On UI start, if they are not found in the main project, the AtriumBasicElement list are created there
+     */
 	private void createLists() {
 		domain.getCommandStack().execute(new RecordingCommand(domain) { // in a transaction context, create any list that has not been found
 	        @Override
@@ -367,6 +391,9 @@ public class AtriumProcess extends javax.swing.JFrame {
 	    });
 	}
 	
+	/**
+     * @brief  On UI start, make sure all CFA are created and consistent with the failure mode and capella elements
+     */
 	private void updateCFA()
 	{
 		//first rename CFA whose failure might have been renamed
@@ -442,7 +469,10 @@ public class AtriumProcess extends javax.swing.JFrame {
 		}
 	}
 	
-	
+	/**
+     * @brief  Create all Swing Component on the window
+     * Add the listeners, initialize some list
+     */
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	private void initComponents() { 
 		//Copy and paste the netbean generated code here. Just make sure to keep the Action listener coded here right under the variables declaration. Also, three lists have been overridden
@@ -791,7 +821,7 @@ public class AtriumProcess extends javax.swing.JFrame {
 		});
 	   jComboBoxCFA.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBoxCFAActionPerformed(evt);
+            	 updateDisplayTab0();
             }
         });
         jComboBoxDG.addActionListener(new java.awt.event.ActionListener() {
@@ -801,12 +831,12 @@ public class AtriumProcess extends javax.swing.JFrame {
         });
         jComboBoxDG2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBoxDG2ActionPerformed(evt);
+            	updateDisplayTab1();
             }
         });
         jComboBoxAssumption.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-            	jComboBoxAssumptionActionPerformed(evt);
+            	updateDisplayTab4();
             }
         });
         jButtonAddLinkedDA.addActionListener(new java.awt.event.ActionListener() {
@@ -1664,6 +1694,10 @@ public class AtriumProcess extends javax.swing.JFrame {
         pack();
     }// </editor-fold>
 	
+	/**
+     * @brief  Re-sort Assumption and DA between linked and unlinked to the selected CFA
+     * Basically what is displayed on tab 1 + the selected DG
+     */
 	public void updateDisplayTab0()
 	{
 		nameLinkedAssumption=new DefaultListModel<String>();
@@ -1701,9 +1735,12 @@ public class AtriumProcess extends javax.swing.JFrame {
 		}
 	}
 	
+	/**
+     * @brief  Re-sort sDG and DA between linked and unlinked to the selected DG
+     * Basically what is displayed on tab 1
+     */
 	public void updateDisplayTab1()
 	{
-		
 		nameLinkedsDG = new DefaultListModel<String>();
 		nameUnlinkedsDG = new DefaultListModel<String>();
 		
@@ -1744,6 +1781,10 @@ public class AtriumProcess extends javax.swing.JFrame {
 		jListLinkedDA.setModel(nameLinkedDA);
 	}
 	
+	/**
+     * @brief  Update the list of DG, DA and sDG
+     * Basically what is displayed on tab 2
+     */
 	public void updateDisplayTab2()
 	{
 		DefaultListModel <String> listModelDG = new DefaultListModel<String>();
@@ -1759,6 +1800,10 @@ public class AtriumProcess extends javax.swing.JFrame {
         jListSDG.setModel(listModelsDG);
 	}
 	
+	/**
+     * @brief  Update the list of Assumptions, ODD, FR and FailureMode
+     * Basically what is displayed on tab 3
+     */
 	public void updateDisplayTab3()
 	{
 		DefaultListModel <String> listModelsAssumptions = new DefaultListModel<String>();
@@ -1778,6 +1823,10 @@ public class AtriumProcess extends javax.swing.JFrame {
         jListFailure.setModel(listModelFailure); 
 	}
 	
+	/**
+     * @brief  Re-sort CFA between linked and unlinked to the selected assumption
+     * Basically what is displayed on tab 4
+     */
 	public void updateDisplayTab4()
 	{
 		nameLinkedCFA = new DefaultListModel<String>();
@@ -1802,7 +1851,9 @@ public class AtriumProcess extends javax.swing.JFrame {
 		jListLinkedCFA.setModel(nameLinkedCFA);
 	}
 
-	
+	/**
+     * @brief  Update the DG ComboBoxes, deleting or adding new DGs
+     */
 	public void updateDGComboBox()
 	{
 		DefaultComboBoxModel<String> listDGcbModel= new DefaultComboBoxModel<String>();
@@ -1816,6 +1867,9 @@ public class AtriumProcess extends javax.swing.JFrame {
         jComboBoxDG2.setModel(listDGcbModel2);
 	}
 	
+	/**
+     * @brief  Update the ComboBox, deleting or adding new Assumptions
+     */
 	public void updateComboBoxAssumption()
 	{
 		DefaultComboBoxModel<String> listComboBoxModelAssumption= new DefaultComboBoxModel<String>();
@@ -1823,6 +1877,10 @@ public class AtriumProcess extends javax.swing.JFrame {
         jComboBoxAssumption.setModel(listComboBoxModelAssumption);
 	}
 	
+	/**
+     * @brief  Link or unlink an object to another
+     * @param  type An number describing which linking or unlinking is performed
+     */
 	@SuppressWarnings("rawtypes")
 	private void moveObject(int type)
 	{
@@ -1977,6 +2035,9 @@ public class AtriumProcess extends javax.swing.JFrame {
 		updateDisplayTab4();
 	}
 	
+	/**
+     * @brief  Link the previously selected CFA with the DG selected
+     */
 	private void linkCFAwithDG()
 	{
 		CFA the_CFA = null;
@@ -2016,19 +2077,11 @@ public class AtriumProcess extends javax.swing.JFrame {
 		}
 	}
 	
-	private void jComboBoxCFAActionPerformed(java.awt.event.ActionEvent evt) {
-		updateDisplayTab0();
-	}
-	
-	private void jComboBoxDG2ActionPerformed(java.awt.event.ActionEvent evt) {                                             
-		updateDisplayTab1();
-    }
-	
-	private void jComboBoxAssumptionActionPerformed(java.awt.event.ActionEvent evt) {                                             
-		updateDisplayTab4();
-    }
-	
-	
+	/**
+     * @brief  Open the editing window when the user double click on a Assumption in the Linked Assumption list
+     * This should be merge with the other MouseClicked events
+     * @param  evt The ActionEvent that has been triggered (not used)
+     */
 	private void jListLinkedAssumptionsMouseClicked(java.awt.event.MouseEvent evt) {
 		Assumption edited_assumption = null;
         if (evt.getClickCount() == 2) {
@@ -2042,6 +2095,11 @@ public class AtriumProcess extends javax.swing.JFrame {
         } 
     }
 	
+	/**
+     * @brief  Open the editing window when the user double click on a Assumption in the Unlinked Assumption list
+     * This should be merge with the other MouseClicked events
+     * @param  evt The ActionEvent that has been triggered (not used)
+     */
 	private void jListUnlinkedAssumptionMouseClicked(java.awt.event.MouseEvent evt) {
 		Assumption edited_assumption = null;
         if (evt.getClickCount() == 2) {
@@ -2055,6 +2113,11 @@ public class AtriumProcess extends javax.swing.JFrame {
         } 
     }
 	
+	/**
+     * @brief  Open the editing window when the user double click on a Assumption in the Assumption list
+     * This should be merge with the other MouseClicked events
+     * @param  evt The ActionEvent that has been triggered (not used)
+     */
 	private void jListAssumptionMouseClicked(java.awt.event.MouseEvent evt) {                                             
 		Assumption edited_assumption = null;
         if (evt.getClickCount() == 2) {
@@ -2068,6 +2131,12 @@ public class AtriumProcess extends javax.swing.JFrame {
         } 
     }  
 	
+	/**
+     * @brief  Open the editing window when the user double click on a AtriumBasicElement 
+     * @param  evt The ActionEvent that has been triggered (not used)
+     * @param jlist The jlist which has been clicked
+     * @param list The list of the corresponding object type
+     */
 	@SuppressWarnings("rawtypes")
 	private void jListMouseClicked(java.awt.event.MouseEvent evt, javax.swing.JList<String> jlist, EList list) {
 		AtriumBasicElement edited_object = null;
@@ -2086,6 +2155,10 @@ public class AtriumProcess extends javax.swing.JFrame {
     	}
 	}                                                                                       
 
+	/**
+     * @brief  Link CFA with DG if a CFA is selected while choosing a DG 
+     * @param  evt The ActionEvent that has been triggered (not used)
+     */
     private void jComboBoxDGActionPerformed(java.awt.event.ActionEvent evt) {
     	if (jComboBoxCFA.getSelectedItem()!=null)
     	{
@@ -2093,6 +2166,11 @@ public class AtriumProcess extends javax.swing.JFrame {
     	} 
     }
     
+    /**
+     * @brief Delete the selected AtriumBasicElement in a given list after the user clicked a button
+     * @param  evt The ActionEvent that has been triggered (not used)
+     * @param type A number corresponding to which element should be deleted (or on which button the user has clicked)
+     */
     @SuppressWarnings({ "rawtypes" })
 	private void jButtonRemoveObject(java.awt.event.ActionEvent evt, int type)
     {
@@ -2140,20 +2218,16 @@ public class AtriumProcess extends javax.swing.JFrame {
     	}
     	
     	AtriumBasicElement elToDelete = null;
-    	
     	String strToDelete = jlist.getSelectedValue();
-    	
     	for (Object obj : listObject)
     	{
     		AtriumBasicElement abe = (AtriumBasicElement) obj;
     		if (abe.getName()==strToDelete) {elToDelete=abe;}
     	}
-    	
-    	
+  
     	if (type==7) {deleteLinkedODDorFR(((Assumption)elToDelete));}
     	if ((type==5)||(type==6)) {deleteLinkedAssumption(elToDelete);}
   
-    	
     	final AtriumBasicElement elToDelete_param = elToDelete;
     	final EObject Extensible_list_param = Extensible_list; 
     	
@@ -2169,12 +2243,14 @@ public class AtriumProcess extends javax.swing.JFrame {
     	updateDisplayTab1();
     	updateDisplayTab2();
     	updateDisplayTab3();
-    	updateDisplayTab4();
-    	
+    	updateDisplayTab4();	
     	updateDGComboBox();
-    	
     }
     
+    /**
+     * @brief Delete an ODD or an FR whose linked Assumption has been deleted
+     * @param  assumption The assumption that has been deleted
+     */
     private void deleteLinkedODDorFR(Assumption assumption)
     {
     	if (assumption.getCreatedFrom() instanceof ODD)
@@ -2203,6 +2279,10 @@ public class AtriumProcess extends javax.swing.JFrame {
     	}
     }
     
+    /**
+     * @brief Delete an assumption whose linked ODD or FR has been deleted
+     * @param  ODDorFR The ODD or FR which has been deleted
+     */
     private void deleteLinkedAssumption(AtriumBasicElement ODDorFR)
     {
     	Assumption linkedAssumption = null;
@@ -2221,6 +2301,11 @@ public class AtriumProcess extends javax.swing.JFrame {
     	listAssumption.remove(assumption_param);
     }
 	
+    /**
+     * @brief Create a new empty AtriumBAsicElement, then open the corresponding editing window
+     * @param  name The Default name given to that object
+     * @param type A number corresponding to which element should be created
+     */
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	private void createAtriumElement(String name, int type)
 	{
@@ -2296,6 +2381,11 @@ public class AtriumProcess extends javax.swing.JFrame {
 		disableAllComponent();
 	}
 	
+	/**
+     * @brief Automatically create an Assumption linked to a new ODD or FR
+     * @param  ODDorFR The new ODD or the new FR that will create the new assumption
+     * @return The new assumption created
+     */
 	public Assumption createAssumptionFromODDorFR(AtriumBasicElement ODDorFR)
 	{	
 		EList<Assumption> ObjectList = listAssumption;
@@ -2318,6 +2408,11 @@ public class AtriumProcess extends javax.swing.JFrame {
 		return newObject;
 	}
 	
+	/**
+     * @brief Return all components contained a given container
+     * @param  c A container
+     * @return A list of components contained inside the given container
+     */
 	private List<Component> getAllComponents(final Container c) {
         Component[] comps = c.getComponents();
         List<Component> compList = new ArrayList<Component>();
@@ -2328,7 +2423,9 @@ public class AtriumProcess extends javax.swing.JFrame {
         }
         return compList;
 }
-	
+	/**
+     * @brief Disable all components in the main Atrium process jTabbedPane
+     */
 	private void disableAllComponent()
 	{
 		List<Component> comps = getAllComponents(jTabbedPane);
@@ -2337,6 +2434,9 @@ public class AtriumProcess extends javax.swing.JFrame {
 		}
 	}
 	
+	/**
+     * @brief Enable all components in the main Atrium process jTabbedPane
+     */
 	public void enableAllComponent()
 	{
 		List<Component> comps = getAllComponents(jTabbedPane);
