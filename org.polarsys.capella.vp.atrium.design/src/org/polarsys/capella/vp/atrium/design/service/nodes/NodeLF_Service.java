@@ -1,4 +1,4 @@
-
+//Manually-edited
 // Generated on 09.07.2020 at 10:56:11 CEST by Viewpoint DSL Generator V 0.1
 
 package org.polarsys.capella.vp.atrium.design.service.nodes;

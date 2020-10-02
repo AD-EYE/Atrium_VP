@@ -1,3 +1,4 @@
+//Manually-edited but imported from a website
 /*
  * This code comes from the website http://www.orbital-computer.de/JComboBox/
  *

@@ -1,3 +1,4 @@
+//Manually-edited
 package org.polarsys.capella.vp.atrium.design.service.tools;
 
 
@@ -2079,7 +2080,7 @@ public class AtriumProcess extends javax.swing.JFrame {
 	
 	/**
      * @brief  Open the editing window when the user double click on a Assumption in the Linked Assumption list
-     * This should be merge with the other MouseClicked events
+     * This should be merge with the other MouseClicked events 
      * @param  evt The ActionEvent that has been triggered (not used)
      */
 	private void jListLinkedAssumptionsMouseClicked(java.awt.event.MouseEvent evt) {

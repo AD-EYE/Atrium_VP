@@ -1,3 +1,4 @@
+//Manually-edited
 package org.polarsys.capella.vp.atrium.design.service.tools;
 
 import javax.swing.DefaultListModel;
