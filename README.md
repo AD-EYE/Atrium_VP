@@ -1,5 +1,9 @@
 # Atrium_VP
-This repository contains code for the tool support in following the process ATRIUM, a creation method for the Functional Safety Viewpoint, part of the SMART Architecture Framework designed by Naveen Mohan and others at KTH Mechatronics. 
+This repository contains code for the tool support in following the process ATRIUM, a creation method for the Functional Safety Viewpoint, part of the SMART Architecture Framework designed by Naveen Mohan and others at KTH Mechatronics.
+
+The implementation language is Java, and the tool is modelled using Capella Studio as a viewpoint to be used in Capella.
+
+
 
 The original paper can be found at: https://doi.org/10.1109/SYSCON.2017.7934819
 
